@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Fonts */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  /* Colors - Base */
+  --color-base-950: #020617;
+  --color-base-900: #0b1120;
+  --color-base-800: #111827;
+  --color-base-700: #1e293b;
+  --color-base-600: #334155;
+
+  /* Colors - Brand */
+  --color-brand-500: #3b82f6;
+  --color-brand-400: #60a5fa;
+  --color-brand-600: #2563eb;
+  --color-cyan-glow: #22d3ee;
+
+  /* Colors - Accent */
+  --color-neon: #00ffb2;
+  --color-violet-soft: #a78bfa;
+
+  /* Colors - Text */
+  --color-text-primary: #e5e7eb;
+  --color-text-secondary: #9ca3af;
+
+  /* Light mode colors */
+  --color-light-bg: #f8fafc;
+  --color-light-surface: #ffffff;
+  --color-light-card: #f1f5f9;
+  --color-light-text: #0f172a;
+  --color-light-muted: #475569;
+  --color-light-border: #e2e8f0;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+/* Dark mode (default) */
+.dark body {
+  background-color: var(--color-base-950);
+  color: var(--color-text-primary);
+}
+
+/* Light mode */
+.light body {
+  background-color: var(--color-light-bg);
+  color: var(--color-light-text);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-brand-500);
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-base-600);
+  border-radius: 3px;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: var(--color-light-border);
+  border-radius: 3px;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out both;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Stagger delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
+.delay-600 {
+  animation-delay: 600ms;
+}
