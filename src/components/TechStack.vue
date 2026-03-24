@@ -5,11 +5,15 @@
     <div class="relative max-w-7xl mx-auto px-6">
       <!-- Header -->
       <div data-animate class="text-center mb-16">
-        <h2 class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text">
-          {{ t('stack.title') }}
+        <h2
+          class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text"
+        >
+          {{ t("stack.title") }}
         </h2>
-        <p class="mt-4 text-lg dark:text-text-secondary text-light-muted max-w-2xl mx-auto">
-          {{ t('stack.subtitle') }}
+        <p
+          class="mt-4 text-lg dark:text-text-secondary text-light-muted max-w-2xl mx-auto"
+        >
+          {{ t("stack.subtitle") }}
         </p>
       </div>
 
@@ -24,11 +28,20 @@
         >
           <!-- Category header -->
           <div class="flex items-center gap-3 mb-5">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center" :class="category.iconBg">
-              <component :is="category.icon" class="w-5 h-5" :class="category.iconColor" />
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center"
+              :class="category.iconBg"
+            >
+              <component
+                :is="category.icon"
+                class="w-5 h-5"
+                :class="category.iconColor"
+              />
             </div>
             <div>
-              <h3 class="font-display text-lg font-semibold dark:text-white text-light-text">
+              <h3
+                class="font-display text-lg font-semibold dark:text-white text-light-text"
+              >
                 {{ t(`stack.categories.${category.key}.title`) }}
               </h3>
             </div>
@@ -46,7 +59,9 @@
           </div>
 
           <!-- Description -->
-          <p class="text-sm dark:text-text-secondary text-light-muted leading-relaxed mb-4">
+          <p
+            class="text-sm dark:text-text-secondary text-light-muted leading-relaxed mb-4"
+          >
             {{ t(`stack.categories.${category.key}.desc`) }}
           </p>
 
@@ -57,7 +72,10 @@
               :key="hIdx"
               class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
             >
-              <component :is="Check" class="w-4 h-4 mt-0.5 shrink-0 text-neon dark:text-neon text-emerald-600" />
+              <component
+                :is="Check"
+                class="w-4 h-4 mt-0.5 shrink-0 text-neon dark:text-neon text-emerald-600"
+              />
               <span>{{ highlight }}</span>
             </li>
           </ul>
@@ -68,7 +86,7 @@
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n'
+import { useI18n } from "vue-i18n";
 import {
   Palette,
   Server,
@@ -80,77 +98,85 @@ import {
   Plug,
   Smartphone,
   Check,
-} from 'lucide-vue-next'
+} from "lucide-vue-next";
 
-const { t, tm } = useI18n()
+const { t, tm } = useI18n();
 
 const categories = [
   {
-    key: 'frontend',
+    key: "frontend",
     icon: Palette,
-    iconBg: 'bg-brand-500/10',
-    iconColor: 'text-brand-500',
-    techs: ['Vue 3', 'Nuxt 3', 'React', 'TailwindCSS', 'TypeScript', 'Pinia'],
+    iconBg: "bg-brand-500/10",
+    iconColor: "text-brand-500",
+    techs: ["Vue 3", "Nuxt 3", "React", "TailwindCSS", "TypeScript", "Pinia"],
   },
   {
-    key: 'backend',
+    key: "backend",
     icon: Server,
-    iconBg: 'dark:bg-cyan-glow/10 bg-cyan-500/10',
-    iconColor: 'dark:text-cyan-glow text-cyan-600',
-    techs: ['Node.js', 'Express', 'Python', 'Flask'],
+    iconBg: "dark:bg-cyan-glow/10 bg-cyan-500/10",
+    iconColor: "dark:text-cyan-glow text-cyan-600",
+    techs: ["Node.js", "Express", "Python", "Flask"],
   },
   {
-    key: 'databases',
+    key: "databases",
     icon: Database,
-    iconBg: 'dark:bg-violet-soft/10 bg-violet-500/10',
-    iconColor: 'dark:text-violet-soft text-violet-600',
-    techs: ['PostgreSQL', 'Neon', 'Supabase', 'Turso', 'Redis'],
+    iconBg: "dark:bg-violet-soft/10 bg-violet-500/10",
+    iconColor: "dark:text-violet-soft text-violet-600",
+    techs: ["PostgreSQL", "Neon", "Supabase", "Turso", "Redis"],
   },
   {
-    key: 'architecture',
+    key: "architecture",
     icon: Blocks,
-    iconBg: 'dark:bg-neon/10 bg-emerald-500/10',
-    iconColor: 'dark:text-neon text-emerald-600',
-    techs: ['SaaS', 'Multi-tenant', 'JWT', 'OAuth', 'RBAC', 'Microservices'],
+    iconBg: "dark:bg-neon/10 bg-emerald-500/10",
+    iconColor: "dark:text-neon text-emerald-600",
+    techs: ["SaaS", "Multi-tenant", "JWT", "OAuth", "RBAC", "Microservices"],
   },
   {
-    key: 'testing',
+    key: "testing",
     icon: TestTubeDiagonal,
-    iconBg: 'bg-brand-500/10',
-    iconColor: 'text-brand-500',
-    techs: ['Swagger', 'Postman', 'OpenAPI 3', 'Insomnia'],
+    iconBg: "bg-brand-500/10",
+    iconColor: "text-brand-500",
+    techs: ["Swagger", "Postman", "OpenAPI 3", "Insomnia"],
   },
   {
-    key: 'geo',
+    key: "geo",
     icon: MapPin,
-    iconBg: 'dark:bg-cyan-glow/10 bg-cyan-500/10',
-    iconColor: 'dark:text-cyan-glow text-cyan-600',
-    techs: ['Mapbox', 'Google Maps'],
+    iconBg: "dark:bg-cyan-glow/10 bg-cyan-500/10",
+    iconColor: "dark:text-cyan-glow text-cyan-600",
+    techs: ["Mapbox", "Google Maps"],
   },
   {
-    key: 'cloud',
+    key: "cloud",
     icon: Cloud,
-    iconBg: 'dark:bg-violet-soft/10 bg-violet-500/10',
-    iconColor: 'dark:text-violet-soft text-violet-600',
-    techs: ['AWS', 'Vercel', 'GCP', 'Docker', 'NGINX', 'Render'],
+    iconBg: "dark:bg-violet-soft/10 bg-violet-500/10",
+    iconColor: "dark:text-violet-soft text-violet-600",
+    techs: ["AWS", "Vercel", "GCP", "Docker", "NGINX", "Render"],
   },
   {
-    key: 'integrations',
+    key: "integrations",
     icon: Plug,
-    iconBg: 'dark:bg-neon/10 bg-emerald-500/10',
-    iconColor: 'dark:text-neon text-emerald-600',
-    techs: ['GitHub', 'Git', 'Figma', 'Stripe', 'Firebase', 'CKEditor', 'Webhooks'],
+    iconBg: "dark:bg-neon/10 bg-emerald-500/10",
+    iconColor: "dark:text-neon text-emerald-600",
+    techs: [
+      "GitHub",
+      "Git",
+      "Figma",
+      "Stripe",
+      "Firebase",
+      "CKEditor",
+      "Webhooks",
+    ],
   },
   {
-    key: 'mobile',
+    key: "mobile",
     icon: Smartphone,
-    iconBg: 'bg-brand-500/10',
-    iconColor: 'text-brand-500',
-    techs: ['PWA', 'Service Workers', 'Push Notifications'],
+    iconBg: "bg-brand-500/10",
+    iconColor: "text-brand-500",
+    techs: ["PWA", "Service Workers", "Push Notifications"],
   },
-]
+];
 
 function getHighlights(key) {
-  return tm(`stack.categories.${key}.highlights`) || []
+  return tm(`stack.categories.${key}.highlights`) || [];
 }
 </script>
