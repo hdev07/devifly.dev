@@ -45,16 +45,19 @@ export default {
   projects: {
     title: 'Proyectos',
     subtitle: 'Productos reales, enviados y funcionando.',
+    visitLabel: 'Ver proyecto',
     items: [
       {
-        name: 'Movibase',
-        desc: 'Plataforma de base de datos de películas con búsqueda en tiempo real, recomendaciones personalizadas y funciones sociales.',
-        tech: ['Vue', 'Node.js', 'PostgreSQL', 'Tailwind'],
+        name: 'MoviBase',
+        desc: 'Plataforma SaaS de control operativo y financiero de flotas vehiculares para Latinoamérica. GPS en tiempo real, comandos remotos, mantenimiento predictivo, control de combustible, checklists digitales, geocercas con PostGIS y dashboards financieros. 27 módulos integrados para empresas de transporte de 10 a miles de vehículos.',
+        tech: ['Vue', 'Node.js', 'PostgreSQL', 'PostGIS', 'Tailwind'],
+        link: 'https://movibase.com/',
       },
       {
-        name: 'Condecdotario',
-        desc: 'Plataforma de storytelling digital para preservar y compartir anécdotas familiares a través de generaciones.',
-        tech: ['Nuxt', 'Firebase', 'Tailwind', 'PWA'],
+        name: 'Confecdotario',
+        desc: 'Red social de anécdotas creada para la comunidad del podcast La Cotorrisa. Feed con scroll infinito, publicación anónima, comentarios y reacciones, sistema de seguidos, contenido trending, gamificación con medallas desbloqueables, notificaciones en tiempo real y PWA completa con modo offline.',
+        tech: ['Nuxt', 'Supabase', 'Tailwind', 'PWA'],
+        link: 'https://confecdotario.devifly.dev/',
       },
       {
         name: 'DevTrack',
@@ -64,8 +67,98 @@ export default {
     ],
   },
   stack: {
-    title: 'Tech Stack',
-    subtitle: 'Herramientas modernas para productos modernos.',
+    title: 'Stack & Tecnologías',
+    subtitle: 'Tecnologías que utilizo para construir productos modernos, rápidos y escalables.',
+    categories: {
+      frontend: {
+        title: 'Frontend',
+        desc: 'Interfaces rápidas, escalables y centradas en el usuario.',
+        highlights: [
+          'Animaciones fluidas',
+          'Integración con streaming de datos en tiempo real',
+          'Componentes de alto rendimiento',
+          'Diseño responsive profesional',
+        ],
+      },
+      backend: {
+        title: 'Backend',
+        desc: 'APIs robustas, seguras y eficientes.',
+        highlights: [
+          'Endpoints optimizados',
+          'Streaming con ReadableStream + TextDecoder',
+          'Validación fuerte y manejo de errores',
+          'Autenticación y autorización avanzada',
+        ],
+      },
+      databases: {
+        title: 'Bases de Datos & Storage',
+        desc: 'Arquitecturas multi-tenant, escalables y optimizadas.',
+        highlights: [
+          'Modelado completo para SaaS',
+          'PostGIS para datos geoespaciales',
+          'Particionado, enums, triggers, funciones',
+          'Storage seguro y versionado',
+        ],
+      },
+      architecture: {
+        title: 'Arquitectura & Diseño de Sistemas',
+        desc: 'Sistemas diseñados para crecer.',
+        highlights: [
+          'Estructuras empresariales tipo Movibase',
+          'Control de unidades, dueños, permisos, relaciones',
+          'Pensado para miles de tenants aislados',
+          'Optimización de consultas + indexación inteligente',
+        ],
+      },
+      testing: {
+        title: 'APIs, Testing & Docs',
+        desc: 'Creación de APIs empresariales.',
+        highlights: [
+          'Documentación clara',
+          'Colecciones de pruebas y flujos de auth',
+          'Mock Servers',
+          'Testing automatizado',
+        ],
+      },
+      geo: {
+        title: 'Mapas & Geo',
+        desc: 'Mapas custom y funcionalidades de ubicación.',
+        highlights: [
+          'Mapas custom (dark mode, branding)',
+          'Geocodificación y tracking de rutas',
+          'Optimización costo-calidad según proyecto',
+        ],
+      },
+      cloud: {
+        title: 'Cloud & DevOps',
+        desc: 'Infraestructura moderna y flexible.',
+        highlights: [
+          'CI/CD automatizado',
+          'Deploy multiambiente',
+          'Servidores optimizados y monitoreo',
+          'Logs y alertas avanzadas',
+        ],
+      },
+      integrations: {
+        title: 'Integraciones & Herramientas',
+        desc: 'Workflows profesionales y conexiones con terceros.',
+        highlights: [
+          'Repositorios organizados por tenant y proyecto',
+          'Control de versiones profesional',
+          'Webhooks de pago y eventos',
+          'Diseño UI/UX aplicado a producto real',
+        ],
+      },
+      mobile: {
+        title: 'PWA & Mobile',
+        desc: 'Experiencias móviles sin necesidad de app nativa.',
+        highlights: [
+          'Funcionamiento offline',
+          'Push notifications',
+          'Optimización ligera para dispositivos de bajo consumo',
+        ],
+      },
+    },
   },
   workWithMe: {
     title: 'Trabaja conmigo',

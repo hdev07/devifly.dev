@@ -37,6 +37,29 @@
   --color-light-border: #e2e8f0;
 }
 
+/* Custom futuristic cursor */
+*,
+*::before,
+*::after {
+  cursor:
+    url("/cursor.svg") 16 16,
+    crosshair;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a,
+button,
+[role="button"],
+input[type="submit"],
+.cursor-pointer {
+  cursor:
+    url("/cursor-pointer.svg") 16 16,
+    pointer;
+}
+
 /* Base styles */
 html {
   scroll-behavior: smooth;

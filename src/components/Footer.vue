@@ -19,7 +19,7 @@
         <!-- Social links -->
         <div class="flex items-center gap-4">
           <a
-            href="https://github.com/devifly"
+            href="https://github.com/devifly-tech"
             target="_blank"
             rel="noopener noreferrer"
             class="p-2.5 rounded-xl dark:bg-base-800/60 bg-light-card border dark:border-base-700/50 border-light-border dark:text-text-secondary text-light-muted hover:text-brand-500 dark:hover:text-brand-400 transition-all duration-300 hover:scale-110"
@@ -55,7 +55,7 @@
             </svg>
           </a>
           <a
-            href="mailto:hello@devifly.dev"
+            href="mailto:devifly.dev@gmail.com"
             class="p-2.5 rounded-xl dark:bg-base-800/60 bg-light-card border dark:border-base-700/50 border-light-border dark:text-text-secondary text-light-muted hover:text-brand-500 dark:hover:text-brand-400 transition-all duration-300 hover:scale-110"
             aria-label="Email"
           >
