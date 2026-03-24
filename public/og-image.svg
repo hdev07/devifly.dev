@@ -1,0 +1,80 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#020617"/>
+      <stop offset="50%" style="stop-color:#0B1120"/>
+      <stop offset="100%" style="stop-color:#111827"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00FFB2"/>
+      <stop offset="100%" style="stop-color:#A78BFA"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="20%" cy="30%" r="40%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="70%" r="35%">
+      <stop offset="0%" style="stop-color:#22D3EE;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Glow effects -->
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#brand)"/>
+  
+  <!-- Logo icon -->
+  <rect x="80" y="80" width="56" height="56" rx="14" fill="url(#brand)"/>
+  <text x="108" y="118" font-family="Arial, sans-serif" font-weight="700" font-size="28" fill="white" text-anchor="middle" dominant-baseline="central">D</text>
+  
+  <!-- Brand name -->
+  <text x="152" y="116" font-family="Arial, sans-serif" font-weight="700" font-size="24" fill="#94A3B8">devifly.dev</text>
+  
+  <!-- Main title -->
+  <text x="80" y="260" font-family="Arial, sans-serif" font-weight="700" font-size="64" fill="white">Build digital products</text>
+  <text x="80" y="340" font-family="Arial, sans-serif" font-weight="700" font-size="64" fill="url(#brand)">that actually scale.</text>
+  
+  <!-- Subtitle -->
+  <text x="80" y="410" font-family="Arial, sans-serif" font-weight="400" font-size="24" fill="#94A3B8">Modern apps · SaaS platforms · High-performance systems</text>
+  
+  <!-- Tech tags -->
+  <rect x="80" y="470" width="72" height="36" rx="18" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="116" y="493" font-family="Arial, sans-serif" font-weight="500" font-size="14" fill="#94A3B8" text-anchor="middle">Vue</text>
+  
+  <rect x="168" y="470" width="96" height="36" rx="18" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="216" y="493" font-family="Arial, sans-serif" font-weight="500" font-size="14" fill="#94A3B8" text-anchor="middle">Node.js</text>
+  
+  <rect x="280" y="470" width="120" height="36" rx="18" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="340" y="493" font-family="Arial, sans-serif" font-weight="500" font-size="14" fill="#94A3B8" text-anchor="middle">PostgreSQL</text>
+  
+  <rect x="416" y="470" width="104" height="36" rx="18" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="468" y="493" font-family="Arial, sans-serif" font-weight="500" font-size="14" fill="#94A3B8" text-anchor="middle">Tailwind</text>
+  
+  <rect x="536" y="470" width="80" height="36" rx="18" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="576" y="493" font-family="Arial, sans-serif" font-weight="500" font-size="14" fill="#94A3B8" text-anchor="middle">NestJS</text>
+  
+  <rect x="632" y="470" width="72" height="36" rx="18" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="668" y="493" font-family="Arial, sans-serif" font-weight="500" font-size="14" fill="#94A3B8" text-anchor="middle">AWS</text>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="626" width="1200" height="4" fill="url(#accent)"/>
+  
+  <!-- URL bottom right -->
+  <text x="1120" y="590" font-family="Arial, sans-serif" font-weight="600" font-size="20" fill="url(#brand)" text-anchor="end">devifly.dev</text>
+</svg>
