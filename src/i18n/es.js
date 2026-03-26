@@ -57,7 +57,7 @@ export default {
         name: 'Confecdotario',
         desc: 'Red social de anécdotas creada para la comunidad del podcast La Cotorrisa. Feed con scroll infinito, publicación anónima, comentarios y reacciones, sistema de seguidos, contenido trending, gamificación con medallas desbloqueables, notificaciones en tiempo real y PWA completa con modo offline.',
         tech: ['Vue 3', 'NestJS', 'Prisma', 'PostgreSQL', 'TailwindCSS', 'PWA', 'AWS S3'],
-        link: 'https://confecdotario.devifly.dev/',
+        link: 'https://app-confecdotario.devifly.dev/',
       },
       {
         name: 'Musion',

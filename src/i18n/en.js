@@ -57,7 +57,7 @@ export default {
         name: 'Confecdotario',
         desc: 'Social network for sharing anecdotes built for the La Cotorrisa podcast community. Infinite scroll feed, anonymous posting, comments & reactions, follow system, trending content, gamification with unlockable badges, real-time notifications, and full PWA with offline mode.',
         tech: ['Vue 3', 'NestJS', 'Prisma', 'PostgreSQL', 'TailwindCSS', 'PWA', 'AWS S3'],
-        link: 'https://confecdotario.devifly.dev/',
+        link: 'https://app-confecdotario.devifly.dev/',
       },
       {
         name: 'Musion',
