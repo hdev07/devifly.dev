@@ -50,14 +50,20 @@ export default {
       {
         name: 'MoviBase',
         desc: 'Plataforma SaaS de control operativo y financiero de flotas vehiculares para Latinoamérica. GPS en tiempo real, comandos remotos, mantenimiento predictivo, control de combustible, checklists digitales, geocercas con PostGIS y dashboards financieros. 27 módulos integrados para empresas de transporte de 10 a miles de vehículos.',
-        tech: ['Vue', 'Node.js', 'PostgreSQL', 'PostGIS', 'Tailwind'],
+        tech: ['Vue 3', 'Node.js', 'Express', 'PostgreSQL', 'PostGIS', 'Redis', 'TailwindCSS', 'Socket.IO'],
         link: 'https://movibase.com/',
       },
       {
         name: 'Confecdotario',
         desc: 'Red social de anécdotas creada para la comunidad del podcast La Cotorrisa. Feed con scroll infinito, publicación anónima, comentarios y reacciones, sistema de seguidos, contenido trending, gamificación con medallas desbloqueables, notificaciones en tiempo real y PWA completa con modo offline.',
-        tech: ['Nuxt', 'Supabase', 'Tailwind', 'PWA'],
+        tech: ['Vue 3', 'NestJS', 'Prisma', 'PostgreSQL', 'TailwindCSS', 'PWA', 'AWS S3'],
         link: 'https://confecdotario.devifly.dev/',
+      },
+      {
+        name: 'Musion',
+        desc: 'PWA que conecta visitantes con museos mediante geolocalización inteligente, gamificación y e-commerce cultural. PostGIS para búsquedas geoespaciales, RBAC con 7 roles, pasarelas de pago (Stripe, PayPal, MercadoPago), Full Text Search en español, modo offline con Workbox y +50 tablas en base de datos.',
+        tech: ['Vue 3', 'Express', 'PostgreSQL', 'PostGIS', 'TailwindCSS', 'PWA', 'Stripe'],
+        link: 'https://musion.day/',
       },
       {
         name: 'DevTrack',
