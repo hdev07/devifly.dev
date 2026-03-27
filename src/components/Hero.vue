@@ -35,9 +35,9 @@
         class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full dark:bg-base-800/60 bg-light-card/80 border dark:border-base-700/50 border-light-border mb-8 backdrop-blur-sm"
       >
         <span class="w-2 h-2 rounded-full bg-neon animate-pulse"></span>
-        <span class="text-sm dark:text-text-secondary text-light-muted"
-          >Available for projects</span
-        >
+        <span class="text-sm dark:text-text-secondary text-light-muted">{{
+          t("hero.badge")
+        }}</span>
       </div>
 
       <!-- Title -->
@@ -45,11 +45,11 @@
         data-animate
         class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight dark:text-white text-light-text leading-[1.1] delay-100"
       >
-        {{ t("hero.title").split("scale")[0] }}
+        {{ t("hero.titlePre") }}
         <span
           class="bg-gradient-to-r from-brand-500 via-cyan-glow to-violet-soft bg-clip-text text-transparent"
         >
-          scale.
+          {{ t("hero.titleHighlight") }}
         </span>
       </h1>
 
@@ -64,10 +64,10 @@
       <!-- CTAs -->
       <div
         data-animate
-        class="mt-10 flex flex-col sm:flex-row gap-4 justify-center delay-300"
+        class="mt-20 flex flex-col sm:flex-row gap-4 justify-center delay-300"
       >
-        <a
-          href="#contact"
+        <router-link
+          to="/solutions"
           class="group relative inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]"
         >
           {{ t("hero.cta") }}
@@ -85,17 +85,19 @@
               d="M17 8l4 4m0 0l-4 4m4-4H3"
             />
           </svg>
-        </a>
-        <a
-          href="#projects"
+        </router-link>
+        <router-link
+          to="/contact"
           class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-2xl dark:bg-base-800/60 bg-light-card border dark:border-base-700/50 border-light-border dark:text-text-primary text-light-text font-semibold text-sm transition-all duration-300 hover:scale-105 dark:hover:border-brand-500/50 hover:border-brand-500/50 backdrop-blur-sm"
         >
           {{ t("hero.ctaSecondary") }}
-        </a>
+        </router-link>
       </div>
 
       <!-- Scroll indicator -->
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-float">
+      <div
+        class="absolute bottom-15 left-1/2 -ml-1 -translate-x-1/2 w-full flex justify-center animate-float"
+      >
         <div
           class="w-6 h-10 rounded-full border-2 dark:border-base-600 border-light-border flex justify-center pt-2"
         >

@@ -33,7 +33,7 @@
               class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 text-2xl transition-transform group-hover:scale-110"
               :class="iconBgs[index]"
             >
-              {{ icons[index] }}
+              <LucideIcon :name="icons[index]" class-name="w-7 h-7" />
             </div>
 
             <h3
@@ -68,22 +68,7 @@
               class="inline-flex items-center gap-2 text-sm font-medium dark:text-brand-500 text-brand-600 hover:underline transition-colors"
             >
               {{ t("projects.visitLabel") || "Visit project" }}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
+              <LucideIcon name="external-link" class-name="w-4 h-4" />
             </a>
           </div>
         </div>
@@ -94,6 +79,7 @@
 
 <script setup>
 import { useI18n } from "vue-i18n";
+import LucideIcon from "./LucideIcon.vue";
 
 const { t, tm } = useI18n();
 
@@ -111,7 +97,7 @@ const iconBgs = [
   "bg-neon/10",
 ];
 
-const icons = ["🚌", "📖", "🏛️", "📊"];
+const icons = ["bus", "book-open", "landmark", "chart-column"];
 
 function getTech(index) {
   const items = tm("projects.items");

@@ -9,7 +9,7 @@
   >
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-2 group">
+      <router-link to="/" class="flex items-center gap-2 group">
         <div class="relative">
           <div
             class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-cyan-glow flex items-center justify-center font-display font-bold text-white text-sm transition-transform group-hover:scale-110"
@@ -25,18 +25,18 @@
         >
           devifly<span class="text-brand-500">.dev</span>
         </span>
-      </a>
+      </router-link>
 
       <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-8">
-        <a
+        <router-link
           v-for="item in navItems"
           :key="item.key"
-          :href="item.href"
+          :to="item.href"
           class="text-sm dark:text-text-secondary text-light-muted hover:text-brand-500 dark:hover:text-brand-400 transition-colors"
         >
           {{ t(`nav.${item.key}`) }}
-        </a>
+        </router-link>
       </div>
 
       <!-- Controls -->
@@ -136,15 +136,15 @@
       class="md:hidden dark:bg-base-950/95 bg-light-bg/95 backdrop-blur-xl border-b dark:border-base-700/50 border-light-border"
     >
       <div class="px-6 py-4 flex flex-col gap-3">
-        <a
+        <router-link
           v-for="item in navItems"
           :key="item.key"
-          :href="item.href"
+          :to="item.href"
           @click="mobileOpen = false"
           class="text-sm dark:text-text-secondary text-light-muted hover:text-brand-500 transition-colors py-2"
         >
           {{ t(`nav.${item.key}`) }}
-        </a>
+        </router-link>
       </div>
     </div>
   </nav>
@@ -162,11 +162,10 @@ const scrolled = ref(false);
 const mobileOpen = ref(false);
 
 const navItems = [
-  { key: "services", href: "#services" },
-  { key: "process", href: "#process" },
-  { key: "projects", href: "#projects" },
-  { key: "stack", href: "#stack" },
-  { key: "contact", href: "#contact" },
+  { key: "products", href: "/products" },
+  { key: "cases", href: "/case-studies" },
+  { key: "pricing", href: "/pricing" },
+  { key: "contact", href: "/contact" },
 ];
 
 const toggleLang = () => {
