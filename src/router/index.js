@@ -64,6 +64,11 @@ const routes = [
     path: '/saas',
     name: 'SaaS',
     component: () => import('../views/SaaS.vue')
+  },
+  {
+    path: '/service/:key',
+    name: 'ServiceDetail',
+    component: () => import('../views/ServiceDetail.vue')
   }
 ]
 

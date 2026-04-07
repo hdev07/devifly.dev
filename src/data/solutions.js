@@ -109,4 +109,18 @@ export const caseStudies = [
     gradient: 'from-emerald-500 to-teal-400',
     link: 'https://musion.day/',
   },
+  {
+    key: 'polegp',
+    titleEs: 'PoleGP: Plataforma de Predicciones F1',
+    titleEn: 'PoleGP: F1 Predictions Platform',
+    problemEs: 'Los fans de Fórmula 1 necesitaban una plataforma moderna e interactiva para predecir carreras y competir en ligas privadas.',
+    problemEn: 'Formula 1 fans needed a modern, interactive platform to predict races and compete in private leagues.',
+    solutionEs: 'PWA premium con motor de scoring en tiempo real, leaderboards dinámicos, cobros por Stripe y arquitectura segura con RLS.',
+    solutionEn: 'Premium PWA with real-time scoring engine, dynamic leaderboards, Stripe payments, and secure RLS architecture.',
+    resultEs: 'Aplicación full-stack con diseño premium y backend transaccional listo para miles de usuarios. Monetización integrada.',
+    resultEn: 'Full-stack app with premium design and transactional backend ready for thousands of users. Integrated monetization.',
+    tags: ['Vue 3', 'Node.js', 'PostgreSQL', 'Stripe', 'PWA'],
+    gradient: 'from-red-600 to-orange-500',
+    link: 'https://polegp.devifly.dev/',
+  },
 ]

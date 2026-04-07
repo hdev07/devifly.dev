@@ -88,6 +88,7 @@ const gradients = [
   "bg-gradient-to-r from-cyan-glow to-neon",
   "bg-gradient-to-r from-violet-soft to-brand-500",
   "bg-gradient-to-r from-neon to-violet-soft",
+  "bg-gradient-to-r from-red-600 to-orange-500",
 ];
 
 const iconBgs = [
@@ -95,9 +96,10 @@ const iconBgs = [
   "bg-cyan-glow/10",
   "bg-violet-soft/10",
   "bg-neon/10",
+  "bg-red-500/10",
 ];
 
-const icons = ["bus", "book-open", "landmark", "chart-column"];
+const icons = ["bus", "book-open", "landmark", "chart-column", "flag"];
 
 function getTech(index) {
   const items = tm("projects.items");

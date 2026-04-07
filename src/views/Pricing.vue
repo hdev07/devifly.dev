@@ -32,86 +32,50 @@
             Landing Pages
           </h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div
-            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
-          >
-            <h3
-              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
-            >
-              Landing One Page
-            </h3>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
-              {{
-                locale === "es"
-                  ? "Página única con todas las secciones. Ideal para promocionar un servicio o captar leads."
-                  : "Single page with all sections. Ideal for promoting a service or capturing leads."
-              }}
-            </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Basic -->
+          <div class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border">
+            <h3 class="font-display text-lg font-bold dark:text-white text-light-text mb-1">One Page</h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Página única para promocionar un servicio o captar leads." : "Single page to promote a service or capture leads." }}</p>
             <div class="mb-4">
-              <span
-                class="font-display text-2xl font-bold dark:text-white text-light-text"
-                >$4,999</span
-              >
-              <span
-                class="text-sm dark:text-text-secondary text-light-muted ml-1"
-                >MXN</span
-              >
+              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$4,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
             </div>
             <ul class="space-y-2 mb-6">
-              <li
-                v-for="f in landingOneFeats"
-                :key="f"
-                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
-              >
-                <LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-brand-500" /> {{ f }}
-              </li>
+              <li v-for="f in landingBasicFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-brand-500" /> {{ f }}</li>
             </ul>
-            <router-link
-              to="/contact"
-              class="block w-full text-center px-4 py-3 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold hover:bg-brand-500/20 transition text-sm"
-            >
+            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold hover:bg-brand-500/20 transition text-sm">
               <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
             </router-link>
           </div>
-          <div
-            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
-          >
-            <h3
-              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
-            >
-              Landing Multi-Sección
-            </h3>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
-              {{
-                locale === "es"
-                  ? "Sitio web con múltiples páginas, blog o catálogo. Para negocios que necesitan más presencia."
-                  : "Website with multiple pages, blog or catalog. For businesses that need more presence."
-              }}
-            </p>
+          <!-- Pro -->
+          <div class="p-6 rounded-2xl border-2 border-brand-500 relative" style="background: linear-gradient(145deg, rgba(59, 130, 246, 0.06), rgba(34, 211, 238, 0.04));">
+            <div class="absolute top-0 right-0 py-1 px-3 bg-brand-500 text-white text-xs font-bold rounded-bl-xl">{{ t("pricingPage.popular") }}</div>
+            <h3 class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2">Multi-Sección</h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Sitio completo con múltiples páginas y catálogo." : "Full website with multiple pages and catalog." }}</p>
             <div class="mb-4">
-              <span
-                class="font-display text-2xl font-bold dark:text-white text-light-text"
-                >$7,999 – $14,999</span
-              >
-              <span
-                class="text-sm dark:text-text-secondary text-light-muted ml-1"
-                >MXN</span
-              >
+              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$7,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
             </div>
             <ul class="space-y-2 mb-6">
-              <li
-                v-for="f in landingMultiFeats"
-                :key="f"
-                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
-              >
-                <LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-brand-500" /> {{ f }}
-              </li>
+              <li v-for="f in landingProFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-brand-500" /> {{ f }}</li>
             </ul>
-            <router-link
-              to="/contact"
-              class="block w-full text-center px-4 py-3 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold hover:bg-brand-500/20 transition text-sm"
-            >
+            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600 transition text-sm shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+              <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+            </router-link>
+          </div>
+          <!-- Premium -->
+          <div class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border">
+            <div class="flex items-center gap-2 mb-1">
+              <h3 class="font-display text-lg font-bold dark:text-white text-light-text">Portal Avanzado</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold">Premium</span>
+            </div>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Portal con CMS 100% autoadministrable y SEO." : "Portal with 100% self-managed CMS and SEO." }}</p>
+            <div class="mb-4">
+              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$12,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li v-for="f in landingPremFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="sparkles" class-name="w-4 h-4 mt-0.5 text-violet-400" /> {{ f }}</li>
+            </ul>
+            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm">
               <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
             </router-link>
           </div>
@@ -157,7 +121,7 @@
             <div class="mb-4">
               <span
                 class="font-display text-2xl font-bold dark:text-white text-light-text"
-                >$1,499</span
+                >$499</span
               >
               <span
                 class="text-sm dark:text-text-secondary text-light-muted ml-1"
@@ -219,7 +183,7 @@
             <div class="mb-4">
               <span
                 class="font-display text-2xl font-bold dark:text-white text-light-text"
-                >$2,999</span
+                >$899</span
               >
               <span
                 class="text-sm dark:text-text-secondary text-light-muted ml-1"
@@ -275,7 +239,7 @@
             <div class="mb-4">
               <span
                 class="font-display text-2xl font-bold dark:text-white text-light-text"
-                >$5,999</span
+                >$1,559</span
               >
               <span
                 class="text-sm dark:text-text-secondary text-light-muted ml-1"
@@ -319,90 +283,50 @@
             {{ locale === "es" ? "Sistema de Citas" : "Appointment System" }}
           </h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div
-            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
-          >
-            <h3
-              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
-            >
-              {{ locale === "es" ? "Agenda Básica" : "Basic Scheduling" }}
-            </h3>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
-              {{
-                locale === "es"
-                  ? "Calendario online con confirmaciones automáticas. Ideal para consultores, estilistas y profesionistas."
-                  : "Online calendar with automatic confirmations. Ideal for consultants, stylists, and professionals."
-              }}
-            </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Basic -->
+          <div class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border">
+            <h3 class="font-display text-lg font-bold dark:text-white text-light-text mb-1">{{ locale === "es" ? "Agenda Básica" : "Basic Scheduling" }}</h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Calendario con confirmaciones automáticas." : "Calendar with automatic confirmations." }}</p>
             <div class="mb-4">
-              <span
-                class="font-display text-2xl font-bold dark:text-white text-light-text"
-                >$7,999</span
-              >
-              <span
-                class="text-sm dark:text-text-secondary text-light-muted ml-1"
-                >MXN</span
-              >
+              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$7,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
             </div>
             <ul class="space-y-2 mb-6">
-              <li
-                v-for="f in citasBasicFeats"
-                :key="f"
-                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
-              >
-                <LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-emerald-500" /> {{ f }}
-              </li>
+              <li v-for="f in citasBasicFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-emerald-500" /> {{ f }}</li>
             </ul>
-            <router-link
-              to="/contact"
-              class="block w-full text-center px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 font-semibold hover:bg-emerald-500/20 transition text-sm"
-            >
+            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 font-semibold hover:bg-emerald-500/20 transition text-sm">
               <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
             </router-link>
           </div>
-          <div
-            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
-          >
-            <h3
-              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
-            >
-              {{
-                locale === "es"
-                  ? "Agenda Completa + CRM"
-                  : "Full Scheduling + CRM"
-              }}
-            </h3>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
-              {{
-                locale === "es"
-                  ? "Sistema completo con historial de clientes, múltiples servicios, pagos en línea y panel de gestión."
-                  : "Complete system with client history, multiple services, online payments, and management panel."
-              }}
-            </p>
+          <!-- Pro -->
+          <div class="p-6 rounded-2xl border-2 border-emerald-500 relative" style="background: linear-gradient(145deg, rgba(16, 185, 129, 0.06), rgba(52, 211, 153, 0.04));">
+            <div class="absolute top-0 right-0 py-1 px-3 bg-emerald-500 text-white text-xs font-bold rounded-bl-xl">{{ t("pricingPage.popular") }}</div>
+            <h3 class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2">{{ locale === "es" ? "Agenda Pro + CRM" : "Pro Scheduling + CRM" }}</h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Historial de clientes, WhatsApp y pagos en línea." : "Client history, WhatsApp, and online payments." }}</p>
             <div class="mb-4">
-              <span
-                class="font-display text-2xl font-bold dark:text-white text-light-text"
-                >$14,999 – $24,999</span
-              >
-              <span
-                class="text-sm dark:text-text-secondary text-light-muted ml-1"
-                >MXN</span
-              >
+              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$14,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
             </div>
             <ul class="space-y-2 mb-6">
-              <li
-                v-for="f in citasFullFeats"
-                :key="f"
-                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
-              >
-                <LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-emerald-500" /> {{ f }}
-              </li>
+              <li v-for="f in citasProFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-emerald-500" /> {{ f }}</li>
             </ul>
-            <router-link
-              to="/contact"
-              class="block w-full text-center px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 font-semibold hover:bg-emerald-500/20 transition text-sm"
-            >
+            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-emerald-500 text-white font-bold hover:bg-emerald-600 transition text-sm shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+              <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+            </router-link>
+          </div>
+          <!-- Premium -->
+          <div class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border">
+            <div class="flex items-center gap-2 mb-1">
+              <h3 class="font-display text-lg font-bold dark:text-white text-light-text">{{ locale === "es" ? "Franquicias" : "Franchise" }}</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold">Premium</span>
+            </div>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Múltiples sucursales, finanzas y PWA instalable." : "Multiple branches, finances, and installable PWA." }}</p>
+            <div class="mb-4">
+              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$24,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li v-for="f in citasPremFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="sparkles" class-name="w-4 h-4 mt-0.5 text-violet-400" /> {{ f }}</li>
+            </ul>
+            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm">
               <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
             </router-link>
           </div>
@@ -419,88 +343,50 @@
             E-commerce
           </h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div
-            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
-          >
-            <h3
-              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
-            >
-              {{ locale === "es" ? "Tienda Online" : "Online Store" }}
-            </h3>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
-              {{
-                locale === "es"
-                  ? "Catálogo de productos, carrito, pagos integrados y gestión de pedidos."
-                  : "Product catalog, cart, integrated payments, and order management."
-              }}
-            </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Esencial -->
+          <div class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border">
+            <h3 class="font-display text-lg font-bold dark:text-white text-light-text mb-1">Esencial</h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Diseño estándar con pagos y gestión de pedidos." : "Standard design with payments and orders." }}</p>
             <div class="mb-4">
-              <span
-                class="font-display text-2xl font-bold dark:text-white text-light-text"
-                >$14,999 – $24,999</span
-              >
-              <span
-                class="text-sm dark:text-text-secondary text-light-muted ml-1"
-                >MXN</span
-              >
+              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$14,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
             </div>
             <ul class="space-y-2 mb-6">
-              <li
-                v-for="f in ecommerceBasicFeats"
-                :key="f"
-                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
-              >
-                <LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-amber-500" /> {{ f }}
-              </li>
+              <li v-for="f in ecommerceBasicFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-amber-500" /> {{ f }}</li>
             </ul>
-            <router-link
-              to="/contact"
-              class="block w-full text-center px-4 py-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-500 font-semibold hover:bg-amber-500/20 transition text-sm"
-            >
+            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-500 font-semibold hover:bg-amber-500/20 transition text-sm">
               <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
             </router-link>
           </div>
-          <div
-            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
-          >
-            <h3
-              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
-            >
-              {{
-                locale === "es" ? "E-commerce Avanzado" : "Advanced E-commerce"
-              }}
-            </h3>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
-              {{
-                locale === "es"
-                  ? "Marketplace, multi-vendedor, inventario avanzado, cupones y reportes."
-                  : "Marketplace, multi-vendor, advanced inventory, coupons, and reports."
-              }}
-            </p>
+          <!-- Básica -->
+          <div class="p-6 rounded-2xl border-2 border-amber-500 relative" style="background: linear-gradient(145deg, rgba(245, 158, 11, 0.06), rgba(251, 191, 36, 0.04));">
+            <div class="absolute top-0 right-0 py-1 px-3 bg-amber-500 text-white text-xs font-bold rounded-bl-xl">{{ t("pricingPage.popular") }}</div>
+            <h3 class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2">Básica</h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Inventario avanzado e integraciones logísticas." : "Advanced inventory and logistics integrations." }}</p>
             <div class="mb-4">
-              <span
-                class="font-display text-2xl font-bold dark:text-white text-light-text"
-                >$29,999+</span
-              >
-              <span
-                class="text-sm dark:text-text-secondary text-light-muted ml-1"
-                >MXN</span
-              >
+              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$24,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
             </div>
             <ul class="space-y-2 mb-6">
-              <li
-                v-for="f in ecommerceAdvFeats"
-                :key="f"
-                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
-              >
-                <LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-amber-500" /> {{ f }}
-              </li>
+              <li v-for="f in ecommerceProFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-amber-500" /> {{ f }}</li>
             </ul>
-            <router-link
-              to="/contact"
-              class="block w-full text-center px-4 py-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-500 font-semibold hover:bg-amber-500/20 transition text-sm"
-            >
+            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-600 transition text-sm shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+              <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+            </router-link>
+          </div>
+          <!-- Pro -->
+          <div class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border">
+            <div class="flex items-center gap-2 mb-1">
+              <h3 class="font-display text-lg font-bold dark:text-white text-light-text">Pro</h3>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold">Premium</span>
+            </div>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Múltiples vendedores y app móvil instalable." : "Multiple vendors and installable mobile app." }}</p>
+            <div class="mb-4">
+              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$39,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li v-for="f in ecommercePremFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="sparkles" class-name="w-4 h-4 mt-0.5 text-violet-400" /> {{ f }}</li>
+            </ul>
+            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm">
               <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
             </router-link>
           </div>
@@ -661,7 +547,7 @@ import LucideIcon from "../components/LucideIcon.vue";
 
 const { t, locale } = useI18n();
 
-const landingOneFeats = [
+const landingBasicFeats = [
   "Diseño UX/UI personalizado",
   "Responsive (móvil, tablet, desktop)",
   "Formulario de contacto / WhatsApp",
@@ -670,13 +556,22 @@ const landingOneFeats = [
   "Entrega: 1–2 semanas",
 ];
 
-const landingMultiFeats = [
+const landingProFeats = [
   "Todo lo de One Page",
-  "Múltiples páginas (hasta 8)",
+  "Múltiples páginas",
   "Blog o catálogo básico",
-  "Animaciones avanzadas",
+  "Animaciones premium",
   "Integración con analytics",
   "Entrega: 2–3 semanas",
+];
+
+const landingPremFeats = [
+  "Todo lo de Multi-Sección",
+  "Panel CMS autoadministrable",
+  "E-commerce básico",
+  "SEO avanzado + CRM automations",
+  "Soporte prioritario",
+  "Entrega: 4–5 semanas",
 ];
 
 const invEsencialFeats = [
@@ -702,7 +597,7 @@ const invProFeats = [
   "QR único por invitado",
   "Multi-idioma (ES/EN)",
   "Dominio personalizado",
-  "Estadísticas + restricciones alimenticias",
+  "Estadísticas completas",
 ];
 
 const citasBasicFeats = [
@@ -714,15 +609,22 @@ const citasBasicFeats = [
   "Entrega: 2–3 semanas",
 ];
 
-const citasFullFeats = [
+const citasProFeats = [
   "Todo lo de Agenda Básica",
-  "Panel admin completo",
-  "Historial de clientes (CRM)",
+  "Panel admin + CRM",
+  "Recordatorios WhatsApp",
   "Pagos en línea (Stripe)",
-  "Recordatorios WhatsApp + email",
   "Múltiples profesionales",
-  "Reportes y métricas",
-  "Entrega: 3–5 semanas",
+  "Entrega: 3–4 semanas",
+];
+
+const citasPremFeats = [
+  "Todo lo de Agenda Pro",
+  "Multi-sucursal / Franquicia",
+  "PWA Instalable",
+  "Facturación automatizada",
+  "Roles de staff avanzados",
+  "Entrega: 5–7 semanas",
 ];
 
 const ecommerceBasicFeats = [
@@ -734,14 +636,22 @@ const ecommerceBasicFeats = [
   "Entrega: 3–4 semanas",
 ];
 
-const ecommerceAdvFeats = [
-  "Todo lo de Tienda Online",
-  "Multi-vendedor / marketplace",
-  "Cupones y descuentos",
+const ecommerceProFeats = [
+  "Todo lo de Tienda Básica",
   "Inventario avanzado",
-  "Reportes de ventas",
+  "Cupones y descuentos",
   "Integraciones logísticas",
-  "Entrega: 5–8 semanas",
+  "Reportes de ventas",
+  "Entrega: 4–6 semanas",
+];
+
+const ecommercePremFeats = [
+  "Todo lo de Tienda Pro",
+  "Multi-vendedor (Marketplace)",
+  "Suscripciones recurrentes",
+  "App PWA instalable",
+  "Analíticas avanzadas",
+  "Entrega: 8–10 semanas",
 ];
 
 const saasFeats = [

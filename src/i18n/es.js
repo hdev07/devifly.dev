@@ -103,9 +103,10 @@ export default {
         link: 'https://musion.day/',
       },
       {
-        name: 'DevTrack',
-        desc: 'Herramienta interna de gestión de proyectos para equipos dev con tracking de sprints, métricas de código y reportes automatizados.',
-        tech: ['Vue', 'NestJS', 'PostgreSQL', 'AWS'],
+        name: 'PoleGP',
+        desc: 'Plataforma de predicciones de F1 donde los fans compiten en leaderboards en tiempo real. Incluye suscripciones por Stripe, jokers, motor de scoring automático y seguridad RLS con PostgreSQL.',
+        tech: ['Vue 3', 'Node.js', 'PostgreSQL', 'Stripe', 'PWA'],
+        link: 'https://polegp.devifly.dev/',
       },
     ],
   },
