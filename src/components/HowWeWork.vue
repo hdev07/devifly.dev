@@ -1,55 +1,56 @@
 <template>
-  <section id="how" class="py-24 px-6">
-    <div class="max-w-5xl mx-auto">
-      <div data-animate class="text-center mb-16">
+  <section id="how" class="py-24 sm:py-32 px-6">
+    <div class="max-w-7-xl mx-auto">
+      <!-- Section header — left-aligned -->
+      <div data-animate class="mb-16 sm:mb-20">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="block w-10 h-px dark:bg-brand-500 bg-brand-600"></span>
+          <span
+            class="text-xs font-semibold tracking-[0.18em] uppercase text-brand-400"
+            >{{ locale === "es" ? "Proceso" : "Process" }}</span
+          >
+        </div>
         <h2
-          class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
+          class="font-display text-4xl sm:text-5xl font-bold dark:text-white text-light-text leading-tight"
         >
           {{ t("howWeWork.title") }}
         </h2>
         <p
-          class="text-lg dark:text-text-secondary text-light-muted max-w-2xl mx-auto"
+          class="mt-4 dark:text-text-secondary text-light-muted max-w-lg leading-relaxed"
         >
           {{ t("howWeWork.subtitle") }}
         </p>
       </div>
 
-      <div class="relative">
-        <!-- Vertical line -->
+      <!-- Steps -->
+      <div class="divide-y dark:divide-base-800/80 divide-light-border">
         <div
-          class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px dark:bg-base-700/50 bg-light-border md:-translate-x-px"
-        ></div>
-
-        <div class="space-y-12">
-          <div
-            v-for="(step, i) in steps"
-            :key="i"
-            data-animate
-            class="relative flex items-start gap-6 md:gap-12"
-            :class="i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'"
+          v-for="(step, i) in steps"
+          :key="i"
+          data-animate
+          class="group relative py-8 sm:py-10 flex gap-6 sm:gap-10 items-start -mx-3 px-3 rounded-xl transition-colors duration-200 hover:dark:bg-base-800/25 hover:bg-light-card/60"
+          :class="`delay-${(i + 1) * 75}`"
+        >
+          <!-- Big step number (decorative) -->
+          <span
+            class="font-display font-bold leading-none dark:text-base-800 text-light-border group-hover:dark:text-base-700 group-hover:text-light-card transition-colors tabular-nums select-none shrink-0 w-16 sm:w-20 text-right"
+            style="font-size: clamp(2.5rem, 6vw, 4.5rem)"
           >
-            <!-- Dot -->
-            <div
-              class="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-brand-500 -translate-x-1.5 mt-2 ring-4 dark:ring-base-950 ring-light-bg z-10"
-            ></div>
+            {{ step.badge }}
+          </span>
 
-            <!-- Content -->
-            <div
-              class="ml-14 md:ml-0 md:w-1/2"
-              :class="i % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16'"
+          <!-- Content -->
+          <div class="pt-1 flex-1 min-w-0">
+            <h3
+              class="font-display text-lg sm:text-xl font-bold dark:text-white text-light-text mb-2"
             >
-              <span class="text-xs font-bold text-brand-500 mb-1 block">{{
-                step.badge
-              }}</span>
-              <h3
-                class="font-display text-lg font-bold dark:text-white text-light-text mb-2"
-              >
-                {{ step.title }}
-              </h3>
-              <p class="text-sm dark:text-text-secondary text-light-muted">
-                {{ step.desc }}
-              </p>
-            </div>
+              {{ step.title }}
+            </h3>
+            <p
+              class="dark:text-text-secondary text-light-muted leading-relaxed text-sm sm:text-base"
+            >
+              {{ step.desc }}
+            </p>
           </div>
         </div>
       </div>

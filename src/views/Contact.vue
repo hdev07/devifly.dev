@@ -20,7 +20,7 @@
       </p>
     </div>
 
-    <div class="max-w-5xl mx-auto px-6 mb-24">
+    <div class="max-w-7xl mx-auto px-6 mb-24">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
         <!-- Form -->
         <div class="lg:col-span-3">

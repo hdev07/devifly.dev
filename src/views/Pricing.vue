@@ -21,7 +21,7 @@
     </div>
 
     <!-- Product pricing sections -->
-    <div class="max-w-6xl mx-auto px-6 space-y-20 mb-24">
+    <div class="max-w-7xl mx-auto px-6 space-y-20 mb-24">
       <!-- Landing Pages -->
       <div>
         <div class="flex items-center gap-3 mb-8">
@@ -32,51 +32,167 @@
             Landing Pages
           </h2>
         </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- Basic -->
-          <div class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border">
-            <h3 class="font-display text-lg font-bold dark:text-white text-light-text mb-1">One Page</h3>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Página única para promocionar un servicio o captar leads." : "Single page to promote a service or capture leads." }}</p>
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              One Page
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Página única para promocionar un servicio o captar leads."
+                  : "Single page to promote a service or capture leads."
+              }}
+            </p>
             <div class="mb-4">
-              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$4,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$4,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
             </div>
             <ul class="space-y-2 mb-6">
-              <li v-for="f in landingBasicFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-brand-500" /> {{ f }}</li>
+              <li
+                v-for="f in landingBasicFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-brand-500"
+                />
+                {{ f }}
+              </li>
             </ul>
-            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold hover:bg-brand-500/20 transition text-sm">
-              <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+            <router-link
+              to="/contact"
+              class="block w-full text-center px-4 py-3 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold hover:bg-brand-500/20 transition text-sm"
+            >
+              <span class="inline-flex items-center gap-2"
+                >{{ t("pricingPage.cta")
+                }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+              /></span>
             </router-link>
           </div>
           <!-- Pro -->
-          <div class="p-6 rounded-2xl border-2 border-brand-500 relative" style="background: linear-gradient(145deg, rgba(59, 130, 246, 0.06), rgba(34, 211, 238, 0.04));">
-            <div class="absolute top-0 right-0 py-1 px-3 bg-brand-500 text-white text-xs font-bold rounded-bl-xl">{{ t("pricingPage.popular") }}</div>
-            <h3 class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2">Multi-Sección</h3>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Sitio completo con múltiples páginas y catálogo." : "Full website with multiple pages and catalog." }}</p>
+          <div
+            class="p-6 rounded-2xl border-2 border-brand-500 relative"
+            style="
+              background: linear-gradient(
+                145deg,
+                rgba(59, 130, 246, 0.06),
+                rgba(34, 211, 238, 0.04)
+              );
+            "
+          >
+            <div
+              class="absolute top-0 right-0 py-1 px-3 bg-brand-500 text-white text-xs font-bold rounded-bl-xl"
+            >
+              {{ t("pricingPage.popular") }}
+            </div>
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2"
+            >
+              Multi-Sección
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Sitio completo con múltiples páginas y catálogo."
+                  : "Full website with multiple pages and catalog."
+              }}
+            </p>
             <div class="mb-4">
-              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$7,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$7,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
             </div>
             <ul class="space-y-2 mb-6">
-              <li v-for="f in landingProFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-brand-500" /> {{ f }}</li>
+              <li
+                v-for="f in landingProFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-brand-500"
+                />
+                {{ f }}
+              </li>
             </ul>
-            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600 transition text-sm shadow-[0_0_20px_rgba(59,130,246,0.3)]">
-              <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+            <router-link
+              to="/contact"
+              class="block w-full text-center px-4 py-3 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600 transition text-sm shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+            >
+              <span class="inline-flex items-center gap-2"
+                >{{ t("pricingPage.cta")
+                }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+              /></span>
             </router-link>
           </div>
           <!-- Premium -->
-          <div class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border">
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
             <div class="flex items-center gap-2 mb-1">
-              <h3 class="font-display text-lg font-bold dark:text-white text-light-text">Portal Avanzado</h3>
-              <span class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold">Premium</span>
+              <h3
+                class="font-display text-lg font-bold dark:text-white text-light-text"
+              >
+                Portal Avanzado
+              </h3>
+              <span
+                class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold"
+                >Premium</span
+              >
             </div>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Portal con CMS 100% autoadministrable y SEO." : "Portal with 100% self-managed CMS and SEO." }}</p>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Portal con CMS 100% autoadministrable y SEO."
+                  : "Portal with 100% self-managed CMS and SEO."
+              }}
+            </p>
             <div class="mb-4">
-              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$12,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$12,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
             </div>
             <ul class="space-y-2 mb-6">
-              <li v-for="f in landingPremFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="sparkles" class-name="w-4 h-4 mt-0.5 text-violet-400" /> {{ f }}</li>
+              <li
+                v-for="f in landingPremFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="sparkles"
+                  class-name="w-4 h-4 mt-0.5 text-violet-400"
+                />
+                {{ f }}
+              </li>
             </ul>
-            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm">
-              <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+            <router-link
+              to="/contact"
+              class="block w-full text-center px-4 py-3 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm"
+            >
+              <span class="inline-flex items-center gap-2"
+                >{{ t("pricingPage.cta")
+                }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+              /></span>
             </router-link>
           </div>
         </div>
@@ -134,7 +250,11 @@
                 :key="f"
                 class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
               >
-                <LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-brand-500" /> {{ f }}
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-brand-500"
+                />
+                {{ f }}
               </li>
             </ul>
             <div class="flex flex-col gap-2">
@@ -142,13 +262,18 @@
                 to="/invitaciones/esencial"
                 class="block w-full text-center px-4 py-2.5 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold hover:bg-brand-500/20 transition text-sm"
               >
-                <span class="inline-flex items-center gap-2"><LucideIcon name="search" class-name="w-4 h-4" />Demo</span>
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="search" class-name="w-4 h-4" />Demo</span
+                >
               </router-link>
               <router-link
                 to="/contact"
                 class="block w-full text-center px-4 py-2.5 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-brand-500 transition text-sm"
               >
-                <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
               </router-link>
             </div>
           </div>
@@ -196,7 +321,11 @@
                 :key="f"
                 class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
               >
-                <LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-brand-500" /> {{ f }}
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-brand-500"
+                />
+                {{ f }}
               </li>
             </ul>
             <div class="flex flex-col gap-2">
@@ -204,13 +333,18 @@
                 to="/invitaciones/basica"
                 class="block w-full text-center px-4 py-2.5 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600 transition text-sm shadow-[0_0_20px_rgba(59,130,246,0.3)]"
               >
-                <span class="inline-flex items-center gap-2"><LucideIcon name="search" class-name="w-4 h-4" />Demo</span>
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="search" class-name="w-4 h-4" />Demo</span
+                >
               </router-link>
               <router-link
                 to="/contact"
                 class="block w-full text-center px-4 py-2.5 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold hover:bg-brand-500/20 transition text-sm"
               >
-                <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
               </router-link>
             </div>
           </div>
@@ -252,7 +386,11 @@
                 :key="f"
                 class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
               >
-                <LucideIcon name="sparkles" class-name="w-4 h-4 mt-0.5 text-violet-400" /> {{ f }}
+                <LucideIcon
+                  name="sparkles"
+                  class-name="w-4 h-4 mt-0.5 text-violet-400"
+                />
+                {{ f }}
               </li>
             </ul>
             <div class="flex flex-col gap-2">
@@ -260,13 +398,18 @@
                 to="/invitaciones/pro"
                 class="block w-full text-center px-4 py-2.5 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm"
               >
-                <span class="inline-flex items-center gap-2"><LucideIcon name="search" class-name="w-4 h-4" />Demo</span>
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="search" class-name="w-4 h-4" />Demo</span
+                >
               </router-link>
               <router-link
                 to="/contact"
                 class="block w-full text-center px-4 py-2.5 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-violet-400 transition text-sm"
               >
-                <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
               </router-link>
             </div>
           </div>
@@ -283,51 +426,169 @@
             {{ locale === "es" ? "Sistema de Citas" : "Appointment System" }}
           </h2>
         </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- Basic -->
-          <div class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border">
-            <h3 class="font-display text-lg font-bold dark:text-white text-light-text mb-1">{{ locale === "es" ? "Agenda Básica" : "Basic Scheduling" }}</h3>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Calendario con confirmaciones automáticas." : "Calendar with automatic confirmations." }}</p>
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              {{ locale === "es" ? "Agenda Básica" : "Basic Scheduling" }}
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Calendario con confirmaciones automáticas."
+                  : "Calendar with automatic confirmations."
+              }}
+            </p>
             <div class="mb-4">
-              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$7,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$7,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
             </div>
             <ul class="space-y-2 mb-6">
-              <li v-for="f in citasBasicFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-emerald-500" /> {{ f }}</li>
+              <li
+                v-for="f in citasBasicFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-emerald-500"
+                />
+                {{ f }}
+              </li>
             </ul>
-            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 font-semibold hover:bg-emerald-500/20 transition text-sm">
-              <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+            <router-link
+              to="/contact"
+              class="block w-full text-center px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 font-semibold hover:bg-emerald-500/20 transition text-sm"
+            >
+              <span class="inline-flex items-center gap-2"
+                >{{ t("pricingPage.cta")
+                }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+              /></span>
             </router-link>
           </div>
           <!-- Pro -->
-          <div class="p-6 rounded-2xl border-2 border-emerald-500 relative" style="background: linear-gradient(145deg, rgba(16, 185, 129, 0.06), rgba(52, 211, 153, 0.04));">
-            <div class="absolute top-0 right-0 py-1 px-3 bg-emerald-500 text-white text-xs font-bold rounded-bl-xl">{{ t("pricingPage.popular") }}</div>
-            <h3 class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2">{{ locale === "es" ? "Agenda Pro + CRM" : "Pro Scheduling + CRM" }}</h3>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Historial de clientes, WhatsApp y pagos en línea." : "Client history, WhatsApp, and online payments." }}</p>
+          <div
+            class="p-6 rounded-2xl border-2 border-emerald-500 relative"
+            style="
+              background: linear-gradient(
+                145deg,
+                rgba(16, 185, 129, 0.06),
+                rgba(52, 211, 153, 0.04)
+              );
+            "
+          >
+            <div
+              class="absolute top-0 right-0 py-1 px-3 bg-emerald-500 text-white text-xs font-bold rounded-bl-xl"
+            >
+              {{ t("pricingPage.popular") }}
+            </div>
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2"
+            >
+              {{
+                locale === "es" ? "Agenda Pro + CRM" : "Pro Scheduling + CRM"
+              }}
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Historial de clientes, WhatsApp y pagos en línea."
+                  : "Client history, WhatsApp, and online payments."
+              }}
+            </p>
             <div class="mb-4">
-              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$14,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$14,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
             </div>
             <ul class="space-y-2 mb-6">
-              <li v-for="f in citasProFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-emerald-500" /> {{ f }}</li>
+              <li
+                v-for="f in citasProFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-emerald-500"
+                />
+                {{ f }}
+              </li>
             </ul>
-            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-emerald-500 text-white font-bold hover:bg-emerald-600 transition text-sm shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-              <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+            <router-link
+              to="/contact"
+              class="block w-full text-center px-4 py-3 rounded-xl bg-emerald-500 text-white font-bold hover:bg-emerald-600 transition text-sm shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+            >
+              <span class="inline-flex items-center gap-2"
+                >{{ t("pricingPage.cta")
+                }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+              /></span>
             </router-link>
           </div>
           <!-- Premium -->
-          <div class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border">
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
             <div class="flex items-center gap-2 mb-1">
-              <h3 class="font-display text-lg font-bold dark:text-white text-light-text">{{ locale === "es" ? "Franquicias" : "Franchise" }}</h3>
-              <span class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold">Premium</span>
+              <h3
+                class="font-display text-lg font-bold dark:text-white text-light-text"
+              >
+                {{ locale === "es" ? "Franquicias" : "Franchise" }}
+              </h3>
+              <span
+                class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold"
+                >Premium</span
+              >
             </div>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Múltiples sucursales, finanzas y PWA instalable." : "Multiple branches, finances, and installable PWA." }}</p>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Múltiples sucursales, finanzas y PWA instalable."
+                  : "Multiple branches, finances, and installable PWA."
+              }}
+            </p>
             <div class="mb-4">
-              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$24,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$24,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
             </div>
             <ul class="space-y-2 mb-6">
-              <li v-for="f in citasPremFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="sparkles" class-name="w-4 h-4 mt-0.5 text-violet-400" /> {{ f }}</li>
+              <li
+                v-for="f in citasPremFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="sparkles"
+                  class-name="w-4 h-4 mt-0.5 text-violet-400"
+                />
+                {{ f }}
+              </li>
             </ul>
-            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm">
-              <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+            <router-link
+              to="/contact"
+              class="block w-full text-center px-4 py-3 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm"
+            >
+              <span class="inline-flex items-center gap-2"
+                >{{ t("pricingPage.cta")
+                }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+              /></span>
             </router-link>
           </div>
         </div>
@@ -345,49 +606,165 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- Esencial -->
-          <div class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border">
-            <h3 class="font-display text-lg font-bold dark:text-white text-light-text mb-1">Esencial</h3>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Diseño estándar con pagos y gestión de pedidos." : "Standard design with payments and orders." }}</p>
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              Esencial
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Diseño estándar con pagos y gestión de pedidos."
+                  : "Standard design with payments and orders."
+              }}
+            </p>
             <div class="mb-4">
-              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$14,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$14,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
             </div>
             <ul class="space-y-2 mb-6">
-              <li v-for="f in ecommerceBasicFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-amber-500" /> {{ f }}</li>
+              <li
+                v-for="f in ecommerceBasicFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-amber-500"
+                />
+                {{ f }}
+              </li>
             </ul>
-            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-500 font-semibold hover:bg-amber-500/20 transition text-sm">
-              <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+            <router-link
+              to="/contact"
+              class="block w-full text-center px-4 py-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-500 font-semibold hover:bg-amber-500/20 transition text-sm"
+            >
+              <span class="inline-flex items-center gap-2"
+                >{{ t("pricingPage.cta")
+                }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+              /></span>
             </router-link>
           </div>
           <!-- Básica -->
-          <div class="p-6 rounded-2xl border-2 border-amber-500 relative" style="background: linear-gradient(145deg, rgba(245, 158, 11, 0.06), rgba(251, 191, 36, 0.04));">
-            <div class="absolute top-0 right-0 py-1 px-3 bg-amber-500 text-white text-xs font-bold rounded-bl-xl">{{ t("pricingPage.popular") }}</div>
-            <h3 class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2">Básica</h3>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Inventario avanzado e integraciones logísticas." : "Advanced inventory and logistics integrations." }}</p>
+          <div
+            class="p-6 rounded-2xl border-2 border-amber-500 relative"
+            style="
+              background: linear-gradient(
+                145deg,
+                rgba(245, 158, 11, 0.06),
+                rgba(251, 191, 36, 0.04)
+              );
+            "
+          >
+            <div
+              class="absolute top-0 right-0 py-1 px-3 bg-amber-500 text-white text-xs font-bold rounded-bl-xl"
+            >
+              {{ t("pricingPage.popular") }}
+            </div>
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2"
+            >
+              Básica
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Inventario avanzado e integraciones logísticas."
+                  : "Advanced inventory and logistics integrations."
+              }}
+            </p>
             <div class="mb-4">
-              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$24,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$24,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
             </div>
             <ul class="space-y-2 mb-6">
-              <li v-for="f in ecommerceProFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-amber-500" /> {{ f }}</li>
+              <li
+                v-for="f in ecommerceProFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-amber-500"
+                />
+                {{ f }}
+              </li>
             </ul>
-            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-600 transition text-sm shadow-[0_0_20px_rgba(245,158,11,0.3)]">
-              <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+            <router-link
+              to="/contact"
+              class="block w-full text-center px-4 py-3 rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-600 transition text-sm shadow-[0_0_20px_rgba(245,158,11,0.3)]"
+            >
+              <span class="inline-flex items-center gap-2"
+                >{{ t("pricingPage.cta")
+                }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+              /></span>
             </router-link>
           </div>
           <!-- Pro -->
-          <div class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border">
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
             <div class="flex items-center gap-2 mb-1">
-              <h3 class="font-display text-lg font-bold dark:text-white text-light-text">Pro</h3>
-              <span class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold">Premium</span>
+              <h3
+                class="font-display text-lg font-bold dark:text-white text-light-text"
+              >
+                Pro
+              </h3>
+              <span
+                class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold"
+                >Premium</span
+              >
             </div>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">{{ locale === "es" ? "Múltiples vendedores y app móvil instalable." : "Multiple vendors and installable mobile app." }}</p>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Múltiples vendedores y app móvil instalable."
+                  : "Multiple vendors and installable mobile app."
+              }}
+            </p>
             <div class="mb-4">
-              <span class="font-display text-2xl font-bold dark:text-white text-light-text">$39,999</span><span class="text-sm dark:text-text-secondary text-light-muted ml-1">MXN</span>
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$39,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
             </div>
             <ul class="space-y-2 mb-6">
-              <li v-for="f in ecommercePremFeats" :key="f" class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"><LucideIcon name="sparkles" class-name="w-4 h-4 mt-0.5 text-violet-400" /> {{ f }}</li>
+              <li
+                v-for="f in ecommercePremFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="sparkles"
+                  class-name="w-4 h-4 mt-0.5 text-violet-400"
+                />
+                {{ f }}
+              </li>
             </ul>
-            <router-link to="/contact" class="block w-full text-center px-4 py-3 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm">
-              <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+            <router-link
+              to="/contact"
+              class="block w-full text-center px-4 py-3 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm"
+            >
+              <span class="inline-flex items-center gap-2"
+                >{{ t("pricingPage.cta")
+                }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+              /></span>
             </router-link>
           </div>
         </div>
@@ -449,14 +826,21 @@
                   :key="f"
                   class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
                 >
-                  <LucideIcon name="sparkles" class-name="w-4 h-4 mt-0.5 text-cyan-400" /> {{ f }}
+                  <LucideIcon
+                    name="sparkles"
+                    class-name="w-4 h-4 mt-0.5 text-cyan-400"
+                  />
+                  {{ f }}
                 </li>
               </ul>
               <router-link
                 to="/contact"
                 class="mt-6 block w-full text-center px-4 py-3 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-semibold hover:bg-cyan-500/20 transition text-sm"
               >
-                <span class="inline-flex items-center gap-2">{{ t("pricingPage.cta") }}<LucideIcon name="arrow-right" class-name="w-4 h-4" /></span>
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
               </router-link>
             </div>
           </div>

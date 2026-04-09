@@ -4,15 +4,20 @@
     class="py-24 px-6 dark:bg-base-800/20 bg-light-card/30"
   >
     <div class="max-w-7xl mx-auto">
-      <div data-animate class="text-center mb-16">
+      <div data-animate class="mb-14">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="block w-8 h-px dark:bg-brand-500 bg-brand-600"></span>
+          <span
+            class="text-xs font-semibold tracking-[0.18em] uppercase text-brand-400"
+            >{{ locale === "es" ? "Soluciones" : "Solutions" }}</span
+          >
+        </div>
         <h2
-          class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
+          class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-2"
         >
           {{ t("solutions.title") }}
         </h2>
-        <p
-          class="text-lg dark:text-text-secondary text-light-muted max-w-2xl mx-auto"
-        >
+        <p class="text-lg dark:text-text-secondary text-light-muted max-w-xl">
           {{ t("solutions.subtitle") }}
         </p>
       </div>
@@ -48,7 +53,10 @@
                 :key="p"
                 class="text-sm dark:text-text-secondary text-light-muted flex items-start gap-2"
               >
-                <LucideIcon name="x" class-name="w-4 h-4 mt-0.5 text-red-400/70" />
+                <LucideIcon
+                  name="x"
+                  class-name="w-4 h-4 mt-0.5 text-red-400/70"
+                />
                 {{ p }}
               </li>
             </ul>

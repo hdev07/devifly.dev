@@ -1,40 +1,59 @@
 <template>
-  <section class="py-24 px-6 text-center">
-    <div class="max-w-3xl mx-auto">
-      <div data-animate class="relative">
-        <!-- Glow -->
-        <div class="absolute inset-0 -z-10">
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-500/10 rounded-full blur-[100px]"
-          ></div>
+  <section class="py-28 sm:py-36 px-6 relative overflow-hidden">
+    <!-- Glow -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-[130px]"
+      ></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <div
+        data-animate
+        class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-10"
+      >
+        <!-- Big statement -->
+        <div class="flex-1">
+          <h2
+            class="font-display font-bold dark:text-white text-light-text leading-[1.05] tracking-tight"
+            style="font-size: clamp(2.2rem, 5vw, 4rem)"
+          >
+            {{ t("ctaFinal.title") }}
+          </h2>
+          <p
+            class="mt-5 text-lg dark:text-text-secondary text-light-muted max-w-md leading-relaxed"
+          >
+            {{ t("ctaFinal.subtitle") }}
+          </p>
         </div>
 
-        <h2
-          class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
-        >
-          {{ t("ctaFinal.title") }}
-        </h2>
-        <p
-          class="text-lg dark:text-text-secondary text-light-muted mb-10 max-w-xl mx-auto"
-        >
-          {{ t("ctaFinal.subtitle") }}
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <!-- Action column -->
+        <div class="flex flex-col gap-4 shrink-0 sm:items-end">
           <router-link
             to="/contact"
-            class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-bold text-sm transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]"
+            class="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold text-sm transition-all duration-300 hover:shadow-[0_8px_40px_rgba(59,130,246,0.35)] hover:brightness-110 whitespace-nowrap"
           >
             {{ t("ctaFinal.cta") }}
-            <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+            <LucideIcon
+              name="arrow-right"
+              class-name="w-4 h-4 group-hover:translate-x-1 transition-transform"
+            />
           </router-link>
           <router-link
             to="/products"
-            class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-2xl dark:bg-base-800/60 bg-light-card border dark:border-base-700/50 border-light-border dark:text-text-primary text-light-text font-semibold text-sm transition-all duration-300 hover:scale-105 hover:border-brand-500/50 backdrop-blur-sm"
+            class="group inline-flex items-center justify-center gap-1.5 text-sm font-medium dark:text-text-secondary text-light-muted hover:dark:text-white hover:text-light-text transition-colors"
           >
             {{ t("ctaFinal.ctaSecondary") }}
+            <span
+              class="group-hover:translate-x-0.5 transition-transform inline-block"
+              >→</span
+            >
           </router-link>
         </div>
       </div>
+
+      <!-- Divider line at bottom -->
+      <div class="mt-16 h-px dark:bg-base-800 bg-light-border"></div>
     </div>
   </section>
 </template>

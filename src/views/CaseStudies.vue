@@ -21,7 +21,7 @@
     </div>
 
     <!-- Case Studies -->
-    <div class="max-w-5xl mx-auto px-6 mb-24">
+    <div class="max-w-7xl mx-auto px-6 mb-24">
       <div class="space-y-12">
         <div
           v-for="cs in caseStudies"
