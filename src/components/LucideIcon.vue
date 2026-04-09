@@ -77,7 +77,18 @@ import {
   Cpu,
   LayoutTemplate,
   Utensils,
-  PieChart
+  PieChart,
+  ChevronLeft,
+  ChevronDown,
+  MapPin,
+  Play,
+  Ticket,
+  Bird,
+  Baby,
+  Smile,
+  Dices,
+  QrCode,
+  Volume2,
 } from "lucide-vue-next";
 
 const props = defineProps({
@@ -163,7 +174,18 @@ const iconMap = {
   cpu: Cpu,
   "layout-template": LayoutTemplate,
   utensils: Utensils,
-  "pie-chart": PieChart
+  "pie-chart": PieChart,
+  "chevron-left": ChevronLeft,
+  "chevron-down": ChevronDown,
+  "map-pin": MapPin,
+  play: Play,
+  ticket: Ticket,
+  bird: Bird,
+  baby: Baby,
+  smile: Smile,
+  dices: Dices,
+  "qr-code": QrCode,
+  "volume-2": Volume2,
 };
 
 const iconComponent = computed(() => iconMap[props.name] || Circle);
