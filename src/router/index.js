@@ -69,6 +69,11 @@ const routes = [
     path: '/service/:key',
     name: 'ServiceDetail',
     component: () => import('../views/ServiceDetail.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('../views/NotFound.vue')
   }
 ]
 

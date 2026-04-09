@@ -6,6 +6,7 @@
 import { computed } from "vue";
 import {
   ArrowRight,
+  ArrowLeft,
   BookOpen,
   CreditCard,
   Briefcase,
@@ -89,6 +90,7 @@ import {
   Dices,
   QrCode,
   Volume2,
+  House
 } from "lucide-vue-next";
 
 const props = defineProps({
@@ -104,6 +106,7 @@ const props = defineProps({
 
 const iconMap = {
   "arrow-right": ArrowRight,
+  "arrow-left": ArrowLeft,
   "book-open": BookOpen,
   briefcase: Briefcase,
   "building-2": Building2,
@@ -186,6 +189,7 @@ const iconMap = {
   dices: Dices,
   "qr-code": QrCode,
   "volume-2": Volume2,
+  house: House
 };
 
 const iconComponent = computed(() => iconMap[props.name] || Circle);

@@ -400,4 +400,10 @@ export default {
       pricing: 'View pricing',
     },
   },
+  notFound: {
+    title: 'Page not found',
+    subtitle: 'The URL you visited does not exist or has been moved. Go back home or return to the previous page.',
+    cta: 'Back to home',
+    back: 'Previous page',
+  },
 }

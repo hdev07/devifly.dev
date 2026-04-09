@@ -400,4 +400,10 @@ export default {
       pricing: 'Ver precios',
     },
   },
+  notFound: {
+    title: 'Página no encontrada',
+    subtitle: 'La URL que visitaste no existe o fue movida. Vuelve al inicio o regresa a la página anterior.',
+    cta: 'Volver al inicio',
+    back: 'Página anterior',
+  },
 }
