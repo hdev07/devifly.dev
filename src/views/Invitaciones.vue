@@ -90,13 +90,14 @@
               >
             </router-link>
             <a
-              href="/#contact"
+              :href="waBasic"
+              target="_blank"
+              rel="noopener noreferrer"
               class="block w-full text-center px-4 py-3 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-brand-500 transition text-sm"
             >
               <span class="inline-flex items-center gap-2"
-                >{{ t("invitacionesPage.actions.hirePackage") }}<LucideIcon
-                  name="arrow-right"
-                  class-name="w-4 h-4"
+                >{{ t("invitacionesPage.actions.hirePackage")
+                }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
               /></span>
             </a>
           </div>
@@ -173,13 +174,14 @@
               >
             </router-link>
             <a
-              href="/#contact"
+              :href="waPro"
+              target="_blank"
+              rel="noopener noreferrer"
               class="block w-full text-center px-4 py-3 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold hover:bg-brand-500/20 transition text-sm"
             >
               <span class="inline-flex items-center gap-2"
-                >{{ t("invitacionesPage.actions.hirePackage") }}<LucideIcon
-                  name="arrow-right"
-                  class-name="w-4 h-4"
+                >{{ t("invitacionesPage.actions.hirePackage")
+                }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
               /></span>
             </a>
           </div>
@@ -251,13 +253,14 @@
               >
             </router-link>
             <a
-              href="/#contact"
+              :href="waPremium"
+              target="_blank"
+              rel="noopener noreferrer"
               class="block w-full text-center px-4 py-3 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-violet-400 transition text-sm"
             >
               <span class="inline-flex items-center gap-2"
-                >{{ t("invitacionesPage.actions.hirePackage") }}<LucideIcon
-                  name="arrow-right"
-                  class-name="w-4 h-4"
+                >{{ t("invitacionesPage.actions.hirePackage")
+                }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
               /></span>
             </a>
           </div>
@@ -362,7 +365,9 @@
         {{ t("invitacionesPage.cta.subtitle") }}
       </p>
       <a
-        href="/#contact"
+        :href="waCta"
+        target="_blank"
+        rel="noopener noreferrer"
         class="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all"
       >
         {{ t("invitacionesPage.cta.button") }}
@@ -378,6 +383,11 @@ import { useI18n } from "vue-i18n";
 import LucideIcon from "../components/LucideIcon.vue";
 
 const { t, tm, locale } = useI18n();
+
+const waBasic = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Me interesa contratar el Plan Basic de invitaciones digitales ($499 MXN) 💌")}`;
+const waPro = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Me interesa contratar el Plan Pro de invitaciones digitales ($899 MXN) ✨")}`;
+const waPremium = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Me interesa contratar el Plan Premium de invitaciones digitales ($1,599 MXN) 💎")}`;
+const waCta = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Quiero más información sobre las invitaciones digitales de Devifly 💌")}`;
 
 const basicFeats = computed(() => {
   locale.value;

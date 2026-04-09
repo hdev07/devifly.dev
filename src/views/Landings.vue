@@ -36,8 +36,8 @@
             <div class="flex items-center gap-3 mb-6">
               <span
                 class="w-10 h-10 rounded-xl flex items-center justify-center text-xl dark:bg-base-700/60 bg-light-card border dark:border-base-600/50 border-light-border"
-                ><LucideIcon name="bus" class-name="w-5 h-5" /></span
-              >
+                ><LucideIcon name="bus" class-name="w-5 h-5"
+              /></span>
               <div>
                 <h2
                   class="font-display text-2xl font-bold dark:text-white text-light-text"
@@ -203,8 +203,20 @@
                     "Una vez en el OXXO me preguntaron si era…"
                   </p>
                   <div class="flex items-center gap-3 mt-2">
-                    <span class="text-xs text-violet-400 inline-flex items-center gap-1"><LucideIcon name="sparkles" class-name="w-3.5 h-3.5" />247</span>
-                    <span class="text-xs text-violet-400 inline-flex items-center gap-1"><LucideIcon name="message-circle" class-name="w-3.5 h-3.5" />18</span>
+                    <span
+                      class="text-xs text-violet-400 inline-flex items-center gap-1"
+                      ><LucideIcon
+                        name="sparkles"
+                        class-name="w-3.5 h-3.5"
+                      />247</span
+                    >
+                    <span
+                      class="text-xs text-violet-400 inline-flex items-center gap-1"
+                      ><LucideIcon
+                        name="message-circle"
+                        class-name="w-3.5 h-3.5"
+                      />18</span
+                    >
                     <span class="text-xs text-white/20">anónimo</span>
                   </div>
                 </div>
@@ -239,8 +251,8 @@
             <div class="flex items-center gap-3 mb-6">
               <span
                 class="w-10 h-10 rounded-xl flex items-center justify-center text-xl dark:bg-base-700/60 bg-light-card border dark:border-base-600/50 border-light-border"
-                ><LucideIcon name="mic" class-name="w-5 h-5" /></span
-              >
+                ><LucideIcon name="mic" class-name="w-5 h-5"
+              /></span>
               <div>
                 <h2
                   class="font-display text-2xl font-bold dark:text-white text-light-text"
@@ -301,7 +313,10 @@
             :key="item.title"
             class="p-6 rounded-2xl dark:bg-base-900/50 bg-light-surface border dark:border-base-700/50 border-light-border"
           >
-            <LucideIcon :name="item.icon" class-name="w-8 h-8 mb-3 text-brand-500" />
+            <LucideIcon
+              :name="item.icon"
+              class-name="w-8 h-8 mb-3 text-brand-500"
+            />
             <h3 class="font-semibold dark:text-white text-light-text mb-2">
               {{ item.title }}
             </h3>
@@ -327,7 +342,9 @@
         24 horas.
       </p>
       <a
-        href="/#contact"
+        :href="waLanding"
+        target="_blank"
+        rel="noopener noreferrer"
         class="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all"
       >
         Iniciar mi proyecto
@@ -339,6 +356,8 @@
 
 <script setup>
 import LucideIcon from "../components/LucideIcon.vue";
+
+const waLanding = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Me interesa una Landing Page para mi proyecto. ¿Pueden darme más información? 🚀")}`;
 
 const moviTags = [
   "SaaS B2B",

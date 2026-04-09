@@ -30,11 +30,15 @@
         Demo — Plan Pro
       </span>
       <a
-        href="/#contact"
+        :href="waContratar"
+        target="_blank"
+        rel="noopener noreferrer"
         class="text-sm font-semibold transition-colors"
         style="color: #7a1e3a"
-        ><span class="inline-flex items-center gap-1">Contratar <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" /></span></a
-      >
+        ><span class="inline-flex items-center gap-1"
+          >Contratar
+          <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" /></span
+      ></a>
     </div>
 
     <!-- PORTADA / HERO -->
@@ -96,7 +100,10 @@
 
       <div class="relative z-10 max-w-lg mx-auto">
         <div class="mb-3">
-          <LucideIcon name="gem" class-name="w-14 h-14 mx-auto text-[#d4af37]" />
+          <LucideIcon
+            name="gem"
+            class-name="w-14 h-14 mx-auto text-[#d4af37]"
+          />
         </div>
 
         <div class="flex items-center justify-center gap-3 mb-4">
@@ -208,7 +215,10 @@
             border: 1px solid rgba(212, 175, 55, 0.25);
           "
         >
-          <LucideIcon :name="musicOn ? 'music' : 'volume-x'" class-name="w-4 h-4" />
+          <LucideIcon
+            :name="musicOn ? 'music' : 'volume-x'"
+            class-name="w-4 h-4"
+          />
           {{ musicOn ? "Pausar" : "Reproducir música" }}
         </button>
         <audio ref="audioRef" loop preload="none">
@@ -219,7 +229,10 @@
         </audio>
 
         <div class="mt-8 animate-bounce">
-          <LucideIcon name="chevron-down" class-name="w-6 h-6 mx-auto text-[#d4af37]" />
+          <LucideIcon
+            name="chevron-down"
+            class-name="w-6 h-6 mx-auto text-[#d4af37]"
+          />
         </div>
       </div>
     </section>
@@ -228,7 +241,10 @@
     <section class="py-16 sm:py-20 px-6" style="background: #ffffff">
       <div class="max-w-2xl mx-auto text-center">
         <div class="mb-6">
-          <LucideIcon name="heart" class-name="w-8 h-8 mx-auto text-[#d4af37]" />
+          <LucideIcon
+            name="heart"
+            class-name="w-8 h-8 mx-auto text-[#d4af37]"
+          />
         </div>
         <h2 class="text-2xl sm:text-3xl font-bold mb-6" style="color: #7a1e3a">
           Un Mensaje Especial
@@ -284,14 +300,22 @@
               class="absolute inset-0 flex items-center justify-center"
               :style="{ background: photo.bg }"
             >
-              <span
-                class="text-4xl transition-transform group-hover:scale-110"
-                ><LucideIcon :name="photo.icon" class-name="w-9 h-9 text-[#7a1e3a]" /></span
-              >
+              <span class="text-4xl transition-transform group-hover:scale-110"
+                ><LucideIcon
+                  :name="photo.icon"
+                  class-name="w-9 h-9 text-[#7a1e3a]"
+              /></span>
             </div>
-            <div v-if="photo.type === 'video'" class="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div class="w-12 h-12 rounded-full flex items-center justify-center bg-white/40 backdrop-blur-sm border border-white/50 shadow-lg">
-                <span class="text-xl translate-x-0.5 text-[#7a1e3a]"><LucideIcon name="play" class-name="w-5 h-5" /></span>
+            <div
+              v-if="photo.type === 'video'"
+              class="absolute inset-0 flex items-center justify-center pointer-events-none"
+            >
+              <div
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/40 backdrop-blur-sm border border-white/50 shadow-lg"
+              >
+                <span class="text-xl translate-x-0.5 text-[#7a1e3a]"
+                  ><LucideIcon name="play" class-name="w-5 h-5"
+                /></span>
               </div>
             </div>
             <div
@@ -303,44 +327,97 @@
     </section>
 
     <!-- ITINERARIO -->
-    <section class="py-16 sm:py-20 px-6" style="background: linear-gradient(180deg, #f8f4f0, #ffffff)">
+    <section
+      class="py-16 sm:py-20 px-6"
+      style="background: linear-gradient(180deg, #f8f4f0, #ffffff)"
+    >
       <div class="max-w-md mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10" style="color: #7a1e3a">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center mb-10"
+          style="color: #7a1e3a"
+        >
           Nuestro Itinerario
         </h2>
-        <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-[#d4af37] before:via-[#7a1e3a] before:to-[#d4af37]">
-          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#f8f4f0] bg-[#d4af37] text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow">
+        <div
+          class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-[#d4af37] before:via-[#7a1e3a] before:to-[#d4af37]"
+        >
+          <div
+            class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+          >
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#f8f4f0] bg-[#d4af37] text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow"
+            >
               <LucideIcon name="landmark" class-name="w-5 h-5" />
             </div>
-            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white shadow-sm" style="border: 1px solid rgba(212, 175, 55, 0.2)">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                <h4 class="font-bold text-base" style="color: #7a1e3a">Misa de Acción de Gracias</h4>
-                <span class="text-xs font-semibold px-2 py-0.5 rounded-full w-fit" style="color: #d4af37; background: rgba(212, 175, 55, 0.1)">4:00 PM</span>
+            <div
+              class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white shadow-sm"
+              style="border: 1px solid rgba(212, 175, 55, 0.2)"
+            >
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
+              >
+                <h4 class="font-bold text-base" style="color: #7a1e3a">
+                  Misa de Acción de Gracias
+                </h4>
+                <span
+                  class="text-xs font-semibold px-2 py-0.5 rounded-full w-fit"
+                  style="color: #d4af37; background: rgba(212, 175, 55, 0.1)"
+                  >4:00 PM</span
+                >
               </div>
               <p class="text-sm" style="color: #999">Parroquia de Guadalupe</p>
             </div>
           </div>
-          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#f8f4f0] bg-[#7a1e3a] text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow">
+          <div
+            class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+          >
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#f8f4f0] bg-[#7a1e3a] text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow"
+            >
               <LucideIcon name="camera" class-name="w-5 h-5" />
             </div>
-            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white shadow-sm" style="border: 1px solid rgba(122, 30, 58, 0.15)">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                <h4 class="font-bold text-base" style="color: #7a1e3a">Sesión Fotográfica</h4>
-                <span class="text-xs font-semibold px-2 py-0.5 rounded-full w-fit" style="color: #7a1e3a; background: rgba(122, 30, 58, 0.08)">5:30 PM</span>
+            <div
+              class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white shadow-sm"
+              style="border: 1px solid rgba(122, 30, 58, 0.15)"
+            >
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
+              >
+                <h4 class="font-bold text-base" style="color: #7a1e3a">
+                  Sesión Fotográfica
+                </h4>
+                <span
+                  class="text-xs font-semibold px-2 py-0.5 rounded-full w-fit"
+                  style="color: #7a1e3a; background: rgba(122, 30, 58, 0.08)"
+                  >5:30 PM</span
+                >
               </div>
               <p class="text-sm" style="color: #999">Jardines del Salón</p>
             </div>
           </div>
-          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#f8f4f0] bg-[#d4af37] text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow">
+          <div
+            class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+          >
+            <div
+              class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#f8f4f0] bg-[#d4af37] text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow"
+            >
               <LucideIcon name="music" class-name="w-5 h-5" />
             </div>
-            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white shadow-sm" style="border: 1px solid rgba(212, 175, 55, 0.2)">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                <h4 class="font-bold text-base" style="color: #7a1e3a">Recepción</h4>
-                <span class="text-xs font-semibold px-2 py-0.5 rounded-full w-fit" style="color: #d4af37; background: rgba(212, 175, 55, 0.1)">7:00 PM</span>
+            <div
+              class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white shadow-sm"
+              style="border: 1px solid rgba(212, 175, 55, 0.2)"
+            >
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
+              >
+                <h4 class="font-bold text-base" style="color: #7a1e3a">
+                  Recepción
+                </h4>
+                <span
+                  class="text-xs font-semibold px-2 py-0.5 rounded-full w-fit"
+                  style="color: #d4af37; background: rgba(212, 175, 55, 0.1)"
+                  >7:00 PM</span
+                >
               </div>
               <p class="text-sm" style="color: #999">Salón Rosa de Cristal</p>
             </div>
@@ -370,7 +447,10 @@
               border: 1.5px solid rgba(122, 30, 58, 0.1);
             "
           >
-            <LucideIcon name="landmark" class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]" />
+            <LucideIcon
+              name="landmark"
+              class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]"
+            />
             <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">
               Misa de Acción de Gracias
             </h3>
@@ -386,7 +466,10 @@
               border: 1.5px solid rgba(212, 175, 55, 0.15);
             "
           >
-            <LucideIcon name="music" class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]" />
+            <LucideIcon
+              name="music"
+              class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]"
+            />
             <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">
               Fiesta
             </h3>
@@ -405,7 +488,11 @@
             border: 1.5px solid rgba(212, 175, 55, 0.15);
           "
         >
-          <span class="text-2xl block mb-2"><LucideIcon name="shirt" class-name="w-8 h-8 mx-auto text-[#7a1e3a]" /></span>
+          <span class="text-2xl block mb-2"
+            ><LucideIcon
+              name="shirt"
+              class-name="w-8 h-8 mx-auto text-[#7a1e3a]"
+          /></span>
           <h3 class="font-bold text-sm mb-1" style="color: #7a1e3a">
             Código de Vestimenta
           </h3>
@@ -455,50 +542,147 @@
               border: 1.5px solid rgba(212, 175, 55, 0.2);
             "
           >
-            <LucideIcon name="calendar-days" class-name="w-4 h-4" /> Agregar a calendario
+            <LucideIcon name="calendar-days" class-name="w-4 h-4" /> Agregar a
+            calendario
           </a>
         </div>
 
         <!-- Extra Details Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
           <!-- Hashtag -->
-          <div class="p-6 rounded-2xl text-center bg-white shadow-sm hover:-translate-y-1 transition-transform" style="border: 1.5px solid rgba(122, 30, 58, 0.15)">
-            <LucideIcon name="square-pen" class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]" />
-            <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">Hashtag del Evento</h3>
+          <div
+            class="p-6 rounded-2xl text-center bg-white shadow-sm hover:-translate-y-1 transition-transform"
+            style="border: 1.5px solid rgba(122, 30, 58, 0.15)"
+          >
+            <LucideIcon
+              name="square-pen"
+              class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]"
+            />
+            <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">
+              Hashtag del Evento
+            </h3>
             <p class="text-sm" style="color: #999">#XVDeValentina</p>
-            <p class="text-xs mt-1 font-medium" style="color: #d4af37">¡Etiquétame en tus fotos!</p>
+            <p class="text-xs mt-1 font-medium" style="color: #d4af37">
+              ¡Etiquétame en tus fotos!
+            </p>
           </div>
-          
+
           <!-- Playlist Colaborativa -->
-          <div class="p-6 rounded-2xl text-center bg-white shadow-sm hover:-translate-y-1 transition-transform" style="border: 1.5px solid rgba(212, 175, 55, 0.15)">
-            <LucideIcon name="music" class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]" />
-            <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">Playlist Colaborativa</h3>
-            <p class="text-sm mb-3" style="color: #999">Agrega las canciones que no pueden faltar aquí.</p>
-            <a href="#" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all hover:scale-105" style="background: rgba(212, 175, 55, 0.1); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.3)"><LucideIcon name="music" class-name="w-3.5 h-3.5" />Abrir en Spotify</a>
+          <div
+            class="p-6 rounded-2xl text-center bg-white shadow-sm hover:-translate-y-1 transition-transform"
+            style="border: 1.5px solid rgba(212, 175, 55, 0.15)"
+          >
+            <LucideIcon
+              name="music"
+              class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]"
+            />
+            <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">
+              Playlist Colaborativa
+            </h3>
+            <p class="text-sm mb-3" style="color: #999">
+              Agrega las canciones que no pueden faltar aquí.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all hover:scale-105"
+              style="
+                background: rgba(212, 175, 55, 0.1);
+                color: #d4af37;
+                border: 1px solid rgba(212, 175, 55, 0.3);
+              "
+              ><LucideIcon name="music" class-name="w-3.5 h-3.5" />Abrir en
+              Spotify</a
+            >
           </div>
 
           <!-- Mesa de Regalos -->
-          <div class="col-span-1 sm:col-span-2 p-6 rounded-2xl text-center shadow-sm" style="background: linear-gradient(135deg, #fdf8f0, #ffffff); border: 1.5px solid rgba(212, 175, 55, 0.2)">
-            <LucideIcon name="gift" class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]" />
-            <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">Mesa de Regalos</h3>
-            <p class="text-sm mb-4 max-w-md mx-auto" style="color: #999">El mejor regalo es tu presencia, pero si deseas tener un detalle conmigo:</p>
+          <div
+            class="col-span-1 sm:col-span-2 p-6 rounded-2xl text-center shadow-sm"
+            style="
+              background: linear-gradient(135deg, #fdf8f0, #ffffff);
+              border: 1.5px solid rgba(212, 175, 55, 0.2);
+            "
+          >
+            <LucideIcon
+              name="gift"
+              class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]"
+            />
+            <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">
+              Mesa de Regalos
+            </h3>
+            <p class="text-sm mb-4 max-w-md mx-auto" style="color: #999">
+              El mejor regalo es tu presencia, pero si deseas tener un detalle
+              conmigo:
+            </p>
             <div class="flex flex-wrap justify-center gap-3">
-              <a href="#" class="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:-translate-y-1" style="background: rgba(122, 30, 58, 0.03); color: #7a1e3a; border: 1px solid rgba(122, 30, 58, 0.2)">Palacio de Hierro</a>
-              <a href="#" class="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:-translate-y-1" style="background: rgba(212, 175, 55, 0.03); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.3)">Liverpool</a>
-              <div class="px-5 py-2.5 rounded-xl text-sm font-semibold bg-white" style="color: #999; border: 1px solid rgba(0, 0, 0, 0.1)">Sobre (Día del evento)</div>
+              <a
+                href="#"
+                class="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:-translate-y-1"
+                style="
+                  background: rgba(122, 30, 58, 0.03);
+                  color: #7a1e3a;
+                  border: 1px solid rgba(122, 30, 58, 0.2);
+                "
+                >Palacio de Hierro</a
+              >
+              <a
+                href="#"
+                class="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:-translate-y-1"
+                style="
+                  background: rgba(212, 175, 55, 0.03);
+                  color: #d4af37;
+                  border: 1px solid rgba(212, 175, 55, 0.3);
+                "
+                >Liverpool</a
+              >
+              <div
+                class="px-5 py-2.5 rounded-xl text-sm font-semibold bg-white"
+                style="color: #999; border: 1px solid rgba(0, 0, 0, 0.1)"
+              >
+                Sobre (Día del evento)
+              </div>
             </div>
           </div>
 
           <!-- Hospedaje -->
-          <div class="col-span-1 sm:col-span-2 p-6 rounded-2xl text-center shadow-sm" style="background: linear-gradient(135deg, #fdf5f8, #ffffff); border: 1.5px solid rgba(122, 30, 58, 0.15)">
-            <LucideIcon name="hotel" class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]" />
-            <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">Sugerencia de Hospedaje</h3>
-            <p class="text-sm mb-4 max-w-md mx-auto" style="color: #999">Para invitados foráneos, recomendamos este hotel cercano al salón:</p>
+          <div
+            class="col-span-1 sm:col-span-2 p-6 rounded-2xl text-center shadow-sm"
+            style="
+              background: linear-gradient(135deg, #fdf5f8, #ffffff);
+              border: 1.5px solid rgba(122, 30, 58, 0.15);
+            "
+          >
+            <LucideIcon
+              name="hotel"
+              class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]"
+            />
+            <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">
+              Sugerencia de Hospedaje
+            </h3>
+            <p class="text-sm mb-4 max-w-md mx-auto" style="color: #999">
+              Para invitados foráneos, recomendamos este hotel cercano al salón:
+            </p>
             <div class="flex justify-center flex-wrap gap-3">
-              <a href="#" class="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:-translate-y-1" style="background: rgba(122, 30, 58, 0.03); color: #7a1e3a; border: 1px solid rgba(122, 30, 58, 0.2)">
+              <a
+                href="#"
+                class="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:-translate-y-1"
+                style="
+                  background: rgba(122, 30, 58, 0.03);
+                  color: #7a1e3a;
+                  border: 1px solid rgba(122, 30, 58, 0.2);
+                "
+              >
                 Hotel Fiesta Inn Zapopan
               </a>
-              <a href="#" class="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:-translate-y-1" style="background: rgba(212, 175, 55, 0.03); color: #d4af37; border: 1px solid rgba(212, 175, 55, 0.2)">
+              <a
+                href="#"
+                class="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:-translate-y-1"
+                style="
+                  background: rgba(212, 175, 55, 0.03);
+                  color: #d4af37;
+                  border: 1px solid rgba(212, 175, 55, 0.2);
+                "
+              >
                 Airbnb Zona Cumbres
               </a>
             </div>
@@ -546,14 +730,35 @@
               color: #444;
             "
           >
-            <option value="" style="background:#fff;color:#aaa">¿Asistirás?</option>
-            <option value="yes" style="background:#fff;color:#444">Sí, con mucho gusto</option>
-            <option value="no" style="background:#fff;color:#444">No podré asistir</option>
+            <option value="" style="background: #fff; color: #aaa">
+              ¿Asistirás?
+            </option>
+            <option value="yes" style="background: #fff; color: #444">
+              Sí, con mucho gusto
+            </option>
+            <option value="no" style="background: #fff; color: #444">
+              No podré asistir
+            </option>
           </select>
-          <div v-if="rsvpForm.attending === 'yes'" class="p-4 rounded-xl text-center" style="background: rgba(212, 175, 55, 0.05); border: 1px solid rgba(212, 175, 55, 0.2)">
-            <span class="text-3xl block mb-2"><LucideIcon name="ticket" class-name="w-8 h-8 mx-auto text-[#d4af37]" /></span>
-            <p class="text-sm font-bold" style="color: #7a1e3a">Pases Asignados: 3</p>
-            <p class="text-xs mt-1" style="color: #999">Esta invitación es válida para un máximo de 3 personas.</p>
+          <div
+            v-if="rsvpForm.attending === 'yes'"
+            class="p-4 rounded-xl text-center"
+            style="
+              background: rgba(212, 175, 55, 0.05);
+              border: 1px solid rgba(212, 175, 55, 0.2);
+            "
+          >
+            <span class="text-3xl block mb-2"
+              ><LucideIcon
+                name="ticket"
+                class-name="w-8 h-8 mx-auto text-[#d4af37]"
+            /></span>
+            <p class="text-sm font-bold" style="color: #7a1e3a">
+              Pases Asignados: 3
+            </p>
+            <p class="text-xs mt-1" style="color: #999">
+              Esta invitación es válida para un máximo de 3 personas.
+            </p>
           </div>
           <div v-if="rsvpForm.attending === 'yes'">
             <input
@@ -587,9 +792,7 @@
             style="background: linear-gradient(135deg, #7a1e3a, #9b2950)"
           >
             {{
-              rsvpSubmitted
-                ? "¡Gracias por confirmar!"
-                : "Confirmar asistencia"
+              rsvpSubmitted ? "¡Gracias por confirmar!" : "Confirmar asistencia"
             }}
           </button>
         </form>
@@ -639,7 +842,9 @@
         Con amor, Valentina
       </p>
       <p class="text-xs mt-4" style="color: #c0b0a0">
-        Hecho con <LucideIcon name="heart" class-name="w-4 h-4 inline text-[#d4af37]" /> por
+        Hecho con
+        <LucideIcon name="heart" class-name="w-4 h-4 inline text-[#d4af37]" />
+        por
         <a
           href="https://devifly.dev"
           class="font-semibold transition-colors hover:underline"
@@ -654,6 +859,8 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import LucideIcon from "../../components/LucideIcon.vue";
+
+const waContratar = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Pro de invitaciones digitales y me interesa contratarlo ✨")}`;
 
 const musicOn = ref(false);
 const audioRef = ref(null);
@@ -684,7 +891,11 @@ const handleRSVP = () => {
 };
 
 const gallery = [
-  { icon: "camera", bg: "linear-gradient(135deg, #FDF5F8, #F8E8EF)", type: "video" },
+  {
+    icon: "camera",
+    bg: "linear-gradient(135deg, #FDF5F8, #F8E8EF)",
+    type: "video",
+  },
   { icon: "gem", bg: "linear-gradient(135deg, #FBF5E8, #F5EDDA)" },
   { icon: "sparkles", bg: "linear-gradient(135deg, #FCF0F4, #F5E0EA)" },
   { icon: "sparkles", bg: "linear-gradient(135deg, #F8F0FF, #F0E5FA)" },
@@ -712,10 +923,18 @@ const countdown = ref([
 ]);
 
 onMounted(() => {
-  const target = new Date("2025-09-20T16:00:00");
+  const target = new Date("2027-09-20T16:00:00");
   const update = () => {
     const diff = target - Date.now();
-    if (diff <= 0) return;
+    if (diff <= 0) {
+      countdown.value = [
+        { label: "DÍAS", val: "00" },
+        { label: "HRS", val: "00" },
+        { label: "MIN", val: "00" },
+        { label: "SEG", val: "00" },
+      ];
+      return;
+    }
     countdown.value = [
       {
         label: "DÍAS",

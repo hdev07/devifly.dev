@@ -134,18 +134,20 @@
             </h3>
             <div class="space-y-4">
               <a
-                href="https://wa.me/528123456789"
+                href="https://wa.me/+525583414659"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="flex items-center gap-3 text-sm dark:text-text-secondary text-light-muted hover:text-brand-500 transition-colors"
               >
-                <LucideIcon name="message-circle" class-name="w-4 h-4" /> WhatsApp
+                <LucideIcon name="message-circle" class-name="w-4 h-4" />
+                WhatsApp
               </a>
               <a
                 href="mailto:devifly.dev@gmail.com"
                 class="flex items-center gap-3 text-sm dark:text-text-secondary text-light-muted hover:text-brand-500 transition-colors"
               >
-                <LucideIcon name="mail" class-name="w-4 h-4" /> devifly.dev@gmail.com
+                <LucideIcon name="mail" class-name="w-4 h-4" />
+                devifly.dev@gmail.com
               </a>
               <a
                 href="https://github.com/devifly"
@@ -185,22 +187,38 @@
               <router-link
                 to="/products"
                 class="block text-sm text-brand-500 hover:text-brand-400 transition-colors"
-                ><span class="inline-flex items-center gap-1"><LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />{{ t("contactPage.explore.products") }}</span></router-link
+                ><span class="inline-flex items-center gap-1"
+                  ><LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />{{
+                    t("contactPage.explore.products")
+                  }}</span
+                ></router-link
               >
               <router-link
                 to="/solutions"
                 class="block text-sm text-brand-500 hover:text-brand-400 transition-colors"
-                ><span class="inline-flex items-center gap-1"><LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />{{ t("contactPage.explore.solutions") }}</span></router-link
+                ><span class="inline-flex items-center gap-1"
+                  ><LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />{{
+                    t("contactPage.explore.solutions")
+                  }}</span
+                ></router-link
               >
               <router-link
                 to="/case-studies"
                 class="block text-sm text-brand-500 hover:text-brand-400 transition-colors"
-                ><span class="inline-flex items-center gap-1"><LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />{{ t("contactPage.explore.cases") }}</span></router-link
+                ><span class="inline-flex items-center gap-1"
+                  ><LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />{{
+                    t("contactPage.explore.cases")
+                  }}</span
+                ></router-link
               >
               <router-link
                 to="/pricing"
                 class="block text-sm text-brand-500 hover:text-brand-400 transition-colors"
-                ><span class="inline-flex items-center gap-1"><LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />{{ t("contactPage.explore.pricing") }}</span></router-link
+                ><span class="inline-flex items-center gap-1"
+                  ><LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />{{
+                    t("contactPage.explore.pricing")
+                  }}</span
+                ></router-link
               >
             </div>
           </div>

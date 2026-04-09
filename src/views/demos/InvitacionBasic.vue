@@ -29,7 +29,9 @@
         >Demo — Plan Basic</span
       >
       <a
-        href="/#contact"
+        :href="waContratar"
+        target="_blank"
+        rel="noopener noreferrer"
         class="text-sm font-semibold transition-colors"
         style="color: #5b9bd5"
         ><span class="inline-flex items-center gap-1"
@@ -78,7 +80,10 @@
       <div class="relative z-10 max-w-md mx-auto">
         <!-- Dove icon -->
         <div class="mb-3 animate-esencial-bounce-in">
-          <LucideIcon name="bird" class-name="w-16 h-16 mx-auto text-[#6aade4]" />
+          <LucideIcon
+            name="bird"
+            class-name="w-16 h-16 mx-auto text-[#6aade4]"
+          />
         </div>
 
         <!-- Event type -->
@@ -180,7 +185,10 @@
         <!-- Music toggle removed for Basic -->
         <!-- Scroll cue -->
         <div class="mt-8 animate-bounce">
-          <LucideIcon name="chevron-down" class-name="w-6 h-6 mx-auto text-[#a7d8ff]" />
+          <LucideIcon
+            name="chevron-down"
+            class-name="w-6 h-6 mx-auto text-[#a7d8ff]"
+          />
         </div>
       </div>
     </section>
@@ -630,6 +638,8 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import LucideIcon from "../../components/LucideIcon.vue";
 
+const waContratar = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Basic de invitaciones digitales y me interesa contratarlo 💌")}`;
+
 let countdownInterval = null;
 const rsvpSubmitted = ref(false);
 const rsvpForm = ref({ name: "", attending: "" });
@@ -650,10 +660,18 @@ const countdown = ref([
 ]);
 
 onMounted(() => {
-  const target = new Date("2025-06-14T12:00:00");
+  const target = new Date("2027-06-14T12:00:00");
   const update = () => {
     const diff = target - Date.now();
-    if (diff <= 0) return;
+    if (diff <= 0) {
+      countdown.value = [
+        { label: "DÍAS", val: "00" },
+        { label: "HRS", val: "00" },
+        { label: "MIN", val: "00" },
+        { label: "SEG", val: "00" },
+      ];
+      return;
+    }
     countdown.value = [
       {
         label: "DÍAS",

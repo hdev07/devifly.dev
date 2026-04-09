@@ -37,11 +37,15 @@
         </button>
       </div>
       <a
-        href="/#contact"
+        :href="waContratar"
+        target="_blank"
+        rel="noopener noreferrer"
         class="text-sm font-semibold transition-colors"
         style="color: #c6a75e"
-        ><span class="inline-flex items-center gap-1">Contratar <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" /></span></a
-      >
+        ><span class="inline-flex items-center gap-1"
+          >Contratar
+          <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" /></span
+      ></a>
     </div>
 
     <!-- HERO — Cinematic -->
@@ -188,7 +192,10 @@
             border: 1px solid rgba(198, 167, 94, 0.15);
           "
         >
-          <LucideIcon :name="musicOn ? 'music' : 'volume-x'" class-name="w-4 h-4" />
+          <LucideIcon
+            :name="musicOn ? 'music' : 'volume-x'"
+            class-name="w-4 h-4"
+          />
           {{ musicOn ? t("pauseMusic") : t("playMusic") }}
         </button>
         <audio ref="audioRef" loop preload="none">
@@ -200,7 +207,10 @@
 
         <!-- Scroll -->
         <div class="mt-8 animate-bounce">
-          <LucideIcon name="chevron-down" class-name="w-6 h-6 mx-auto text-[rgba(198,167,94,0.4)]" />
+          <LucideIcon
+            name="chevron-down"
+            class-name="w-6 h-6 mx-auto text-[rgba(198,167,94,0.4)]"
+          />
         </div>
       </div>
     </section>
@@ -243,7 +253,10 @@
                 border: 1.5px solid rgba(198, 167, 94, 0.2);
               "
             >
-              <LucideIcon :name="event.icon" class-name="w-6 h-6 text-[#c6a75e]" />
+              <LucideIcon
+                :name="event.icon"
+                class-name="w-6 h-6 text-[#c6a75e]"
+              />
             </div>
             <!-- Content -->
             <div class="pt-1 sm:pt-3">
@@ -298,8 +311,14 @@
               <span
                 class="transition-transform duration-500 group-hover:scale-125"
                 :class="i === 0 ? 'text-6xl' : 'text-3xl'"
-                ><LucideIcon :name="photo.icon" :class-name="i === 0 ? 'w-14 h-14 text-[#c6a75e]' : 'w-8 h-8 text-[#c6a75e]'" /></span
-              >
+                ><LucideIcon
+                  :name="photo.icon"
+                  :class-name="
+                    i === 0
+                      ? 'w-14 h-14 text-[#c6a75e]'
+                      : 'w-8 h-8 text-[#c6a75e]'
+                  "
+              /></span>
             </div>
             <div
               class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"
@@ -335,7 +354,10 @@
               border: 1px solid rgba(198, 167, 94, 0.1);
             "
           >
-            <LucideIcon :name="detail.icon" class-name="w-10 h-10 mb-4 mx-auto text-[#c6a75e]" />
+            <LucideIcon
+              :name="detail.icon"
+              class-name="w-10 h-10 mb-4 mx-auto text-[#c6a75e]"
+            />
             <h3 class="text-white font-bold text-lg mb-2">
               {{ t(detail.titleKey) }}
             </h3>
@@ -371,7 +393,8 @@
               border: 1px solid rgba(198, 167, 94, 0.15);
             "
           >
-            <LucideIcon name="external-link" class-name="w-4 h-4" /> {{ t("howToGet") }}
+            <LucideIcon name="external-link" class-name="w-4 h-4" />
+            {{ t("howToGet") }}
           </a>
           <a
             :href="googleCalUrl"
@@ -384,7 +407,8 @@
               border: 1px solid rgba(198, 167, 94, 0.15);
             "
           >
-            <LucideIcon name="calendar-days" class-name="w-4 h-4" /> Google Calendar
+            <LucideIcon name="calendar-days" class-name="w-4 h-4" /> Google
+            Calendar
           </a>
           <a
             :href="appleCalUrl"
@@ -397,7 +421,8 @@
               border: 1px solid rgba(198, 167, 94, 0.15);
             "
           >
-            <LucideIcon name="calendar-days" class-name="w-4 h-4" /> Apple Calendar
+            <LucideIcon name="calendar-days" class-name="w-4 h-4" /> Apple
+            Calendar
           </a>
         </div>
 
@@ -411,7 +436,10 @@
               border: 1px solid rgba(198, 167, 94, 0.1);
             "
           >
-            <LucideIcon name="shirt" class-name="w-10 h-10 mb-3 mx-auto text-[#c6a75e]" />
+            <LucideIcon
+              name="shirt"
+              class-name="w-10 h-10 mb-3 mx-auto text-[#c6a75e]"
+            />
             <h3 class="text-white font-bold text-lg mb-1">
               {{ t("dressCodeTitle", "Código de Vestimenta") }}
             </h3>
@@ -428,7 +456,10 @@
               border: 1px solid rgba(198, 167, 94, 0.1);
             "
           >
-            <LucideIcon name="square-pen" class-name="w-10 h-10 mb-3 mx-auto text-[#c6a75e]" />
+            <LucideIcon
+              name="square-pen"
+              class-name="w-10 h-10 mb-3 mx-auto text-[#c6a75e]"
+            />
             <h3 class="text-white font-bold text-lg mb-1">
               {{ t("hashtagTitle", "Hashtag") }}
             </h3>
@@ -446,7 +477,10 @@
               border: 1px solid rgba(198, 167, 94, 0.1);
             "
           >
-            <LucideIcon name="hotel" class-name="w-10 h-10 mb-3 mx-auto text-[#c6a75e]" />
+            <LucideIcon
+              name="hotel"
+              class-name="w-10 h-10 mb-3 mx-auto text-[#c6a75e]"
+            />
             <h3 class="text-white font-bold text-lg mb-1">
               {{ t("lodgingTitle", "Hospedaje") }}
             </h3>
@@ -469,7 +503,10 @@
               border: 1px solid rgba(198, 167, 94, 0.1);
             "
           >
-            <LucideIcon name="music" class-name="w-10 h-10 mb-3 mx-auto text-[#c6a75e]" />
+            <LucideIcon
+              name="music"
+              class-name="w-10 h-10 mb-3 mx-auto text-[#c6a75e]"
+            />
             <h3 class="text-white font-bold text-lg mb-1">
               {{ t("playlistTitle", "Playlist") }}
             </h3>
@@ -492,7 +529,10 @@
               border: 1px solid rgba(198, 167, 94, 0.1);
             "
           >
-            <LucideIcon name="camera" class-name="w-10 h-10 mb-3 mx-auto text-[#c6a75e]" />
+            <LucideIcon
+              name="camera"
+              class-name="w-10 h-10 mb-3 mx-auto text-[#c6a75e]"
+            />
             <h3 class="text-white font-bold text-lg mb-1">
               {{ t("albumTitle", "Álbum Colaborativo") }}
             </h3>
@@ -515,7 +555,10 @@
               border: 1px solid rgba(198, 167, 94, 0.1);
             "
           >
-            <LucideIcon name="dices" class-name="w-10 h-10 mb-3 mx-auto text-[#c6a75e]" />
+            <LucideIcon
+              name="dices"
+              class-name="w-10 h-10 mb-3 mx-auto text-[#c6a75e]"
+            />
             <h3 class="text-white font-bold text-lg mb-1">
               {{ t("triviaTitle", "Trivia de Novios") }}
             </h3>
@@ -609,7 +652,10 @@
               border: 1px solid rgba(198, 167, 94, 0.1);
             "
           >
-            <LucideIcon :name="store.icon" class-name="w-8 h-8 transition-transform group-hover:scale-110 text-[#c6a75e]" />
+            <LucideIcon
+              :name="store.icon"
+              class-name="w-8 h-8 transition-transform group-hover:scale-110 text-[#c6a75e]"
+            />
             <span class="font-semibold text-sm" style="color: #c6a75e">{{
               store.name
             }}</span>
@@ -666,17 +712,26 @@
             style="
               background: rgba(198, 167, 94, 0.05);
               border: 1px solid rgba(198, 167, 94, 0.15);
-              color: rgba(255,255,255,0.75);
+              color: rgba(255, 255, 255, 0.75);
             "
           >
-            <option value="" style="background:#1a1a1a;color:rgba(255,255,255,0.45)">
-              {{ t('rsvpAttending') }}
+            <option
+              value=""
+              style="background: #1a1a1a; color: rgba(255, 255, 255, 0.45)"
+            >
+              {{ t("rsvpAttending") }}
             </option>
-            <option value="yes" style="background:#1a1a1a;color:rgba(255,255,255,0.85)">
-              {{ t('rsvpYes') }}
+            <option
+              value="yes"
+              style="background: #1a1a1a; color: rgba(255, 255, 255, 0.85)"
+            >
+              {{ t("rsvpYes") }}
             </option>
-            <option value="no" style="background:#1a1a1a;color:rgba(255,255,255,0.85)">
-              {{ t('rsvpNo') }}
+            <option
+              value="no"
+              style="background: #1a1a1a; color: rgba(255, 255, 255, 0.85)"
+            >
+              {{ t("rsvpNo") }}
             </option>
           </select>
           <div v-if="rsvpForm.attending === 'yes'" class="space-y-4">
@@ -846,7 +901,9 @@
         {{ t("footerMsg") }}
       </p>
       <p class="text-xs" style="color: #444">
-        mariana-y-diego.com · Hecho con <LucideIcon name="heart" class-name="w-4 h-4 inline text-[#c6a75e]" /> por
+        mariana-y-diego.com · Hecho con
+        <LucideIcon name="heart" class-name="w-4 h-4 inline text-[#c6a75e]" />
+        por
         <a
           href="https://devifly.dev"
           class="font-semibold transition-colors hover:underline"
@@ -861,6 +918,8 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import LucideIcon from "../../components/LucideIcon.vue";
+
+const waContratar = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Premium de invitaciones digitales y me interesa contratarlo 💎")}`;
 
 const lang = ref("es");
 const musicOn = ref(false);
@@ -1037,7 +1096,12 @@ const handleRSVP = () => {
 };
 
 const timeline = [
-  { icon: "sparkles", year: "2019", titleKey: "howWeMet", descKey: "howWeMetDesc" },
+  {
+    icon: "sparkles",
+    year: "2019",
+    titleKey: "howWeMet",
+    descKey: "howWeMetDesc",
+  },
   {
     icon: "heart",
     year: "2020",
@@ -1150,10 +1214,18 @@ const countdown = ref([
 ]);
 
 onMounted(() => {
-  const target = new Date("2025-11-15T17:00:00");
+  const target = new Date("2027-11-15T17:00:00");
   const update = () => {
     const diff = target - Date.now();
-    if (diff <= 0) return;
+    if (diff <= 0) {
+      countdown.value = [
+        { label: lang.value === "es" ? "DÍAS" : "DAYS", val: "000" },
+        { label: "HRS", val: "00" },
+        { label: "MIN", val: "00" },
+        { label: lang.value === "es" ? "SEG" : "SEC", val: "00" },
+      ];
+      return;
+    }
     countdown.value = [
       {
         label: lang.value === "es" ? "DÍAS" : "DAYS",
