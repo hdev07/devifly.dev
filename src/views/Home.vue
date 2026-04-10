@@ -1,6 +1,7 @@
 <script setup>
 import Hero from "../components/Hero.vue";
 import BuildSection from "../components/BuildSection.vue";
+import TopSellers from "../components/TopSellers.vue";
 import SolutionsByClient from "../components/SolutionsByClient.vue";
 import HowWeWork from "../components/HowWeWork.vue";
 import Projects from "../components/Projects.vue";
@@ -13,6 +14,7 @@ import CTAFinal from "../components/CTAFinal.vue";
   <main>
     <Hero />
     <BuildSection />
+    <TopSellers />
     <SolutionsByClient />
     <HowWeWork />
     <Projects />

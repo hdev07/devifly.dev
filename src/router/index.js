@@ -43,7 +43,7 @@ const routes = [
     component: () => import('../views/Invitaciones.vue')
   },
   {
-    path: '/invitaciones/basic',
+    path: '/invitaciones/esencial',
     name: 'DemoBasic',
     component: () => import('../views/demos/InvitacionBasic.vue'),
     meta: { fullscreen: true }
@@ -61,9 +61,31 @@ const routes = [
     meta: { fullscreen: true }
   },
   {
+    path: '/menus-digitales',
+    name: 'MenusDigitales',
+    component: () => import('../views/MenusDigitales.vue')
+  },
+  {
+    path: '/menus-digitales/demo',
+    name: 'MenuDemo',
+    component: () => import('../views/demos/MenuDemo.vue'),
+    meta: { fullscreen: true }
+  },
+  {
     path: '/saas',
     name: 'SaaS',
     component: () => import('../views/SaaS.vue')
+  },
+  {
+    path: '/catalogos-nenis',
+    name: 'CatalogosNenis',
+    component: () => import('../views/CatalogosNenis.vue')
+  },
+  {
+    path: '/catalogos-nenis/demo',
+    name: 'CatalogoNenisDemo',
+    component: () => import('../views/demos/CatalogoNenisDemo.vue'),
+    meta: { fullscreen: true }
   },
   {
     path: '/service/:key',

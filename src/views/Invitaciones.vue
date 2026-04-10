@@ -23,7 +23,7 @@
     <!-- Pricing grid -->
     <div class="max-w-6xl mx-auto px-6 mb-24">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        <!-- Basic -->
+        <!-- Esencial -->
         <div
           class="flex flex-col rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border overflow-hidden"
         >
@@ -31,12 +31,12 @@
             <h2
               class="font-display text-2xl font-bold dark:text-white text-light-text mb-1"
             >
-              Basic
+              Esencial
             </h2>
             <p
               class="text-sm dark:text-text-secondary text-light-muted mb-2 font-medium"
             >
-              {{ t("invitacionesPage.packages.basic.tagline") }}
+              {{ t("invitacionesPage.packages.esencial.tagline") }}
             </p>
             <div class="mb-6">
               <span
@@ -51,11 +51,11 @@
             <p
               class="text-xs dark:text-text-secondary text-light-muted mb-4 font-semibold"
             >
-              {{ t("invitacionesPage.packages.basic.summary") }}
+              {{ t("invitacionesPage.packages.esencial.summary") }}
             </p>
             <ul class="space-y-3 mb-8">
               <li
-                v-for="f in basicFeats"
+                v-for="f in esencialFeats"
                 :key="f"
                 class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
               >
@@ -69,18 +69,18 @@
             <p class="text-xs text-red-500/80 mb-2 font-semibold">
               <span class="inline-flex items-center gap-2">
                 <LucideIcon name="x" class-name="w-4 h-4" />
-                {{ t("invitacionesPage.packages.basic.excluded") }}
+                {{ t("invitacionesPage.packages.esencial.excluded") }}
               </span>
             </p>
             <p
               class="text-xs dark:text-text-secondary/60 text-light-muted/60 mb-2"
             >
-              {{ t("invitacionesPage.packages.basic.validity") }}
+              {{ t("invitacionesPage.packages.esencial.validity") }}
             </p>
           </div>
           <div class="px-8 pb-8 flex flex-col gap-3">
             <router-link
-              to="/invitaciones/basic"
+              to="/invitaciones/esencial"
               class="block w-full text-center px-4 py-3 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold hover:bg-brand-500/20 transition text-sm"
             >
               <span class="inline-flex items-center gap-2"
@@ -90,7 +90,7 @@
               >
             </router-link>
             <a
-              :href="waBasic"
+              :href="waEsencial"
               target="_blank"
               rel="noopener noreferrer"
               class="block w-full text-center px-4 py-3 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-brand-500 transition text-sm"
@@ -292,7 +292,7 @@
                 <th
                   class="text-center py-4 px-4 dark:text-white text-light-text font-semibold whitespace-nowrap"
                 >
-                  Basic
+                  Esencial
                 </th>
                 <th
                   class="text-center py-4 px-4 text-brand-500 font-semibold whitespace-nowrap"
@@ -319,8 +319,8 @@
                 </td>
                 <td class="py-3 px-4 text-center">
                   <LucideIcon
-                    v-if="row.basic === 'check'"
-                    :name="row.basic"
+                    v-if="row.esencial === 'check'"
+                    :name="row.esencial"
                     class-name="w-4 h-4 mx-auto text-light-muted dark:text-text-secondary"
                   />
                   <span v-else class="text-light-muted dark:text-text-secondary"
@@ -384,14 +384,14 @@ import LucideIcon from "../components/LucideIcon.vue";
 
 const { t, tm, locale } = useI18n();
 
-const waBasic = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Me interesa contratar el Plan Basic de invitaciones digitales ($499 MXN) 💌")}`;
+const waEsencial = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Me interesa contratar el Plan Esencial de invitaciones digitales ($499 MXN) 💌")}`;
 const waPro = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Me interesa contratar el Plan Pro de invitaciones digitales ($899 MXN) ✨")}`;
 const waPremium = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Me interesa contratar el Plan Premium de invitaciones digitales ($1,599 MXN) 💎")}`;
 const waCta = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Quiero más información sobre las invitaciones digitales de Devifly 💌")}`;
 
-const basicFeats = computed(() => {
+const esencialFeats = computed(() => {
   locale.value;
-  return tm("invitacionesPage.packages.basic.features");
+  return tm("invitacionesPage.packages.esencial.features");
 });
 
 const proFeats = computed(() => {

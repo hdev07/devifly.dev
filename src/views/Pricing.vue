@@ -93,12 +93,12 @@
             "
           >
             <div
-              class="absolute top-0 right-0 py-1 px-3 bg-brand-500 text-white text-xs font-bold rounded-bl-xl"
+              class="absolute -top-3 right-4 py-1 px-3 bg-brand-500 text-white text-xs font-bold rounded-full shadow-lg"
             >
               {{ t("pricingPage.popular") }}
             </div>
             <h3
-              class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2"
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
             >
               Multi-Sección
             </h3>
@@ -277,7 +277,7 @@
               </router-link>
             </div>
           </div>
-          <!-- Básica -->
+          <!-- Pro -->
           <div
             class="p-6 rounded-2xl border-2 border-brand-500 relative"
             style="
@@ -289,14 +289,14 @@
             "
           >
             <div
-              class="absolute top-0 right-0 py-1 px-3 bg-brand-500 text-white text-xs font-bold rounded-bl-xl"
+              class="absolute -top-3 right-4 py-1 px-3 bg-brand-500 text-white text-xs font-bold rounded-full shadow-lg"
             >
               {{ t("pricingPage.popular") }}
             </div>
             <h3
-              class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2"
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
             >
-              Básica
+              Pro
             </h3>
             <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
               {{
@@ -317,7 +317,7 @@
             </div>
             <ul class="space-y-2 mb-6">
               <li
-                v-for="f in invBasicaFeats"
+                v-for="f in invProFeats"
                 :key="f"
                 class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
               >
@@ -330,7 +330,7 @@
             </ul>
             <div class="flex flex-col gap-2">
               <router-link
-                to="/invitaciones/basica"
+                to="/invitaciones/pro"
                 class="block w-full text-center px-4 py-2.5 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600 transition text-sm shadow-[0_0_20px_rgba(59,130,246,0.3)]"
               >
                 <span class="inline-flex items-center gap-2"
@@ -348,21 +348,15 @@
               </router-link>
             </div>
           </div>
-          <!-- Pro -->
+          <!-- Premium -->
           <div
             class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
           >
-            <div class="flex items-center gap-2 mb-1">
-              <h3
-                class="font-display text-lg font-bold dark:text-white text-light-text"
-              >
-                Pro
-              </h3>
-              <span
-                class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold"
-                >Premium</span
-              >
-            </div>
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              Premium
+            </h3>
             <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
               {{
                 locale === "es"
@@ -373,7 +367,7 @@
             <div class="mb-4">
               <span
                 class="font-display text-2xl font-bold dark:text-white text-light-text"
-                >$1,559</span
+                >$1,599</span
               >
               <span
                 class="text-sm dark:text-text-secondary text-light-muted ml-1"
@@ -382,7 +376,7 @@
             </div>
             <ul class="space-y-2 mb-6">
               <li
-                v-for="f in invProFeats"
+                v-for="f in invPremiumFeats"
                 :key="f"
                 class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
               >
@@ -395,7 +389,227 @@
             </ul>
             <div class="flex flex-col gap-2">
               <router-link
-                to="/invitaciones/pro"
+                to="/invitaciones/premium"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="search" class-name="w-4 h-4" />Demo</span
+                >
+              </router-link>
+              <router-link
+                to="/contact"
+                class="block w-full text-center px-4 py-2.5 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-violet-400 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menús Digitales -->
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <LucideIcon name="utensils-crossed" class-name="w-8 h-8" />
+          <h2
+            class="font-display text-2xl font-bold dark:text-white text-light-text"
+          >
+            {{
+              locale === "es"
+                ? "Menús Digitales para Restaurantes"
+                : "Digital Menus for Restaurants"
+            }}
+          </h2>
+        </div>
+        <p class="text-sm dark:text-text-secondary text-light-muted mb-8 ml-12">
+          {{
+            locale === "es"
+              ? "Menú elegante con acceso por QR, categorías, búsqueda y más."
+              : "Elegant menu with QR access, categories, search and more."
+          }}
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Esencial -->
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              Esencial
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Menú digital básico para restaurantes pequeños."
+                  : "Basic digital menu for small restaurants."
+              }}
+            </p>
+            <div class="mb-4">
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$3,999</span
+              >
+              <span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li
+                v-for="f in menuEsencialFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-amber-500"
+                />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="flex flex-col gap-2">
+              <router-link
+                to="/menus-digitales/demo"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-500 font-semibold hover:bg-amber-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="search" class-name="w-4 h-4" />Demo</span
+                >
+              </router-link>
+              <router-link
+                to="/contact"
+                class="block w-full text-center px-4 py-2.5 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-amber-500 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
+              </router-link>
+            </div>
+          </div>
+          <!-- Profesional -->
+          <div
+            class="p-6 rounded-2xl border-2 border-amber-500 relative"
+            style="
+              background: linear-gradient(
+                145deg,
+                rgba(245, 158, 11, 0.06),
+                rgba(251, 191, 36, 0.04)
+              );
+            "
+          >
+            <div
+              class="absolute -top-3 right-4 py-1 px-3 bg-amber-500 text-white text-xs font-bold rounded-full shadow-lg"
+            >
+              {{ t("pricingPage.popular") }}
+            </div>
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              Profesional
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Para restaurantes medianos con carta completa."
+                  : "For mid-size restaurants with a full menu."
+              }}
+            </p>
+            <div class="mb-4">
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$7,999</span
+              >
+              <span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li
+                v-for="f in menuProFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-amber-500"
+                />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="flex flex-col gap-2">
+              <router-link
+                to="/menus-digitales/demo"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-amber-500 text-white font-bold hover:bg-amber-600 transition text-sm shadow-[0_0_20px_rgba(245,158,11,0.3)]"
+              >
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="search" class-name="w-4 h-4" />Demo</span
+                >
+              </router-link>
+              <router-link
+                to="/contact"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-500 font-semibold hover:bg-amber-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
+              </router-link>
+            </div>
+          </div>
+          <!-- Enterprise -->
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
+            <div class="flex items-center gap-2 mb-1">
+              <h3
+                class="font-display text-lg font-bold dark:text-white text-light-text"
+              >
+                Enterprise
+              </h3>
+              <span
+                class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold"
+                >Premium</span
+              >
+            </div>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Cadenas y franquicias con múltiples sucursales."
+                  : "Chains and franchises with multiple locations."
+              }}
+            </p>
+            <div class="mb-4">
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$14,999</span
+              >
+              <span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li
+                v-for="f in menuEnterpriseFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="sparkles"
+                  class-name="w-4 h-4 mt-0.5 text-violet-400"
+                />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="flex flex-col gap-2">
+              <router-link
+                to="/menus-digitales/demo"
                 class="block w-full text-center px-4 py-2.5 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm"
               >
                 <span class="inline-flex items-center gap-2"
@@ -487,12 +701,12 @@
             "
           >
             <div
-              class="absolute top-0 right-0 py-1 px-3 bg-emerald-500 text-white text-xs font-bold rounded-bl-xl"
+              class="absolute -top-3 right-4 py-1 px-3 bg-emerald-500 text-white text-xs font-bold rounded-full shadow-lg"
             >
               {{ t("pricingPage.popular") }}
             </div>
             <h3
-              class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2"
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
             >
               {{
                 locale === "es" ? "Agenda Pro + CRM" : "Pro Scheduling + CRM"
@@ -665,12 +879,12 @@
             "
           >
             <div
-              class="absolute top-0 right-0 py-1 px-3 bg-amber-500 text-white text-xs font-bold rounded-bl-xl"
+              class="absolute -top-3 right-4 py-1 px-3 bg-amber-500 text-white text-xs font-bold rounded-full shadow-lg"
             >
               {{ t("pricingPage.popular") }}
             </div>
             <h3
-              class="font-display text-lg font-bold dark:text-white text-light-text mb-1 mt-2"
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
             >
               Básica
             </h3>
@@ -766,6 +980,223 @@
                 }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
               /></span>
             </router-link>
+          </div>
+        </div>
+      </div>
+
+      <!-- Catálogo Digital para Nenis -->
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <LucideIcon name="shopping-bag" class-name="w-8 h-8" />
+          <h2
+            class="font-display text-2xl font-bold dark:text-white text-light-text"
+          >
+            {{
+              locale === "es"
+                ? "Catálogo Digital para Nenis"
+                : "Digital Catalog for Sellers"
+            }}
+          </h2>
+        </div>
+        <p class="text-sm dark:text-text-secondary text-light-muted mb-8 ml-12">
+          {{
+            locale === "es"
+              ? "Emprendedoras que venden por Facebook y WhatsApp."
+              : "Entrepreneurs selling through Facebook and WhatsApp."
+          }}
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Básico -->
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              {{ locale === "es" ? "Básico" : "Basic" }}
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Para empezar a vender de forma profesional."
+                  : "To start selling professionally."
+              }}
+            </p>
+            <div class="mb-4">
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$1,499</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li
+                v-for="f in catalogoBasicFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-pink-500"
+                />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="flex flex-col gap-2">
+              <router-link
+                to="/catalogos-nenis/demo"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-pink-500/10 border border-pink-500/30 text-pink-500 font-semibold hover:bg-pink-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="search" class-name="w-4 h-4" />Demo</span
+                >
+              </router-link>
+              <router-link
+                to="/contact"
+                class="block w-full text-center px-4 py-2.5 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-pink-500 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
+              </router-link>
+            </div>
+          </div>
+          <!-- Pro -->
+          <div
+            class="p-6 rounded-2xl border-2 border-pink-500 relative"
+            style="
+              background: linear-gradient(
+                145deg,
+                rgba(236, 72, 153, 0.06),
+                rgba(232, 121, 249, 0.04)
+              );
+            "
+          >
+            <div
+              class="absolute -top-3 right-4 py-1 px-3 bg-pink-500 text-white text-xs font-bold rounded-full shadow-lg"
+            >
+              {{ t("pricingPage.popular") }}
+            </div>
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              Pro
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Para nenis que ya venden fuerte y quieren crecer."
+                  : "For sellers already scaling their business."
+              }}
+            </p>
+            <div class="mb-4">
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$3,499</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li
+                v-for="f in catalogoProFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-pink-500"
+                />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="flex flex-col gap-2">
+              <router-link
+                to="/catalogos-nenis/demo"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-pink-500 text-white font-bold hover:bg-pink-600 transition text-sm shadow-[0_0_20px_rgba(236,72,153,0.3)]"
+              >
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="search" class-name="w-4 h-4" />Demo</span
+                >
+              </router-link>
+              <router-link
+                to="/contact"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-pink-500/10 border border-pink-500/30 text-pink-500 font-semibold hover:bg-pink-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
+              </router-link>
+            </div>
+          </div>
+          <!-- Premium -->
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
+            <div class="flex items-center gap-2 mb-1">
+              <h3
+                class="font-display text-lg font-bold dark:text-white text-light-text"
+              >
+                Premium
+              </h3>
+              <span
+                class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold"
+                >VIP</span
+              >
+            </div>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Para negocios serios con múltiples vendedoras."
+                  : "For serious businesses with multiple sellers."
+              }}
+            </p>
+            <div class="mb-4">
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$6,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li
+                v-for="f in catalogoPremFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="sparkles"
+                  class-name="w-4 h-4 mt-0.5 text-violet-400"
+                />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="flex flex-col gap-2">
+              <router-link
+                to="/catalogos-nenis/demo"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="search" class-name="w-4 h-4" />Demo</span
+                >
+              </router-link>
+              <router-link
+                to="/contact"
+                class="block w-full text-center px-4 py-2.5 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-violet-400 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
+              </router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -966,7 +1397,7 @@ const invEsencialFeats = [
   "Enlace compartible",
 ];
 
-const invBasicaFeats = [
+const invProFeats = [
   "Todo lo de Esencial",
   "Cuenta regresiva en vivo",
   "Música de fondo",
@@ -975,8 +1406,8 @@ const invBasicaFeats = [
   "Galería (10 fotos)",
 ];
 
-const invProFeats = [
-  "Todo lo de Básica",
+const invPremiumFeats = [
+  "Todo lo de Pro",
   "Panel admin de invitados",
   "QR único por invitado",
   "Multi-idioma (ES/EN)",
@@ -1038,6 +1469,72 @@ const ecommercePremFeats = [
   "Entrega: 8–10 semanas",
 ];
 
+const catalogoBasicFeats = [
+  "Hasta 50 productos",
+  "1 categoría",
+  "Galería de 2 fotos por producto",
+  "Control de precios",
+  "Link compartible",
+  "Botón de WhatsApp",
+  "Diseño responsive",
+  "Entrega: 1 semana",
+];
+
+const catalogoProFeats = [
+  "Todo lo del Básico",
+  "Productos ilimitados",
+  "Categorías ilimitadas",
+  "Hasta 5 fotos por producto",
+  "Control de tallas y colores",
+  "Control de stock",
+  "Buscador de productos",
+  "Panel admin completo",
+  "Entrega: 2 semanas",
+];
+
+const catalogoPremFeats = [
+  "Todo lo del Pro",
+  "Múltiples vendedoras (catálogos)",
+  "Cupones y descuentos",
+  "Reportes de productos más vistos",
+  "Dominio personalizado",
+  "Notificaciones por WhatsApp",
+  "Integración con pagos en línea",
+  "Soporte prioritario",
+  "Entrega: 3–4 semanas",
+];
+
+const menuEsencialFeats = [
+  "Hasta 30 platillos",
+  "3 categorías",
+  "Acceso por código QR",
+  "Diseño responsive premium",
+  "1 foto por platillo",
+  "Entrega: 1 semana",
+];
+
+const menuProFeats = [
+  "Todo lo de Esencial",
+  "Platillos ilimitados",
+  "Categorías y subcategorías",
+  "Búsqueda de platillos",
+  "Hasta 3 fotos por platillo",
+  "Panel admin para editar menú",
+  "Sección de promociones",
+  "Entrega: 2 semanas",
+];
+
+const menuEnterpriseFeats = [
+  "Todo lo de Profesional",
+  "Multi-sucursal / Franquicia",
+  "Menú por horario (desayuno/comida/cena)",
+  "Analíticas de platillos más vistos",
+  "Dominio personalizado",
+  "Integración con POS",
+  "Soporte prioritario",
+  "Entrega: 3–4 semanas",
+];
+
 const saasFeats = [
   "Arquitectura multi-tenant",
   "Autenticación + roles + permisos",
@@ -1049,3 +1546,15 @@ const saasFeats = [
   "Soporte post-lanzamiento",
 ];
 </script>
+
+<style scoped>
+:deep(.grid) > div {
+  display: flex;
+  flex-direction: column;
+}
+
+:deep(.grid) > div > a:last-child,
+:deep(.grid) > div > div:last-child {
+  margin-top: auto;
+}
+</style>
