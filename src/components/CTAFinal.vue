@@ -1,5 +1,5 @@
 <template>
-  <section class="py-28 sm:py-36 px-6 relative overflow-hidden">
+  <section class="py-28 sm:py-36 relative overflow-hidden">
     <!-- Glow -->
     <div class="absolute inset-0 pointer-events-none">
       <div
@@ -7,7 +7,7 @@
       ></div>
     </div>
 
-    <div class="relative max-w-5xl mx-auto">
+    <div class="relative max-w-5xl mx-auto px-6">
       <div
         data-animate
         class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-10"

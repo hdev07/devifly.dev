@@ -1,9 +1,9 @@
 <template>
   <section
     id="solutions"
-    class="py-24 px-6 dark:bg-base-800/20 bg-light-card/30"
+    class="py-24 sm:py-32 dark:bg-base-800/20 bg-light-card/30"
   >
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto px-6">
       <div data-animate class="mb-14">
         <div class="flex items-center gap-3 mb-4">
           <span class="block w-8 h-px dark:bg-brand-500 bg-brand-600"></span>

@@ -1,6 +1,6 @@
 <template>
-  <section id="how" class="py-24 sm:py-32 px-6">
-    <div class="max-w-7-xl mx-auto">
+  <section id="how" class="py-24 sm:py-32">
+    <div class="max-w-7xl mx-auto px-6">
       <!-- Section header — left-aligned -->
       <div data-animate class="mb-16 sm:mb-20">
         <div class="flex items-center gap-3 mb-5">
