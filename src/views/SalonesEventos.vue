@@ -147,7 +147,7 @@
         <h2 class="font-display text-3xl sm:text-4xl font-black text-white text-center mb-4 leading-tight">
           Un sistema que trabaja por ti<br />
           <span style="background: linear-gradient(135deg, #f43f5e, #c026d3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-            mientras tú atienden los eventos
+            mientras tú atiendes los eventos
           </span>
         </h2>
         <p class="text-white/60 text-center max-w-2xl mx-auto mb-16">
