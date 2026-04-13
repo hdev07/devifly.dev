@@ -77,6 +77,17 @@ const routes = [
     component: () => import('../views/SaaS.vue')
   },
   {
+    path: '/salones-eventos',
+    name: 'SalonesEventos',
+    component: () => import('../views/SalonesEventos.vue')
+  },
+  {
+    path: '/salones-eventos/demo',
+    name: 'SalonesEventosDemo',
+    component: () => import('../views/demos/SalonesEventosDemo.vue'),
+    meta: { fullscreen: true }
+  },
+  {
     path: '/catalogos-nenis',
     name: 'CatalogosNenis',
     component: () => import('../views/CatalogosNenis.vue')

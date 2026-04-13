@@ -174,6 +174,26 @@ export const products = [
     gradient: 'from-amber-500/20 to-orange-400/20',
   },
 
+  {
+    key: 'salones-eventos',
+    icon: 'calendar-heart',
+    category: 'Web & Landings',
+    titleEs: 'Sistema PRO para Salones de Eventos',
+    titleEn: 'PRO Booking System for Event Venues',
+    descEs: 'Página profesional con agenda de fechas, formulario inteligente y WhatsApp prellenado. Consigue más reservaciones sin responder mensajes repetitivos.',
+    descEn: 'Professional page with date scheduler, smart inquiry form, and pre-filled WhatsApp. Get more bookings without answering repetitive messages.',
+    forEs: 'Salones de fiestas, jardines de eventos, salones de bodas',
+    forEn: 'Party halls, event gardens, wedding venues',
+    includesEs: ['Agenda de fechas disponibles', 'Formulario de cotización inteligente', 'Galería premium', 'Botón WhatsApp prellenado', 'Google Maps integrado', 'SEO básico'],
+    includesEn: ['Available dates scheduler', 'Smart quote form', 'Premium gallery', 'Pre-filled WhatsApp button', 'Google Maps integration', 'Basic SEO'],
+    benefitEs: 'Más eventos reservados sin perder el día en WhatsApp.',
+    benefitEn: 'More booked events without spending all day on WhatsApp.',
+    priceEs: 'Desde $9,999 MXN',
+    priceEn: 'From $599 USD',
+    link: '/salones-eventos',
+    gradient: 'from-rose-500/20 to-pink-400/20',
+  },
+
   // --- Marketing & Growth ---
   {
     key: 'captura-crm',
