@@ -267,6 +267,37 @@ const topProducts = [
     priceEn: "$89 USD",
   },
   {
+    key: "salones-eventos",
+    icon: "calendar-heart",
+    link: "/salones-eventos",
+    popular: false,
+    bgGradient:
+      "bg-gradient-to-br from-rose-500/20 via-pink-500/10 to-purple-500/10",
+    accentText: "dark:text-rose-400 text-rose-600",
+    categoryEs: "Eventos",
+    categoryEn: "Events",
+    titleEs: "Sistema PRO para Salones",
+    titleEn: "PRO System for Event Venues",
+    descEs:
+      "Página con agenda de fechas, formulario inteligente y WhatsApp prellenado para conseguir más reservaciones automáticamente.",
+    descEn:
+      "Page with date scheduler, smart form, and pre-filled WhatsApp to get more bookings automatically.",
+    featuresEs: [
+      "Agenda de fechas disponibles",
+      "Formulario de cotización inteligente",
+      "Botón WhatsApp prellenado",
+      "Galería premium + SEO básico",
+    ],
+    featuresEn: [
+      "Available dates calendar",
+      "Smart quote form",
+      "Pre-filled WhatsApp button",
+      "Premium gallery + Basic SEO",
+    ],
+    priceEs: "$9,999 MXN",
+    priceEn: "$599 USD",
+  },
+  {
     key: "menus",
     icon: "utensils-crossed",
     link: "/menus-digitales",

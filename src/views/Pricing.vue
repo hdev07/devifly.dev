@@ -1278,6 +1278,223 @@
         </div>
       </div>
 
+      <!-- Salones de Eventos -->
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <LucideIcon name="calendar-heart" class-name="w-8 h-8" />
+          <h2
+            class="font-display text-2xl font-bold dark:text-white text-light-text"
+          >
+            {{
+              locale === "es"
+                ? "Sistema PRO para Salones de Eventos"
+                : "PRO System for Event Venues"
+            }}
+          </h2>
+        </div>
+        <p class="text-sm dark:text-text-secondary text-light-muted mb-8 ml-12">
+          {{
+            locale === "es"
+              ? "Salones de fiestas, jardines de eventos y salones de bodas."
+              : "Party halls, event gardens, and wedding venues."
+          }}
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Esencial -->
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              {{ locale === "es" ? "Esencial" : "Essential" }}
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Para salones pequeños que empiezan a vender en línea."
+                  : "For small venues starting to sell online."
+              }}
+            </p>
+            <div class="mb-4">
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$7,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li
+                v-for="f in salonesEsencialFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-rose-500"
+                />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="flex flex-col gap-2">
+              <router-link
+                to="/salones-eventos/demo"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-500 font-semibold hover:bg-rose-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="eye" class-name="w-4 h-4" />Demo</span
+                >
+              </router-link>
+              <router-link
+                to="/contact"
+                class="block w-full text-center px-4 py-2.5 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-rose-500 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
+              </router-link>
+            </div>
+          </div>
+          <!-- PRO (popular) -->
+          <div
+            class="p-6 rounded-2xl border-2 border-rose-500 relative"
+            style="
+              background: linear-gradient(
+                145deg,
+                rgba(244, 63, 94, 0.06),
+                rgba(192, 38, 211, 0.04)
+              );
+            "
+          >
+            <div
+              class="absolute -top-3 right-4 py-1 px-3 bg-rose-500 text-white text-xs font-bold rounded-full shadow-lg"
+            >
+              {{ t("pricingPage.popular") }}
+            </div>
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              PRO
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "El sistema completo para conseguir más reservaciones."
+                  : "The complete system to get more bookings."
+              }}
+            </p>
+            <div class="mb-4">
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$9,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li
+                v-for="f in salonesPROFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-rose-500"
+                />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="flex flex-col gap-2">
+              <router-link
+                to="/salones-eventos/demo"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-rose-500 text-white font-bold hover:bg-rose-600 transition text-sm shadow-[0_0_20px_rgba(244,63,94,0.3)]"
+              >
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="eye" class-name="w-4 h-4" />Demo</span
+                >
+              </router-link>
+              <router-link
+                to="/contact"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-500 font-semibold hover:bg-rose-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
+              </router-link>
+            </div>
+          </div>
+          <!-- Premium -->
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
+            <div class="flex items-center gap-2 mb-1">
+              <h3
+                class="font-display text-lg font-bold dark:text-white text-light-text"
+              >
+                Premium
+              </h3>
+              <span
+                class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold"
+                >Elite</span
+              >
+            </div>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Multi-salón con CRM, pagos y automatización total."
+                  : "Multi-venue with CRM, payments, and full automation."
+              }}
+            </p>
+            <div class="mb-4">
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$16,999</span
+              ><span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li
+                v-for="f in salonesPremiumFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="sparkles"
+                  class-name="w-4 h-4 mt-0.5 text-violet-400"
+                />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="flex flex-col gap-2">
+              <router-link
+                to="/salones-eventos/demo"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="eye" class-name="w-4 h-4" />Demo</span
+                >
+              </router-link>
+              <router-link
+                to="/contact"
+                class="block w-full text-center px-4 py-2.5 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-violet-400 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Custom Development -->
       <div>
         <div class="flex items-center gap-3 mb-8">
@@ -1532,6 +1749,39 @@ const menuEnterpriseFeats = [
   "Dominio personalizado",
   "Integración con POS",
   "Soporte prioritario",
+  "Entrega: 3–4 semanas",
+];
+
+const salonesEsencialFeats = [
+  "Página web de 1 sección",
+  "Galería de fotos básica",
+  "Botón de WhatsApp",
+  "Integración Google Maps",
+  "Responsive (móvil + desktop)",
+  "SEO básico",
+  "Entrega: 1–2 semanas",
+];
+
+const salonesPROFeats = [
+  "Todo lo de Esencial",
+  "Agenda de fechas disponibles",
+  "Formulario de cotización inteligente",
+  "WhatsApp con mensaje prellenado",
+  "Galería premium con secciones",
+  "Sección de paquetes y precios",
+  "Textos de venta incluidos",
+  "Entrega: 2 semanas",
+];
+
+const salonesPremiumFeats = [
+  "Todo lo de PRO",
+  "Panel admin para gestionar fechas",
+  "CRM básico de prospectos",
+  "Integración con pagos (apartado)",
+  "Multi-salón / múltiples espacios",
+  "Notificaciones por WhatsApp",
+  "Dominio personalizado",
+  "Garantía de resultados 30 días",
   "Entrega: 3–4 semanas",
 ];
 
