@@ -176,7 +176,7 @@ const reservationPackages = [
 <template>
   <main class="pt-24 pb-0">
     <!-- Hero — Vercel: left-aligned, monumental type, restrained -->
-    <section class="max-w-6xl mx-auto px-6 pt-12 pb-24">
+    <section class="max-w-7xl mx-auto px-6 pt-12 pb-24">
       <p
         class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-6 font-mono"
       >
@@ -223,7 +223,7 @@ const reservationPackages = [
     </div>
 
     <!-- Pain points — numbered, minimal -->
-    <section class="max-w-6xl mx-auto px-6 py-24">
+    <section class="max-w-7xl mx-auto px-6 py-24">
       <p
         class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-3 font-mono"
       >
@@ -790,7 +790,7 @@ const reservationPackages = [
     </div>
 
     <!-- FAQ -->
-    <section class="max-w-3xl mx-auto px-6 py-24">
+    <section class="max-w-7xl mx-auto px-6 py-24">
       <p
         class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-3 font-mono"
       >

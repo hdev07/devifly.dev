@@ -193,7 +193,7 @@ const testimonials = [
     </section>
 
     <!-- Solution — warm accent block -->
-    <section class="max-w-5xl mx-auto px-6 py-24">
+    <section class="max-w-7xl mx-auto px-6 py-24">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
         <div class="lg:col-span-2">
           <h2
@@ -366,7 +366,7 @@ const testimonials = [
     </section>
 
     <!-- Testimonials — quote with left border accent -->
-    <section class="max-w-4xl mx-auto px-6 py-24">
+    <section class="max-w-7xl mx-auto px-6 py-24">
       <h2
         class="text-2xl font-bold dark:text-white text-light-text text-center mb-14"
       >
@@ -400,7 +400,7 @@ const testimonials = [
     </section>
 
     <!-- Guarantee -->
-    <section class="max-w-3xl mx-auto px-6 pb-12">
+    <section class="max-w-7xl mx-auto px-6 pb-12">
       <div
         class="p-8 rounded-2xl dark:bg-base-800/20 bg-white border dark:border-base-700/30 border-light-border text-center shadow-sm"
       >
