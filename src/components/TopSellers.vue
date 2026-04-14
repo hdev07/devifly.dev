@@ -42,11 +42,10 @@
       </div>
 
       <!-- Product Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <router-link
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
           v-for="(product, index) in topProducts"
           :key="product.key"
-          :to="product.link"
           data-animate
           class="group relative flex flex-col rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border overflow-hidden transition-all duration-500 hover:border-brand-500/40 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
         >
@@ -118,29 +117,42 @@
 
             <!-- Price + CTA -->
             <div
-              class="pt-4 border-t dark:border-base-700/30 border-light-border flex items-end justify-between gap-3"
+              class="pt-4 border-t dark:border-base-700/30 border-light-border"
             >
-              <div>
-                <span
-                  class="block text-[10px] font-medium uppercase tracking-wider dark:text-text-secondary text-light-muted mb-0.5"
-                >
-                  {{ locale === "es" ? "Desde" : "From" }}
-                </span>
-                <span
-                  class="font-display text-xl font-bold dark:text-white text-light-text"
-                >
-                  {{ locale === "es" ? product.priceEs : product.priceEn }}
-                </span>
+              <div class="flex items-end justify-between gap-3 mb-3">
+                <div>
+                  <span
+                    class="block text-[10px] font-medium uppercase tracking-wider dark:text-text-secondary text-light-muted mb-0.5"
+                  >
+                    {{ locale === "es" ? "Desde" : "From" }}
+                  </span>
+                  <span
+                    class="font-display text-xl font-bold dark:text-white text-light-text"
+                  >
+                    {{ locale === "es" ? product.priceEs : product.priceEn }}
+                  </span>
+                </div>
               </div>
-              <span
-                class="inline-flex items-center gap-1 text-xs font-semibold text-brand-500 group-hover:translate-x-1 transition-transform duration-300"
-              >
-                {{ locale === "es" ? "Ver más" : "Learn more" }}
-                <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />
-              </span>
+              <div class="flex gap-2">
+                <router-link
+                  :to="product.link"
+                  class="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold text-xs hover:bg-brand-500/20 transition"
+                >
+                  {{ locale === "es" ? "Ver más" : "Learn more" }}
+                  <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />
+                </router-link>
+                <router-link
+                  v-if="product.demoLink"
+                  :to="product.demoLink"
+                  class="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold text-xs hover:border-brand-500/50 hover:text-brand-500 transition"
+                >
+                  <LucideIcon name="play" class-name="w-3.5 h-3.5" />
+                  {{ locale === "es" ? "Ver demo" : "View demo" }}
+                </router-link>
+              </div>
             </div>
           </div>
-        </router-link>
+        </div>
       </div>
 
       <!-- Bottom CTA -->
@@ -208,6 +220,7 @@ const topProducts = [
     key: "invitaciones",
     icon: "party-popper",
     link: "/invitaciones",
+    demoLink: "/invitaciones/esencial",
     popular: true,
     bgGradient:
       "bg-gradient-to-br from-pink-500/20 via-rose-500/10 to-purple-500/10",
@@ -239,6 +252,7 @@ const topProducts = [
     key: "catalogos",
     icon: "shopping-bag",
     link: "/catalogos-nenis",
+    demoLink: "/catalogos-nenis/demo",
     popular: false,
     bgGradient:
       "bg-gradient-to-br from-violet-500/20 via-purple-500/10 to-fuchsia-500/10",
@@ -270,6 +284,7 @@ const topProducts = [
     key: "menus",
     icon: "utensils-crossed",
     link: "/menus-digitales",
+    demoLink: "/menus-digitales/demo",
     popular: false,
     bgGradient:
       "bg-gradient-to-br from-amber-500/20 via-orange-500/10 to-yellow-500/10",
@@ -296,6 +311,38 @@ const topProducts = [
     ],
     priceEs: "$3,999 MXN",
     priceEn: "$229 USD",
+  },
+  {
+    key: "salones-eventos",
+    icon: "tent",
+    link: "/salones-eventos",
+    demoLink: "/salones-eventos/demo",
+    popular: true,
+    bgGradient:
+      "bg-gradient-to-br from-emerald-500/20 via-teal-500/10 to-green-500/10",
+    accentText: "dark:text-emerald-400 text-emerald-600",
+    categoryEs: "Eventos",
+    categoryEn: "Events",
+    titleEs: "Web para Salones de Eventos",
+    titleEn: "Event Venue Website",
+    descEs:
+      "Sitio profesional para salones, terrazas, jardines y haciendas. Con galería, cotizador y calendario.",
+    descEn:
+      "Professional site for venues, terraces, gardens and haciendas. With gallery, quote system and calendar.",
+    featuresEs: [
+      "Galería de fotos/videos",
+      "Cotizador en línea",
+      "Calendario disponibilidad",
+      "Integración WhatsApp",
+    ],
+    featuresEn: [
+      "Photo/video gallery",
+      "Online quote system",
+      "Availability calendar",
+      "WhatsApp integration",
+    ],
+    priceEs: "$5,999 MXN",
+    priceEn: "$349 USD",
   },
 ];
 </script>

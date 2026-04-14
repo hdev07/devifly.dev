@@ -54,7 +54,7 @@
         );
       "
     >
-      <div class="max-w-lg mx-auto text-center">
+      <div class="max-w-lg lg:max-w-4xl mx-auto text-center">
         <div
           class="w-20 h-20 rounded-full mx-auto mb-3 flex items-center justify-center"
           style="background: linear-gradient(135deg, #ec4899, #a855f7)"
@@ -86,7 +86,7 @@
     <section
       class="sticky top-[52px] z-40 bg-white border-b border-gray-100 py-3 px-4"
     >
-      <div class="max-w-lg mx-auto">
+      <div class="max-w-lg lg:max-w-4xl mx-auto">
         <!-- Search -->
         <div class="relative mb-3">
           <LucideIcon
@@ -122,8 +122,8 @@
 
     <!-- Products Grid -->
     <section class="py-6 px-4" style="background: #fafafa; min-height: 60vh">
-      <div class="max-w-lg mx-auto">
-        <div class="grid grid-cols-2 gap-3">
+      <div class="max-w-lg lg:max-w-4xl mx-auto">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
           <div
             v-for="product in filteredProducts"
             :key="product.id"
@@ -238,7 +238,7 @@
             @click="selectedProduct = null"
           ></div>
           <div
-            class="relative w-full max-w-md bg-white rounded-t-3xl sm:rounded-3xl max-h-[85vh] overflow-y-auto"
+            class="relative w-full max-w-md lg:max-w-2xl bg-white rounded-t-3xl sm:rounded-3xl max-h-[85vh] overflow-y-auto"
             style="z-index: 1"
           >
             <!-- Product header in modal -->

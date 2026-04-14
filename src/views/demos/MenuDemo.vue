@@ -13,7 +13,7 @@
         border-bottom: 1px solid rgba(212, 175, 55, 0.15);
       "
     >
-      <div class="max-w-lg mx-auto px-4 flex items-center justify-between">
+      <div class="max-w-lg lg:max-w-3xl mx-auto px-4 flex items-center justify-between">
         <router-link
           to="/menus-digitales"
           class="flex items-center gap-2 text-sm transition-all duration-300 hover:scale-105"
@@ -76,7 +76,7 @@
         class="fixed top-0 left-0 right-0 bottom-0 z-[60] flex flex-col"
         style="background: rgba(10, 10, 10, 0.98)"
       >
-        <div class="max-w-lg mx-auto w-full px-4 pt-6 flex flex-col h-full">
+        <div class="max-w-lg lg:max-w-2xl mx-auto w-full px-4 pt-6 flex flex-col h-full">
           <div class="flex items-center gap-3 mb-6">
             <div class="flex-1 relative">
               <input
@@ -220,7 +220,7 @@
       </div>
 
       <h1
-        class="relative z-10 font-bold text-3xl sm:text-4xl tracking-tight mb-2 animate-fade-in-up"
+        class="relative z-10 font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-2 animate-fade-in-up"
         style="
           background: linear-gradient(135deg, #d4af37, #f5e6b8, #d4af37);
           -webkit-background-clip: text;
@@ -247,7 +247,7 @@
 
       <!-- Hero image placeholder -->
       <div
-        class="relative z-10 w-full max-w-lg mx-auto h-56 sm:h-72 mb-0 overflow-hidden animate-fade-in-up animation-delay-600"
+        class="relative z-10 w-full max-w-lg lg:max-w-2xl mx-auto h-56 sm:h-72 lg:h-80 mb-0 overflow-hidden animate-fade-in-up animation-delay-600"
         style="
           background: linear-gradient(
             180deg,
@@ -290,7 +290,7 @@
         border-bottom: 1px solid rgba(212, 175, 55, 0.1);
       "
     >
-      <div class="max-w-lg mx-auto px-4">
+      <div class="max-w-lg lg:max-w-3xl mx-auto px-4">
         <div class="flex justify-around text-center">
           <div
             class="animate-fade-in-up"
@@ -316,7 +316,7 @@
 
     <!-- Promotions marquee -->
     <section class="py-6 overflow-hidden" style="background: #0a0a0a">
-      <div class="max-w-lg mx-auto px-4 mb-4">
+      <div class="max-w-lg lg:max-w-3xl mx-auto px-4">
         <div class="flex items-center gap-2">
           <div class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
           <h3
@@ -331,7 +331,7 @@
         <div
           v-for="(promo, i) in promotions"
           :key="i"
-          class="flex-shrink-0 w-72 rounded-2xl overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-[1.02]"
+          class="flex-shrink-0 w-64 sm:w-72 rounded-2xl overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-[1.02]"
           style="
             background: linear-gradient(
               135deg,
@@ -412,7 +412,7 @@
         backdrop-filter: blur(20px);
       "
     >
-      <div class="max-w-lg mx-auto overflow-x-auto hide-scrollbar">
+      <div class="max-w-lg lg:max-w-3xl mx-auto overflow-x-auto hide-scrollbar">
         <div class="flex gap-2 px-4 min-w-max">
           <button
             v-for="cat in menuCategories"
@@ -445,7 +445,7 @@
         class="menu-category-section"
       >
         <!-- Category header -->
-        <div class="pt-10 pb-4 px-4 max-w-lg mx-auto">
+        <div class="pt-10 pb-4 px-4 max-w-lg lg:max-w-3xl mx-auto">
           <div class="flex items-center gap-3 mb-2">
             <div
               class="w-8 h-8 rounded-lg flex items-center justify-center"
@@ -475,7 +475,7 @@
 
         <!-- Subcategories -->
         <div v-for="sub in cat.subcategories" :key="sub.name" class="mb-6">
-          <div class="max-w-lg mx-auto px-4 mb-3">
+          <div class="max-w-lg lg:max-w-3xl mx-auto px-4 mb-3">
             <div class="flex items-center gap-2">
               <div
                 class="h-px flex-1"
@@ -512,7 +512,7 @@
           </div>
 
           <!-- Items grid -->
-          <div class="max-w-lg mx-auto px-4 space-y-3">
+          <div class="max-w-lg lg:max-w-3xl mx-auto px-4 space-y-3 lg:grid lg:grid-cols-2 lg:gap-4 lg:space-y-0">
             <div
               v-for="(item, idx) in sub.items"
               :key="item.name"
@@ -600,11 +600,11 @@
           @click="selectedItem = null"
         />
         <div
-          class="relative w-full max-w-lg rounded-t-3xl overflow-hidden animate-slide-up"
+          class="relative w-full max-w-lg lg:max-w-xl lg:rounded-3xl rounded-t-3xl overflow-hidden overflow-y-auto animate-slide-up"
           style="
             background: linear-gradient(180deg, #1a1510 0%, #0f0d0a 100%);
             border-top: 1px solid rgba(212, 175, 55, 0.15);
-            max-height: 85vh;
+            max-height: 80vh;
           "
         >
           <!-- Drag handle -->
@@ -759,7 +759,7 @@
         border-top: 1px solid rgba(212, 175, 55, 0.08);
       "
     >
-      <div class="max-w-lg mx-auto px-4">
+      <div class="max-w-lg lg:max-w-3xl mx-auto px-4">
         <div
           class="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4"
           style="

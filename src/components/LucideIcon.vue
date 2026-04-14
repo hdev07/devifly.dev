@@ -103,6 +103,14 @@ import {
   QrCode,
   Volume2,
   House,
+  Clock,
+  Shield,
+  Star,
+  Globe,
+  TrendingUp,
+  Image,
+  Tent,
+  Award,
 } from "lucide-vue-next";
 
 const props = defineProps({
@@ -214,6 +222,14 @@ const iconMap = {
   "qr-code": QrCode,
   "volume-2": Volume2,
   house: House,
+  clock: Clock,
+  shield: Shield,
+  star: Star,
+  globe: Globe,
+  "trending-up": TrendingUp,
+  image: Image,
+  tent: Tent,
+  award: Award,
 };
 
 const iconComponent = computed(() => iconMap[props.name] || Circle);

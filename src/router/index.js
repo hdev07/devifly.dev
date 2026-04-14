@@ -35,12 +35,12 @@ const routes = [
   {
     path: '/landings',
     name: 'Landings',
-    component: () => import('../views/Landings.vue')
+    component: () => import('../views/landings/LandingNegocios.vue')
   },
   {
     path: '/invitaciones',
     name: 'Invitaciones',
-    component: () => import('../views/Invitaciones.vue')
+    component: () => import('../views/landings/LandingInvitaciones.vue')
   },
   {
     path: '/invitaciones/esencial',
@@ -63,7 +63,7 @@ const routes = [
   {
     path: '/menus-digitales',
     name: 'MenusDigitales',
-    component: () => import('../views/MenusDigitales.vue')
+    component: () => import('../views/landings/LandingMenus.vue')
   },
   {
     path: '/menus-digitales/demo',
@@ -79,12 +79,23 @@ const routes = [
   {
     path: '/catalogos-nenis',
     name: 'CatalogosNenis',
-    component: () => import('../views/CatalogosNenis.vue')
+    component: () => import('../views/landings/LandingCatalogos.vue')
   },
   {
     path: '/catalogos-nenis/demo',
     name: 'CatalogoNenisDemo',
     component: () => import('../views/demos/CatalogoNenisDemo.vue'),
+    meta: { fullscreen: true }
+  },
+  {
+    path: '/salones-eventos',
+    name: 'SalonesEventos',
+    component: () => import('../views/landings/LandingReservaciones.vue')
+  },
+  {
+    path: '/salones-eventos/demo',
+    name: 'SalonEventosDemo',
+    component: () => import('../views/demos/SalonEventosDemo.vue'),
     meta: { fullscreen: true }
   },
   {

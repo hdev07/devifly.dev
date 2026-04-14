@@ -56,23 +56,23 @@
       <!-- Floating pastel circles -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          class="absolute w-32 h-32 rounded-full opacity-40 animate-esencial-float-1"
+          class="absolute w-20 h-20 sm:w-32 sm:h-32 rounded-full opacity-40 animate-esencial-float-1"
           style="background: #fadadd; top: 8%; left: 5%"
         ></div>
         <div
-          class="absolute w-24 h-24 rounded-full opacity-30 animate-esencial-float-2"
+          class="absolute w-16 h-16 sm:w-24 sm:h-24 rounded-full opacity-30 animate-esencial-float-2"
           style="background: #a7d8ff; top: 15%; right: 8%"
         ></div>
         <div
-          class="absolute w-20 h-20 rounded-full opacity-25 animate-esencial-float-3"
+          class="absolute w-14 h-14 sm:w-20 sm:h-20 rounded-full opacity-25 animate-esencial-float-3"
           style="background: #d6c1ff; bottom: 25%; left: 10%"
         ></div>
         <div
-          class="absolute w-28 h-28 rounded-full opacity-30 animate-esencial-float-1"
+          class="absolute w-20 h-20 sm:w-28 sm:h-28 rounded-full opacity-30 animate-esencial-float-1"
           style="background: #fff3b0; bottom: 15%; right: 5%"
         ></div>
         <div
-          class="absolute w-16 h-16 rounded-full opacity-20 animate-esencial-float-2"
+          class="absolute w-10 h-10 sm:w-16 sm:h-16 rounded-full opacity-20 animate-esencial-float-2"
           style="background: #fadadd; top: 50%; left: 50%"
         ></div>
       </div>
@@ -355,7 +355,7 @@
         >
           <iframe
             src="https://maps.google.com/maps?q=Parroquia+San+Jose+Guadalajara+Jalisco&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            class="w-full h-56 sm:h-72"
+            class="w-full h-56 sm:h-72 lg:h-96"
             style="border: 0"
             allowfullscreen=""
             loading="lazy"
@@ -516,7 +516,7 @@
             Galería</span
           >
         </h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           <div
             class="aspect-square rounded-2xl bg-white border-2 border-[#d6c1ff]/30 flex items-center justify-center shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
@@ -576,7 +576,7 @@
         </p>
 
         <!-- RSVP Form -->
-        <form class="space-y-4 max-w-sm mx-auto" @submit.prevent="handleRSVP">
+        <form class="space-y-4 max-w-sm lg:max-w-md mx-auto" @submit.prevent="handleRSVP">
           <input
             v-model="rsvpForm.name"
             type="text"

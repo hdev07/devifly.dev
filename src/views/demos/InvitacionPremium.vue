@@ -71,11 +71,11 @@
         "
       ></div>
       <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border animate-pro-orbit"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] sm:w-[500px] sm:h-[500px] rounded-full border animate-pro-orbit"
         style="border-color: rgba(198, 167, 94, 0.06)"
       ></div>
       <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full border animate-pro-orbit-reverse"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] sm:w-[350px] sm:h-[350px] rounded-full border animate-pro-orbit-reverse"
         style="border-color: rgba(198, 167, 94, 0.04)"
       ></div>
 
@@ -372,7 +372,7 @@
         >
           <iframe
             src="https://maps.google.com/maps?q=Santa+Fe+CDMX+salones+de+eventos&t=&z=14&ie=UTF8&iwloc=&output=embed"
-            class="w-full h-56 sm:h-72"
+            class="w-full h-56 sm:h-72 lg:h-96"
             style="border: 0; filter: grayscale(0.3) contrast(1.1)"
             allowfullscreen=""
             loading="lazy"

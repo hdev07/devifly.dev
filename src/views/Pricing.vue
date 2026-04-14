@@ -630,6 +630,226 @@
         </div>
       </div>
 
+      <!-- Salones de Eventos -->
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <LucideIcon name="tent" class-name="w-8 h-8" />
+          <h2
+            class="font-display text-2xl font-bold dark:text-white text-light-text"
+          >
+            {{
+              locale === "es"
+                ? "Webs para Salones de Eventos"
+                : "Event Venue Websites"
+            }}
+          </h2>
+        </div>
+        <p class="text-sm dark:text-text-secondary text-light-muted mb-8 ml-12">
+          {{
+            locale === "es"
+              ? "Salones, terrazas, jardines, haciendas y quintas para todo tipo de eventos."
+              : "Venues, terraces, gardens, haciendas and villas for all types of events."
+          }}
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Esencial -->
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              Esencial
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Presencia web profesional para tu salón de eventos."
+                  : "Professional web presence for your event venue."
+              }}
+            </p>
+            <div class="mb-4">
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$5,999</span
+              >
+              <span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li
+                v-for="f in salonBasicFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-emerald-500"
+                />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="flex flex-col gap-2">
+              <router-link
+                to="/salones-eventos/demo"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 font-semibold hover:bg-emerald-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="search" class-name="w-4 h-4" />Demo</span
+                >
+              </router-link>
+              <router-link
+                to="/contact"
+                class="block w-full text-center px-4 py-2.5 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-emerald-500 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
+              </router-link>
+            </div>
+          </div>
+          <!-- Pro -->
+          <div
+            class="p-6 rounded-2xl border-2 border-emerald-500 relative"
+            style="
+              background: linear-gradient(
+                145deg,
+                rgba(16, 185, 129, 0.06),
+                rgba(20, 184, 166, 0.04)
+              );
+            "
+          >
+            <div
+              class="absolute -top-3 right-4 py-1 px-3 bg-emerald-500 text-white text-xs font-bold rounded-full shadow-lg"
+            >
+              {{ t("pricingPage.popular") }}
+            </div>
+            <h3
+              class="font-display text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              Pro
+            </h3>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Automatiza cotizaciones y reservas de tu salón."
+                  : "Automate quotes and bookings for your venue."
+              }}
+            </p>
+            <div class="mb-4">
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$9,999</span
+              >
+              <span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li
+                v-for="f in salonProFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-emerald-500"
+                />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="flex flex-col gap-2">
+              <router-link
+                to="/salones-eventos/demo"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-emerald-500 text-white font-bold hover:bg-emerald-600 transition text-sm shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+              >
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="search" class-name="w-4 h-4" />Demo</span
+                >
+              </router-link>
+              <router-link
+                to="/contact"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 font-semibold hover:bg-emerald-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
+              </router-link>
+            </div>
+          </div>
+          <!-- Premium -->
+          <div
+            class="p-6 rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border"
+          >
+            <div class="flex items-center gap-2 mb-1">
+              <h3
+                class="font-display text-lg font-bold dark:text-white text-light-text"
+              >
+                Premium
+              </h3>
+              <span
+                class="text-xs px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/20 font-semibold"
+                >VIP</span
+              >
+            </div>
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+              {{
+                locale === "es"
+                  ? "Sistema completo con CRM, pagos y contratos."
+                  : "Complete system with CRM, payments and contracts."
+              }}
+            </p>
+            <div class="mb-4">
+              <span
+                class="font-display text-2xl font-bold dark:text-white text-light-text"
+                >$16,999</span
+              >
+              <span
+                class="text-sm dark:text-text-secondary text-light-muted ml-1"
+                >MXN</span
+              >
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li
+                v-for="f in salonPremiumFeats"
+                :key="f"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="sparkles"
+                  class-name="w-4 h-4 mt-0.5 text-violet-400"
+                />
+                {{ f }}
+              </li>
+            </ul>
+            <div class="flex flex-col gap-2">
+              <router-link
+                to="/salones-eventos/demo"
+                class="block w-full text-center px-4 py-2.5 rounded-xl bg-violet-500/10 border border-violet-500/30 text-violet-400 font-semibold hover:bg-violet-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  ><LucideIcon name="search" class-name="w-4 h-4" />Demo</span
+                >
+              </router-link>
+              <router-link
+                to="/contact"
+                class="block w-full text-center px-4 py-2.5 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-violet-400 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2"
+                  >{{ t("pricingPage.cta")
+                  }}<LucideIcon name="arrow-right" class-name="w-4 h-4"
+                /></span>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Sistema de Citas -->
       <div>
         <div class="flex items-center gap-3 mb-8">
@@ -1533,6 +1753,36 @@ const menuEnterpriseFeats = [
   "Integración con POS",
   "Soporte prioritario",
   "Entrega: 3–4 semanas",
+];
+
+const salonBasicFeats = [
+  "Diseño responsivo premium",
+  "Galería de fotos (hasta 20)",
+  "Formulario de contacto",
+  "Integración WhatsApp",
+  "Mapa de ubicación",
+  "SEO local básico",
+  "Entrega: 2 semanas",
+];
+
+const salonProFeats = [
+  "Todo lo de Esencial",
+  "Cotizador en línea automático",
+  "Calendario de disponibilidad",
+  "Galería con videos",
+  "Blog de eventos",
+  "Google Calendar sync",
+  "Entrega: 3 semanas",
+];
+
+const salonPremiumFeats = [
+  "Todo lo de Pro",
+  "Panel admin completo",
+  "CRM de clientes",
+  "Pagos de anticipo en línea",
+  "Contratos digitales",
+  "Multi-salón / Sucursales",
+  "Entrega: 4–5 semanas",
 ];
 
 const saasFeats = [

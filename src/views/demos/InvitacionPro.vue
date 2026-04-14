@@ -285,7 +285,7 @@
           Una mirada a los momentos más especiales
         </p>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
           <div
             v-for="(photo, i) in gallery"
             :key="i"
@@ -508,7 +508,7 @@
         >
           <iframe
             src="https://maps.google.com/maps?q=Salon+de+eventos+Zapopan+Jalisco&t=&z=14&ie=UTF8&iwloc=&output=embed"
-            class="w-full h-56 sm:h-72"
+            class="w-full h-56 sm:h-72 lg:h-96"
             style="border: 0"
             allowfullscreen=""
             loading="lazy"
@@ -548,7 +548,7 @@
         </div>
 
         <!-- Extra Details Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
           <!-- Hashtag -->
           <div
             class="p-6 rounded-2xl text-center bg-white shadow-sm hover:-translate-y-1 transition-transform"
@@ -597,7 +597,7 @@
 
           <!-- Mesa de Regalos -->
           <div
-            class="col-span-1 sm:col-span-2 p-6 rounded-2xl text-center shadow-sm"
+            class="col-span-1 sm:col-span-2 lg:col-span-3 p-6 rounded-2xl text-center shadow-sm"
             style="
               background: linear-gradient(135deg, #fdf8f0, #ffffff);
               border: 1.5px solid rgba(212, 175, 55, 0.2);
@@ -646,7 +646,7 @@
 
           <!-- Hospedaje -->
           <div
-            class="col-span-1 sm:col-span-2 p-6 rounded-2xl text-center shadow-sm"
+            class="col-span-1 sm:col-span-2 lg:col-span-3 p-6 rounded-2xl text-center shadow-sm"
             style="
               background: linear-gradient(135deg, #fdf5f8, #ffffff);
               border: 1.5px solid rgba(122, 30, 58, 0.15);

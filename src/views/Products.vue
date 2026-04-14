@@ -84,7 +84,10 @@
                 :key="inc"
                 class="text-sm dark:text-text-secondary text-light-muted flex items-start gap-2"
               >
-                <LucideIcon name="check" class-name="w-4 h-4 mt-0.5 text-brand-500" />
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4 mt-0.5 text-brand-500"
+                />
                 {{ inc }}
               </li>
             </ul>
@@ -95,7 +98,10 @@
             >
               <p class="text-sm font-medium dark:text-white text-light-text">
                 <span class="inline-flex items-center gap-2">
-                  <LucideIcon name="sparkles" class-name="w-4 h-4 text-brand-500" />
+                  <LucideIcon
+                    name="sparkles"
+                    class-name="w-4 h-4 text-brand-500"
+                  />
                   {{ locale === "es" ? p.benefitEs : p.benefitEn }}
                 </span>
               </p>
@@ -106,15 +112,27 @@
             <span class="text-lg font-bold dark:text-white text-light-text">
               {{ locale === "es" ? p.priceEs : p.priceEn }}
             </span>
-            <router-link
-              :to="p.link"
-              class="block w-full text-center px-4 py-3 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold hover:bg-brand-500/20 transition text-sm"
-            >
-              <span class="inline-flex items-center gap-2">
-                {{ t("productsPage.viewMore") }}
-                <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-              </span>
-            </router-link>
+            <div class="flex gap-2">
+              <router-link
+                :to="p.link"
+                class="flex-1 text-center px-4 py-3 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold hover:bg-brand-500/20 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2">
+                  {{ t("productsPage.viewMore") }}
+                  <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+                </span>
+              </router-link>
+              <router-link
+                v-if="p.demoLink"
+                :to="p.demoLink"
+                class="flex-1 text-center px-4 py-3 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:border-brand-500/50 hover:text-brand-500 transition text-sm"
+              >
+                <span class="inline-flex items-center gap-2">
+                  <LucideIcon name="play" class-name="w-4 h-4" />
+                  {{ locale === "es" ? "Ver demo" : "View demo" }}
+                </span>
+              </router-link>
+            </div>
             <router-link
               to="/contact"
               class="block w-full text-center px-4 py-3 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-brand-500 transition text-sm"
