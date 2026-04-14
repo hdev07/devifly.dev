@@ -38,6 +38,12 @@ const routes = [
     component: () => import('../views/landings/LandingNegocios.vue')
   },
   {
+    path: '/landings/demo',
+    name: 'LandingPageDemo',
+    component: () => import('../views/demos/LandingPageDemo.vue'),
+    meta: { fullscreen: true }
+  },
+  {
     path: '/invitaciones',
     name: 'Invitaciones',
     component: () => import('../views/landings/LandingInvitaciones.vue')

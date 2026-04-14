@@ -189,6 +189,7 @@ const topProducts = [
     key: "landings",
     icon: "layout",
     link: "/landings",
+    demoLink: "/landings/demo",
     popular: false,
     bgGradient:
       "bg-gradient-to-br from-brand-500/20 via-brand-600/10 to-cyan-500/10",
