@@ -14,14 +14,14 @@
         {{ t("solutionsPage.title") }}
       </h1>
       <p
-        class="text-lg dark:text-text-secondary text-light-muted max-w-2xl mx-auto"
+        class="text-lg dark:text-text-secondary text-light-muted max-w-3xl mx-auto"
       >
         {{ t("solutionsPage.subtitle") }}
       </p>
     </div>
 
     <!-- Solutions -->
-    <div class="max-w-5xl mx-auto px-6 mb-24">
+    <div class="max-w-7xl mx-auto px-6 mb-24">
       <div class="space-y-8">
         <div
           v-for="sol in solutions"
@@ -53,7 +53,10 @@
                   :key="p"
                   class="text-sm dark:text-text-secondary text-light-muted flex items-start gap-2"
                 >
-                  <LucideIcon name="x" class-name="w-4 h-4 mt-0.5 text-red-400/70" />
+                  <LucideIcon
+                    name="x"
+                    class-name="w-4 h-4 mt-0.5 text-red-400/70"
+                  />
                   {{ p }}
                 </li>
               </ul>

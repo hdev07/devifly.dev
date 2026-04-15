@@ -1,6 +1,5 @@
 <template>
   <main class="pt-24 pb-0">
-    <!-- Hero -->
     <div class="max-w-7xl mx-auto px-6 text-center mb-16">
       <div
         class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full dark:bg-base-800/60 bg-light-card/80 border dark:border-base-700/50 border-light-border mb-6 text-sm dark:text-text-secondary text-light-muted"
@@ -20,30 +19,10 @@
       </p>
     </div>
 
-    <!-- Category filters -->
-    <div class="max-w-7xl mx-auto px-6 mb-12">
-      <div class="flex flex-wrap gap-2 justify-center">
-        <button
-          v-for="cat in categories"
-          :key="cat.key"
-          @click="activeCategory = cat.key"
-          class="px-4 py-2 rounded-xl text-sm font-medium transition-all"
-          :class="
-            activeCategory === cat.key
-              ? 'bg-brand-500 text-white'
-              : 'dark:bg-base-800/50 bg-light-card border dark:border-base-700/50 border-light-border dark:text-text-secondary text-light-muted hover:border-brand-500/50'
-          "
-        >
-          {{ locale === "es" ? cat.labelEs : cat.labelEn }}
-        </button>
-      </div>
-    </div>
-
-    <!-- Products grid -->
     <div class="max-w-7xl mx-auto px-6 mb-24">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
-          v-for="p in filtered"
+          v-for="p in visibleProducts"
           :key="p.key"
           class="group flex flex-col rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border overflow-hidden hover:border-brand-500/30 transition-all duration-300"
         >
@@ -53,7 +32,7 @@
               <span
                 class="text-xs font-medium px-2 py-1 rounded-full dark:bg-base-700/50 bg-light-card dark:text-text-secondary text-light-muted border dark:border-base-600/50 border-light-border"
               >
-                {{ p.category }}
+                {{ locale === "es" ? p.categoryEs : p.categoryEn }}
               </span>
             </div>
             <h2
@@ -61,38 +40,24 @@
             >
               {{ locale === "es" ? p.titleEs : p.titleEn }}
             </h2>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
+            <p class="text-sm dark:text-text-secondary text-light-muted mb-6">
               {{ locale === "es" ? p.descEs : p.descEn }}
             </p>
 
-            <!-- For whom -->
-            <div class="mb-4">
-              <span
-                class="text-xs font-semibold uppercase tracking-wider text-brand-500 mb-1 block"
-              >
-                {{ t("productsPage.forLabel") }}
-              </span>
-              <p class="text-sm dark:text-text-secondary text-light-muted">
-                {{ locale === "es" ? p.forEs : p.forEn }}
-              </p>
-            </div>
-
-            <!-- Includes -->
             <ul class="space-y-2 mb-6">
               <li
-                v-for="inc in locale === 'es' ? p.includesEs : p.includesEn"
-                :key="inc"
+                v-for="feature in locale === 'es' ? p.featuresEs : p.featuresEn"
+                :key="feature"
                 class="text-sm dark:text-text-secondary text-light-muted flex items-start gap-2"
               >
                 <LucideIcon
                   name="check"
                   class-name="w-4 h-4 mt-0.5 text-brand-500"
                 />
-                {{ inc }}
+                {{ feature }}
               </li>
             </ul>
 
-            <!-- Benefit -->
             <div
               class="p-3 rounded-xl dark:bg-base-700/30 bg-light-card/80 border dark:border-base-600/30 border-light-border"
             >
@@ -102,16 +67,13 @@
                     name="sparkles"
                     class-name="w-4 h-4 text-brand-500"
                   />
-                  {{ locale === "es" ? p.benefitEs : p.benefitEn }}
+                  {{ locale === "es" ? p.priceEs : p.priceEn }}
                 </span>
               </p>
             </div>
           </div>
 
           <div class="px-8 pb-8 flex flex-col gap-3">
-            <span class="text-lg font-bold dark:text-white text-light-text">
-              {{ locale === "es" ? p.priceEs : p.priceEn }}
-            </span>
             <div class="flex gap-2">
               <router-link
                 :to="p.link"
@@ -144,7 +106,6 @@
       </div>
     </div>
 
-    <!-- CTA -->
     <div
       class="dark:bg-base-800/30 bg-light-card/50 border-t dark:border-base-700/50 border-light-border py-20 px-6 text-center"
     >
@@ -170,16 +131,10 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { products, categories } from "../data/products.js";
+import { customSoftwareProduct, salesProducts } from "../data/salesCatalog.js";
 import LucideIcon from "../components/LucideIcon.vue";
 
 const { t, locale } = useI18n();
-const activeCategory = ref("all");
-
-const filtered = computed(() => {
-  if (activeCategory.value === "all") return products;
-  return products.filter((p) => p.category === activeCategory.value);
-});
+const visibleProducts = [...salesProducts, customSoftwareProduct];
 </script>
