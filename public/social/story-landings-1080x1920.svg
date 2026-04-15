@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0b1120"/>
+    </linearGradient>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="glowBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glowViolet" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ctaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="mockupGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="100"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="blur3"><feGaussianBlur stdDeviation="20"/></filter>
+    <filter id="glowText">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1080" height="1920" fill="url(#bgGrad)"/>
+
+  <!-- Glows de fondo -->
+  <circle cx="200" cy="400" r="500" fill="url(#glowBlue)" filter="url(#blur1)"/>
+  <circle cx="900" cy="1500" r="450" fill="url(#glowViolet)" filter="url(#blur1)"/>
+  <circle cx="700" cy="900" r="300" fill="#22d3ee" fill-opacity="0.04" filter="url(#blur2)"/>
+
+  <!-- Grid de puntos -->
+  <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="#ffffff" fill-opacity="0.04"/>
+  </pattern>
+  <rect width="1080" height="1920" fill="url(#dots)"/>
+
+  <!-- === LOGO centrado en header === -->
+  <g transform="translate(540, 120)">
+    <rect x="-26" y="-26" width="52" height="52" rx="12" fill="url(#brandGrad)"/>
+    <rect x="-26" y="-26" width="52" height="52" rx="12" fill="url(#brandGrad)" filter="url(#blur3)" opacity="0.6"/>
+    <text x="0" y="10" text-anchor="middle" font-family="system-ui" font-weight="700"
+          font-size="26" fill="white">D</text>
+  </g>
+  <text x="540" y="205" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="600" font-size="28" fill="#f1f5f9">devifly<tspan fill="#60a5fa">.dev</tspan></text>
+
+  <!-- Línea sutil bajo header -->
+  <rect x="200" y="225" width="680" height="1" fill="url(#brandGrad)" opacity="0.2"/>
+
+  <!-- === BADGE === -->
+  <g transform="translate(540, 310)">
+    <rect x="-130" y="-20" width="260" height="40" rx="20"
+          fill="#1e293b" fill-opacity="0.8" stroke="#334155" stroke-width="1"/>
+    <circle cx="-95" cy="0" r="6" fill="#00ffb2"/>
+    <text x="-80" y="6" font-family="'Inter', system-ui, sans-serif" font-size="17"
+          fill="#9ca3af">Landing Pages Pro</text>
+  </g>
+
+  <!-- === TÍTULO BIG === -->
+  <text x="540" y="440" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="90" fill="#f1f5f9" letter-spacing="-3">Tu negocio</text>
+  <text x="540" y="545" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="90" fill="#f1f5f9" letter-spacing="-3">merece una</text>
+  <text x="540" y="650" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="90" fill="url(#brandGrad)"
+        filter="url(#glowText)" letter-spacing="-3">web de clase</text>
+  <text x="540" y="755" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="90" fill="url(#brandGrad)"
+        filter="url(#glowText)" letter-spacing="-3">mundial.</text>
+
+  <!-- Subtítulo -->
+  <text x="540" y="840" text-anchor="middle"
+        font-family="'Inter', system-ui, sans-serif" font-size="28" fill="#9ca3af">
+    Diseñadas para convertir visitantes
+  </text>
+  <text x="540" y="875" text-anchor="middle"
+        font-family="'Inter', system-ui, sans-serif" font-size="28" fill="#9ca3af">
+    en clientes reales.
+  </text>
+
+  <!-- Línea divisora -->
+  <rect x="90" y="920" width="900" height="1" fill="url(#brandGrad)" opacity="0.2"/>
+
+  <!-- === MOCKUP de pantalla simplificado === -->
+  <g transform="translate(150, 960)">
+    <!-- Laptop frame -->
+    <rect width="780" height="480" rx="16" fill="url(#mockupGrad)" stroke="#334155" stroke-width="1.5"/>
+    <!-- Screen content -->
+    <rect x="20" y="20" width="740" height="440" rx="10" fill="#020617"/>
+    <!-- Barra de browser -->
+    <rect x="20" y="20" width="740" height="36" rx="10" fill="#111827"/>
+    <circle cx="46" cy="38" r="6" fill="#ef4444"/>
+    <circle cx="66" cy="38" r="6" fill="#fbbf24"/>
+    <circle cx="86" cy="38" r="6" fill="#22c55e"/>
+    <!-- URL bar simulada -->
+    <rect x="110" y="28" width="500" height="20" rx="10" fill="#1e293b"/>
+    <text x="360" y="43" text-anchor="middle" font-family="'Inter', system-ui, sans-serif"
+          font-size="12" fill="#6b7280">tuempresa.com</text>
+    <!-- Contenido de la "landing" simulada -->
+    <rect x="20" y="60" width="740" height="395" rx="0" fill="#020617"/>
+    <!-- Hero simulado -->
+    <rect x="80" y="90" width="300" height="18" rx="4" fill="#3b82f6" fill-opacity="0.3"/>
+    <rect x="80" y="120" width="420" height="32" rx="4" fill="#e5e7eb" fill-opacity="0.15"/>
+    <rect x="80" y="165" width="360" height="16" rx="4" fill="#9ca3af" fill-opacity="0.2"/>
+    <rect x="80" y="190" width="280" height="16" rx="4" fill="#9ca3af" fill-opacity="0.2"/>
+    <!-- CTA mini -->
+    <rect x="80" y="225" width="140" height="38" rx="19" fill="url(#ctaGrad)" fill-opacity="0.9"/>
+    <!-- Imagen placeholder -->
+    <rect x="460" y="80" width="290" height="300" rx="12" fill="#1e293b"/>
+    <rect x="470" y="90" width="270" height="280" rx="10" fill="#3b82f6" fill-opacity="0.08"/>
+    <!-- Waveform decorativo -->
+    <polyline points="490,200 510,170 530,220 550,160 570,210 590,175 610,215 630,180 650,200 670,185 690,205 710,175 730,200"
+              fill="none" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.5"/>
+
+    <!-- Stats row -->
+    <rect x="80" y="310" width="120" height="60" rx="10" fill="#1e293b"/>
+    <rect x="220" y="310" width="120" height="60" rx="10" fill="#1e293b"/>
+    <rect x="360" y="310" width="120" height="60" rx="10" fill="#1e293b"/>
+    <text x="140" y="335" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="700" font-size="18" fill="#60a5fa">95+</text>
+    <text x="140" y="355" text-anchor="middle" font-family="'Inter', system-ui, sans-serif"
+          font-size="11" fill="#6b7280">Performance</text>
+    <text x="280" y="335" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="700" font-size="18" fill="#22d3ee">7 días</text>
+    <text x="280" y="355" text-anchor="middle" font-family="'Inter', system-ui, sans-serif"
+          font-size="11" fill="#6b7280">Entrega</text>
+    <text x="420" y="335" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="700" font-size="18" fill="#a78bfa">100%</text>
+    <text x="420" y="355" text-anchor="middle" font-family="'Inter', system-ui, sans-serif"
+          font-size="11" fill="#6b7280">Mobile</text>
+  </g>
+
+  <!-- Línea divisora 2 -->
+  <rect x="90" y="1470" width="900" height="1" fill="url(#brandGrad)" opacity="0.2"/>
+
+  <!-- === FEATURES LIST === -->
+  <g transform="translate(540, 1540)">
+    <text x="-350" y="0" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="600"
+          font-size="24" fill="#e5e7eb">✅  Entrega en 7 días</text>
+    <text x="-350" y="50" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="600"
+          font-size="24" fill="#e5e7eb">✅  SEO desde el día 1</text>
+    <text x="-350" y="100" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="600"
+          font-size="24" fill="#e5e7eb">✅  Diseño a medida sin plantillas</text>
+    <text x="-350" y="150" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="600"
+          font-size="24" fill="#e5e7eb">✅  Soporte post-entrega incluido</text>
+  </g>
+
+  <!-- === CTA Button === -->
+  <g transform="translate(540, 1770)">
+    <rect x="-240" y="-38" width="480" height="76" rx="38" fill="url(#ctaGrad)"/>
+    <rect x="-240" y="-38" width="480" height="76" rx="38" fill="url(#ctaGrad)" filter="url(#blur3)" opacity="0.5"/>
+    <text x="0" y="10" text-anchor="middle"
+          font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="26" fill="white">🚀 Quiero mi landing →</text>
+  </g>
+
+  <!-- URL footer -->
+  <text x="540" y="1880" text-anchor="middle"
+        font-family="'Inter', system-ui" font-size="22" fill="#475569" letter-spacing="1">devifly.dev</text>
+
+  <!-- Esquinas decorativas -->
+  <line x1="60" y1="1880" x2="160" y2="1880" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.4"/>
+  <line x1="60" y1="1880" x2="60" y2="1840" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.4"/>
+  <line x1="920" y1="1880" x2="1020" y2="1880" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.4"/>
+  <line x1="1020" y1="1880" x2="1020" y2="1840" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.4"/>
+</svg>

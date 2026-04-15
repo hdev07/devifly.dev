@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0b1120"/>
+    </linearGradient>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="glowBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glowViolet" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ctaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="divider" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="30"/></filter>
+    <filter id="glowText">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Glows -->
+  <circle cx="200" cy="200" r="300" fill="url(#glowBlue)" filter="url(#blur1)"/>
+  <circle cx="1050" cy="430" r="280" fill="url(#glowViolet)" filter="url(#blur1)"/>
+  <circle cx="600" cy="315" r="200" fill="#22d3ee" fill-opacity="0.03" filter="url(#blur2)"/>
+
+  <!-- Grid de puntos -->
+  <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="#ffffff" fill-opacity="0.04"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Línea divisora vertical central suave -->
+  <rect x="598" y="60" width="2" height="510" fill="url(#divider)" opacity="0.2"/>
+
+  <!-- ===================== LADO IZQUIERDO: LANDINGS ===================== -->
+
+  <!-- LOGO top-left -->
+  <g transform="translate(50, 40)">
+    <rect width="40" height="40" rx="9" fill="url(#brandGrad)"/>
+    <rect width="40" height="40" rx="9" fill="url(#brandGrad)" filter="url(#blur2)" opacity="0.5"/>
+    <text x="20" y="27" text-anchor="middle" font-family="system-ui" font-weight="700"
+          font-size="20" fill="white">D</text>
+    <text x="53" y="17" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="600"
+          font-size="20" fill="#f1f5f9">devifly</text>
+    <text x="53" y="36" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="400"
+          font-size="13" fill="#60a5fa">.dev</text>
+  </g>
+
+  <!-- Badge landing -->
+  <g transform="translate(50, 120)">
+    <rect x="0" y="0" width="190" height="30" rx="15"
+          fill="#1e293b" fill-opacity="0.9" stroke="#334155" stroke-width="1"/>
+    <circle cx="20" cy="15" r="5" fill="#00ffb2"/>
+    <text x="35" y="20" font-family="'Inter', system-ui, sans-serif" font-size="13"
+          fill="#9ca3af">Landing Pages</text>
+  </g>
+
+  <!-- Título izquierdo -->
+  <text x="50" y="225" font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="56" fill="#f1f5f9" letter-spacing="-1">Tu negocio</text>
+  <text x="50" y="290" font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="56" fill="url(#brandGrad)"
+        filter="url(#glowText)" letter-spacing="-1">en línea hoy.</text>
+
+  <!-- Subtítulo -->
+  <text x="50" y="345" font-family="'Inter', system-ui, sans-serif"
+        font-size="20" fill="#9ca3af">Diseño moderno · SEO · Alta conversión</text>
+
+  <!-- Features landing -->
+  <text x="50" y="400" font-family="'Inter', system-ui, sans-serif" font-size="17" fill="#e5e7eb">⚡ Entrega en 7 días hábiles</text>
+  <text x="50" y="430" font-family="'Inter', system-ui, sans-serif" font-size="17" fill="#e5e7eb">📱 100% responsive y optimizada</text>
+  <text x="50" y="460" font-family="'Inter', system-ui, sans-serif" font-size="17" fill="#e5e7eb">🎨 Diseño único, sin plantillas genéricas</text>
+
+  <!-- CTA izquierdo -->
+  <g transform="translate(50, 530)">
+    <rect width="220" height="50" rx="25" fill="url(#ctaGrad)"/>
+    <rect width="220" height="50" rx="25" fill="url(#ctaGrad)" filter="url(#blur2)" opacity="0.4"/>
+    <text x="110" y="32" text-anchor="middle"
+          font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="18" fill="white">Ver demos →</text>
+  </g>
+
+  <!-- ===================== LADO DERECHO: INVITACIONES ===================== -->
+
+  <!-- Badge invitaciones -->
+  <g transform="translate(640, 120)">
+    <rect x="0" y="0" width="220" height="30" rx="15"
+          fill="#1e1b30" fill-opacity="0.9" stroke="#4c1d95" stroke-width="1"/>
+    <circle cx="20" cy="15" r="5" fill="#a78bfa"/>
+    <text x="35" y="20" font-family="'Inter', system-ui, sans-serif" font-size="13"
+          fill="#9ca3af">Invitaciones Digitales</text>
+  </g>
+
+  <!-- Icono -->
+  <text x="1090" y="195" text-anchor="middle" font-size="55">💍</text>
+
+  <!-- Título derecho -->
+  <text x="640" y="225" font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="56" fill="#f1f5f9" letter-spacing="-1">Haz tu evento</text>
+  <text x="640" y="290" font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="56" fill="url(#brandGrad)"
+        filter="url(#glowText)" letter-spacing="-1">inolvidable.</text>
+
+  <!-- Subtítulo -->
+  <text x="640" y="345" font-family="'Inter', system-ui, sans-serif"
+        font-size="20" fill="#9ca3af">Bodas · XV años · Bautizos · Graduaciones</text>
+
+  <!-- Features invitaciones -->
+  <text x="640" y="400" font-family="'Inter', system-ui, sans-serif" font-size="17" fill="#e5e7eb">💌 Envío por link · sin apps</text>
+  <text x="640" y="430" font-family="'Inter', system-ui, sans-serif" font-size="17" fill="#e5e7eb">🎵 Música · Galería · Cuenta regresiva</text>
+  <text x="640" y="460" font-family="'Inter', system-ui, sans-serif" font-size="17" fill="#e5e7eb">📊 Panel RSVP · Desde $499 MXN</text>
+
+  <!-- CTA derecho -->
+  <g transform="translate(640, 530)">
+    <rect width="250" height="50" rx="25" fill="url(#ctaGrad)"/>
+    <rect width="250" height="50" rx="25" fill="url(#ctaGrad)" filter="url(#blur2)" opacity="0.4"/>
+    <text x="125" y="32" text-anchor="middle"
+          font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="18" fill="white">Ver invite demo →</text>
+  </g>
+
+  <!-- ===================== FOOTER CENTRAL ===================== -->
+  <text x="600" y="610" text-anchor="middle"
+        font-family="'Inter', system-ui" font-size="18" fill="#334155" letter-spacing="2">devifly.dev</text>
+
+  <!-- Esquinas decorativas -->
+  <line x1="25" y1="600" x2="100" y2="600" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.4"/>
+  <line x1="25" y1="600" x2="25" y2="550" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.4"/>
+  <line x1="1175" y1="600" x2="1100" y2="600" stroke="#22d3ee" stroke-width="1.5" stroke-opacity="0.4"/>
+  <line x1="1175" y1="600" x2="1175" y2="550" stroke="#22d3ee" stroke-width="1.5" stroke-opacity="0.4"/>
+</svg>

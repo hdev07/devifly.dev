@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0818"/>
+      <stop offset="100%" stop-color="#0b1120"/>
+    </linearGradient>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="violetGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="roseGlow" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ctaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="cardGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b30" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#15102b" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur stdDeviation="50"/>
+    </filter>
+    <filter id="glowText">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1080" height="1080" fill="url(#bgGrad)"/>
+
+  <!-- Glows -->
+  <circle cx="900" cy="200" r="400" fill="url(#violetGlow)" filter="url(#blur1)"/>
+  <circle cx="150" cy="850" r="350" fill="url(#roseGlow)" filter="url(#blur1)"/>
+  <circle cx="500" cy="540" r="200" fill="#22d3ee" fill-opacity="0.03" filter="url(#blur2)"/>
+
+  <!-- Grid de puntos -->
+  <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="#ffffff" fill-opacity="0.04"/>
+  </pattern>
+  <rect width="1080" height="1080" fill="url(#dots)"/>
+
+  <!-- Líneas decorativas elegantes -->
+  <line x1="0" y1="540" x2="1080" y2="540" stroke="url(#brandGrad)" stroke-width="0.5" stroke-opacity="0.1"/>
+
+  <!-- === LOGO === -->
+  <g transform="translate(60, 55)">
+    <rect width="44" height="44" rx="10" fill="url(#brandGrad)"/>
+    <rect width="44" height="44" rx="10" fill="url(#brandGrad)" filter="url(#blur2)" opacity="0.5"/>
+    <text x="22" y="30" text-anchor="middle" font-family="system-ui" font-weight="700"
+          font-size="22" fill="white">D</text>
+    <text x="56" y="20" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="600"
+          font-size="22" fill="#f1f5f9">devifly</text>
+    <text x="56" y="42" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="400"
+          font-size="15" fill="#a78bfa">.dev</text>
+  </g>
+
+  <!-- Decoración sobre + icono central de corazón/anillo -->
+  <g transform="translate(540, 210)">
+    <!-- Anillo sutil decorativo -->
+    <circle cx="0" cy="0" r="70" fill="none" stroke="url(#brandGrad)" stroke-width="1" stroke-opacity="0.3"/>
+    <circle cx="0" cy="0" r="50" fill="#1e1b30" fill-opacity="0.8" stroke="#a78bfa" stroke-width="1" stroke-opacity="0.5"/>
+    <!-- Icono de anillo/boda estilizado -->
+    <text x="0" y="18" text-anchor="middle" font-size="44">💍</text>
+  </g>
+
+  <!-- === BADGE === -->
+  <g transform="translate(540, 330)">
+    <rect x="-130" y="-18" width="260" height="36" rx="18"
+          fill="#1e1b30" fill-opacity="0.9" stroke="#4c1d95" stroke-width="1"/>
+    <circle cx="-100" cy="0" r="5" fill="#a78bfa"/>
+    <text x="-85" y="5" font-family="'Inter', system-ui, sans-serif" font-size="15"
+          fill="#9ca3af">Invitaciones Digitales Premium</text>
+  </g>
+
+  <!-- === TÍTULO === -->
+  <text x="540" y="430" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="66" fill="#f1f5f9"
+        letter-spacing="-1">Tu invitación digital,</text>
+
+  <text x="540" y="510" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="66" fill="url(#brandGrad)"
+        filter="url(#glowText)" letter-spacing="-1">hecha con amor.</text>
+
+  <!-- Subtítulo -->
+  <text x="540" y="580" text-anchor="middle"
+        font-family="'Inter', system-ui, sans-serif"
+        font-size="24" fill="#9ca3af">Bodas · XV años · Bautizos · Graduaciones</text>
+
+  <!-- === CARDS de planes === -->
+  <!-- Esencial -->
+  <g transform="translate(90, 630)">
+    <rect width="240" height="150" rx="16" fill="url(#cardGold)" stroke="#334155" stroke-width="1"/>
+    <text x="120" y="45" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="16" fill="#9ca3af">ESENCIAL</text>
+    <text x="120" y="80" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="700" font-size="32" fill="#e5e7eb">$499</text>
+    <text x="120" y="105" text-anchor="middle" font-family="'Inter', system-ui, sans-serif"
+          font-size="13" fill="#6b7280">Diseño elegante básico</text>
+    <text x="120" y="125" text-anchor="middle" font-family="'Inter', system-ui, sans-serif"
+          font-size="13" fill="#6b7280">Cuenta regresiva · RSVP</text>
+  </g>
+
+  <!-- PRO (destacado) -->
+  <g transform="translate(400, 610)">
+    <rect width="280" height="175" rx="16" fill="url(#cardGold)" stroke="#a78bfa" stroke-width="1.5"/>
+    <!-- Badge "Popular" -->
+    <rect x="80" y="-14" width="120" height="28" rx="14" fill="url(#ctaGrad)"/>
+    <text x="140" y="4" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="13" fill="white">⭐ MÁS POPULAR</text>
+    <text x="140" y="50" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="16" fill="#a78bfa">PRO</text>
+    <text x="140" y="90" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="700" font-size="36" fill="#e5e7eb">$899</text>
+    <text x="140" y="117" text-anchor="middle" font-family="'Inter', system-ui, sans-serif"
+          font-size="13" fill="#6b7280">Música + Galería + Mapa</text>
+    <text x="140" y="137" text-anchor="middle" font-family="'Inter', system-ui, sans-serif"
+          font-size="13" fill="#6b7280">Mesa de regalos digital</text>
+  </g>
+
+  <!-- Premium -->
+  <g transform="translate(750, 630)">
+    <rect width="240" height="150" rx="16" fill="url(#cardGold)" stroke="#334155" stroke-width="1"/>
+    <text x="120" y="45" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="16" fill="#fbbf24">PREMIUM</text>
+    <text x="120" y="80" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="700" font-size="32" fill="#e5e7eb">$1,599</text>
+    <text x="120" y="105" text-anchor="middle" font-family="'Inter', system-ui, sans-serif"
+          font-size="13" fill="#6b7280">Todo Pro + Animaciones</text>
+    <text x="120" y="125" text-anchor="middle" font-family="'Inter', system-ui, sans-serif"
+          font-size="13" fill="#6b7280">Diseño 100% a medida</text>
+  </g>
+
+  <!-- Línea divisora -->
+  <rect x="90" y="810" width="900" height="1" fill="url(#brandGrad)" opacity="0.25"/>
+
+  <!-- === CTA Button === -->
+  <g transform="translate(540, 880)">
+    <rect x="-200" y="-32" width="400" height="64" rx="32" fill="url(#ctaGrad)"/>
+    <rect x="-200" y="-32" width="400" height="64" rx="32" fill="url(#ctaGrad)" filter="url(#blur2)" opacity="0.4"/>
+    <text x="0" y="9" text-anchor="middle"
+          font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="22" fill="white">💌 Ver invite demo →</text>
+  </g>
+
+  <!-- URL footer -->
+  <text x="540" y="985" text-anchor="middle"
+        font-family="'Inter', system-ui" font-size="20" fill="#475569" letter-spacing="1">devifly.dev/invitaciones</text>
+
+  <!-- Esquinas decorativas -->
+  <line x1="60" y1="1020" x2="160" y2="1020" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.4"/>
+  <line x1="60" y1="1020" x2="60" y2="980" stroke="#a78bfa" stroke-width="2" stroke-opacity="0.4"/>
+  <line x1="920" y1="1020" x2="1020" y2="1020" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.4"/>
+  <line x1="1020" y1="1020" x2="1020" y2="980" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.4"/>
+</svg>

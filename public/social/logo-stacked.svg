@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140">
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Caja cuadrada -->
+  <rect x="10" y="0" width="100" height="100" rx="22" fill="url(#brandGrad)"/>
+  <rect x="10" y="0" width="100" height="100" rx="22" fill="url(#brandGrad)" filter="url(#glow)" opacity="0.5"/>
+
+  <!-- Letra D centrada -->
+  <text x="60" y="70" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="58" fill="white">D</text>
+
+  <!-- Wordmark bajo el icono -->
+  <text x="60" y="125" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="600" font-size="22" fill="#f1f5f9">devifly<tspan fill="#60a5fa">.dev</tspan></text>
+</svg>

@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0810"/>
+      <stop offset="100%" stop-color="#180a18"/>
+    </linearGradient>
+    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="50%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#d946ef"/>
+    </linearGradient>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="glowPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#d946ef" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glowFuchsia" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d946ef" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ctaPink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#d946ef"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f0f1f" stop-opacity="0.97"/>
+      <stop offset="100%" stop-color="#0f080f" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="glowText">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo oscuro rosa/fucsia -->
+  <rect width="1080" height="1080" fill="url(#bgGrad)"/>
+
+  <!-- Glows -->
+  <circle cx="150" cy="200" r="380" fill="url(#glowPink)" filter="url(#blur1)"/>
+  <circle cx="960" cy="880" r="330" fill="url(#glowFuchsia)" filter="url(#blur1)"/>
+  <circle cx="600" cy="540" r="200" fill="#ec4899" fill-opacity="0.03" filter="url(#blur2)"/>
+
+  <!-- Grid de puntos -->
+  <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="#ec4899" fill-opacity="0.05"/>
+  </pattern>
+  <rect width="1080" height="1080" fill="url(#dots)"/>
+
+  <!-- Formas decorativas de esquina -->
+  <circle cx="1020" cy="60" r="130" fill="none" stroke="#ec4899" stroke-width="0.6" stroke-opacity="0.1"/>
+  <circle cx="1020" cy="60" r="85" fill="none" stroke="#d946ef" stroke-width="0.6" stroke-opacity="0.15"/>
+  <circle cx="60" cy="1020" r="100" fill="none" stroke="#f472b6" stroke-width="0.5" stroke-opacity="0.1"/>
+
+  <!-- === LOGO top-left === -->
+  <g transform="translate(60, 55)">
+    <rect width="44" height="44" rx="10" fill="url(#brandGrad)"/>
+    <rect width="44" height="44" rx="10" fill="url(#brandGrad)" filter="url(#blur2)" opacity="0.5"/>
+    <text x="22" y="30" text-anchor="middle" font-family="system-ui" font-weight="700"
+          font-size="22" fill="white">D</text>
+    <text x="56" y="20" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="600"
+          font-size="22" fill="#f1f5f9">devifly</text>
+    <text x="56" y="42" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="400"
+          font-size="15" fill="#60a5fa">.dev</text>
+  </g>
+
+  <!-- === BADGE === -->
+  <g transform="translate(540, 222)">
+    <rect x="-150" y="-18" width="300" height="36" rx="18"
+          fill="#1f0f1f" fill-opacity="0.9" stroke="#5b1a4a" stroke-width="1"/>
+    <circle cx="-118" cy="0" r="5" fill="#f472b6"/>
+    <text x="-103" y="5" font-family="'Inter', system-ui, sans-serif" font-size="15"
+          fill="#b05080">Catálogos Digitales para Nenis</text>
+  </g>
+
+  <!-- === Icono central === -->
+  <g transform="translate(540, 185)">
+    <circle cx="0" cy="0" r="54" fill="#1f0f1f" fill-opacity="0.95" stroke="#ec4899" stroke-width="1.2" stroke-opacity="0.5"/>
+    <circle cx="0" cy="0" r="44" fill="none" stroke="#f472b6" stroke-width="0.5" stroke-opacity="0.25"/>
+    <text x="0" y="18" text-anchor="middle" font-size="42">🛍️</text>
+  </g>
+
+  <!-- === TÍTULO === -->
+  <text x="540" y="348" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="66" fill="#fdf2f8" letter-spacing="-1">Vende más por</text>
+  <text x="540" y="428" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="66" fill="url(#pinkGrad)"
+        filter="url(#glowText)" letter-spacing="-1">redes sociales</text>
+  <text x="540" y="504" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="56" fill="#fdf2f8" letter-spacing="-1">con tu catálogo</text>
+  <text x="540" y="572" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="56" fill="url(#pinkGrad)"
+        filter="url(#glowText)" letter-spacing="-1">profesional. 💅</text>
+
+  <!-- === CARDS de beneficios === -->
+  <g transform="translate(90, 625)">
+    <rect width="260" height="130" rx="16" fill="url(#cardGrad)" stroke="#5b1a4a" stroke-width="1" stroke-opacity="0.8"/>
+    <text x="30" y="52" font-size="30">📸</text>
+    <text x="30" y="82" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="17" fill="#fdf2f8">Fotos HD</text>
+    <text x="30" y="104" font-family="'Inter', system-ui, sans-serif"
+          font-size="13" fill="#7a3a5a">Sube tus productos con estilo</text>
+  </g>
+  <g transform="translate(410, 625)">
+    <rect width="260" height="130" rx="16" fill="url(#cardGrad)" stroke="#5b1a4a" stroke-width="1" stroke-opacity="0.8"/>
+    <text x="30" y="52" font-size="30">📦</text>
+    <text x="30" y="82" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="17" fill="#fdf2f8">Control de stock</text>
+    <text x="30" y="104" font-family="'Inter', system-ui, sans-serif"
+          font-size="13" fill="#7a3a5a">Tallas, colores y precios</text>
+  </g>
+  <g transform="translate(730, 625)">
+    <rect width="260" height="130" rx="16" fill="url(#cardGrad)" stroke="#5b1a4a" stroke-width="1" stroke-opacity="0.8"/>
+    <text x="30" y="52" font-size="30">💬</text>
+    <text x="30" y="82" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="17" fill="#fdf2f8">Pedidos por WhatsApp</text>
+    <text x="30" y="104" font-family="'Inter', system-ui, sans-serif"
+          font-size="13" fill="#7a3a5a">Directo al chat, sin rodeos</text>
+  </g>
+
+  <!-- === Planes row === -->
+  <g transform="translate(90, 800)">
+    <rect width="265" height="75" rx="12" fill="url(#cardGrad)" stroke="#5b1a4a" stroke-width="1"/>
+    <text x="20" y="28" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="14" fill="#b05080">BÁSICO</text>
+    <text x="20" y="55" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="700" font-size="26" fill="#fdf2f8">$1,499</text>
+    <text x="200" y="55" font-family="'Inter', system-ui, sans-serif"
+          font-size="12" fill="#7a3a5a">pago único</text>
+  </g>
+  <g transform="translate(413, 788)">
+    <rect width="265" height="90" rx="12" fill="url(#cardGrad)" stroke="#ec4899" stroke-width="1.5"/>
+    <rect x="55" y="-13" width="155" height="26" rx="13" fill="url(#ctaPink)"/>
+    <text x="132" y="4" text-anchor="middle" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="700" font-size="12" fill="white">💅 MÁS POPULAR</text>
+    <text x="20" y="40" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="14" fill="#f472b6">COMPLETO</text>
+    <text x="20" y="68" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="700" font-size="26" fill="#fdf2f8">$3,499</text>
+    <text x="200" y="68" font-family="'Inter', system-ui, sans-serif"
+          font-size="12" fill="#7a3a5a">pago único</text>
+  </g>
+  <g transform="translate(737, 800)">
+    <rect width="253" height="75" rx="12" fill="url(#cardGrad)" stroke="#5b1a4a" stroke-width="1"/>
+    <text x="20" y="28" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="14" fill="#d946ef">✨ PREMIUM</text>
+    <text x="20" y="55" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="700" font-size="26" fill="#fdf2f8">$6,999</text>
+    <text x="195" y="55" font-family="'Inter', system-ui, sans-serif"
+          font-size="12" fill="#7a3a5a">con tienda</text>
+  </g>
+
+  <!-- Línea divisora -->
+  <rect x="90" y="900" width="900" height="1" fill="url(#pinkGrad)" opacity="0.35"/>
+
+  <!-- === CTA === -->
+  <g transform="translate(540, 968)">
+    <rect x="-215" y="-30" width="430" height="60" rx="30" fill="url(#ctaPink)"/>
+    <rect x="-215" y="-30" width="430" height="60" rx="30" fill="url(#ctaPink)" filter="url(#blur2)" opacity="0.4"/>
+    <text x="0" y="9" text-anchor="middle"
+          font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="700" font-size="21" fill="white">🛍️ Quiero mi catálogo →</text>
+  </g>
+
+  <!-- URL footer -->
+  <text x="540" y="1050" text-anchor="middle"
+        font-family="'Inter', system-ui" font-size="19" fill="#5b1a4a" letter-spacing="1">devifly.dev/catalogos-nenis</text>
+
+  <!-- Esquinas ornamentales rosas -->
+  <line x1="60" y1="1060" x2="160" y2="1060" stroke="#ec4899" stroke-width="1.5" stroke-opacity="0.4"/>
+  <line x1="60" y1="1060" x2="60" y2="1020" stroke="#ec4899" stroke-width="1.5" stroke-opacity="0.4"/>
+  <line x1="920" y1="1060" x2="1020" y2="1060" stroke="#d946ef" stroke-width="1.5" stroke-opacity="0.4"/>
+  <line x1="1020" y1="1060" x2="1020" y2="1020" stroke="#d946ef" stroke-width="1.5" stroke-opacity="0.4"/>
+</svg>

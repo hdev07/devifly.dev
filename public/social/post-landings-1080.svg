@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <!-- Gradientes -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0b1120"/>
+    </linearGradient>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="glowBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glowViolet" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ctaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.7"/>
+    </linearGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <clipPath id="roundRect">
+      <rect x="0" y="0" width="1080" height="1080" rx="0"/>
+    </clipPath>
+  </defs>
+
+  <!-- Fondo base -->
+  <rect width="1080" height="1080" fill="url(#bgGrad)"/>
+
+  <!-- Glows de fondo -->
+  <circle cx="200" cy="250" r="350" fill="url(#glowBlue)" filter="url(#blur1)"/>
+  <circle cx="900" cy="800" r="300" fill="url(#glowViolet)" filter="url(#blur2)"/>
+  <circle cx="700" cy="200" r="200" fill="#22d3ee" fill-opacity="0.06" filter="url(#blur2)"/>
+
+  <!-- Grid de puntos sutil -->
+  <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="#ffffff" fill-opacity="0.05"/>
+  </pattern>
+  <rect width="1080" height="1080" fill="url(#dots)"/>
+
+  <!-- === LOGO en esquina superior izquierda === -->
+  <g transform="translate(60, 55)">
+    <!-- Caja del logo -->
+    <rect width="44" height="44" rx="10" fill="url(#brandGrad)"/>
+    <!-- Glow del logo -->
+    <rect width="44" height="44" rx="10" fill="url(#brandGrad)" filter="url(#blur2)" opacity="0.5"/>
+    <!-- Letra D -->
+    <text x="22" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="700"
+          font-size="22" fill="white">D</text>
+    <!-- Nombre -->
+    <text x="56" y="20" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="600"
+          font-size="22" fill="#f1f5f9">devifly</text>
+    <text x="56" y="42" font-family="'Space Grotesk', system-ui, sans-serif" font-weight="400"
+          font-size="15" fill="#60a5fa">.dev</text>
+  </g>
+
+  <!-- === BADGE superior === -->
+  <g transform="translate(540, 230)">
+    <rect x="-110" y="-18" width="220" height="36" rx="18"
+          fill="#1e293b" fill-opacity="0.8" stroke="#334155" stroke-width="1"/>
+    <!-- Punto verde pulsante -->
+    <circle cx="-80" cy="0" r="5" fill="#00ffb2"/>
+    <text x="-65" y="5" font-family="'Inter', system-ui, sans-serif" font-size="15"
+          fill="#9ca3af">Disponible para proyectos</text>
+  </g>
+
+  <!-- === TÍTULO PRINCIPAL === -->
+  <text x="540" y="340" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="72" fill="#f1f5f9"
+        letter-spacing="-2">Tu landing page,</text>
+
+  <!-- Línea con gradiente -->
+  <text x="540" y="430" text-anchor="middle"
+        font-family="'Space Grotesk', system-ui, sans-serif"
+        font-weight="700" font-size="72" fill="url(#brandGrad)"
+        letter-spacing="-2" filter="url(#textGlow)">lista en 7 días.</text>
+
+  <!-- === SUBTÍTULO === -->
+  <text x="540" y="510" text-anchor="middle"
+        font-family="'Inter', system-ui, sans-serif"
+        font-weight="400" font-size="26" fill="#9ca3af"
+        letter-spacing="0">Diseño moderno · Alta conversión · SEO optimizado</text>
+
+  <!-- === CARDS de características === -->
+  <!-- Card 1 -->
+  <g transform="translate(90, 580)">
+    <rect width="260" height="120" rx="16" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" stroke-opacity="0.6"/>
+    <!-- Ícono rayo -->
+    <text x="30" y="50" font-size="32">⚡</text>
+    <text x="30" y="80" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="18" fill="#e5e7eb">Ultra rápidas</text>
+    <text x="30" y="102" font-family="'Inter', system-ui, sans-serif"
+          font-size="14" fill="#6b7280">Core Web Vitals 95+</text>
+  </g>
+  <!-- Card 2 -->
+  <g transform="translate(410, 580)">
+    <rect width="260" height="120" rx="16" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" stroke-opacity="0.6"/>
+    <text x="30" y="50" font-size="32">🎨</text>
+    <text x="30" y="80" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="18" fill="#e5e7eb">Diseño premium</text>
+    <text x="30" y="102" font-family="'Inter', system-ui, sans-serif"
+          font-size="14" fill="#6b7280">UX centrado en conversión</text>
+  </g>
+  <!-- Card 3 -->
+  <g transform="translate(730, 580)">
+    <rect width="260" height="120" rx="16" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" stroke-opacity="0.6"/>
+    <text x="30" y="50" font-size="32">📱</text>
+    <text x="30" y="80" font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="18" fill="#e5e7eb">100% Mobile</text>
+    <text x="30" y="102" font-family="'Inter', system-ui, sans-serif"
+          font-size="14" fill="#6b7280">Responsive desde el día 1</text>
+  </g>
+
+  <!-- === Línea divisora con gradiente === -->
+  <rect x="90" y="745" width="900" height="1" fill="url(#brandGrad)" opacity="0.3"/>
+
+  <!-- === CTA BUTTON === -->
+  <g transform="translate(540, 820)">
+    <rect x="-180" y="-30" width="360" height="60" rx="30" fill="url(#ctaGrad)"/>
+    <!-- Glow del botón -->
+    <rect x="-180" y="-30" width="360" height="60" rx="30" fill="url(#ctaGrad)" filter="url(#blur2)" opacity="0.4"/>
+    <text x="0" y="8" text-anchor="middle"
+          font-family="'Space Grotesk', system-ui, sans-serif"
+          font-weight="600" font-size="22" fill="white">🚀 Quiero mi landing →</text>
+  </g>
+
+  <!-- === URL footer === -->
+  <text x="540" y="930" text-anchor="middle"
+        font-family="'Inter', system-ui, sans-serif"
+        font-size="20" fill="#475569" letter-spacing="1">devifly.dev</text>
+
+  <!-- Líneas decorativas de esquina -->
+  <line x1="60" y1="980" x2="160" y2="980" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="60" y1="980" x2="60" y2="940" stroke="#3b82f6" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="920" y1="980" x2="1020" y2="980" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="1020" y1="980" x2="1020" y2="940" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.5"/>
+
+</svg>
