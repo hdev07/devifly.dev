@@ -919,7 +919,7 @@
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import LucideIcon from "../../components/LucideIcon.vue";
 
-const waContratar = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Premium de invitaciones digitales y me interesa contratarlo 💎")}`;
+const waContratar = `https://wa.me/+525635926679?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Premium de invitaciones digitales y me interesa contratarlo 💎")}`;
 
 const lang = ref("es");
 const musicOn = ref(false);

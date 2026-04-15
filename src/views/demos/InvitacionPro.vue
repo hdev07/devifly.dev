@@ -285,7 +285,9 @@
           Una mirada a los momentos más especiales
         </p>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4"
+        >
           <div
             v-for="(photo, i) in gallery"
             :key="i"
@@ -860,7 +862,7 @@
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import LucideIcon from "../../components/LucideIcon.vue";
 
-const waContratar = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Pro de invitaciones digitales y me interesa contratarlo ✨")}`;
+const waContratar = `https://wa.me/+525635926679?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Pro de invitaciones digitales y me interesa contratarlo ✨")}`;
 
 const musicOn = ref(false);
 const audioRef = ref(null);

@@ -576,7 +576,10 @@
         </p>
 
         <!-- RSVP Form -->
-        <form class="space-y-4 max-w-sm lg:max-w-md mx-auto" @submit.prevent="handleRSVP">
+        <form
+          class="space-y-4 max-w-sm lg:max-w-md mx-auto"
+          @submit.prevent="handleRSVP"
+        >
           <input
             v-model="rsvpForm.name"
             type="text"
@@ -638,7 +641,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import LucideIcon from "../../components/LucideIcon.vue";
 
-const waContratar = `https://wa.me/+525583414659?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Basic de invitaciones digitales y me interesa contratarlo 💌")}`;
+const waContratar = `https://wa.me/+525635926679?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Basic de invitaciones digitales y me interesa contratarlo 💌")}`;
 
 let countdownInterval = null;
 const rsvpSubmitted = ref(false);

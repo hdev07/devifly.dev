@@ -22,11 +22,7 @@
         <h2
           class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-light-text mb-4 leading-tight"
         >
-          {{
-            locale === "es"
-              ? "Soluciones principales"
-              : "Core solutions"
-          }}
+          {{ locale === "es" ? "Soluciones principales" : "Core solutions" }}
         </h2>
         <p
           class="text-lg dark:text-text-secondary text-light-muted max-w-2xl leading-relaxed"
@@ -92,7 +88,9 @@
 
             <ul class="space-y-1.5 mb-5">
               <li
-                v-for="feat in locale === 'es' ? product.featuresEs : product.featuresEn"
+                v-for="feat in locale === 'es'
+                  ? product.featuresEs
+                  : product.featuresEn"
                 :key="feat"
                 class="flex items-center gap-2 text-xs dark:text-text-secondary text-light-muted"
               >
@@ -156,7 +154,9 @@
           class="inline-flex items-center gap-2 px-6 py-3 rounded-xl dark:bg-base-800/60 bg-light-card border dark:border-base-700/50 border-light-border dark:text-text-primary text-light-text font-semibold text-sm hover:border-brand-500/50 transition-all duration-300"
         >
           {{
-            locale === "es" ? "Ver precios y opciones" : "View pricing and options"
+            locale === "es"
+              ? "Ver precios y opciones"
+              : "View pricing and options"
           }}
           <LucideIcon name="arrow-right" class-name="w-4 h-4" />
         </router-link>

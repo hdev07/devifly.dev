@@ -44,10 +44,6 @@
   cursor:
     url("/cursor.svg") 16 16,
     crosshair;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 a,
@@ -70,6 +66,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+}
+
+a[href="#"] {
+  opacity: 0.55;
+  cursor: not-allowed !important;
+}
+
+/* Normalize top-level landing section shells to the shared 7xl container. */
+.landing-shell > :is(section, div):is(.max-w-4xl, .max-w-5xl, .max-w-6xl),
+.landing-shell
+  > :is(section, div)
+  > :is(.max-w-4xl, .max-w-5xl, .max-w-6xl).mx-auto {
+  max-width: 80rem;
 }
 
 /* Dark mode (default) */

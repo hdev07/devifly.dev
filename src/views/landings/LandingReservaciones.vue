@@ -7,7 +7,7 @@ import { ref } from "vue";
 import LucideIcon from "../../components/LucideIcon.vue";
 import { RouterLink } from "vue-router";
 
-const WA = "+525583414659";
+const WA = "+525635926679";
 const waDemo = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Tengo un salón de eventos y me interesa una demo del Sistema PRO de Reservaciones 🏛️")}`;
 const waCotizar = `https://wa.me/${WA}?text=${encodeURIComponent("Quiero cotizar el Sistema PRO de Reservaciones para mi salón 🏛️")}`;
 
@@ -174,7 +174,7 @@ const reservationPackages = [
 </script>
 
 <template>
-  <main class="pt-24 pb-0">
+  <main class="landing-shell pt-24 pb-0">
     <!-- Hero — Vercel: left-aligned, monumental type, restrained -->
     <section class="max-w-7xl mx-auto px-6 pt-12 pb-24">
       <p
