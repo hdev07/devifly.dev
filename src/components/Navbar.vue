@@ -163,8 +163,9 @@ const mobileOpen = ref(false);
 
 const navItems = [
   { key: "products", href: "/products" },
-  { key: "cases", href: "/case-studies" },
+  { key: "solutions", href: "/solutions" },
   { key: "pricing", href: "/pricing" },
+  { key: "cases", href: "/case-studies" },
   { key: "contact", href: "/contact" },
 ];
 

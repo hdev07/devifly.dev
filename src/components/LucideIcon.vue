@@ -96,6 +96,7 @@ import {
   Utensils,
   PieChart,
   ChevronLeft,
+  ChevronRight,
   ChevronDown,
   MapPin,
   Play,
@@ -115,6 +116,11 @@ import {
   Image,
   Tent,
   Award,
+  Server,
+  Settings2,
+  BadgeCheck,
+  ShieldCheck,
+  CircleCheck,
 } from "lucide-vue-next";
 
 const props = defineProps({
@@ -219,6 +225,7 @@ const iconMap = {
   utensils: Utensils,
   "pie-chart": PieChart,
   "chevron-left": ChevronLeft,
+  "chevron-right": ChevronRight,
   "chevron-down": ChevronDown,
   "map-pin": MapPin,
   play: Play,
@@ -238,6 +245,11 @@ const iconMap = {
   image: Image,
   tent: Tent,
   award: Award,
+  server: Server,
+  "settings-2": Settings2,
+  "badge-check": BadgeCheck,
+  "shield-check": ShieldCheck,
+  "circle-check": CircleCheck,
 };
 
 const iconComponent = computed(() => iconMap[props.name] || Circle);

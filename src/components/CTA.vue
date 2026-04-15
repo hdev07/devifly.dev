@@ -19,8 +19,8 @@
         >
           {{ t("cta.subtitle") }}
         </p>
-        <a
-          href="mailto:hello@devifly.dev"
+        <router-link
+          to="/contact"
           class="group inline-flex items-center gap-3 px-10 py-4 rounded-2xl bg-gradient-to-r from-brand-500 to-cyan-glow text-white font-semibold text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]"
         >
           {{ t("cta.button") }}
@@ -38,7 +38,7 @@
               d="M17 8l4 4m0 0l-4 4m4-4H3"
             />
           </svg>
-        </a>
+        </router-link>
       </div>
     </div>
   </section>

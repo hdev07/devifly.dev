@@ -2,10 +2,9 @@
   <footer class="relative border-t dark:border-base-700/50 border-light-border">
     <div class="max-w-7xl mx-auto px-6 py-12">
       <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-        <!-- Logo -->
         <div class="flex items-center gap-2">
           <div
-            class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-cyan-glow flex items-center justify-center font-display font-bold text-white text-xs"
+            class="w-7 h-7 rounded-lg bg-linear-to-br from-brand-500 to-cyan-glow flex items-center justify-center font-display font-bold text-white text-xs"
           >
             D
           </div>
@@ -16,10 +15,9 @@
           </span>
         </div>
 
-        <!-- Social links -->
         <div class="flex items-center gap-4">
           <a
-            href="https://github.com/devifly-tech"
+            :href="siteConfig.githubUrl"
             target="_blank"
             rel="noopener noreferrer"
             class="p-2.5 rounded-xl dark:bg-base-800/60 bg-light-card border dark:border-base-700/50 border-light-border dark:text-text-secondary text-light-muted hover:text-brand-500 dark:hover:text-brand-400 transition-all duration-300 hover:scale-110"
@@ -37,7 +35,7 @@
             </svg>
           </a>
           <a
-            href="https://linkedin.com/in/devifly"
+            :href="siteConfig.linkedinUrl"
             target="_blank"
             rel="noopener noreferrer"
             class="p-2.5 rounded-xl dark:bg-base-800/60 bg-light-card border dark:border-base-700/50 border-light-border dark:text-text-secondary text-light-muted hover:text-brand-500 dark:hover:text-brand-400 transition-all duration-300 hover:scale-110"
@@ -55,7 +53,7 @@
             </svg>
           </a>
           <a
-            href="mailto:devifly.dev@gmail.com"
+            :href="siteLinks.email"
             class="p-2.5 rounded-xl dark:bg-base-800/60 bg-light-card border dark:border-base-700/50 border-light-border dark:text-text-secondary text-light-muted hover:text-brand-500 dark:hover:text-brand-400 transition-all duration-300 hover:scale-110"
             aria-label="Email"
           >
@@ -76,7 +74,6 @@
           </a>
         </div>
 
-        <!-- Copyright -->
         <div class="text-center md:text-right">
           <p class="text-sm dark:text-text-secondary text-light-muted">
             © {{ currentYear }} devifly.dev · {{ t("footer.rights") }}
@@ -92,6 +89,7 @@
 
 <script setup>
 import { useI18n } from "vue-i18n";
+import { siteConfig, siteLinks } from "../data/site.js";
 
 const { t } = useI18n();
 const currentYear = new Date().getFullYear();

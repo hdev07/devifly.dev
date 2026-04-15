@@ -7,7 +7,7 @@
       ></div>
     </div>
 
-    <div class="relative max-w-5xl mx-auto px-6">
+    <div class="relative max-w-7xl mx-auto px-6">
       <div
         data-animate
         class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-10"
