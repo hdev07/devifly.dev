@@ -6,7 +6,7 @@
 import { RouterLink } from "vue-router";
 import LucideIcon from "../../components/LucideIcon.vue";
 
-const WA = "+525583414659";
+const WA = "+525635926679";
 const waDemo = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa una demo de invitaciones web personalizadas para mi evento 💌")}`;
 const waContratar = `https://wa.me/${WA}?text=${encodeURIComponent("Quiero cotizar una invitación web personalizada 💌")}`;
 const waEsencial = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa contratar el Plan Esencial de invitaciones digitales ($499 MXN) 💌")}`;
@@ -193,7 +193,7 @@ const mockupSections = [
 </script>
 
 <template>
-  <main class="pt-24 pb-0 overflow-hidden">
+  <main class="landing-shell pt-24 pb-0 overflow-hidden">
     <!-- Hero — Stripe: centered, gradient text, floating blobs -->
     <section class="relative py-24 px-6">
       <!-- Decorative blobs -->

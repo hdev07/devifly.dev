@@ -6,7 +6,7 @@
 import { RouterLink } from "vue-router";
 import LucideIcon from "../../components/LucideIcon.vue";
 
-const WA = "+525583414659";
+const WA = "+525635926679";
 const waDemo = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa un catálogo digital para mi negocio de ventas 🛍️")}`;
 const waContratar = `https://wa.me/${WA}?text=${encodeURIComponent("Quiero cotizar mi catálogo digital de productos 🛍️")}`;
 
@@ -143,7 +143,7 @@ const mockupProducts = [
 </script>
 
 <template>
-  <main class="pt-24 pb-0">
+  <main class="landing-shell pt-24 pb-0">
     <!-- Hero — Linear: precise, subtle glow, monoweight -->
     <section class="relative max-w-7xl mx-auto px-6 pt-16 pb-24">
       <!-- Subtle radial glow -->

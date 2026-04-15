@@ -5,7 +5,7 @@
  */
 import LucideIcon from "../../components/LucideIcon.vue";
 
-const WA = "+525583414659";
+const WA = "+525635926679";
 const waDemo = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa una landing page de alto impacto para mi negocio 🚀")}`;
 const waContratar = `https://wa.me/${WA}?text=${encodeURIComponent("Quiero cotizar una landing page para mi negocio 🚀")}`;
 
@@ -91,7 +91,7 @@ const testimonials = [
 </script>
 
 <template>
-  <main class="pt-24 pb-0">
+  <main class="landing-shell pt-24 pb-0">
     <!-- Hero — Notion/Arc: editorial, warm, large mixed typography -->
     <section class="relative px-6 pt-16 pb-28 overflow-hidden">
       <!-- Warm gradient bg -->

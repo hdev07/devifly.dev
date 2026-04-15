@@ -6,7 +6,7 @@
 import { RouterLink } from "vue-router";
 import LucideIcon from "../../components/LucideIcon.vue";
 
-const WA = "+525583414659";
+const WA = "+525635926679";
 const waDemo = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Tengo un restaurante y me interesa el menú digital interactivo 🍽️")}`;
 const waContratar = `https://wa.me/${WA}?text=${encodeURIComponent("Quiero cotizar un menú digital para mi restaurante 🍽️")}`;
 const waSmall = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el menú digital plan Esencial ($3,999 MXN) 🍽️")}`;
@@ -185,7 +185,7 @@ const menuCategories = [
 </script>
 
 <template>
-  <main class="pt-24 pb-0">
+  <main class="landing-shell pt-24 pb-0">
     <!-- Hero — Spotify: bold colored background, massive type, rounded shapes -->
     <section
       class="relative px-6 py-20 overflow-hidden"
