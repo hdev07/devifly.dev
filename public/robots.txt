@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /landings/demo
+Disallow: /invitaciones/esencial
+Disallow: /invitaciones/pro
+Disallow: /invitaciones/premium
+Disallow: /menus-digitales/demo
+Disallow: /catalogos-nenis/demo
+Disallow: /salones-eventos/demo
+
+Sitemap: https://devifly.dev/sitemap.xml
