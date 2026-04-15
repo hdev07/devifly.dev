@@ -41,7 +41,14 @@ const routes = [
     path: '/landings/demo',
     name: 'LandingPageDemo',
     component: () => import('../views/demos/LandingPageDemo.vue'),
-    meta: { fullscreen: true }
+    meta: {
+      fullscreen: true,
+      exitTo: '/landings',
+      exitLabelEs: 'Volver a landing pages',
+      exitLabelEn: 'Back to landing pages',
+      robots: 'noindex, nofollow',
+      canonicalPath: '/landings'
+    }
   },
   {
     path: '/invitaciones',
@@ -52,19 +59,40 @@ const routes = [
     path: '/invitaciones/esencial',
     name: 'DemoBasic',
     component: () => import('../views/demos/InvitacionBasic.vue'),
-    meta: { fullscreen: true }
+    meta: {
+      fullscreen: true,
+      exitTo: '/invitaciones',
+      exitLabelEs: 'Volver a invitaciones',
+      exitLabelEn: 'Back to invitations',
+      robots: 'noindex, nofollow',
+      canonicalPath: '/invitaciones'
+    }
   },
   {
     path: '/invitaciones/pro',
     name: 'DemoPro',
     component: () => import('../views/demos/InvitacionPro.vue'),
-    meta: { fullscreen: true }
+    meta: {
+      fullscreen: true,
+      exitTo: '/invitaciones',
+      exitLabelEs: 'Volver a invitaciones',
+      exitLabelEn: 'Back to invitations',
+      robots: 'noindex, nofollow',
+      canonicalPath: '/invitaciones'
+    }
   },
   {
     path: '/invitaciones/premium',
     name: 'DemoPremium',
     component: () => import('../views/demos/InvitacionPremium.vue'),
-    meta: { fullscreen: true }
+    meta: {
+      fullscreen: true,
+      exitTo: '/invitaciones',
+      exitLabelEs: 'Volver a invitaciones',
+      exitLabelEn: 'Back to invitations',
+      robots: 'noindex, nofollow',
+      canonicalPath: '/invitaciones'
+    }
   },
   {
     path: '/menus-digitales',
@@ -75,7 +103,14 @@ const routes = [
     path: '/menus-digitales/demo',
     name: 'MenuDemo',
     component: () => import('../views/demos/MenuDemo.vue'),
-    meta: { fullscreen: true }
+    meta: {
+      fullscreen: true,
+      exitTo: '/menus-digitales',
+      exitLabelEs: 'Volver a menús digitales',
+      exitLabelEn: 'Back to digital menus',
+      robots: 'noindex, nofollow',
+      canonicalPath: '/menus-digitales'
+    }
   },
   {
     path: '/saas',
@@ -91,7 +126,14 @@ const routes = [
     path: '/catalogos-nenis/demo',
     name: 'CatalogoNenisDemo',
     component: () => import('../views/demos/CatalogoNenisDemo.vue'),
-    meta: { fullscreen: true }
+    meta: {
+      fullscreen: true,
+      exitTo: '/catalogos-nenis',
+      exitLabelEs: 'Volver a catálogos digitales',
+      exitLabelEn: 'Back to digital catalogs',
+      robots: 'noindex, nofollow',
+      canonicalPath: '/catalogos-nenis'
+    }
   },
   {
     path: '/salones-eventos',
@@ -102,7 +144,14 @@ const routes = [
     path: '/salones-eventos/demo',
     name: 'SalonEventosDemo',
     component: () => import('../views/demos/SalonEventosDemo.vue'),
-    meta: { fullscreen: true }
+    meta: {
+      fullscreen: true,
+      exitTo: '/salones-eventos',
+      exitLabelEs: 'Volver a reservaciones',
+      exitLabelEn: 'Back to venue websites',
+      robots: 'noindex, nofollow',
+      canonicalPath: '/salones-eventos'
+    }
   },
   {
     path: '/service/:key',
@@ -112,7 +161,8 @@ const routes = [
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: () => import('../views/NotFound.vue')
+    component: () => import('../views/NotFound.vue'),
+    meta: { robots: 'noindex, nofollow' }
   }
 ]
 
