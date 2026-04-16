@@ -270,6 +270,10 @@ export default {
     afterSalesTitle: '¿Qué pasa después de lanzar mi sitio?',
     afterSalesSubtitle: 'El desarrollo es un pago único. Para mantener tu sitio activo, actualizado y con soporte tienes estas opciones mensuales.',
     afterSalesNote: '* El hosting + dominio es el único costo recurrente obligatorio (~$199/mes). Los planes de mantenimiento son opcionales y se contratan cuando los necesitas.',
+    demo21Badge: 'Demo 21 días',
+    demo21Title: '¿Quieres probarlo antes?',
+    demo21Desc: 'Por $999 MXN armamos tu proyecto real, publicado y funcionando 21 días. Si contratas, se descuenta del anticipo.',
+    demo21Cta: 'Solicitar demo',
   },
   invitacionesPage: {
     badge: 'Invitaciones Digitales',

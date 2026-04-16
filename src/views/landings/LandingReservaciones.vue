@@ -10,6 +10,7 @@ import { RouterLink } from "vue-router";
 const WA = "+525635926679";
 const waDemo = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Tengo un salón de eventos y me interesa una demo del Sistema PRO de Reservaciones 🏛️")}`;
 const waCotizar = `https://wa.me/${WA}?text=${encodeURIComponent("Quiero cotizar el Sistema PRO de Reservaciones para mi salón 🏛️")}`;
+const waDemo21 = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el demo de 21 días para mi salón de eventos por $999 MXN 🏛️")}`;
 
 const painPoints = [
   "¿Sigues respondiendo lo mismo en WhatsApp todo el día?",
@@ -49,8 +50,8 @@ const bonuses = [
   },
   {
     icon: "sparkles",
-    title: "Demo personalizado GRATIS",
-    desc: "Prueba antes de decidir",
+    title: "Demo 21 días por $999 MXN",
+    desc: "Prueba tu sitio real antes de contratar. Se descuenta al firmar.",
   },
 ];
 
@@ -105,6 +106,10 @@ const faqs = [
   {
     q: "¿Qué pasa si no recibo resultados?",
     a: "Tenemos garantía sin riesgo. Si no recibes más solicitudes en el primer mes, optimizamos tu página sin costo hasta que lo logres.",
+  },
+  {
+    q: "¿Puedo probar antes de contratar un plan completo?",
+    a: "Sí. Tenemos un demo de 21 días por $999 MXN. Te armamos tu sitio real, con tus fotos y contenido, publicado y funcionando. Lo pruebas, lo compartes. Si contratas, los $999 se descuentan del anticipo. Si no te convence, se desactiva al día 22 sin compromiso.",
   },
 ];
 
@@ -827,6 +832,109 @@ const reservationPackages = [
           >
             {{ faq.a }}
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo 21 días -->
+    <section class="max-w-5xl mx-auto px-6 py-24">
+      <div
+        class="rounded-2xl border dark:border-base-700/40 border-light-border dark:bg-base-900/40 bg-light-card/60 p-8 md:p-12"
+      >
+        <div class="text-center mb-10">
+          <p
+            class="text-xs tracking-[0.2em] uppercase dark:text-amber-400/70 text-amber-600/70 mb-3 font-mono"
+          >
+            Prueba antes de decidir
+          </p>
+          <h2
+            class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
+          >
+            Demo 21 días por
+            <span class="dark:text-amber-400 text-amber-600">$999 MXN</span>
+          </h2>
+          <p
+            class="dark:text-text-secondary text-light-muted max-w-2xl mx-auto text-base leading-relaxed"
+          >
+            Te armamos el sitio de tu salón con tu contenido real, publicado y
+            funcionando durante 21 días. Si decides contratar, los $999 se
+            descuentan del anticipo.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10">
+          <div
+            class="p-5 rounded-xl dark:bg-base-800/50 bg-light-surface border dark:border-base-700/40 border-light-border text-center"
+          >
+            <div
+              class="w-10 h-10 rounded-xl dark:bg-base-700/50 bg-white border dark:border-base-600/50 border-light-border flex items-center justify-center mx-auto mb-3"
+            >
+              <LucideIcon
+                name="image"
+                class-name="w-5 h-5 dark:text-white text-light-text"
+              />
+            </div>
+            <p
+              class="dark:text-white text-light-text font-semibold text-sm mb-1"
+            >
+              Tu salón real
+            </p>
+            <p class="dark:text-text-secondary/60 text-light-muted/60 text-xs">
+              Con tus fotos, servicios y datos reales
+            </p>
+          </div>
+          <div
+            class="p-5 rounded-xl dark:bg-base-800/50 bg-light-surface border dark:border-base-700/40 border-light-border text-center"
+          >
+            <div
+              class="w-10 h-10 rounded-xl dark:bg-base-700/50 bg-white border dark:border-base-600/50 border-light-border flex items-center justify-center mx-auto mb-3"
+            >
+              <LucideIcon
+                name="share-2"
+                class-name="w-5 h-5 dark:text-white text-light-text"
+              />
+            </div>
+            <p
+              class="dark:text-white text-light-text font-semibold text-sm mb-1"
+            >
+              Publicado y compartible
+            </p>
+            <p class="dark:text-text-secondary/60 text-light-muted/60 text-xs">
+              Enséñalo a clientes, compártelo en redes
+            </p>
+          </div>
+          <div
+            class="p-5 rounded-xl dark:bg-base-800/50 bg-light-surface border dark:border-base-700/40 border-light-border text-center"
+          >
+            <div
+              class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mx-auto mb-3"
+            >
+              <LucideIcon name="receipt" class-name="w-5 h-5 text-amber-500" />
+            </div>
+            <p
+              class="dark:text-white text-light-text font-semibold text-sm mb-1"
+            >
+              Se descuenta al contratar
+            </p>
+            <p class="dark:text-text-secondary/60 text-light-muted/60 text-xs">
+              Los $999 se restan del anticipo de cualquier plan
+            </p>
+          </div>
+        </div>
+        <div class="text-center">
+          <a
+            :href="waDemo21"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white text-black font-bold text-sm hover:bg-neutral-200 transition dark:bg-white dark:text-black"
+          >
+            Solicitar demo de 21 días
+            <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+          </a>
+          <p
+            class="dark:text-text-secondary/40 text-light-muted/40 text-xs mt-4 font-mono"
+          >
+            Si no te convence, se desactiva al día 22. Sin compromisos.
+          </p>
         </div>
       </div>
     </section>

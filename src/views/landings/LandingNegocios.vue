@@ -8,6 +8,7 @@ import LucideIcon from "../../components/LucideIcon.vue";
 const WA = "+525635926679";
 const waDemo = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa una landing page de alto impacto para mi negocio 🚀")}`;
 const waContratar = `https://wa.me/${WA}?text=${encodeURIComponent("Quiero cotizar una landing page para mi negocio 🚀")}`;
+const waDemo21 = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el demo de 21 días de la landing page por $999 MXN 🚀")}`;
 
 const painPoints = [
   { emoji: "📱", text: "Tu negocio depende solo de redes sociales" },
@@ -72,7 +73,10 @@ const bonuses = [
     emoji: "✍️",
     text: "Textos de venta incluidos — no te preocupes por el copy",
   },
-  { emoji: "🎨", text: "Demo sin costo antes de contratar" },
+  {
+    emoji: "🧪",
+    text: "Demo 21 días por $999 MXN — prueba tu landing real antes de contratar",
+  },
 ];
 
 const testimonials = [
@@ -417,6 +421,94 @@ const testimonials = [
           Si no recibes más prospectos en el primer mes, optimizamos tu landing
           gratis.
         </p>
+      </div>
+    </section>
+
+    <!-- Demo 21 días -->
+    <section class="max-w-5xl mx-auto px-6 pb-12">
+      <div
+        class="p-8 rounded-2xl dark:bg-base-800/20 bg-white border dark:border-amber-500/20 border-amber-200 shadow-sm overflow-hidden relative"
+      >
+        <div
+          class="absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-[0.06] pointer-events-none"
+          style="background: radial-gradient(circle, #f59e0b, transparent 60%)"
+        ></div>
+        <div class="relative flex flex-col lg:flex-row lg:items-center gap-8">
+          <div class="flex-1 min-w-0">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-2xl dark:bg-amber-500/10 bg-amber-50 border dark:border-amber-500/20 border-amber-200 mb-4 text-xs"
+            >
+              <span>🧪</span>
+              <span class="dark:text-amber-400 text-amber-700 font-semibold"
+                >Demo 21 días</span
+              >
+            </div>
+            <h3 class="font-bold dark:text-white text-light-text text-xl mb-2">
+              ¿Prefieres ver antes de decidir?
+            </h3>
+            <p
+              class="dark:text-text-secondary text-light-muted text-sm leading-relaxed mb-4"
+            >
+              Por
+              <span class="dark:text-amber-400 text-amber-700 font-bold"
+                >$999 MXN</span
+              >
+              te armamos tu landing real, con tu contenido, publicada y
+              funcionando 21 días. Si te convence y contratas, se descuenta del
+              anticipo — no pagas nada extra.
+            </p>
+            <ul class="space-y-2">
+              <li
+                class="flex items-center gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4"
+                  style="color: #f97316"
+                />
+                Tu landing real con tu contenido
+              </li>
+              <li
+                class="flex items-center gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4"
+                  style="color: #f97316"
+                />
+                Publicada en tuneogocio.devifly.dev
+              </li>
+              <li
+                class="flex items-center gap-2 text-sm dark:text-text-secondary text-light-muted"
+              >
+                <LucideIcon
+                  name="check"
+                  class-name="w-4 h-4"
+                  style="color: #f97316"
+                />
+                $999 se descuentan al contratar cualquier plan
+              </li>
+            </ul>
+          </div>
+          <div class="shrink-0 flex flex-col items-center gap-3">
+            <a
+              :href="waDemo21"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-8 py-4 rounded-2xl text-sm font-bold transition-all hover:scale-105 hover:shadow-lg"
+              style="
+                background: linear-gradient(135deg, #f59e0b, #d97706);
+                color: #000;
+                box-shadow: 0 4px 16px rgba(245, 158, 11, 0.25);
+              "
+            >
+              Solicitar demo 21 días
+            </a>
+            <p class="dark:text-text-secondary/40 text-light-muted/40 text-xs">
+              Sin compromisos · Se desactiva al día 22
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 

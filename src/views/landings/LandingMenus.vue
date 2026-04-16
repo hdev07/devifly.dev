@@ -9,6 +9,7 @@ import LucideIcon from "../../components/LucideIcon.vue";
 const WA = "+525635926679";
 const waDemo = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Tengo un restaurante y me interesa el menú digital interactivo 🍽️")}`;
 const waContratar = `https://wa.me/${WA}?text=${encodeURIComponent("Quiero cotizar un menú digital para mi restaurante 🍽️")}`;
+const waDemo21 = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el demo de 21 días del menú digital por $999 MXN 🍽️")}`;
 const waSmall = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el menú digital plan Esencial ($3,999 MXN) 🍽️")}`;
 const waMedium = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el menú digital plan Profesional ($7,999 MXN) 🍽️")}`;
 const waLarge = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el menú digital plan Enterprise ($14,999 MXN) 🍽️")}`;
@@ -157,7 +158,10 @@ const includes = [
 const bonuses = [
   { icon: "qr-code", text: "Diseño de QR personalizado para tus mesas" },
   { icon: "camera", text: "Asesoría en fotografía de platillos" },
-  { icon: "eye", text: "Demo gratis con tu menú real" },
+  {
+    icon: "eye",
+    text: "Demo 21 días por $999 MXN — prueba tu menú real antes de contratar",
+  },
 ];
 
 const testimonials = [
@@ -862,6 +866,82 @@ const menuCategories = [
             </tbody>
           </table>
         </div>
+      </div>
+    </section>
+
+    <!-- Demo 21 días -->
+    <section class="px-6 py-24" style="background: #111">
+      <div class="max-w-4xl mx-auto text-center">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-8"
+        >
+          <LucideIcon name="calendar-clock" class-name="w-3.5 h-3.5" />
+          Demo 21 días
+        </div>
+        <h2
+          class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
+        >
+          ¿Quieres probarlo antes de decidir?
+        </h2>
+        <p
+          class="text-neutral-400 max-w-2xl mx-auto mb-12 text-base leading-relaxed"
+        >
+          Por solo <span class="text-amber-400 font-bold">$999 MXN</span> te
+          armamos tu menú digital real, con tus platillos, publicado y
+          funcionando durante 21 días. Si decides contratar, los $999 se
+          descuentan del anticipo — no pagas nada extra.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-12">
+          <div class="p-5 rounded-2xl bg-neutral-900 border border-neutral-800">
+            <div
+              class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3"
+            >
+              <LucideIcon
+                name="utensils-crossed"
+                class-name="w-5 h-5 text-green-400"
+              />
+            </div>
+            <p class="text-white font-semibold text-sm mb-1">Tu menú real</p>
+            <p class="text-neutral-500 text-xs">
+              Con tus platillos, categorías y precios reales
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-neutral-900 border border-neutral-800">
+            <div
+              class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3"
+            >
+              <LucideIcon name="qr-code" class-name="w-5 h-5 text-green-400" />
+            </div>
+            <p class="text-white font-semibold text-sm mb-1">
+              Publicado y funcional
+            </p>
+            <p class="text-neutral-500 text-xs">
+              Accesible por QR, compartible con tu equipo
+            </p>
+          </div>
+          <div class="p-5 rounded-2xl bg-neutral-900 border border-neutral-800">
+            <div
+              class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center mx-auto mb-3"
+            >
+              <LucideIcon name="receipt" class-name="w-5 h-5 text-amber-400" />
+            </div>
+            <p class="text-white font-semibold text-sm mb-1">
+              Se descuenta al contratar
+            </p>
+            <p class="text-neutral-500 text-xs">
+              Los $999 se restan del anticipo de cualquier plan
+            </p>
+          </div>
+        </div>
+        <a
+          :href="waDemo21"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-amber-500 text-black font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105 shadow-[0_0_20px_rgba(245,158,11,0.25)]"
+        >
+          Quiero mi demo de 21 días
+          <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+        </a>
       </div>
     </section>
 

@@ -211,6 +211,57 @@
                   </div>
                 </div>
 
+                <!-- Demo 21 días banner -->
+                <div
+                  v-if="product.demo21?.enabled"
+                  class="rounded-2xl border border-amber-500/30 dark:bg-amber-500/5 bg-amber-50/60 p-5 mb-6 flex flex-col sm:flex-row sm:items-center gap-4"
+                >
+                  <div class="flex items-center gap-3 flex-1 min-w-0">
+                    <div
+                      class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0"
+                    >
+                      <LucideIcon
+                        name="calendar-clock"
+                        class-name="w-5 h-5 text-amber-500"
+                      />
+                    </div>
+                    <div class="min-w-0">
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <span
+                          class="text-sm font-bold dark:text-white text-light-text"
+                        >
+                          {{ locale === "es" ? "Demo 21 días" : "21-day Demo" }}
+                        </span>
+                        <span
+                          class="px-2 py-0.5 rounded-full text-xs font-bold bg-amber-500/15 text-amber-500 border border-amber-500/20"
+                        >
+                          {{
+                            locale === "es"
+                              ? product.demo21.priceEs
+                              : product.demo21.priceEn
+                          }}
+                        </span>
+                      </div>
+                      <p
+                        class="text-xs dark:text-text-secondary text-light-muted mt-0.5 leading-relaxed"
+                      >
+                        {{
+                          locale === "es"
+                            ? product.demo21.descEs
+                            : product.demo21.descEn
+                        }}
+                      </p>
+                    </div>
+                  </div>
+                  <router-link
+                    to="/contact"
+                    class="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-sm font-semibold hover:bg-amber-500/20 transition"
+                  >
+                    {{ locale === "es" ? "Solicitar demo" : "Request demo" }}
+                    <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />
+                  </router-link>
+                </div>
+
                 <!-- Plans grid -->
                 <div
                   class="grid gap-5"

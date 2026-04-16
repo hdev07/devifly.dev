@@ -270,6 +270,10 @@ export default {
     afterSalesTitle: 'What happens after my site launches?',
     afterSalesSubtitle: 'Development is a one-time payment. To keep your site live, updated, and supported, these are your monthly options.',
     afterSalesNote: '* Hosting + domain is the only required recurring cost (~$12/mo). Maintenance plans are optional and can be added whenever you need them.',
+    demo21Badge: '21-day Demo',
+    demo21Title: 'Want to try it first?',
+    demo21Desc: 'For $59 USD we build your real project, published and running for 21 days. If you hire, it\'s deducted from the deposit.',
+    demo21Cta: 'Request demo',
   },
   invitacionesPage: {
     badge: 'Digital Invitations',

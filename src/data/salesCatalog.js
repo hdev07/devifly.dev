@@ -98,6 +98,17 @@ export const salesProducts = [
         ],
       },
     ],
+    demo21: {
+      enabled: true,
+      priceEs: "$999 MXN",
+      priceEn: "$59 USD",
+      basePlanEs: "One Page",
+      basePlanEn: "One Page",
+      basePriceEs: "$4,999 MXN",
+      basePriceEn: "$299 USD",
+      descEs: "Prueba tu landing real por 21 días. Si contratas, se descuenta del anticipo.",
+      descEn: "Try your real landing for 21 days. If you hire, it's deducted from the deposit.",
+    },
   },
   {
     key: "invitaciones",
@@ -447,6 +458,17 @@ export const salesProducts = [
         demoLink: "/menus-digitales/demo",
       },
     ],
+    demo21: {
+      enabled: true,
+      priceEs: "$999 MXN",
+      priceEn: "$59 USD",
+      basePlanEs: "Esencial",
+      basePlanEn: "Essential",
+      basePriceEs: "$3,999 MXN",
+      basePriceEn: "$229 USD",
+      descEs: "Prueba tu menú digital real por 21 días. Si contratas, se descuenta del anticipo.",
+      descEn: "Try your real digital menu for 21 days. If you hire, it's deducted from the deposit.",
+    },
   },
   {
     key: "salones",
@@ -572,6 +594,17 @@ export const salesProducts = [
         demoLink: "/salones-eventos/demo",
       },
     ],
+    demo21: {
+      enabled: true,
+      priceEs: "$999 MXN",
+      priceEn: "$59 USD",
+      basePlanEs: "Esencial",
+      basePlanEn: "Essential",
+      basePriceEs: "$5,999 MXN",
+      basePriceEn: "$349 USD",
+      descEs: "Prueba tu sitio de salón real por 21 días. Si contratas, se descuenta del anticipo.",
+      descEn: "Try your real venue site for 21 days. If you hire, it's deducted from the deposit.",
+    },
   },
 ];
 
