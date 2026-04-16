@@ -131,6 +131,20 @@ const reservationPackages = [
       "Mapa ubicación interactivo",
       "SEO local optimizado",
     ],
+    excluded: [
+      "Cotizador en línea",
+      "Calendario de disponibilidad",
+      "Galería con videos",
+      "Sección paquetes/servicios",
+      "Blog de eventos",
+      "Google Calendar sync",
+      "Panel admin completo",
+      "CRM clientes integrado",
+      "Pagos anticipo en línea",
+      "Contratos digitales",
+      "Multi-salón / Sucursales",
+      "Analíticas y reportes",
+    ],
     note: "Hasta 20 fotos · Entrega 2 semanas",
     demo: "/salones-eventos/demo",
     wa: waEsencial,
@@ -148,6 +162,14 @@ const reservationPackages = [
       "Sección paquetes/servicios",
       "Blog de eventos",
       "Google Calendar sync",
+    ],
+    excluded: [
+      "Panel admin completo",
+      "CRM clientes integrado",
+      "Pagos anticipo en línea",
+      "Contratos digitales",
+      "Multi-salón / Sucursales",
+      "Analíticas y reportes",
     ],
     note: "Fotos ilimitadas + videos · Entrega 3 semanas",
     demo: "/salones-eventos/demo",
@@ -742,6 +764,22 @@ const reservationPackages = [
                   "
                 />
                 {{ f }}
+              </li>
+            </ul>
+            <ul
+              v-if="pkg.excluded?.length"
+              class="space-y-3 mb-4 border-t dark:border-base-700/40 border-light-border pt-4"
+            >
+              <li
+                v-for="ex in pkg.excluded"
+                :key="ex"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary/50 text-light-muted/60 line-through"
+              >
+                <LucideIcon
+                  name="x"
+                  class-name="w-4 h-4 mt-0.5 text-red-400/60 shrink-0"
+                />
+                {{ ex }}
               </li>
             </ul>
             <p

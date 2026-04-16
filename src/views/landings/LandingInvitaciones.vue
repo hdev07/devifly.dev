@@ -35,8 +35,23 @@ const packages = [
       "Sugerencia de hospedaje",
       "Envíos ilimitados",
     ],
-    excluded:
-      "NO incluye: Música, Personalizadas, QR, Pases, WhatsApp o Videos.",
+    excluded: [
+      "Música de fondo y animaciones",
+      "Galería de fotos y video",
+      "Listado de asistencia confirmada",
+      "Número de pases asignados",
+      "Invitaciones múltiples (10-20 sugerido)",
+      "Confirmación por WhatsApp + formulario",
+      "Botón para agregar al calendario",
+      "Playlist colaborativa",
+      "Invitaciones personalizadas por invitado",
+      "Nombre de invitado o familia y pases",
+      "Link único por invitación",
+      "Código QR y sistema de check-in",
+      "Control de acceso en evento",
+      "Diseño completamente personalizado",
+      "Álbum colaborativo y compartir fotos",
+    ],
     validity: "Vigencia: 3 meses",
   },
   {
@@ -59,6 +74,15 @@ const packages = [
       "Confirmación por WhatsApp + formulario",
       "Botón para agregar al calendario",
       "Playlist colaborativa",
+    ],
+    excluded: [
+      "Invitaciones personalizadas por invitado",
+      "Nombre de invitado o familia y pases",
+      "Link único por invitación",
+      "Código QR y sistema de check-in",
+      "Control de acceso en evento",
+      "Diseño completamente personalizado",
+      "Álbum colaborativo y compartir fotos",
     ],
   },
   {
@@ -1055,15 +1079,22 @@ const mockupSections = [
                   {{ f }}
                 </li>
               </ul>
-              <p
-                v-if="pkg.excluded"
-                class="text-xs text-red-500/80 mb-2 font-semibold"
+              <ul
+                v-if="pkg.excluded?.length"
+                class="space-y-3 mb-6 border-t dark:border-base-700/40 border-light-border pt-4"
               >
-                <span class="inline-flex items-center gap-2">
-                  <LucideIcon name="x" class-name="w-4 h-4" />
-                  {{ pkg.excluded }}
-                </span>
-              </p>
+                <li
+                  v-for="ex in pkg.excluded"
+                  :key="ex"
+                  class="flex items-start gap-2 text-sm dark:text-text-secondary/50 text-light-muted/60 line-through"
+                >
+                  <LucideIcon
+                    name="x"
+                    class-name="w-4 h-4 mt-0.5 text-red-400/60 shrink-0"
+                  />
+                  {{ ex }}
+                </li>
+              </ul>
               <p
                 v-if="pkg.validity"
                 class="text-xs dark:text-text-secondary/60 text-light-muted/60"

@@ -34,6 +34,23 @@ const menuPackages = [
       "Dominio incluido (.devifly.dev)",
       "Deploy y hosting 1 año",
     ],
+    excluded: [
+      "Hasta 100 platillos",
+      "Subcategorías ilimitadas",
+      "Sección de promociones con banner",
+      "Buscador de productos",
+      "Detalle con alérgenos y porciones",
+      "Dominio personalizado (.com)",
+      "Panel básico para editar platillos",
+      "Platillos ilimitados",
+      "Múltiples sucursales",
+      "Panel de administración completo",
+      "Multi-idioma (ES/EN)",
+      "Analítica de platillos más vistos",
+      "Integración con sistema POS",
+      "Soporte prioritario 6 meses",
+      "Diseño a medida con branding",
+    ],
     note: "Hasta 30 platillos · Entrega 5 días hábiles",
   },
   {
@@ -55,6 +72,16 @@ const menuPackages = [
       "Detalle con alérgenos y porciones",
       "Dominio personalizado (.com)",
       "Panel básico para editar platillos",
+    ],
+    excluded: [
+      "Platillos ilimitados",
+      "Múltiples sucursales",
+      "Panel de administración completo",
+      "Multi-idioma (ES/EN)",
+      "Analítica de platillos más vistos",
+      "Integración con sistema POS",
+      "Soporte prioritario 6 meses",
+      "Diseño a medida con branding",
     ],
     note: "Hasta 100 platillos · Entrega 7 días hábiles",
   },
@@ -753,6 +780,22 @@ const menuCategories = [
                     "
                   />
                   {{ f }}
+                </li>
+              </ul>
+              <ul
+                v-if="pkg.excluded?.length"
+                class="space-y-3 mb-6 border-t border-neutral-800 pt-4"
+              >
+                <li
+                  v-for="ex in pkg.excluded"
+                  :key="ex"
+                  class="flex items-start gap-2 text-sm text-neutral-500 line-through"
+                >
+                  <LucideIcon
+                    name="x"
+                    class-name="w-4 h-4 mt-0.5 text-red-400/60 shrink-0"
+                  />
+                  {{ ex }}
                 </li>
               </ul>
               <p v-if="pkg.note" class="text-xs text-neutral-500">

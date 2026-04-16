@@ -29,6 +29,22 @@ const catalogPackages = [
       "Diseño responsive",
       "Entrega: 1 semana",
     ],
+    excluded: [
+      "Productos ilimitados",
+      "Categorías ilimitadas",
+      "Hasta 5 fotos por producto",
+      "Control de tallas y colores",
+      "Control de stock",
+      "Buscador de productos",
+      "Panel admin completo",
+      "Múltiples vendedoras (catálogos)",
+      "Cupones y descuentos",
+      "Reportes de productos más vistos",
+      "Dominio personalizado",
+      "Notificaciones por WhatsApp",
+      "Integración con pagos en línea",
+      "Soporte prioritario",
+    ],
   },
   {
     name: "Pro",
@@ -48,6 +64,15 @@ const catalogPackages = [
       "Buscador de productos",
       "Panel admin completo",
       "Entrega: 2 semanas",
+    ],
+    excluded: [
+      "Múltiples vendedoras (catálogos)",
+      "Cupones y descuentos",
+      "Reportes de productos más vistos",
+      "Dominio personalizado",
+      "Notificaciones por WhatsApp",
+      "Integración con pagos en línea",
+      "Soporte prioritario",
     ],
   },
   {
@@ -702,6 +727,22 @@ const mockupProducts = [
                   "
                 />
                 {{ f }}
+              </li>
+            </ul>
+            <ul
+              v-if="pkg.excluded?.length"
+              class="space-y-3 mb-6 border-t dark:border-base-700/40 border-light-border pt-4"
+            >
+              <li
+                v-for="ex in pkg.excluded"
+                :key="ex"
+                class="flex items-start gap-2 text-sm dark:text-text-secondary/50 text-light-muted/60 line-through"
+              >
+                <LucideIcon
+                  name="x"
+                  class-name="w-4 h-4 mt-0.5 text-red-400/60 shrink-0"
+                />
+                {{ ex }}
               </li>
             </ul>
           </div>
