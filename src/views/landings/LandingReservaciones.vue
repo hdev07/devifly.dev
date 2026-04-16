@@ -78,41 +78,6 @@ const mockupFeatures = [
 
 const openFaq = ref(null);
 
-const faqs = [
-  {
-    q: "¿Cuánto tiempo tarda en estar listo mi sitio?",
-    a: "Depende del plan. El plan Esencial se entrega en aproximadamente 2 semanas, el Pro en 3 semanas y el Premium en 4 a 5 semanas. Estos tiempos pueden variar según la cantidad de contenido que nos proporciones.",
-  },
-  {
-    q: "¿Necesito proporcionar las fotos y videos?",
-    a: "Sí, tú nos envías las fotos y videos de tu salón. Si no cuentas con material profesional, podemos recomendarte fotógrafos aliados a precios preferenciales.",
-  },
-  {
-    q: "¿El cotizador funciona automáticamente?",
-    a: "Sí, configuramos las tarifas base, extras y reglas de temporada. Tus clientes seleccionan fecha, número de invitados y servicios adicionales, y reciben una cotización estimada al instante.",
-  },
-  {
-    q: "¿Puedo actualizar las fotos, precios y disponibilidad yo mismo?",
-    a: "En los planes Pro y Premium incluimos un panel de administración donde puedes gestionar tu contenido, precios y calendario sin necesidad de conocimientos técnicos.",
-  },
-  {
-    q: "¿Incluye dominio y hosting?",
-    a: "Incluimos el deploy en un subdominio de devifly (tu-salon.devifly.dev) sin costo adicional. Si prefieres tu propio dominio (ej. tusalondefiestas.com), te ayudamos a configurarlo por un costo mínimo adicional.",
-  },
-  {
-    q: "¿Qué pasa si tengo varios salones o sucursales?",
-    a: "El plan Premium VIP incluye soporte multi-salón. Cada espacio tendrá su propia galería, disponibilidad y cotizador dentro del mismo sitio web.",
-  },
-  {
-    q: "¿Qué pasa si no recibo resultados?",
-    a: "Tenemos garantía sin riesgo. Si no recibes más solicitudes en el primer mes, optimizamos tu página sin costo hasta que lo logres.",
-  },
-  {
-    q: "¿Puedo probar antes de contratar un plan completo?",
-    a: "Sí. Tenemos un demo de 21 días por $999 MXN. Te armamos tu sitio real, con tus fotos y contenido, publicado y funcionando. Lo pruebas, lo compartes. Si contratas, los $999 se descuentan del anticipo. Si no te convence, se desactiva al día 22 sin compromiso.",
-  },
-];
-
 const waEsencial = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el plan Esencial del Sistema de Reservaciones para mi salón 🏛️")}`;
 const waPro = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el plan Pro del Sistema de Reservaciones para mi salón 🏛️")}`;
 const waPremium = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el plan Premium VIP del Sistema de Reservaciones para mi salón 🏛️")}`;
@@ -128,7 +93,7 @@ const reservationPackages = [
       "Galería de fotos (hasta 20)",
       "Formulario de contacto",
       "Integración WhatsApp",
-      "Mapa ubicación interactivo",
+      "Mapa de ubicación interactivo",
       "SEO local optimizado",
     ],
     excluded: [
@@ -197,6 +162,42 @@ const reservationPackages = [
     vip: true,
     badge: "VIP",
   },
+];
+
+const reservationComparisonRows = [
+  { feature: "Diseño responsivo premium", col1: true, col2: true, col3: true },
+  { feature: "Galería de fotos", col1: true, col2: true, col3: true },
+  { feature: "Formulario de contacto", col1: true, col2: true, col3: true },
+  { feature: "Integración WhatsApp", col1: true, col2: true, col3: true },
+  {
+    feature: "Mapa de ubicación interactivo",
+    col1: true,
+    col2: true,
+    col3: true,
+  },
+  { feature: "SEO local optimizado", col1: true, col2: true, col3: true },
+  { feature: "Cotizador en línea", col1: false, col2: true, col3: true },
+  {
+    feature: "Calendario de disponibilidad",
+    col1: false,
+    col2: true,
+    col3: true,
+  },
+  { feature: "Galería con videos", col1: false, col2: true, col3: true },
+  {
+    feature: "Sección paquetes / servicios",
+    col1: false,
+    col2: true,
+    col3: true,
+  },
+  { feature: "Blog de eventos", col1: false, col2: true, col3: true },
+  { feature: "Google Calendar sync", col1: false, col2: true, col3: true },
+  { feature: "Panel admin completo", col1: false, col2: false, col3: true },
+  { feature: "CRM clientes integrado", col1: false, col2: false, col3: true },
+  { feature: "Pagos anticipo en línea", col1: false, col2: false, col3: true },
+  { feature: "Contratos digitales", col1: false, col2: false, col3: true },
+  { feature: "Multi-salón / Sucursales", col1: false, col2: false, col3: true },
+  { feature: "Analíticas y reportes", col1: false, col2: false, col3: true },
 ];
 </script>
 
@@ -688,7 +689,7 @@ const reservationPackages = [
         Desde una página profesional hasta un sistema completo de gestión de
         eventos.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+      <div class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory">
         <div
           v-for="pkg in reservationPackages"
           :key="pkg.name"
@@ -827,53 +828,6 @@ const reservationPackages = [
       <div class="h-px dark:bg-base-700/50 bg-light-border"></div>
     </div>
 
-    <!-- Divider -->
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="h-px dark:bg-base-700/50 bg-light-border"></div>
-    </div>
-
-    <!-- FAQ -->
-    <section class="max-w-7xl mx-auto px-6 py-24">
-      <p
-        class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-3 font-mono"
-      >
-        07 / Preguntas Frecuentes
-      </p>
-      <h2
-        class="font-display text-3xl font-bold dark:text-white text-light-text mb-12"
-      >
-        Todo lo que necesitas saber
-      </h2>
-      <div class="space-y-0">
-        <div
-          v-for="(faq, i) in faqs"
-          :key="i"
-          class="border-b dark:border-base-700/40 border-light-border/60"
-        >
-          <button
-            @click="openFaq = openFaq === i ? null : i"
-            class="w-full flex items-center justify-between gap-4 py-5 text-left group"
-          >
-            <span
-              class="text-sm font-medium dark:text-text-primary text-light-text group-hover:dark:text-white group-hover:text-light-text transition"
-            >
-              {{ faq.q }}
-            </span>
-            <LucideIcon
-              name="chevron-down"
-              :class-name="`w-4 h-4 shrink-0 dark:text-text-secondary/40 text-light-muted/40 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`"
-            />
-          </button>
-          <div
-            v-show="openFaq === i"
-            class="pb-5 text-sm dark:text-text-secondary text-light-muted leading-relaxed"
-          >
-            {{ faq.a }}
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Demo 21 días -->
     <section class="max-w-5xl mx-auto px-6 py-24">
       <div
@@ -976,6 +930,102 @@ const reservationPackages = [
         </div>
       </div>
     </section>
+
+    <!-- Comparison Table -->
+    <section class="max-w-5xl mx-auto px-6 py-20">
+      <h2
+        class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text text-center mb-2 tracking-tight"
+      >
+        Compara los planes
+      </h2>
+      <p class="text-center dark:text-text-secondary text-light-muted mb-10">
+        Elige el sistema que necesita tu salón.
+      </p>
+      <div
+        class="overflow-x-auto rounded-xl border dark:border-base-800 border-light-border"
+      >
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="dark:bg-base-900 bg-light-card">
+              <th
+                class="text-left px-5 py-4 dark:text-text-secondary text-light-muted font-medium w-1/2"
+              >
+                Característica
+              </th>
+              <th
+                class="text-center px-4 py-4 dark:text-white text-light-text font-semibold"
+              >
+                Esencial
+              </th>
+              <th
+                class="text-center px-4 py-4 dark:text-white text-light-text font-semibold"
+              >
+                Pro
+              </th>
+              <th class="text-center px-4 py-4 text-emerald-400 font-semibold">
+                Premium VIP
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="(row, i) in reservationComparisonRows"
+              :key="i"
+              :class="
+                i % 2 === 0
+                  ? 'dark:bg-base-900/40 bg-light-bg'
+                  : 'dark:bg-base-800/20 bg-white'
+              "
+            >
+              <td class="px-5 py-3 dark:text-text-secondary text-light-muted">
+                {{ row.feature }}
+              </td>
+              <td class="text-center px-4 py-3">
+                <LucideIcon
+                  v-if="row.col1"
+                  name="check"
+                  class-name="w-4 h-4 dark:text-white text-light-text mx-auto"
+                />
+                <span
+                  v-else
+                  class="dark:text-base-600 text-light-border text-lg leading-none"
+                  >—</span
+                >
+              </td>
+              <td class="text-center px-4 py-3">
+                <LucideIcon
+                  v-if="row.col2"
+                  name="check"
+                  class-name="w-4 h-4 dark:text-white text-light-text mx-auto"
+                />
+                <span
+                  v-else
+                  class="dark:text-base-600 text-light-border text-lg leading-none"
+                  >—</span
+                >
+              </td>
+              <td class="text-center px-4 py-3">
+                <LucideIcon
+                  v-if="row.col3"
+                  name="check"
+                  class-name="w-4 h-4 text-emerald-400 mx-auto"
+                />
+                <span
+                  v-else
+                  class="dark:text-base-600 text-light-border text-lg leading-none"
+                  >—</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="h-px dark:bg-base-800 bg-light-border"></div>
+    </div>
 
     <!-- CTA Final -->
     <section class="py-32 px-6 text-center">

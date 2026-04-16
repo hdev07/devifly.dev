@@ -165,6 +165,50 @@ const mockupProducts = [
   { name: "Aretes Dorados", price: "$120", tag: null },
   { name: "Set Maquillaje", price: "$580", tag: "Popular" },
 ];
+
+const catalogComparisonRows = [
+  { feature: "Hasta 50 productos", col1: true, col2: true, col3: true },
+  { feature: "1 categoría", col1: true, col2: false, col3: false },
+  { feature: "Galería 2 fotos/producto", col1: true, col2: false, col3: false },
+  { feature: "Control de precios", col1: true, col2: true, col3: true },
+  { feature: "Link compartible", col1: true, col2: true, col3: true },
+  { feature: "Botón de WhatsApp", col1: true, col2: true, col3: true },
+  { feature: "Diseño responsive", col1: true, col2: true, col3: true },
+  { feature: "Productos ilimitados", col1: false, col2: true, col3: true },
+  { feature: "Categorías ilimitadas", col1: false, col2: true, col3: true },
+  {
+    feature: "Hasta 5 fotos por producto",
+    col1: false,
+    col2: true,
+    col3: true,
+  },
+  {
+    feature: "Control de tallas y colores",
+    col1: false,
+    col2: true,
+    col3: true,
+  },
+  { feature: "Control de stock", col1: false, col2: true, col3: true },
+  { feature: "Buscador de productos", col1: false, col2: true, col3: true },
+  { feature: "Panel admin completo", col1: false, col2: true, col3: true },
+  { feature: "Múltiples vendedoras", col1: false, col2: false, col3: true },
+  { feature: "Cupones y descuentos", col1: false, col2: false, col3: true },
+  { feature: "Reportes de más vistos", col1: false, col2: false, col3: true },
+  { feature: "Dominio personalizado", col1: false, col2: false, col3: true },
+  {
+    feature: "Notificaciones por WhatsApp",
+    col1: false,
+    col2: false,
+    col3: true,
+  },
+  {
+    feature: "Integración pagos en línea",
+    col1: false,
+    col2: false,
+    col3: true,
+  },
+  { feature: "Soporte prioritario", col1: false, col2: false, col3: true },
+];
 </script>
 
 <template>
@@ -663,11 +707,11 @@ const mockupProducts = [
       >
         Desde lo básico hasta un catálogo con todo el poder para tu negocio.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+      <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
         <div
           v-for="pkg in catalogPackages"
           :key="pkg.name"
-          class="relative flex flex-col rounded-lg overflow-hidden"
+          class="w-[400px] shrink-0 snap-start relative flex flex-col rounded-lg overflow-hidden"
           :class="
             pkg.highlighted
               ? 'border-2 border-fuchsia-500'
@@ -784,6 +828,95 @@ const mockupProducts = [
             </router-link>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="max-w-5xl mx-auto px-6 py-20">
+      <h2
+        class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text text-center mb-2 tracking-tight"
+      >
+        Compara los planes
+      </h2>
+      <p class="text-center dark:text-text-secondary text-light-muted mb-10">
+        Elige el que mejor se adapta a tu negocio.
+      </p>
+      <div
+        class="overflow-x-auto rounded-xl border dark:border-base-800 border-light-border"
+      >
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="dark:bg-base-900 bg-light-card">
+              <th
+                class="text-left px-5 py-4 dark:text-text-secondary text-light-muted font-medium w-1/2"
+              >
+                Característica
+              </th>
+              <th
+                class="text-center px-4 py-4 dark:text-white text-light-text font-semibold"
+              >
+                Básico
+              </th>
+              <th class="text-center px-4 py-4 text-fuchsia-400 font-semibold">
+                Pro
+              </th>
+              <th class="text-center px-4 py-4 text-amber-400 font-semibold">
+                Premium VIP
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="(row, i) in catalogComparisonRows"
+              :key="i"
+              :class="
+                i % 2 === 0
+                  ? 'dark:bg-base-900/40 bg-light-bg'
+                  : 'dark:bg-base-800/20 bg-white'
+              "
+            >
+              <td class="px-5 py-3 dark:text-text-secondary text-light-muted">
+                {{ row.feature }}
+              </td>
+              <td class="text-center px-4 py-3">
+                <LucideIcon
+                  v-if="row.col1"
+                  name="check"
+                  class-name="w-4 h-4 text-fuchsia-400 mx-auto"
+                />
+                <span
+                  v-else
+                  class="dark:text-base-600 text-light-border text-lg leading-none"
+                  >—</span
+                >
+              </td>
+              <td class="text-center px-4 py-3">
+                <LucideIcon
+                  v-if="row.col2"
+                  name="check"
+                  class-name="w-4 h-4 text-fuchsia-400 mx-auto"
+                />
+                <span
+                  v-else
+                  class="dark:text-base-600 text-light-border text-lg leading-none"
+                  >—</span
+                >
+              </td>
+              <td class="text-center px-4 py-3">
+                <LucideIcon
+                  v-if="row.col3"
+                  name="check"
+                  class-name="w-4 h-4 text-amber-400 mx-auto"
+                />
+                <span
+                  v-else
+                  class="dark:text-base-600 text-light-border text-lg leading-none"
+                  >—</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 

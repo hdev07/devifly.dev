@@ -64,7 +64,7 @@ const menuPackages = [
     badge: "Más popular",
     vip: false,
     features: [
-      "Todo del plan Esencial",
+      "Todo lo de Esencial",
       "Hasta 100 platillos",
       "Subcategorías ilimitadas",
       "Sección de promociones con banner",
@@ -96,7 +96,7 @@ const menuPackages = [
     badge: "Enterprise",
     vip: true,
     features: [
-      "Todo del plan Profesional",
+      "Todo lo de Profesional",
       "Platillos ilimitados",
       "Múltiples sucursales",
       "Panel de administración completo",
@@ -715,11 +715,11 @@ const menuCategories = [
         <p class="text-neutral-400 text-center mb-16 max-w-xl mx-auto text-sm">
           Desde food trucks hasta cadenas con múltiples sucursales.
         </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory">
           <div
             v-for="pkg in menuPackages"
             :key="pkg.name"
-            class="relative flex flex-col rounded-2xl overflow-hidden"
+            class="w-[400px] shrink-0 snap-start relative flex flex-col rounded-2xl overflow-hidden"
             :class="
               pkg.highlighted
                 ? 'border-2 border-green-400'

@@ -84,6 +84,7 @@ const packages = [
       "Diseño completamente personalizado",
       "Álbum colaborativo y compartir fotos",
     ],
+    validity: "Vigencia: 6 meses",
   },
   {
     name: "Premium VIP",
@@ -105,6 +106,8 @@ const packages = [
       "Diseño completamente personalizado",
       "Álbum colaborativo y compartir fotos",
     ],
+    excluded: [],
+    validity: "Vigencia: 12 meses",
   },
 ];
 
@@ -1006,11 +1009,11 @@ const mockupSections = [
           Desde lo esencial hasta la experiencia VIP completa con control de
           acceso QR.
         </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory">
           <div
             v-for="pkg in packages"
             :key="pkg.name"
-            class="relative flex flex-col rounded-2xl overflow-hidden"
+            class="w-[400px] shrink-0 snap-start relative flex flex-col rounded-2xl overflow-hidden"
             :class="
               pkg.highlighted
                 ? 'border-2 border-violet-500'
