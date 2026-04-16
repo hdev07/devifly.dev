@@ -337,6 +337,29 @@
                       </li>
                     </ul>
 
+                    <!-- Excluded features -->
+                    <ul
+                      v-if="
+                        (locale === 'es' ? plan.excludedEs : plan.excludedEn)
+                          ?.length
+                      "
+                      class="space-y-2 mb-6 border-t dark:border-base-700/40 border-light-border pt-4"
+                    >
+                      <li
+                        v-for="excluded in locale === 'es'
+                          ? plan.excludedEs
+                          : plan.excludedEn"
+                        :key="excluded"
+                        class="flex items-start gap-2 text-sm dark:text-text-secondary/50 text-light-muted/60 line-through"
+                      >
+                        <LucideIcon
+                          name="x"
+                          class-name="w-4 h-4 mt-0.5 text-red-400/60 shrink-0"
+                        />
+                        {{ excluded }}
+                      </li>
+                    </ul>
+
                     <div class="flex flex-col gap-2 mt-auto">
                       <router-link
                         v-if="plan.demoLink"
