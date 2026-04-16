@@ -772,7 +772,7 @@ const mockupSections = [
           </div>
         </div>
 
-        <div class="flex justify-center mt-10">
+        <div class="flex flex-wrap justify-center gap-4 mt-10">
           <router-link
             to="/invitaciones/esencial"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition"
@@ -783,7 +783,33 @@ const mockupSections = [
             "
           >
             <LucideIcon name="eye" class-name="w-4 h-4" />
-            Ver demo en vivo
+            Demo Esencial
+            <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+          </router-link>
+          <router-link
+            to="/invitaciones/pro"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition"
+            style="
+              background: rgba(236, 72, 153, 0.08);
+              border: 1px solid rgba(236, 72, 153, 0.2);
+              color: rgb(236, 72, 153);
+            "
+          >
+            <LucideIcon name="eye" class-name="w-4 h-4" />
+            Demo Pro
+            <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+          </router-link>
+          <router-link
+            to="/invitaciones/premium"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition"
+            style="
+              background: rgba(212, 175, 55, 0.08);
+              border: 1px solid rgba(212, 175, 55, 0.2);
+              color: rgb(212, 175, 55);
+            "
+          >
+            <LucideIcon name="eye" class-name="w-4 h-4" />
+            Demo Premium
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
           </router-link>
         </div>

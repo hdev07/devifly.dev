@@ -518,34 +518,64 @@
         </h2>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           <div
-            class="aspect-square rounded-2xl bg-white border-2 border-[#d6c1ff]/30 flex items-center justify-center shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
+            class="aspect-square rounded-2xl overflow-hidden border-2 border-[#d6c1ff]/30 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
-            <LucideIcon name="baby" class-name="w-10 h-10 text-[#6aade4]" />
+            <img
+              src="https://images.unsplash.com/photo-1519340333755-56e9c1d04579?w=400&h=400&fit=crop"
+              alt="Bebé durmiendo"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
           <div
-            class="aspect-square rounded-2xl bg-[#fff5f6] border-2 border-[#fadadd]/30 flex items-center justify-center shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
+            class="aspect-square rounded-2xl overflow-hidden border-2 border-[#fadadd]/30 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
-            <LucideIcon name="heart" class-name="w-10 h-10 text-[#fadadd]" />
+            <img
+              src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&h=400&fit=crop"
+              alt="Ropita de bebé"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
           <div
-            class="aspect-square rounded-2xl bg-[#edf6ff] border-2 border-[#a7d8ff]/30 flex items-center justify-center shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
+            class="aspect-square rounded-2xl overflow-hidden border-2 border-[#a7d8ff]/30 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
-            <LucideIcon name="package" class-name="w-10 h-10 text-[#b0a7c0]" />
+            <img
+              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop"
+              alt="Vela de bautizo"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
           <div
-            class="aspect-square rounded-2xl bg-[#fff9e6] border-2 border-[#fff3b0]/50 flex items-center justify-center shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
+            class="aspect-square rounded-2xl overflow-hidden border-2 border-[#fff3b0]/50 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
-            <LucideIcon name="sparkles" class-name="w-10 h-10 text-[#c6a75e]" />
+            <img
+              src="https://images.unsplash.com/photo-1504439904031-93ded9f93e4e?w=400&h=400&fit=crop"
+              alt="Cruz decorativa"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
           <div
-            class="aspect-square rounded-2xl bg-white border-2 border-[#d6c1ff]/30 flex items-center justify-center shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
+            class="aspect-square rounded-2xl overflow-hidden border-2 border-[#d6c1ff]/30 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
-            <LucideIcon name="smile" class-name="w-10 h-10 text-[#d4849a]" />
+            <img
+              src="https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?w=400&h=400&fit=crop"
+              alt="Familia celebrando"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
           <div
-            class="aspect-square rounded-2xl bg-[#fff5f6] border-2 border-[#fadadd]/30 flex items-center justify-center shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
+            class="aspect-square rounded-2xl overflow-hidden border-2 border-[#fadadd]/30 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
-            <LucideIcon name="bird" class-name="w-10 h-10 text-[#5b9bd5]" />
+            <img
+              src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=400&h=400&fit=crop"
+              alt="Detalles de bautizo"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>

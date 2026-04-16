@@ -13,7 +13,9 @@
         border-bottom: 1px solid rgba(212, 175, 55, 0.15);
       "
     >
-      <div class="max-w-lg lg:max-w-3xl mx-auto px-4 flex items-center justify-between">
+      <div
+        class="max-w-lg lg:max-w-3xl mx-auto px-4 flex items-center justify-between"
+      >
         <router-link
           to="/menus-digitales"
           class="flex items-center gap-2 text-sm transition-all duration-300 hover:scale-105"
@@ -76,7 +78,9 @@
         class="fixed top-0 left-0 right-0 bottom-0 z-[60] flex flex-col"
         style="background: rgba(10, 10, 10, 0.98)"
       >
-        <div class="max-w-lg lg:max-w-2xl mx-auto w-full px-4 pt-6 flex flex-col h-full">
+        <div
+          class="max-w-lg lg:max-w-2xl mx-auto w-full px-4 pt-6 flex flex-col h-full"
+        >
           <div class="flex items-center gap-3 mb-6">
             <div class="flex-1 relative">
               <input
@@ -245,39 +249,26 @@
         temporada
       </p>
 
-      <!-- Hero image placeholder -->
+      <!-- Hero image -->
       <div
         class="relative z-10 w-full max-w-lg lg:max-w-2xl mx-auto h-56 sm:h-72 lg:h-80 mb-0 overflow-hidden animate-fade-in-up animation-delay-600"
-        style="
-          background: linear-gradient(
-            180deg,
-            rgba(30, 25, 18, 0.9),
-            rgba(15, 13, 10, 1)
-          );
-        "
       >
-        <div class="absolute inset-0 flex items-center justify-center">
-          <div class="text-center">
-            <div
-              class="w-20 h-20 mx-auto rounded-2xl bg-neutral-800/50 border border-neutral-700/30 flex items-center justify-center mb-3"
-            >
-              <svg
-                class="w-8 h-8 text-neutral-600"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                viewBox="0 0 24 24"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <circle cx="9" cy="9" r="1.5" />
-                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-              </svg>
-            </div>
-            <span class="text-neutral-600 text-xs tracking-wider uppercase"
-              >Imagen Principal</span
-            >
-          </div>
-        </div>
+        <img
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&h=500&fit=crop"
+          alt="Restaurante La Trattoria"
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div
+          class="absolute inset-0"
+          style="
+            background: linear-gradient(
+              180deg,
+              rgba(30, 25, 18, 0.3),
+              rgba(15, 13, 10, 0.85)
+            );
+          "
+        ></div>
       </div>
     </section>
 
@@ -512,7 +503,9 @@
           </div>
 
           <!-- Items grid -->
-          <div class="max-w-lg lg:max-w-3xl mx-auto px-4 space-y-3 lg:grid lg:grid-cols-2 lg:gap-4 lg:space-y-0">
+          <div
+            class="max-w-lg lg:max-w-3xl mx-auto px-4 space-y-3 lg:grid lg:grid-cols-2 lg:gap-4 lg:space-y-0"
+          >
             <div
               v-for="(item, idx) in sub.items"
               :key="item.name"
@@ -529,18 +522,19 @@
               @click="openDetail(item)"
             >
               <div class="flex gap-4 p-3.5">
-                <!-- Item image placeholder -->
+                <!-- Item image -->
                 <div
                   class="w-24 h-24 rounded-xl flex-shrink-0 overflow-hidden relative"
                 >
-                  <div
-                    class="absolute inset-0 bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center"
-                  >
-                    <span
-                      class="text-neutral-700 text-[9px] tracking-wider uppercase text-center"
-                      >Foto<br />platillo</span
-                    >
-                  </div>
+                  <img
+                    :src="
+                      foodImageMap[item.name] ||
+                      'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&h=200&fit=crop'
+                    "
+                    :alt="item.name"
+                    class="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                  />
                   <div v-if="item.tag" class="absolute top-1.5 left-1.5">
                     <span
                       class="px-2 py-0.5 rounded-full text-[8px] font-bold tracking-wider uppercase"
@@ -636,28 +630,17 @@
             </svg>
           </button>
 
-          <!-- Detail image placeholder -->
+          <!-- Detail image -->
           <div class="w-full h-56 relative overflow-hidden">
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center"
-            >
-              <div class="text-center">
-                <svg
-                  class="w-12 h-12 mx-auto text-neutral-700 mb-2"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  viewBox="0 0 24 24"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="9" cy="9" r="1.5" />
-                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                </svg>
-                <span class="text-neutral-600 text-xs tracking-wider uppercase"
-                  >Imagen del platillo</span
-                >
-              </div>
-            </div>
+            <img
+              :src="
+                foodImageMap[selectedItem.name] ||
+                'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop'
+              "
+              :alt="selectedItem.name"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
             <div
               class="absolute bottom-0 left-0 right-0 h-24"
               style="background: linear-gradient(transparent, #1a1510)"
@@ -897,6 +880,83 @@ const promotions = [
     badge: "L-J",
   },
 ];
+
+const foodImageMap = {
+  "Guacamole con Totopos":
+    "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?w=200&h=200&fit=crop",
+  "Nachos Supremos":
+    "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=200&h=200&fit=crop",
+  "Esquites Premium":
+    "https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=200&h=200&fit=crop",
+  "Tabla de Quesos Artesanales":
+    "https://images.unsplash.com/photo-1452195100486-9cc805987862?w=200&h=200&fit=crop",
+  "Tostada de Atún Fresco":
+    "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=200&h=200&fit=crop",
+  "Tostada de Aguachile":
+    "https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=200&h=200&fit=crop",
+  "Tostada de Pulpo":
+    "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=200&h=200&fit=crop",
+  "Salmón a la Parrilla":
+    "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200&h=200&fit=crop",
+  "Pulpo Zarandeado":
+    "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=200&h=200&fit=crop",
+  "Camarones a la Diabla":
+    "https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=200&h=200&fit=crop",
+  "Rib Eye Premium":
+    "https://images.unsplash.com/photo-1558030006-450675393462?w=200&h=200&fit=crop",
+  "Arrachera Marinada":
+    "https://images.unsplash.com/photo-1544025162-d76694265947?w=200&h=200&fit=crop",
+  "Molcajete Mar y Tierra":
+    "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=200&h=200&fit=crop",
+  "Hamburguesa Gourmet":
+    "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&h=200&fit=crop",
+  "Tacos de Rib Eye":
+    "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=200&h=200&fit=crop",
+  "Tacos de Arrachera":
+    "https://images.unsplash.com/photo-1624300629298-e9de39c13be5?w=200&h=200&fit=crop",
+  "Tacos de Picanha":
+    "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=200&h=200&fit=crop",
+  "Taco de Pulpo Zarandeado":
+    "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=200&h=200&fit=crop",
+  "Taco de Camarón Tempura":
+    "https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=200&h=200&fit=crop",
+  "Margarita Clásica":
+    "https://images.unsplash.com/photo-1556855810-ac404aa91e85?w=200&h=200&fit=crop",
+  "Mojito de Maracuyá":
+    "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=200&h=200&fit=crop",
+  "Mezcalita Toronja":
+    "https://images.unsplash.com/photo-1587223962217-f4e4612c1e6b?w=200&h=200&fit=crop",
+  "Negroni Ahumado":
+    "https://images.unsplash.com/photo-1574056932095-24bbcfdd4253?w=200&h=200&fit=crop",
+  "Cerveza Nacional":
+    "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=200&h=200&fit=crop",
+  "Cerveza Premium":
+    "https://images.unsplash.com/photo-1608270586620-248524c67de9?w=200&h=200&fit=crop",
+  "Cerveza Artesanal":
+    "https://images.unsplash.com/photo-1566633806327-68e152aaf26d?w=200&h=200&fit=crop",
+  "Limonada de Frutos Rojos":
+    "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=200&h=200&fit=crop",
+  "Naranjada con Hierbabuena":
+    "https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?w=200&h=200&fit=crop",
+  "Agua de Horchata":
+    "https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=200&h=200&fit=crop",
+  "Churros con Chocolate":
+    "https://images.unsplash.com/photo-1624371414361-e670246e0773?w=200&h=200&fit=crop",
+  "Pastel de Tres Leches":
+    "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=200&h=200&fit=crop",
+  "Flan Napolitano":
+    "https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?w=200&h=200&fit=crop",
+  "Helado Artesanal":
+    "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=200&h=200&fit=crop",
+  "Café Americano":
+    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&h=200&fit=crop",
+  "Carajillo Licor 43":
+    "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=200&h=200&fit=crop",
+  "Carajillo de Baileys":
+    "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=200&h=200&fit=crop",
+  "Mezcal Cenizo (1 oz)":
+    "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=200&h=200&fit=crop",
+};
 
 const menuCategories = [
   {

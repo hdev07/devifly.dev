@@ -123,24 +123,23 @@
     <!-- Products Grid -->
     <section class="py-6 px-4" style="background: #fafafa; min-height: 60vh">
       <div class="max-w-lg lg:max-w-4xl mx-auto">
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4"
+        >
           <div
             v-for="product in filteredProducts"
             :key="product.id"
             class="rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
             @click="openProduct(product)"
           >
-            <!-- Product image placeholder -->
-            <div
-              class="aspect-square relative overflow-hidden"
-              :style="{ background: product.bg }"
-            >
-              <div class="absolute inset-0 flex items-center justify-center">
-                <LucideIcon
-                  :name="product.icon"
-                  class-name="w-12 h-12 text-white/80"
-                />
-              </div>
+            <!-- Product image -->
+            <div class="aspect-square relative overflow-hidden">
+              <img
+                :src="product.img"
+                :alt="product.name"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
               <!-- Badge -->
               <div
                 v-if="product.badge"
@@ -244,14 +243,12 @@
             <!-- Product header in modal -->
             <div
               class="aspect-video relative overflow-hidden rounded-t-3xl sm:rounded-t-3xl"
-              :style="{ background: selectedProduct.bg }"
             >
-              <div class="absolute inset-0 flex items-center justify-center">
-                <LucideIcon
-                  :name="selectedProduct.icon"
-                  class-name="w-20 h-20 text-white/70"
-                />
-              </div>
+              <img
+                :src="selectedProduct.img"
+                :alt="selectedProduct.name"
+                class="absolute inset-0 w-full h-full object-cover"
+              />
               <button
                 @click="selectedProduct = null"
                 class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/80 flex items-center justify-center"
@@ -424,8 +421,7 @@ const products = [
     ],
     description:
       "Blusa de manga corta con estampado floral. Tela ligera y fresca, perfecta para la temporada.",
-    icon: "shirt",
-    bg: "linear-gradient(135deg, #f9a8d4, #f472b6)",
+    img: "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=400&h=400&fit=crop",
     badge: "-30%",
     badgeColor: "#ef4444",
   },
@@ -442,8 +438,7 @@ const products = [
     ],
     description:
       "Vestido largo estilo boho con bordados. Ideal para salidas casuales y eventos al aire libre.",
-    icon: "shirt",
-    bg: "linear-gradient(135deg, #fed7aa, #fdba74)",
+    img: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&h=400&fit=crop",
   },
   {
     id: 3,
@@ -459,8 +454,7 @@ const products = [
     ],
     description:
       "Set de 6 labiales mate de larga duración. Colores vibrantes que no se transfieren.",
-    icon: "palette",
-    bg: "linear-gradient(135deg, #c084fc, #a855f7)",
+    img: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400&h=400&fit=crop",
     badge: "Más vendido",
     badgeColor: "#ec4899",
   },
@@ -472,8 +466,7 @@ const products = [
     stock: 18,
     description:
       "Crema hidratante con ácido hialurónico y vitamina E. Para todo tipo de piel.",
-    icon: "droplets",
-    bg: "linear-gradient(135deg, #a7f3d0, #6ee7b7)",
+    img: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop",
   },
   {
     id: 5,
@@ -488,8 +481,7 @@ const products = [
     ],
     description:
       "Bolsa crossbody de piel sintética con acabados metálicos. Compartimentos organizadores.",
-    icon: "shopping-bag",
-    bg: "linear-gradient(135deg, #fda4af, #fb7185)",
+    img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop",
   },
   {
     id: 6,
@@ -503,8 +495,7 @@ const products = [
     ],
     description:
       "Aretes colgantes en forma de corazón con cristal. Hipoalergénicos.",
-    icon: "heart",
-    bg: "linear-gradient(135deg, #fde68a, #fbbf24)",
+    img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop",
     badge: "Nuevo",
     badgeColor: "#8b5cf6",
   },
@@ -516,8 +507,7 @@ const products = [
     stock: 15,
     description:
       "Vela de cera de soya con aroma a lavanda. 40 horas de duración. Presentación en frasco de vidrio.",
-    icon: "flame",
-    bg: "linear-gradient(135deg, #c4b5fd, #a78bfa)",
+    img: "https://images.unsplash.com/photo-1602607688066-3bcc4894e6e6?w=400&h=400&fit=crop",
   },
   {
     id: 8,
@@ -532,8 +522,7 @@ const products = [
     ],
     description:
       "Jeans skinny de tiro alto con stretch. Ajuste perfecto y muy cómodos.",
-    icon: "shirt",
-    bg: "linear-gradient(135deg, #93c5fd, #3b82f6)",
+    img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&h=400&fit=crop",
   },
   {
     id: 9,
@@ -544,8 +533,7 @@ const products = [
     stock: 7,
     description:
       "Cojín decorativo con flecos estilo boho. 45x45cm. Funda lavable con zipper.",
-    icon: "sofa",
-    bg: "linear-gradient(135deg, #fecaca, #fca5a5)",
+    img: "https://images.unsplash.com/photo-1629949009765-40fc74c9ec21?w=400&h=400&fit=crop",
     badge: "-21%",
     badgeColor: "#ef4444",
   },
@@ -557,8 +545,7 @@ const products = [
     stock: 20,
     description:
       "Set profesional de 12 brochas con estuche. Pelo sintético suave y mango ergonómico.",
-    icon: "brush",
-    bg: "linear-gradient(135deg, #fbcfe8, #f9a8d4)",
+    img: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=400&fit=crop",
   },
 ];
 

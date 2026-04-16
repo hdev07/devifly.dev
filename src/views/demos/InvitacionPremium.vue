@@ -304,22 +304,12 @@
             "
             :style="{ aspectRatio: i === 0 ? '1' : '1' }"
           >
-            <div
-              class="absolute inset-0 flex items-center justify-center"
-              :style="{ background: photo.bg }"
-            >
-              <span
-                class="transition-transform duration-500 group-hover:scale-125"
-                :class="i === 0 ? 'text-6xl' : 'text-3xl'"
-                ><LucideIcon
-                  :name="photo.icon"
-                  :class-name="
-                    i === 0
-                      ? 'w-14 h-14 text-[#c6a75e]'
-                      : 'w-8 h-8 text-[#c6a75e]'
-                  "
-              /></span>
-            </div>
+            <img
+              :src="photo.img"
+              alt="Galería de boda"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
             <div
               class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"
             ></div>
@@ -1119,32 +1109,25 @@ const timeline = [
 
 const galleryPhotos = [
   {
-    icon: "users",
-    bg: "linear-gradient(135deg, rgba(198,167,94,0.12), rgba(198,167,94,0.06))",
+    img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=600&fit=crop",
   },
   {
-    icon: "camera",
-    bg: "linear-gradient(135deg, rgba(198,167,94,0.08), rgba(198,167,94,0.04))",
+    img: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=400&h=400&fit=crop",
   },
   {
-    icon: "sparkles",
-    bg: "linear-gradient(135deg, rgba(198,167,94,0.10), rgba(198,167,94,0.05))",
+    img: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400&h=400&fit=crop",
   },
   {
-    icon: "gift",
-    bg: "linear-gradient(135deg, rgba(198,167,94,0.06), rgba(198,167,94,0.03))",
+    img: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&h=400&fit=crop",
   },
   {
-    icon: "sparkles",
-    bg: "linear-gradient(135deg, rgba(198,167,94,0.08), rgba(198,167,94,0.04))",
+    img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400&h=400&fit=crop",
   },
   {
-    icon: "sparkles",
-    bg: "linear-gradient(135deg, rgba(198,167,94,0.10), rgba(198,167,94,0.06))",
+    img: "https://images.unsplash.com/photo-1529636798458-92182e662485?w=400&h=400&fit=crop",
   },
   {
-    icon: "mail",
-    bg: "linear-gradient(135deg, rgba(198,167,94,0.06), rgba(198,167,94,0.03))",
+    img: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&h=400&fit=crop",
   },
 ];
 

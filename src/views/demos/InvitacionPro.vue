@@ -298,16 +298,12 @@
                 : 'aspect-square'
             "
           >
-            <div
-              class="absolute inset-0 flex items-center justify-center"
-              :style="{ background: photo.bg }"
-            >
-              <span class="text-4xl transition-transform group-hover:scale-110"
-                ><LucideIcon
-                  :name="photo.icon"
-                  class-name="w-9 h-9 text-[#7a1e3a]"
-              /></span>
-            </div>
+            <img
+              :src="photo.img"
+              alt="Galería XV años"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
             <div
               v-if="photo.type === 'video'"
               class="absolute inset-0 flex items-center justify-center pointer-events-none"
@@ -894,15 +890,24 @@ const handleRSVP = () => {
 
 const gallery = [
   {
-    icon: "camera",
-    bg: "linear-gradient(135deg, #FDF5F8, #F8E8EF)",
+    img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=600&fit=crop",
     type: "video",
   },
-  { icon: "gem", bg: "linear-gradient(135deg, #FBF5E8, #F5EDDA)" },
-  { icon: "sparkles", bg: "linear-gradient(135deg, #FCF0F4, #F5E0EA)" },
-  { icon: "sparkles", bg: "linear-gradient(135deg, #F8F0FF, #F0E5FA)" },
-  { icon: "music", bg: "linear-gradient(135deg, #FFF5F6, #FCEAED)" },
-  { icon: "gift", bg: "linear-gradient(135deg, #FDF5F8, #F8E8EF)" },
+  {
+    img: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400&h=400&fit=crop",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&h=400&fit=crop",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&h=400&fit=crop",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1549488344-cbb6c34cf08b?w=400&h=400&fit=crop",
+  },
 ];
 
 const calendarUrl = computed(() => {
