@@ -240,3 +240,267 @@ a[href="#"] {
 .delay-600 {
   animation-delay: 600ms;
 }
+
+/* === CRO redesign utilities === */
+
+/* Soft hover-lifted glass shadow */
+.shadow-glass-hover {
+  box-shadow:
+    0 22px 60px -20px rgba(15, 23, 42, 0.45),
+    0 0 0 1px rgba(59, 130, 246, 0.18) inset;
+}
+.dark .shadow-glass-hover {
+  box-shadow:
+    0 28px 70px -20px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(96, 165, 250, 0.25) inset;
+}
+
+/* Premium gradient text */
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-500),
+    var(--color-cyan-glow) 50%,
+    var(--color-violet-soft)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle animated gradient border */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.5),
+    rgba(34, 211, 238, 0.25),
+    rgba(167, 139, 250, 0.4)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Conic ring (used in CTAs and feature hubs) */
+@keyframes conic-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.conic-ring::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(59, 130, 246, 0.35) 90deg,
+    transparent 180deg,
+    rgba(34, 211, 238, 0.35) 270deg,
+    transparent 360deg
+  );
+  animation: conic-spin 8s linear infinite;
+  z-index: -1;
+}
+
+/* Hero shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.shimmer {
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* Scroll-reveal stagger variants */
+@keyframes scroll-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal-up {
+  animation: scroll-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Tilt-on-hover (used for hero card / case study cards) */
+.tilt-card {
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s ease;
+}
+.tilt-card:hover {
+  transform: perspective(1200px) rotateX(2deg) rotateY(-2deg) translateY(-4px);
+}
+
+/* Marquee mask edges */
+.marquee-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+/* Section divider line */
+.section-divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-base-700) 50%,
+    transparent
+  );
+}
+.light .section-divider {
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-light-border) 50%,
+    transparent
+  );
+}
+
+/* Stat counter pulse */
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-count-up {
+  animation: count-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* CRO sticky bottom CTA on mobile */
+.sticky-cta-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 49;
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+  background: linear-gradient(
+    to top,
+    var(--color-base-950) 60%,
+    rgba(2, 6, 23, 0)
+  );
+  pointer-events: none;
+}
+.light .sticky-cta-mobile {
+  background: linear-gradient(
+    to top,
+    rgba(248, 250, 252, 0.96) 60%,
+    rgba(248, 250, 252, 0)
+  );
+}
+.sticky-cta-mobile > * {
+  pointer-events: auto;
+}
+
+/* Range slider for ROI Calculator */
+.roi-range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+}
+.roi-range::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--color-brand-500) 0%,
+    var(--color-brand-500) var(--fill, 50%),
+    rgba(148, 163, 184, 0.25) var(--fill, 50%)
+  );
+}
+.roi-range::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.25);
+}
+.roi-range::-moz-range-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-brand-500);
+}
+.roi-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -7px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--color-brand-500);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.45);
+  transition: transform 0.2s ease;
+}
+.roi-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+.roi-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--color-brand-500);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.45);
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .animate-glow-pulse,
+  .animate-float,
+  .animate-fade-in-up,
+  .animate-slide-in-left,
+  .marquee-track,
+  .conic-ring::after,
+  .shimmer {
+    animation: none !important;
+  }
+}
