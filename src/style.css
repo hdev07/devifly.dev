@@ -504,3 +504,122 @@ a[href="#"] {
     animation: none !important;
   }
 }
+
+/* ===== Landing premium system (aligned with Home palette) ===== */
+.landing-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.landing-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      60rem 30rem at 10% -10%,
+      rgba(59, 130, 246, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      52rem 26rem at 90% 12%,
+      rgba(34, 211, 238, 0.1),
+      transparent 62%
+    ),
+    radial-gradient(
+      44rem 24rem at 50% 100%,
+      rgba(167, 139, 250, 0.1),
+      transparent 64%
+    );
+}
+
+.landing-shell > section {
+  position: relative;
+}
+
+.landing-shell > section:nth-of-type(odd) {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.28),
+    rgba(2, 6, 23, 0.08) 55%,
+    transparent
+  );
+}
+
+.landing-shell > section:nth-of-type(even) {
+  background: linear-gradient(
+    180deg,
+    rgba(59, 130, 246, 0.06),
+    rgba(34, 211, 238, 0.03) 55%,
+    transparent
+  );
+}
+
+.landing-shell h1,
+.landing-shell h2 {
+  letter-spacing: -0.02em;
+}
+
+.landing-shell :is(.rounded-lg, .rounded-xl, .rounded-2xl, .rounded-3xl) {
+  border-color: rgba(148, 163, 184, 0.22) !important;
+}
+
+.landing-shell :is(.rounded-lg, .rounded-xl, .rounded-2xl, .rounded-3xl):is(
+    .border,
+    [class*="border-"]
+  ) {
+  box-shadow:
+    0 22px 60px -28px rgba(2, 6, 23, 0.75),
+    0 0 0 1px rgba(96, 165, 250, 0.08) inset;
+}
+
+.landing-shell :is(a, button).rounded-lg,
+.landing-shell :is(a, button).rounded-xl,
+.landing-shell :is(a, button).rounded-2xl,
+.landing-shell :is(a, button).rounded-full {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    filter 0.25s ease;
+}
+
+.landing-shell :is(a, button).rounded-lg:hover,
+.landing-shell :is(a, button).rounded-xl:hover,
+.landing-shell :is(a, button).rounded-2xl:hover,
+.landing-shell :is(a, button).rounded-full:hover {
+  transform: translateY(-2px);
+  filter: saturate(1.08);
+  box-shadow:
+    0 16px 42px -22px rgba(59, 130, 246, 0.75),
+    0 0 0 1px rgba(125, 211, 252, 0.22) inset;
+}
+
+.light .landing-shell > section:nth-of-type(odd) {
+  background: linear-gradient(
+    180deg,
+    rgba(59, 130, 246, 0.05),
+    rgba(15, 23, 42, 0.01) 60%,
+    transparent
+  );
+}
+
+.light .landing-shell > section:nth-of-type(even) {
+  background: linear-gradient(
+    180deg,
+    rgba(34, 211, 238, 0.05),
+    rgba(167, 139, 250, 0.03) 60%,
+    transparent
+  );
+}
+
+.light .landing-shell :is(.rounded-lg, .rounded-xl, .rounded-2xl, .rounded-3xl):is(
+    .border,
+    [class*="border-"]
+  ) {
+  box-shadow:
+    0 18px 40px -30px rgba(15, 23, 42, 0.25),
+    0 0 0 1px rgba(59, 130, 246, 0.08) inset;
+}

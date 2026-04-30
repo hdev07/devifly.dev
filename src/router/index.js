@@ -13,9 +13,14 @@ const routes = [
     component: () => import('../views/Products.vue')
   },
   {
+    path: '/enfoque',
+    name: 'Enfoque',
+    component: () => import('../views/Enfoque.vue')
+  },
+  {
     path: '/solutions',
     name: 'Solutions',
-    component: () => import('../views/Solutions.vue')
+    component: () => import('../views/Enfoque.vue')
   },
   {
     path: '/case-studies',
