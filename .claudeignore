@@ -1,0 +1,9 @@
+# Carpetas a ignorar por Claude
+.git/
+node_modules/
+dist/
+build/
+out/
+coverage/
+.vscode/
+.idea/

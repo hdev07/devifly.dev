@@ -93,7 +93,7 @@ export const caseStudies = [
     resultEn: 'Active community with badges, trending, and real engagement.',
     tags: ['Vue 3', 'NestJS', 'Prisma', 'PostgreSQL', 'PWA'],
     gradient: 'from-violet-500 to-purple-400',
-    link: 'https://app-confecdotario.devifly.dev/',
+    link: 'https://app.confecdotariocom/',
   },
   {
     key: 'musion',
