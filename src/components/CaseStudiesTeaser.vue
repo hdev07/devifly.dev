@@ -3,14 +3,22 @@
     <AmbientGlow variant="default" />
 
     <div class="relative max-w-7xl mx-auto px-6">
-      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14">
+      <div
+        class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14"
+      >
         <SectionHeader
           class="!mb-0"
           :eyebrow="locale === 'es' ? 'Casos de Éxito' : 'Case Studies'"
-          :title="locale === 'es' ? 'Productos reales con métricas reales' : 'Real products with real metrics'"
-          :subtitle="locale === 'es'
-            ? 'No vendemos humo. Tres historias de cómo el producto correcto cambió el negocio.'
-            : 'We do not sell smoke. Three stories of how the right product changed the business.'"
+          :title="
+            locale === 'es'
+              ? 'Productos reales con métricas reales'
+              : 'Real products with real metrics'
+          "
+          :subtitle="
+            locale === 'es'
+              ? 'No vendemos humo. Tres historias de cómo el producto correcto cambió el negocio.'
+              : 'We do not sell smoke. Three stories of how the right product changed the business.'
+          "
         />
         <router-link
           to="/case-studies"
@@ -39,16 +47,37 @@
           >
             <div class="absolute inset-0" :class="study.gradient"></div>
             <!-- Mesh pattern -->
-            <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 20% 80%, rgba(59,130,246,0.5) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(34,211,238,0.5) 0%, transparent 50%);"></div>
+            <div
+              class="absolute inset-0 opacity-30"
+              style="
+                background-image:
+                  radial-gradient(
+                    circle at 20% 80%,
+                    rgba(59, 130, 246, 0.5) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 80% 20%,
+                    rgba(34, 211, 238, 0.5) 0%,
+                    transparent 50%
+                  );
+              "
+            ></div>
             <!-- Centered icon -->
             <div class="absolute inset-0 flex items-center justify-center">
               <div class="relative">
-                <div class="absolute inset-0 rounded-full blur-3xl" :class="study.glow"></div>
+                <div
+                  class="absolute inset-0 rounded-full blur-3xl"
+                  :class="study.glow"
+                ></div>
                 <div
                   class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl flex items-center justify-center backdrop-blur-md border dark:border-white/15 border-white/30"
                   :class="study.iconBg"
                 >
-                  <LucideIcon :name="study.icon" :class-name="`${i === 0 ? 'w-12 h-12' : 'w-10 h-10'} ${study.iconColor}`" />
+                  <LucideIcon
+                    :name="study.icon"
+                    :class-name="`${i === 0 ? 'w-12 h-12' : 'w-10 h-10'} ${study.iconColor}`"
+                  />
                 </div>
               </div>
             </div>
@@ -64,10 +93,14 @@
             </div>
             <!-- Big metric overlay (only on featured) -->
             <div v-if="i === 0" class="absolute bottom-4 right-4 text-right">
-              <div class="font-display text-5xl sm:text-6xl font-bold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+              <div
+                class="font-display text-5xl sm:text-6xl font-bold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
+              >
                 {{ study.metric }}
               </div>
-              <div class="text-xs uppercase tracking-[0.2em] text-white/85 font-semibold">
+              <div
+                class="text-xs uppercase tracking-[0.2em] text-white/85 font-semibold"
+              >
                 {{ study.metricLabel[locale] }}
               </div>
             </div>
@@ -77,7 +110,9 @@
           <div class="p-6 sm:p-7 flex flex-col gap-4">
             <div>
               <div class="flex items-center gap-2 mb-2">
-                <span class="font-display text-xl sm:text-2xl font-bold dark:text-white text-light-text">
+                <span
+                  class="font-display text-xl sm:text-2xl font-bold dark:text-white text-light-text"
+                >
                   {{ study.name }}
                 </span>
                 <a
@@ -90,7 +125,9 @@
                   <LucideIcon name="arrow-up-right" class-name="w-3.5 h-3.5" />
                 </a>
               </div>
-              <p class="text-sm dark:text-text-secondary text-light-muted leading-relaxed">
+              <p
+                class="text-sm dark:text-text-secondary text-light-muted leading-relaxed"
+              >
                 {{ study.summary[locale] }}
               </p>
             </div>
@@ -98,33 +135,57 @@
             <!-- Story: Problem -> Solution -> Result -->
             <div class="space-y-2 text-sm">
               <div class="flex items-start gap-2">
-                <LucideIcon name="x" class-name="w-3.5 h-3.5 dark:text-red-400 text-red-500 mt-1 shrink-0" />
+                <LucideIcon
+                  name="x"
+                  class-name="w-3.5 h-3.5 dark:text-red-400 text-red-500 mt-1 shrink-0"
+                />
                 <p class="dark:text-text-secondary text-light-muted">
-                  <span class="font-semibold dark:text-white text-light-text">{{ locale === "es" ? "Problema:" : "Problem:" }}</span>
+                  <span class="font-semibold dark:text-white text-light-text">{{
+                    locale === "es" ? "Problema:" : "Problem:"
+                  }}</span>
                   {{ study.problem[locale] }}
                 </p>
               </div>
               <div class="flex items-start gap-2">
-                <LucideIcon name="zap" class-name="w-3.5 h-3.5 text-brand-400 mt-1 shrink-0" />
+                <LucideIcon
+                  name="zap"
+                  class-name="w-3.5 h-3.5 text-brand-400 mt-1 shrink-0"
+                />
                 <p class="dark:text-text-secondary text-light-muted">
-                  <span class="font-semibold dark:text-white text-light-text">{{ locale === "es" ? "Solución:" : "Solution:" }}</span>
+                  <span class="font-semibold dark:text-white text-light-text">{{
+                    locale === "es" ? "Solución:" : "Solution:"
+                  }}</span>
                   {{ study.solution[locale] }}
                 </p>
               </div>
               <div class="flex items-start gap-2">
-                <LucideIcon name="trending-up" class-name="w-3.5 h-3.5 text-emerald-400 mt-1 shrink-0" />
+                <LucideIcon
+                  name="trending-up"
+                  class-name="w-3.5 h-3.5 text-emerald-400 mt-1 shrink-0"
+                />
                 <p class="dark:text-text-secondary text-light-muted">
-                  <span class="font-semibold dark:text-white text-light-text">{{ locale === "es" ? "Resultado:" : "Result:" }}</span>
+                  <span class="font-semibold dark:text-white text-light-text">{{
+                    locale === "es" ? "Resultado:" : "Result:"
+                  }}</span>
                   {{ study.result[locale] }}
                 </p>
               </div>
             </div>
 
             <!-- Featured metrics row (only on featured) -->
-            <div v-if="i === 0" class="grid grid-cols-3 gap-3 mt-2 pt-4 border-t dark:border-white/8 border-light-border">
+            <div
+              v-if="i === 0"
+              class="grid grid-cols-3 gap-3 mt-2 pt-4 border-t dark:border-white/8 border-light-border"
+            >
               <div v-for="kpi in study.kpis" :key="kpi.label">
-                <div class="font-display text-2xl font-bold text-gradient tabular-nums">{{ kpi.value }}</div>
-                <div class="text-[10px] uppercase tracking-[0.18em] dark:text-text-secondary text-light-muted mt-1">
+                <div
+                  class="font-display text-2xl font-bold text-gradient tabular-nums"
+                >
+                  {{ kpi.value }}
+                </div>
+                <div
+                  class="text-[10px] uppercase tracking-[0.18em] dark:text-text-secondary text-light-muted mt-1"
+                >
                   {{ kpi.label[locale] }}
                 </div>
               </div>
@@ -216,7 +277,7 @@ const cases = [
       es: "Aumento sostenido de engagement y comunidad propia controlada por la marca.",
       en: "Sustained engagement growth and a community owned by the brand.",
     },
-    link: "https://app-confecdotario.devifly.dev/",
+    link: "https://app.confecdotario.com/",
   },
   {
     key: "musion",
