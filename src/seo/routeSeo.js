@@ -1,4 +1,3 @@
-import { products } from '../data/products.js'
 import { siteConfig } from '../data/site.js'
 
 const baseKeywords = {
