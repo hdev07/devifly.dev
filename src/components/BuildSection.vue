@@ -38,10 +38,10 @@
             :class="track.accentClass"
             >{{ track.label }}</span
           >
-          <div
-            class="flex-1 h-px dark:bg-base-800 bg-light-border"
-          ></div>
-          <span class="text-xs dark:text-base-700 text-light-border tabular-nums">
+          <div class="flex-1 h-px dark:bg-base-800 bg-light-border"></div>
+          <span
+            class="text-xs dark:text-base-700 text-light-border tabular-nums"
+          >
             {{ track.items.length }}
           </span>
         </div>
@@ -60,7 +60,9 @@
           <!-- Scrolling belt -->
           <div
             class="flex gap-4 py-1 marquee-track w-max"
-            :class="track.direction === 'left' ? 'marquee-left' : 'marquee-right'"
+            :class="
+              track.direction === 'left' ? 'marquee-left' : 'marquee-right'
+            "
             :style="`animation-duration: ${track.items.length * 7}s`"
           >
             <!-- Duplicate items for seamless loop -->
@@ -122,7 +124,6 @@
 <script setup>
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { products } from "../data/products.js";
 import LucideIcon from "./LucideIcon.vue";
 
 const { t, locale } = useI18n();
@@ -145,7 +146,10 @@ const tracks = computed(() => {
           ? "Marketing & Automatización"
           : "Marketing & Automation",
       accentClass: "dark:text-cyan-400 text-cyan-600",
-      items: [...byCategory("Marketing & Growth"), ...byCategory("Automatización")],
+      items: [
+        ...byCategory("Marketing & Growth"),
+        ...byCategory("Automatización"),
+      ],
       direction: "right",
     },
     {
@@ -161,9 +165,7 @@ const tracks = computed(() => {
     {
       key: "saas",
       label:
-        locale.value === "es"
-          ? "Sistemas & SaaS"
-          : "Internal Systems & SaaS",
+        locale.value === "es" ? "Sistemas & SaaS" : "Internal Systems & SaaS",
       accentClass: "dark:text-neon text-emerald-600",
       items: [
         ...byCategory("Sistemas Internos"),
