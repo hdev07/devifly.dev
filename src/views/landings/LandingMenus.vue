@@ -191,6 +191,7 @@ const menuPackages = [
     price: "$3,999",
     period: "pago único",
     tagline: "Para restaurantes pequeños y food trucks",
+    demo: "/menus-digitales/demo",
     wa: waSmall,
     highlighted: false,
     badge: null,
@@ -219,6 +220,7 @@ const menuPackages = [
     price: "$7,999",
     period: "pago único",
     tagline: "Para restaurantes medianos en crecimiento",
+    demo: "/menus-digitales/pro",
     wa: waMedium,
     highlighted: true,
     badge: "Más popular",
@@ -241,6 +243,7 @@ const menuPackages = [
     price: "$14,999",
     period: "pago único",
     tagline: "Para cadenas y restaurantes con varias sucursales",
+    demo: "/menus-digitales/premium",
     wa: waLarge,
     highlighted: false,
     badge: "Completo",
@@ -1043,7 +1046,7 @@ const faqs = [
                 <LucideIcon name="arrow-right" class-name="w-4 h-4" />
               </a>
               <RouterLink
-                to="/menus-digitales/demo"
+                :to="pkg.demo"
                 class="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-neutral-700 text-neutral-400 text-sm hover:text-white hover:border-neutral-600 transition"
               >
                 <LucideIcon name="play" class-name="w-3.5 h-3.5" />

@@ -1,5 +1,5 @@
 <template>
-  <MenuDemoView tier="esencial" />
+  <MenuDemoView tier="premium" />
 </template>
 
 <script setup>

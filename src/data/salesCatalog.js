@@ -651,7 +651,7 @@ export const salesProducts = [
           "6-month priority support",
           "Custom branding design",
         ],
-        demoLink: "/menus-digitales/demo",
+        demoLink: "/menus-digitales/pro",
       },
       {
         key: "menu-enterprise",
@@ -683,7 +683,7 @@ export const salesProducts = [
           "6-month priority support",
           "Custom branding design",
         ],
-        demoLink: "/menus-digitales/demo",
+        demoLink: "/menus-digitales/premium",
       },
     ],
     demo21: {

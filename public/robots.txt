@@ -5,6 +5,8 @@ Disallow: /invitaciones/esencial
 Disallow: /invitaciones/pro
 Disallow: /invitaciones/premium
 Disallow: /menus-digitales/demo
+Disallow: /menus-digitales/pro
+Disallow: /menus-digitales/premium
 Disallow: /catalogos-nenis/demo
 Disallow: /catalogos-nenis/pro
 Disallow: /catalogos-nenis/premium

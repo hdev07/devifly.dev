@@ -106,8 +106,34 @@ const routes = [
   },
   {
     path: '/menus-digitales/demo',
-    name: 'MenuDemo',
-    component: () => import('../views/demos/MenuDemo.vue'),
+    name: 'MenuEsencialDemo',
+    component: () => import('../views/demos/MenuEsencialDemo.vue'),
+    meta: {
+      fullscreen: true,
+      exitTo: '/menus-digitales',
+      exitLabelEs: 'Volver a menús digitales',
+      exitLabelEn: 'Back to digital menus',
+      robots: 'noindex, nofollow',
+      canonicalPath: '/menus-digitales'
+    }
+  },
+  {
+    path: '/menus-digitales/pro',
+    name: 'MenuProDemo',
+    component: () => import('../views/demos/MenuProDemo.vue'),
+    meta: {
+      fullscreen: true,
+      exitTo: '/menus-digitales',
+      exitLabelEs: 'Volver a menús digitales',
+      exitLabelEn: 'Back to digital menus',
+      robots: 'noindex, nofollow',
+      canonicalPath: '/menus-digitales'
+    }
+  },
+  {
+    path: '/menus-digitales/premium',
+    name: 'MenuPremiumDemo',
+    component: () => import('../views/demos/MenuPremiumDemo.vue'),
     meta: {
       fullscreen: true,
       exitTo: '/menus-digitales',
