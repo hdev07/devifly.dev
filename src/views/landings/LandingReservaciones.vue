@@ -1,7 +1,12 @@
 <script setup>
-import { ref, computed } from "vue";
-import LucideIcon from "../../components/LucideIcon.vue";
+/**
+ * Landing: Web para Salones de Eventos
+ * Estilo visual: Spotify dark — acento rojo navbar (#ef4444)
+ * Secciones: Hero · Stats · Pain · Demo Preview · Features · How it Works · Testimonials · Pricing · FAQ · Demo 21d · CTA Final
+ */
+import { ref } from "vue";
 import { RouterLink } from "vue-router";
+import LucideIcon from "../../components/LucideIcon.vue";
 
 const WA = "+525635926679";
 const waDemo = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Tengo un salón de eventos y me interesa una demo del Sistema PRO de Reservaciones 🏛️")}`;
@@ -10,6 +15,11 @@ const waDemo21 = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me inte
 const waEsencial = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el plan Esencial del Sistema de Reservaciones para mi salón 🏛️")}`;
 const waPro = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el plan Pro del Sistema de Reservaciones para mi salón 🏛️")}`;
 const waPremium = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el plan Premium VIP del Sistema de Reservaciones para mi salón 🏛️")}`;
+
+const openFaq = ref(null);
+const toggleFaq = (i) => {
+  openFaq.value = openFaq.value === i ? null : i;
+};
 
 const stats = [
   { value: "500+", label: "Eventos gestionados" },
@@ -45,120 +55,233 @@ const features = [
   {
     icon: "calendar-days",
     title: "Agenda de disponibilidad",
-    desc: "Tus clientes ven fechas libres al instante. Sin llamadas de 'y ese día?'. Sin doble reservas.",
-    tag: "Convierte 24/7",
+    desc: "Tus clientes ven fechas libres al instante. Sin llamadas de '¿y ese día?'. Sin doble reservas.",
+    color: "text-red-400",
+    bg: "bg-red-500/10",
   },
   {
     icon: "calculator",
     title: "Cotizador inteligente",
     desc: "El cliente arma su evento, elige paquete, invitados y extras. Tú recibes leads calificados listos para cerrar.",
-    tag: "Leads de calidad",
+    color: "text-red-400",
+    bg: "bg-red-500/10",
   },
   {
     icon: "images",
     title: "Galería premium",
     desc: "Fotos y video que generan deseo. El cliente imagina su boda ahí antes de llamarte.",
-    tag: "Genera deseo",
+    color: "text-red-400",
+    bg: "bg-red-500/10",
   },
   {
     icon: "message-circle",
     title: "WhatsApp directo",
     desc: "Botón con mensaje prellenado según lo que vio el cliente. Más conversión, menos fricción.",
-    tag: "+60% conversión",
+    color: "text-red-400",
+    bg: "bg-red-500/10",
   },
   {
     icon: "map-pin",
     title: "Google Maps integrado",
     desc: "Mapa interactivo con tus datos. Fácil de encontrar en Google y con SEO local optimizado.",
-    tag: "SEO local",
+    color: "text-red-400",
+    bg: "bg-red-500/10",
   },
   {
     icon: "smartphone",
     title: "100% responsivo",
     desc: "Se ve perfecto en celular, tablet y computadora. Tu cliente cotiza desde donde sea.",
-    tag: "Mobile first",
+    color: "text-red-400",
+    bg: "bg-red-500/10",
   },
-];
-
-const premiumFeatures = [
   {
     icon: "shield-check",
     title: "Panel admin completo",
     desc: "Gestiona reservaciones, clientes y fechas desde un panel propio.",
+    color: "text-violet-400",
+    bg: "bg-violet-500/10",
   },
   {
     icon: "users",
     title: "CRM de clientes",
     desc: "Historial, seguimientos y datos de cada cliente en un solo lugar.",
+    color: "text-violet-400",
+    bg: "bg-violet-500/10",
   },
   {
     icon: "credit-card",
     title: "Pagos de anticipo en línea",
     desc: "Recibe depósitos para apartar fechas. Menos cancelaciones.",
-  },
-  {
-    icon: "file-text",
-    title: "Contratos digitales",
-    desc: "Genera y firma contratos automáticamente desde la plataforma.",
+    color: "text-violet-400",
+    bg: "bg-violet-500/10",
   },
   {
     icon: "building-2",
     title: "Multi-salón / Sucursales",
     desc: "Gestiona varios espacios o ubicaciones desde un solo sistema.",
-  },
-  {
-    icon: "bar-chart-2",
-    title: "Analíticas y reportes",
-    desc: "Ve qué eventos generan más ingresos y toma mejores decisiones.",
+    color: "text-violet-400",
+    bg: "bg-violet-500/10",
   },
 ];
 
 const steps = [
   {
-    num: "01",
+    number: "01",
     icon: "camera",
     title: "Nos mandas tu contenido",
     desc: "Fotos de tu salón, info de paquetes y precios. Eso es todo lo que necesitamos para arrancar.",
+    color: "text-red-400",
+    border: "border-red-500/30",
+    bg: "bg-red-500/10",
   },
   {
-    num: "02",
+    number: "02",
     icon: "code-2",
     title: "Construimos tu sistema",
     desc: "En 2–4 semanas armamos tu página completa con cotizador, galería y agenda. Te mandamos avances.",
+    color: "text-red-400",
+    border: "border-red-500/30",
+    bg: "bg-red-500/10",
   },
   {
-    num: "03",
+    number: "03",
     icon: "rocket",
-    title: "Lanzamos y empiezas a recibir leads",
+    title: "Lanzamos y recibes leads",
     desc: "Tu sistema queda publicado. Los clientes llegan, cotizan solos y tú solo cierras eventos.",
+    color: "text-violet-400",
+    border: "border-violet-500/30",
+    bg: "bg-violet-500/10",
   },
 ];
 
 const testimonials = [
   {
-    stars: 5,
-    quote:
-      "Antes perdía clientes por no contestar a tiempo. Ahora mi agenda se llena sola y solo atiendo a los que realmente quieren reservar.",
     name: "Mariana R.",
-    place: "Salón Jardín Encantado",
-    icon: "tent",
+    role: "Salón Jardín Encantado, Guadalajara",
+    avatar: "MR",
+    avatarBg: "bg-red-500/20",
+    avatarColor: "text-red-400",
+    text: "Antes perdía clientes por no contestar a tiempo. Ahora mi agenda se llena sola y solo atiendo a los que realmente quieren reservar.",
+    stars: 5,
   },
   {
-    stars: 5,
-    quote:
-      "Mi página se ve increíble, recibo más mensajes y cierro más eventos. ¡Vale cada peso! En el primer mes recuperé la inversión.",
     name: "Luis M.",
-    place: "Terraza Real",
-    icon: "building-2",
+    role: "Terraza Real, CDMX",
+    avatar: "LM",
+    avatarBg: "bg-red-500/20",
+    avatarColor: "text-red-400",
+    text: "Mi página se ve increíble, recibo más mensajes y cierro más eventos. ¡Vale cada peso! En el primer mes recuperé la inversión.",
+    stars: 5,
   },
   {
-    stars: 5,
-    quote:
-      "El cotizador es lo que más nos gusta. Los clientes llegan sabiendo cuánto van a pagar. No hay regateo, solo cierres.",
     name: "Patricia V.",
-    place: "Hacienda Los Arcos",
-    icon: "landmark",
+    role: "Hacienda Los Arcos, Monterrey",
+    avatar: "PV",
+    avatarBg: "bg-violet-500/20",
+    avatarColor: "text-violet-400",
+    text: "El cotizador es lo que más nos gusta. Los clientes llegan sabiendo cuánto van a pagar. No hay regateo, solo cierres.",
+    stars: 5,
   },
+];
+
+const salonPackages = [
+  {
+    name: "Esencial",
+    icon: "building",
+    price: "$5,999",
+    period: "pago único",
+    tagline: "Presencia profesional que genera confianza",
+    wa: waEsencial,
+    highlighted: false,
+    badge: null,
+    vip: false,
+    features: [
+      "Diseño responsivo premium",
+      "Galería de fotos (hasta 20)",
+      "Formulario de contacto",
+      "Integración WhatsApp",
+      "Mapa de ubicación interactivo",
+      "SEO local optimizado",
+    ],
+    excluded: [
+      "Cotizador en línea",
+      "Calendario de disponibilidad",
+      "Galería con videos",
+      "Panel admin",
+      "CRM clientes",
+      "Pagos en línea",
+    ],
+  },
+  {
+    name: "Pro",
+    icon: "building-2",
+    price: "$9,999",
+    period: "pago único",
+    tagline: "Todo para convertir visitas en reservaciones",
+    wa: waPro,
+    highlighted: true,
+    badge: "Más vendido",
+    vip: false,
+    features: [
+      "Todo lo de Esencial",
+      "Cotizador en línea",
+      "Calendario de disponibilidad",
+      "Galería con videos",
+      "Sección paquetes/servicios",
+      "Blog de eventos",
+      "Google Calendar sync",
+    ],
+    excluded: [
+      "Panel admin completo",
+      "CRM clientes integrado",
+      "Pagos anticipo en línea",
+      "Contratos digitales",
+      "Multi-salón / Sucursales",
+      "Analíticas y reportes",
+    ],
+  },
+  {
+    name: "Premium VIP",
+    icon: "gem",
+    price: "$16,999",
+    period: "pago único",
+    tagline: "Gestión completa de tu negocio de eventos",
+    wa: waPremium,
+    highlighted: false,
+    badge: "VIP",
+    vip: true,
+    features: [
+      "Todo lo de Pro",
+      "Panel admin completo",
+      "CRM clientes integrado",
+      "Pagos anticipo en línea",
+      "Contratos digitales",
+      "Multi-salón / Sucursales",
+      "Analíticas y reportes",
+    ],
+    excluded: [],
+  },
+];
+
+const salonComparisonRows = [
+  { feature: "Diseño responsivo premium", small: true, medium: true, large: true },
+  { feature: "Galería de fotos", small: true, medium: true, large: true },
+  { feature: "Formulario de contacto", small: true, medium: true, large: true },
+  { feature: "Integración WhatsApp", small: true, medium: true, large: true },
+  { feature: "Mapa de ubicación interactivo", small: true, medium: true, large: true },
+  { feature: "SEO local optimizado", small: true, medium: true, large: true },
+  { feature: "Cotizador en línea", small: false, medium: true, large: true },
+  { feature: "Calendario de disponibilidad", small: false, medium: true, large: true },
+  { feature: "Galería con videos", small: false, medium: true, large: true },
+  { feature: "Sección paquetes / servicios", small: false, medium: true, large: true },
+  { feature: "Blog de eventos", small: false, medium: true, large: true },
+  { feature: "Google Calendar sync", small: false, medium: true, large: true },
+  { feature: "Panel admin completo", small: false, medium: false, large: true },
+  { feature: "CRM clientes integrado", small: false, medium: false, large: true },
+  { feature: "Pagos anticipo en línea", small: false, medium: false, large: true },
+  { feature: "Contratos digitales", small: false, medium: false, large: true },
+  { feature: "Multi-salón / Sucursales", small: false, medium: false, large: true },
+  { feature: "Analíticas y reportes", small: false, medium: false, large: true },
 ];
 
 const faqs = [
@@ -191,861 +314,294 @@ const faqs = [
     a: "Claro. Puedes empezar con el plan Esencial y escalar al Pro o Premium VIP cuando lo necesites. Solo se cobra la diferencia.",
   },
 ];
-
-const packages = [
-  {
-    name: "Esencial",
-    tagline: "Presencia profesional que genera confianza",
-    price: "$5,999",
-    icon: "building",
-    note: "Hasta 20 fotos · Entrega 2 semanas",
-    demo: "/salones-eventos/demo",
-    wa: waEsencial,
-    features: [
-      "Diseño responsivo premium",
-      "Galería de fotos (hasta 20)",
-      "Formulario de contacto",
-      "Integración WhatsApp",
-      "Mapa de ubicación interactivo",
-      "SEO local optimizado",
-    ],
-    excluded: [
-      "Cotizador en línea",
-      "Calendario de disponibilidad",
-      "Galería con videos",
-      "Panel admin",
-      "CRM clientes",
-      "Pagos en línea",
-    ],
-  },
-  {
-    name: "Pro",
-    tagline: "Todo para convertir visitas en reservaciones",
-    price: "$9,999",
-    icon: "building-2",
-    note: "Fotos ilimitadas + videos · Entrega 3 semanas",
-    demo: "/salones-eventos/demo",
-    wa: waPro,
-    highlighted: true,
-    badge: "Más vendido",
-    features: [
-      "Todo lo de Esencial",
-      "Cotizador en línea",
-      "Calendario de disponibilidad",
-      "Galería con videos",
-      "Sección paquetes/servicios",
-      "Blog de eventos",
-      "Google Calendar sync",
-    ],
-    excluded: [
-      "Panel admin completo",
-      "CRM clientes integrado",
-      "Pagos anticipo en línea",
-      "Contratos digitales",
-      "Multi-salón / Sucursales",
-      "Analíticas y reportes",
-    ],
-  },
-  {
-    name: "Premium VIP",
-    tagline: "Gestión completa de tu negocio de eventos",
-    price: "$16,999",
-    icon: "gem",
-    note: "Multi-salón · CRM completo · Entrega 4–5 semanas",
-    demo: "/salones-eventos/demo",
-    wa: waPremium,
-    vip: true,
-    badge: "VIP",
-    features: [
-      "Todo lo de Pro",
-      "Panel admin completo",
-      "CRM clientes integrado",
-      "Pagos anticipo en línea",
-      "Contratos digitales",
-      "Multi-salón / Sucursales",
-      "Analíticas y reportes",
-    ],
-  },
-];
-
-const comparisonRows = [
-  { feature: "Diseño responsivo premium", col1: true, col2: true, col3: true },
-  { feature: "Galería de fotos", col1: true, col2: true, col3: true },
-  { feature: "Formulario de contacto", col1: true, col2: true, col3: true },
-  { feature: "Integración WhatsApp", col1: true, col2: true, col3: true },
-  {
-    feature: "Mapa de ubicación interactivo",
-    col1: true,
-    col2: true,
-    col3: true,
-  },
-  { feature: "SEO local optimizado", col1: true, col2: true, col3: true },
-  { feature: "Cotizador en línea", col1: false, col2: true, col3: true },
-  {
-    feature: "Calendario de disponibilidad",
-    col1: false,
-    col2: true,
-    col3: true,
-  },
-  { feature: "Galería con videos", col1: false, col2: true, col3: true },
-  {
-    feature: "Sección paquetes / servicios",
-    col1: false,
-    col2: true,
-    col3: true,
-  },
-  { feature: "Blog de eventos", col1: false, col2: true, col3: true },
-  { feature: "Google Calendar sync", col1: false, col2: true, col3: true },
-  { feature: "Panel admin completo", col1: false, col2: false, col3: true },
-  { feature: "CRM clientes integrado", col1: false, col2: false, col3: true },
-  { feature: "Pagos anticipo en línea", col1: false, col2: false, col3: true },
-  { feature: "Contratos digitales", col1: false, col2: false, col3: true },
-  { feature: "Multi-salón / Sucursales", col1: false, col2: false, col3: true },
-  { feature: "Analíticas y reportes", col1: false, col2: false, col3: true },
-];
-
-const mockupFeatures = [
-  {
-    label: "Agenda interactiva",
-    sub: "Fechas disponibles al instante",
-    icon: "calendar-days",
-  },
-  {
-    label: "Galería premium",
-    sub: "Fotos que venden tu espacio",
-    icon: "images",
-  },
-  {
-    label: "Cotizador en línea",
-    sub: "Leads calificados 24/7",
-    icon: "calculator",
-  },
-];
-
-const openFaq = ref(null);
-const toggleFaq = (i) => {
-  openFaq.value = openFaq.value === i ? null : i;
-};
 </script>
 
 <template>
-  <main class="landing-shell pt-24 pb-0 overflow-x-hidden">
-    <!-- ─── HERO ─────────────────────────────────────────── -->
-    <section class="relative max-w-7xl mx-auto px-6 pt-16 pb-20">
-      <!-- Ambient glow -->
-      <div
-        class="pointer-events-none absolute -top-20 -right-20 w-96 h-96 rounded-full blur-[120px] dark:bg-brand-500/8 bg-brand-500/5"
-      ></div>
-      <div
-        class="pointer-events-none absolute top-40 -left-10 w-64 h-64 rounded-full blur-[100px] dark:bg-brand-600/5 bg-brand-600/3"
-      ></div>
-
-      <p
-        class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-5 font-mono"
-      >
-        Sistema PRO · Salones & Eventos
-      </p>
-
-      <h1
-        class="font-display text-5xl sm:text-6xl lg:text-[4.5rem] font-bold dark:text-white text-light-text leading-[1.04] tracking-tight max-w-4xl mb-7"
-      >
-        Tu salón merece una página
-        <span class="dark:text-brand-400 text-brand-600">
-          que venda eventos</span
-        >, no solo que exista.
-      </h1>
-
-      <p
-        class="text-lg dark:text-text-secondary text-light-muted max-w-2xl mb-10 leading-relaxed"
-      >
-        Un sistema web completo que responde dudas, filtra clientes y llena tu
-        agenda — mientras tú te enfocas en hacer eventos inolvidables.
-      </p>
-
-      <div class="flex flex-wrap gap-4 mb-16">
-        <a
-          :href="waDemo"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-white text-black font-bold text-sm hover:bg-neutral-100 transition shadow-lg"
-        >
-          <LucideIcon name="calendar-check" class-name="w-4 h-4" />
-          Quiero más reservaciones
-        </a>
-        <router-link
-          to="/salones-eventos/demo"
-          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border dark:border-base-600 border-light-border dark:text-text-secondary text-light-muted font-semibold text-sm hover:dark:border-white hover:dark:text-white hover:border-light-text hover:text-light-text transition"
-        >
-          <LucideIcon name="eye" class-name="w-4 h-4" />
-          Ver demo en vivo
-        </router-link>
-      </div>
-
-      <!-- Stats bar -->
-      <div
-        class="grid grid-cols-2 sm:grid-cols-4 gap-px dark:bg-base-700/40 bg-light-border rounded-2xl overflow-hidden border dark:border-base-700/40 border-light-border"
-      >
+  <main class="landing-shell" style="background: #0a0a0a">
+    <!-- ─── HERO ─────────────────────────────────────────────────────── -->
+    <section
+      class="relative overflow-hidden px-6 pt-28 pb-20 sm:pt-36 sm:pb-28"
+      style="background: #0a0a0a"
+    >
+      <div class="pointer-events-none absolute inset-0 overflow-hidden">
         <div
-          v-for="s in stats"
-          :key="s.label"
-          class="dark:bg-base-900 bg-white px-6 py-5 text-center"
-        >
-          <p
-            class="font-display text-3xl font-bold dark:text-white text-light-text mb-1"
-          >
-            {{ s.value }}
-          </p>
-          <p class="text-xs dark:text-text-secondary/70 text-light-muted/70">
-            {{ s.label }}
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── DEMO PREVIEW ──────────────────────────────────── -->
-    <section class="max-w-6xl mx-auto px-6 py-20">
-      <div class="text-center mb-10">
-        <p
-          class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-3 font-mono"
-        >
-          Experiencia visual
-        </p>
-        <h2
-          class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
-        >
-          Así se ve tu nuevo sistema
-        </h2>
-        <p class="dark:text-text-secondary text-light-muted max-w-xl mx-auto">
-          Diseñado para impresionar, convencer y convertir. Tu salón con la
-          imagen que merece.
-        </p>
+          class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full opacity-20"
+          style="
+            background: radial-gradient(ellipse, #ef4444 0%, transparent 70%);
+          "
+        ></div>
       </div>
 
-      <!-- Browser frame -->
-      <div
-        class="rounded-2xl border dark:border-base-700 border-light-border overflow-hidden shadow-2xl"
-      >
-        <!-- Bar -->
-        <div
-          class="flex items-center gap-2 px-5 py-3 border-b"
-          style="background: #0a0f0d; border-color: rgba(201, 169, 110, 0.15)"
-        >
-          <div class="flex gap-1.5">
-            <div class="w-2.5 h-2.5 rounded-full bg-red-400/50"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-amber-400/50"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-green-400/50"></div>
-          </div>
-          <div
-            class="flex-1 mx-4 py-1.5 px-4 rounded-md text-xs font-mono"
-            style="
-              background: rgba(201, 169, 110, 0.05);
-              color: rgba(201, 169, 110, 0.45);
-              border: 1px solid rgba(201, 169, 110, 0.1);
-            "
-          >
-            jardín-victoria.com
-          </div>
-          <div
-            class="text-[10px] font-mono"
-            style="color: rgba(201, 169, 110, 0.3)"
-          >
-            ● En vivo
-          </div>
-        </div>
-
-        <!-- Content preview -->
-        <div class="relative" style="background: #0c0a09">
-          <!-- Ambient -->
-          <div
-            class="pointer-events-none absolute top-0 right-0 w-64 h-64 rounded-full blur-[80px]"
-            style="background: rgba(201, 169, 110, 0.06)"
-          ></div>
-          <div
-            class="pointer-events-none absolute bottom-0 left-1/3 w-40 h-40 rounded-full blur-[60px]"
-            style="background: rgba(201, 169, 110, 0.04)"
-          ></div>
-
-          <!-- Nav bar mockup -->
-          <div
-            class="flex items-center justify-between px-8 sm:px-12 pt-6 pb-4 border-b"
-            style="border-color: rgba(201, 169, 110, 0.08)"
-          >
-            <div class="flex items-center gap-2">
-              <div
-                class="w-7 h-7 rounded-full flex items-center justify-center"
-                style="background: linear-gradient(135deg, #c9a96e, #a07840)"
-              >
-                <span class="text-white text-[10px] font-bold">JV</span>
-              </div>
-              <span class="text-sm font-semibold text-white"
-                >Jardín Victoria</span
-              >
-            </div>
-            <div class="hidden sm:flex items-center gap-4">
-              <span class="text-[11px]" style="color: rgba(201, 169, 110, 0.5)"
-                >Galería</span
-              >
-              <span class="text-[11px]" style="color: rgba(201, 169, 110, 0.5)"
-                >Paquetes</span
-              >
-              <span class="text-[11px]" style="color: rgba(201, 169, 110, 0.5)"
-                >Espacios</span
-              >
+      <div class="relative max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <!-- Left: copy -->
+          <div>
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-6"
+            >
               <span
-                class="px-3 py-1.5 rounded-lg text-[11px] font-semibold text-black"
-                style="background: linear-gradient(135deg, #c9a96e, #a07840)"
-                >Cotizar evento</span
+                class="w-2 h-2 rounded-full bg-red-500 animate-pulse"
+              ></span>
+              Salones & Eventos · Sistema PRO
+            </div>
+
+            <h1
+              class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.05] tracking-tight mb-6"
+            >
+              Tu salón merece una página que
+              <span class="text-red-400"> venda eventos</span>
+            </h1>
+
+            <p class="text-neutral-400 text-lg leading-relaxed mb-8 max-w-xl">
+              Sistema web completo con cotizador, agenda de disponibilidad,
+              galería premium y WhatsApp directo. Responde dudas 24/7 mientras
+              tú te enfocas en hacer eventos inolvidables.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-start gap-4 mb-10">
+              <RouterLink
+                to="/salones-eventos/demo"
+                class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-red-500 text-neutral-950 font-bold text-sm hover:bg-red-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(239,68,68,0.3)]"
               >
+                <LucideIcon name="play-circle" class-name="w-4 h-4" />
+                Ver demo en vivo
+              </RouterLink>
+              <a
+                :href="waCotizar"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-red-500/40 hover:text-white transition"
+              >
+                Cotizar mi salón
+                <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+              </a>
+            </div>
+
+            <div class="flex items-center gap-3 text-xs text-neutral-500">
+              <span class="flex items-center gap-1">
+                <LucideIcon
+                  name="check-circle"
+                  class-name="w-3.5 h-3.5 text-red-400"
+                />
+                Cotizador incluido
+              </span>
+              <span class="w-px h-3 bg-neutral-700"></span>
+              <span class="flex items-center gap-1">
+                <LucideIcon
+                  name="check-circle"
+                  class-name="w-3.5 h-3.5 text-red-400"
+                />
+                Entrega en 2–5 semanas
+              </span>
+              <span class="w-px h-3 bg-neutral-700"></span>
+              <span class="flex items-center gap-1">
+                <LucideIcon
+                  name="check-circle"
+                  class-name="w-3.5 h-3.5 text-red-400"
+                />
+                Garantía de resultados
+              </span>
             </div>
           </div>
 
-          <!-- Hero mockup content -->
-          <div class="px-8 sm:px-12 pt-10 pb-8">
-            <p
-              class="text-[10px] uppercase tracking-widest mb-2"
-              style="color: rgba(201, 169, 110, 0.5)"
-            >
-              Salón de eventos · Guadalajara
-            </p>
-            <p
-              class="text-2xl sm:text-4xl font-bold text-white leading-tight mb-3"
-              style="font-family: system-ui"
-            >
-              Donde cada momento
-              <span style="color: #c9a96e">se convierte</span> en un recuerdo
-              eterno
-            </p>
-            <p
-              class="text-xs mb-6 max-w-md"
-              style="color: rgba(255, 255, 255, 0.4)"
-            >
-              Bodas, XV años, eventos corporativos y celebraciones únicas.
-              Capacidad para 400 invitados en 4 espacios exclusivos.
-            </p>
-
-            <!-- Mini stats row -->
-            <div class="flex gap-6 mb-6">
-              <div>
-                <p class="text-lg font-bold text-white">500+</p>
-                <p class="text-[9px]" style="color: rgba(201, 169, 110, 0.5)">
-                  Eventos realizados
-                </p>
-              </div>
+          <!-- Right: phone mockup -->
+          <div class="flex justify-center lg:justify-end">
+            <div class="relative">
               <div
-                style="width: 1px; background: rgba(201, 169, 110, 0.1)"
+                class="absolute inset-0 rounded-[2.5rem] blur-2xl opacity-30"
+                style="background: linear-gradient(135deg, #ef4444, #a855f7)"
               ></div>
-              <div>
-                <p class="text-lg font-bold text-white">400</p>
-                <p class="text-[9px]" style="color: rgba(201, 169, 110, 0.5)">
-                  Capacidad máx.
-                </p>
-              </div>
-              <div
-                style="width: 1px; background: rgba(201, 169, 110, 0.1)"
-              ></div>
-              <div>
-                <p class="text-lg font-bold text-white">15+</p>
-                <p class="text-[9px]" style="color: rgba(201, 169, 110, 0.5)">
-                  Años de experiencia
-                </p>
-              </div>
-            </div>
 
-            <div class="flex gap-3 mb-6">
               <div
-                class="px-4 py-2 rounded-lg text-[11px] font-semibold text-black flex items-center gap-1.5"
-                style="background: linear-gradient(135deg, #c9a96e, #a07840)"
-              >
-                <LucideIcon name="calendar" class-name="w-3 h-3" />
-                Cotizar mi evento
-              </div>
-              <div
-                class="px-4 py-2 rounded-lg text-[11px] font-semibold flex items-center gap-1.5"
+                class="relative w-64 sm:w-72 rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl"
                 style="
-                  border: 1px solid rgba(201, 169, 110, 0.25);
-                  color: rgba(201, 169, 110, 0.7);
+                  background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
                 "
               >
-                <LucideIcon name="images" class-name="w-3 h-3" />
-                Ver galería
-              </div>
-            </div>
-
-            <div
-              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px]"
-              style="
-                background: rgba(201, 169, 110, 0.06);
-                border: 1px solid rgba(201, 169, 110, 0.12);
-                color: #c9a96e;
-              "
-            >
-              <span
-                class="w-1.5 h-1.5 rounded-full animate-pulse"
-                style="background: #c9a96e"
-              ></span>
-              Fechas disponibles 2026
-            </div>
-          </div>
-
-          <!-- Feature cards row -->
-          <div class="px-8 sm:px-12 pb-8 grid grid-cols-3 gap-3">
-            <div
-              v-for="feat in mockupFeatures"
-              :key="feat.label"
-              class="p-4 rounded-xl"
-              style="
-                background: rgba(201, 169, 110, 0.04);
-                border: 1px solid rgba(201, 169, 110, 0.09);
-              "
-            >
-              <LucideIcon
-                :name="feat.icon"
-                class-name="w-4 h-4 mb-2"
-                style="color: rgba(201, 169, 110, 0.6)"
-              />
-              <p class="font-semibold text-white text-[11px] mb-0.5">
-                {{ feat.label }}
-              </p>
-              <p class="text-[9px]" style="color: rgba(255, 255, 255, 0.3)">
-                {{ feat.sub }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex justify-center mt-8">
-        <router-link
-          to="/salones-eventos/demo"
-          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border dark:border-base-600 border-light-border dark:text-text-secondary text-light-muted text-sm font-semibold hover:dark:border-white hover:dark:text-white hover:border-light-text hover:text-light-text transition group"
-        >
-          <LucideIcon
-            name="play-circle"
-            class-name="w-4 h-4 group-hover:text-brand-400 transition"
-          />
-          Explorar demo completo e interactivo
-          <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-        </router-link>
-      </div>
-    </section>
-
-    <!-- ─── PAIN POINTS ───────────────────────────────────── -->
-    <section class="dark:bg-base-900/50 bg-light-card/40 py-24 px-6">
-      <div class="max-w-6xl mx-auto">
-        <p
-          class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-3 font-mono"
-        >
-          01 / El problema real
-        </p>
-        <h2
-          class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4 max-w-2xl"
-        >
-          ¿Te suena familiar?
-        </h2>
-        <p
-          class="dark:text-text-secondary text-light-muted mb-14 max-w-xl text-base"
-        >
-          Si administras un salón de eventos, probablemente vives esto todos los
-          días.
-        </p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div
-            v-for="pain in painPoints"
-            :key="pain.title"
-            class="group flex gap-5 p-6 rounded-xl border dark:border-base-700/60 border-light-border dark:bg-base-900/60 bg-white hover:dark:border-base-600 hover:border-light-muted/40 transition"
-          >
-            <div
-              class="w-10 h-10 rounded-xl shrink-0 flex items-center justify-center dark:bg-red-500/10 bg-red-50 border dark:border-red-500/20 border-red-100"
-            >
-              <LucideIcon :name="pain.icon" class-name="w-5 h-5 text-red-400" />
-            </div>
-            <div>
-              <h3
-                class="font-semibold dark:text-white text-light-text text-sm mb-1.5"
-              >
-                {{ pain.title }}
-              </h3>
-              <p
-                class="text-sm dark:text-text-secondary text-light-muted leading-relaxed"
-              >
-                {{ pain.desc }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── SOLUTION INTRO ────────────────────────────────── -->
-    <section class="max-w-6xl mx-auto px-6 py-24">
-      <p
-        class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-3 font-mono"
-      >
-        02 / La solución
-      </p>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <h2
-            class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-6 leading-tight"
-          >
-            Un sistema que trabaja por ti,
-            <span class="dark:text-brand-400 text-brand-600">
-              incluso mientras duermes</span
-            >
-          </h2>
-          <p
-            class="dark:text-text-secondary text-light-muted text-base mb-8 leading-relaxed"
-          >
-            El Sistema PRO de Reservaciones es una página web diseñada
-            específicamente para salones de eventos. Responde dudas, muestra
-            disponibilidad, genera cotizaciones y dirige al cliente directo a
-            WhatsApp para cerrar.
-          </p>
-          <div class="space-y-4">
-            <div class="flex items-center gap-3">
-              <div
-                class="w-6 h-6 rounded-full dark:bg-brand-500/20 bg-brand-50 flex items-center justify-center shrink-0"
-              >
-                <LucideIcon
-                  name="check"
-                  class-name="w-3.5 h-3.5 dark:text-brand-400 text-brand-600"
-                />
-              </div>
-              <p class="text-sm dark:text-text-secondary text-light-muted">
-                Clientes que llegan ya listos para apartar
-              </p>
-            </div>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-6 h-6 rounded-full dark:bg-brand-500/20 bg-brand-50 flex items-center justify-center shrink-0"
-              >
-                <LucideIcon
-                  name="check"
-                  class-name="w-3.5 h-3.5 dark:text-brand-400 text-brand-600"
-                />
-              </div>
-              <p class="text-sm dark:text-text-secondary text-light-muted">
-                Sin responder lo mismo 50 veces al día
-              </p>
-            </div>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-6 h-6 rounded-full dark:bg-brand-500/20 bg-brand-50 flex items-center justify-center shrink-0"
-              >
-                <LucideIcon
-                  name="check"
-                  class-name="w-3.5 h-3.5 dark:text-brand-400 text-brand-600"
-                />
-              </div>
-              <p class="text-sm dark:text-text-secondary text-light-muted">
-                Imagen premium que genera confianza antes de hablar
-              </p>
-            </div>
-            <div class="flex items-center gap-3">
-              <div
-                class="w-6 h-6 rounded-full dark:bg-brand-500/20 bg-brand-50 flex items-center justify-center shrink-0"
-              >
-                <LucideIcon
-                  name="check"
-                  class-name="w-3.5 h-3.5 dark:text-brand-400 text-brand-600"
-                />
-              </div>
-              <p class="text-sm dark:text-text-secondary text-light-muted">
-                Más eventos, más ingresos, menos estrés
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right side visual -->
-        <div class="relative">
-          <div
-            class="rounded-2xl p-8 dark:bg-base-900/60 bg-light-card/60 border dark:border-base-700/50 border-light-border"
-          >
-            <!-- Fake message thread -->
-            <div
-              class="flex items-center gap-2 mb-6 pb-4 border-b dark:border-base-700/40 border-light-border"
-            >
-              <div
-                class="w-2 h-2 rounded-full bg-green-400 animate-pulse"
-              ></div>
-              <span
-                class="text-xs font-mono dark:text-text-secondary/60 text-light-muted/60"
-                >Sistema activo · respondiendo ahora</span
-              >
-            </div>
-            <div class="space-y-3 mb-6">
-              <div class="flex justify-end">
-                <div
-                  class="max-w-[80%] px-4 py-2.5 rounded-2xl rounded-tr-sm text-xs bg-green-500 text-white"
-                >
-                  Hola, ¿tienen disponibilidad para el 15 de marzo para 200
-                  personas?
+                <!-- Status bar -->
+                <div class="flex items-center justify-between px-6 pt-4 pb-2">
+                  <span class="text-white/60 text-[10px]">9:41</span>
+                  <div
+                    class="w-16 h-5 rounded-full bg-black mx-auto absolute left-1/2 -translate-x-1/2 top-2"
+                  ></div>
+                  <div class="flex gap-1">
+                    <div class="w-3 h-1.5 rounded-sm bg-white/60"></div>
+                    <div class="w-1 h-1.5 rounded-sm bg-white/60"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="flex justify-start">
+
+                <!-- App header (navbar rojo) -->
                 <div
-                  class="max-w-[80%] px-4 py-2.5 rounded-2xl rounded-tl-sm text-xs dark:bg-base-800 bg-white border dark:border-base-700/40 border-light-border dark:text-text-secondary text-light-muted"
+                  class="px-4 py-3 border-b border-white/5"
+                  style="background: #141414"
                 >
-                  ¡Hola! El 15 de marzo está disponible. Aquí puedes ver
-                  nuestros paquetes y calcular tu cotización al instante 👉
-                  jardín-victoria.com/cotizar
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div
+                        class="text-red-400 text-xs font-bold tracking-widest uppercase"
+                      >
+                        Salón de eventos
+                      </div>
+                      <div class="text-white text-sm font-semibold">
+                        Jardín Victoria
+                      </div>
+                    </div>
+                    <div
+                      class="w-8 h-8 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center"
+                    >
+                      <LucideIcon
+                        name="calendar"
+                        class-name="w-3.5 h-3.5 text-red-400"
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="flex justify-end">
+
+                <!-- Category tabs -->
                 <div
-                  class="max-w-[80%] px-4 py-2.5 rounded-2xl rounded-tr-sm text-xs bg-green-500 text-white"
+                  class="flex gap-2 px-4 py-2 overflow-hidden"
+                  style="background: #111"
                 >
-                  ¡Perfecto! Ya vi los paquetes, quiero apartar esa fecha 🎉
+                  <span
+                    class="px-3 py-1 rounded-full bg-red-500 text-black text-[10px] font-bold whitespace-nowrap"
+                    >Bodas</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full bg-white/10 text-white/60 text-[10px] whitespace-nowrap"
+                    >XV años</span
+                  >
+                  <span
+                    class="px-3 py-1 rounded-full bg-white/10 text-white/60 text-[10px] whitespace-nowrap"
+                    >Corporativo</span
+                  >
+                </div>
+
+                <!-- Paquetes -->
+                <div class="px-4 py-3 space-y-3" style="background: #0f0f0f">
+                  <div
+                    v-for="item in [
+                      {
+                        name: 'Paquete Oro',
+                        price: '$899/persona',
+                        img: '💍',
+                        badge: null,
+                      },
+                      {
+                        name: 'Paquete Diamante',
+                        price: '$1,299/persona',
+                        img: '✨',
+                        badge: 'Popular',
+                      },
+                      {
+                        name: 'Terraza Premium',
+                        price: 'Desde $45,000',
+                        img: '🌿',
+                        badge: null,
+                      },
+                    ]"
+                    :key="item.name"
+                    class="flex items-center gap-3 p-2.5 rounded-xl border border-white/5"
+                    style="background: #1a1a1a"
+                  >
+                    <div
+                      class="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0"
+                      style="background: #222"
+                    >
+                      {{ item.img }}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center gap-1.5">
+                        <p class="text-white text-xs font-semibold truncate">
+                          {{ item.name }}
+                        </p>
+                        <span
+                          v-if="item.badge"
+                          class="px-1.5 py-0.5 rounded-full bg-red-500/20 text-red-400 text-[9px] font-bold"
+                          >{{ item.badge }}</span
+                        >
+                      </div>
+                      <p class="text-red-400 text-xs font-bold">
+                        {{ item.price }}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-center gap-2 pt-1">
+                    <LucideIcon
+                      name="calendar-check"
+                      class-name="w-3.5 h-3.5 text-neutral-600"
+                    />
+                    <span class="text-neutral-600 text-[10px]"
+                      >jardin-victoria.com</span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-            <div
-              class="text-center p-3 rounded-xl dark:bg-brand-500/10 bg-brand-50 border dark:border-brand-500/20 border-brand-100"
-            >
-              <p
-                class="text-xs font-semibold dark:text-brand-400 text-brand-600"
-              >
-                Reservación cerrada — sin llamadas repetitivas
-              </p>
-            </div>
           </div>
-          <!-- Glow -->
-          <div
-            class="pointer-events-none absolute inset-0 rounded-2xl"
-            style="box-shadow: 0 0 60px rgba(16, 185, 129, 0.04)"
-          ></div>
         </div>
       </div>
     </section>
 
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="h-px dark:bg-base-700/50 bg-light-border"></div>
-    </div>
-
-    <!-- ─── FEATURES GRID ─────────────────────────────────── -->
-    <section class="max-w-6xl mx-auto px-6 py-24">
-      <p
-        class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-3 font-mono"
+    <!-- ─── STATS BAR ─────────────────────────────────────────────────── -->
+    <section
+      class="px-6 py-10 border-y border-neutral-800"
+      style="background: #111"
+    >
+      <div
+        class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center"
       >
-        03 / Funcionalidades
-      </p>
-      <h2
-        class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4 max-w-2xl"
-      >
-        Todo lo que necesita tu salón para vender más
-      </h2>
-      <p class="dark:text-text-secondary text-light-muted mb-16 max-w-xl">
-        Cada función fue diseñada para convertir visitas en reservaciones. Nada
-        de relleno.
-      </p>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div
-          v-for="feat in features"
-          :key="feat.title"
-          class="group relative p-6 rounded-xl border dark:border-base-700/50 border-light-border hover:dark:border-base-600 hover:border-light-muted/40 transition dark:bg-base-900/30 bg-white"
-        >
-          <div class="flex items-start justify-between mb-5">
-            <div
-              class="w-10 h-10 rounded-xl flex items-center justify-center dark:bg-base-800 bg-light-surface border dark:border-base-700 border-light-border group-hover:dark:border-brand-500/30 group-hover:border-brand-500/20 transition"
-            >
-              <LucideIcon
-                :name="feat.icon"
-                class-name="w-5 h-5 dark:text-brand-400 text-brand-600"
-              />
-            </div>
-            <span
-              class="text-[10px] font-mono px-2 py-1 rounded-full dark:bg-brand-500/10 bg-brand-50 dark:text-brand-400/80 text-brand-700 border dark:border-brand-500/20 border-brand-100"
-            >
-              {{ feat.tag }}
-            </span>
+        <div v-for="stat in stats" :key="stat.label">
+          <div class="font-display text-3xl font-extrabold text-red-400 mb-1">
+            {{ stat.value }}
           </div>
-          <h3
-            class="font-semibold dark:text-white text-light-text text-base mb-2"
-          >
-            {{ feat.title }}
-          </h3>
-          <p
-            class="text-sm dark:text-text-secondary text-light-muted leading-relaxed"
-          >
-            {{ feat.desc }}
-          </p>
+          <div class="text-neutral-500 text-sm">{{ stat.label }}</div>
         </div>
       </div>
     </section>
 
-    <!-- ─── HOW IT WORKS ──────────────────────────────────── -->
-    <section class="dark:bg-base-900/50 bg-light-card/40 py-24 px-6">
+    <!-- ─── PAIN POINTS ──────────────────────────────────────────────── -->
+    <section class="px-6 py-20" style="background: #0a0a0a">
       <div class="max-w-5xl mx-auto">
-        <p
-          class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-3 font-mono text-center"
-        >
-          04 / ¿Cómo funciona?
-        </p>
-        <h2
-          class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4 text-center"
-        >
-          De cero a recibir reservaciones en 3 pasos
-        </h2>
-        <p
-          class="dark:text-text-secondary text-light-muted mb-16 text-center max-w-xl mx-auto"
-        >
-          Sin complicaciones técnicas. Tú pones el salón, nosotros ponemos el
-          sistema.
-        </p>
-
-        <div class="relative">
-          <!-- Connecting line -->
+        <div class="text-center mb-14">
           <div
-            class="hidden lg:block absolute top-12 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px dark:bg-base-700/60 bg-light-border"
-          ></div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <div
-              v-for="step in steps"
-              :key="step.num"
-              class="relative text-center lg:text-left"
-            >
-              <!-- Icon circle -->
-              <div
-                class="w-16 h-16 rounded-2xl mx-auto lg:mx-0 mb-6 flex items-center justify-center dark:bg-base-800 bg-white border dark:border-base-700 border-light-border relative z-10"
-              >
-                <LucideIcon
-                  :name="step.icon"
-                  class-name="w-7 h-7 dark:text-brand-400 text-brand-600"
-                />
-                <span
-                  class="absolute -top-2 -right-2 w-5 h-5 rounded-full dark:bg-base-700 bg-light-border flex items-center justify-center text-[10px] font-mono dark:text-text-secondary text-light-muted"
-                  >{{ step.num }}</span
-                >
-              </div>
-              <h3
-                class="font-display font-bold dark:text-white text-light-text text-lg mb-3"
-              >
-                {{ step.title }}
-              </h3>
-              <p
-                class="text-sm dark:text-text-secondary text-light-muted leading-relaxed"
-              >
-                {{ step.desc }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── PREMIUM FEATURES (VIP) ───────────────────────── -->
-    <section class="max-w-6xl mx-auto px-6 py-24">
-      <p
-        class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-3 font-mono"
-      >
-        05 / Funciones Premium VIP
-      </p>
-      <h2
-        class="font-display text-3xl font-bold dark:text-white text-light-text mb-4 max-w-2xl"
-      >
-        Gestión completa de tu negocio de eventos
-      </h2>
-      <p class="dark:text-text-secondary text-light-muted mb-16 max-w-xl">
-        El plan Premium VIP convierte tu página en un sistema empresarial
-        completo.
-      </p>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div
-          v-for="feat in premiumFeatures"
-          :key="feat.title"
-          class="flex gap-4 p-5 rounded-xl border dark:border-emerald-500/15 border-emerald-500/10 dark:bg-emerald-500/5 bg-emerald-50/50"
-        >
-          <div
-            class="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 dark:bg-emerald-500/10 bg-emerald-100 border dark:border-emerald-500/20 border-emerald-200"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
           >
-            <LucideIcon
-              :name="feat.icon"
-              class-name="w-4 h-4 text-emerald-500"
-            />
+            <LucideIcon name="alert-triangle" class-name="w-3.5 h-3.5" />
+            El problema real
           </div>
-          <div>
-            <h3
-              class="font-semibold text-sm dark:text-white text-light-text mb-1"
-            >
-              {{ feat.title }}
-            </h3>
-            <p
-              class="text-xs dark:text-text-secondary text-light-muted leading-relaxed"
-            >
-              {{ feat.desc }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="h-px dark:bg-base-700/50 bg-light-border"></div>
-    </div>
-
-    <!-- ─── TESTIMONIALS ──────────────────────────────────── -->
-    <section class="max-w-6xl mx-auto px-6 py-24">
-      <p
-        class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-3 font-mono"
-      >
-        06 / Resultados reales
-      </p>
-      <h2
-        class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
-      >
-        Lo que dicen otros dueños de salones
-      </h2>
-      <p class="dark:text-text-secondary text-light-muted mb-16 max-w-xl">
-        No son promesas. Son resultados de salones que ya tienen el sistema
-        funcionando.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div
-          v-for="t in testimonials"
-          :key="t.name"
-          class="p-7 rounded-2xl border dark:border-base-700/50 border-light-border dark:bg-base-900/40 bg-white flex flex-col"
-        >
-          <!-- Stars -->
-          <div class="flex gap-0.5 mb-5">
-            <LucideIcon
-              v-for="n in t.stars"
-              :key="n"
-              name="star"
-              class-name="w-4 h-4 fill-amber-400 text-amber-400"
-            />
-          </div>
-
-          <p
-            class="dark:text-text-primary text-light-text leading-relaxed text-sm mb-6 flex-1"
+          <h2
+            class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            "{{ t.quote }}"
+            ¿Tu salón sigue vendiendo por WhatsApp?
+          </h2>
+          <p class="text-neutral-400 max-w-xl mx-auto">
+            Cada día sin un sistema web profesional pierdes reservaciones,
+            tiempo y la confianza de clientes que buscan en Google.
           </p>
+        </div>
 
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div
-            class="flex items-center gap-3 pt-5 border-t dark:border-base-700/40 border-light-border"
+            v-for="point in painPoints"
+            :key="point.title"
+            class="flex gap-4 p-6 rounded-2xl border border-red-500/10 hover:border-red-500/20 transition"
+            style="background: #111"
           >
             <div
-              class="w-9 h-9 rounded-full dark:bg-base-800 bg-light-surface border dark:border-base-700 border-light-border flex items-center justify-center"
+              class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center flex-shrink-0"
             >
               <LucideIcon
-                :name="t.icon"
-                class-name="w-4 h-4 dark:text-text-secondary text-light-muted"
+                :name="point.icon"
+                class-name="w-5 h-5 text-red-400"
               />
             </div>
             <div>
-              <p class="font-semibold dark:text-white text-light-text text-sm">
-                {{ t.name }}
-              </p>
-              <p
-                class="text-xs dark:text-text-secondary/60 text-light-muted/60"
-              >
-                {{ t.place }}
+              <h3 class="text-white font-semibold text-sm mb-1">
+                {{ point.title }}
+              </h3>
+              <p class="text-neutral-500 text-sm leading-relaxed">
+                {{ point.desc }}
               </p>
             </div>
           </div>
@@ -1053,549 +609,748 @@ const toggleFaq = (i) => {
       </div>
     </section>
 
-    <!-- ─── GUARANTEE ─────────────────────────────────────── -->
-    <section class="dark:bg-base-900/50 bg-light-card/40 py-24 px-6">
-      <div class="max-w-4xl mx-auto">
+    <!-- ─── DEMO PREVIEW CTA ─────────────────────────────────────────── -->
+    <section class="px-6 py-20" style="background: #111">
+      <div class="max-w-5xl mx-auto">
         <div
-          class="rounded-2xl border dark:border-brand-500/20 border-brand-200 dark:bg-brand-500/5 bg-brand-50/30 p-10 md:p-14 flex flex-col md:flex-row items-center gap-10"
-        >
-          <div
-            class="w-16 h-16 rounded-2xl shrink-0 flex items-center justify-center dark:bg-brand-500/15 bg-brand-100 border dark:border-brand-500/25 border-brand-200"
-          >
-            <LucideIcon
-              name="shield-check"
-              class-name="w-8 h-8 dark:text-brand-400 text-brand-600"
-            />
-          </div>
-          <div>
-            <h2
-              class="font-display text-2xl font-bold dark:text-white text-light-text mb-3"
-            >
-              Garantía de resultados — sin letra chiquita
-            </h2>
-            <p
-              class="dark:text-text-secondary text-light-muted leading-relaxed mb-4"
-            >
-              Si en el primer mes después del lanzamiento no ves más solicitudes
-              de cotización, optimizamos tu sistema sin costo extra hasta que
-              empieces a ver resultados. Punto.
-            </p>
-            <p
-              class="text-xs dark:text-text-secondary/50 text-light-muted/50 font-mono uppercase tracking-wider"
-            >
-              Invertir en tu sistema es invertir en más eventos, más ingresos y
-              menos estrés.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── PRICING ───────────────────────────────────────── -->
-    <section class="max-w-6xl mx-auto px-6 py-24">
-      <p
-        class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-3 font-mono"
-      >
-        07 / Planes y precios
-      </p>
-      <h2
-        class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4 max-w-2xl"
-      >
-        Elige el plan que le viene a tu salón
-      </h2>
-      <p class="dark:text-text-secondary text-light-muted mb-16 max-w-xl">
-        Desde presencia profesional hasta gestión completa. Todos incluyen
-        garantía.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div
-          v-for="pkg in packages"
-          :key="pkg.name"
-          class="relative flex flex-col rounded-2xl overflow-hidden border transition"
-          :class="
-            pkg.highlighted
-              ? 'border-2 dark:border-white border-light-text shadow-xl'
-              : pkg.vip
-                ? 'border dark:border-emerald-500/30 border-emerald-200'
-                : 'border dark:border-base-700 border-light-border'
+          class="relative rounded-3xl overflow-hidden border border-red-500/20 p-8 sm:p-12"
+          style="
+            background: linear-gradient(
+              135deg,
+              #1a0808 0%,
+              #0a0a0a 60%,
+              #0d0a14 100%
+            );
           "
         >
-          <!-- Badge -->
           <div
-            v-if="pkg.badge"
-            class="absolute top-0 right-0 py-1.5 px-4 text-xs font-bold rounded-bl-xl"
-            :class="
-              pkg.vip ? 'bg-emerald-500 text-white' : 'bg-white text-black'
+            class="pointer-events-none absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2"
+            style="
+              background: radial-gradient(ellipse, #ef4444, transparent 70%);
             "
+          ></div>
+
+          <div
+            class="relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
           >
-            <span class="inline-flex items-center gap-1">
-              {{ pkg.badge }}
-              <LucideIcon
-                :name="pkg.vip ? 'gem' : 'flame'"
-                class-name="w-3 h-3"
-              />
-            </span>
-          </div>
-
-          <div class="p-8 flex-1" :class="pkg.badge ? 'pt-10' : ''">
-            <!-- Name + icon -->
-            <div class="flex items-center gap-3 mb-2">
-              <LucideIcon
-                :name="pkg.icon"
-                :class-name="
-                  'w-5 h-5 ' +
-                  (pkg.vip
-                    ? 'text-emerald-400'
-                    : pkg.highlighted
-                      ? 'dark:text-white text-light-text'
-                      : 'dark:text-text-secondary text-light-muted')
-                "
-              />
-              <h3
-                class="font-display text-xl font-bold dark:text-white text-light-text"
+            <div>
+              <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-6"
               >
-                {{ pkg.name }}
-              </h3>
-            </div>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-6">
-              {{ pkg.tagline }}
-            </p>
-
-            <!-- Price -->
-            <div class="mb-7">
-              <span
-                class="font-display text-4xl font-bold dark:text-white text-light-text"
-                >{{ pkg.price }}</span
+                <LucideIcon name="eye" class-name="w-3.5 h-3.5" />
+                Demo interactivo disponible
+              </div>
+              <h2
+                class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4 leading-tight"
               >
-              <span
-                class="text-sm dark:text-text-secondary text-light-muted ml-1"
-                >MXN</span
-              >
-              <p
-                class="text-xs dark:text-text-secondary/50 text-light-muted/50 font-mono mt-1"
-              >
-                {{ pkg.note }}
+                Prueba el sistema de tu salón<br />
+                <span class="text-red-400">antes de comprometerte</span>
+              </h2>
+              <p class="text-neutral-400 mb-8 leading-relaxed">
+                Navega por una demo real con galería, cotizador, agenda y
+                WhatsApp. Exactamente así se verá la página de tu salón.
               </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <RouterLink
+                  to="/salones-eventos/demo"
+                  class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-red-500 text-neutral-950 font-bold text-sm hover:bg-red-400 transition-all hover:scale-105 shadow-[0_0_20px_rgba(239,68,68,0.25)]"
+                >
+                  <LucideIcon name="smartphone" class-name="w-4 h-4" />
+                  Abrir demo interactivo
+                </RouterLink>
+                <a
+                  :href="waDemo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-red-500/30 text-red-400 font-semibold text-sm hover:bg-red-500/10 transition"
+                >
+                  Quiero el mío así
+                  <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+                </a>
+              </div>
             </div>
 
-            <!-- Included -->
-            <ul class="space-y-2.5 mb-4">
+            <div class="grid grid-cols-2 gap-3">
+              <div
+                v-for="chip in [
+                  { icon: 'calculator', text: 'Cotizador en vivo' },
+                  { icon: 'calendar-days', text: 'Agenda disponible' },
+                  { icon: 'images', text: 'Galería premium' },
+                  { icon: 'message-circle', text: 'WhatsApp directo' },
+                  { icon: 'map-pin', text: 'Mapa integrado' },
+                  { icon: 'smartphone', text: 'Fluido en móvil' },
+                ]"
+                :key="chip.text"
+                class="flex items-center gap-3 p-4 rounded-xl border border-red-500/10"
+                style="background: rgba(239, 68, 68, 0.04)"
+              >
+                <div
+                  class="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0"
+                >
+                  <LucideIcon
+                    :name="chip.icon"
+                    class-name="w-4 h-4 text-red-400"
+                  />
+                </div>
+                <span class="text-white text-xs font-semibold">{{
+                  chip.text
+                }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FEATURES ─────────────────────────────────────────────────── -->
+    <section class="px-6 py-20" style="background: #0a0a0a">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-14">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
+          >
+            <LucideIcon name="star" class-name="w-3.5 h-3.5" />
+            Todo lo que incluye
+          </div>
+          <h2
+            class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
+          >
+            Un sistema que trabaja por ti
+          </h2>
+          <p class="text-neutral-400 max-w-xl mx-auto">
+            Cada función está diseñada para convertir visitas en reservaciones
+            y liberarte del WhatsApp repetitivo.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div
+            v-for="feature in features"
+            :key="feature.title"
+            class="p-6 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition-all hover:-translate-y-0.5"
+            style="background: #111"
+          >
+            <div
+              :class="[
+                'w-11 h-11 rounded-xl flex items-center justify-center mb-4',
+                feature.bg,
+              ]"
+            >
+              <LucideIcon
+                :name="feature.icon"
+                :class-name="`w-5 h-5 ${feature.color}`"
+              />
+            </div>
+            <h3 class="text-white font-semibold text-sm mb-2">
+              {{ feature.title }}
+            </h3>
+            <p class="text-neutral-500 text-sm leading-relaxed">
+              {{ feature.desc }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── HOW IT WORKS ─────────────────────────────────────────────── -->
+    <section class="px-6 py-20" style="background: #111">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-14">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
+          >
+            <LucideIcon name="map" class-name="w-3.5 h-3.5" />
+            Proceso
+          </div>
+          <h2
+            class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
+          >
+            De cero a recibir leads en 3 pasos
+          </h2>
+          <p class="text-neutral-400 max-w-lg mx-auto">
+            Sin complicaciones técnicas. Tú pones el salón, nosotros ponemos
+            el sistema.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <div
+            class="hidden md:block absolute top-10 left-1/3 right-1/3 h-px border-t border-dashed border-neutral-700"
+          ></div>
+
+          <div
+            v-for="step in steps"
+            :key="step.number"
+            class="text-center relative"
+          >
+            <div
+              :class="[
+                'inline-flex items-center justify-center w-20 h-20 rounded-2xl border mb-5 mx-auto',
+                step.border,
+                step.bg,
+              ]"
+            >
+              <LucideIcon
+                :name="step.icon"
+                :class-name="`w-8 h-8 ${step.color}`"
+              />
+            </div>
+            <div :class="['font-display text-xs font-bold mb-2', step.color]">
+              PASO {{ step.number }}
+            </div>
+            <h3 class="text-white font-bold text-base mb-2">
+              {{ step.title }}
+            </h3>
+            <p class="text-neutral-500 text-sm leading-relaxed">
+              {{ step.desc }}
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            :href="waDemo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-red-500 text-neutral-950 font-bold text-sm hover:bg-red-400 transition-all hover:scale-105"
+          >
+            Empezar ahora
+            <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TESTIMONIALS ─────────────────────────────────────────────── -->
+    <section class="px-6 py-20" style="background: #0a0a0a">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-14">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
+          >
+            <LucideIcon name="message-square" class-name="w-3.5 h-3.5" />
+            Testimoniales
+          </div>
+          <h2
+            class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
+          >
+            Lo que dicen otros dueños de salones
+          </h2>
+          <p class="text-neutral-400 max-w-lg mx-auto">
+            Salones reales, resultados reales.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            v-for="t in testimonials"
+            :key="t.name"
+            class="p-7 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition flex flex-col"
+            style="background: #111"
+          >
+            <div class="flex gap-1 mb-5">
+              <LucideIcon
+                v-for="s in t.stars"
+                :key="s"
+                name="star"
+                class-name="w-4 h-4 text-red-400 fill-current"
+              />
+            </div>
+            <p class="text-neutral-300 text-sm leading-relaxed mb-6 flex-1">
+              "{{ t.text }}"
+            </p>
+            <div
+              class="flex items-center gap-3 pt-4 border-t border-neutral-800"
+            >
+              <div
+                :class="[
+                  'w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0',
+                  t.avatarBg,
+                  t.avatarColor,
+                ]"
+              >
+                {{ t.avatar }}
+              </div>
+              <div>
+                <div class="text-white font-semibold text-sm">{{ t.name }}</div>
+                <div class="text-neutral-500 text-xs">{{ t.role }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PRICING ──────────────────────────────────────────────────── -->
+    <section id="precios" class="px-6 py-20" style="background: #111">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-14">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
+          >
+            <LucideIcon name="tag" class-name="w-3.5 h-3.5" />
+            Planes y precios
+          </div>
+          <h2
+            class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
+          >
+            Elige el plan para tu salón
+          </h2>
+          <p class="text-neutral-400 max-w-xl mx-auto">
+            Pago único, sin mensualidades ni sorpresas. Hosting incluido el
+            primer año. Todos incluyen garantía.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            v-for="pkg in salonPackages"
+            :key="pkg.name"
+            :class="[
+              'relative flex flex-col rounded-2xl border p-7 transition-all',
+              pkg.highlighted
+                ? 'border-red-500/50 shadow-[0_0_40px_rgba(239,68,68,0.12)]'
+                : pkg.vip
+                  ? 'border-violet-500/30'
+                  : 'border-neutral-800',
+            ]"
+            style="background: #1a1a1a"
+          >
+            <div
+              v-if="pkg.badge"
+              :class="[
+                'absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap',
+                pkg.highlighted
+                  ? 'bg-red-500 text-neutral-950'
+                  : 'bg-violet-500 text-white',
+              ]"
+            >
+              {{ pkg.badge }}
+            </div>
+
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                :class="[
+                  'w-10 h-10 rounded-xl flex items-center justify-center',
+                  pkg.highlighted
+                    ? 'bg-red-500/15'
+                    : pkg.vip
+                      ? 'bg-violet-500/15'
+                      : 'bg-neutral-800',
+                ]"
+              >
+                <LucideIcon
+                  :name="pkg.icon"
+                  :class-name="`w-5 h-5 ${pkg.highlighted ? 'text-red-400' : pkg.vip ? 'text-violet-400' : 'text-neutral-400'}`"
+                />
+              </div>
+              <div>
+                <div class="text-white font-bold">{{ pkg.name }}</div>
+                <div class="text-neutral-500 text-xs">{{ pkg.tagline }}</div>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <span
+                :class="[
+                  'font-display text-4xl font-extrabold',
+                  pkg.highlighted
+                    ? 'text-red-400'
+                    : pkg.vip
+                      ? 'text-violet-400'
+                      : 'text-white',
+                ]"
+              >
+                {{ pkg.price }}
+              </span>
+              <span class="text-neutral-500 text-sm ml-2"
+                >MXN · {{ pkg.period }}</span
+              >
+            </div>
+
+            <ul class="space-y-2.5 mb-7 flex-1">
               <li
                 v-for="f in pkg.features"
                 :key="f"
-                class="flex items-start gap-2.5 text-sm dark:text-text-secondary text-light-muted"
+                class="flex items-start gap-2.5 text-sm"
               >
                 <LucideIcon
-                  :name="pkg.vip ? 'sparkles' : 'check'"
-                  :class-name="
-                    'w-4 h-4 mt-0.5 shrink-0 ' +
-                    (pkg.vip
-                      ? 'text-emerald-400'
-                      : pkg.highlighted
-                        ? 'dark:text-white text-light-text'
-                        : 'dark:text-brand-400/70 text-brand-600/70')
-                  "
+                  name="check"
+                  :class-name="`w-4 h-4 flex-shrink-0 mt-0.5 ${pkg.highlighted ? 'text-red-400' : pkg.vip ? 'text-violet-400' : 'text-neutral-500'}`"
                 />
-                {{ f }}
+                <span class="text-neutral-300">{{ f }}</span>
               </li>
-            </ul>
-
-            <!-- Excluded -->
-            <ul
-              v-if="pkg.excluded?.length"
-              class="space-y-2 border-t dark:border-base-700/40 border-light-border pt-4"
-            >
               <li
-                v-for="ex in pkg.excluded"
-                :key="ex"
-                class="flex items-start gap-2 text-xs dark:text-text-secondary/40 text-light-muted/40 line-through"
+                v-for="f in pkg.excluded"
+                :key="f"
+                class="flex items-start gap-2.5 text-sm"
               >
                 <LucideIcon
                   name="minus"
-                  class-name="w-3.5 h-3.5 mt-0.5 shrink-0"
+                  class-name="w-4 h-4 flex-shrink-0 mt-0.5 text-neutral-700"
                 />
-                {{ ex }}
+                <span class="text-neutral-700">{{ f }}</span>
               </li>
             </ul>
-          </div>
 
-          <!-- CTA area -->
-          <div class="px-8 pb-8 flex flex-col gap-3">
-            <router-link
-              :to="pkg.demo"
-              class="block w-full text-center px-4 py-2.5 rounded-xl font-semibold text-sm transition"
-              :class="
-                pkg.highlighted
-                  ? 'bg-white text-black hover:bg-neutral-100'
-                  : pkg.vip
-                    ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20'
-                    : 'border dark:border-base-600 border-light-border dark:text-text-secondary text-light-muted hover:dark:border-white hover:dark:text-white'
-              "
-            >
-              <span class="inline-flex items-center justify-center gap-2">
-                <LucideIcon name="eye" class-name="w-4 h-4" />
+            <div class="space-y-2.5">
+              <a
+                :href="pkg.wa"
+                target="_blank"
+                rel="noopener noreferrer"
+                :class="[
+                  'w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm transition-all hover:scale-[1.02]',
+                  pkg.highlighted
+                    ? 'bg-red-500 text-neutral-950 hover:bg-red-400 shadow-[0_0_20px_rgba(239,68,68,0.2)]'
+                    : pkg.vip
+                      ? 'bg-violet-600 text-white hover:bg-violet-500'
+                      : 'bg-neutral-700 text-white hover:bg-neutral-600',
+                ]"
+              >
+                Contratar {{ pkg.name }}
+                <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+              </a>
+              <RouterLink
+                to="/salones-eventos/demo"
+                class="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-neutral-700 text-neutral-400 text-sm hover:text-white hover:border-neutral-600 transition"
+              >
+                <LucideIcon name="play" class-name="w-3.5 h-3.5" />
                 Ver demo
-              </span>
-            </router-link>
+              </RouterLink>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── COMPARISON TABLE ─────────────────────────────────────────── -->
+    <section class="px-6 py-16" style="background: #0a0a0a">
+      <div class="max-w-4xl mx-auto">
+        <h2
+          class="font-display text-2xl font-bold text-white text-center mb-10"
+        >
+          Comparación detallada de planes
+        </h2>
+        <div class="overflow-x-auto rounded-2xl border border-neutral-800">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-neutral-800" style="background: #111">
+                <th class="text-left py-4 px-6 text-neutral-400 font-medium">
+                  Característica
+                </th>
+                <th
+                  class="text-center py-4 px-4 text-white font-semibold whitespace-nowrap"
+                >
+                  Esencial
+                </th>
+                <th
+                  class="text-center py-4 px-4 text-red-400 font-semibold whitespace-nowrap"
+                >
+                  Pro
+                </th>
+                <th
+                  class="text-center py-4 px-4 text-violet-400 font-semibold whitespace-nowrap"
+                >
+                  Premium VIP
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="row in salonComparisonRows"
+                :key="row.feature"
+                class="border-b border-neutral-800/50 last:border-0 hover:bg-red-500/5 transition-colors"
+                style="background: #0f0f0f"
+              >
+                <td class="py-3 px-6 text-neutral-400 whitespace-nowrap">
+                  {{ row.feature }}
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <LucideIcon
+                    v-if="row.small"
+                    name="check"
+                    class-name="w-4 h-4 mx-auto text-neutral-500"
+                  />
+                  <span v-else class="text-neutral-700">—</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <LucideIcon
+                    v-if="row.medium"
+                    name="check"
+                    class-name="w-4 h-4 mx-auto text-red-400"
+                  />
+                  <span v-else class="text-neutral-700">—</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <LucideIcon
+                    v-if="row.large"
+                    name="check"
+                    class-name="w-4 h-4 mx-auto text-violet-400"
+                  />
+                  <span v-else class="text-neutral-700">—</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ──────────────────────────────────────────────────────── -->
+    <section class="px-6 py-20" style="background: #111">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
+          >
+            <LucideIcon name="help-circle" class-name="w-3.5 h-3.5" />
+            Preguntas frecuentes
+          </div>
+          <h2
+            class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
+          >
+            Resolvemos tus dudas
+          </h2>
+          <p class="text-neutral-400">
+            Si tienes más preguntas, escríbenos por WhatsApp — respondemos
+            rápido.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div
+            v-for="(faq, i) in faqs"
+            :key="i"
+            class="rounded-2xl border border-neutral-800 overflow-hidden transition-all"
+            :class="openFaq === i ? 'border-red-500/30' : ''"
+            style="background: #1a1a1a"
+          >
+            <button
+              class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+              @click="toggleFaq(i)"
+            >
+              <span class="text-white font-semibold text-sm">{{ faq.q }}</span>
+              <LucideIcon
+                :name="openFaq === i ? 'chevron-up' : 'chevron-down'"
+                :class-name="`w-4 h-4 flex-shrink-0 transition-transform ${openFaq === i ? 'text-red-400' : 'text-neutral-500'}`"
+              />
+            </button>
+            <div v-if="openFaq === i" class="px-6 pb-5">
+              <p class="text-neutral-400 text-sm leading-relaxed">
+                {{ faq.a }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <a
+            :href="waCotizar"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-red-400 text-sm font-semibold hover:text-red-300 transition"
+          >
+            ¿Tienes otra pregunta? Escríbenos
+            <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── DEMO 21 DÍAS ──────────────────────────────────────────────── -->
+    <section class="px-6 py-24" style="background: #0a0a0a">
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="relative rounded-3xl overflow-hidden border border-red-500/20 p-8 sm:p-14 text-center"
+          style="
+            background: linear-gradient(
+              135deg,
+              #1a0808 0%,
+              #0a0a0a 50%,
+              #0a0a14 100%
+            );
+          "
+        >
+          <div
+            class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-96 h-64 rounded-full opacity-20 -translate-y-1/2"
+            style="
+              background: radial-gradient(ellipse, #ef4444, transparent 70%);
+            "
+          ></div>
+
+          <div class="relative">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-7"
+            >
+              <LucideIcon name="calendar-clock" class-name="w-3.5 h-3.5" />
+              Demo 21 días — Oferta especial
+            </div>
+
+            <h2
+              class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
+            >
+              ¿Quieres probarlo antes de decidir?
+            </h2>
+            <p
+              class="text-neutral-400 max-w-2xl mx-auto mb-10 text-base leading-relaxed"
+            >
+              Por solo
+              <span class="text-red-400 font-bold">$999 MXN</span> armamos el
+              sitio de tu salón con tu contenido real — publicado y funcionando
+              durante <strong class="text-white">21 días</strong>. Si luego
+              contratas, los $999 se descuentan del anticipo. No pagas nada
+              extra.
+            </p>
+
+            <div
+              class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 max-w-2xl mx-auto"
+            >
+              <div
+                class="p-5 rounded-2xl border border-red-500/15"
+                style="background: rgba(239, 68, 68, 0.05)"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mx-auto mb-3"
+                >
+                  <LucideIcon
+                    name="building-2"
+                    class-name="w-5 h-5 text-red-400"
+                  />
+                </div>
+                <p class="text-white font-semibold text-sm mb-1">
+                  Tu salón real
+                </p>
+                <p class="text-neutral-500 text-xs">
+                  Con tus fotos, paquetes y precios reales
+                </p>
+              </div>
+              <div
+                class="p-5 rounded-2xl border border-red-500/15"
+                style="background: rgba(239, 68, 68, 0.05)"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mx-auto mb-3"
+                >
+                  <LucideIcon
+                    name="share-2"
+                    class-name="w-5 h-5 text-red-400"
+                  />
+                </div>
+                <p class="text-white font-semibold text-sm mb-1">
+                  Publicado y funcional
+                </p>
+                <p class="text-neutral-500 text-xs">
+                  Compartible en redes y WhatsApp
+                </p>
+              </div>
+              <div
+                class="p-5 rounded-2xl border border-red-500/15"
+                style="background: rgba(239, 68, 68, 0.05)"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mx-auto mb-3"
+                >
+                  <LucideIcon
+                    name="receipt"
+                    class-name="w-5 h-5 text-red-400"
+                  />
+                </div>
+                <p class="text-white font-semibold text-sm mb-1">
+                  Se descuenta al contratar
+                </p>
+                <p class="text-neutral-500 text-xs">
+                  Los $999 se restan del anticipo de cualquier plan
+                </p>
+              </div>
+            </div>
+
             <a
-              :href="pkg.wa"
+              :href="waDemo21"
               target="_blank"
               rel="noopener noreferrer"
-              class="block w-full text-center px-4 py-2.5 rounded-xl border dark:border-base-700 border-light-border dark:text-text-secondary text-light-muted font-semibold text-sm transition hover:dark:border-white hover:dark:text-white hover:border-light-text hover:text-light-text"
+              class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-red-500 text-black font-bold text-sm hover:bg-red-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(239,68,68,0.3)]"
             >
-              <span class="inline-flex items-center justify-center gap-2">
-                Contratar plan
-                <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-              </span>
+              Quiero mi demo de 21 días
+              <LucideIcon name="arrow-right" class-name="w-4 h-4" />
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── DEMO 21 DÍAS ──────────────────────────────────── -->
-    <section class="dark:bg-base-900/50 bg-light-card/40 py-24 px-6">
-      <div class="max-w-5xl mx-auto">
+    <!-- ─── CTA FINAL ─────────────────────────────────────────────────── -->
+    <section class="px-6 py-32 text-center" style="background: #111">
+      <div class="max-w-3xl mx-auto">
         <div
-          class="rounded-2xl border dark:border-amber-500/20 border-amber-200 dark:bg-amber-500/5 bg-amber-50/30 p-10 md:p-14"
+          class="w-16 h-16 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto mb-8"
         >
-          <div class="flex flex-col md:flex-row items-start gap-10">
-            <div class="md:flex-1">
-              <p
-                class="text-xs tracking-[0.2em] uppercase dark:text-amber-400/70 text-amber-600/70 mb-3 font-mono"
-              >
-                Prueba real antes de decidir
-              </p>
-              <h2
-                class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
-              >
-                Demo 21 días por
-                <span class="dark:text-amber-400 text-amber-600">$999 MXN</span>
-              </h2>
-              <p
-                class="dark:text-text-secondary text-light-muted mb-8 leading-relaxed"
-              >
-                Armamos el sitio de tu salón con tu contenido real, lo
-                publicamos y lo tienes funcionando durante 21 días. Si te
-                convence y contratas, los $999 se descuentan del anticipo.
-              </p>
-
-              <div class="space-y-3 mb-8">
-                <div class="flex items-center gap-3">
-                  <LucideIcon
-                    name="image"
-                    class-name="w-4 h-4 dark:text-amber-400 text-amber-600"
-                  />
-                  <p class="text-sm dark:text-text-secondary text-light-muted">
-                    Tu salón real — con tus fotos, servicios y precios
-                  </p>
-                </div>
-                <div class="flex items-center gap-3">
-                  <LucideIcon
-                    name="share-2"
-                    class-name="w-4 h-4 dark:text-amber-400 text-amber-600"
-                  />
-                  <p class="text-sm dark:text-text-secondary text-light-muted">
-                    Publicado y compartible en redes sociales
-                  </p>
-                </div>
-                <div class="flex items-center gap-3">
-                  <LucideIcon
-                    name="receipt"
-                    class-name="w-4 h-4 dark:text-amber-400 text-amber-600"
-                  />
-                  <p class="text-sm dark:text-text-secondary text-light-muted">
-                    Los $999 se restan del anticipo si contratas
-                  </p>
-                </div>
-                <div class="flex items-center gap-3">
-                  <LucideIcon
-                    name="x-circle"
-                    class-name="w-4 h-4 dark:text-text-secondary/50 text-light-muted/50"
-                  />
-                  <p
-                    class="text-sm dark:text-text-secondary/50 text-light-muted/50"
-                  >
-                    Si no te convence, se desactiva al día 22. Sin compromisos.
-                  </p>
-                </div>
-              </div>
-
-              <a
-                :href="waDemo21"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-white text-black font-bold text-sm hover:bg-neutral-100 transition shadow-md"
-              >
-                Solicitar demo de 21 días
-                <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-              </a>
-            </div>
-
-            <div class="md:w-64 shrink-0 space-y-4">
-              <div
-                class="p-5 rounded-xl dark:bg-base-800/60 bg-white border dark:border-base-700/40 border-amber-100 text-center"
-              >
-                <p
-                  class="font-display text-3xl font-bold dark:text-white text-light-text mb-1"
-                >
-                  21
-                </p>
-                <p class="text-xs dark:text-text-secondary text-light-muted">
-                  Días de prueba real
-                </p>
-              </div>
-              <div
-                class="p-5 rounded-xl dark:bg-base-800/60 bg-white border dark:border-base-700/40 border-amber-100 text-center"
-              >
-                <p
-                  class="font-display text-3xl font-bold dark:text-amber-400 text-amber-600 mb-1"
-                >
-                  $999
-                </p>
-                <p class="text-xs dark:text-text-secondary text-light-muted">
-                  MXN · descontable
-                </p>
-              </div>
-              <div
-                class="p-5 rounded-xl dark:bg-base-800/60 bg-white border dark:border-base-700/40 border-amber-100 text-center"
-              >
-                <p
-                  class="font-display text-3xl font-bold dark:text-white text-light-text mb-1"
-                >
-                  48h
-                </p>
-                <p class="text-xs dark:text-text-secondary text-light-muted">
-                  Para tenerlo publicado
-                </p>
-              </div>
-            </div>
-          </div>
+          <LucideIcon name="landmark" class-name="w-8 h-8 text-red-400" />
         </div>
-      </div>
-    </section>
 
-    <!-- ─── COMPARISON TABLE ──────────────────────────────── -->
-    <section class="max-w-5xl mx-auto px-6 py-24">
-      <h2
-        class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text text-center mb-2 tracking-tight"
-      >
-        Compara los planes
-      </h2>
-      <p class="text-center dark:text-text-secondary text-light-muted mb-10">
-        Elige el sistema que necesita tu salón. Todos incluyen garantía.
-      </p>
-      <div
-        class="overflow-x-auto rounded-xl border dark:border-base-800 border-light-border"
-      >
-        <table class="w-full text-sm">
-          <thead>
-            <tr
-              class="dark:bg-base-900 bg-light-card border-b dark:border-base-800 border-light-border"
-            >
-              <th
-                class="text-left px-5 py-4 dark:text-text-secondary text-light-muted font-medium w-1/2"
-              >
-                Característica
-              </th>
-              <th
-                class="text-center px-4 py-4 dark:text-white text-light-text font-semibold"
-              >
-                Esencial
-              </th>
-              <th
-                class="text-center px-4 py-4 dark:text-white text-light-text font-semibold border-x dark:border-base-700 border-light-border"
-              >
-                Pro
-              </th>
-              <th class="text-center px-4 py-4 text-emerald-400 font-semibold">
-                Premium VIP
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="(row, i) in comparisonRows"
-              :key="i"
-              class="border-b dark:border-base-800/60 border-light-border/60 last:border-0"
-              :class="
-                i % 2 === 0
-                  ? 'dark:bg-base-900/40 bg-light-bg'
-                  : 'dark:bg-base-800/20 bg-white'
-              "
-            >
-              <td class="px-5 py-3 dark:text-text-secondary text-light-muted">
-                {{ row.feature }}
-              </td>
-              <td class="text-center px-4 py-3">
-                <LucideIcon
-                  v-if="row.col1"
-                  name="check"
-                  class-name="w-4 h-4 dark:text-brand-400 text-brand-600 mx-auto"
-                />
-                <span
-                  v-else
-                  class="dark:text-base-700 text-light-border text-lg leading-none"
-                  >—</span
-                >
-              </td>
-              <td
-                class="text-center px-4 py-3 border-x dark:border-base-700/40 border-light-border/40"
-              >
-                <LucideIcon
-                  v-if="row.col2"
-                  name="check"
-                  class-name="w-4 h-4 dark:text-white text-light-text mx-auto"
-                />
-                <span
-                  v-else
-                  class="dark:text-base-700 text-light-border text-lg leading-none"
-                  >—</span
-                >
-              </td>
-              <td class="text-center px-4 py-3">
-                <LucideIcon
-                  v-if="row.col3"
-                  name="check"
-                  class-name="w-4 h-4 text-emerald-400 mx-auto"
-                />
-                <span
-                  v-else
-                  class="dark:text-base-700 text-light-border text-lg leading-none"
-                  >—</span
-                >
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="h-px dark:bg-base-800 bg-light-border"></div>
-    </div>
-
-    <!-- ─── FAQ ───────────────────────────────────────────── -->
-    <section class="max-w-3xl mx-auto px-6 py-24">
-      <p
-        class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-3 font-mono text-center"
-      >
-        08 / Preguntas frecuentes
-      </p>
-      <h2
-        class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text text-center mb-14"
-      >
-        Todo lo que necesitas saber
-      </h2>
-
-      <div class="space-y-3">
-        <div
-          v-for="(faq, i) in faqs"
-          :key="i"
-          class="rounded-xl border dark:border-base-700/50 border-light-border overflow-hidden"
-        >
-          <button
-            @click="toggleFaq(i)"
-            class="w-full flex items-center justify-between px-6 py-4 text-left dark:hover:bg-base-800/50 hover:bg-light-card/60 transition"
-          >
-            <span
-              class="font-semibold dark:text-white text-light-text text-sm pr-4"
-              >{{ faq.q }}</span
-            >
-            <LucideIcon
-              :name="openFaq === i ? 'chevron-up' : 'chevron-down'"
-              class-name="w-4 h-4 dark:text-text-secondary text-light-muted shrink-0 transition"
-            />
-          </button>
-          <div
-            v-if="openFaq === i"
-            class="px-6 pb-5 border-t dark:border-base-700/40 border-light-border pt-4"
-          >
-            <p
-              class="text-sm dark:text-text-secondary text-light-muted leading-relaxed"
-            >
-              {{ faq.a }}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-10 text-center">
-        <p class="text-sm dark:text-text-secondary text-light-muted mb-4">
-          ¿Tienes otra pregunta?
-        </p>
-        <a
-          :href="waCotizar"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border dark:border-base-600 border-light-border dark:text-text-secondary text-light-muted text-sm font-semibold hover:dark:border-white hover:dark:text-white hover:border-light-text hover:text-light-text transition"
-        >
-          <LucideIcon name="message-circle" class-name="w-4 h-4" />
-          Escríbenos por WhatsApp
-        </a>
-      </div>
-    </section>
-
-    <!-- ─── FINAL CTA ──────────────────────────────────────── -->
-    <section class="relative py-32 px-6 text-center overflow-hidden">
-      <!-- Ambient -->
-      <div class="pointer-events-none absolute inset-0">
-        <div
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[120px] dark:bg-brand-500/8 bg-brand-500/5"
-        ></div>
-      </div>
-
-      <div class="relative max-w-3xl mx-auto">
-        <p
-          class="text-xs tracking-[0.2em] uppercase dark:text-text-secondary/60 text-light-muted/60 mb-5 font-mono"
-        >
-          Listo para empezar
-        </p>
         <h2
-          class="font-display text-4xl sm:text-6xl font-bold dark:text-white text-light-text mb-6 tracking-tight leading-[1.04]"
+          class="font-display text-4xl sm:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight"
         >
-          ¿Listo para que tu salón
-          <span class="dark:text-brand-400 text-brand-600">
-            llene su agenda</span
-          >?
+          Lleva tu salón al<br />
+          <span class="text-red-400">siguiente nivel</span>
         </h2>
         <p
-          class="dark:text-text-secondary text-light-muted mb-12 text-lg max-w-xl mx-auto leading-relaxed"
+          class="text-neutral-400 mb-10 text-lg max-w-xl mx-auto leading-relaxed"
         >
-          No es solo una página web. Es el sistema que te va a ayudar a
-          conseguir más eventos, sin perder tiempo y con una imagen que inspira
-          confianza.
+          Empieza hoy. Escríbenos por WhatsApp y en pocas semanas tu salón ya
+          tiene un sistema que vende eventos mientras duermes.
         </p>
 
         <div
-          class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
         >
           <a
-            :href="waDemo"
+            :href="waCotizar"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-black font-bold text-sm hover:bg-neutral-100 transition shadow-lg"
+            class="px-10 py-4 rounded-full bg-red-500 text-neutral-950 font-bold text-sm hover:bg-red-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(239,68,68,0.25)]"
           >
-            <LucideIcon name="calendar-check" class-name="w-4 h-4" />
-            Quiero más reservaciones
+            Cotizar mi sistema
           </a>
-          <a
-            :href="waDemo21"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-8 py-4 rounded-xl border dark:border-amber-500/40 border-amber-300 dark:text-amber-400 text-amber-600 font-semibold text-sm hover:dark:bg-amber-500/10 hover:bg-amber-50 transition"
+          <RouterLink
+            to="/salones-eventos/demo"
+            class="px-10 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-red-500/30 hover:text-white transition"
           >
-            <LucideIcon name="play-circle" class-name="w-4 h-4" />
-            Demo 21 días — $999 MXN
-          </a>
+            Ver demo primero
+          </RouterLink>
         </div>
 
-        <p
-          class="text-xs dark:text-text-secondary/40 text-light-muted/40 font-mono"
+        <div
+          class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-neutral-600"
         >
-          Garantía incluida · Sin contratos permanentes · Entrega en 2–5 semanas
-        </p>
+          <span class="flex items-center gap-1.5">
+            <LucideIcon
+              name="shield-check"
+              class-name="w-3.5 h-3.5 text-red-500/60"
+            />
+            Garantía de resultados
+          </span>
+          <span class="flex items-center gap-1.5">
+            <LucideIcon
+              name="clock"
+              class-name="w-3.5 h-3.5 text-red-500/60"
+            />
+            Entrega en 2–5 semanas
+          </span>
+          <span class="flex items-center gap-1.5">
+            <LucideIcon
+              name="headphones"
+              class-name="w-3.5 h-3.5 text-red-500/60"
+            />
+            Soporte en español
+          </span>
+          <span class="flex items-center gap-1.5">
+            <LucideIcon
+              name="calendar-check"
+              class-name="w-3.5 h-3.5 text-red-500/60"
+            />
+            Cotizador y agenda incluidos
+          </span>
+        </div>
       </div>
     </section>
   </main>

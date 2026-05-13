@@ -6,6 +6,8 @@ Disallow: /invitaciones/pro
 Disallow: /invitaciones/premium
 Disallow: /menus-digitales/demo
 Disallow: /catalogos-nenis/demo
+Disallow: /catalogos-nenis/pro
+Disallow: /catalogos-nenis/premium
 Disallow: /salones-eventos/demo
 
 Sitemap: https://devifly.dev/sitemap.xml

@@ -470,7 +470,7 @@ export const salesProducts = [
           "Online payment integration",
           "Priority support",
         ],
-        demoLink: "/catalogos-nenis/demo",
+        demoLink: "/catalogos-nenis/pro",
       },
       {
         key: "catalogo-premium",
@@ -502,7 +502,7 @@ export const salesProducts = [
           "Priority support",
           "Delivery: 3–4 weeks",
         ],
-        demoLink: "/catalogos-nenis/demo",
+        demoLink: "/catalogos-nenis/premium",
       },
     ],
   },

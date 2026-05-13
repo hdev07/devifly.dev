@@ -1,7 +1,7 @@
 <script setup>
 /**
  * Landing: Menús Digitales Interactivos para Restaurantes
- * Estilo visual: Spotify — colores vibrantes, backgrounds sólidos, rounded shapes, bold y playful
+ * Estilo visual: Spotify dark — acento ámbar navbar (#f59e0b)
  * Secciones: Hero · Stats · Pain · Demo Preview · Features · How it Works · Testimonials · Pricing · FAQ · Demo 21d · CTA Final
  */
 import { ref } from "vue";
@@ -56,22 +56,22 @@ const features = [
     icon: "smartphone",
     title: "Mobile-first premium",
     desc: "Diseñado para verse perfecto en el celular, donde el 95% de tus clientes lo abrirán.",
-    color: "text-green-400",
-    bg: "bg-green-500/10",
+    color: "text-amber-400",
+    bg: "bg-amber-500/10",
   },
   {
     icon: "search",
     title: "Buscador de platillos",
     desc: "Tus clientes encuentran lo que quieren al instante. Sin scrollear interminablemente.",
-    color: "text-green-400",
-    bg: "bg-green-500/10",
+    color: "text-amber-400",
+    bg: "bg-amber-500/10",
   },
   {
     icon: "qr-code",
     title: "QR code personalizado",
     desc: "Un QR con tu marca para poner en mesas, mostrador, redes sociales o tarjetas.",
-    color: "text-green-400",
-    bg: "bg-green-500/10",
+    color: "text-amber-400",
+    bg: "bg-amber-500/10",
   },
   {
     icon: "pencil",
@@ -91,15 +91,15 @@ const features = [
     icon: "layers",
     title: "Categorías y subcategorías",
     desc: "Organiza entradas, platos fuertes, postres, bebidas y más con una navegación limpia.",
-    color: "text-green-400",
-    bg: "bg-green-500/10",
+    color: "text-amber-400",
+    bg: "bg-amber-500/10",
   },
   {
     icon: "image",
     title: "Fotos de alta calidad",
     desc: "Las fotos venden. Cada platillo puede tener su imagen apetecible y descripción detallada.",
-    color: "text-green-400",
-    bg: "bg-green-500/10",
+    color: "text-amber-400",
+    bg: "bg-amber-500/10",
   },
   {
     icon: "shield-check",
@@ -130,9 +130,9 @@ const steps = [
     icon: "message-circle",
     title: "Nos compartes tu menú",
     desc: "Envíanos tu menú actual (foto, PDF o lista). Recopilamos platillos, categorías y precios.",
-    color: "text-green-400",
-    border: "border-green-500/30",
-    bg: "bg-green-500/10",
+    color: "text-amber-400",
+    border: "border-amber-500/30",
+    bg: "bg-amber-500/10",
   },
   {
     number: "02",
@@ -159,8 +159,8 @@ const testimonials = [
     name: "Carlos Ramírez",
     role: "Dueño de Taquería El Patrón, CDMX",
     avatar: "CR",
-    avatarBg: "bg-green-500/20",
-    avatarColor: "text-green-400",
+    avatarBg: "bg-amber-500/20",
+    avatarColor: "text-amber-400",
     text: "Antes imprimía 200 menús cada mes por cambios de precio. Ahora actualizo desde el celular en 2 minutos. Me ahorré más de $3,000 pesos en el primer mes solo en impresiones.",
     stars: 5,
   },
@@ -344,7 +344,7 @@ const faqs = [
         <div
           class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full opacity-20"
           style="
-            background: radial-gradient(ellipse, #4ade80 0%, transparent 70%);
+            background: radial-gradient(ellipse, #f59e0b 0%, transparent 70%);
           "
         ></div>
       </div>
@@ -355,10 +355,10 @@ const faqs = [
           <div>
             <!-- badge -->
             <div
-              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold mb-6"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-6"
             >
               <span
-                class="w-2 h-2 rounded-full bg-green-400 animate-pulse"
+                class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"
               ></span>
               Menús Digitales Interactivos
             </div>
@@ -367,7 +367,7 @@ const faqs = [
               class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.05] tracking-tight mb-6"
             >
               Tu restaurante merece un menú que
-              <span class="text-green-400"> venda más</span>
+              <span class="text-amber-400"> venda más</span>
             </h1>
 
             <p class="text-neutral-400 text-lg leading-relaxed mb-8 max-w-xl">
@@ -380,7 +380,7 @@ const faqs = [
             <div class="flex flex-col sm:flex-row items-start gap-4 mb-10">
               <RouterLink
                 to="/menus-digitales/demo"
-                class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-green-400 text-green-950 font-bold text-sm hover:bg-green-300 transition-all hover:scale-105 shadow-[0_0_24px_rgba(74,222,128,0.3)]"
+                class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-amber-500 text-neutral-950 font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(245,158,11,0.3)]"
               >
                 <LucideIcon name="play-circle" class-name="w-4 h-4" />
                 Ver demo en vivo
@@ -389,7 +389,7 @@ const faqs = [
                 :href="waContratar"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-green-500/40 hover:text-white transition"
+                class="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-amber-500/40 hover:text-white transition"
               >
                 Cotizar mi menú
                 <LucideIcon name="arrow-right" class-name="w-4 h-4" />
@@ -401,7 +401,7 @@ const faqs = [
               <span class="flex items-center gap-1">
                 <LucideIcon
                   name="check-circle"
-                  class-name="w-3.5 h-3.5 text-green-400"
+                  class-name="w-3.5 h-3.5 text-amber-400"
                 />
                 Sin app que descargar
               </span>
@@ -409,7 +409,7 @@ const faqs = [
               <span class="flex items-center gap-1">
                 <LucideIcon
                   name="check-circle"
-                  class-name="w-3.5 h-3.5 text-green-400"
+                  class-name="w-3.5 h-3.5 text-amber-400"
                 />
                 Entrega en &lt; 5 días
               </span>
@@ -417,7 +417,7 @@ const faqs = [
               <span class="flex items-center gap-1">
                 <LucideIcon
                   name="check-circle"
-                  class-name="w-3.5 h-3.5 text-green-400"
+                  class-name="w-3.5 h-3.5 text-amber-400"
                 />
                 QR incluido
               </span>
@@ -430,7 +430,7 @@ const faqs = [
               <!-- Outer glow -->
               <div
                 class="absolute inset-0 rounded-[2.5rem] blur-2xl opacity-30"
-                style="background: linear-gradient(135deg, #4ade80, #22d3ee)"
+                style="background: linear-gradient(135deg, #f59e0b, #22d3ee)"
               ></div>
 
               <!-- Phone frame -->
@@ -538,7 +538,7 @@ const faqs = [
                         </p>
                         <span
                           v-if="item.badge"
-                          class="px-1.5 py-0.5 rounded-full bg-green-500/20 text-green-400 text-[9px] font-bold"
+                          class="px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400 text-[9px] font-bold"
                           >{{ item.badge }}</span
                         >
                       </div>
@@ -575,7 +575,7 @@ const faqs = [
         class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center"
       >
         <div v-for="stat in stats" :key="stat.label">
-          <div class="font-display text-3xl font-extrabold text-green-400 mb-1">
+          <div class="font-display text-3xl font-extrabold text-amber-400 mb-1">
             {{ stat.value }}
           </div>
           <div class="text-neutral-500 text-sm">{{ stat.label }}</div>
@@ -636,11 +636,11 @@ const faqs = [
     <section class="px-6 py-20" style="background: #111">
       <div class="max-w-5xl mx-auto">
         <div
-          class="relative rounded-3xl overflow-hidden border border-green-500/20 p-8 sm:p-12"
+          class="relative rounded-3xl overflow-hidden border border-amber-500/20 p-8 sm:p-12"
           style="
             background: linear-gradient(
               135deg,
-              #0d1f0d 0%,
+              #1a1200 0%,
               #0a0a0a 60%,
               #0d1020 100%
             );
@@ -650,7 +650,7 @@ const faqs = [
           <div
             class="pointer-events-none absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2"
             style="
-              background: radial-gradient(ellipse, #4ade80, transparent 70%);
+              background: radial-gradient(ellipse, #f59e0b, transparent 70%);
             "
           ></div>
 
@@ -659,7 +659,7 @@ const faqs = [
           >
             <div>
               <div
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold mb-6"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-6"
               >
                 <LucideIcon name="eye" class-name="w-3.5 h-3.5" />
                 Demo interactivo disponible
@@ -668,7 +668,7 @@ const faqs = [
                 class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4 leading-tight"
               >
                 Prueba el menú digital<br />
-                <span class="text-green-400">antes de comprometerte</span>
+                <span class="text-amber-400">antes de comprometerte</span>
               </h2>
               <p class="text-neutral-400 mb-8 leading-relaxed">
                 Navega por una demo real con platillos, fotos, buscador y QR.
@@ -677,7 +677,7 @@ const faqs = [
               <div class="flex flex-col sm:flex-row gap-4">
                 <RouterLink
                   to="/menus-digitales/demo"
-                  class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-green-400 text-green-950 font-bold text-sm hover:bg-green-300 transition-all hover:scale-105 shadow-[0_0_20px_rgba(74,222,128,0.25)]"
+                  class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-amber-500 text-neutral-950 font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105 shadow-[0_0_20px_rgba(245,158,11,0.25)]"
                 >
                   <LucideIcon name="smartphone" class-name="w-4 h-4" />
                   Abrir demo interactivo
@@ -686,7 +686,7 @@ const faqs = [
                   :href="waDemo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-green-500/30 text-green-400 font-semibold text-sm hover:bg-green-500/10 transition"
+                  class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-amber-500/30 text-amber-400 font-semibold text-sm hover:bg-amber-500/10 transition"
                 >
                   Quiero el mío así
                   <LucideIcon name="arrow-right" class-name="w-4 h-4" />
@@ -706,15 +706,15 @@ const faqs = [
                   { icon: 'smartphone', text: 'Fluido en móvil' },
                 ]"
                 :key="chip.text"
-                class="flex items-center gap-3 p-4 rounded-xl border border-green-500/10"
+                class="flex items-center gap-3 p-4 rounded-xl border border-amber-500/10"
                 style="background: rgba(74, 222, 128, 0.04)"
               >
                 <div
-                  class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0"
+                  class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center flex-shrink-0"
                 >
                   <LucideIcon
                     :name="chip.icon"
-                    class-name="w-4 h-4 text-green-400"
+                    class-name="w-4 h-4 text-amber-400"
                   />
                 </div>
                 <span class="text-white text-xs font-semibold">{{
@@ -732,7 +732,7 @@ const faqs = [
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-14">
           <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold mb-5"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="star" class-name="w-3.5 h-3.5" />
             Todo lo que incluye
@@ -782,7 +782,7 @@ const faqs = [
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-14">
           <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold mb-5"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="map" class-name="w-3.5 h-3.5" />
             Proceso
@@ -838,7 +838,7 @@ const faqs = [
             :href="waDemo"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-green-400 text-green-950 font-bold text-sm hover:bg-green-300 transition-all hover:scale-105"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-amber-500 text-neutral-950 font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105"
           >
             Empezar ahora
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
@@ -913,7 +913,7 @@ const faqs = [
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-14">
           <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold mb-5"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="tag" class-name="w-3.5 h-3.5" />
             Planes y precios
@@ -936,7 +936,7 @@ const faqs = [
             :class="[
               'relative flex flex-col rounded-2xl border p-7 transition-all',
               pkg.highlighted
-                ? 'border-green-500/50 shadow-[0_0_40px_rgba(74,222,128,0.12)]'
+                ? 'border-amber-500/50 shadow-[0_0_40px_rgba(245,158,11,0.12)]'
                 : pkg.vip
                   ? 'border-violet-500/30'
                   : 'border-neutral-800',
@@ -949,7 +949,7 @@ const faqs = [
               :class="[
                 'absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap',
                 pkg.highlighted
-                  ? 'bg-green-400 text-green-950'
+                  ? 'bg-amber-500 text-neutral-950'
                   : 'bg-violet-500 text-white',
               ]"
             >
@@ -962,7 +962,7 @@ const faqs = [
                 :class="[
                   'w-10 h-10 rounded-xl flex items-center justify-center',
                   pkg.highlighted
-                    ? 'bg-green-500/15'
+                    ? 'bg-amber-500/15'
                     : pkg.vip
                       ? 'bg-violet-500/15'
                       : 'bg-neutral-800',
@@ -970,7 +970,7 @@ const faqs = [
               >
                 <LucideIcon
                   :name="pkg.icon"
-                  :class-name="`w-5 h-5 ${pkg.highlighted ? 'text-green-400' : pkg.vip ? 'text-violet-400' : 'text-neutral-400'}`"
+                  :class-name="`w-5 h-5 ${pkg.highlighted ? 'text-amber-400' : pkg.vip ? 'text-violet-400' : 'text-neutral-400'}`"
                 />
               </div>
               <div>
@@ -985,7 +985,7 @@ const faqs = [
                 :class="[
                   'font-display text-4xl font-extrabold',
                   pkg.highlighted
-                    ? 'text-green-400'
+                    ? 'text-amber-400'
                     : pkg.vip
                       ? 'text-violet-400'
                       : 'text-white',
@@ -1007,7 +1007,7 @@ const faqs = [
               >
                 <LucideIcon
                   name="check"
-                  :class-name="`w-4 h-4 flex-shrink-0 mt-0.5 ${pkg.highlighted ? 'text-green-400' : pkg.vip ? 'text-violet-400' : 'text-neutral-500'}`"
+                  :class-name="`w-4 h-4 flex-shrink-0 mt-0.5 ${pkg.highlighted ? 'text-amber-400' : pkg.vip ? 'text-violet-400' : 'text-neutral-500'}`"
                 />
                 <span class="text-neutral-300">{{ f }}</span>
               </li>
@@ -1033,7 +1033,7 @@ const faqs = [
                 :class="[
                   'w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm transition-all hover:scale-[1.02]',
                   pkg.highlighted
-                    ? 'bg-green-400 text-green-950 hover:bg-green-300 shadow-[0_0_20px_rgba(74,222,128,0.2)]'
+                    ? 'bg-amber-500 text-neutral-950 hover:bg-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]'
                     : pkg.vip
                       ? 'bg-violet-600 text-white hover:bg-violet-500'
                       : 'bg-neutral-700 text-white hover:bg-neutral-600',
@@ -1076,7 +1076,7 @@ const faqs = [
                   Esencial
                 </th>
                 <th
-                  class="text-center py-4 px-4 text-green-400 font-semibold whitespace-nowrap"
+                  class="text-center py-4 px-4 text-amber-400 font-semibold whitespace-nowrap"
                 >
                   Profesional
                 </th>
@@ -1091,7 +1091,7 @@ const faqs = [
               <tr
                 v-for="row in menuComparisonRows"
                 :key="row.feature"
-                class="border-b border-neutral-800/50 last:border-0 hover:bg-green-500/5 transition-colors"
+                class="border-b border-neutral-800/50 last:border-0 hover:bg-amber-500/5 transition-colors"
                 style="background: #0f0f0f"
               >
                 <td class="py-3 px-6 text-neutral-400 whitespace-nowrap">
@@ -1109,7 +1109,7 @@ const faqs = [
                   <LucideIcon
                     v-if="row.medium"
                     name="check"
-                    class-name="w-4 h-4 mx-auto text-green-400"
+                    class-name="w-4 h-4 mx-auto text-amber-400"
                   />
                   <span v-else class="text-neutral-700">—</span>
                 </td>
@@ -1133,7 +1133,7 @@ const faqs = [
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-12">
           <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-semibold mb-5"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="help-circle" class-name="w-3.5 h-3.5" />
             Preguntas frecuentes
@@ -1154,7 +1154,7 @@ const faqs = [
             v-for="(faq, i) in faqs"
             :key="i"
             class="rounded-2xl border border-neutral-800 overflow-hidden transition-all"
-            :class="openFaq === i ? 'border-green-500/30' : ''"
+            :class="openFaq === i ? 'border-amber-500/30' : ''"
             style="background: #1a1a1a"
           >
             <button
@@ -1164,7 +1164,7 @@ const faqs = [
               <span class="text-white font-semibold text-sm">{{ faq.q }}</span>
               <LucideIcon
                 :name="openFaq === i ? 'chevron-up' : 'chevron-down'"
-                :class-name="`w-4 h-4 flex-shrink-0 transition-transform ${openFaq === i ? 'text-green-400' : 'text-neutral-500'}`"
+                :class-name="`w-4 h-4 flex-shrink-0 transition-transform ${openFaq === i ? 'text-amber-400' : 'text-neutral-500'}`"
               />
             </button>
             <div v-if="openFaq === i" class="px-6 pb-5">
@@ -1180,7 +1180,7 @@ const faqs = [
             :href="waDemo"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-green-400 text-sm font-semibold hover:text-green-300 transition"
+            class="inline-flex items-center gap-2 text-amber-400 text-sm font-semibold hover:text-amber-300 transition"
           >
             ¿Tienes otra pregunta? Escríbenos
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
@@ -1281,11 +1281,11 @@ const faqs = [
                 style="background: rgba(245, 158, 11, 0.05)"
               >
                 <div
-                  class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-3"
+                  class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center mx-auto mb-3"
                 >
                   <LucideIcon
                     name="receipt"
-                    class-name="w-5 h-5 text-green-400"
+                    class-name="w-5 h-5 text-amber-400"
                   />
                 </div>
                 <p class="text-white font-semibold text-sm mb-1">
@@ -1316,16 +1316,16 @@ const faqs = [
       <div class="max-w-3xl mx-auto">
         <!-- Icon -->
         <div
-          class="w-16 h-16 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center mx-auto mb-8"
+          class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mx-auto mb-8"
         >
-          <LucideIcon name="utensils" class-name="w-8 h-8 text-green-400" />
+          <LucideIcon name="utensils" class-name="w-8 h-8 text-amber-400" />
         </div>
 
         <h2
           class="font-display text-4xl sm:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight"
         >
           Lleva tu restaurante al<br />
-          <span class="text-green-400">siguiente nivel</span>
+          <span class="text-amber-400">siguiente nivel</span>
         </h2>
         <p
           class="text-neutral-400 mb-10 text-lg max-w-xl mx-auto leading-relaxed"
@@ -1341,13 +1341,13 @@ const faqs = [
             :href="waContratar"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-10 py-4 rounded-full bg-green-400 text-green-950 font-bold text-sm hover:bg-green-300 transition-all hover:scale-105 shadow-[0_0_24px_rgba(74,222,128,0.25)]"
+            class="px-10 py-4 rounded-full bg-amber-500 text-neutral-950 font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(245,158,11,0.25)]"
           >
             Cotizar mi menú digital
           </a>
           <RouterLink
             to="/menus-digitales/demo"
-            class="px-10 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-green-500/30 hover:text-white transition"
+            class="px-10 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-amber-500/30 hover:text-white transition"
           >
             Ver demo primero
           </RouterLink>
@@ -1360,28 +1360,28 @@ const faqs = [
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="shield-check"
-              class-name="w-3.5 h-3.5 text-green-500/60"
+              class-name="w-3.5 h-3.5 text-amber-500/60"
             />
             Pago único, sin mensualidades
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="clock"
-              class-name="w-3.5 h-3.5 text-green-500/60"
+              class-name="w-3.5 h-3.5 text-amber-500/60"
             />
             Entrega en menos de 5 días
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="headphones"
-              class-name="w-3.5 h-3.5 text-green-500/60"
+              class-name="w-3.5 h-3.5 text-amber-500/60"
             />
             Soporte en español
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="smartphone"
-              class-name="w-3.5 h-3.5 text-green-500/60"
+              class-name="w-3.5 h-3.5 text-amber-500/60"
             />
             Sin app que descargar
           </span>

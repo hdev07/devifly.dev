@@ -1,5 +1,5 @@
 <template>
-  <CatalogDemoView tier="basico" />
+  <CatalogDemoView tier="premium" />
 </template>
 
 <script setup>

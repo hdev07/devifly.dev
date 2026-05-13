@@ -73,6 +73,22 @@ const routeSeoByName = {
     path: '/solutions',
     pageType: 'CollectionPage',
   }),
+  Enfoque: ({ locale }) => ({
+    title:
+      locale === 'es'
+        ? 'Enfoque de producto digital por negocio | Devifly'
+        : 'Digital product approach by business | Devifly',
+    description:
+      locale === 'es'
+        ? 'Metodología de producto digital: pilares de conversión, perfiles por negocio y proceso de lanzamiento sin plantillas genéricas.'
+        : 'Digital product methodology: conversion pillars, business profiles, and a launch process without generic templates.',
+    keywords:
+      locale === 'es'
+        ? ['enfoque digital', 'producto digital a medida', 'estrategia web para negocios']
+        : ['digital approach', 'tailored digital product', 'business web strategy'],
+    path: '/enfoque',
+    pageType: 'CollectionPage',
+  }),
   CaseStudies: ({ locale }) => ({
     title:
       locale === 'es'
@@ -169,22 +185,6 @@ const routeSeoByName = {
     path: '/menus-digitales',
     pageType: 'Service',
   }),
-  SaaS: ({ locale }) => ({
-    title:
-      locale === 'es'
-        ? 'Desarrollo SaaS a medida y plataformas web | Devifly'
-        : 'Custom SaaS development and web platforms | Devifly',
-    description:
-      locale === 'es'
-        ? 'Construimos plataformas SaaS y software a medida con arquitectura escalable, dashboards, automatizaciones y enfoque en negocio.'
-        : 'We build SaaS platforms and custom software with scalable architecture, dashboards, automations and strong business fit.',
-    keywords:
-      locale === 'es'
-        ? ['desarrollo saas', 'software a medida', 'plataforma web personalizada']
-        : ['saas development', 'custom software', 'custom web platform'],
-    path: '/saas',
-    pageType: 'Service',
-  }),
   CatalogosNenis: ({ locale }) => ({
     title:
       locale === 'es'
@@ -254,58 +254,7 @@ function getDefaultSeo(locale) {
   return routeSeoByName.Home({ locale })
 }
 
-function getProductFromRoute(route) {
-  if (route.name !== 'ServiceDetail') {
-    return null
-  }
-
-  return products.find((item) => item.key === route.params.key) ?? null
-}
-
-function getServiceSeo(route, locale) {
-  const product = getProductFromRoute(route)
-
-  if (!product) {
-    return {
-      title:
-        locale === 'es' ? 'Servicio no encontrado | Devifly' : 'Service not found | Devifly',
-      description:
-        locale === 'es'
-          ? 'El servicio solicitado no está disponible o cambió de ruta.'
-          : 'The requested service is unavailable or moved.',
-      robots: 'noindex, nofollow',
-      path: '/products',
-      pageType: 'WebPage',
-    }
-  }
-
-  const title = locale === 'es' ? product.titleEs : product.titleEn
-  const description = locale === 'es' ? product.descEs : product.descEn
-  const audience = locale === 'es' ? product.forEs : product.forEn
-  const includes = locale === 'es' ? product.includesEs : product.includesEn
-  const category = product.category
-
-  return {
-    title: `${title} | Devifly`,
-    description,
-    keywords: uniq([
-      title,
-      category,
-      audience,
-      ...includes.slice(0, 4),
-      locale === 'es' ? 'desarrollo a medida' : 'custom development',
-    ]),
-    path: route.path,
-    pageType: 'Service',
-    serviceName: title,
-  }
-}
-
 function resolveSeo(route, locale) {
-  if (route.name === 'ServiceDetail') {
-    return getServiceSeo(route, locale)
-  }
-
   const resolver = routeSeoByName[route.name] ?? getDefaultSeo
   return resolver({ route, locale })
 }
@@ -322,25 +271,6 @@ function buildBreadcrumb(route, seo, locale) {
 
   if (route.name === 'Home') {
     return null
-  }
-
-  if (route.name === 'ServiceDetail') {
-    items.push({
-      '@type': 'ListItem',
-      position: 2,
-      name: locale === 'es' ? 'Productos' : 'Products',
-      item: toAbsoluteUrl('/products'),
-    })
-    items.push({
-      '@type': 'ListItem',
-      position: 3,
-      name: seo.serviceName ?? seo.title,
-      item: seo.canonical,
-    })
-    return {
-      '@type': 'BreadcrumbList',
-      itemListElement: items,
-    }
   }
 
   items.push({

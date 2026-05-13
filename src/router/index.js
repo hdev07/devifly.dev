@@ -118,11 +118,6 @@ const routes = [
     }
   },
   {
-    path: '/saas',
-    name: 'SaaS',
-    component: () => import('../views/SaaS.vue')
-  },
-  {
     path: '/catalogos-nenis',
     name: 'CatalogosNenis',
     component: () => import('../views/landings/LandingCatalogos.vue')
@@ -131,6 +126,32 @@ const routes = [
     path: '/catalogos-nenis/demo',
     name: 'CatalogoNenisDemo',
     component: () => import('../views/demos/CatalogoNenisDemo.vue'),
+    meta: {
+      fullscreen: true,
+      exitTo: '/catalogos-nenis',
+      exitLabelEs: 'Volver a catálogos digitales',
+      exitLabelEn: 'Back to digital catalogs',
+      robots: 'noindex, nofollow',
+      canonicalPath: '/catalogos-nenis'
+    }
+  },
+  {
+    path: '/catalogos-nenis/pro',
+    name: 'CatalogoProDemo',
+    component: () => import('../views/demos/CatalogoProDemo.vue'),
+    meta: {
+      fullscreen: true,
+      exitTo: '/catalogos-nenis',
+      exitLabelEs: 'Volver a catálogos digitales',
+      exitLabelEn: 'Back to digital catalogs',
+      robots: 'noindex, nofollow',
+      canonicalPath: '/catalogos-nenis'
+    }
+  },
+  {
+    path: '/catalogos-nenis/premium',
+    name: 'CatalogoPremiumDemo',
+    component: () => import('../views/demos/CatalogoPremiumDemo.vue'),
     meta: {
       fullscreen: true,
       exitTo: '/catalogos-nenis',
@@ -157,11 +178,6 @@ const routes = [
       robots: 'noindex, nofollow',
       canonicalPath: '/salones-eventos'
     }
-  },
-  {
-    path: '/service/:key',
-    name: 'ServiceDetail',
-    component: () => import('../views/ServiceDetail.vue')
   },
   {
     path: '/:pathMatch(.*)*',
