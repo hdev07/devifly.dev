@@ -1,132 +1,79 @@
 <template>
   <main class="pt-24 pb-0">
-    <div class="max-w-7xl mx-auto px-6 text-center mb-16">
-      <div
-        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full dark:bg-base-800/60 bg-light-card/80 border dark:border-base-700/50 border-light-border mb-6 text-sm dark:text-text-secondary text-light-muted"
-      >
-        <LucideIcon name="wrench" class-name="w-4 h-4" />
-        {{ t("productsPage.badge") }}
+    <section class="relative py-10 sm:py-14 overflow-hidden">
+      <AmbientGlow variant="subtle" />
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <SectionHeader
+          align="center"
+          :eyebrow="t('productsPage.badge')"
+          :title="t('productsPage.title')"
+          :subtitle="t('productsPage.subtitle')"
+        />
       </div>
-      <h1
-        class="font-display text-4xl sm:text-5xl font-bold dark:text-white text-light-text mb-6 max-w-3xl mx-auto"
-      >
-        {{ t("productsPage.title") }}
-      </h1>
-      <p
-        class="text-lg dark:text-text-secondary text-light-muted max-w-2xl mx-auto"
-      >
-        {{ t("productsPage.subtitle") }}
-      </p>
-    </div>
+    </section>
 
-    <div class="max-w-7xl mx-auto px-6 mb-24">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section class="relative pb-20 sm:pb-28 overflow-hidden">
+      <AmbientGlow variant="default" />
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <ProductCard
+            v-for="(product, i) in visibleProducts"
+            :key="product.key"
+            data-animate
+            :class="`delay-${(i + 1) * 75}`"
+            :product="product"
+            :locale="locale"
+            :show-hire="product.key !== 'custom'"
+            :from-label="locale === 'es' ? 'Desde' : 'From'"
+            :view-more-label="t('productsPage.viewMore')"
+            :demo-label="locale === 'es' ? 'Demo' : 'Demo'"
+            :hire-label="t('productsPage.hire')"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="relative py-20 sm:py-24 overflow-hidden dark:bg-base-800/20 bg-light-card/30 border-y dark:border-white/5 border-light-border"
+    >
+      <AmbientGlow variant="subtle" />
+
+      <div class="relative max-w-7xl mx-auto px-6">
         <div
-          v-for="p in visibleProducts"
-          :key="p.key"
-          class="group flex flex-col rounded-2xl dark:bg-base-800/40 bg-light-surface border dark:border-base-700/50 border-light-border overflow-hidden hover:border-brand-500/30 transition-all duration-300"
+          class="rounded-2xl border dark:border-brand-500/25 border-brand-500/30 dark:bg-gradient-to-r dark:from-brand-500/10 from-brand-500/5 to-transparent p-6 sm:p-8 backdrop-blur-xl"
+          data-animate
         >
-          <div class="p-8 flex-1">
-            <div class="flex items-center gap-3 mb-4">
-              <LucideIcon :name="p.icon" class-name="w-8 h-8" />
-              <span
-                class="text-xs font-medium px-2 py-1 rounded-full dark:bg-base-700/50 bg-light-card dark:text-text-secondary text-light-muted border dark:border-base-600/50 border-light-border"
-              >
-                {{ locale === "es" ? p.categoryEs : p.categoryEn }}
-              </span>
-            </div>
-            <h2
-              class="font-display text-xl font-bold dark:text-white text-light-text mb-2"
-            >
-              {{ locale === "es" ? p.titleEs : p.titleEn }}
-            </h2>
-            <p class="text-sm dark:text-text-secondary text-light-muted mb-6">
-              {{ locale === "es" ? p.descEs : p.descEn }}
-            </p>
-
-            <ul class="space-y-2 mb-6">
-              <li
-                v-for="feature in locale === 'es' ? p.featuresEs : p.featuresEn"
-                :key="feature"
-                class="text-sm dark:text-text-secondary text-light-muted flex items-start gap-2"
-              >
-                <LucideIcon
-                  name="check"
-                  class-name="w-4 h-4 mt-0.5 text-brand-500"
-                />
-                {{ feature }}
-              </li>
-            </ul>
-
+          <div class="flex flex-col sm:flex-row sm:items-center gap-5">
             <div
-              class="p-3 rounded-xl dark:bg-base-700/30 bg-light-card/80 border dark:border-base-600/30 border-light-border"
+              class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-brand-500 to-cyan-glow shrink-0"
             >
-              <p class="text-sm font-medium dark:text-white text-light-text">
-                <span class="inline-flex items-center gap-2">
-                  <LucideIcon
-                    name="sparkles"
-                    class-name="w-4 h-4 text-brand-500"
-                  />
-                  {{ locale === "es" ? p.priceEs : p.priceEn }}
-                </span>
-              </p>
+              <LucideIcon name="cpu" class-name="w-5 h-5 text-white" />
             </div>
-          </div>
-
-          <div class="px-8 pb-8 flex flex-col gap-3">
-            <div class="flex gap-2">
-              <router-link
-                :to="p.link"
-                class="flex-1 text-center px-4 py-3 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 font-semibold hover:bg-brand-500/20 transition text-sm"
+            <div class="flex-1">
+              <h2
+                class="font-display text-base sm:text-lg font-bold dark:text-white text-light-text mb-1"
               >
-                <span class="inline-flex items-center gap-2">
-                  {{ t("productsPage.viewMore") }}
-                  <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-                </span>
-              </router-link>
-              <router-link
-                v-if="p.demoLink"
-                :to="p.demoLink"
-                class="flex-1 text-center px-4 py-3 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:border-brand-500/50 hover:text-brand-500 transition text-sm"
-              >
-                <span class="inline-flex items-center gap-2">
-                  <LucideIcon name="play" class-name="w-4 h-4" />
-                  {{ locale === "es" ? "Ver demo" : "View demo" }}
-                </span>
-              </router-link>
+                {{ t("productsPage.ctaTitle") }}
+              </h2>
+              <p class="text-sm dark:text-text-secondary text-light-muted leading-relaxed">
+                {{ t("productsPage.ctaSubtitle") }}
+              </p>
             </div>
             <router-link
               to="/contact"
-              class="block w-full text-center px-4 py-3 rounded-xl dark:bg-base-700/50 bg-light-card border dark:border-base-600/50 border-light-border dark:text-text-secondary text-light-muted font-semibold hover:text-brand-500 transition text-sm"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border text-sm font-semibold dark:text-white text-light-text hover:dark:border-brand-500/50 transition-all shrink-0"
             >
-              {{ t("productsPage.hire") }}
+              {{ t("productsPage.ctaButton") }}
+              <LucideIcon name="arrow-right" class-name="w-4 h-4" />
             </router-link>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div
-      class="dark:bg-base-800/30 bg-light-card/50 border-t dark:border-base-700/50 border-light-border py-20 px-6 text-center"
-    >
-      <h2
-        class="font-display text-3xl font-bold dark:text-white text-light-text mb-4"
-      >
-        {{ t("productsPage.ctaTitle") }}
-      </h2>
-      <p
-        class="dark:text-text-secondary text-light-muted mb-8 max-w-xl mx-auto"
-      >
-        {{ t("productsPage.ctaSubtitle") }}
-      </p>
-      <router-link
-        to="/contact"
-        class="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all"
-      >
-        {{ t("productsPage.ctaButton") }}
-        <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-      </router-link>
-    </div>
+    <CTAFinal />
   </main>
 </template>
 
@@ -134,6 +81,10 @@
 import { useI18n } from "vue-i18n";
 import { customSoftwareProduct, salesProducts } from "../data/salesCatalog.js";
 import LucideIcon from "../components/LucideIcon.vue";
+import ProductCard from "../components/ProductCard.vue";
+import CTAFinal from "../components/CTAFinal.vue";
+import AmbientGlow from "../components/ui/AmbientGlow.vue";
+import SectionHeader from "../components/ui/SectionHeader.vue";
 
 const { t, locale } = useI18n();
 const visibleProducts = [...salesProducts, customSoftwareProduct];
