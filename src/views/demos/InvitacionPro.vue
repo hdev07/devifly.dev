@@ -821,6 +821,72 @@
       </div>
     </section>
 
+    <!-- Listado de asistencia confirmada -->
+    <section
+      class="py-16 sm:py-20 px-6"
+      style="background: linear-gradient(180deg, #ffffff, #f8f4f0)"
+    >
+      <div class="max-w-2xl mx-auto">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center mb-3"
+          style="color: #7a1e3a"
+        >
+          Listado de asistencia confirmada
+        </h2>
+        <p class="text-sm text-center mb-8" style="color: #999">
+          Vista previa del panel que verás en tiempo real (solo organizadores)
+        </p>
+
+        <div class="grid grid-cols-3 gap-3 mb-8">
+          <div
+            v-for="stat in attendanceStats"
+            :key="stat.label"
+            class="p-4 rounded-2xl text-center"
+            style="
+              background: rgba(122, 30, 58, 0.04);
+              border: 1px solid rgba(122, 30, 58, 0.1);
+            "
+          >
+            <p class="text-2xl font-bold" style="color: #7a1e3a">{{ stat.val }}</p>
+            <p class="text-xs mt-1" style="color: #999">{{ stat.label }}</p>
+          </div>
+        </div>
+
+        <div
+          class="rounded-2xl overflow-hidden"
+          style="border: 1.5px solid rgba(212, 175, 55, 0.2)"
+        >
+          <div
+            class="grid grid-cols-3 gap-2 px-4 py-3 text-xs font-semibold uppercase tracking-wider"
+            style="background: rgba(212, 175, 55, 0.08); color: #7a1e3a"
+          >
+            <span>Invitado</span>
+            <span class="text-center">Personas</span>
+            <span class="text-right">Estado</span>
+          </div>
+          <div
+            v-for="guest in confirmedGuests"
+            :key="guest.name"
+            class="grid grid-cols-3 gap-2 px-4 py-3 text-sm border-t"
+            style="border-color: rgba(212, 175, 55, 0.12); color: #666"
+          >
+            <span class="font-medium" style="color: #7a1e3a">{{ guest.name }}</span>
+            <span class="text-center">{{ guest.guests }}</span>
+            <span
+              class="text-right text-xs font-semibold px-2 py-0.5 rounded-full justify-self-end"
+              :style="
+                guest.status === 'Confirmado'
+                  ? 'background: rgba(37, 211, 102, 0.1); color: #25a244'
+                  : 'background: rgba(212, 175, 55, 0.1); color: #d4af37'
+              "
+            >
+              {{ guest.status }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer
       class="py-10 text-center"
@@ -859,6 +925,18 @@ import { ref, computed, onMounted, onUnmounted } from "vue";
 import LucideIcon from "../../components/LucideIcon.vue";
 
 const waContratar = `https://wa.me/+525635926679?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Pro de invitaciones digitales y me interesa contratarlo ✨")}`;
+
+const attendanceStats = [
+  { val: "48", label: "Confirmados" },
+  { val: "12", label: "Pendientes" },
+  { val: "60", label: "Invitados" },
+];
+const confirmedGuests = [
+  { name: "Familia Guzmán", guests: 4, status: "Confirmado" },
+  { name: "Roberto & Ana López", guests: 2, status: "Confirmado" },
+  { name: "Daniela Morales", guests: 1, status: "Pendiente" },
+  { name: "Grupo de amigas", guests: 5, status: "Confirmado" },
+];
 
 const musicOn = ref(false);
 const audioRef = ref(null);

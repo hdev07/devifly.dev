@@ -26,7 +26,7 @@
           color: #5b9bd5;
           border: 1px solid rgba(167, 216, 255, 0.4);
         "
-        >Demo — Plan Basic</span
+        >Demo — Plan Esencial</span
       >
       <a
         :href="waContratar"
@@ -124,10 +124,14 @@
           Con la bendición de Dios,<br />celebramos su llegada a la fe
         </p>
 
-        <!-- Parents -->
+        <!-- Parents & godparents -->
         <p class="text-xs mb-1" style="color: #c0b0c8">Hijos de</p>
-        <p class="font-semibold text-sm mb-8" style="color: #8b7aaf">
+        <p class="font-semibold text-sm mb-4" style="color: #8b7aaf">
           Andrea & Carlos Mendoza
+        </p>
+        <p class="text-xs mb-1" style="color: #c0b0c8">Padrinos</p>
+        <p class="font-semibold text-sm mb-8" style="color: #8b7aaf">
+          Miguel & Patricia Ruiz · Luis Hernández
         </p>
 
         <!-- Date chip -->
@@ -581,7 +585,7 @@
       </div>
     </section>
 
-    <!-- RSVP VIA WHATSAPP -->
+    <!-- RSVP -->
     <section
       class="py-16 px-6"
       style="background: linear-gradient(180deg, #fff9e6, #fff5f6)"
@@ -596,8 +600,8 @@
           "
         >
           <span class="inline-flex items-center gap-2"
-            ><LucideIcon name="mail" class-name="w-7 h-7" />¿Nos
-            acompañas?</span
+            ><LucideIcon name="users" class-name="w-7 h-7" />Confirmación de
+            asistencia</span
           >
         </h2>
         <p class="text-sm mb-8" style="color: #b0a7c0">
@@ -605,7 +609,6 @@
           <strong style="color: #8b7aaf">1 de mayo de 2025</strong>
         </p>
 
-        <!-- RSVP Form -->
         <form
           class="space-y-4 max-w-sm lg:max-w-md mx-auto"
           @submit.prevent="handleRSVP"
@@ -622,6 +625,20 @@
               color: #444;
             "
           />
+          <select
+            v-model="rsvpForm.attending"
+            required
+            class="w-full px-4 py-3.5 rounded-xl text-sm focus:outline-none transition-all rsvp-select-esencial"
+            style="
+              background: #ffffff;
+              border: 1.5px solid rgba(167, 216, 255, 0.4);
+              color: #444;
+            "
+          >
+            <option value="" disabled>¿Asistirás?</option>
+            <option value="yes">Sí, con mucho gusto</option>
+            <option value="no">No podré asistir</option>
+          </select>
           <button
             type="submit"
             class="w-full py-3.5 rounded-xl font-bold text-white transition-all hover:scale-105 shadow-md"
@@ -632,11 +649,6 @@
             }}
           </button>
         </form>
-
-        <p class="text-xs mt-6" style="color: #c0b0c8">
-          También puedes escribirnos directamente al
-          <strong style="color: #8b7aaf">55 5123 4567</strong>
-        </p>
       </div>
     </section>
 
@@ -681,7 +693,7 @@ const handleRSVP = () => {
   rsvpSubmitted.value = true;
   setTimeout(() => {
     rsvpSubmitted.value = false;
-    rsvpForm.value.name = "";
+    rsvpForm.value = { name: "", attending: "" };
   }, 3000);
 };
 
@@ -802,6 +814,15 @@ onUnmounted(() => {
 .animate-esencial-fade-up {
   animation: esencial-fade-up 0.7s ease-out both 0.3s;
   opacity: 0;
+}
+
+.rsvp-select-esencial {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235b9bd5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 42px;
 }
 
 .inv-esencial {

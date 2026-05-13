@@ -29,6 +29,20 @@
           >Demo — Plan Premium</span
         >
         <button
+          v-for="(guest, i) in demoGuests"
+          :key="guest.slug"
+          type="button"
+          @click="activeGuestIdx = i"
+          class="hidden sm:inline text-xs px-2.5 py-1 rounded-full transition"
+          :style="
+            activeGuestIdx === i
+              ? 'border: 1px solid rgba(198, 167, 94, 0.5); color: #c6a75e; background: rgba(198, 167, 94, 0.12)'
+              : 'border: 1px solid rgba(198, 167, 94, 0.15); color: rgba(198, 167, 94, 0.5)'
+          "
+        >
+          {{ guest.shortName }}
+        </button>
+        <button
           @click="lang = lang === 'es' ? 'en' : 'es'"
           class="text-xs px-3 py-1 rounded-full transition"
           style="border: 1px solid rgba(198, 167, 94, 0.2); color: #c6a75e"
@@ -93,9 +107,19 @@
             style="background: #c6a75e"
           ></span>
           <span class="text-xs font-mono" style="color: rgba(198, 167, 94, 0.7)"
-            >mariana-y-diego.com</span
+            >mariana-y-diego.com/inv/{{ activeGuest.slug }}</span
           >
         </div>
+
+        <p
+          class="text-sm mb-4 tracking-wide"
+          style="color: rgba(198, 167, 94, 0.75)"
+        >
+          {{ activeGuest.label }}
+        </p>
+        <p class="text-xs mb-6" style="color: rgba(255, 255, 255, 0.35)">
+          Link único · {{ activeGuest.passes }} pases asignados
+        </p>
 
         <!-- Names -->
         <h1
@@ -276,6 +300,38 @@
       </div>
     </section>
 
+    <!-- Itinerario -->
+    <section class="py-16 sm:py-20 px-6" style="background: #0b0b0b">
+      <div class="max-w-md mx-auto">
+        <h2 class="text-3xl font-bold text-center text-white mb-10">
+          {{ t("itineraryTitle") }}
+        </h2>
+        <div class="space-y-5">
+          <div
+            v-for="item in itinerary"
+            :key="item.time"
+            class="flex gap-4 p-4 rounded-2xl"
+            style="
+              background: rgba(198, 167, 94, 0.04);
+              border: 1px solid rgba(198, 167, 94, 0.1);
+            "
+          >
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
+              style="background: rgba(198, 167, 94, 0.1)"
+            >
+              <LucideIcon :name="item.icon" class-name="w-5 h-5 text-[#c6a75e]" />
+            </div>
+            <div>
+              <p class="text-xs font-semibold" style="color: #c6a75e">{{ item.time }}</p>
+              <p class="text-white font-medium">{{ t(item.titleKey) }}</p>
+              <p class="text-sm" style="color: #888">{{ t(item.descKey) }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- GALLERY — Premium Carousel -->
     <section
       class="py-16 sm:py-24 px-6"
@@ -310,6 +366,16 @@
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
             />
+            <div
+              v-if="photo.type === 'video'"
+              class="absolute inset-0 flex items-center justify-center pointer-events-none"
+            >
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center bg-black/40 backdrop-blur-sm border border-white/30"
+              >
+                <LucideIcon name="play" class-name="w-6 h-6 text-white" />
+              </div>
+            </div>
             <div
               class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"
             ></div>
@@ -680,7 +746,7 @@
           "
         >
           <p class="text-sm" style="color: #c6a75e; font-style: italic">
-            "{{ t("rsvpGreeting") }}"
+            "{{ guestGreeting }}"
           </p>
         </div>
 
@@ -725,11 +791,24 @@
             </option>
           </select>
           <div v-if="rsvpForm.attending === 'yes'" class="space-y-4">
+            <div
+              class="p-4 rounded-xl text-center"
+              style="
+                background: rgba(198, 167, 94, 0.06);
+                border: 1px solid rgba(198, 167, 94, 0.15);
+              "
+            >
+              <LucideIcon name="ticket" class-name="w-6 h-6 mx-auto text-[#c6a75e] mb-2" />
+              <p class="text-sm font-bold text-white">
+                {{ t("passesAssigned") }}: {{ activeGuest.passes }}
+              </p>
+              <p class="text-xs mt-1" style="color: #888">{{ t("passesNote") }}</p>
+            </div>
             <input
               v-model="rsvpForm.guests"
               type="number"
               min="1"
-              max="10"
+              :max="activeGuest.passes"
               :placeholder="t('rsvpGuests')"
               class="w-full px-4 py-3.5 rounded-xl text-sm text-white/80 placeholder-white/30 focus:outline-none"
               style="
@@ -819,6 +898,67 @@
             {{ t("qrBtn") }}
           </button>
         </div>
+
+        <div
+          class="rounded-2xl p-6 sm:p-8"
+          style="
+            background: rgba(198, 167, 94, 0.03);
+            border: 1px solid rgba(198, 167, 94, 0.12);
+          "
+        >
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 text-center">
+            {{ t("adminTitle") }}
+          </h3>
+          <p class="text-sm text-center mb-8" style="color: #888">
+            {{ t("adminDesc") }}
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+            <div
+              v-for="stat in adminStats"
+              :key="stat.label"
+              class="p-4 rounded-xl text-center"
+              style="background: rgba(198, 167, 94, 0.05); border: 1px solid rgba(198, 167, 94, 0.1)"
+            >
+              <p class="text-xl font-bold" style="color: #c6a75e">{{ stat.val }}</p>
+              <p class="text-xs mt-1" style="color: #888">{{ stat.label }}</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl overflow-hidden" style="border: 1px solid rgba(198, 167, 94, 0.1)">
+            <div
+              class="grid grid-cols-4 gap-2 px-4 py-3 text-[10px] sm:text-xs font-semibold uppercase tracking-wider"
+              style="background: rgba(198, 167, 94, 0.08); color: #c6a75e"
+            >
+              <span>{{ t("guestName") }}</span>
+              <span class="text-center">{{ t("guestTable") }}</span>
+              <span class="text-center">{{ t("guestTag") }}</span>
+              <span class="text-right">{{ t("guestStatus") }}</span>
+            </div>
+            <div
+              v-for="guest in guests"
+              :key="guest.name"
+              class="grid grid-cols-4 gap-2 px-4 py-3 text-sm border-t"
+              style="border-color: rgba(198, 167, 94, 0.08); color: #aaa"
+            >
+              <span class="text-white/80 truncate">{{ guest.name }}</span>
+              <span class="text-center">{{ guest.table }}</span>
+              <span class="text-center text-xs">{{ guest.tag }}</span>
+              <span
+                class="text-right text-xs font-semibold justify-self-end"
+                :style="
+                  guest.status === 'Confirmado' || guest.status === 'Checked-in'
+                    ? 'color: #4ade80'
+                    : guest.status === 'Declinó'
+                      ? 'color: #f87171'
+                      : 'color: #c6a75e'
+                "
+              >
+                {{ guest.status }}
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -857,10 +997,10 @@
               ></div>
             </div>
           </div>
-          <p class="font-mono text-sm" style="color: #c6a75e">BODA-PRO-0042</p>
+          <p class="font-mono text-sm" style="color: #c6a75e">{{ activeGuest.qrCode }}</p>
           <p class="text-xs mt-2" style="color: #666">
             {{ t("qrAccess") }}:
-            <span class="text-white/60">Mariana + Diego</span>
+            <span class="text-white/60">{{ activeGuest.label }}</span>
           </p>
           <button
             @click="qrOpen = false"
@@ -984,6 +1124,16 @@ const translations = {
     qrAccess: "Ingreso",
     close: "Cerrar",
     adminTitle: "Panel de Gestión de Invitados",
+    adminDesc: "Control de acceso, check-in y listado de asistencia en tiempo real",
+    passesAssigned: "Pases asignados",
+    passesNote: "Válido solo para esta familia o invitado",
+    itineraryTitle: "Itinerario del evento",
+    itineraryMass: "Misa",
+    itineraryMassDesc: "Iglesia La Paz · Santa Fe",
+    itineraryCocktail: "Cóctel de bienvenida",
+    itineraryCocktailDesc: "Jardín del salón",
+    itineraryParty: "Recepción y fiesta",
+    itineraryPartyDesc: "Salón Versalles",
     guestName: "Invitado",
     guestTable: "Mesa",
     guestTag: "Etiqueta",
@@ -1053,6 +1203,16 @@ const translations = {
     qrAccess: "Access",
     close: "Close",
     adminTitle: "Guest Management Panel",
+    adminDesc: "Access control, check-in, and live attendance list",
+    passesAssigned: "Assigned passes",
+    passesNote: "Valid for this family or guest only",
+    itineraryTitle: "Event itinerary",
+    itineraryMass: "Mass",
+    itineraryMassDesc: "La Paz Church · Santa Fe",
+    itineraryCocktail: "Welcome cocktail",
+    itineraryCocktailDesc: "Venue garden",
+    itineraryParty: "Reception & party",
+    itineraryPartyDesc: "Versalles Hall",
     guestName: "Guest",
     guestTable: "Table",
     guestTag: "Tag",
@@ -1068,6 +1228,53 @@ const translations = {
   },
 };
 const t = (key) => translations[lang.value][key] || key;
+
+const activeGuestIdx = ref(0);
+const demoGuests = [
+  {
+    shortName: "Martínez",
+    label: "Familia Martínez",
+    slug: "fam-martinez-7k2x",
+    passes: 4,
+    qrCode: "BODA-VIP-0042",
+    greetingEs:
+      "Querida Familia Martínez, Mariana y Diego están encantados de invitarlos a celebrar su amor.",
+    greetingEn:
+      "Dear Martínez Family, Mariana and Diego are delighted to invite you to celebrate their love.",
+  },
+  {
+    shortName: "Herrera",
+    label: "Luis & Ana Herrera",
+    slug: "luis-ana-herrera-9m1p",
+    passes: 2,
+    qrCode: "BODA-VIP-0087",
+    greetingEs:
+      "Queridos Luis y Ana, su presencia haría aún más especial nuestro gran día.",
+    greetingEn:
+      "Dear Luis and Ana, your presence would make our big day even more special.",
+  },
+  {
+    shortName: "López",
+    label: "Familia López",
+    slug: "fam-lopez-3n8q",
+    passes: 5,
+    qrCode: "BODA-VIP-0113",
+    greetingEs:
+      "Apreciada Familia López, los esperamos con alegría para compartir esta celebración.",
+    greetingEn:
+      "Dear López Family, we look forward to sharing this celebration with you.",
+  },
+];
+const activeGuest = computed(() => demoGuests[activeGuestIdx.value]);
+const guestGreeting = computed(() =>
+  lang.value === "es" ? activeGuest.value.greetingEs : activeGuest.value.greetingEn,
+);
+
+const itinerary = [
+  { time: "5:00 PM", icon: "landmark", titleKey: "itineraryMass", descKey: "itineraryMassDesc" },
+  { time: "6:30 PM", icon: "wine", titleKey: "itineraryCocktail", descKey: "itineraryCocktailDesc" },
+  { time: "7:00 PM", icon: "sparkles", titleKey: "itineraryParty", descKey: "itineraryPartyDesc" },
+];
 
 const toggleMusic = () => {
   musicOn.value = !musicOn.value;
@@ -1110,6 +1317,7 @@ const timeline = [
 const galleryPhotos = [
   {
     img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=600&fit=crop",
+    type: "video",
   },
   {
     img: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=400&h=400&fit=crop",
@@ -1156,9 +1364,9 @@ const guests = [
     name: "Andrea Martínez",
     table: "Mesa 3",
     tag: "Familia",
-    status: "Confirmado",
+    status: "Checked-in",
   },
-  { name: "Luis Herrera", table: "Mesa 7", tag: "Amigos", status: "Pendiente" },
+  { name: "Luis Herrera", table: "Mesa 7", tag: "Amigos", status: "Confirmado" },
   { name: "Carmen López", table: "Mesa 1", tag: "VIP", status: "Confirmado" },
   { name: "Jorge Ramírez", table: "Mesa 5", tag: "Trabajo", status: "Declinó" },
 ];
