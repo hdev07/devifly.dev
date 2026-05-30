@@ -123,5 +123,7 @@ const fallbackBrands = [
     link: "https://jardindeltata.devifly.dev",
   },
   { name: "Zapori Banquetes", link: "https://zaporibanquetes.devifly.dev" },
+  { name: "Linco Eventos", link: "https://lincoeventos.com" },
+  { name: "Aurea", link: "https://aurea.wtf" },
 ];
 </script>
