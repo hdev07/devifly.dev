@@ -116,6 +116,7 @@ const fallbackBrands = [
   { name: "MoviBase", link: "https://movibase.com" },
   { name: "Confecdotario", link: "https://confecdotario.com" },
   { name: "Musion", link: "https://musion.com" },
+  { name: "CruzBet", link: "https://cruzbet.devifly.dev" },
   { name: "PoleGP", link: "https://polegp.devifly.dev" },
   { name: "Barberia JAFZ", link: "https://barberiajafz.devifly.dev" },
   {
@@ -125,5 +126,6 @@ const fallbackBrands = [
   { name: "Zapori Banquetes", link: "https://zaporibanquetes.devifly.dev" },
   { name: "Linco Eventos", link: "https://lincoeventos.com" },
   { name: "Aurea", link: "https://aurea.wtf" },
+  { name: "White Glove Naples", link: "https://whiteglovenaples.devifly.dev" },
 ];
 </script>
