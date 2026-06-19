@@ -159,7 +159,7 @@ const rows = [
     icon: "wand-sparkles",
     feature: { es: "Cambios después del lanzamiento", en: "Post-launch changes" },
     others: { es: "Cobran cada ajuste menor como ticket nuevo", en: "Every minor tweak billed as a new ticket" },
-    devifly: { es: "Planes de mantenimiento claros desde $999/mes", en: "Clear maintenance plans from $59/mo" },
+    devifly: { es: "Planes de mantenimiento claros desde $999/mes", en: "Clear maintenance plans from $71/mo" },
   },
   {
     icon: "shield-check",

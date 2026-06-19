@@ -254,7 +254,7 @@
             <div
               class="font-display text-xl font-bold dark:text-white text-light-text tabular-nums"
             >
-              {{ locale === "es" ? "$199 MXN/mes" : "$12 USD/mo" }}
+              {{ locale === "es" ? "$199 MXN/mes" : "$14 USD/mo" }}
             </div>
             <div class="text-xs dark:text-text-secondary text-light-muted">
               {{

@@ -75,8 +75,8 @@
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
         <p class="text-xs dark:text-text-secondary text-light-muted max-w-md">
           {{ locale === "es"
-            ? "* Precios de referencia en MXN. Demo de 21 días disponible en productos seleccionados."
-            : "* Reference prices in MXN. 21-day demo available on select products." }}
+            ? "* Precios de referencia en MXN, más IVA (16%) si requieres factura. Demo de 21 días disponible en productos seleccionados."
+            : "* USD prices include a 20% international adjustment. VAT applies if an invoice is required. 21-day demo available on select products." }}
         </p>
         <router-link
           to="/pricing"
@@ -108,7 +108,7 @@ const tiers = [
       en: "Invitations, catalogs, and digital menus.",
     },
     priceEs: "$499",
-    priceEn: "$29",
+    priceEn: "$35",
     delivery: { es: "MXN · 1-2 semanas", en: "USD · 1-2 weeks" },
     features: {
       es: ["Diseño responsive", "WhatsApp integrado", "Hosting 1 año incluido"],
@@ -126,7 +126,7 @@ const tiers = [
       en: "Landings and venue websites.",
     },
     priceEs: "$4,999",
-    priceEn: "$299",
+    priceEn: "$359",
     delivery: { es: "MXN · 2-3 semanas", en: "USD · 2-3 weeks" },
     features: {
       es: ["UX orientado a venta", "SEO + analytics", "Soporte 30 días"],

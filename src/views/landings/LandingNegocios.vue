@@ -543,6 +543,10 @@ const toggleFaq = (i) => {
             </div>
           </div>
         </div>
+
+        <p class="text-center mt-8 text-xs text-neutral-500 max-w-2xl mx-auto">
+          {{ content.ui.pricingNote }}
+        </p>
       </div>
     </section>
 

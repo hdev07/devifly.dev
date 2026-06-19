@@ -31,7 +31,7 @@ export const salesProducts = [
       "Built for campaigns and lead generation",
     ],
     priceEs: "Desde $4,999 MXN",
-    priceEn: "From $299 USD",
+    priceEn: "From $359 USD",
     plans: [
       {
         key: "one-page",
@@ -40,7 +40,7 @@ export const salesProducts = [
         descriptionEs: "Estructura compacta para una oferta puntual o una campaña específica.",
         descriptionEn: "Compact structure for a focused offer or a specific campaign.",
         priceEs: "$4,999 MXN",
-        priceEn: "$299 USD",
+        priceEn: "$359 USD",
         featuresEs: [
           "Secciones esenciales de conversión",
           "Formulario y CTA principal",
@@ -79,7 +79,7 @@ export const salesProducts = [
         descriptionEs: "Versión más completa para explicar propuesta, beneficios y respaldo comercial.",
         descriptionEn: "A more complete version to explain your proposal, benefits, and commercial positioning.",
         priceEs: "$7,999 MXN",
-        priceEn: "$479 USD",
+        priceEn: "$575 USD",
         popular: true,
         featuresEs: [
           "Todo lo del One Page",
@@ -113,7 +113,7 @@ export const salesProducts = [
         descriptionEs: "Opción de mayor alcance para marcas que necesitan estructura, contenido y crecimiento.",
         descriptionEn: "Higher-scope option for brands that need structure, content, and room to grow.",
         priceEs: "$12,999 MXN",
-        priceEn: "$799 USD",
+        priceEn: "$959 USD",
         featuresEs: [
           "Todo lo del Multi-Sección",
           "Arquitectura de contenido extendida",
@@ -133,11 +133,11 @@ export const salesProducts = [
     demo21: {
       enabled: true,
       priceEs: "$999 MXN",
-      priceEn: "$59 USD",
+      priceEn: "$71 USD",
       basePlanEs: "One Page",
       basePlanEn: "One Page",
       basePriceEs: "$4,999 MXN",
-      basePriceEn: "$299 USD",
+      basePriceEn: "$359 USD",
       descEs: "Prueba tu landing real por 21 días. Si contratas, se descuenta del anticipo.",
       descEn: "Try your real landing for 21 days. If you hire, it's deducted from the deposit.",
     },
@@ -174,7 +174,7 @@ export const salesProducts = [
       "Scalable packages by event type",
     ],
     priceEs: "Desde $499 MXN",
-    priceEn: "From $29 USD",
+    priceEn: "From $35 USD",
     plans: [
       {
         key: "esencial",
@@ -183,7 +183,7 @@ export const salesProducts = [
         descriptionEs: "Base funcional para compartir el evento de forma clara y ordenada.",
         descriptionEn: "Functional base to share the event clearly and in an organized way.",
         priceEs: "$499 MXN",
-        priceEn: "$29 USD",
+        priceEn: "$35 USD",
         featuresEs: [
           "Cuenta regresiva e itinerario",
           "Ubicación con GPS",
@@ -249,7 +249,7 @@ export const salesProducts = [
         descriptionEs: "Versión recomendada para eventos que requieren más contenido e interacción.",
         descriptionEn: "Recommended version for events that need more content and interaction.",
         priceEs: "$899 MXN",
-        priceEn: "$55 USD",
+        priceEn: "$66 USD",
         popular: true,
         featuresEs: [
           "Todo lo de Esencial",
@@ -300,7 +300,7 @@ export const salesProducts = [
         descriptionEs: "Pensado para eventos con personalización individual y control de acceso.",
         descriptionEn: "Designed for events that need personalized invitations and access control.",
         priceEs: "$1,599 MXN",
-        priceEn: "$95 USD",
+        priceEn: "$114 USD",
         featuresEs: [
           "Todo lo de Pro",
           "Invitaciones personalizadas por invitado",
@@ -357,7 +357,7 @@ export const salesProducts = [
       "Ideal for entrepreneurs and local businesses",
     ],
     priceEs: "Desde $1,499 MXN",
-    priceEn: "From $89 USD",
+    priceEn: "From $107 USD",
     plans: [
       {
         key: "catalogo-basico",
@@ -366,7 +366,7 @@ export const salesProducts = [
         descriptionEs: "Para empezar a vender de forma profesional.",
         descriptionEn: "To start selling in a professional way.",
         priceEs: "$1,499 MXN",
-        priceEn: "$89 USD",
+        priceEn: "$107 USD",
         featuresEs: [
           "Hasta 50 productos",
           "1 categoría",
@@ -428,7 +428,7 @@ export const salesProducts = [
         descriptionEs: "Para negocios que ya venden fuerte y quieren crecer.",
         descriptionEn: "For businesses already selling strong and ready to grow.",
         priceEs: "$3,499 MXN",
-        priceEn: "$199 USD",
+        priceEn: "$239 USD",
         popular: true,
         featuresEs: [
           "Todo lo del Básico",
@@ -479,7 +479,7 @@ export const salesProducts = [
         descriptionEs: "Para negocios serios con múltiples vendedoras.",
         descriptionEn: "For serious businesses with multiple sellers.",
         priceEs: "$6,999 MXN",
-        priceEn: "$419 USD",
+        priceEn: "$503 USD",
         featuresEs: [
           "Todo lo del Pro",
           "Múltiples vendedoras (catálogos)",
@@ -538,7 +538,7 @@ export const salesProducts = [
       "Fast mobile experience",
     ],
     priceEs: "Desde $3,999 MXN",
-    priceEn: "From $229 USD",
+    priceEn: "From $275 USD",
     plans: [
       {
         key: "menu-esencial",
@@ -547,7 +547,7 @@ export const salesProducts = [
         descriptionEs: "Menú digital básico para restaurantes pequeños.",
         descriptionEn: "Basic digital menu for small restaurants.",
         priceEs: "$3,999 MXN",
-        priceEn: "$229 USD",
+        priceEn: "$275 USD",
         featuresEs: [
           "Diseño mobile-first premium",
           "Hasta 30 platillos",
@@ -609,7 +609,7 @@ export const salesProducts = [
         descriptionEs: "Para restaurantes medianos con carta completa.",
         descriptionEn: "For mid-size restaurants with a full menu.",
         priceEs: "$7,999 MXN",
-        priceEn: "$479 USD",
+        priceEn: "$575 USD",
         popular: true,
         featuresEs: [
           "Todo lo de Esencial",
@@ -660,7 +660,7 @@ export const salesProducts = [
         descriptionEs: "Cadenas y franquicias con múltiples sucursales.",
         descriptionEn: "Chains and franchises with multiple locations.",
         priceEs: "$14,999 MXN",
-        priceEn: "$899 USD",
+        priceEn: "$1,079 USD",
         featuresEs: [
           "Todo lo de Profesional",
           "Platillos ilimitados",
@@ -689,11 +689,11 @@ export const salesProducts = [
     demo21: {
       enabled: true,
       priceEs: "$999 MXN",
-      priceEn: "$59 USD",
+      priceEn: "$71 USD",
       basePlanEs: "Esencial",
       basePlanEn: "Essential",
       basePriceEs: "$3,999 MXN",
-      basePriceEn: "$229 USD",
+      basePriceEn: "$275 USD",
       descEs: "Prueba tu menú digital real por 21 días. Si contratas, se descuenta del anticipo.",
       descEn: "Try your real digital menu for 21 days. If you hire, it's deducted from the deposit.",
     },
@@ -730,7 +730,7 @@ export const salesProducts = [
       "Booking-focused setup",
     ],
     priceEs: "Desde $5,999 MXN",
-    priceEn: "From $349 USD",
+    priceEn: "From $419 USD",
     plans: [
       {
         key: "venue-esencial",
@@ -739,7 +739,7 @@ export const salesProducts = [
         descriptionEs: "Presencia web profesional para tu salón de eventos.",
         descriptionEn: "Professional web presence for your event venue.",
         priceEs: "$5,999 MXN",
-        priceEn: "$349 USD",
+        priceEn: "$419 USD",
         featuresEs: [
           "Diseño responsivo premium",
           "Galería de fotos (hasta 20)",
@@ -795,7 +795,7 @@ export const salesProducts = [
         descriptionEs: "Todo para convertir visitas en reservaciones.",
         descriptionEn: "Everything to convert visits into bookings.",
         priceEs: "$9,999 MXN",
-        priceEn: "$599 USD",
+        priceEn: "$719 USD",
         popular: true,
         featuresEs: [
           "Todo lo de Esencial",
@@ -842,7 +842,7 @@ export const salesProducts = [
         descriptionEs: "Gestión completa de tu negocio de eventos.",
         descriptionEn: "Complete management of your events business.",
         priceEs: "$16,999 MXN",
-        priceEn: "$999 USD",
+        priceEn: "$1,199 USD",
         featuresEs: [
           "Todo lo de Pro",
           "Panel admin completo",
@@ -869,11 +869,11 @@ export const salesProducts = [
     demo21: {
       enabled: true,
       priceEs: "$999 MXN",
-      priceEn: "$59 USD",
+      priceEn: "$71 USD",
       basePlanEs: "Esencial",
       basePlanEn: "Essential",
       basePriceEs: "$5,999 MXN",
-      basePriceEn: "$349 USD",
+      basePriceEn: "$419 USD",
       descEs: "Prueba tu sitio de salón real por 21 días. Si contratas, se descuenta del anticipo.",
       descEn: "Try your real venue site for 21 days. If you hire, it's deducted from the deposit.",
     },
@@ -947,9 +947,9 @@ export const afterSalesPlans = [
     descEs: "Tu sitio publicado, seguro y disponible 24/7. Costo operativo que aplica a cualquier plan contratado.",
     descEn: "Your site published, secure, and available 24/7. Operational cost that applies to any contracted plan.",
     priceMonthlyEs: "$199 MXN/mes",
-    priceMonthlyEn: "$12 USD/mo",
+    priceMonthlyEn: "$14 USD/mo",
     priceAnnualEs: "$1,999 MXN/año",
-    priceAnnualEn: "$120 USD/yr",
+    priceAnnualEn: "$144 USD/yr",
     featuresEs: [
       "Hosting en servidor optimizado",
       "Dominio personalizado (.com, .mx)",
@@ -971,7 +971,7 @@ export const afterSalesPlans = [
     descEs: "Para sitios con cambios ocasionales y soporte cuando lo necesites.",
     descEn: "For sites with occasional updates and support when you need it.",
     priceMonthlyEs: "$999 MXN/mes",
-    priceMonthlyEn: "$59 USD/mo",
+    priceMonthlyEn: "$71 USD/mo",
     featuresEs: [
       "Hasta 2 cambios de contenido al mes",
       "Soporte por WhatsApp (48 hrs)",
@@ -994,7 +994,7 @@ export const afterSalesPlans = [
     descEs: "Para negocios activos que necesitan cambios frecuentes y respuesta rápida.",
     descEn: "For active businesses needing frequent changes and fast response.",
     priceMonthlyEs: "$1,999 MXN/mes",
-    priceMonthlyEn: "$119 USD/mo",
+    priceMonthlyEn: "$143 USD/mo",
     featuresEs: [
       "Hasta 5 cambios al mes (contenido + diseño)",
       "Soporte prioritario (24 hrs)",
@@ -1018,7 +1018,7 @@ export const afterSalesPlans = [
     descEs: "Soporte completo, cambios ilimitados y evolución continua de tu sitio.",
     descEn: "Full support, unlimited changes, and continuous site evolution.",
     priceMonthlyEs: "$3,499 MXN/mes",
-    priceMonthlyEn: "$209 USD/mo",
+    priceMonthlyEn: "$251 USD/mo",
     featuresEs: [
       "Cambios ilimitados de contenido y diseño",
       "Soporte mismo día (horario laboral)",

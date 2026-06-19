@@ -52,6 +52,8 @@ export const landingReservacionesContent = {
       pricingTitle: "Elige el plan para tu salón",
       pricingSubtitle:
         "Pago único, sin mensualidades ni sorpresas. Hosting incluido el primer año. Todos incluyen garantía.",
+      pricingNote:
+        "Precios más IVA (16%) si requieres factura. Pago único; la cotización final puede variar según alcance.",
       hirePlan: "Contratar",
       viewDemo: "Ver demo",
       comparisonTitle: "Comparación detallada de planes",
@@ -399,10 +401,10 @@ export const landingReservacionesContent = {
     wa: {
       demo: "Hello! I have an event venue and I'm interested in a demo of the PRO Reservations System 🏛️",
       hire: "I'd like a quote for the PRO Reservations System for my venue 🏛️",
-      demo21: "Hello! I'm interested in the 21-day demo for my event venue for $59 USD 🏛️",
-      essential: "Hello! I'm interested in the Essential plan of the Reservations System for my venue ($349 USD) 🏛️",
-      pro: "Hello! I'm interested in the Pro plan of the Reservations System for my venue ($599 USD) 🏛️",
-      premium: "Hello! I'm interested in the Premium VIP plan of the Reservations System for my venue ($999 USD) 🏛️",
+      demo21: "Hello! I'm interested in the 21-day demo for my event venue for $71 USD 🏛️",
+      essential: "Hello! I'm interested in the Essential plan of the Reservations System for my venue ($419 USD) 🏛️",
+      pro: "Hello! I'm interested in the Pro plan of the Reservations System for my venue ($719 USD) 🏛️",
+      premium: "Hello! I'm interested in the Premium VIP plan of the Reservations System for my venue ($1,199 USD) 🏛️",
     },
     ui: {
       heroBadge: "Venues & Events · PRO System",
@@ -448,6 +450,8 @@ export const landingReservacionesContent = {
       pricingTitle: "Choose the plan for your venue",
       pricingSubtitle:
         "One-time payment, no monthly fees or surprises. Hosting included the first year. All plans include a guarantee.",
+      pricingNote:
+        "USD prices include a 20% international adjustment. VAT applies if an invoice is required.",
       hirePlan: "Get",
       viewDemo: "View demo",
       comparisonTitle: "Detailed plan comparison",
@@ -467,13 +471,13 @@ export const landingReservacionesContent = {
         "we build your venue site with your real content—published and running for",
       demo21Days: "21 days",
       demo21DescEnd:
-        "If you then hire, the $59 is deducted from the deposit. You pay nothing extra.",
+        "If you then hire, the $71 is deducted from the deposit. You pay nothing extra.",
       demo21Card1Title: "Your real venue",
       demo21Card1Desc: "With your photos, packages, and real prices",
       demo21Card2Title: "Published and live",
       demo21Card2Desc: "Shareable on social media and WhatsApp",
       demo21Card3Title: "Deducted when you hire",
-      demo21Card3Desc: "The $59 is subtracted from the deposit on any plan",
+      demo21Card3Desc: "The $71 is subtracted from the deposit on any plan",
       demo21Cta: "I want my 21-day demo",
       finalTitleLine1: "Take your venue to the",
       finalTitleHighlight: "next level",
@@ -661,7 +665,7 @@ export const landingReservacionesContent = {
       {
         name: "Essential",
         icon: "building",
-        price: "$349",
+        price: "$419",
         period: "one-time payment",
         tagline: "Professional presence that builds trust",
         demo: "/salones-eventos/demo",
@@ -689,7 +693,7 @@ export const landingReservacionesContent = {
       {
         name: "Pro",
         icon: "building-2",
-        price: "$599",
+        price: "$719",
         period: "one-time payment",
         tagline: "Everything to convert visits into bookings",
         demo: "/salones-eventos/demo",
@@ -718,7 +722,7 @@ export const landingReservacionesContent = {
       {
         name: "Premium VIP",
         icon: "gem",
-        price: "$999",
+        price: "$1,199",
         period: "one-time payment",
         tagline: "Complete management of your events business",
         demo: "/salones-eventos/demo",
@@ -769,7 +773,7 @@ export const landingReservacionesContent = {
       },
       {
         q: "Can I try before hiring?",
-        a: "Yes. We have a 21-day Demo for $59 USD where we build your real site with your content and publish it for you to try. If you decide to hire, that $59 is deducted from the deposit.",
+        a: "Yes. We have a 21-day Demo for $71 USD where we build your real site with your content and publish it for you to try. If you decide to hire, that $71 is deducted from the deposit.",
       },
       {
         q: "What if it doesn't generate more bookings?",
@@ -788,7 +792,7 @@ export const landingReservacionesContent = {
         a: "Of course. You can start with Essential and scale to Pro or Premium VIP when you need it. You only pay the difference.",
       },
     ],
-    demo21Price: "$59 USD",
-    demo21DiscountAmount: "$59",
+    demo21Price: "$71 USD",
+    demo21DiscountAmount: "$71",
   },
 };

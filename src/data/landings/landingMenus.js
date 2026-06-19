@@ -52,6 +52,8 @@ export const landingMenusContent = {
       pricingTitle: "Elige el plan para tu restaurante",
       pricingSubtitle:
         "Pago único, sin mensualidades ni sorpresas. Hosting incluido el primer año.",
+      pricingNote:
+        "Precios más IVA (16%) si requieres factura. Pago único; la cotización final puede variar según alcance.",
       hirePlan: "Contratar",
       viewDemo: "Ver demo",
       comparisonTitle: "Comparación detallada de planes",
@@ -395,10 +397,10 @@ export const landingMenusContent = {
     wa: {
       demo: "Hello! I have a restaurant and I'm interested in the interactive digital menu 🍽️",
       hire: "I'd like a quote for a digital menu for my restaurant 🍽️",
-      demo21: "Hello! I'm interested in the 21-day digital menu demo for $59 USD 🍽️",
-      essential: "Hello! I'm interested in the Essential digital menu plan ($229 USD) 🍽️",
-      professional: "Hello! I'm interested in the Professional digital menu plan ($479 USD) 🍽️",
-      enterprise: "Hello! I'm interested in the Enterprise digital menu plan ($899 USD) 🍽️",
+      demo21: "Hello! I'm interested in the 21-day digital menu demo for $71 USD 🍽️",
+      essential: "Hello! I'm interested in the Essential digital menu plan ($275 USD) 🍽️",
+      professional: "Hello! I'm interested in the Professional digital menu plan ($575 USD) 🍽️",
+      enterprise: "Hello! I'm interested in the Enterprise digital menu plan ($1,079 USD) 🍽️",
     },
     ui: {
       heroBadge: "Interactive Digital Menus",
@@ -444,6 +446,8 @@ export const landingMenusContent = {
       pricingTitle: "Choose the plan for your restaurant",
       pricingSubtitle:
         "One-time payment, no monthly fees or surprises. Hosting included the first year.",
+      pricingNote:
+        "USD prices include a 20% international adjustment. VAT applies if an invoice is required.",
       hirePlan: "Get",
       viewDemo: "View demo",
       comparisonTitle: "Detailed plan comparison",
@@ -462,13 +466,13 @@ export const landingMenusContent = {
         "we build your real digital menu—with your dishes, photos, and prices—published and running for",
       demo21Days: "21 days",
       demo21DescEnd:
-        "If you then hire, the $59 is deducted from the deposit. You pay nothing extra.",
+        "If you then hire, the $71 is deducted from the deposit. You pay nothing extra.",
       demo21Card1Title: "Your real menu",
       demo21Card1Desc: "With your dishes, categories, and real prices",
       demo21Card2Title: "Published and live",
       demo21Card2Desc: "Accessible via QR, ready to use at tables",
       demo21Card3Title: "Deducted when you hire",
-      demo21Card3Desc: "The $59 is subtracted from the deposit on any plan",
+      demo21Card3Desc: "The $71 is subtracted from the deposit on any plan",
       demo21Cta: "I want my 21-day demo",
       finalTitleLine1: "Take your restaurant to the",
       finalTitleHighlight: "next level",
@@ -656,7 +660,7 @@ export const landingMenusContent = {
       {
         name: "Essential",
         icon: "store",
-        price: "$229",
+        price: "$275",
         period: "one-time payment",
         tagline: "For small restaurants and food trucks",
         demo: "/menus-digitales/demo",
@@ -685,7 +689,7 @@ export const landingMenusContent = {
       {
         name: "Professional",
         icon: "utensils",
-        price: "$479",
+        price: "$575",
         period: "one-time payment",
         tagline: "For growing mid-size restaurants",
         demo: "/menus-digitales/pro",
@@ -708,7 +712,7 @@ export const landingMenusContent = {
       {
         name: "Enterprise",
         icon: "building-2",
-        price: "$899",
+        price: "$1,079",
         period: "one-time payment",
         tagline: "For chains and restaurants with multiple locations",
         demo: "/menus-digitales/premium",
@@ -764,7 +768,7 @@ export const landingMenusContent = {
       },
       {
         q: "What happens after the first year of hosting?",
-        a: "After the first year, hosting renewal costs $69 USD/year for Essential, $103 USD/year for Professional, and $137 USD/year for Enterprise. We notify you in advance.",
+        a: "After the first year, hosting renewal costs $83 USD/year for Essential, $124 USD/year for Professional, and $164 USD/year for Enterprise. We notify you in advance.",
       },
       {
         q: "Can I use my own domain (menu.myrestaurant.com)?",
@@ -776,10 +780,10 @@ export const landingMenusContent = {
       },
       {
         q: "Can I see a demo before hiring?",
-        a: "Yes. You can view the generic demo right now from this page. We also offer a 21-day demo with your real menu for $59 USD—if you then hire, that amount is deducted from the deposit.",
+        a: "Yes. You can view the generic demo right now from this page. We also offer a 21-day demo with your real menu for $71 USD—if you then hire, that amount is deducted from the deposit.",
       },
     ],
-    demo21Price: "$59 USD",
-    demo21DiscountAmount: "$59",
+    demo21Price: "$71 USD",
+    demo21DiscountAmount: "$71",
   },
 };

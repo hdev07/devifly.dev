@@ -61,7 +61,7 @@ const faqItems = computed(() => {
       },
       {
         q: "¿Trabajan con clientes fuera de México?",
-        a: "Sí. Trabajamos remoto con clientes en LATAM, Estados Unidos y Europa. Tenemos versión en inglés del sitio y todas las comunicaciones pueden ser bilingües. Los precios se ajustan a USD para clientes internacionales.",
+        a: "Sí. Trabajamos remoto con clientes en LATAM, Estados Unidos y Europa. Tenemos versión en inglés del sitio y todas las comunicaciones pueden ser bilingües. Los precios en USD incluyen un ajuste del 20% para clientes internacionales; si requieres factura, aplican más IVA.",
       },
       {
         q: "¿El precio incluye hosting y dominio?",
@@ -92,19 +92,19 @@ const faqItems = computed(() => {
     },
     {
       q: "What if I am not convinced by the first version?",
-      a: "We work in weekly iterative deliveries. Each delivery includes one feedback round, and major changes are applied live in the next iteration. We also offer a 21-day demo for $59 USD to validate before paying the bulk of the project.",
+      a: "We work in weekly iterative deliveries. Each delivery includes one feedback round, and major changes are applied live in the next iteration. We also offer a 21-day demo for $71 USD to validate before paying the bulk of the project.",
     },
     {
       q: "Do you work with clients outside Mexico?",
-      a: "Yes. We work remote with clients across LATAM, the US, and Europe. The site has an English version and all communication can be bilingual. Prices adjust to USD for international clients.",
+      a: "Yes. We work remote with clients across LATAM, the US, and Europe. The site has an English version and all communication can be bilingual. USD prices include a 20% international adjustment; VAT applies if an invoice is required.",
     },
     {
       q: "Does the price include hosting and domain?",
-      a: "Yes. Starter plans include 1 year of hosting and a .devifly.dev subdomain. Growth and Scale plans include a custom domain (.com / .mx) and optimized hosting. After the first year, the recurring cost is ~$12 USD/month.",
+      a: "Yes. Starter plans include 1 year of hosting and a .devifly.dev subdomain. Growth and Scale plans include a custom domain (.com / .mx) and optimized hosting. After the first year, the recurring cost is ~$14 USD/month.",
     },
     {
       q: "Can I manage the site myself after launch?",
-      a: "Depends on the plan. Pro and higher plans include an admin panel so you can edit content, products, prices, or dishes. If you prefer to delegate changes, we offer monthly maintenance plans from $59 USD.",
+      a: "Depends on the plan. Pro and higher plans include an admin panel so you can edit content, products, prices, or dishes. If you prefer to delegate changes, we offer monthly maintenance plans from $71 USD.",
     },
     {
       q: "Why Vue 3 and not WordPress?",

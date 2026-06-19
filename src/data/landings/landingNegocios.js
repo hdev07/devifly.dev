@@ -56,6 +56,8 @@ export const landingNegociosContent = {
       pricingTitle: "Elige el plan para tu negocio",
       pricingSubtitle:
         "Pago único, sin mensualidades ni sorpresas. Desde campaña puntual hasta portal completo.",
+      pricingNote:
+        "Precios más IVA (16%) si requieres factura. Pago único; la cotización final puede variar según alcance.",
       hirePlan: "Contratar",
       viewDemo: "Ver demo",
       comparisonTitle: "Comparación detallada de planes",
@@ -380,10 +382,10 @@ export const landingNegociosContent = {
     wa: {
       demo: "Hello! I'm interested in a high-impact landing page for my business 🚀",
       hire: "I'd like a quote for a landing page for my business 🚀",
-      demo21: "Hello! I'm interested in the 21-day landing page demo for $59 USD 🚀",
-      onePage: "Hello! I'm interested in the One Page landing plan ($299 USD) 🚀",
-      multiSection: "Hello! I'm interested in the Multi-Section landing plan ($479 USD) 🚀",
-      portal: "Hello! I'm interested in the Advanced Portal landing plan ($799 USD) 🚀",
+      demo21: "Hello! I'm interested in the 21-day landing page demo for $71 USD 🚀",
+      onePage: "Hello! I'm interested in the One Page landing plan ($359 USD) 🚀",
+      multiSection: "Hello! I'm interested in the Multi-Section landing plan ($575 USD) 🚀",
+      portal: "Hello! I'm interested in the Advanced Portal landing plan ($959 USD) 🚀",
     },
     ui: {
       heroBadge: "High-Impact Landing Pages",
@@ -433,6 +435,8 @@ export const landingNegociosContent = {
       pricingTitle: "Choose the plan for your business",
       pricingSubtitle:
         "One-time payment, no monthly fees or surprises. From a focused campaign to a full portal.",
+      pricingNote:
+        "USD prices include a 20% international adjustment. VAT applies if an invoice is required.",
       hirePlan: "Get",
       viewDemo: "View demo",
       comparisonTitle: "Detailed plan comparison",
@@ -451,13 +455,13 @@ export const landingNegociosContent = {
         "we build your real landing—with your content, offer, and CTAs—published and running for",
       demo21Days: "21 days",
       demo21DescEnd:
-        "If you then hire, the $59 is deducted from the deposit. You pay nothing extra.",
+        "If you then hire, the $71 is deducted from the deposit. You pay nothing extra.",
       demo21Card1Title: "Your real landing",
       demo21Card1Desc: "With your offer, copy, and business goal",
       demo21Card2Title: "Published and live",
       demo21Card2Desc: "At tuneogocio.devifly.dev, ready to share",
       demo21Card3Title: "Deducted when you hire",
-      demo21Card3Desc: "The $59 is subtracted from the deposit on any plan",
+      demo21Card3Desc: "The $71 is subtracted from the deposit on any plan",
       demo21Cta: "I want my 21-day demo",
       finalTitleLine1: "Take your business to the",
       finalTitleHighlight: "next level",
@@ -632,7 +636,7 @@ export const landingNegociosContent = {
       {
         name: "One Page",
         icon: "layout",
-        price: "$299",
+        price: "$359",
         period: "one-time payment",
         tagline: "Compact structure for a focused offer or specific campaign",
         highlighted: false,
@@ -658,7 +662,7 @@ export const landingNegociosContent = {
       {
         name: "Multi-Section",
         icon: "layers",
-        price: "$479",
+        price: "$575",
         period: "one-time payment",
         tagline: "Explain proposal, benefits, and full commercial positioning",
         highlighted: true,
@@ -681,7 +685,7 @@ export const landingNegociosContent = {
       {
         name: "Advanced Portal",
         icon: "building-2",
-        price: "$799",
+        price: "$959",
         period: "one-time payment",
         tagline: "For brands that need structure, content, and room to grow",
         highlighted: false,
@@ -735,7 +739,7 @@ export const landingNegociosContent = {
       },
       {
         q: "Can I see a demo before hiring?",
-        a: "Yes. You can view the generic demo from this page. We also offer a 21-day demo with your real content for $59 USD—if you hire, that amount is deducted from the deposit.",
+        a: "Yes. You can view the generic demo from this page. We also offer a 21-day demo with your real content for $71 USD—if you hire, that amount is deducted from the deposit.",
       },
       {
         q: "Do you include sales copy?",
@@ -750,7 +754,7 @@ export const landingNegociosContent = {
       { icon: "star", text: "Social proof" },
       { icon: "zap", text: "Ultra-fast load" },
     ],
-    demo21Price: "$59 USD",
-    demo21DiscountAmount: "$59",
+    demo21Price: "$71 USD",
+    demo21DiscountAmount: "$71",
   },
 };

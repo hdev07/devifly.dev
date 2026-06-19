@@ -71,7 +71,7 @@ export default {
     learnMore: 'Ver producto',
     viewDemo: 'Ver demo',
     demo21: 'Demo 21 días',
-    note: '* Precios de referencia en MXN. Cada proyecto se cotiza según alcance y timeline.',
+    note: '* Precios de referencia en MXN, más IVA (16%) si requieres factura. Cada proyecto se cotiza según alcance y timeline.',
     ctaTitle: '¿Listo para empezar?',
     ctaSubtitle: 'Cuéntanos tu idea y te enviamos una cotización en 24 horas.',
     ctaButton: 'Solicitar cotización',
@@ -82,7 +82,7 @@ export default {
     hostingRequired: 'Obligatorio',
     hostingDesc: 'El único costo recurrente para mantener tu sitio en línea y seguro.',
     maintenanceLabel: 'Mantenimiento opcional',
-    afterSalesNote: '* El hosting es obligatorio (~$199/mes). Los planes de mantenimiento son opcionales.',
+    afterSalesNote: '* El hosting es obligatorio (~$199 MXN/mes). Los planes de mantenimiento son opcionales. Precios más IVA si requieres factura.',
   },
   contactPage: {
     badge: 'Contacto',

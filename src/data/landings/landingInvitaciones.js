@@ -47,6 +47,8 @@ export const landingInvitacionesContent = {
       pricingTitle: "Elige tu paquete ideal",
       pricingSubtitle:
         "Pago único — sin mensualidades. Desde lo esencial hasta la experiencia VIP completa con QR.",
+      pricingNote:
+        "Precios más IVA (16%) si requieres factura. Pago único; la cotización final puede variar según alcance.",
       hirePlan: "Contratar",
       viewDemo: "Ver demo",
       pricingGuarantee: "Garantía total · Si no te encanta, te devolvemos tu dinero.",
@@ -337,9 +339,9 @@ export const landingInvitacionesContent = {
     wa: {
       demo: "Hello! I'm interested in a demo of personalized web invitations for my event 💌",
       hire: "I'd like a quote for a personalized web invitation 💌",
-      esencial: "Hello! I'm interested in the Essential digital invitations plan ($29 USD) 💌",
-      pro: "Hello! I'm interested in the Pro digital invitations plan ($54 USD) ✨",
-      premium: "Hello! I'm interested in the Premium digital invitations plan ($96 USD) 💎",
+      esencial: "Hello! I'm interested in the Essential digital invitations plan ($35 USD) 💌",
+      pro: "Hello! I'm interested in the Pro digital invitations plan ($65 USD) ✨",
+      premium: "Hello! I'm interested in the Premium digital invitations plan ($115 USD) 💎",
     },
     ui: {
       heroBadge: "Personalized Web Invitations",
@@ -381,6 +383,8 @@ export const landingInvitacionesContent = {
       pricingTitle: "Choose your ideal package",
       pricingSubtitle:
         "One-time payment — no monthly fees. From essentials to the full VIP experience with QR.",
+      pricingNote:
+        "USD prices include a 20% international adjustment. VAT applies if an invoice is required.",
       hirePlan: "Get",
       viewDemo: "View demo",
       pricingGuarantee: "Full guarantee · If you don't love it, we refund your money.",
@@ -530,7 +534,7 @@ export const landingInvitacionesContent = {
     packages: [
       {
         name: "Essential",
-        price: "$29",
+        price: "$35",
         tagline: "The essentials to share your event",
         demo: "/invitaciones/esencial",
         waKey: "esencial",
@@ -561,7 +565,7 @@ export const landingInvitacionesContent = {
       },
       {
         name: "Pro",
-        price: "$54",
+        price: "$65",
         tagline: "The ideal plan for memorable events",
         demo: "/invitaciones/pro",
         waKey: "pro",
@@ -589,7 +593,7 @@ export const landingInvitacionesContent = {
       },
       {
         name: "Premium VIP",
-        price: "$96",
+        price: "$115",
         tagline: "Full control + personalization + QR access",
         demo: "/invitaciones/premium",
         waKey: "premium",

@@ -48,6 +48,8 @@ export const landingCatalogosContent = {
       pricingTitle: "Elige tu plan ideal",
       pricingSubtitle:
         "Pago único — sin mensualidades ni comisiones. Desde lo básico hasta la experiencia VIP con múltiples vendedoras.",
+      pricingNote:
+        "Precios más IVA (16%) si requieres factura. Pago único; la cotización final puede variar según alcance.",
       hirePlan: "Contratar",
       viewDemo: "Ver demo",
       pricingGuarantee:
@@ -344,9 +346,9 @@ export const landingCatalogosContent = {
     wa: {
       demo: "Hello! I'm interested in a digital catalog for my sales business 🛍️",
       hire: "I'd like a quote for my digital product catalog 🛍️",
-      basico: "Hello! I'm interested in the Basic digital catalog plan ($90 USD) 🛍️",
-      pro: "Hello! I'm interested in the Pro digital catalog plan ($209 USD) ✨",
-      premium: "Hello! I'm interested in the Premium VIP digital catalog plan ($419 USD) 💎",
+      basico: "Hello! I'm interested in the Basic digital catalog plan ($108 USD) 🛍️",
+      pro: "Hello! I'm interested in the Pro digital catalog plan ($251 USD) ✨",
+      premium: "Hello! I'm interested in the Premium VIP digital catalog plan ($503 USD) 💎",
     },
     ui: {
       heroBadge: "Digital Catalogs",
@@ -389,6 +391,8 @@ export const landingCatalogosContent = {
       pricingTitle: "Choose your ideal plan",
       pricingSubtitle:
         "One-time payment — no monthly fees or commissions. From basic to the VIP experience with multiple sellers.",
+      pricingNote:
+        "USD prices include a 20% international adjustment. VAT applies if an invoice is required.",
       hirePlan: "Get",
       viewDemo: "View demo",
       pricingGuarantee:
@@ -541,7 +545,7 @@ export const landingCatalogosContent = {
     packages: [
       {
         name: "Basic",
-        price: "$90",
+        price: "$108",
         tagline: "Start selling professionally",
         demo: "/catalogos-nenis/demo",
         waKey: "basico",
@@ -573,7 +577,7 @@ export const landingCatalogosContent = {
       },
       {
         name: "Pro",
-        price: "$209",
+        price: "$251",
         tagline: "For businesses already selling strong and ready to grow",
         demo: "/catalogos-nenis/pro",
         waKey: "pro",
@@ -603,7 +607,7 @@ export const landingCatalogosContent = {
       },
       {
         name: "Premium VIP",
-        price: "$419",
+        price: "$503",
         tagline: "For serious businesses with multiple sellers",
         demo: "/catalogos-nenis/premium",
         waKey: "premium",

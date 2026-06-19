@@ -71,7 +71,7 @@ export default {
     learnMore: 'View product',
     viewDemo: 'View demo',
     demo21: '21-day demo',
-    note: '* Reference prices in MXN. Each project is quoted based on scope and timeline.',
+    note: '* USD prices include a 20% international adjustment. VAT applies if an invoice is required. Final quote depends on scope and timeline.',
     ctaTitle: 'Ready to start?',
     ctaSubtitle: 'Tell us your idea and we\'ll send you a quote within 24 hours.',
     ctaButton: 'Request a quote',
@@ -82,7 +82,7 @@ export default {
     hostingRequired: 'Required',
     hostingDesc: 'The only recurring cost to keep your site online and secure.',
     maintenanceLabel: 'Optional maintenance',
-    afterSalesNote: '* Hosting is required (~$12/mo). Maintenance plans are optional.',
+    afterSalesNote: '* Hosting is required (~$14 USD/mo). Maintenance plans are optional. VAT applies if an invoice is required.',
   },
   contactPage: {
     badge: 'Contact',

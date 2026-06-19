@@ -849,7 +849,13 @@ const toggleFaq = (i) => {
         </div>
 
         <p
-          class="text-center mt-10 text-xs dark:text-text-secondary/60 text-light-muted/60"
+          class="text-center mt-10 text-xs dark:text-text-secondary/60 text-light-muted/60 max-w-2xl mx-auto"
+        >
+          {{ content.ui.pricingNote }}
+        </p>
+
+        <p
+          class="text-center mt-4 text-xs dark:text-text-secondary/60 text-light-muted/60"
         >
           <LucideIcon
             name="shield-check"
