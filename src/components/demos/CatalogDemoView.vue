@@ -17,7 +17,7 @@
         :style="{ color: theme.colors.primary }"
       >
         <LucideIcon name="chevron-left" class-name="w-4 h-4" />
-        <span class="hidden sm:inline">Volver</span>
+        <span class="hidden sm:inline">{{ copy.back }}</span>
       </router-link>
       <span
         class="text-xs font-semibold px-3 py-1 rounded-full"
@@ -27,7 +27,7 @@
           border: `1px solid ${theme.colors.border}`,
         }"
       >
-        Demo — Plan {{ theme.plan }}
+        {{ copy.demo }} {{ theme.plan }}
       </span>
       <a
         :href="waHire"
@@ -37,7 +37,7 @@
         :style="{ color: theme.colors.primary }"
       >
         <span class="inline-flex items-center gap-1">
-          Contratar
+          {{ copy.hire }}
           <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />
         </span>
       </a>
@@ -110,7 +110,7 @@
     >
       <div class="max-w-lg lg:max-w-4xl mx-auto">
         <p class="text-[10px] uppercase tracking-widest mb-2" :style="{ color: theme.colors.textMuted }">
-          Vendedora / catálogo
+          {{ copy.sellerPicker }}
         </p>
         <div class="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
           <button
@@ -122,7 +122,7 @@
             "
             @click="activeSeller = 'all'"
           >
-            Todas
+            {{ copy.allSellers }}
           </button>
           <button
             v-for="seller in theme.sellers"
@@ -166,7 +166,7 @@
           <input
             v-model="search"
             type="text"
-            placeholder="Buscar producto..."
+            :placeholder="copy.searchPlaceholder"
             class="w-full pl-10 pr-4 py-2.5 rounded-xl border text-sm focus:outline-none transition"
             :style="{
               background: tier === 'premium' ? '#1a1a1a' : '#fafafa',
@@ -177,7 +177,7 @@
         </div>
         <div class="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
           <button
-            v-for="cat in categories"
+            v-for="cat in displayCategories"
             :key="cat.key"
             class="px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all"
             :style="
@@ -227,19 +227,19 @@
                 :style="{ background: theme.colors.cta, color: theme.colors.ctaText || '#0b0b0b' }"
               >
                 <LucideIcon name="credit-card" class-name="w-2.5 h-2.5" />
-                Pago en línea
+                {{ copy.onlinePay }}
               </div>
               <div
                 v-if="product.stock <= 3 && product.stock > 0"
                 class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full text-[10px] font-semibold text-white bg-orange-500"
               >
-                Quedan {{ product.stock }}
+                {{ copy.stockLeft(product.stock) }}
               </div>
               <div
                 v-else-if="product.stock === 0"
                 class="absolute inset-0 bg-black/50 flex items-center justify-center"
               >
-                <span class="text-white font-bold text-sm">Agotado</span>
+                <span class="text-white font-bold text-sm">{{ copy.soldOut }}</span>
               </div>
             </div>
             <div class="p-3">
@@ -277,7 +277,7 @@
 
         <div v-if="filteredProducts.length === 0" class="text-center py-16">
           <LucideIcon name="search-x" class-name="w-12 h-12 mx-auto mb-3" :style="{ color: theme.colors.textMuted }" />
-          <p class="text-sm" :style="{ color: theme.colors.textMuted }">No se encontraron productos</p>
+          <p class="text-sm" :style="{ color: theme.colors.textMuted }">{{ copy.noProducts }}</p>
         </div>
       </div>
     </section>
@@ -363,7 +363,7 @@
               </div>
 
               <div v-if="selectedProduct.sizes" class="mb-4">
-                <p class="text-xs font-semibold mb-2" :style="{ color: theme.colors.text }">Talla</p>
+                <p class="text-xs font-semibold mb-2" :style="{ color: theme.colors.text }">{{ copy.size }}</p>
                 <div class="flex gap-2 flex-wrap">
                   <button
                     v-for="s in selectedProduct.sizes"
@@ -382,7 +382,7 @@
               </div>
 
               <div v-if="selectedProduct.colors" class="mb-4">
-                <p class="text-xs font-semibold mb-2" :style="{ color: theme.colors.text }">Color</p>
+                <p class="text-xs font-semibold mb-2" :style="{ color: theme.colors.text }">{{ copy.color }}</p>
                 <div class="flex gap-2">
                   <button
                     v-for="c in selectedProduct.colors"
@@ -409,10 +409,10 @@
                   <LucideIcon name="package" class-name="w-3 h-3" />
                   {{
                     selectedProduct.stock > 5
-                      ? "En stock"
+                      ? copy.inStock
                       : selectedProduct.stock > 0
-                        ? `¡Solo quedan ${selectedProduct.stock}!`
-                        : "Agotado"
+                        ? copy.stockLow(selectedProduct.stock)
+                        : copy.soldOut
                   }}
                 </p>
               </div>
@@ -429,7 +429,7 @@
               >
                 <span class="inline-flex items-center gap-2 justify-center">
                   <LucideIcon name="message-circle" class-name="w-4 h-4" />
-                  Pedir por WhatsApp
+                  {{ copy.orderWhatsApp }}
                 </span>
               </a>
             </div>
@@ -440,7 +440,7 @@
 
     <section class="py-8 px-4 text-center" :style="{ background: theme.colors.cardBg }">
       <p class="text-xs" :style="{ color: theme.colors.textMuted }">
-        Catálogo creado con
+        {{ copy.footerCredit }}
         <a href="/" class="font-semibold" :style="{ color: theme.colors.primary }">Devifly</a>
       </p>
     </section>
@@ -449,6 +449,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { useI18n } from "vue-i18n";
 import LucideIcon from "../LucideIcon.vue";
 import {
   catalogThemes,
@@ -456,6 +457,73 @@ import {
   catalogCategories,
   waLink,
 } from "../../data/catalogDemo.js";
+
+const { locale } = useI18n();
+
+const ui = {
+  es: {
+    back: "Volver",
+    hire: "Contratar",
+    demo: "Demo — Plan",
+    sellerPicker: "Vendedora / catálogo",
+    allSellers: "Todas",
+    searchPlaceholder: "Buscar producto...",
+    onlinePay: "Pago en línea",
+    stockLeft: (n) => `Quedan ${n}`,
+    soldOut: "Agotado",
+    noProducts: "No se encontraron productos",
+    size: "Talla",
+    color: "Color",
+    inStock: "En stock",
+    stockLow: (n) => `¡Solo quedan ${n}!`,
+    orderWhatsApp: "Pedir por WhatsApp",
+    footerCredit: "Catálogo creado con",
+    categoryLabels: {
+      Todo: "Todo",
+      Ropa: "Ropa",
+      Accesorios: "Accesorios",
+      Skincare: "Skincare",
+      Maquillaje: "Maquillaje",
+      Anillos: "Anillos",
+      Collares: "Collares",
+      Aretes: "Aretes",
+      Pulseras: "Pulseras",
+      Dijes: "Dijes",
+    },
+  },
+  en: {
+    back: "Back",
+    hire: "Get started",
+    demo: "Demo — Plan",
+    sellerPicker: "Seller / catalog",
+    allSellers: "All",
+    searchPlaceholder: "Search products...",
+    onlinePay: "Pay online",
+    stockLeft: (n) => `${n} left`,
+    soldOut: "Sold out",
+    noProducts: "No products found",
+    size: "Size",
+    color: "Color",
+    inStock: "In stock",
+    stockLow: (n) => `Only ${n} left!`,
+    orderWhatsApp: "Order on WhatsApp",
+    footerCredit: "Catalog built with",
+    categoryLabels: {
+      Todo: "All",
+      Ropa: "Clothing",
+      Accesorios: "Accessories",
+      Skincare: "Skincare",
+      Maquillaje: "Makeup",
+      Anillos: "Rings",
+      Collares: "Necklaces",
+      Aretes: "Earrings",
+      Pulseras: "Bracelets",
+      Dijes: "Charms",
+    },
+  },
+};
+
+const copy = computed(() => ui[locale.value] ?? ui.es);
 
 const props = defineProps({
   tier: {
@@ -468,6 +536,13 @@ const props = defineProps({
 const theme = catalogThemes[props.tier];
 const products = catalogProducts[props.tier];
 const categories = catalogCategories[props.tier];
+
+const displayCategories = computed(() =>
+  categories.map((cat) => ({
+    ...cat,
+    label: copy.value.categoryLabels[cat.label] ?? cat.label,
+  })),
+);
 
 const search = ref("");
 const activeCategory = ref("all");

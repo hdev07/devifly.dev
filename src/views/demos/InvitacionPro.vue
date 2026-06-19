@@ -17,7 +17,7 @@
         style="color: #999"
       >
         <LucideIcon name="chevron-left" class-name="w-4 h-4" />
-        <span class="hidden sm:inline">Volver</span>
+        <span class="hidden sm:inline">{{ copy.back }}</span>
       </router-link>
       <span
         class="text-xs font-semibold px-3 py-1 rounded-full"
@@ -27,7 +27,7 @@
           border: 1px solid rgba(212, 175, 55, 0.3);
         "
       >
-        Demo — Plan Pro
+        {{ copy.demo }} — Plan Pro
       </span>
       <a
         :href="waContratar"
@@ -36,7 +36,7 @@
         class="text-sm font-semibold transition-colors"
         style="color: #7a1e3a"
         ><span class="inline-flex items-center gap-1"
-          >Contratar
+          >{{ copy.hire }}
           <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" /></span
       ></a>
     </div>
@@ -923,6 +923,9 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import LucideIcon from "../../components/LucideIcon.vue";
+import { useDemoChrome } from "../../composables/useDemoChrome.js";
+
+const { copy } = useDemoChrome();
 
 const waContratar = `https://wa.me/+525635926679?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Pro de invitaciones digitales y me interesa contratarlo ✨")}`;
 

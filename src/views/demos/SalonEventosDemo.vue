@@ -46,7 +46,7 @@
             />
           </svg>
           <span class="hidden sm:inline text-xs tracking-[0.2em] uppercase"
-            >Volver</span
+            >{{ copy.back }}</span
           >
         </router-link>
 
@@ -1437,6 +1437,9 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
+import { useDemoChrome } from "../../composables/useDemoChrome.js";
+
+const { copy } = useDemoChrome();
 
 // --- Hero background ---
 const svgBg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%230c0a09" width="100" height="100"/><circle cx="20" cy="30" r="1.5" fill="%23c9a96e" opacity="0.06"/><circle cx="80" cy="70" r="2" fill="%23c9a96e" opacity="0.05"/><circle cx="50" cy="15" r="1" fill="%23c9a96e" opacity="0.07"/><circle cx="10" cy="85" r="1.8" fill="%23c9a96e" opacity="0.04"/><circle cx="70" cy="20" r="1.2" fill="%23c9a96e" opacity="0.06"/></svg>`;

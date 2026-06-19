@@ -5,276 +5,24 @@
  * Style: Stripe — refined gradients, glass, depth, asymmetric layout
  * Section order: Hero · Demo · Benefits · Templates · How · What's included · Pricing · FAQ · Testimonials · CTA
  */
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { RouterLink } from "vue-router";
 import LucideIcon from "../../components/LucideIcon.vue";
+import { useLocaleContent } from "../../composables/useLocaleContent.js";
+import { landingInvitacionesContent } from "../../data/landings/landingInvitaciones.js";
 
 const WA = "+525635926679";
-const wa = (msg) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
-const waDemo = wa(
-  "¡Hola! Me interesa una demo de invitaciones web personalizadas para mi evento 💌",
-);
-const waContratar = wa("Quiero cotizar una invitación web personalizada 💌");
-const waEsencial = wa(
-  "¡Hola! Me interesa contratar el Plan Esencial de invitaciones digitales ($499 MXN) 💌",
-);
-const waPro = wa(
-  "¡Hola! Me interesa contratar el Plan Pro de invitaciones digitales ($899 MXN) ✨",
-);
-const waPremium = wa(
-  "¡Hola! Me interesa contratar el Plan Premium de invitaciones digitales ($1,599 MXN) 💎",
-);
+const { content, isEn } = useLocaleContent(landingInvitacionesContent);
+
+const waUrl = (text) => `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
+const waDemo = computed(() => waUrl(content.value.wa.demo));
+const waContratar = computed(() => waUrl(content.value.wa.hire));
+const pkgWaUrl = (waKey) => waUrl(content.value.wa[waKey]);
 
 const openFaq = ref(null);
 const toggleFaq = (i) => {
   openFaq.value = openFaq.value === i ? null : i;
 };
-
-// Themes / templates available
-const themes = [
-  {
-    id: "boda",
-    name: "Boda elegante",
-    desc: "Tipografía serif, dorados sutiles y galería editorial.",
-    palette: ["#fdf2f8", "#fce7f3", "#f5d0fe", "#a78bfa"],
-    icon: "heart",
-  },
-  {
-    id: "xv",
-    name: "XV años glam",
-    desc: "Acentos rosados y dorados con animaciones tipo confetti.",
-    palette: ["#fdf2f8", "#f5d0fe", "#d8b4fe", "#7c3aed"],
-    icon: "sparkles",
-  },
-  {
-    id: "bautizo",
-    name: "Bautizo / baby",
-    desc: "Pasteles suaves, tipografía redonda, ilustraciones dulces.",
-    palette: ["#eff6ff", "#dbeafe", "#e9d5ff", "#a78bfa"],
-    icon: "smile",
-  },
-  {
-    id: "corporate",
-    name: "Eventos corporativos",
-    desc: "Sobrio, dark mode, ideal para inauguraciones y galas.",
-    palette: ["#0b0b0b", "#1e1b4b", "#4c1d95", "#a78bfa"],
-    icon: "briefcase",
-  },
-  {
-    id: "minimal",
-    name: "Minimal moderno",
-    desc: "Mucho espacio, líneas finas, foto de portada protagonista.",
-    palette: ["#ffffff", "#f1f5f9", "#e2e8f0", "#7c3aed"],
-    icon: "wand-sparkles",
-  },
-  {
-    id: "tropical",
-    name: "Destino / playa",
-    desc: "Tonos arena, esmeralda y palma para destination weddings.",
-    palette: ["#fffbeb", "#fef3c7", "#a7f3d0", "#7c3aed"],
-    icon: "palette",
-  },
-];
-
-const benefits = [
-  {
-    icon: "send",
-    title: "Envíos ilimitados, cero papel",
-    desc: "Comparte tu invitación por WhatsApp, redes o link. Sin imprenta, sin mensajería, sin esperas.",
-  },
-  {
-    icon: "users-2",
-    title: "RSVP en tiempo real",
-    desc: "Las confirmaciones llegan a tu panel al instante. Sabes exactamente quién va y quién no.",
-  },
-  {
-    icon: "smartphone",
-    title: "Siempre a la mano",
-    desc: "Tus invitados abren la invitación desde su celular cuantas veces quieran. Nadie pierde la dirección.",
-  },
-  {
-    icon: "sparkles",
-    title: "Imagen única",
-    desc: "Animaciones, música y galería interactiva. Imposible de ignorar — y de olvidar.",
-  },
-];
-
-const steps = [
-  {
-    num: "01",
-    icon: "message-circle",
-    title: "Cuéntanos del evento",
-    desc: "Nombres, fecha, lugar y el estilo que tienes en mente. Te asesoramos en redacción si quieres.",
-  },
-  {
-    num: "02",
-    icon: "palette",
-    title: "Diseñamos tu invitación",
-    desc: "En 3–5 días tienes el primer borrador con tu paleta, tipografía y fotos. Ajustes ilimitados.",
-  },
-  {
-    num: "03",
-    icon: "rocket",
-    title: "La compartes y listo",
-    desc: "Recibes el link único, el QR y el panel de RSVP. La compartes y empiezas a recibir confirmaciones.",
-  },
-];
-
-const includes = [
-  {
-    icon: "palette",
-    text: "Diseño 100% personalizado (colores, tipografía y fotos tuyas)",
-  },
-  { icon: "calendar-days", text: "Cuenta regresiva e itinerario del evento" },
-  { icon: "map-pin", text: "Ubicación con Google Maps integrado" },
-  { icon: "images", text: "Galería de fotos y video" },
-  { icon: "users-2", text: "Confirmación RSVP automática" },
-  { icon: "gift", text: "Mesa de regalos (links a tu lista)" },
-  { icon: "wand-sparkles", text: "Edición ilimitada antes del evento" },
-  { icon: "shield-check", text: "Hosting y soporte hasta el día del evento" },
-];
-
-const packages = [
-  {
-    name: "Esencial",
-    price: "$499",
-    tagline: "Lo esencial para compartir tu evento",
-    demo: "/invitaciones/esencial",
-    wa: waEsencial,
-    highlighted: false,
-    badge: null,
-    vip: false,
-    validity: "Vigencia 3 meses",
-    features: [
-      "Cuenta regresiva e itinerario",
-      "Ubicación con GPS",
-      "Galería de fotos",
-      "Confirmación de asistencia",
-      "Mesa de regalos (link)",
-      "Código de vestimenta y hashtag",
-      "Mención de padres / padrinos",
-      "Envíos ilimitados",
-    ],
-    excluded: [
-      "Música de fondo y animaciones",
-      "Galería de video",
-      "Listado de asistencia confirmada",
-      "Pases asignados por invitado",
-      "Confirmación por WhatsApp",
-      "Playlist colaborativa",
-      "QR y control de acceso",
-      "Diseño completamente personalizado",
-    ],
-  },
-  {
-    name: "Pro",
-    price: "$899",
-    tagline: "El plan ideal para eventos memorables",
-    demo: "/invitaciones/pro",
-    wa: waPro,
-    highlighted: true,
-    badge: "Más popular",
-    vip: false,
-    validity: "Vigencia 6 meses",
-    features: [
-      "Todo lo de Esencial",
-      "Música de fondo y animaciones",
-      "Galería de fotos y video",
-      "Listado de asistencia confirmada",
-      "Pases asignados por invitado",
-      "Confirmación por WhatsApp + formulario",
-      "Botón para agregar al calendario",
-      "Playlist colaborativa",
-    ],
-    excluded: [
-      "Invitaciones personalizadas por invitado",
-      "Link único por invitación",
-      "QR y control de acceso",
-      "Diseño completamente personalizado",
-      "Álbum colaborativo",
-    ],
-  },
-  {
-    name: "Premium VIP",
-    price: "$1,599",
-    tagline: "Control total + personalización + acceso QR",
-    demo: "/invitaciones/premium",
-    wa: waPremium,
-    highlighted: false,
-    badge: "Experiencia VIP",
-    vip: true,
-    validity: "Vigencia 12 meses",
-    features: [
-      "Todo lo de Pro",
-      "Invitaciones personalizadas por invitado",
-      "Nombre y pases por familia",
-      "Link único por invitación",
-      "QR y sistema de check-in",
-      "Control de acceso en evento",
-      "Diseño completamente personalizado",
-      "Álbum colaborativo de fotos",
-    ],
-    excluded: [],
-  },
-];
-
-const faqs = [
-  {
-    q: "¿Cuánto tiempo tarda en estar lista mi invitación?",
-    a: "El primer borrador lo entregamos en 3 a 5 días hábiles desde que nos compartes la información del evento, fotos y preferencias. Después tienes ediciones ilimitadas hasta dejarla perfecta.",
-  },
-  {
-    q: "¿Puedo pedir cambios después de aprobarla?",
-    a: "Sí. Mientras esté activa la vigencia de tu plan (3, 6 o 12 meses), puedes editar textos, fechas, fotos y galería las veces que quieras sin costo extra.",
-  },
-  {
-    q: "¿Cómo se la mando a mis invitados?",
-    a: "Te entregamos un link único (y un QR). Lo compartes por WhatsApp, redes sociales, mail o el medio que prefieras. En el plan Premium VIP cada invitado recibe su propio link con su nombre.",
-  },
-  {
-    q: "¿Necesito saber de tecnología para usarla?",
-    a: "No. Tú nos das la información y nosotros la armamos. Tendrás un panel sencillo donde ves los RSVP en tiempo real — pensado para que cualquier persona lo use desde el celular.",
-  },
-  {
-    q: "¿Qué pasa si me arrepiento del diseño?",
-    a: "Tenemos garantía total: si no te gusta el resultado, te devolvemos tu dinero. Pero antes intentaremos llegar al diseño que sí amas — los cambios son ilimitados.",
-  },
-  {
-    q: "¿La invitación se ve bien en cualquier celular?",
-    a: "Sí, está optimizada para iOS y Android, con cualquier tamaño de pantalla. También funciona en computadora y tablet.",
-  },
-  {
-    q: "¿Puedo agregar música, animaciones o video?",
-    a: "Sí, en los planes Pro y Premium VIP. Música de fondo, animaciones de entrada, video de portada y playlist colaborativa donde tus invitados sugieren canciones.",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Mis invitados amaron la invitación, todos confirmaron y nadie se perdió en el camino. La música de fondo fue el detalle que más comentaron.",
-    name: "Ana García",
-    event: "Boda · Marzo 2025",
-    avatar: "A",
-    stars: 5,
-  },
-  {
-    quote:
-      "Me ahorré tiempo y dinero, y la invitación se veía increíble. El control de RSVP por WhatsApp me cambió la vida — sabía exactamente quién iba.",
-    name: "Carlos Méndez",
-    event: "XV Años · Julio 2025",
-    avatar: "C",
-    stars: 5,
-  },
-  {
-    quote:
-      "La invitación de bautizo fue tan tierna que mis amigas la pidieron prestada para sus eventos. El proceso fue rapidísimo, en 4 días la tenía lista.",
-    name: "Mariana López",
-    event: "Bautizo · Septiembre 2025",
-    avatar: "M",
-    stars: 5,
-  },
-];
 </script>
 
 <template>
@@ -308,14 +56,14 @@ const testimonials = [
             style="background: #a78bfa"
           ></span>
           <LucideIcon name="party-popper" class-name="w-3.5 h-3.5" />
-          Invitaciones Web Personalizadas
+          {{ content.ui.heroBadge }}
         </div>
 
         <h1
           class="font-display text-5xl sm:text-6xl lg:text-[5rem] font-bold leading-[1.04] tracking-tight mb-7"
         >
           <span class="dark:text-white text-light-text"
-            >Haz que tu evento sea
+            >{{ content.ui.heroTitleBefore }}
           </span>
           <span
             class="bg-clip-text text-transparent"
@@ -327,19 +75,17 @@ const testimonials = [
                 #c4b5fd 100%
               );
             "
-            >inolvidable</span
+            >{{ content.ui.heroTitleHighlight }}</span
           >
           <span class="dark:text-white text-light-text">
-            desde la invitación</span
+            {{ content.ui.heroTitleAfter }}</span
           >
         </h1>
 
         <p
           class="text-lg dark:text-text-secondary text-light-muted max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Sorprende a tus invitados con una invitación digital interactiva,
-          elegante y fácil de compartir. Sin papel, sin imprenta, sin pretextos
-          para no llegar.
+          {{ content.ui.heroSubtitle }}
         </p>
 
         <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
@@ -354,7 +100,7 @@ const testimonials = [
             "
           >
             <LucideIcon name="sparkles" class-name="w-4 h-4" />
-            Solicita tu demo gratis
+            {{ content.ui.heroCtaDemo }}
           </a>
           <a
             :href="waContratar"
@@ -367,7 +113,7 @@ const testimonials = [
               background: rgba(167, 139, 250, 0.04);
             "
           >
-            Quiero cotizar mi invitación
+            {{ content.ui.heroCtaQuote }}
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
           </a>
         </div>
@@ -382,7 +128,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: #a78bfa"
             />
-            Edición ilimitada
+            {{ content.ui.heroTrustEdit }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
@@ -390,7 +136,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: #a78bfa"
             />
-            Entrega en 3–5 días
+            {{ content.ui.heroTrustDelivery }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
@@ -398,7 +144,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: #a78bfa"
             />
-            RSVP en tiempo real
+            {{ content.ui.heroTrustRsvp }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
@@ -406,7 +152,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: #a78bfa"
             />
-            Garantía total
+            {{ content.ui.heroTrustGuarantee }}
           </span>
         </div>
       </div>
@@ -420,16 +166,15 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(167, 139, 250, 0.7)"
           >
-            01 / Demo interactiva
+            {{ content.ui.sectionDemo }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
           >
-            Pruébala antes de pedirla
+            {{ content.ui.demoTitle }}
           </h2>
           <p class="dark:text-text-secondary text-light-muted max-w-xl mx-auto">
-            Tres demos reales — Esencial, Pro y Premium VIP. Tócalas, abre la
-            galería, prueba el RSVP. Así se ve la tuya.
+            {{ content.ui.demoSubtitle }}
           </p>
         </div>
 
@@ -473,13 +218,13 @@ const testimonials = [
                     class="text-[9px] uppercase tracking-widest mb-1"
                     style="color: #b0a7c0"
                   >
-                    Bautizo
+                    {{ content.demoCards[0].mockEvent }}
                   </p>
                   <p
                     class="text-lg font-bold mb-1"
                     style="color: #6aade4; font-family: serif"
                   >
-                    Santiago
+                    {{ content.demoCards[0].mockName }}
                   </p>
                   <div
                     class="w-8 h-px mx-auto mb-2"
@@ -490,7 +235,7 @@ const testimonials = [
                     style="background: rgba(106, 173, 228, 0.1); color: #6aade4"
                   >
                     <LucideIcon name="calendar" class-name="w-2.5 h-2.5" />
-                    15 Mar 2026
+                    {{ content.demoCards[0].mockDate }}
                   </div>
                   <div
                     class="mt-3 py-1.5 rounded-full text-[8px] font-semibold text-white"
@@ -498,20 +243,20 @@ const testimonials = [
                       background: linear-gradient(135deg, #6aade4, #a78bfa);
                     "
                   >
-                    Confirmar asistencia
+                    {{ content.ui.confirmRsvp }}
                   </div>
                 </div>
               </div>
             </RouterLink>
             <div class="text-center">
               <p class="text-xs font-bold mb-1" style="color: #a78bfa">
-                Esencial
+                {{ content.demoCards[0].planLabel }}
               </p>
               <RouterLink
-                to="/invitaciones/esencial"
+                :to="content.demoCards[0].path"
                 class="inline-flex items-center gap-1 text-[11px] dark:text-text-secondary text-light-muted hover:text-violet-400 transition"
               >
-                Abrir demo
+                {{ content.ui.openDemo }}
                 <LucideIcon name="arrow-right" class-name="w-3 h-3" />
               </RouterLink>
             </div>
@@ -523,7 +268,7 @@ const testimonials = [
               class="absolute hidden sm:block translate-x-16 -translate-y-2 px-2.5 py-1 rounded-full text-[10px] font-bold text-white z-10"
               style="background: linear-gradient(135deg, #7c3aed, #a78bfa)"
             >
-              Más popular
+              {{ content.ui.mostPopular }}
             </div>
             <RouterLink
               to="/invitaciones/pro"
@@ -569,13 +314,13 @@ const testimonials = [
                     class="text-[9px] uppercase tracking-widest mb-1"
                     style="color: #c4a97d"
                   >
-                    Mis XV Años
+                    {{ content.demoCards[1].mockEvent }}
                   </p>
                   <p
                     class="text-lg font-bold mb-1"
                     style="color: #7a1e3a; font-family: serif"
                   >
-                    Valentina
+                    {{ content.demoCards[1].mockName }}
                   </p>
                   <div
                     class="w-10 h-px mx-auto mb-2"
@@ -597,7 +342,7 @@ const testimonials = [
                     "
                   >
                     <LucideIcon name="calendar" class-name="w-2.5 h-2.5" />
-                    20 Jul 2026
+                    {{ content.demoCards[1].mockDate }}
                   </div>
                   <div
                     class="mt-3 py-1.5 rounded-full text-[8px] font-semibold text-white"
@@ -605,18 +350,18 @@ const testimonials = [
                       background: linear-gradient(135deg, #d4af37, #c6a75e);
                     "
                   >
-                    Confirmar asistencia
+                    {{ content.ui.confirmRsvp }}
                   </div>
                 </div>
               </div>
             </RouterLink>
             <div class="text-center">
-              <p class="text-xs font-bold mb-1" style="color: #d4af37">Pro</p>
+              <p class="text-xs font-bold mb-1" style="color: #d4af37">{{ content.demoCards[1].planLabel }}</p>
               <RouterLink
-                to="/invitaciones/pro"
+                :to="content.demoCards[1].path"
                 class="inline-flex items-center gap-1 text-[11px] dark:text-text-secondary text-light-muted hover:text-violet-400 transition"
               >
-                Abrir demo
+                {{ content.ui.openDemo }}
                 <LucideIcon name="arrow-right" class-name="w-3 h-3" />
               </RouterLink>
             </div>
@@ -666,7 +411,7 @@ const testimonials = [
                     class="text-[9px] uppercase tracking-widest mb-1 mt-4"
                     style="color: rgba(198, 167, 94, 0.5)"
                   >
-                    Nuestra Boda
+                    {{ content.demoCards[2].mockEvent }}
                   </p>
                   <p
                     class="text-base font-bold mb-0.5"
@@ -677,7 +422,7 @@ const testimonials = [
                       font-family: serif;
                     "
                   >
-                    Ana &amp; Carlos
+                    {{ content.demoCards[2].mockName }}
                   </p>
                   <div
                     class="w-6 h-px mx-auto my-2"
@@ -692,7 +437,7 @@ const testimonials = [
                     "
                   >
                     <LucideIcon name="calendar" class-name="w-2.5 h-2.5" />
-                    10 Dic 2026
+                    {{ content.demoCards[2].mockDate }}
                   </div>
                   <div
                     class="mt-3 py-1.5 rounded-full text-[8px] font-bold"
@@ -701,20 +446,20 @@ const testimonials = [
                       color: #0b0b0b;
                     "
                   >
-                    Confirmar asistencia
+                    {{ content.ui.confirmRsvp }}
                   </div>
                 </div>
               </div>
             </RouterLink>
             <div class="text-center">
               <p class="text-xs font-bold mb-1" style="color: #c6a75e">
-                Premium VIP
+                {{ content.demoCards[2].planLabel }}
               </p>
               <RouterLink
-                to="/invitaciones/premium"
+                :to="content.demoCards[2].path"
                 class="inline-flex items-center gap-1 text-[11px] dark:text-text-secondary text-light-muted hover:text-violet-400 transition"
               >
-                Abrir demo
+                {{ content.ui.openDemo }}
                 <LucideIcon name="arrow-right" class-name="w-3 h-3" />
               </RouterLink>
             </div>
@@ -740,22 +485,21 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(167, 139, 250, 0.7)"
           >
-            02 / Beneficios
+            {{ content.ui.sectionBenefits }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text max-w-2xl mb-4"
           >
-            Por qué la van a amar
+            {{ content.ui.benefitsTitle }}
           </h2>
           <p class="dark:text-text-secondary text-light-muted max-w-xl">
-            Cuatro razones por las que tus invitados, tu mamá y tu wedding
-            planner te van a agradecer.
+            {{ content.ui.benefitsSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <div
-            v-for="(b, i) in benefits"
+            v-for="b in content.benefits"
             :key="b.title"
             class="p-6 rounded-2xl border transition hover:-translate-y-1"
             style="
@@ -802,22 +546,21 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(167, 139, 250, 0.7)"
           >
-            03 / Templates &amp; estilos
+            {{ content.ui.sectionTemplates }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
           >
-            Encuentra tu estilo
+            {{ content.ui.templatesTitle }}
           </h2>
           <p class="dark:text-text-secondary text-light-muted max-w-xl mx-auto">
-            Empezamos a partir de un estilo base y lo adaptamos por completo a
-            ti — colores, tipografía y fotos.
+            {{ content.ui.templatesSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <div
-            v-for="theme in themes"
+            v-for="theme in content.themes"
             :key="theme.id"
             class="group relative p-6 rounded-2xl border overflow-hidden transition hover:-translate-y-1"
             style="
@@ -875,8 +618,7 @@ const testimonials = [
         <p
           class="text-center text-xs dark:text-text-secondary/60 text-light-muted/60 mt-10"
         >
-          ¿Tienes un estilo distinto en mente? Lo construimos desde cero
-          contigo.
+          {{ content.ui.templatesFooter }}
         </p>
       </div>
     </section>
@@ -898,16 +640,15 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(167, 139, 250, 0.7)"
           >
-            04 / Cómo funciona
+            {{ content.ui.sectionProcess }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
           >
-            De la idea a las confirmaciones, en 3 pasos
+            {{ content.ui.processTitle }}
           </h2>
           <p class="dark:text-text-secondary text-light-muted max-w-xl mx-auto">
-            Tú nos das el evento. Nosotros te entregamos una invitación lista
-            para impresionar.
+            {{ content.ui.processSubtitle }}
           </p>
         </div>
 
@@ -919,7 +660,7 @@ const testimonials = [
           ></div>
 
           <div
-            v-for="step in steps"
+            v-for="step in content.steps"
             :key="step.num"
             class="relative text-center"
           >
@@ -941,7 +682,7 @@ const testimonials = [
               class="font-mono text-[11px] mb-2"
               style="color: rgba(167, 139, 250, 0.7)"
             >
-              PASO {{ step.num }}
+              {{ content.ui.stepLabel }} {{ step.num }}
             </p>
             <h3
               class="font-display font-bold dark:text-white text-light-text text-lg mb-2"
@@ -967,27 +708,21 @@ const testimonials = [
               class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
               style="color: rgba(167, 139, 250, 0.7)"
             >
-              05 / Qué incluye
+              {{ content.ui.sectionIncludes }}
             </p>
             <h2
               class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
             >
-              Todo lo que viene con tu invitación
+              {{ content.ui.includesTitle }}
             </h2>
             <p
               class="dark:text-text-secondary text-light-muted max-w-xl mb-8 leading-relaxed"
             >
-              Cero sorpresas en la entrega. Esto es lo que recibes desde el
-              primer plan, listo para enviar.
+              {{ content.ui.includesSubtitle }}
             </p>
             <div class="flex flex-wrap gap-2">
               <span
-                v-for="bonus in [
-                  'Edición ilimitada',
-                  'Asesoría de redacción',
-                  'Demo gratuita',
-                  'Soporte WhatsApp',
-                ]"
+                v-for="bonus in content.bonusChips"
                 :key="bonus"
                 class="px-3 py-1.5 rounded-full text-xs font-medium"
                 style="
@@ -1005,7 +740,7 @@ const testimonials = [
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div
-              v-for="item in includes"
+              v-for="item in content.includes"
               :key="item.text"
               class="flex items-start gap-3 p-4 rounded-xl border"
               style="
@@ -1052,22 +787,21 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(167, 139, 250, 0.7)"
           >
-            06 / Precios
+            {{ content.ui.sectionPricing }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
           >
-            Elige tu paquete ideal
+            {{ content.ui.pricingTitle }}
           </h2>
           <p class="dark:text-text-secondary text-light-muted max-w-xl mx-auto">
-            Pago único — sin mensualidades. Desde lo esencial hasta la
-            experiencia VIP completa con QR.
+            {{ content.ui.pricingSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div
-            v-for="pkg in packages"
+            v-for="pkg in content.packages"
             :key="pkg.name"
             class="relative flex flex-col rounded-2xl overflow-hidden transition"
             :class="pkg.highlighted ? 'border-2' : 'border'"
@@ -1115,7 +849,7 @@ const testimonials = [
                 >
                 <span
                   class="text-sm dark:text-text-secondary text-light-muted ml-1"
-                  >MXN</span
+                  >{{ isEn ? "USD" : "MXN" }}</span
                 >
                 <p
                   class="text-xs font-mono mt-1"
@@ -1161,7 +895,7 @@ const testimonials = [
 
             <div class="px-8 pb-8 flex flex-col gap-2.5">
               <a
-                :href="pkg.wa"
+                :href="pkgWaUrl(pkg.waKey)"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="block w-full text-center px-4 py-3 rounded-xl font-bold text-sm transition"
@@ -1174,7 +908,7 @@ const testimonials = [
                 "
               >
                 <span class="inline-flex items-center gap-2">
-                  Contratar {{ pkg.name }}
+                  {{ content.ui.hirePlan }} {{ pkg.name }}
                   <LucideIcon name="arrow-right" class-name="w-4 h-4" />
                 </span>
               </a>
@@ -1188,7 +922,7 @@ const testimonials = [
               >
                 <span class="inline-flex items-center gap-2">
                   <LucideIcon name="eye" class-name="w-4 h-4" />
-                  Ver demo
+                  {{ content.ui.viewDemo }}
                 </span>
               </RouterLink>
             </div>
@@ -1203,7 +937,7 @@ const testimonials = [
             class-name="w-3.5 h-3.5 inline mr-1"
             style="color: #a78bfa"
           />
-          Garantía total · Si no te encanta, te devolvemos tu dinero.
+          {{ content.ui.pricingGuarantee }}
         </p>
       </div>
     </section>
@@ -1216,21 +950,21 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(167, 139, 250, 0.7)"
           >
-            07 / Preguntas frecuentes
+            {{ content.ui.sectionFaq }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
           >
-            Resolvemos tus dudas
+            {{ content.ui.faqTitle }}
           </h2>
           <p class="dark:text-text-secondary text-light-muted">
-            Si te queda alguna, escríbenos por WhatsApp — respondemos rápido.
+            {{ content.ui.faqSubtitle }}
           </p>
         </div>
 
         <div class="space-y-3">
           <div
-            v-for="(faq, i) in faqs"
+            v-for="(faq, i) in content.faqs"
             :key="i"
             class="rounded-2xl border overflow-hidden transition-all"
             :style="
@@ -1275,7 +1009,7 @@ const testimonials = [
             class="inline-flex items-center gap-2 text-sm font-semibold transition"
             style="color: #a78bfa"
           >
-            ¿Tienes otra pregunta? Escríbenos
+            {{ content.ui.faqMoreQuestions }}
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
           </a>
         </div>
@@ -1299,18 +1033,18 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(167, 139, 250, 0.7)"
           >
-            08 / Testimonios
+            {{ content.ui.sectionTestimonials }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
           >
-            Lo que dicen nuestros clientes
+            {{ content.ui.testimonialsTitle }}
           </h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
-            v-for="t in testimonials"
+            v-for="t in content.testimonials"
             :key="t.name"
             class="relative p-7 rounded-2xl border flex flex-col"
             style="
@@ -1392,7 +1126,7 @@ const testimonials = [
           class="font-display text-4xl sm:text-5xl font-bold mb-6 leading-tight"
         >
           <span class="dark:text-white text-light-text"
-            >Sorprende a tus invitados con una
+            >{{ content.ui.finalTitleBefore }}
           </span>
           <span
             class="bg-clip-text text-transparent"
@@ -1404,14 +1138,13 @@ const testimonials = [
                 #c4b5fd
               );
             "
-            >invitación única</span
+            >{{ content.ui.finalTitleHighlight }}</span
           >
         </h2>
         <p
           class="dark:text-text-secondary text-light-muted mb-10 text-lg max-w-xl mx-auto"
         >
-          Solicita tu demo gratis por WhatsApp y haz que tu evento sea
-          inolvidable.
+          {{ content.ui.finalSubtitle }}
         </p>
 
         <div
@@ -1428,7 +1161,7 @@ const testimonials = [
             "
           >
             <LucideIcon name="sparkles" class-name="w-4 h-4" />
-            Solicita tu demo gratis
+            {{ content.ui.heroCtaDemo }}
           </a>
           <a
             :href="waContratar"
@@ -1441,7 +1174,7 @@ const testimonials = [
               background: rgba(167, 139, 250, 0.04);
             "
           >
-            Cotizar mi invitación
+            {{ content.ui.heroCtaQuote }}
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
           </a>
         </div>
@@ -1455,7 +1188,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: rgba(167, 139, 250, 0.7)"
             />
-            Garantía de satisfacción
+            {{ content.ui.finalTrustGuarantee }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
@@ -1463,7 +1196,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: rgba(167, 139, 250, 0.7)"
             />
-            Entrega en 3–5 días
+            {{ content.ui.finalTrustDelivery }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
@@ -1471,7 +1204,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: rgba(167, 139, 250, 0.7)"
             />
-            Soporte en español
+            {{ content.ui.finalTrustSupport }}
           </span>
         </div>
       </div>

@@ -18,7 +18,7 @@
           d="M15 19l-7-7 7-7"
         />
       </svg>
-      <span class="hidden sm:inline">Volver</span>
+      <span class="hidden sm:inline">{{ copy.back }}</span>
     </router-link>
 
     <!-- NavBar -->
@@ -938,6 +938,9 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
+import { useDemoChrome } from "../../composables/useDemoChrome.js";
+
+const { copy } = useDemoChrome();
 
 const waLinkAlonso =
   "https://wa.me/525521483348?text=Hola%20Alonso%2C%20quiero%20agendar%20una%20cita";

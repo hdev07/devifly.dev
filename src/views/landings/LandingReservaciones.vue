@@ -4,316 +4,27 @@
  * Estilo visual: Spotify dark — acento rojo navbar (#ef4444)
  * Secciones: Hero · Stats · Pain · Demo Preview · Features · How it Works · Testimonials · Pricing · FAQ · Demo 21d · CTA Final
  */
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { RouterLink } from "vue-router";
 import LucideIcon from "../../components/LucideIcon.vue";
+import { useLocaleContent } from "../../composables/useLocaleContent.js";
+import { landingReservacionesContent } from "../../data/landings/landingReservaciones.js";
 
 const WA = "+525635926679";
-const waDemo = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Tengo un salón de eventos y me interesa una demo del Sistema PRO de Reservaciones 🏛️")}`;
-const waCotizar = `https://wa.me/${WA}?text=${encodeURIComponent("Quiero cotizar el Sistema PRO de Reservaciones para mi salón 🏛️")}`;
-const waDemo21 = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el demo de 21 días para mi salón de eventos por $999 MXN 🏛️")}`;
-const waEsencial = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el plan Esencial del Sistema de Reservaciones para mi salón 🏛️")}`;
-const waPro = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el plan Pro del Sistema de Reservaciones para mi salón 🏛️")}`;
-const waPremium = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el plan Premium VIP del Sistema de Reservaciones para mi salón 🏛️")}`;
+const { content, isEn } = useLocaleContent(landingReservacionesContent);
+
+const waUrl = (text) => `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
+
+const waDemo = computed(() => waUrl(content.value.wa.demo));
+const waContratar = computed(() => waUrl(content.value.wa.hire));
+const waDemo21 = computed(() => waUrl(content.value.wa.demo21));
+
+const pkgWaUrl = (waKey) => waUrl(content.value.wa[waKey]);
 
 const openFaq = ref(null);
 const toggleFaq = (i) => {
   openFaq.value = openFaq.value === i ? null : i;
 };
-
-const stats = [
-  { value: "500+", label: "Eventos gestionados" },
-  { value: "48h", label: "Tiempo de entrega inicial" },
-  { value: "3×", label: "Más cotizaciones al mes" },
-  { value: "100%", label: "Clientes satisfechos" },
-];
-
-const painPoints = [
-  {
-    icon: "message-circle-x",
-    title: "Respondes lo mismo todo el día",
-    desc: "Precios, disponibilidad, paquetes… siempre lo mismo por WhatsApp mientras atiendes eventos.",
-  },
-  {
-    icon: "clock-x",
-    title: "Clientes que no contestas a tiempo",
-    desc: "Un salón que responde más rápido se lleva la reservación. Cada hora que tardas, pierdes dinero.",
-  },
-  {
-    icon: "instagram",
-    title: "Instagram que no convierte",
-    desc: "Muchos seguidores, pocos reservados. Publicar bonito no es suficiente para llenar tu agenda.",
-  },
-  {
-    icon: "calendar-x",
-    title: "Agenda llena de dudas, no de eventos",
-    desc: "Gestionas WhatsApp, Excel y notas. Pierdes fechas, doble reservas y tiempo valioso.",
-  },
-];
-
-const features = [
-  {
-    icon: "calendar-days",
-    title: "Agenda de disponibilidad",
-    desc: "Tus clientes ven fechas libres al instante. Sin llamadas de '¿y ese día?'. Sin doble reservas.",
-    color: "text-red-400",
-    bg: "bg-red-500/10",
-  },
-  {
-    icon: "calculator",
-    title: "Cotizador inteligente",
-    desc: "El cliente arma su evento, elige paquete, invitados y extras. Tú recibes leads calificados listos para cerrar.",
-    color: "text-red-400",
-    bg: "bg-red-500/10",
-  },
-  {
-    icon: "images",
-    title: "Galería premium",
-    desc: "Fotos y video que generan deseo. El cliente imagina su boda ahí antes de llamarte.",
-    color: "text-red-400",
-    bg: "bg-red-500/10",
-  },
-  {
-    icon: "message-circle",
-    title: "WhatsApp directo",
-    desc: "Botón con mensaje prellenado según lo que vio el cliente. Más conversión, menos fricción.",
-    color: "text-red-400",
-    bg: "bg-red-500/10",
-  },
-  {
-    icon: "map-pin",
-    title: "Google Maps integrado",
-    desc: "Mapa interactivo con tus datos. Fácil de encontrar en Google y con SEO local optimizado.",
-    color: "text-red-400",
-    bg: "bg-red-500/10",
-  },
-  {
-    icon: "smartphone",
-    title: "100% responsivo",
-    desc: "Se ve perfecto en celular, tablet y computadora. Tu cliente cotiza desde donde sea.",
-    color: "text-red-400",
-    bg: "bg-red-500/10",
-  },
-  {
-    icon: "shield-check",
-    title: "Panel admin completo",
-    desc: "Gestiona reservaciones, clientes y fechas desde un panel propio.",
-    color: "text-violet-400",
-    bg: "bg-violet-500/10",
-  },
-  {
-    icon: "users",
-    title: "CRM de clientes",
-    desc: "Historial, seguimientos y datos de cada cliente en un solo lugar.",
-    color: "text-violet-400",
-    bg: "bg-violet-500/10",
-  },
-  {
-    icon: "credit-card",
-    title: "Pagos de anticipo en línea",
-    desc: "Recibe depósitos para apartar fechas. Menos cancelaciones.",
-    color: "text-violet-400",
-    bg: "bg-violet-500/10",
-  },
-  {
-    icon: "building-2",
-    title: "Multi-salón / Sucursales",
-    desc: "Gestiona varios espacios o ubicaciones desde un solo sistema.",
-    color: "text-violet-400",
-    bg: "bg-violet-500/10",
-  },
-];
-
-const steps = [
-  {
-    number: "01",
-    icon: "camera",
-    title: "Nos mandas tu contenido",
-    desc: "Fotos de tu salón, info de paquetes y precios. Eso es todo lo que necesitamos para arrancar.",
-    color: "text-red-400",
-    border: "border-red-500/30",
-    bg: "bg-red-500/10",
-  },
-  {
-    number: "02",
-    icon: "code-2",
-    title: "Construimos tu sistema",
-    desc: "En 2–4 semanas armamos tu página completa con cotizador, galería y agenda. Te mandamos avances.",
-    color: "text-red-400",
-    border: "border-red-500/30",
-    bg: "bg-red-500/10",
-  },
-  {
-    number: "03",
-    icon: "rocket",
-    title: "Lanzamos y recibes leads",
-    desc: "Tu sistema queda publicado. Los clientes llegan, cotizan solos y tú solo cierras eventos.",
-    color: "text-violet-400",
-    border: "border-violet-500/30",
-    bg: "bg-violet-500/10",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Mariana R.",
-    role: "Salón Jardín Encantado, Guadalajara",
-    avatar: "MR",
-    avatarBg: "bg-red-500/20",
-    avatarColor: "text-red-400",
-    text: "Antes perdía clientes por no contestar a tiempo. Ahora mi agenda se llena sola y solo atiendo a los que realmente quieren reservar.",
-    stars: 5,
-  },
-  {
-    name: "Luis M.",
-    role: "Terraza Real, CDMX",
-    avatar: "LM",
-    avatarBg: "bg-red-500/20",
-    avatarColor: "text-red-400",
-    text: "Mi página se ve increíble, recibo más mensajes y cierro más eventos. ¡Vale cada peso! En el primer mes recuperé la inversión.",
-    stars: 5,
-  },
-  {
-    name: "Patricia V.",
-    role: "Hacienda Los Arcos, Monterrey",
-    avatar: "PV",
-    avatarBg: "bg-violet-500/20",
-    avatarColor: "text-violet-400",
-    text: "El cotizador es lo que más nos gusta. Los clientes llegan sabiendo cuánto van a pagar. No hay regateo, solo cierres.",
-    stars: 5,
-  },
-];
-
-const salonPackages = [
-  {
-    name: "Esencial",
-    icon: "building",
-    price: "$5,999",
-    period: "pago único",
-    tagline: "Presencia profesional que genera confianza",
-    wa: waEsencial,
-    highlighted: false,
-    badge: null,
-    vip: false,
-    features: [
-      "Diseño responsivo premium",
-      "Galería de fotos (hasta 20)",
-      "Formulario de contacto",
-      "Integración WhatsApp",
-      "Mapa de ubicación interactivo",
-      "SEO local optimizado",
-    ],
-    excluded: [
-      "Cotizador en línea",
-      "Calendario de disponibilidad",
-      "Galería con videos",
-      "Panel admin",
-      "CRM clientes",
-      "Pagos en línea",
-    ],
-  },
-  {
-    name: "Pro",
-    icon: "building-2",
-    price: "$9,999",
-    period: "pago único",
-    tagline: "Todo para convertir visitas en reservaciones",
-    wa: waPro,
-    highlighted: true,
-    badge: "Más vendido",
-    vip: false,
-    features: [
-      "Todo lo de Esencial",
-      "Cotizador en línea",
-      "Calendario de disponibilidad",
-      "Galería con videos",
-      "Sección paquetes/servicios",
-      "Blog de eventos",
-      "Google Calendar sync",
-    ],
-    excluded: [
-      "Panel admin completo",
-      "CRM clientes integrado",
-      "Pagos anticipo en línea",
-      "Contratos digitales",
-      "Multi-salón / Sucursales",
-      "Analíticas y reportes",
-    ],
-  },
-  {
-    name: "Premium VIP",
-    icon: "gem",
-    price: "$16,999",
-    period: "pago único",
-    tagline: "Gestión completa de tu negocio de eventos",
-    wa: waPremium,
-    highlighted: false,
-    badge: "VIP",
-    vip: true,
-    features: [
-      "Todo lo de Pro",
-      "Panel admin completo",
-      "CRM clientes integrado",
-      "Pagos anticipo en línea",
-      "Contratos digitales",
-      "Multi-salón / Sucursales",
-      "Analíticas y reportes",
-    ],
-    excluded: [],
-  },
-];
-
-const salonComparisonRows = [
-  { feature: "Diseño responsivo premium", small: true, medium: true, large: true },
-  { feature: "Galería de fotos", small: true, medium: true, large: true },
-  { feature: "Formulario de contacto", small: true, medium: true, large: true },
-  { feature: "Integración WhatsApp", small: true, medium: true, large: true },
-  { feature: "Mapa de ubicación interactivo", small: true, medium: true, large: true },
-  { feature: "SEO local optimizado", small: true, medium: true, large: true },
-  { feature: "Cotizador en línea", small: false, medium: true, large: true },
-  { feature: "Calendario de disponibilidad", small: false, medium: true, large: true },
-  { feature: "Galería con videos", small: false, medium: true, large: true },
-  { feature: "Sección paquetes / servicios", small: false, medium: true, large: true },
-  { feature: "Blog de eventos", small: false, medium: true, large: true },
-  { feature: "Google Calendar sync", small: false, medium: true, large: true },
-  { feature: "Panel admin completo", small: false, medium: false, large: true },
-  { feature: "CRM clientes integrado", small: false, medium: false, large: true },
-  { feature: "Pagos anticipo en línea", small: false, medium: false, large: true },
-  { feature: "Contratos digitales", small: false, medium: false, large: true },
-  { feature: "Multi-salón / Sucursales", small: false, medium: false, large: true },
-  { feature: "Analíticas y reportes", small: false, medium: false, large: true },
-];
-
-const faqs = [
-  {
-    q: "¿Cuánto tiempo tarda en estar lista mi página?",
-    a: "El plan Esencial se entrega en 2 semanas, el Pro en 3 semanas y el Premium VIP en 4–5 semanas. Todo depende de qué tan rápido nos compartes tu contenido (fotos, info, precios).",
-  },
-  {
-    q: "¿Qué necesito darles para empezar?",
-    a: "Solo fotos de tu salón, la info de tus paquetes y servicios, y tus datos de contacto. Nosotros nos encargamos del resto: textos, diseño, configuración y publicación.",
-  },
-  {
-    q: "¿Puedo probar antes de contratar?",
-    a: "Sí. Tenemos el Demo de 21 días por $999 MXN donde armamos tu sitio real con tu contenido y lo publicamos para que lo pruebes. Si decides contratar, esos $999 se descuentan del anticipo.",
-  },
-  {
-    q: "¿Qué pasa si no me genera más reservaciones?",
-    a: "Tenemos garantía de resultados. Si en el primer mes no notas mejoras, optimizamos tu sitio sin costo hasta que empieces a ver resultados. Sin letras chiquitas.",
-  },
-  {
-    q: "¿Necesito saber de tecnología para manejarlo?",
-    a: "No. El sistema fue diseñado para dueños de salones, no para técnicos. Si tienes plan Pro o Premium VIP, te damos capacitación y soporte para que administres todo fácilmente.",
-  },
-  {
-    q: "¿Incluye dominio y hosting?",
-    a: "Sí, el primer año de hosting y la configuración del dominio están incluidos. A partir del segundo año se cobra una mensualidad de mantenimiento muy accesible.",
-  },
-  {
-    q: "¿Puedo actualizar mi plan después?",
-    a: "Claro. Puedes empezar con el plan Esencial y escalar al Pro o Premium VIP cuando lo necesites. Solo se cobra la diferencia.",
-  },
-];
 </script>
 
 <template>
@@ -342,20 +53,18 @@ const faqs = [
               <span
                 class="w-2 h-2 rounded-full bg-red-500 animate-pulse"
               ></span>
-              Salones & Eventos · Sistema PRO
+              {{ content.ui.heroBadge }}
             </div>
 
             <h1
               class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.05] tracking-tight mb-6"
             >
-              Tu salón merece una página que
-              <span class="text-red-400"> venda eventos</span>
+              {{ content.ui.heroTitleBefore }}
+              <span class="text-red-400">{{ content.ui.heroTitleHighlight }}</span>
             </h1>
 
             <p class="text-neutral-400 text-lg leading-relaxed mb-8 max-w-xl">
-              Sistema web completo con cotizador, agenda de disponibilidad,
-              galería premium y WhatsApp directo. Responde dudas 24/7 mientras
-              tú te enfocas en hacer eventos inolvidables.
+              {{ content.ui.heroSubtitle }}
             </p>
 
             <div class="flex flex-col sm:flex-row items-start gap-4 mb-10">
@@ -364,15 +73,15 @@ const faqs = [
                 class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-red-500 text-neutral-950 font-bold text-sm hover:bg-red-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(239,68,68,0.3)]"
               >
                 <LucideIcon name="play-circle" class-name="w-4 h-4" />
-                Ver demo en vivo
+                {{ content.ui.heroCtaDemo }}
               </RouterLink>
               <a
-                :href="waCotizar"
+                :href="waContratar"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-red-500/40 hover:text-white transition"
               >
-                Cotizar mi salón
+                {{ content.ui.heroCtaQuote }}
                 <LucideIcon name="arrow-right" class-name="w-4 h-4" />
               </a>
             </div>
@@ -383,7 +92,7 @@ const faqs = [
                   name="check-circle"
                   class-name="w-3.5 h-3.5 text-red-400"
                 />
-                Cotizador incluido
+                {{ content.ui.heroTrustQuote }}
               </span>
               <span class="w-px h-3 bg-neutral-700"></span>
               <span class="flex items-center gap-1">
@@ -391,7 +100,7 @@ const faqs = [
                   name="check-circle"
                   class-name="w-3.5 h-3.5 text-red-400"
                 />
-                Entrega en 2–5 semanas
+                {{ content.ui.heroTrustDelivery }}
               </span>
               <span class="w-px h-3 bg-neutral-700"></span>
               <span class="flex items-center gap-1">
@@ -399,7 +108,7 @@ const faqs = [
                   name="check-circle"
                   class-name="w-3.5 h-3.5 text-red-400"
                 />
-                Garantía de resultados
+                {{ content.ui.heroTrustGuarantee }}
               </span>
             </div>
           </div>
@@ -440,10 +149,10 @@ const faqs = [
                       <div
                         class="text-red-400 text-xs font-bold tracking-widest uppercase"
                       >
-                        Salón de eventos
+                        {{ content.ui.mockVenueLabel }}
                       </div>
                       <div class="text-white text-sm font-semibold">
-                        Jardín Victoria
+                        {{ content.ui.mockVenueName }}
                       </div>
                     </div>
                     <div
@@ -463,42 +172,22 @@ const faqs = [
                   style="background: #111"
                 >
                   <span
-                    class="px-3 py-1 rounded-full bg-red-500 text-black text-[10px] font-bold whitespace-nowrap"
-                    >Bodas</span
-                  >
-                  <span
-                    class="px-3 py-1 rounded-full bg-white/10 text-white/60 text-[10px] whitespace-nowrap"
-                    >XV años</span
-                  >
-                  <span
-                    class="px-3 py-1 rounded-full bg-white/10 text-white/60 text-[10px] whitespace-nowrap"
-                    >Corporativo</span
+                    v-for="(cat, i) in content.ui.mockCategories"
+                    :key="cat"
+                    :class="[
+                      'px-3 py-1 rounded-full text-[10px] whitespace-nowrap',
+                      i === 0
+                        ? 'bg-red-500 text-black font-bold'
+                        : 'bg-white/10 text-white/60',
+                    ]"
+                    >{{ cat }}</span
                   >
                 </div>
 
                 <!-- Paquetes -->
                 <div class="px-4 py-3 space-y-3" style="background: #0f0f0f">
                   <div
-                    v-for="item in [
-                      {
-                        name: 'Paquete Oro',
-                        price: '$899/persona',
-                        img: '💍',
-                        badge: null,
-                      },
-                      {
-                        name: 'Paquete Diamante',
-                        price: '$1,299/persona',
-                        img: '✨',
-                        badge: 'Popular',
-                      },
-                      {
-                        name: 'Terraza Premium',
-                        price: 'Desde $45,000',
-                        img: '🌿',
-                        badge: null,
-                      },
-                    ]"
+                    v-for="item in content.mockItems"
                     :key="item.name"
                     class="flex items-center gap-3 p-2.5 rounded-xl border border-white/5"
                     style="background: #1a1a1a"
@@ -517,7 +206,7 @@ const faqs = [
                         <span
                           v-if="item.badge"
                           class="px-1.5 py-0.5 rounded-full bg-red-500/20 text-red-400 text-[9px] font-bold"
-                          >{{ item.badge }}</span
+                          >{{ content.ui.mockPopularBadge }}</span
                         >
                       </div>
                       <p class="text-red-400 text-xs font-bold">
@@ -531,9 +220,9 @@ const faqs = [
                       name="calendar-check"
                       class-name="w-3.5 h-3.5 text-neutral-600"
                     />
-                    <span class="text-neutral-600 text-[10px]"
-                      >jardin-victoria.com</span
-                    >
+                    <span class="text-neutral-600 text-[10px]">{{
+                      content.ui.mockDomain
+                    }}</span>
                   </div>
                 </div>
               </div>
@@ -551,7 +240,7 @@ const faqs = [
       <div
         class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center"
       >
-        <div v-for="stat in stats" :key="stat.label">
+        <div v-for="stat in content.stats" :key="stat.label">
           <div class="font-display text-3xl font-extrabold text-red-400 mb-1">
             {{ stat.value }}
           </div>
@@ -568,22 +257,21 @@ const faqs = [
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="alert-triangle" class-name="w-3.5 h-3.5" />
-            El problema real
+            {{ content.ui.painBadge }}
           </div>
           <h2
             class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            ¿Tu salón sigue vendiendo por WhatsApp?
+            {{ content.ui.painTitle }}
           </h2>
           <p class="text-neutral-400 max-w-xl mx-auto">
-            Cada día sin un sistema web profesional pierdes reservaciones,
-            tiempo y la confianza de clientes que buscan en Google.
+            {{ content.ui.painSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div
-            v-for="point in painPoints"
+            v-for="point in content.painPoints"
             :key="point.title"
             class="flex gap-4 p-6 rounded-2xl border border-red-500/10 hover:border-red-500/20 transition"
             style="background: #111"
@@ -638,17 +326,16 @@ const faqs = [
                 class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-6"
               >
                 <LucideIcon name="eye" class-name="w-3.5 h-3.5" />
-                Demo interactivo disponible
+                {{ content.ui.demoBadge }}
               </div>
               <h2
                 class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4 leading-tight"
               >
-                Prueba el sistema de tu salón<br />
-                <span class="text-red-400">antes de comprometerte</span>
+                {{ content.ui.demoTitleLine1 }}<br />
+                <span class="text-red-400">{{ content.ui.demoTitleHighlight }}</span>
               </h2>
               <p class="text-neutral-400 mb-8 leading-relaxed">
-                Navega por una demo real con galería, cotizador, agenda y
-                WhatsApp. Exactamente así se verá la página de tu salón.
+                {{ content.ui.demoSubtitle }}
               </p>
               <div class="flex flex-col sm:flex-row gap-4">
                 <RouterLink
@@ -656,7 +343,7 @@ const faqs = [
                   class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-red-500 text-neutral-950 font-bold text-sm hover:bg-red-400 transition-all hover:scale-105 shadow-[0_0_20px_rgba(239,68,68,0.25)]"
                 >
                   <LucideIcon name="smartphone" class-name="w-4 h-4" />
-                  Abrir demo interactivo
+                  {{ content.ui.demoCtaOpen }}
                 </RouterLink>
                 <a
                   :href="waDemo"
@@ -664,7 +351,7 @@ const faqs = [
                   rel="noopener noreferrer"
                   class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-red-500/30 text-red-400 font-semibold text-sm hover:bg-red-500/10 transition"
                 >
-                  Quiero el mío así
+                  {{ content.ui.demoCtaWant }}
                   <LucideIcon name="arrow-right" class-name="w-4 h-4" />
                 </a>
               </div>
@@ -672,14 +359,7 @@ const faqs = [
 
             <div class="grid grid-cols-2 gap-3">
               <div
-                v-for="chip in [
-                  { icon: 'calculator', text: 'Cotizador en vivo' },
-                  { icon: 'calendar-days', text: 'Agenda disponible' },
-                  { icon: 'images', text: 'Galería premium' },
-                  { icon: 'message-circle', text: 'WhatsApp directo' },
-                  { icon: 'map-pin', text: 'Mapa integrado' },
-                  { icon: 'smartphone', text: 'Fluido en móvil' },
-                ]"
+                v-for="chip in content.demoChips"
                 :key="chip.text"
                 class="flex items-center gap-3 p-4 rounded-xl border border-red-500/10"
                 style="background: rgba(239, 68, 68, 0.04)"
@@ -710,22 +390,21 @@ const faqs = [
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="star" class-name="w-3.5 h-3.5" />
-            Todo lo que incluye
+            {{ content.ui.featuresBadge }}
           </div>
           <h2
             class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            Un sistema que trabaja por ti
+            {{ content.ui.featuresTitle }}
           </h2>
           <p class="text-neutral-400 max-w-xl mx-auto">
-            Cada función está diseñada para convertir visitas en reservaciones
-            y liberarte del WhatsApp repetitivo.
+            {{ content.ui.featuresSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <div
-            v-for="feature in features"
+            v-for="feature in content.features"
             :key="feature.title"
             class="p-6 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition-all hover:-translate-y-0.5"
             style="background: #111"
@@ -760,16 +439,15 @@ const faqs = [
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="map" class-name="w-3.5 h-3.5" />
-            Proceso
+            {{ content.ui.processBadge }}
           </div>
           <h2
             class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            De cero a recibir leads en 3 pasos
+            {{ content.ui.processTitle }}
           </h2>
           <p class="text-neutral-400 max-w-lg mx-auto">
-            Sin complicaciones técnicas. Tú pones el salón, nosotros ponemos
-            el sistema.
+            {{ content.ui.processSubtitle }}
           </p>
         </div>
 
@@ -779,7 +457,7 @@ const faqs = [
           ></div>
 
           <div
-            v-for="step in steps"
+            v-for="step in content.steps"
             :key="step.number"
             class="text-center relative"
           >
@@ -796,7 +474,7 @@ const faqs = [
               />
             </div>
             <div :class="['font-display text-xs font-bold mb-2', step.color]">
-              PASO {{ step.number }}
+              {{ content.ui.stepLabel }} {{ step.number }}
             </div>
             <h3 class="text-white font-bold text-base mb-2">
               {{ step.title }}
@@ -814,7 +492,7 @@ const faqs = [
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-red-500 text-neutral-950 font-bold text-sm hover:bg-red-400 transition-all hover:scale-105"
           >
-            Empezar ahora
+            {{ content.ui.processCta }}
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
           </a>
         </div>
@@ -829,21 +507,21 @@ const faqs = [
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="message-square" class-name="w-3.5 h-3.5" />
-            Testimoniales
+            {{ content.ui.testimonialsBadge }}
           </div>
           <h2
             class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            Lo que dicen otros dueños de salones
+            {{ content.ui.testimonialsTitle }}
           </h2>
           <p class="text-neutral-400 max-w-lg mx-auto">
-            Salones reales, resultados reales.
+            {{ content.ui.testimonialsSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
-            v-for="t in testimonials"
+            v-for="t in content.testimonials"
             :key="t.name"
             class="p-7 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition flex flex-col"
             style="background: #111"
@@ -889,22 +567,21 @@ const faqs = [
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="tag" class-name="w-3.5 h-3.5" />
-            Planes y precios
+            {{ content.ui.pricingBadge }}
           </div>
           <h2
             class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            Elige el plan para tu salón
+            {{ content.ui.pricingTitle }}
           </h2>
           <p class="text-neutral-400 max-w-xl mx-auto">
-            Pago único, sin mensualidades ni sorpresas. Hosting incluido el
-            primer año. Todos incluyen garantía.
+            {{ content.ui.pricingSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
-            v-for="pkg in salonPackages"
+            v-for="pkg in content.packages"
             :key="pkg.name"
             :class="[
               'relative flex flex-col rounded-2xl border p-7 transition-all',
@@ -964,7 +641,7 @@ const faqs = [
                 {{ pkg.price }}
               </span>
               <span class="text-neutral-500 text-sm ml-2"
-                >MXN · {{ pkg.period }}</span
+                >{{ isEn ? "USD" : "MXN" }} · {{ pkg.period }}</span
               >
             </div>
 
@@ -995,7 +672,7 @@ const faqs = [
 
             <div class="space-y-2.5">
               <a
-                :href="pkg.wa"
+                :href="pkgWaUrl(pkg.waKey)"
                 target="_blank"
                 rel="noopener noreferrer"
                 :class="[
@@ -1007,15 +684,15 @@ const faqs = [
                       : 'bg-neutral-700 text-white hover:bg-neutral-600',
                 ]"
               >
-                Contratar {{ pkg.name }}
+                {{ content.ui.hirePlan }} {{ pkg.name }}
                 <LucideIcon name="arrow-right" class-name="w-4 h-4" />
               </a>
               <RouterLink
-                to="/salones-eventos/demo"
+                :to="pkg.demo"
                 class="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-neutral-700 text-neutral-400 text-sm hover:text-white hover:border-neutral-600 transition"
               >
                 <LucideIcon name="play" class-name="w-3.5 h-3.5" />
-                Ver demo
+                {{ content.ui.viewDemo }}
               </RouterLink>
             </div>
           </div>
@@ -1029,35 +706,35 @@ const faqs = [
         <h2
           class="font-display text-2xl font-bold text-white text-center mb-10"
         >
-          Comparación detallada de planes
+          {{ content.ui.comparisonTitle }}
         </h2>
         <div class="overflow-x-auto rounded-2xl border border-neutral-800">
           <table class="w-full text-sm">
             <thead>
               <tr class="border-b border-neutral-800" style="background: #111">
                 <th class="text-left py-4 px-6 text-neutral-400 font-medium">
-                  Característica
+                  {{ content.ui.comparisonFeatureHeader }}
                 </th>
                 <th
                   class="text-center py-4 px-4 text-white font-semibold whitespace-nowrap"
                 >
-                  Esencial
+                  {{ content.ui.comparisonEssential }}
                 </th>
                 <th
                   class="text-center py-4 px-4 text-red-400 font-semibold whitespace-nowrap"
                 >
-                  Pro
+                  {{ content.ui.comparisonPro }}
                 </th>
                 <th
                   class="text-center py-4 px-4 text-violet-400 font-semibold whitespace-nowrap"
                 >
-                  Premium VIP
+                  {{ content.ui.comparisonPremium }}
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr
-                v-for="row in salonComparisonRows"
+                v-for="row in content.comparisonRows"
                 :key="row.feature"
                 class="border-b border-neutral-800/50 last:border-0 hover:bg-red-500/5 transition-colors"
                 style="background: #0f0f0f"
@@ -1104,22 +781,21 @@ const faqs = [
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="help-circle" class-name="w-3.5 h-3.5" />
-            Preguntas frecuentes
+            {{ content.ui.faqBadge }}
           </div>
           <h2
             class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            Resolvemos tus dudas
+            {{ content.ui.faqTitle }}
           </h2>
           <p class="text-neutral-400">
-            Si tienes más preguntas, escríbenos por WhatsApp — respondemos
-            rápido.
+            {{ content.ui.faqSubtitle }}
           </p>
         </div>
 
         <div class="space-y-3">
           <div
-            v-for="(faq, i) in faqs"
+            v-for="(faq, i) in content.faqs"
             :key="i"
             class="rounded-2xl border border-neutral-800 overflow-hidden transition-all"
             :class="openFaq === i ? 'border-red-500/30' : ''"
@@ -1145,12 +821,12 @@ const faqs = [
 
         <div class="text-center mt-10">
           <a
-            :href="waCotizar"
+            :href="waContratar"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 text-red-400 text-sm font-semibold hover:text-red-300 transition"
           >
-            ¿Tienes otra pregunta? Escríbenos
+            {{ content.ui.faqMoreQuestions }}
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
           </a>
         </div>
@@ -1183,23 +859,22 @@ const faqs = [
               class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-7"
             >
               <LucideIcon name="calendar-clock" class-name="w-3.5 h-3.5" />
-              Demo 21 días — Oferta especial
+              {{ content.ui.demo21Badge }}
             </div>
 
             <h2
               class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
             >
-              ¿Quieres probarlo antes de decidir?
+              {{ content.ui.demo21Title }}
             </h2>
             <p
               class="text-neutral-400 max-w-2xl mx-auto mb-10 text-base leading-relaxed"
             >
-              Por solo
-              <span class="text-red-400 font-bold">$999 MXN</span> armamos el
-              sitio de tu salón con tu contenido real — publicado y funcionando
-              durante <strong class="text-white">21 días</strong>. Si luego
-              contratas, los $999 se descuentan del anticipo. No pagas nada
-              extra.
+              {{ content.ui.demo21DescBefore }}
+              <span class="text-red-400 font-bold">{{ content.demo21Price }}</span>
+              {{ content.ui.demo21DescAfter }}
+              <strong class="text-white">{{ content.ui.demo21Days }}</strong>.
+              {{ content.ui.demo21DescEnd }}
             </p>
 
             <div
@@ -1218,10 +893,10 @@ const faqs = [
                   />
                 </div>
                 <p class="text-white font-semibold text-sm mb-1">
-                  Tu salón real
+                  {{ content.ui.demo21Card1Title }}
                 </p>
                 <p class="text-neutral-500 text-xs">
-                  Con tus fotos, paquetes y precios reales
+                  {{ content.ui.demo21Card1Desc }}
                 </p>
               </div>
               <div
@@ -1237,10 +912,10 @@ const faqs = [
                   />
                 </div>
                 <p class="text-white font-semibold text-sm mb-1">
-                  Publicado y funcional
+                  {{ content.ui.demo21Card2Title }}
                 </p>
                 <p class="text-neutral-500 text-xs">
-                  Compartible en redes y WhatsApp
+                  {{ content.ui.demo21Card2Desc }}
                 </p>
               </div>
               <div
@@ -1256,10 +931,10 @@ const faqs = [
                   />
                 </div>
                 <p class="text-white font-semibold text-sm mb-1">
-                  Se descuenta al contratar
+                  {{ content.ui.demo21Card3Title }}
                 </p>
                 <p class="text-neutral-500 text-xs">
-                  Los $999 se restan del anticipo de cualquier plan
+                  {{ content.ui.demo21Card3Desc }}
                 </p>
               </div>
             </div>
@@ -1270,7 +945,7 @@ const faqs = [
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-red-500 text-black font-bold text-sm hover:bg-red-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(239,68,68,0.3)]"
             >
-              Quiero mi demo de 21 días
+              {{ content.ui.demo21Cta }}
               <LucideIcon name="arrow-right" class-name="w-4 h-4" />
             </a>
           </div>
@@ -1290,32 +965,31 @@ const faqs = [
         <h2
           class="font-display text-4xl sm:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight"
         >
-          Lleva tu salón al<br />
-          <span class="text-red-400">siguiente nivel</span>
+          {{ content.ui.finalTitleLine1 }}<br />
+          <span class="text-red-400">{{ content.ui.finalTitleHighlight }}</span>
         </h2>
         <p
           class="text-neutral-400 mb-10 text-lg max-w-xl mx-auto leading-relaxed"
         >
-          Empieza hoy. Escríbenos por WhatsApp y en pocas semanas tu salón ya
-          tiene un sistema que vende eventos mientras duermes.
+          {{ content.ui.finalSubtitle }}
         </p>
 
         <div
           class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
         >
           <a
-            :href="waCotizar"
+            :href="waContratar"
             target="_blank"
             rel="noopener noreferrer"
             class="px-10 py-4 rounded-full bg-red-500 text-neutral-950 font-bold text-sm hover:bg-red-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(239,68,68,0.25)]"
           >
-            Cotizar mi sistema
+            {{ content.ui.finalCtaQuote }}
           </a>
           <RouterLink
             to="/salones-eventos/demo"
             class="px-10 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-red-500/30 hover:text-white transition"
           >
-            Ver demo primero
+            {{ content.ui.finalCtaDemo }}
           </RouterLink>
         </div>
 
@@ -1327,28 +1001,28 @@ const faqs = [
               name="shield-check"
               class-name="w-3.5 h-3.5 text-red-500/60"
             />
-            Garantía de resultados
+            {{ content.ui.finalTrustGuarantee }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="clock"
               class-name="w-3.5 h-3.5 text-red-500/60"
             />
-            Entrega en 2–5 semanas
+            {{ content.ui.finalTrustDelivery }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="headphones"
               class-name="w-3.5 h-3.5 text-red-500/60"
             />
-            Soporte en español
+            {{ content.ui.finalTrustSupport }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="calendar-check"
               class-name="w-3.5 h-3.5 text-red-500/60"
             />
-            Cotizador y agenda incluidos
+            {{ content.ui.finalTrustQuoteAgenda }}
           </span>
         </div>
       </div>

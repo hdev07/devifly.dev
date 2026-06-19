@@ -7,7 +7,7 @@ export const siteConfig = {
   whatsappNumber: '525635926679',
   githubUrl: 'https://github.com/devifly-tech',
   linkedinUrl: 'https://www.linkedin.com/company/devifly-dev',
-  ogImage: 'https://devifly.dev/og-image.png',
+  ogImage: 'https://devifly.dev/og-image.svg',
   xHandle: '@deviflydev',
 }
 

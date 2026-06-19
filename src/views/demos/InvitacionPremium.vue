@@ -16,7 +16,7 @@
         class="flex items-center gap-2 text-sm text-white/40 hover:text-white transition-colors"
       >
         <LucideIcon name="chevron-left" class-name="w-4 h-4" />
-        <span class="hidden sm:inline">Paquetes</span>
+        <span class="hidden sm:inline">{{ copy.packages }}</span>
       </router-link>
       <div class="flex items-center gap-2">
         <span
@@ -26,7 +26,7 @@
             border: 1px solid rgba(198, 167, 94, 0.3);
             background: rgba(198, 167, 94, 0.08);
           "
-          >Demo — Plan Premium</span
+          >{{ copy.demo }} — Plan Premium</span
         >
         <button
           v-for="(guest, i) in demoGuests"
@@ -43,11 +43,11 @@
           {{ guest.shortName }}
         </button>
         <button
-          @click="lang = lang === 'es' ? 'en' : 'es'"
+          @click="locale = locale === 'es' ? 'en' : 'es'"
           class="text-xs px-3 py-1 rounded-full transition"
           style="border: 1px solid rgba(198, 167, 94, 0.2); color: #c6a75e"
         >
-          {{ lang === "es" ? "EN" : "ES" }}
+          {{ locale === "es" ? "EN" : "ES" }}
         </button>
       </div>
       <a
@@ -57,7 +57,7 @@
         class="text-sm font-semibold transition-colors"
         style="color: #c6a75e"
         ><span class="inline-flex items-center gap-1"
-          >Contratar
+          >{{ copy.hire }}
           <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" /></span
       ></a>
     </div>
@@ -1047,11 +1047,16 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
+import { useI18n } from "vue-i18n";
 import LucideIcon from "../../components/LucideIcon.vue";
+import { useDemoChrome } from "../../composables/useDemoChrome.js";
+
+const { locale } = useI18n();
+const { copy } = useDemoChrome();
 
 const waContratar = `https://wa.me/+525635926679?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Premium de invitaciones digitales y me interesa contratarlo 💎")}`;
 
-const lang = ref("es");
+const lang = locale;
 const musicOn = ref(false);
 const audioRef = ref(null);
 const rsvpOpen = ref(false);

@@ -4,335 +4,27 @@
  * Estilo visual: Spotify dark — acento ámbar navbar (#f59e0b)
  * Secciones: Hero · Stats · Pain · Demo Preview · Features · How it Works · Testimonials · Pricing · FAQ · Demo 21d · CTA Final
  */
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { RouterLink } from "vue-router";
 import LucideIcon from "../../components/LucideIcon.vue";
+import { useLocaleContent } from "../../composables/useLocaleContent.js";
+import { landingMenusContent } from "../../data/landings/landingMenus.js";
 
 const WA = "+525635926679";
-const waDemo = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Tengo un restaurante y me interesa el menú digital interactivo 🍽️")}`;
-const waContratar = `https://wa.me/${WA}?text=${encodeURIComponent("Quiero cotizar un menú digital para mi restaurante 🍽️")}`;
-const waDemo21 = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el demo de 21 días del menú digital por $999 MXN 🍽️")}`;
-const waSmall = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el menú digital plan Esencial ($3,999 MXN) 🍽️")}`;
-const waMedium = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el menú digital plan Profesional ($7,999 MXN) 🍽️")}`;
-const waLarge = `https://wa.me/${WA}?text=${encodeURIComponent("¡Hola! Me interesa el menú digital plan Enterprise ($14,999 MXN) 🍽️")}`;
+const { content, isEn } = useLocaleContent(landingMenusContent);
+
+const waUrl = (text) => `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
+
+const waDemo = computed(() => waUrl(content.value.wa.demo));
+const waContratar = computed(() => waUrl(content.value.wa.hire));
+const waDemo21 = computed(() => waUrl(content.value.wa.demo21));
+
+const pkgWaUrl = (waKey) => waUrl(content.value.wa[waKey]);
 
 const openFaq = ref(null);
 const toggleFaq = (i) => {
   openFaq.value = openFaq.value === i ? null : i;
 };
-
-const stats = [
-  { value: "+120", label: "Menús activos" },
-  { value: "+80", label: "Restaurantes" },
-  { value: "98%", label: "Satisfacción" },
-  { value: "< 5 días", label: "Entrega" },
-];
-
-const painPoints = [
-  {
-    icon: "printer",
-    title: "Impresión cara, sin fin",
-    desc: "Cada vez que cambia un precio o un platillo, tienes que reimprimir todo. Tiempo y dinero perdido.",
-  },
-  {
-    icon: "wifi-off",
-    title: "Sin presencia digital real",
-    desc: "Un cliente busca tu restaurante en Google o Instagram y no puede ver tu menú fácilmente.",
-  },
-  {
-    icon: "bar-chart-2",
-    title: "Cero datos de tu negocio",
-    desc: "No sabes qué platillos son los más vistos, ni cuándo hay más tráfico en tu menú.",
-  },
-  {
-    icon: "frown",
-    title: "Mala experiencia del cliente",
-    desc: "Menús sucios, ilegibles o desactualizados generan desconfianza y reducen el ticket promedio.",
-  },
-];
-
-const features = [
-  {
-    icon: "smartphone",
-    title: "Mobile-first premium",
-    desc: "Diseñado para verse perfecto en el celular, donde el 95% de tus clientes lo abrirán.",
-    color: "text-amber-400",
-    bg: "bg-amber-500/10",
-  },
-  {
-    icon: "search",
-    title: "Buscador de platillos",
-    desc: "Tus clientes encuentran lo que quieren al instante. Sin scrollear interminablemente.",
-    color: "text-amber-400",
-    bg: "bg-amber-500/10",
-  },
-  {
-    icon: "qr-code",
-    title: "QR code personalizado",
-    desc: "Un QR con tu marca para poner en mesas, mostrador, redes sociales o tarjetas.",
-    color: "text-amber-400",
-    bg: "bg-amber-500/10",
-  },
-  {
-    icon: "pencil",
-    title: "Precios siempre al día",
-    desc: "Actualiza precios o platillos sin reimprimir nada. Cambia lo que necesites cuando quieras.",
-    color: "text-amber-400",
-    bg: "bg-amber-500/10",
-  },
-  {
-    icon: "tag",
-    title: "Promociones con banner",
-    desc: "Destaca tus promos del día o platillos especiales en un banner visual irresistible.",
-    color: "text-amber-400",
-    bg: "bg-amber-500/10",
-  },
-  {
-    icon: "layers",
-    title: "Categorías y subcategorías",
-    desc: "Organiza entradas, platos fuertes, postres, bebidas y más con una navegación limpia.",
-    color: "text-amber-400",
-    bg: "bg-amber-500/10",
-  },
-  {
-    icon: "image",
-    title: "Fotos de alta calidad",
-    desc: "Las fotos venden. Cada platillo puede tener su imagen apetecible y descripción detallada.",
-    color: "text-amber-400",
-    bg: "bg-amber-500/10",
-  },
-  {
-    icon: "shield-check",
-    title: "Alérgenos e ingredientes",
-    desc: "Información de alérgenos y porciones para clientes exigentes y cumplir normas sanitarias.",
-    color: "text-amber-400",
-    bg: "bg-amber-500/10",
-  },
-  {
-    icon: "globe",
-    title: "Dominio personalizado",
-    desc: "Tu menú en menu.turestaurante.com — no en una app genérica ni con branding ajeno.",
-    color: "text-violet-400",
-    bg: "bg-violet-500/10",
-  },
-  {
-    icon: "building-2",
-    title: "Multi-sucursal",
-    desc: "Un sistema central, múltiples sucursales. Gestiona todo desde un solo lugar.",
-    color: "text-violet-400",
-    bg: "bg-violet-500/10",
-  },
-];
-
-const steps = [
-  {
-    number: "01",
-    icon: "message-circle",
-    title: "Nos compartes tu menú",
-    desc: "Envíanos tu menú actual (foto, PDF o lista). Recopilamos platillos, categorías y precios.",
-    color: "text-amber-400",
-    border: "border-amber-500/30",
-    bg: "bg-amber-500/10",
-  },
-  {
-    number: "02",
-    icon: "palette",
-    title: "Diseñamos y construimos",
-    desc: "En menos de 5 días hábiles tienes tu menú digital publicado, con tu imagen y estilo.",
-    color: "text-amber-400",
-    border: "border-amber-500/30",
-    bg: "bg-amber-500/10",
-  },
-  {
-    number: "03",
-    icon: "qr-code",
-    title: "Listo para usar",
-    desc: "Te entregamos tu QR y link. Ponlo en las mesas y listo — tu restaurante al siguiente nivel.",
-    color: "text-violet-400",
-    border: "border-violet-500/30",
-    bg: "bg-violet-500/10",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Carlos Ramírez",
-    role: "Dueño de Taquería El Patrón, CDMX",
-    avatar: "CR",
-    avatarBg: "bg-amber-500/20",
-    avatarColor: "text-amber-400",
-    text: "Antes imprimía 200 menús cada mes por cambios de precio. Ahora actualizo desde el celular en 2 minutos. Me ahorré más de $3,000 pesos en el primer mes solo en impresiones.",
-    stars: 5,
-  },
-  {
-    name: "Sofía Torres",
-    role: "Gerente de Restaurante Fusión, Guadalajara",
-    avatar: "ST",
-    avatarBg: "bg-amber-500/20",
-    avatarColor: "text-amber-400",
-    text: "Nuestros clientes nos dicen que el menú se ve increíble. Lo comparten en sus historias de Instagram y eso nos ha traído nuevos clientes. El buscador es una maravilla para menús largos.",
-    stars: 5,
-  },
-  {
-    name: "Miguel Ángel Díaz",
-    role: "Food Truck Birrias Mike, Monterrey",
-    avatar: "MD",
-    avatarBg: "bg-violet-500/20",
-    avatarColor: "text-violet-400",
-    text: "Para un food truck es perfecto. Cambio el menú del día en segundos y mis clientes ya saben que lo pueden ver antes de llegar. Esto me genera ventas anticipadas todos los días.",
-    stars: 5,
-  },
-];
-
-const menuPackages = [
-  {
-    name: "Esencial",
-    icon: "store",
-    price: "$3,999",
-    period: "pago único",
-    tagline: "Para restaurantes pequeños y food trucks",
-    demo: "/menus-digitales/demo",
-    wa: waSmall,
-    highlighted: false,
-    badge: null,
-    vip: false,
-    features: [
-      "Diseño mobile-first premium",
-      "Hasta 30 platillos",
-      "Categorías con fotos",
-      "Precios actualizables",
-      "QR code personalizado",
-      "Dominio incluido (.devifly.dev)",
-      "Deploy y hosting 1 año",
-    ],
-    excluded: [
-      "Buscador de platillos",
-      "Sección de promociones con banner",
-      "Detalle con alérgenos y porciones",
-      "Dominio personalizado (.com)",
-      "Panel para editar platillos",
-      "Múltiples sucursales",
-    ],
-  },
-  {
-    name: "Profesional",
-    icon: "utensils",
-    price: "$7,999",
-    period: "pago único",
-    tagline: "Para restaurantes medianos en crecimiento",
-    demo: "/menus-digitales/pro",
-    wa: waMedium,
-    highlighted: true,
-    badge: "Más popular",
-    vip: false,
-    features: [
-      "Todo lo de Esencial",
-      "Hasta 100 platillos",
-      "Subcategorías ilimitadas",
-      "Sección de promociones con banner",
-      "Buscador de productos",
-      "Detalle con alérgenos y porciones",
-      "Dominio personalizado (.com)",
-      "Panel básico para editar platillos",
-    ],
-    excluded: ["Platillos ilimitados", "Múltiples sucursales"],
-  },
-  {
-    name: "Enterprise",
-    icon: "building-2",
-    price: "$14,999",
-    period: "pago único",
-    tagline: "Para cadenas y restaurantes con varias sucursales",
-    demo: "/menus-digitales/premium",
-    wa: waLarge,
-    highlighted: false,
-    badge: "Completo",
-    vip: true,
-    features: [
-      "Todo lo de Profesional",
-      "Platillos ilimitados",
-      "Múltiples sucursales",
-      "Panel avanzado multi-sucursal",
-      "Integración con redes sociales",
-      "Analíticas de visitas básicas",
-      "Soporte prioritario",
-      "Onboarding personalizado",
-    ],
-    excluded: [],
-  },
-];
-
-const menuComparisonRows = [
-  { feature: "Diseño mobile-first", small: true, medium: true, large: true },
-  { feature: "Categorías con fotos", small: true, medium: true, large: true },
-  { feature: "Precios actualizables", small: true, medium: true, large: true },
-  { feature: "QR code personalizado", small: true, medium: true, large: true },
-  { feature: "Hosting 1 año incluido", small: true, medium: true, large: true },
-  { feature: "Hasta 30 platillos", small: true, medium: false, large: false },
-  { feature: "Hasta 100 platillos", small: false, medium: true, large: false },
-  { feature: "Platillos ilimitados", small: false, medium: false, large: true },
-  {
-    feature: "Subcategorías ilimitadas",
-    small: false,
-    medium: true,
-    large: true,
-  },
-  { feature: "Banner de promociones", small: false, medium: true, large: true },
-  { feature: "Buscador de platillos", small: false, medium: true, large: true },
-  { feature: "Alérgenos y porciones", small: false, medium: true, large: true },
-  {
-    feature: "Dominio personalizado (.com)",
-    small: false,
-    medium: true,
-    large: true,
-  },
-  {
-    feature: "Panel para editar platillos",
-    small: false,
-    medium: true,
-    large: true,
-  },
-  { feature: "Múltiples sucursales", small: false, medium: false, large: true },
-  { feature: "Panel multi-sucursal", small: false, medium: false, large: true },
-  {
-    feature: "Analíticas de visitas",
-    small: false,
-    medium: false,
-    large: true,
-  },
-  { feature: "Soporte prioritario", small: false, medium: false, large: true },
-];
-
-const faqs = [
-  {
-    q: "¿En cuánto tiempo me entregan el menú digital?",
-    a: "En menos de 5 días hábiles desde que nos compartes tu menú y materiales (fotos, platillos, precios). Si tienes todo listo, podemos ser incluso más rápidos.",
-  },
-  {
-    q: "¿Puedo actualizar precios y platillos yo mismo?",
-    a: "En los planes Profesional y Enterprise incluimos un panel básico para que tú o tu equipo puedan actualizar precios, platillos y descripciones sin depender de nosotros. En el plan Esencial, los cambios los gestiona el equipo de Devifly.",
-  },
-  {
-    q: "¿El menú funciona sin que el cliente descargue ninguna app?",
-    a: "Sí, totalmente. El menú digital es una página web — se abre directo desde el celular al escanear el QR o tocar el link. Cero descargas, cero registros, cero fricción.",
-  },
-  {
-    q: "¿Qué pasa después del primer año de hosting?",
-    a: "Al finalizar el primer año, el hosting tiene un costo de renovación de $1,200 MXN/año por plan Esencial, $1,800 MXN/año por Profesional y $2,400 MXN/año por Enterprise. Te avisamos con anticipación.",
-  },
-  {
-    q: "¿Puedo usar mi propio dominio (menu.mirestaurante.com)?",
-    a: "Sí, en los planes Profesional y Enterprise incluimos la configuración del dominio personalizado. Si ya tienes un dominio, lo conectamos; si no, te ayudamos a conseguirlo.",
-  },
-  {
-    q: "¿El menú se ve bien en todos los celulares?",
-    a: "Absolutamente. Está diseñado con enfoque mobile-first y probado en iOS y Android, en Chrome, Safari y otros navegadores. Se adapta a cualquier tamaño de pantalla.",
-  },
-  {
-    q: "¿Puedo ver una demo antes de contratar?",
-    a: "Sí. Puedes ver la demo genérica ahora mismo desde esta página. Además, ofrecemos un Demo de 21 días con tu menú real por $999 MXN — si luego contratas, ese monto se descuenta del anticipo.",
-  },
-];
 </script>
 
 <template>
@@ -363,20 +55,18 @@ const faqs = [
               <span
                 class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"
               ></span>
-              Menús Digitales Interactivos
+              {{ content.ui.heroBadge }}
             </div>
 
             <h1
               class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.05] tracking-tight mb-6"
             >
-              Tu restaurante merece un menú que
-              <span class="text-amber-400"> venda más</span>
+              {{ content.ui.heroTitleBefore }}
+              <span class="text-amber-400">{{ content.ui.heroTitleHighlight }}</span>
             </h1>
 
             <p class="text-neutral-400 text-lg leading-relaxed mb-8 max-w-xl">
-              Menú digital premium con QR personalizado, fotos de tus platillos,
-              buscador y precios siempre al día. Sin apps, sin impresiones, sin
-              complicaciones.
+              {{ content.ui.heroSubtitle }}
             </p>
 
             <!-- CTAs -->
@@ -386,7 +76,7 @@ const faqs = [
                 class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-amber-500 text-neutral-950 font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(245,158,11,0.3)]"
               >
                 <LucideIcon name="play-circle" class-name="w-4 h-4" />
-                Ver demo en vivo
+                {{ content.ui.heroCtaDemo }}
               </RouterLink>
               <a
                 :href="waContratar"
@@ -394,7 +84,7 @@ const faqs = [
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-amber-500/40 hover:text-white transition"
               >
-                Cotizar mi menú
+                {{ content.ui.heroCtaQuote }}
                 <LucideIcon name="arrow-right" class-name="w-4 h-4" />
               </a>
             </div>
@@ -406,7 +96,7 @@ const faqs = [
                   name="check-circle"
                   class-name="w-3.5 h-3.5 text-amber-400"
                 />
-                Sin app que descargar
+                {{ content.ui.heroTrustNoApp }}
               </span>
               <span class="w-px h-3 bg-neutral-700"></span>
               <span class="flex items-center gap-1">
@@ -414,7 +104,7 @@ const faqs = [
                   name="check-circle"
                   class-name="w-3.5 h-3.5 text-amber-400"
                 />
-                Entrega en &lt; 5 días
+                {{ content.ui.heroTrustDelivery }}
               </span>
               <span class="w-px h-3 bg-neutral-700"></span>
               <span class="flex items-center gap-1">
@@ -422,7 +112,7 @@ const faqs = [
                   name="check-circle"
                   class-name="w-3.5 h-3.5 text-amber-400"
                 />
-                QR incluido
+                {{ content.ui.heroTrustQr }}
               </span>
             </div>
           </div>
@@ -465,10 +155,10 @@ const faqs = [
                       <div
                         class="text-amber-400 text-xs font-bold tracking-widest uppercase"
                       >
-                        Restaurante
+                        {{ content.ui.mockRestaurantLabel }}
                       </div>
                       <div class="text-white text-sm font-semibold">
-                        El Patrón
+                        {{ content.ui.mockRestaurantName }}
                       </div>
                     </div>
                     <div
@@ -488,42 +178,22 @@ const faqs = [
                   style="background: #111"
                 >
                   <span
-                    class="px-3 py-1 rounded-full bg-amber-500 text-black text-[10px] font-bold whitespace-nowrap"
-                    >Tacos</span
-                  >
-                  <span
-                    class="px-3 py-1 rounded-full bg-white/10 text-white/60 text-[10px] whitespace-nowrap"
-                    >Bebidas</span
-                  >
-                  <span
-                    class="px-3 py-1 rounded-full bg-white/10 text-white/60 text-[10px] whitespace-nowrap"
-                    >Postres</span
+                    v-for="(cat, i) in content.ui.mockCategories"
+                    :key="cat"
+                    :class="[
+                      'px-3 py-1 rounded-full text-[10px] whitespace-nowrap',
+                      i === 0
+                        ? 'bg-amber-500 text-black font-bold'
+                        : 'bg-white/10 text-white/60',
+                    ]"
+                    >{{ cat }}</span
                   >
                 </div>
 
                 <!-- Menu items -->
                 <div class="px-4 py-3 space-y-3" style="background: #0f0f0f">
                   <div
-                    v-for="item in [
-                      {
-                        name: 'Taco de Birria',
-                        price: '$45',
-                        img: '🌮',
-                        badge: null,
-                      },
-                      {
-                        name: 'Orden Volcanes',
-                        price: '$89',
-                        img: '🔥',
-                        badge: 'Popular',
-                      },
-                      {
-                        name: 'Agua de Jamaica',
-                        price: '$25',
-                        img: '🧃',
-                        badge: null,
-                      },
-                    ]"
+                    v-for="item in content.mockItems"
                     :key="item.name"
                     class="flex items-center gap-3 p-2.5 rounded-xl border border-white/5"
                     style="background: #1a1a1a"
@@ -542,7 +212,7 @@ const faqs = [
                         <span
                           v-if="item.badge"
                           class="px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400 text-[9px] font-bold"
-                          >{{ item.badge }}</span
+                          >{{ content.ui.mockPopularBadge }}</span
                         >
                       </div>
                       <p class="text-amber-400 text-xs font-bold">
@@ -557,9 +227,9 @@ const faqs = [
                       name="qr-code"
                       class-name="w-3.5 h-3.5 text-neutral-600"
                     />
-                    <span class="text-neutral-600 text-[10px]"
-                      >menu.elpatron.com</span
-                    >
+                    <span class="text-neutral-600 text-[10px]">{{
+                      content.ui.mockDomain
+                    }}</span>
                   </div>
                 </div>
               </div>
@@ -577,7 +247,7 @@ const faqs = [
       <div
         class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center"
       >
-        <div v-for="stat in stats" :key="stat.label">
+        <div v-for="stat in content.stats" :key="stat.label">
           <div class="font-display text-3xl font-extrabold text-amber-400 mb-1">
             {{ stat.value }}
           </div>
@@ -594,22 +264,21 @@ const faqs = [
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="alert-triangle" class-name="w-3.5 h-3.5" />
-            El problema real
+            {{ content.ui.painBadge }}
           </div>
           <h2
             class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            ¿Todavía usas menú físico?
+            {{ content.ui.painTitle }}
           </h2>
           <p class="text-neutral-400 max-w-xl mx-auto">
-            Cada día que sigues con el menú de papel, estás perdiendo dinero,
-            clientes y oportunidades.
+            {{ content.ui.painSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div
-            v-for="point in painPoints"
+            v-for="point in content.painPoints"
             :key="point.title"
             class="flex gap-4 p-6 rounded-2xl border border-red-500/10 hover:border-red-500/20 transition"
             style="background: #111"
@@ -665,17 +334,16 @@ const faqs = [
                 class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-6"
               >
                 <LucideIcon name="eye" class-name="w-3.5 h-3.5" />
-                Demo interactivo disponible
+                {{ content.ui.demoBadge }}
               </div>
               <h2
                 class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4 leading-tight"
               >
-                Prueba el menú digital<br />
-                <span class="text-amber-400">antes de comprometerte</span>
+                {{ content.ui.demoTitleLine1 }}<br />
+                <span class="text-amber-400">{{ content.ui.demoTitleHighlight }}</span>
               </h2>
               <p class="text-neutral-400 mb-8 leading-relaxed">
-                Navega por una demo real con platillos, fotos, buscador y QR.
-                Exactamente así se verá el menú de tu restaurante.
+                {{ content.ui.demoSubtitle }}
               </p>
               <div class="flex flex-col sm:flex-row gap-4">
                 <RouterLink
@@ -683,7 +351,7 @@ const faqs = [
                   class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-amber-500 text-neutral-950 font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105 shadow-[0_0_20px_rgba(245,158,11,0.25)]"
                 >
                   <LucideIcon name="smartphone" class-name="w-4 h-4" />
-                  Abrir demo interactivo
+                  {{ content.ui.demoCtaOpen }}
                 </RouterLink>
                 <a
                   :href="waDemo"
@@ -691,7 +359,7 @@ const faqs = [
                   rel="noopener noreferrer"
                   class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-amber-500/30 text-amber-400 font-semibold text-sm hover:bg-amber-500/10 transition"
                 >
-                  Quiero el mío así
+                  {{ content.ui.demoCtaWant }}
                   <LucideIcon name="arrow-right" class-name="w-4 h-4" />
                 </a>
               </div>
@@ -700,14 +368,7 @@ const faqs = [
             <!-- Feature chips -->
             <div class="grid grid-cols-2 gap-3">
               <div
-                v-for="chip in [
-                  { icon: 'search', text: 'Buscador en vivo' },
-                  { icon: 'image', text: 'Fotos por platillo' },
-                  { icon: 'tag', text: 'Banner de promos' },
-                  { icon: 'layers', text: 'Categorías claras' },
-                  { icon: 'qr-code', text: 'QR personalizado' },
-                  { icon: 'smartphone', text: 'Fluido en móvil' },
-                ]"
+                v-for="chip in content.demoChips"
                 :key="chip.text"
                 class="flex items-center gap-3 p-4 rounded-xl border border-amber-500/10"
                 style="background: rgba(74, 222, 128, 0.04)"
@@ -738,22 +399,21 @@ const faqs = [
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="star" class-name="w-3.5 h-3.5" />
-            Todo lo que incluye
+            {{ content.ui.featuresBadge }}
           </div>
           <h2
             class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            Un menú digital que trabaja por ti
+            {{ content.ui.featuresTitle }}
           </h2>
           <p class="text-neutral-400 max-w-xl mx-auto">
-            Cada función está diseñada para mejorar la experiencia del cliente y
-            ayudarte a vender más.
+            {{ content.ui.featuresSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <div
-            v-for="feature in features"
+            v-for="feature in content.features"
             :key="feature.title"
             class="p-6 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition-all hover:-translate-y-0.5"
             style="background: #111"
@@ -788,16 +448,15 @@ const faqs = [
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="map" class-name="w-3.5 h-3.5" />
-            Proceso
+            {{ content.ui.processBadge }}
           </div>
           <h2
             class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            Así de fácil empezamos
+            {{ content.ui.processTitle }}
           </h2>
           <p class="text-neutral-400 max-w-lg mx-auto">
-            En menos de una semana tu restaurante ya tiene su menú digital
-            publicado y funcionando.
+            {{ content.ui.processSubtitle }}
           </p>
         </div>
 
@@ -808,7 +467,7 @@ const faqs = [
           ></div>
 
           <div
-            v-for="step in steps"
+            v-for="step in content.steps"
             :key="step.number"
             class="text-center relative"
           >
@@ -825,7 +484,7 @@ const faqs = [
               />
             </div>
             <div :class="['font-display text-xs font-bold mb-2', step.color]">
-              PASO {{ step.number }}
+              {{ content.ui.stepLabel }} {{ step.number }}
             </div>
             <h3 class="text-white font-bold text-base mb-2">
               {{ step.title }}
@@ -843,7 +502,7 @@ const faqs = [
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-amber-500 text-neutral-950 font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105"
           >
-            Empezar ahora
+            {{ content.ui.processCta }}
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
           </a>
         </div>
@@ -858,21 +517,21 @@ const faqs = [
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="message-square" class-name="w-3.5 h-3.5" />
-            Testimoniales
+            {{ content.ui.testimonialsBadge }}
           </div>
           <h2
             class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            Lo que dicen los restaurantes
+            {{ content.ui.testimonialsTitle }}
           </h2>
           <p class="text-neutral-400 max-w-lg mx-auto">
-            Restaurantes reales, resultados reales.
+            {{ content.ui.testimonialsSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
-            v-for="t in testimonials"
+            v-for="t in content.testimonials"
             :key="t.name"
             class="p-7 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition flex flex-col"
             style="background: #111"
@@ -919,22 +578,21 @@ const faqs = [
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="tag" class-name="w-3.5 h-3.5" />
-            Planes y precios
+            {{ content.ui.pricingBadge }}
           </div>
           <h2
             class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            Elige el plan para tu restaurante
+            {{ content.ui.pricingTitle }}
           </h2>
           <p class="text-neutral-400 max-w-xl mx-auto">
-            Pago único, sin mensualidades ni sorpresas. Hosting incluido el
-            primer año.
+            {{ content.ui.pricingSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
-            v-for="pkg in menuPackages"
+            v-for="pkg in content.packages"
             :key="pkg.name"
             :class="[
               'relative flex flex-col rounded-2xl border p-7 transition-all',
@@ -997,7 +655,7 @@ const faqs = [
                 {{ pkg.price }}
               </span>
               <span class="text-neutral-500 text-sm ml-2"
-                >MXN · {{ pkg.period }}</span
+                >{{ isEn ? "USD" : "MXN" }} · {{ pkg.period }}</span
               >
             </div>
 
@@ -1030,7 +688,7 @@ const faqs = [
             <!-- CTA -->
             <div class="space-y-2.5">
               <a
-                :href="pkg.wa"
+                :href="pkgWaUrl(pkg.waKey)"
                 target="_blank"
                 rel="noopener noreferrer"
                 :class="[
@@ -1042,7 +700,7 @@ const faqs = [
                       : 'bg-neutral-700 text-white hover:bg-neutral-600',
                 ]"
               >
-                Contratar {{ pkg.name }}
+                {{ content.ui.hirePlan }} {{ pkg.name }}
                 <LucideIcon name="arrow-right" class-name="w-4 h-4" />
               </a>
               <RouterLink
@@ -1050,7 +708,7 @@ const faqs = [
                 class="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-neutral-700 text-neutral-400 text-sm hover:text-white hover:border-neutral-600 transition"
               >
                 <LucideIcon name="play" class-name="w-3.5 h-3.5" />
-                Ver demo
+                {{ content.ui.viewDemo }}
               </RouterLink>
             </div>
           </div>
@@ -1064,35 +722,35 @@ const faqs = [
         <h2
           class="font-display text-2xl font-bold text-white text-center mb-10"
         >
-          Comparación detallada de planes
+          {{ content.ui.comparisonTitle }}
         </h2>
         <div class="overflow-x-auto rounded-2xl border border-neutral-800">
           <table class="w-full text-sm">
             <thead>
               <tr class="border-b border-neutral-800" style="background: #111">
                 <th class="text-left py-4 px-6 text-neutral-400 font-medium">
-                  Característica
+                  {{ content.ui.comparisonFeatureHeader }}
                 </th>
                 <th
                   class="text-center py-4 px-4 text-white font-semibold whitespace-nowrap"
                 >
-                  Esencial
+                  {{ content.ui.comparisonEssential }}
                 </th>
                 <th
                   class="text-center py-4 px-4 text-amber-400 font-semibold whitespace-nowrap"
                 >
-                  Profesional
+                  {{ content.ui.comparisonProfessional }}
                 </th>
                 <th
                   class="text-center py-4 px-4 text-violet-400 font-semibold whitespace-nowrap"
                 >
-                  Enterprise
+                  {{ content.ui.comparisonEnterprise }}
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr
-                v-for="row in menuComparisonRows"
+                v-for="row in content.comparisonRows"
                 :key="row.feature"
                 class="border-b border-neutral-800/50 last:border-0 hover:bg-amber-500/5 transition-colors"
                 style="background: #0f0f0f"
@@ -1139,22 +797,21 @@ const faqs = [
             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-5"
           >
             <LucideIcon name="help-circle" class-name="w-3.5 h-3.5" />
-            Preguntas frecuentes
+            {{ content.ui.faqBadge }}
           </div>
           <h2
             class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
           >
-            Resolvemos tus dudas
+            {{ content.ui.faqTitle }}
           </h2>
           <p class="text-neutral-400">
-            Si tienes más preguntas, escríbenos por WhatsApp — respondemos
-            rápido.
+            {{ content.ui.faqSubtitle }}
           </p>
         </div>
 
         <div class="space-y-3">
           <div
-            v-for="(faq, i) in faqs"
+            v-for="(faq, i) in content.faqs"
             :key="i"
             class="rounded-2xl border border-neutral-800 overflow-hidden transition-all"
             :class="openFaq === i ? 'border-amber-500/30' : ''"
@@ -1185,7 +842,7 @@ const faqs = [
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 text-amber-400 text-sm font-semibold hover:text-amber-300 transition"
           >
-            ¿Tienes otra pregunta? Escríbenos
+            {{ content.ui.faqMoreQuestions }}
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
           </a>
         </div>
@@ -1219,23 +876,22 @@ const faqs = [
               class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-7"
             >
               <LucideIcon name="calendar-clock" class-name="w-3.5 h-3.5" />
-              Demo 21 días — Oferta especial
+              {{ content.ui.demo21Badge }}
             </div>
 
             <h2
               class="font-display text-3xl sm:text-4xl font-extrabold text-white mb-4"
             >
-              ¿Quieres probarlo antes de decidir?
+              {{ content.ui.demo21Title }}
             </h2>
             <p
               class="text-neutral-400 max-w-2xl mx-auto mb-10 text-base leading-relaxed"
             >
-              Por solo
-              <span class="text-amber-400 font-bold">$999 MXN</span> armamos tu
-              menú digital real — con tus platillos, fotos y precios — publicado
-              y funcionando durante <strong class="text-white">21 días</strong>.
-              Si luego contratas, los $999 se descuentan del anticipo. No pagas
-              nada extra.
+              {{ content.ui.demo21DescBefore }}
+              <span class="text-amber-400 font-bold">{{ content.demo21Price }}</span>
+              {{ content.ui.demo21DescAfter }}
+              <strong class="text-white">{{ content.ui.demo21Days }}</strong>.
+              {{ content.ui.demo21DescEnd }}
             </p>
 
             <div
@@ -1254,10 +910,10 @@ const faqs = [
                   />
                 </div>
                 <p class="text-white font-semibold text-sm mb-1">
-                  Tu menú real
+                  {{ content.ui.demo21Card1Title }}
                 </p>
                 <p class="text-neutral-500 text-xs">
-                  Con tus platillos, categorías y precios reales
+                  {{ content.ui.demo21Card1Desc }}
                 </p>
               </div>
               <div
@@ -1273,10 +929,10 @@ const faqs = [
                   />
                 </div>
                 <p class="text-white font-semibold text-sm mb-1">
-                  Publicado y funcional
+                  {{ content.ui.demo21Card2Title }}
                 </p>
                 <p class="text-neutral-500 text-xs">
-                  Accesible por QR, listo para usar en mesas
+                  {{ content.ui.demo21Card2Desc }}
                 </p>
               </div>
               <div
@@ -1292,10 +948,10 @@ const faqs = [
                   />
                 </div>
                 <p class="text-white font-semibold text-sm mb-1">
-                  Se descuenta al contratar
+                  {{ content.ui.demo21Card3Title }}
                 </p>
                 <p class="text-neutral-500 text-xs">
-                  Los $999 se restan del anticipo de cualquier plan
+                  {{ content.ui.demo21Card3Desc }}
                 </p>
               </div>
             </div>
@@ -1306,7 +962,7 @@ const faqs = [
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-amber-500 text-black font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(245,158,11,0.3)]"
             >
-              Quiero mi demo de 21 días
+              {{ content.ui.demo21Cta }}
               <LucideIcon name="arrow-right" class-name="w-4 h-4" />
             </a>
           </div>
@@ -1327,14 +983,13 @@ const faqs = [
         <h2
           class="font-display text-4xl sm:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight"
         >
-          Lleva tu restaurante al<br />
-          <span class="text-amber-400">siguiente nivel</span>
+          {{ content.ui.finalTitleLine1 }}<br />
+          <span class="text-amber-400">{{ content.ui.finalTitleHighlight }}</span>
         </h2>
         <p
           class="text-neutral-400 mb-10 text-lg max-w-xl mx-auto leading-relaxed"
         >
-          Empieza hoy. Escríbenos por WhatsApp y en menos de 5 días tu
-          restaurante ya tiene menú digital.
+          {{ content.ui.finalSubtitle }}
         </p>
 
         <div
@@ -1346,13 +1001,13 @@ const faqs = [
             rel="noopener noreferrer"
             class="px-10 py-4 rounded-full bg-amber-500 text-neutral-950 font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(245,158,11,0.25)]"
           >
-            Cotizar mi menú digital
+            {{ content.ui.finalCtaQuote }}
           </a>
           <RouterLink
             to="/menus-digitales/demo"
             class="px-10 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-amber-500/30 hover:text-white transition"
           >
-            Ver demo primero
+            {{ content.ui.finalCtaDemo }}
           </RouterLink>
         </div>
 
@@ -1365,28 +1020,28 @@ const faqs = [
               name="shield-check"
               class-name="w-3.5 h-3.5 text-amber-500/60"
             />
-            Pago único, sin mensualidades
+            {{ content.ui.finalTrustPayment }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="clock"
               class-name="w-3.5 h-3.5 text-amber-500/60"
             />
-            Entrega en menos de 5 días
+            {{ content.ui.finalTrustDelivery }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="headphones"
               class-name="w-3.5 h-3.5 text-amber-500/60"
             />
-            Soporte en español
+            {{ content.ui.finalTrustSupport }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="smartphone"
               class-name="w-3.5 h-3.5 text-amber-500/60"
             />
-            Sin app que descargar
+            {{ content.ui.finalTrustNoApp }}
           </span>
         </div>
       </div>

@@ -17,7 +17,7 @@
         style="color: #9bb0c8"
       >
         <LucideIcon name="chevron-left" class-name="w-4 h-4" />
-        <span class="hidden sm:inline">Volver</span>
+        <span class="hidden sm:inline">{{ copy.back }}</span>
       </router-link>
       <span
         class="text-xs font-semibold px-3 py-1 rounded-full"
@@ -26,7 +26,7 @@
           color: #5b9bd5;
           border: 1px solid rgba(167, 216, 255, 0.4);
         "
-        >Demo — Plan Esencial</span
+        >{{ copy.demo }} — Plan Esencial</span
       >
       <a
         :href="waContratar"
@@ -35,7 +35,7 @@
         class="text-sm font-semibold transition-colors"
         style="color: #5b9bd5"
         ><span class="inline-flex items-center gap-1"
-          >Contratar
+          >{{ copy.hire }}
           <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" /></span
       ></a>
     </div>
@@ -680,8 +680,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, computed } from "vue";
 import LucideIcon from "../../components/LucideIcon.vue";
+import { useDemoChrome } from "../../composables/useDemoChrome.js";
+import { useI18n } from "vue-i18n";
+
+const { copy } = useDemoChrome();
+const { locale } = useI18n();
 
 const waContratar = `https://wa.me/+525635926679?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Basic de invitaciones digitales y me interesa contratarlo 💌")}`;
 
@@ -697,11 +702,17 @@ const handleRSVP = () => {
   }, 3000);
 };
 
+const countdownLabels = computed(() =>
+  locale.value === "en"
+    ? { days: "DAYS", hrs: "HRS", min: "MIN", sec: "SEC" }
+    : { days: "DÍAS", hrs: "HRS", min: "MIN", sec: "SEG" },
+);
+
 const countdown = ref([
-  { label: "DÍAS", val: "00" },
-  { label: "HRS", val: "00" },
-  { label: "MIN", val: "00" },
-  { label: "SEG", val: "00" },
+  { label: countdownLabels.value.days, val: "00" },
+  { label: countdownLabels.value.hrs, val: "00" },
+  { label: countdownLabels.value.min, val: "00" },
+  { label: countdownLabels.value.sec, val: "00" },
 ]);
 
 onMounted(() => {
@@ -710,28 +721,28 @@ onMounted(() => {
     const diff = target - Date.now();
     if (diff <= 0) {
       countdown.value = [
-        { label: "DÍAS", val: "00" },
-        { label: "HRS", val: "00" },
-        { label: "MIN", val: "00" },
-        { label: "SEG", val: "00" },
+        { label: countdownLabels.value.days, val: "00" },
+        { label: countdownLabels.value.hrs, val: "00" },
+        { label: countdownLabels.value.min, val: "00" },
+        { label: countdownLabels.value.sec, val: "00" },
       ];
       return;
     }
     countdown.value = [
       {
-        label: "DÍAS",
+        label: countdownLabels.value.days,
         val: String(Math.floor(diff / 86400000)).padStart(2, "0"),
       },
       {
-        label: "HRS",
+        label: countdownLabels.value.hrs,
         val: String(Math.floor((diff % 86400000) / 3600000)).padStart(2, "0"),
       },
       {
-        label: "MIN",
+        label: countdownLabels.value.min,
         val: String(Math.floor((diff % 3600000) / 60000)).padStart(2, "0"),
       },
       {
-        label: "SEG",
+        label: countdownLabels.value.sec,
         val: String(Math.floor((diff % 60000) / 1000)).padStart(2, "0"),
       },
     ];

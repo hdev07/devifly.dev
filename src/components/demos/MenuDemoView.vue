@@ -35,7 +35,7 @@
             />
           </svg>
           <span class="hidden sm:inline text-xs tracking-widest uppercase"
-            >Volver</span
+            >{{ copy.back }}</span
           >
         </router-link>
 
@@ -58,7 +58,7 @@
               background: theme.colors.primaryGhost,
               border: `1px solid ${theme.colors.primaryFaint}`,
             }"
-            >Demo — {{ theme.plan }}</span
+            >{{ copy.demo }} {{ theme.plan }}</span
           >
         </div>
 
@@ -69,7 +69,7 @@
             rel="noopener noreferrer"
             class="text-[10px] font-semibold tracking-wider uppercase hidden sm:inline"
             :style="{ color: theme.colors.primary }"
-            >Contratar</a
+            >{{ copy.hire }}</a
           >
           <button
             v-if="theme.showSearch"
@@ -108,7 +108,7 @@
                 ref="searchInput"
                 v-model="searchQuery"
                 type="text"
-                placeholder="Buscar en el menú..."
+                :placeholder="copy.searchPlaceholder"
                 class="w-full px-5 py-3.5 rounded-2xl text-sm text-white placeholder-neutral-500 focus:outline-none transition-all duration-300"
                 style="
                   background: rgba(255, 255, 255, 0.06);
@@ -140,7 +140,7 @@
               class="text-xs tracking-widest uppercase py-3 px-4 rounded-2xl transition-all duration-300"
               style="color: #d4af37; background: rgba(212, 175, 55, 0.08)"
             >
-              Cerrar
+              {{ copy.close }}
             </button>
           </div>
           <div class="flex-1 overflow-y-auto pb-8 custom-scroll">
@@ -148,13 +148,13 @@
               v-if="!searchQuery"
               class="text-neutral-600 text-sm text-center mt-12"
             >
-              Escribe para buscar platillos, bebidas o categorías...
+              {{ copy.searchHint }}
             </p>
             <p
               v-else-if="searchResults.length === 0"
               class="text-neutral-500 text-sm text-center mt-12"
             >
-              No se encontraron resultados para "{{ searchQuery }}"
+              {{ copy.noResults(searchQuery) }}
             </p>
             <div v-else class="space-y-3">
               <div
@@ -174,7 +174,7 @@
                   >
                     <span
                       class="text-neutral-600 text-[10px] tracking-wider uppercase"
-                      >Foto</span
+                      >{{ copy.photo }}</span
                     >
                   </div>
                 </div>
@@ -233,7 +233,7 @@
           <span
             class="text-[10px] tracking-wider uppercase text-center leading-tight"
             :style="{ color: theme.colors.primaryMuted }"
-            >Logo<br />Restaurante</span
+            >{{ copy.logoLine1 }}<br />{{ copy.logoLine2 }}</span
           >
         </div>
       </div>
@@ -330,7 +330,7 @@
             class="text-xs font-bold tracking-[0.3em] uppercase"
             style="color: #d4af37"
           >
-            Promociones
+            {{ copy.promotions }}
           </h3>
         </div>
       </div>
@@ -366,7 +366,7 @@
                 </svg>
                 <span
                   class="text-neutral-700 text-[9px] tracking-wider uppercase"
-                  >Imagen Promo</span
+                  >{{ copy.promoImage }}</span
                 >
               </div>
             </div>
@@ -419,7 +419,7 @@
           class="text-[10px] tracking-[0.25em] uppercase mb-3 text-center"
           :style="{ color: theme.colors.primaryMuted }"
         >
-          Selecciona sucursal
+          {{ copy.selectBranch }}
         </p>
         <div class="flex gap-2 overflow-x-auto hide-scrollbar">
           <button
@@ -643,7 +643,7 @@
                         background: rgba(212, 175, 55, 0.08);
                         border: 1px solid rgba(212, 175, 55, 0.15);
                       "
-                      >Ver más</span
+                      >{{ copy.viewMore }}</span
                     >
                   </div>
                 </div>
@@ -753,7 +753,7 @@
               <div>
                 <span
                   class="text-neutral-500 text-[10px] tracking-wider uppercase block mb-0.5"
-                  >Precio</span
+                  >{{ copy.price }}</span
                 >
                 <span class="text-2xl font-bold" style="color: #d4af37"
                   >${{ selectedItem.price }}</span
@@ -762,7 +762,7 @@
               <div v-if="selectedItem.portion" class="text-right">
                 <span
                   class="text-neutral-500 text-[10px] tracking-wider uppercase block mb-0.5"
-                  >Porción</span
+                  >{{ copy.portion }}</span
                 >
                 <span class="text-neutral-300 text-sm font-medium">{{
                   selectedItem.portion
@@ -773,7 +773,7 @@
             <div v-if="selectedItem.allergens" class="mb-4">
               <span
                 class="text-neutral-500 text-[10px] tracking-wider uppercase block mb-2"
-                >Alérgenos</span
+                >{{ copy.allergens }}</span
               >
               <div class="flex flex-wrap gap-2">
                 <span
@@ -799,7 +799,7 @@
                 color: #0a0a0a;
                 box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
               "
-              >Preguntar disponibilidad</a
+              >{{ copy.askAvailability }}</a
             >
           </div>
         </div>
@@ -824,7 +824,7 @@
         >
           <span
             class="text-amber-500/40 text-[8px] tracking-wider uppercase text-center leading-tight"
-            >Logo</span
+            >{{ copy.logo }}</span
           >
         </div>
         <h4
@@ -854,7 +854,7 @@
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
               />
             </svg>
-            Llamar
+            {{ copy.call }}
           </a>
           <a
             href="#"
@@ -870,7 +870,7 @@
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            Ubicación
+            {{ copy.location }}
           </a>
           <a
             href="#"
@@ -887,7 +887,7 @@
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
               <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
             </svg>
-            Instagram
+            {{ copy.instagram }}
           </a>
         </div>
 
@@ -899,11 +899,11 @@
             color: rgba(212, 175, 55, 0.4);
           "
         >
-          <span>Horario: {{ theme.schedule }}</span>
+          <span>{{ copy.schedule }} {{ theme.schedule }}</span>
         </div>
 
         <p class="text-neutral-700 text-[10px] mt-6 tracking-wider">
-          Menú digital creado por
+          {{ copy.footerCredit }}
           <a
             href="/"
             class="text-amber-600/60 hover:text-amber-400 transition-colors duration-300"
@@ -917,12 +917,86 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from "vue";
+import { useI18n } from "vue-i18n";
 import {
   menuThemes,
   esencialMenuCategories,
   foodImageMap,
   waLink,
 } from "../../data/menuDemo.js";
+
+const { locale } = useI18n();
+
+const ui = {
+  es: {
+    back: "Volver",
+    hire: "Contratar",
+    demo: "Demo —",
+    searchPlaceholder: "Buscar en el menú...",
+    close: "Cerrar",
+    searchHint: "Escribe para buscar platillos, bebidas o categorías...",
+    noResults: (q) => `No se encontraron resultados para "${q}"`,
+    photo: "Foto",
+    logoLine1: "Logo",
+    logoLine2: "Restaurante",
+    promotions: "Promociones",
+    promoImage: "Imagen Promo",
+    selectBranch: "Selecciona sucursal",
+    viewMore: "Ver más",
+    price: "Precio",
+    portion: "Porción",
+    allergens: "Alérgenos",
+    askAvailability: "Preguntar disponibilidad",
+    logo: "Logo",
+    call: "Llamar",
+    location: "Ubicación",
+    instagram: "Instagram",
+    schedule: "Horario:",
+    footerCredit: "Menú digital creado por",
+    infoLabels: {
+      Horario: "Horario",
+      Servicio: "Servicio",
+      Ubicación: "Ubicación",
+      Reservas: "Reservas",
+      Sucursales: "Sucursales",
+    },
+  },
+  en: {
+    back: "Back",
+    hire: "Get started",
+    demo: "Demo —",
+    searchPlaceholder: "Search the menu...",
+    close: "Close",
+    searchHint: "Type to search dishes, drinks, or categories...",
+    noResults: (q) => `No results found for "${q}"`,
+    photo: "Photo",
+    logoLine1: "Logo",
+    logoLine2: "Restaurant",
+    promotions: "Promotions",
+    promoImage: "Promo image",
+    selectBranch: "Select location",
+    viewMore: "View more",
+    price: "Price",
+    portion: "Portion",
+    allergens: "Allergens",
+    askAvailability: "Ask about availability",
+    logo: "Logo",
+    call: "Call",
+    location: "Location",
+    instagram: "Instagram",
+    schedule: "Hours:",
+    footerCredit: "Digital menu by",
+    infoLabels: {
+      Horario: "Hours",
+      Servicio: "Service",
+      Ubicación: "Location",
+      Reservas: "Reservations",
+      Sucursales: "Locations",
+    },
+  },
+};
+
+const copy = computed(() => ui[locale.value] ?? ui.es);
 
 const props = defineProps({
   tier: {
@@ -960,7 +1034,12 @@ const selectedBranch = computed(() =>
   theme.value.branches?.find((b) => b.id === activeBranch.value),
 );
 
-const infoItems = computed(() => theme.value.infoItems);
+const infoItems = computed(() =>
+  theme.value.infoItems.map((item) => ({
+    ...item,
+    label: copy.value.infoLabels[item.label] ?? item.label,
+  })),
+);
 
 const fullMenuCategories = [
   {

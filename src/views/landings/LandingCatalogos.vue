@@ -5,275 +5,24 @@
  * Style: Stripe — refined gradients, glass, depth, asymmetric layout
  * Section order: Hero · Demo · Benefits · Templates · How · What's included · Pricing · FAQ · Testimonials · CTA
  */
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { RouterLink } from "vue-router";
 import LucideIcon from "../../components/LucideIcon.vue";
+import { useLocaleContent } from "../../composables/useLocaleContent.js";
+import { landingCatalogosContent } from "../../data/landings/landingCatalogos.js";
 
 const WA = "+525635926679";
-const wa = (msg) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
-const waDemo = wa(
-  "¡Hola! Me interesa un catálogo digital para mi negocio de ventas 🛍️",
-);
-const waContratar = wa("Quiero cotizar mi catálogo digital de productos 🛍️");
-const waBasico = wa(
-  "¡Hola! Me interesa el Plan Básico de catálogo digital ($1,499 MXN) 🛍️",
-);
-const waPro = wa(
-  "¡Hola! Me interesa el Plan Pro de catálogo digital ($3,499 MXN) ✨",
-);
-const waPremium = wa(
-  "¡Hola! Me interesa el Plan Premium VIP de catálogo digital ($6,999 MXN) 💎",
-);
+const { content, isEn } = useLocaleContent(landingCatalogosContent);
+
+const waUrl = (text) => `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
+const waDemo = computed(() => waUrl(content.value.wa.demo));
+const waContratar = computed(() => waUrl(content.value.wa.hire));
+const pkgWaUrl = (waKey) => waUrl(content.value.wa[waKey]);
 
 const openFaq = ref(null);
 const toggleFaq = (i) => {
   openFaq.value = openFaq.value === i ? null : i;
 };
-
-const themes = [
-  {
-    id: "moda",
-    name: "Moda & accesorios",
-    desc: "Grid de productos, tallas y colores, etiquetas de novedad y ofertas.",
-    palette: ["#ecfdf5", "#d1fae5", "#a7f3d0", "#10b981"],
-    icon: "shopping-bag",
-  },
-  {
-    id: "belleza",
-    name: "Belleza & cosméticos",
-    desc: "Tonos suaves, fotos grandes y categorías por tipo de producto.",
-    palette: ["#fdf2f8", "#fce7f3", "#d1fae5", "#059669"],
-    icon: "sparkles",
-  },
-  {
-    id: "reposteria",
-    name: "Repostería & postres",
-    desc: "Estilo cálido, precios claros y botón de pedido directo a WhatsApp.",
-    palette: ["#fffbeb", "#fef3c7", "#a7f3d0", "#10b981"],
-    icon: "cake",
-  },
-  {
-    id: "joyeria",
-    name: "Joyería artesanal",
-    desc: "Fondo elegante, galería de detalle y sensación premium en cada pieza.",
-    palette: ["#0b0b0b", "#064e3b", "#065f46", "#34d399"],
-    icon: "gem",
-  },
-  {
-    id: "deportivo",
-    name: "Ropa deportiva",
-    desc: "Dinámico, con stock visible y filtros por talla y género.",
-    palette: ["#f0fdf4", "#dcfce7", "#bbf7d0", "#059669"],
-    icon: "zap",
-  },
-  {
-    id: "regalos",
-    name: "Regalos & detalles",
-    desc: "Catálogo versátil para temporadas, combos y productos personalizados.",
-    palette: ["#ffffff", "#f0fdf4", "#d1fae5", "#10b981"],
-    icon: "gift",
-  },
-];
-
-const benefits = [
-  {
-    icon: "clock",
-    title: "Ahorra horas cada día",
-    desc: "Deja de mandar fotos y precios uno por uno. Tu catálogo responde por ti las 24 horas.",
-  },
-  {
-    icon: "trending-up",
-    title: "Más ventas, menos fricción",
-    desc: "Tus clientas ven todo, eligen y te escriben directo a WhatsApp con el pedido listo.",
-  },
-  {
-    icon: "smartphone",
-    title: "Siempre en el bolsillo",
-    desc: "Un solo link que compartes en historias, grupos y chats. Sin app, sin comisiones.",
-  },
-  {
-    icon: "sparkles",
-    title: "Imagen profesional",
-    desc: "Diseño limpio, fotos organizadas y marca propia que genera confianza al instante.",
-  },
-];
-
-const steps = [
-  {
-    num: "01",
-    icon: "message-circle",
-    title: "Cuéntanos de tu negocio",
-    desc: "Qué vendes, cómo organizas tus productos y qué estilo quieres transmitir.",
-  },
-  {
-    num: "02",
-    icon: "palette",
-    title: "Armamos tu catálogo",
-    desc: "En 1–4 semanas según tu plan, con tus fotos, precios, categorías y botón de WhatsApp.",
-  },
-  {
-    num: "03",
-    icon: "rocket",
-    title: "Compartes y vendes",
-    desc: "Recibes tu link único, lo publicas y empiezas a recibir pedidos sin intermediarios.",
-  },
-];
-
-const includes = [
-  { icon: "layout-grid", text: "Catálogo digital personalizado con tu marca" },
-  { icon: "message-circle", text: "Botón de pedido directo a WhatsApp" },
-  { icon: "folder-open", text: "Organización por categorías y productos" },
-  { icon: "image", text: "Galería de fotos por producto" },
-  { icon: "search", text: "Buscador de productos (plan Pro+)" },
-  { icon: "bar-chart-2", text: "Control de stock y tallas (plan Pro+)" },
-  { icon: "refresh-cw", text: "Actualización ilimitada de productos" },
-  { icon: "shield-check", text: "Hosting, SSL y soporte incluidos" },
-];
-
-const packages = [
-  {
-    name: "Básico",
-    price: "$1,499",
-    tagline: "Para empezar a vender de forma profesional",
-    demo: "/catalogos-nenis/demo",
-    wa: waBasico,
-    highlighted: false,
-    badge: null,
-    vip: false,
-    validity: "Entrega: 1 semana",
-    features: [
-      "Hasta 50 productos",
-      "1 categoría",
-      "Galería de 2 fotos por producto",
-      "Control de precios",
-      "Link compartible",
-      "Botón de WhatsApp",
-      "Diseño responsive",
-    ],
-    excluded: [
-      "Productos ilimitados",
-      "Categorías ilimitadas",
-      "Hasta 5 fotos por producto",
-      "Control de tallas y colores",
-      "Control de stock",
-      "Buscador de productos",
-      "Panel admin completo",
-      "Múltiples vendedoras (catálogos)",
-      "Cupones y descuentos",
-      "Dominio personalizado",
-    ],
-  },
-  {
-    name: "Pro",
-    price: "$3,499",
-    tagline: "Para negocios que ya venden fuerte y quieren crecer",
-    demo: "/catalogos-nenis/pro",
-    wa: waPro,
-    highlighted: true,
-    badge: "Más popular",
-    vip: false,
-    validity: "Entrega: 2 semanas",
-    features: [
-      "Todo lo del Básico",
-      "Productos ilimitados",
-      "Categorías ilimitadas",
-      "Hasta 5 fotos por producto",
-      "Control de tallas y colores",
-      "Control de stock",
-      "Buscador de productos",
-      "Panel admin completo",
-    ],
-    excluded: [
-      "Múltiples vendedoras (catálogos)",
-      "Cupones y descuentos",
-      "Reportes de productos más vistos",
-      "Dominio personalizado",
-      "Notificaciones por WhatsApp",
-      "Integración con pagos en línea",
-      "Soporte prioritario",
-    ],
-  },
-  {
-    name: "Premium VIP",
-    price: "$6,999",
-    tagline: "Para negocios serios con múltiples vendedoras",
-    demo: "/catalogos-nenis/premium",
-    wa: waPremium,
-    highlighted: false,
-    badge: "Experiencia VIP",
-    vip: true,
-    validity: "Entrega: 3–4 semanas",
-    features: [
-      "Todo lo del Pro",
-      "Múltiples vendedoras (catálogos)",
-      "Cupones y descuentos",
-      "Reportes de productos más vistos",
-      "Dominio personalizado",
-      "Notificaciones por WhatsApp",
-      "Integración con pagos en línea",
-      "Soporte prioritario",
-    ],
-    excluded: [],
-  },
-];
-
-const faqs = [
-  {
-    q: "¿Cuánto tarda en estar listo mi catálogo?",
-    a: "Según el plan: Básico en 1 semana, Pro en 2 semanas y Premium VIP en 3–4 semanas desde que nos compartes tus productos, fotos y preferencias de diseño.",
-  },
-  {
-    q: "¿Puedo actualizar productos yo misma?",
-    a: "Sí. En los planes Pro y Premium VIP tienes panel admin completo para agregar, editar o quitar productos cuando quieras. En el plan Básico nos escribes y te ayudamos con los cambios.",
-  },
-  {
-    q: "¿Cobran comisión por cada venta?",
-    a: "No. Es pago único por el catálogo. Tus clientas te pagan directo — tú decides si por transferencia, efectivo o el método que prefieras.",
-  },
-  {
-    q: "¿Necesito saber de tecnología?",
-    a: "Para nada. Nosotros armamos todo y te explicamos cómo compartir tu link y recibir pedidos. El panel admin es sencillo y pensado para usarse desde el celular.",
-  },
-  {
-    q: "¿Funciona en celular y computadora?",
-    a: "Sí, tu catálogo se ve perfecto en cualquier dispositivo. Tus clientas lo abren desde WhatsApp, Instagram o donde lo compartas.",
-  },
-  {
-    q: "¿Puedo tener varias vendedoras con su propio catálogo?",
-    a: "Sí, en el plan Premium VIP. Cada vendedora tiene su catálogo independiente bajo la misma cuenta, ideal para equipos de venta o distribuidoras.",
-  },
-  {
-    q: "¿Qué pasa si no me gusta el resultado?",
-    a: "Trabajamos contigo hasta que quede como lo quieres. Si en el primer mes no ves mejora en tus ventas, te ayudamos a optimizar tu catálogo sin costo extra.",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Ahora mis clientas ven todo mi catálogo y me piden directo. Vendo más y ya no paso el día mandando las mismas fotos.",
-    name: "Paola R.",
-    event: "Moda & accesorios · CDMX",
-    avatar: "P",
-    stars: 5,
-  },
-  {
-    quote:
-      "Me ahorro horas cada semana y la imagen se ve súper profesional. Mis clientas confían más desde que tengo el link del catálogo.",
-    name: "Fernanda M.",
-    event: "Belleza · Estado de México",
-    avatar: "F",
-    stars: 5,
-  },
-  {
-    quote:
-      "El panel admin es facilísimo. Actualizo precios y stock en minutos. El plan Pro valió cada peso.",
-    name: "Lucía S.",
-    event: "Repostería · Querétaro",
-    avatar: "L",
-    stars: 5,
-  },
-];
 </script>
 
 <template>
@@ -305,13 +54,13 @@ const testimonials = [
             style="background: #10b981"
           ></span>
           <LucideIcon name="shopping-bag" class-name="w-3.5 h-3.5" />
-          Catálogos Digitales
+          {{ content.ui.heroBadge }}
         </div>
 
         <h1
           class="font-display text-5xl sm:text-6xl lg:text-[5rem] font-bold leading-[1.04] tracking-tight mb-7"
         >
-          <span class="dark:text-white text-light-text">Vende más con tu </span>
+          <span class="dark:text-white text-light-text">{{ content.ui.heroTitleBefore }} </span>
           <span
             class="bg-clip-text text-transparent"
             style="
@@ -322,17 +71,15 @@ const testimonials = [
                 #6ee7b7 100%
               );
             "
-            >catálogo digital</span
+            >{{ content.ui.heroTitleHighlight }}</span
           >
-          <span class="dark:text-white text-light-text"> propio</span>
+          <span v-if="content.ui.heroTitleAfter" class="dark:text-white text-light-text"> {{ content.ui.heroTitleAfter }}</span>
         </h1>
 
         <p
           class="text-lg dark:text-text-secondary text-light-muted max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Organiza tus productos, comparte un solo link y recibe pedidos directo
-          a tu WhatsApp. Sin comisiones, sin intermediarios, sin perder ventas
-          por no contestar a tiempo.
+          {{ content.ui.heroSubtitle }}
         </p>
 
         <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
@@ -347,7 +94,7 @@ const testimonials = [
             "
           >
             <LucideIcon name="sparkles" class-name="w-4 h-4" />
-            Solicita tu demo gratis
+            {{ content.ui.heroCtaDemo }}
           </a>
           <a
             :href="waContratar"
@@ -360,7 +107,7 @@ const testimonials = [
               background: rgba(16, 185, 129, 0.04);
             "
           >
-            Quiero cotizar mi catálogo
+            {{ content.ui.heroCtaQuote }}
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
           </a>
         </div>
@@ -374,7 +121,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: #10b981"
             />
-            Sin comisiones
+            {{ content.ui.heroTrustNoFees }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
@@ -382,7 +129,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: #10b981"
             />
-            Listo en 1–4 semanas
+            {{ content.ui.heroTrustDelivery }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
@@ -390,7 +137,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: #10b981"
             />
-            Pedidos por WhatsApp
+            {{ content.ui.heroTrustWhatsapp }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
@@ -398,7 +145,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: #10b981"
             />
-            Garantía de satisfacción
+            {{ content.ui.heroTrustGuarantee }}
           </span>
         </div>
       </div>
@@ -412,16 +159,15 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(16, 185, 129, 0.7)"
           >
-            01 / Demo interactiva
+            {{ content.ui.sectionDemo }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
           >
-            Pruébalo antes de pedirlo
+            {{ content.ui.demoTitle }}
           </h2>
           <p class="dark:text-text-secondary text-light-muted max-w-xl mx-auto">
-            Tres estilos de catálogo — Básico, Pro y Premium VIP. Explora la
-            demo en vivo y mira cómo se vería el tuyo.
+            {{ content.ui.demoSubtitle }}
           </p>
         </div>
 
@@ -458,10 +204,10 @@ const testimonials = [
                     <span class="text-white text-sm font-bold">B</span>
                   </div>
                   <p class="text-[9px] uppercase tracking-widest mb-1" style="color: #9ca3af">
-                    Boutique
+                    {{ content.demoCards[0].mockCategory }}
                   </p>
                   <p class="text-sm font-bold mb-2" style="color: #065f46">
-                    Lupita Moda
+                    {{ content.demoCards[0].mockName }}
                   </p>
                   <div class="grid grid-cols-2 gap-1.5 mb-2">
                     <div class="h-10 rounded-lg" style="background: #ecfdf5"></div>
@@ -471,18 +217,18 @@ const testimonials = [
                     class="py-1.5 rounded-full text-[8px] font-semibold text-white"
                     style="background: linear-gradient(135deg, #059669, #10b981)"
                   >
-                    Pedir por WhatsApp
+                    {{ content.ui.orderWhatsapp }}
                   </div>
                 </div>
               </div>
             </RouterLink>
             <div class="text-center">
-              <p class="text-xs font-bold mb-1" style="color: #10b981">Básico</p>
+              <p class="text-xs font-bold mb-1" style="color: #10b981">{{ content.demoCards[0].planLabel }}</p>
               <RouterLink
-                to="/catalogos-nenis/demo"
+                :to="content.demoCards[0].path"
                 class="inline-flex items-center gap-1 text-[11px] dark:text-text-secondary text-light-muted hover:text-emerald-400 transition"
               >
-                Abrir demo
+                {{ content.ui.openDemo }}
                 <LucideIcon name="arrow-right" class-name="w-3 h-3" />
               </RouterLink>
             </div>
@@ -494,7 +240,7 @@ const testimonials = [
               class="absolute hidden sm:block translate-x-16 -translate-y-2 px-2.5 py-1 rounded-full text-[10px] font-bold text-white z-10"
               style="background: linear-gradient(135deg, #059669, #10b981)"
             >
-              Más popular
+              {{ content.ui.mostPopular }}
             </div>
             <RouterLink
               to="/catalogos-nenis/pro"
@@ -521,8 +267,8 @@ const testimonials = [
                 </div>
                 <div class="rounded-2xl overflow-hidden bg-white">
                   <div class="p-3 text-center" style="background: linear-gradient(180deg, #ecfdf5, white)">
-                    <p class="text-xs font-bold" style="color: #065f46">Glam Beauty ✨</p>
-                    <p class="text-[8px]" style="color: #9ca3af">Cosméticos & skincare</p>
+                    <p class="text-xs font-bold" style="color: #065f46">{{ content.demoCards[1].mockName }}</p>
+                    <p class="text-[8px]" style="color: #9ca3af">{{ content.demoCards[1].mockSubtitle }}</p>
                   </div>
                   <div class="px-3 pb-1">
                     <div
@@ -530,18 +276,18 @@ const testimonials = [
                       style="background: #f9fafb; border: 1px solid #f3f4f6"
                     >
                       <LucideIcon name="search" class-name="w-2.5 h-2.5" style="color: #d1d5db" />
-                      <span class="text-[8px]" style="color: #d1d5db">Buscar...</span>
+                      <span class="text-[8px]" style="color: #d1d5db">{{ content.demoCards[1].mockSearch }}</span>
                     </div>
                     <div class="grid grid-cols-2 gap-1.5">
-                      <div class="rounded-lg p-1.5" style="background: #f0fdf4">
+                      <div
+                        v-for="product in content.demoCards[1].mockProducts"
+                        :key="product.name"
+                        class="rounded-lg p-1.5"
+                        style="background: #f0fdf4"
+                      >
                         <div class="h-8 rounded mb-1" style="background: #d1fae5"></div>
-                        <p class="text-[8px] font-semibold" style="color: #065f46">Serum</p>
-                        <p class="text-[8px] font-bold" style="color: #10b981">$280</p>
-                      </div>
-                      <div class="rounded-lg p-1.5" style="background: #f0fdf4">
-                        <div class="h-8 rounded mb-1" style="background: #d1fae5"></div>
-                        <p class="text-[8px] font-semibold" style="color: #065f46">Labial</p>
-                        <p class="text-[8px] font-bold" style="color: #10b981">$150</p>
+                        <p class="text-[8px] font-semibold" style="color: #065f46">{{ product.name }}</p>
+                        <p class="text-[8px] font-bold" style="color: #10b981">{{ product.price }}</p>
                       </div>
                     </div>
                   </div>
@@ -550,19 +296,19 @@ const testimonials = [
                       class="py-1.5 rounded-full text-[8px] font-semibold text-white text-center"
                       style="background: linear-gradient(135deg, #059669, #10b981)"
                     >
-                      Pedir por WhatsApp
+                      {{ content.ui.orderWhatsapp }}
                     </div>
                   </div>
                 </div>
               </div>
             </RouterLink>
             <div class="text-center">
-              <p class="text-xs font-bold mb-1" style="color: #059669">Pro</p>
+              <p class="text-xs font-bold mb-1" style="color: #059669">{{ content.demoCards[1].planLabel }}</p>
               <RouterLink
-                to="/catalogos-nenis/pro"
+                :to="content.demoCards[1].path"
                 class="inline-flex items-center gap-1 text-[11px] dark:text-text-secondary text-light-muted hover:text-emerald-400 transition"
               >
-                Abrir demo
+                {{ content.ui.openDemo }}
                 <LucideIcon name="arrow-right" class-name="w-3 h-3" />
               </RouterLink>
             </div>
@@ -602,7 +348,7 @@ const testimonials = [
                     class="text-[9px] uppercase tracking-widest mb-1"
                     style="color: rgba(198, 167, 94, 0.5)"
                   >
-                    Joyería VIP
+                    {{ content.demoCards[2].mockCategory }}
                   </p>
                   <p
                     class="text-sm font-bold mb-2"
@@ -612,7 +358,7 @@ const testimonials = [
                       -webkit-text-fill-color: transparent;
                     "
                   >
-                    Oro &amp; Plata
+                    {{ content.demoCards[2].mockName }}
                   </p>
                   <div class="grid grid-cols-2 gap-1.5 mb-2">
                     <div class="h-9 rounded-lg" style="background: rgba(198, 167, 94, 0.08)"></div>
@@ -625,18 +371,18 @@ const testimonials = [
                       color: #0b0b0b;
                     "
                   >
-                    Pedir por WhatsApp
+                    {{ content.ui.orderWhatsapp }}
                   </div>
                 </div>
               </div>
             </RouterLink>
             <div class="text-center">
-              <p class="text-xs font-bold mb-1" style="color: #c6a75e">Premium VIP</p>
+              <p class="text-xs font-bold mb-1" style="color: #c6a75e">{{ content.demoCards[2].planLabel }}</p>
               <RouterLink
-                to="/catalogos-nenis/premium"
+                :to="content.demoCards[2].path"
                 class="inline-flex items-center gap-1 text-[11px] dark:text-text-secondary text-light-muted hover:text-emerald-400 transition"
               >
-                Abrir demo
+                {{ content.ui.openDemo }}
                 <LucideIcon name="arrow-right" class-name="w-3 h-3" />
               </RouterLink>
             </div>
@@ -662,22 +408,21 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(16, 185, 129, 0.7)"
           >
-            02 / Beneficios
+            {{ content.ui.sectionBenefits }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text max-w-2xl mb-4"
           >
-            Por qué tu negocio lo necesita
+            {{ content.ui.benefitsTitle }}
           </h2>
           <p class="dark:text-text-secondary text-light-muted max-w-xl">
-            Cuatro razones por las que vender con catálogo digital cambia tu
-            día a día — y tu bolsillo.
+            {{ content.ui.benefitsSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <div
-            v-for="b in benefits"
+            v-for="b in content.benefits"
             :key="b.title"
             class="p-6 rounded-2xl border transition hover:-translate-y-1"
             style="
@@ -724,22 +469,21 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(16, 185, 129, 0.7)"
           >
-            03 / Estilos &amp; nichos
+            {{ content.ui.sectionTemplates }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
           >
-            Adaptado a tu tipo de negocio
+            {{ content.ui.templatesTitle }}
           </h2>
           <p class="dark:text-text-secondary text-light-muted max-w-xl mx-auto">
-            Partimos de un estilo base y lo personalizamos con tu marca, fotos
-            y categorías.
+            {{ content.ui.templatesSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <div
-            v-for="theme in themes"
+            v-for="theme in content.themes"
             :key="theme.id"
             class="group relative p-6 rounded-2xl border overflow-hidden transition hover:-translate-y-1"
             style="
@@ -795,7 +539,7 @@ const testimonials = [
         <p
           class="text-center text-xs dark:text-text-secondary/60 text-light-muted/60 mt-10"
         >
-          ¿Tu negocio es distinto? Lo diseñamos desde cero contigo.
+          {{ content.ui.templatesFooter }}
         </p>
       </div>
     </section>
@@ -817,16 +561,15 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(16, 185, 129, 0.7)"
           >
-            04 / Cómo funciona
+            {{ content.ui.sectionProcess }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
           >
-            De tus productos a tus primeros pedidos, en 3 pasos
+            {{ content.ui.processTitle }}
           </h2>
           <p class="dark:text-text-secondary text-light-muted max-w-xl mx-auto">
-            Tú nos das la info. Nosotros te entregamos un catálogo listo para
-            vender.
+            {{ content.ui.processSubtitle }}
           </p>
         </div>
 
@@ -837,7 +580,7 @@ const testimonials = [
           ></div>
 
           <div
-            v-for="step in steps"
+            v-for="step in content.steps"
             :key="step.num"
             class="relative text-center"
           >
@@ -859,7 +602,7 @@ const testimonials = [
               class="font-mono text-[11px] mb-2"
               style="color: rgba(16, 185, 129, 0.7)"
             >
-              PASO {{ step.num }}
+              {{ content.ui.stepLabel }} {{ step.num }}
             </p>
             <h3
               class="font-display font-bold dark:text-white text-light-text text-lg mb-2"
@@ -885,27 +628,21 @@ const testimonials = [
               class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
               style="color: rgba(16, 185, 129, 0.7)"
             >
-              05 / Qué incluye
+              {{ content.ui.sectionIncludes }}
             </p>
             <h2
               class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
             >
-              Todo lo que viene con tu catálogo
+              {{ content.ui.includesTitle }}
             </h2>
             <p
               class="dark:text-text-secondary text-light-muted max-w-xl mb-8 leading-relaxed"
             >
-              Cero sorpresas en la entrega. Esto es lo que recibes listo para
-              compartir y vender.
+              {{ content.ui.includesSubtitle }}
             </p>
             <div class="flex flex-wrap gap-2">
               <span
-                v-for="bonus in [
-                  'Demo con tus productos',
-                  'Asesoría en fotografía',
-                  'Plantillas de venta',
-                  'Soporte WhatsApp',
-                ]"
+                v-for="bonus in content.bonusChips"
                 :key="bonus"
                 class="px-3 py-1.5 rounded-full text-xs font-medium"
                 style="
@@ -923,7 +660,7 @@ const testimonials = [
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div
-              v-for="item in includes"
+              v-for="item in content.includes"
               :key="item.text"
               class="flex items-start gap-3 p-4 rounded-xl border"
               style="
@@ -970,22 +707,21 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(16, 185, 129, 0.7)"
           >
-            06 / Precios
+            {{ content.ui.sectionPricing }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
           >
-            Elige tu plan ideal
+            {{ content.ui.pricingTitle }}
           </h2>
           <p class="dark:text-text-secondary text-light-muted max-w-xl mx-auto">
-            Pago único — sin mensualidades ni comisiones. Desde lo básico hasta
-            la experiencia VIP con múltiples vendedoras.
+            {{ content.ui.pricingSubtitle }}
           </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div
-            v-for="pkg in packages"
+            v-for="pkg in content.packages"
             :key="pkg.name"
             class="relative flex flex-col rounded-2xl overflow-hidden transition"
             :class="pkg.highlighted ? 'border-2' : 'border'"
@@ -1032,7 +768,7 @@ const testimonials = [
                 >
                 <span
                   class="text-sm dark:text-text-secondary text-light-muted ml-1"
-                  >MXN</span
+                  >{{ isEn ? "USD" : "MXN" }}</span
                 >
                 <p
                   class="text-xs font-mono mt-1"
@@ -1078,7 +814,7 @@ const testimonials = [
 
             <div class="px-8 pb-8 flex flex-col gap-2.5">
               <a
-                :href="pkg.wa"
+                :href="pkgWaUrl(pkg.waKey)"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="block w-full text-center px-4 py-3 rounded-xl font-bold text-sm transition"
@@ -1091,7 +827,7 @@ const testimonials = [
                 "
               >
                 <span class="inline-flex items-center gap-2">
-                  Contratar {{ pkg.name }}
+                  {{ content.ui.hirePlan }} {{ pkg.name }}
                   <LucideIcon name="arrow-right" class-name="w-4 h-4" />
                 </span>
               </a>
@@ -1105,7 +841,7 @@ const testimonials = [
               >
                 <span class="inline-flex items-center gap-2">
                   <LucideIcon name="eye" class-name="w-4 h-4" />
-                  Ver demo
+                  {{ content.ui.viewDemo }}
                 </span>
               </RouterLink>
             </div>
@@ -1120,8 +856,7 @@ const testimonials = [
             class-name="w-3.5 h-3.5 inline mr-1"
             style="color: #10b981"
           />
-          Garantía de satisfacción · Si no vendes más, te ayudamos a mejorar tu
-          catálogo gratis.
+          {{ content.ui.pricingGuarantee }}
         </p>
       </div>
     </section>
@@ -1134,21 +869,21 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(16, 185, 129, 0.7)"
           >
-            07 / Preguntas frecuentes
+            {{ content.ui.sectionFaq }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
           >
-            Resolvemos tus dudas
+            {{ content.ui.faqTitle }}
           </h2>
           <p class="dark:text-text-secondary text-light-muted">
-            Si te queda alguna, escríbenos por WhatsApp — respondemos rápido.
+            {{ content.ui.faqSubtitle }}
           </p>
         </div>
 
         <div class="space-y-3">
           <div
-            v-for="(faq, i) in faqs"
+            v-for="(faq, i) in content.faqs"
             :key="i"
             class="rounded-2xl border overflow-hidden transition-all"
             :style="
@@ -1193,7 +928,7 @@ const testimonials = [
             class="inline-flex items-center gap-2 text-sm font-semibold transition"
             style="color: #10b981"
           >
-            ¿Tienes otra pregunta? Escríbenos
+            {{ content.ui.faqMoreQuestions }}
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
           </a>
         </div>
@@ -1217,18 +952,18 @@ const testimonials = [
             class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
             style="color: rgba(16, 185, 129, 0.7)"
           >
-            08 / Testimonios
+            {{ content.ui.sectionTestimonials }}
           </p>
           <h2
             class="font-display text-3xl sm:text-4xl font-bold dark:text-white text-light-text mb-4"
           >
-            Lo que dicen nuestras clientas
+            {{ content.ui.testimonialsTitle }}
           </h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div
-            v-for="t in testimonials"
+            v-for="t in content.testimonials"
             :key="t.name"
             class="relative p-7 rounded-2xl border flex flex-col"
             style="
@@ -1310,7 +1045,7 @@ const testimonials = [
           class="font-display text-4xl sm:text-5xl font-bold mb-6 leading-tight"
         >
           <span class="dark:text-white text-light-text"
-            >Empieza a vender más con tu
+            >{{ content.ui.finalTitleBefore }}
           </span>
           <span
             class="bg-clip-text text-transparent"
@@ -1322,14 +1057,13 @@ const testimonials = [
                 #6ee7b7
               );
             "
-            >catálogo digital</span
+            >{{ content.ui.finalTitleHighlight }}</span
           >
         </h2>
         <p
           class="dark:text-text-secondary text-light-muted mb-10 text-lg max-w-xl mx-auto"
         >
-          Solicita tu demo gratis por WhatsApp y deja de perder ventas por no
-          tener todo organizado.
+          {{ content.ui.finalSubtitle }}
         </p>
 
         <div
@@ -1346,7 +1080,7 @@ const testimonials = [
             "
           >
             <LucideIcon name="sparkles" class-name="w-4 h-4" />
-            Solicita tu demo gratis
+            {{ content.ui.heroCtaDemo }}
           </a>
           <a
             :href="waContratar"
@@ -1359,7 +1093,7 @@ const testimonials = [
               background: rgba(16, 185, 129, 0.04);
             "
           >
-            Cotizar mi catálogo
+            {{ content.ui.heroCtaQuote }}
             <LucideIcon name="arrow-right" class-name="w-4 h-4" />
           </a>
         </div>
@@ -1373,7 +1107,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: rgba(16, 185, 129, 0.7)"
             />
-            Garantía de satisfacción
+            {{ content.ui.finalTrustGuarantee }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
@@ -1381,7 +1115,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: rgba(16, 185, 129, 0.7)"
             />
-            Listo en 1–4 semanas
+            {{ content.ui.finalTrustDelivery }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
@@ -1389,7 +1123,7 @@ const testimonials = [
               class-name="w-3.5 h-3.5"
               style="color: rgba(16, 185, 129, 0.7)"
             />
-            Soporte en español
+            {{ content.ui.finalTrustSupport }}
           </span>
         </div>
       </div>
