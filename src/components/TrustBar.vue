@@ -42,7 +42,7 @@
         <span
           class="text-[11px] font-semibold tracking-[0.22em] uppercase text-brand-400"
         >
-          {{ locale === "es" ? "Marcas que confían" : "Trusted by" }}
+          {{ t("trustBar.trustedBy") }}
         </span>
       </div>
     </div>
@@ -83,29 +83,13 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
-const { locale } = useI18n();
+const { t } = useI18n();
 
 const kpis = computed(() => [
-  {
-    value: "+20",
-    label: locale.value === "es" ? "Productos enviados" : "Products shipped",
-  },
-  {
-    prefix: "+",
-    value: "45",
-    suffix: "%",
-    label:
-      locale.value === "es" ? "Lift de leads promedio" : "Average lead lift",
-  },
-  {
-    value: "99.9%",
-    label: locale.value === "es" ? "Uptime en producción" : "Production uptime",
-  },
-  {
-    value: "21d",
-    label:
-      locale.value === "es" ? "Demo real publicada" : "Live demo turnaround",
-  },
+  { value: "+20", label: t("trustBar.kpiProducts") },
+  { prefix: "+", value: "45", suffix: "%", label: t("trustBar.kpiLift") },
+  { value: "99.9%", label: t("trustBar.kpiUptime") },
+  { value: "21d", label: t("trustBar.kpiDemo") },
 ]);
 
 const goToBrand = (link) => {

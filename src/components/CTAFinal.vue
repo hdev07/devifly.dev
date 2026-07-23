@@ -16,21 +16,19 @@
               <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full dark:bg-brand-500/15 bg-brand-500/10 border dark:border-brand-500/30 border-brand-500/40 mb-6">
                 <span class="block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span class="text-[11px] font-bold tracking-[0.18em] uppercase text-brand-400">
-                  {{ locale === "es" ? "Sesión gratuita · Sin compromiso" : "Free session · No commitment" }}
+                  {{ t("ctaFinal.badge") }}
                 </span>
               </div>
 
               <!-- Headline -->
               <h2 class="font-display font-bold dark:text-white text-light-text leading-[1.05] tracking-tight" style="font-size: clamp(2.2rem, 5.5vw, 4rem)">
-                {{ locale === "es" ? "Agenda una" : "Book a" }}
-                <span class="text-gradient">{{ locale === "es" ? "sesión estratégica" : "strategy session" }}</span>
-                {{ locale === "es" ? "de 30 minutos." : "of 30 minutes." }}
+                {{ t("ctaFinal.title1") }}
+                <span class="text-gradient">{{ t("ctaFinal.titleGradient") }}</span>
+                {{ t("ctaFinal.title2") }}
               </h2>
 
               <p class="mt-6 text-base sm:text-lg dark:text-text-secondary text-light-muted leading-relaxed max-w-xl">
-                {{ locale === "es"
-                  ? "Te ayudamos a definir el producto correcto para tu negocio, los entregables y el alcance — sin venderte humo. Si encajamos, seguimos. Si no, te queda un plan claro."
-                  : "We help you define the right product for your business, the deliverables, and the scope — no smoke selling. If we fit, we move forward. If not, you walk away with a clear plan." }}
+                {{ t("ctaFinal.subtitle") }}
               </p>
 
               <!-- Inclusions -->
@@ -39,7 +37,7 @@
                   <div class="w-8 h-8 rounded-lg bg-emerald-500/15 flex items-center justify-center shrink-0">
                     <LucideIcon :name="incl.icon" class-name="w-4 h-4 text-emerald-400" />
                   </div>
-                  <span>{{ incl.label[locale] }}</span>
+                  <span>{{ t(`ctaFinal.inclusions.${incl.key}`) }}</span>
                 </li>
               </ul>
 
@@ -47,10 +45,10 @@
               <div class="mt-10 flex flex-wrap items-center gap-4">
                 <BaseButton :href="callLink" size="lg" arrow>
                   <LucideIcon name="message-circle" class-name="w-5 h-5" />
-                  {{ locale === "es" ? "Agendar ahora por WhatsApp" : "Book now on WhatsApp" }}
+                  {{ t("ctaFinal.ctaBook") }}
                 </BaseButton>
                 <span class="text-sm dark:text-text-secondary text-light-muted">
-                  {{ locale === "es" ? "Respondemos en menos de 24h" : "We answer in under 24h" }}
+                  {{ t("ctaFinal.reply24") }}
                 </span>
               </div>
             </div>
@@ -60,9 +58,7 @@
               <div class="relative rounded-2xl border dark:border-white/10 border-light-border dark:bg-base-900/60 bg-light-surface backdrop-blur-xl p-7 shadow-glass-hover">
                 <LucideIcon name="quote" class-name="w-8 h-8 text-brand-400/40 mb-4" />
                 <p class="font-display text-lg sm:text-xl dark:text-white text-light-text leading-relaxed mb-6">
-                  {{ locale === "es"
-                    ? "Llegué con una idea vaga y salí con un roadmap claro y precio fijo. En 21 días tenía mi sitio publicado y generando leads."
-                    : "I arrived with a fuzzy idea and left with a clear roadmap and fixed price. In 21 days I had my site live generating leads." }}
+                  {{ t("ctaFinal.quote") }}
                 </p>
                 <div class="flex items-center gap-3">
                   <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-cyan-glow flex items-center justify-center font-display font-bold text-white">
@@ -73,7 +69,7 @@
                       Marco G.
                     </div>
                     <div class="text-xs dark:text-text-secondary text-light-muted">
-                      {{ locale === "es" ? "Founder · Salón Casa Verde" : "Founder · Salón Casa Verde" }}
+                      Founder · Salón Casa Verde
                     </div>
                   </div>
                 </div>
@@ -99,27 +95,16 @@ import LucideIcon from "./LucideIcon.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
 import BaseButton from "./ui/BaseButton.vue";
 
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 const { linkFor } = useWhatsApp();
 
 const callLink = computed(() => linkFor("call", locale.value));
 
+// Textos en src/i18n/{es,en}.js bajo `ctaFinal.inclusions.<key>`
 const inclusions = [
-  {
-    icon: "compass",
-    label: { es: "Diagnóstico de oportunidad", en: "Opportunity diagnosis" },
-  },
-  {
-    icon: "lightbulb",
-    label: { es: "Recomendación de producto", en: "Product recommendation" },
-  },
-  {
-    icon: "calculator",
-    label: { es: "Estimación de inversión", en: "Investment estimate" },
-  },
-  {
-    icon: "calendar-check",
-    label: { es: "Roadmap de fases y tiempos", en: "Phase and timeline roadmap" },
-  },
+  { key: "diagnosis", icon: "compass" },
+  { key: "recommendation", icon: "lightbulb" },
+  { key: "estimate", icon: "calculator" },
+  { key: "roadmap", icon: "calendar-check" },
 ];
 </script>

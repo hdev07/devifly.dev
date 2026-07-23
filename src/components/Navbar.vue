@@ -101,7 +101,7 @@
           class="group relative flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-1.5 lg:py-2 rounded-xl text-xs lg:text-sm font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-brand-500/25"
           style="background: linear-gradient(135deg, #3b82f6, #22d3ee);"
         >
-          <span class="relative z-10">{{ locale === 'en' ? 'Book a call' : 'Agendar llamada' }}</span>
+          <span class="relative z-10">{{ t('nav.bookCall') }}</span>
           <svg class="relative z-10 w-3 h-3 lg:w-3.5 lg:h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
@@ -156,7 +156,7 @@
               <div>
                 <div class="flex items-center gap-1.5">
                   <span class="text-sm font-semibold dark:text-text-primary text-light-text leading-tight">
-                    {{ locale === 'en' ? product.titleEn : product.titleEs }}
+                    {{ t(`nav.mega.${product.key}.title`) }}
                   </span>
                   <span
                     v-if="product.badge"
@@ -165,7 +165,7 @@
                   >{{ product.badge }}</span>
                 </div>
                 <p class="text-xs dark:text-text-secondary text-light-muted mt-0.5 leading-snug">
-                  {{ locale === 'en' ? product.descEn : product.descEs }}
+                  {{ t(`nav.mega.${product.key}.desc`) }}
                 </p>
               </div>
               <!-- arrow -->
@@ -181,14 +181,14 @@
           <!-- bottom strip -->
           <div class="mt-4 pt-4 border-t dark:border-base-700/40 border-light-border flex items-center justify-between">
             <p class="text-xs dark:text-text-secondary text-light-muted">
-              {{ locale === 'en' ? '✦ All services include hosting, SSL and ongoing support' : '✦ Todos los servicios incluyen hosting, SSL y soporte continuo' }}
+              {{ t('nav.allInclude') }}
             </p>
             <router-link
               to="/#productos"
               @click="closeDropdown"
               class="flex items-center gap-1.5 text-xs font-semibold text-brand-500 hover:text-brand-400 transition-colors"
             >
-              {{ locale === 'en' ? 'See all services' : 'Ver todos los servicios' }}
+              {{ t('nav.seeAll') }}
               <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -239,10 +239,10 @@
                   ></span>
                   <div>
                     <div class="font-medium leading-tight dark:text-text-primary text-light-text text-[13px]">
-                      {{ locale === 'en' ? product.titleEn : product.titleEs }}
+                      {{ t(`nav.mega.${product.key}.title`) }}
                     </div>
                     <div class="text-[11px] dark:text-text-secondary text-light-muted mt-0.5">
-                      {{ locale === 'en' ? product.descEn : product.descEs }}
+                      {{ t(`nav.mega.${product.key}.desc`) }}
                     </div>
                   </div>
                 </router-link>
@@ -272,7 +272,7 @@
               class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white"
               style="background: linear-gradient(135deg, #3b82f6, #22d3ee);"
             >
-              {{ locale === 'en' ? 'Book a call' : 'Agendar llamada' }}
+              {{ t('nav.bookCall') }}
             </router-link>
             <button
               @click="toggleLang"
@@ -324,54 +324,39 @@ const isProductsActive = computed(() =>
   ['/landing-pages', '/invitaciones', '/menus-digitales', '/catalogos', '/salones-eventos'].some(p => route.path.startsWith(p))
 )
 
-// Mega menu products
+// Mega menu products — textos en src/i18n/{es,en}.js bajo `nav.mega.<key>`
 const megaProducts = [
   {
+    key: 'landing',
     href: '/landing-pages',
-    titleEs: 'Landing Pages',
-    titleEn: 'Landing Pages',
-    descEs: 'Páginas de alta conversión para negocios',
-    descEn: 'High-conversion pages for businesses',
     icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>`,
     color: '#3b82f6',
     badge: null,
   },
   {
+    key: 'invitaciones',
     href: '/invitaciones',
-    titleEs: 'Invitaciones',
-    titleEn: 'Invitations',
-    descEs: 'Invitaciones digitales para eventos',
-    descEn: 'Digital invitations for any event',
     icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M21 8V6a2 2 0 00-2-2H5a2 2 0 00-2 2v2"/><rect x="1" y="8" width="22" height="13" rx="2"/><path d="M1 13l11-4 11 4"/></svg>`,
     color: '#a78bfa',
     badge: null,
   },
   {
+    key: 'menus',
     href: '/menus-digitales',
-    titleEs: 'Menús Digitales',
-    titleEn: 'Digital Menus',
-    descEs: 'Menús QR para restaurantes y cafés',
-    descEn: 'QR menus for restaurants & cafés',
     icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h12"/><circle cx="19" cy="18" r="2"/></svg>`,
     color: '#f59e0b',
     badge: null,
   },
   {
+    key: 'catalogos',
     href: '/catalogos',
-    titleEs: 'Catálogos',
-    titleEn: 'Catalogs',
-    descEs: 'Catálogos digitales para vendedoras',
-    descEn: 'Digital catalogs for sellers',
     icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>`,
     color: '#10b981',
     badge: 'nuevo',
   },
   {
+    key: 'salones',
     href: '/salones-eventos',
-    titleEs: 'Salones & Eventos',
-    titleEn: 'Venues & Events',
-    descEs: 'Sitios web con sistema de reservas',
-    descEn: 'Websites with booking system',
     icon: `<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
     color: '#f43f5e',
     badge: null,

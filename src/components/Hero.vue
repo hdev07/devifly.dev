@@ -17,7 +17,7 @@
               <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
             </span>
             <span class="text-[11px] font-semibold tracking-[0.18em] uppercase dark:text-text-secondary text-light-muted">
-              {{ locale === "es" ? "+20 productos en producción · Disponible Q2" : "+20 products live · Available Q2" }}
+              {{ t("hero.badge") }}
             </span>
           </div>
 
@@ -27,13 +27,13 @@
             class="font-display font-bold leading-[1.02] tracking-tight dark:text-white text-light-text delay-100"
             style="font-size: clamp(2.4rem, 6.8vw, 5rem)"
           >
-            {{ locale === "es" ? "Diseñamos" : "We design" }}
+            {{ t("hero.title1") }}
             <span class="text-gradient">
-              {{ locale === "es" ? "software que genera" : "software that drives" }}
+              {{ t("hero.title2") }}
             </span>
             <br class="hidden sm:block" />
             <span class="relative inline-block">
-              {{ locale === "es" ? "crecimiento" : "growth" }}.
+              {{ t("hero.title3") }}.
               <svg class="absolute -bottom-2 left-0 w-full" height="14" viewBox="0 0 300 14" fill="none">
                 <path d="M2 8 Q 75 -2, 150 6 T 298 5" stroke="url(#hero-stroke)" stroke-width="3" stroke-linecap="round" fill="none" />
                 <defs>
@@ -48,23 +48,19 @@
 
           <!-- Subtitle -->
           <p data-animate class="mt-7 text-base sm:text-lg dark:text-text-secondary text-light-muted leading-relaxed max-w-xl delay-200">
-            {{
-              locale === "es"
-                ? "Productos digitales premium — landings, invitaciones, menús, catálogos y SaaS — construidos para convertir tráfico en clientes y operaciones manuales en sistemas."
-                : "Premium digital products — landings, invitations, menus, catalogs, and SaaS — built to turn traffic into clients and manual operations into systems."
-            }}
+            {{ t("hero.subtitle") }}
           </p>
 
           <!-- 3 CTAs -->
           <div data-animate class="mt-9 flex flex-wrap items-center gap-3 sm:gap-4 delay-300">
             <BaseButton :href="callLink" arrow>
-              {{ locale === "es" ? "Agendar llamada" : "Book a call" }}
+              {{ t("hero.ctaCall") }}
             </BaseButton>
             <BaseButton to="/#productos" variant="secondary">
-              {{ locale === "es" ? "Ver productos" : "See products" }}
+              {{ t("hero.ctaProducts") }}
             </BaseButton>
             <BaseButton to="/#casos" variant="ghost" arrow>
-              {{ locale === "es" ? "Casos de éxito" : "Case studies" }}
+              {{ t("hero.ctaCases") }}
             </BaseButton>
           </div>
 
@@ -73,21 +69,21 @@
             <div>
               <span class="font-display text-3xl sm:text-4xl font-bold text-gradient tabular-nums">+20</span>
               <p class="text-xs dark:text-text-secondary text-light-muted mt-1.5 uppercase tracking-[0.15em]">
-                {{ locale === "es" ? "productos enviados" : "products shipped" }}
+                {{ t("hero.metricProducts") }}
               </p>
             </div>
             <div class="w-px h-10 dark:bg-white/10 bg-light-border"></div>
             <div>
               <span class="font-display text-3xl sm:text-4xl font-bold text-gradient tabular-nums">5+</span>
               <p class="text-xs dark:text-text-secondary text-light-muted mt-1.5 uppercase tracking-[0.15em]">
-                {{ locale === "es" ? "años construyendo" : "years building" }}
+                {{ t("hero.metricYears") }}
               </p>
             </div>
             <div class="w-px h-10 dark:bg-white/10 bg-light-border"></div>
             <div>
               <span class="font-display text-3xl sm:text-4xl font-bold text-gradient tabular-nums">21d</span>
               <p class="text-xs dark:text-text-secondary text-light-muted mt-1.5 uppercase tracking-[0.15em]">
-                {{ locale === "es" ? "demo en vivo" : "live demo" }}
+                {{ t("hero.metricDemo") }}
               </p>
             </div>
           </div>
@@ -120,12 +116,12 @@
             class="absolute top-[140px] left-0 w-[260px] tilt-card rounded-2xl border dark:border-brand-500/25 border-brand-500/30 dark:bg-base-900/75 bg-light-surface backdrop-blur-xl p-5 shadow-glass-hover delay-300"
           >
             <div class="flex items-center justify-between mb-2.5">
-              <span class="text-[10px] uppercase tracking-[0.18em] text-brand-400 font-semibold">{{ locale === "es" ? "Resultado" : "Result" }}</span>
+              <span class="text-[10px] uppercase tracking-[0.18em] text-brand-400 font-semibold">{{ t("hero.resultLabel") }}</span>
               <LucideIcon name="trending-up" class-name="w-4 h-4 text-emerald-400" />
             </div>
             <div class="font-display font-bold text-3xl text-gradient leading-none mb-2">+45%</div>
             <p class="text-xs dark:text-text-secondary text-light-muted leading-relaxed">
-              {{ locale === "es" ? "Aumento de leads tras rediseño de landing" : "Lift in leads after landing redesign" }}
+              {{ t("hero.resultDesc") }}
             </p>
             <div class="mt-3 h-1.5 rounded-full dark:bg-white/5 bg-light-card overflow-hidden">
               <div class="h-full w-[78%] rounded-full bg-gradient-to-r from-brand-500 to-cyan-glow"></div>
@@ -166,7 +162,7 @@
 
     <!-- Scroll indicator -->
     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 dark:text-text-secondary text-light-muted">
-      <span class="text-[10px] uppercase tracking-[0.2em]">{{ locale === "es" ? "Scroll" : "Scroll" }}</span>
+      <span class="text-[10px] uppercase tracking-[0.2em]">Scroll</span>
       <div class="w-px h-8 dark:bg-white/15 bg-light-border relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-3 bg-gradient-to-b from-brand-500 to-transparent animate-[scroll-down_2s_ease-in-out_infinite]"></div>
       </div>
@@ -182,7 +178,7 @@ import LucideIcon from "./LucideIcon.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
 import BaseButton from "./ui/BaseButton.vue";
 
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 const { linkFor } = useWhatsApp();
 
 const callLink = computed(() => linkFor("call", locale.value));

@@ -5,11 +5,9 @@
     <div class="relative max-w-7xl mx-auto px-6">
       <SectionHeader
         align="center"
-        :eyebrow="locale === 'es' ? 'Por qué Devifly' : 'Why Devifly'"
-        :title="locale === 'es' ? 'No somos una agencia más. Y eso se nota.' : 'We are not just another agency. And it shows.'"
-        :subtitle="locale === 'es'
-          ? 'Mientras la competencia entrega plantillas genéricas y cobra por cada cambio, Devifly construye productos pensados para vender desde el día 1.'
-          : 'While the competition ships generic templates and charges for every change, Devifly builds products designed to sell from day 1.'"
+        :eyebrow="t('whyDevifly.eyebrow')"
+        :title="t('whyDevifly.title')"
+        :subtitle="t('whyDevifly.subtitle')"
       />
 
       <!-- Mobile: stacked cards -->
@@ -22,21 +20,21 @@
           class="rounded-2xl border dark:border-white/8 border-light-border dark:bg-base-900/55 bg-light-surface/85 backdrop-blur-xl p-5"
         >
           <h3 class="font-display font-semibold dark:text-white text-light-text mb-3">
-            {{ row.feature[locale] }}
+            {{ t(`whyDevifly.rows.${row.key}.feature`) }}
           </h3>
           <div class="grid grid-cols-2 gap-3">
             <div class="rounded-xl p-3 dark:bg-red-500/5 bg-red-500/5 border dark:border-red-400/15 border-red-400/20">
               <span class="text-[10px] font-bold uppercase tracking-[0.18em] dark:text-red-400 text-red-500 block mb-1">
-                {{ locale === "es" ? "Otros" : "Others" }}
+                {{ t("whyDevifly.others") }}
               </span>
               <p class="text-xs dark:text-text-secondary text-light-muted leading-relaxed">
-                {{ row.others[locale] }}
+                {{ t(`whyDevifly.rows.${row.key}.others`) }}
               </p>
             </div>
             <div class="rounded-xl p-3 dark:bg-emerald-500/5 bg-emerald-500/5 border dark:border-emerald-400/20 border-emerald-400/25">
               <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-400 block mb-1">Devifly</span>
               <p class="text-xs font-medium dark:text-white text-light-text leading-relaxed">
-                {{ row.devifly[locale] }}
+                {{ t(`whyDevifly.rows.${row.key}.devifly`) }}
               </p>
             </div>
           </div>
@@ -50,14 +48,14 @@
           <div class="grid grid-cols-12 dark:bg-base-800/60 bg-light-card border-b dark:border-white/8 border-light-border">
             <div class="col-span-4 px-6 py-5">
               <span class="text-[11px] font-semibold tracking-[0.22em] uppercase dark:text-text-secondary text-light-muted">
-                {{ locale === "es" ? "Comparación" : "Comparison" }}
+                {{ t("whyDevifly.comparison") }}
               </span>
             </div>
             <div class="col-span-4 px-6 py-5 border-l dark:border-white/8 border-light-border">
               <div class="flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-red-400"></span>
                 <span class="font-display text-sm font-semibold dark:text-text-secondary text-light-muted uppercase tracking-wider">
-                  {{ locale === "es" ? "Otros estudios" : "Other studios" }}
+                  {{ t("whyDevifly.otherStudios") }}
                 </span>
               </div>
             </div>
@@ -81,19 +79,19 @@
               <div class="col-span-4 px-6 py-5 flex items-center gap-3">
                 <LucideIcon :name="row.icon" class-name="w-4 h-4 text-brand-400 shrink-0" />
                 <span class="font-medium text-sm dark:text-white text-light-text">
-                  {{ row.feature[locale] }}
+                  {{ t(`whyDevifly.rows.${row.key}.feature`) }}
                 </span>
               </div>
               <div class="col-span-4 px-6 py-5 border-l dark:border-white/5 border-light-border flex items-start gap-3">
                 <LucideIcon name="x" class-name="w-4 h-4 dark:text-red-400/80 text-red-500/80 mt-0.5 shrink-0" />
                 <p class="text-sm dark:text-text-secondary text-light-muted leading-relaxed">
-                  {{ row.others[locale] }}
+                  {{ t(`whyDevifly.rows.${row.key}.others`) }}
                 </p>
               </div>
               <div class="col-span-4 px-6 py-5 border-l dark:border-brand-500/15 border-brand-500/20 dark:bg-emerald-500/3 bg-emerald-500/3 flex items-start gap-3">
                 <LucideIcon name="check" class-name="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
                 <p class="text-sm font-medium dark:text-white text-light-text leading-relaxed">
-                  {{ row.devifly[locale] }}
+                  {{ t(`whyDevifly.rows.${row.key}.devifly`) }}
                 </p>
               </div>
             </div>
@@ -109,7 +107,7 @@
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-500 via-brand-500 to-cyan-glow text-white font-semibold text-sm shadow-[0_10px_40px_rgba(59,130,246,0.35)] hover:shadow-[0_14px_55px_rgba(59,130,246,0.55)] transition-all"
         >
-          {{ locale === "es" ? "Quiero un partner, no un proveedor" : "I want a partner, not a vendor" }}
+          {{ t("whyDevifly.cta") }}
           <span aria-hidden="true">→</span>
         </a>
       </div>
@@ -125,53 +123,19 @@ import LucideIcon from "./LucideIcon.vue";
 import SectionHeader from "./ui/SectionHeader.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
 
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 const { linkFor } = useWhatsApp();
 
 const callLink = computed(() => linkFor("call", locale.value));
 
+// Textos en src/i18n/{es,en}.js bajo `whyDevifly.rows.<key>`
 const rows = [
-  {
-    icon: "rocket",
-    feature: { es: "Velocidad de entrega", en: "Delivery speed" },
-    others: { es: "Procesos burocráticos, demos en 6-8 semanas", en: "Bureaucratic processes, demos in 6-8 weeks" },
-    devifly: { es: "Demo real publicada en 21 días", en: "Real demo live in 21 days" },
-  },
-  {
-    icon: "target",
-    feature: { es: "Enfoque del diseño", en: "Design focus" },
-    others: { es: "Bonito pero sin estrategia de conversión", en: "Pretty but no conversion strategy" },
-    devifly: { es: "UX orientado a venta y datos", en: "Sales- and data-oriented UX" },
-  },
-  {
-    icon: "code",
-    feature: { es: "Stack y rendimiento", en: "Stack & performance" },
-    others: { es: "Plantillas WordPress lentas con plugins inflados", en: "Slow WordPress templates with bloated plugins" },
-    devifly: { es: "Vue 3 + Tailwind, Lighthouse 90+", en: "Vue 3 + Tailwind, Lighthouse 90+" },
-  },
-  {
-    icon: "users",
-    feature: { es: "Comunicación", en: "Communication" },
-    others: { es: "Pasas por 3 cuentas y un PM antes de hablar con dev", en: "You go through 3 accounts and a PM before reaching dev" },
-    devifly: { es: "Trato directo con el founder/dev en cada etapa", en: "Direct line with founder/dev at every step" },
-  },
-  {
-    icon: "wand-sparkles",
-    feature: { es: "Cambios después del lanzamiento", en: "Post-launch changes" },
-    others: { es: "Cobran cada ajuste menor como ticket nuevo", en: "Every minor tweak billed as a new ticket" },
-    devifly: { es: "Planes de mantenimiento claros desde $999/mes", en: "Clear maintenance plans from $71/mo" },
-  },
-  {
-    icon: "shield-check",
-    feature: { es: "Garantía de resultado", en: "Result guarantee" },
-    others: { es: "Te entregan el sitio y desaparecen", en: "They ship the site and disappear" },
-    devifly: { es: "21 días para validar antes de pagar el grueso", en: "21 days to validate before paying the bulk" },
-  },
-  {
-    icon: "trending-up",
-    feature: { es: "Visión de negocio", en: "Business vision" },
-    others: { es: "Solo construyen lo que pides", en: "They only build what you ask for" },
-    devifly: { es: "Aportan estrategia CRO y métricas", en: "They contribute CRO strategy and metrics" },
-  },
+  { key: "speed", icon: "rocket" },
+  { key: "focus", icon: "target" },
+  { key: "stack", icon: "code" },
+  { key: "communication", icon: "users" },
+  { key: "changes", icon: "wand-sparkles" },
+  { key: "guarantee", icon: "shield-check" },
+  { key: "vision", icon: "trending-up" },
 ];
 </script>

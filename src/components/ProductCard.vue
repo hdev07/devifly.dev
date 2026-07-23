@@ -7,7 +7,7 @@
       class="absolute top-3 right-3 z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-white text-[10px] font-bold uppercase tracking-wider shadow-lg"
     >
       <LucideIcon name="flame" class-name="w-3 h-3" />
-      {{ locale === "es" ? "Popular" : "Popular" }}
+      Popular
     </div>
 
     <div class="relative h-44 overflow-hidden">

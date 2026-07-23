@@ -8,23 +8,15 @@
       >
         <SectionHeader
           class="!mb-0"
-          :eyebrow="locale === 'es' ? 'Resultados' : 'Results'"
-          :title="
-            locale === 'es'
-              ? 'Productos en producción, no en Figma'
-              : 'Products in production, not in Figma'
-          "
-          :subtitle="
-            locale === 'es'
-              ? 'Tres proyectos reales con usuarios activos. Así se ve cuando el producto correcto resuelve un problema de negocio.'
-              : 'Three real projects with active users. This is what happens when the right product solves a business problem.'
-          "
+          :eyebrow="t('cases.eyebrow')"
+          :title="t('cases.title')"
+          :subtitle="t('cases.subtitle')"
         />
         <router-link
           to="/contacto"
           class="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border dark:text-white text-light-text text-sm font-semibold hover:dark:border-brand-500/40 hover:border-brand-500/50 backdrop-blur-md whitespace-nowrap transition-all"
         >
-          {{ locale === "es" ? "Quiero un resultado así" : "I want results like these" }}
+          {{ t("cases.cta") }}
           <LucideIcon name="arrow-right" class-name="w-4 h-4" />
         </router-link>
       </div>
@@ -64,11 +56,7 @@
                       target="_blank"
                       rel="noopener noreferrer"
                       class="inline-flex items-center text-brand-400 hover:text-brand-300 transition-colors"
-                      :aria-label="
-                        locale === 'es'
-                          ? `Visitar ${study.title[locale]}`
-                          : `Visit ${study.title[locale]}`
-                      "
+                      :aria-label="t('cases.visit', { name: study.title[locale] })"
                     >
                       <LucideIcon name="arrow-up-right" class-name="w-4 h-4" />
                     </a>
@@ -112,7 +100,7 @@
                 <span
                   class="text-[10px] font-bold uppercase tracking-[0.18em] dark:text-red-400 text-red-500 block mb-1"
                 >
-                  {{ locale === "es" ? "Problema" : "Problem" }}
+                  {{ t("common.problem") }}
                 </span>
                 <p class="text-sm dark:text-text-secondary text-light-muted leading-relaxed">
                   {{ study.problem[locale] }}
@@ -132,7 +120,7 @@
                 <span
                   class="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-400 block mb-1"
                 >
-                  {{ locale === "es" ? "Solución" : "Solution" }}
+                  {{ t("common.solution") }}
                 </span>
                 <p class="text-sm dark:text-text-secondary text-light-muted leading-relaxed">
                   {{ study.solution[locale] }}
@@ -155,7 +143,7 @@
                 <span
                   class="text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-400 block mb-1"
                 >
-                  {{ locale === "es" ? "Resultado" : "Result" }}
+                  {{ t("common.result") }}
                 </span>
                 <p class="text-sm font-semibold dark:text-white text-light-text leading-relaxed">
                   {{ study.result[locale] }}
@@ -171,7 +159,7 @@
           to="/contacto"
           class="inline-flex items-center gap-2 px-5 py-3 rounded-full dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border dark:text-white text-light-text text-sm font-semibold hover:dark:border-brand-500/40 transition-all"
         >
-          {{ locale === "es" ? "Quiero un resultado así" : "I want results like these" }}
+          {{ t("cases.cta") }}
           <LucideIcon name="arrow-right" class-name="w-4 h-4" />
         </router-link>
       </div>
@@ -187,7 +175,7 @@ import SectionHeader from "./ui/SectionHeader.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
 import { caseStudies } from "../data/solutions.js";
 
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 
 const featuredCases = computed(() =>
   caseStudies.filter((cs) => cs.featured),

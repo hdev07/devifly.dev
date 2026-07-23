@@ -4,11 +4,9 @@
 
     <div class="relative max-w-7xl mx-auto px-6">
       <SectionHeader
-        :eyebrow="locale === 'es' ? 'Proceso' : 'Process'"
-        :title="locale === 'es' ? 'De la idea al lanzamiento en 4 pasos' : 'From idea to launch in 4 steps'"
-        :subtitle="locale === 'es'
-          ? 'Sin reuniones eternas. Cada fase tiene un entregable claro y avanzas viendo tu producto crecer.'
-          : 'No endless meetings. Each phase has a clear deliverable and you advance watching your product grow.'"
+        :eyebrow="t('howWeWork.eyebrow')"
+        :title="t('howWeWork.title')"
+        :subtitle="t('howWeWork.subtitle')"
       />
 
       <!-- Steps -->
@@ -35,7 +33,7 @@
               >
                 <div class="text-center">
                   <div class="text-[10px] uppercase tracking-[0.22em] text-brand-400 font-bold mb-1">
-                    {{ locale === "es" ? "Paso" : "Step" }}
+                    {{ t("howWeWork.step") }}
                   </div>
                   <div class="font-display text-4xl font-bold dark:text-white text-light-text leading-none">
                     {{ step.num }}
@@ -50,26 +48,26 @@
                   :class="step.tagColor"
                 >
                   <LucideIcon :name="step.icon" class-name="w-3.5 h-3.5" />
-                  {{ step.duration[locale] }}
+                  {{ t(`howWeWork.steps.${step.key}.duration`) }}
                 </span>
               </div>
 
               <h3 class="font-display text-xl font-bold dark:text-white text-light-text mb-3 leading-tight">
-                {{ step.title[locale] }}
+                {{ t(`howWeWork.steps.${step.key}.title`) }}
               </h3>
               <p class="text-sm dark:text-text-secondary text-light-muted leading-relaxed mb-4">
-                {{ step.desc[locale] }}
+                {{ t(`howWeWork.steps.${step.key}.desc`) }}
               </p>
 
               <!-- Deliverable -->
               <div class="mt-auto pt-4 border-t dark:border-white/8 border-light-border w-full">
                 <div class="text-[10px] font-bold uppercase tracking-[0.18em] dark:text-text-secondary text-light-muted mb-1.5">
-                  {{ locale === "es" ? "Entregable" : "Deliverable" }}
+                  {{ t("howWeWork.deliverable") }}
                 </div>
                 <div class="flex items-start gap-2">
                   <LucideIcon name="check-circle-2" class-name="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
                   <span class="text-sm font-semibold dark:text-white text-light-text">
-                    {{ step.deliverable[locale] }}
+                    {{ t(`howWeWork.steps.${step.key}.deliverable`) }}
                   </span>
                 </div>
               </div>
@@ -86,19 +84,17 @@
           </div>
           <div class="flex-1">
             <h4 class="font-display text-base sm:text-lg font-bold dark:text-white text-light-text mb-1">
-              {{ locale === "es" ? "Bonus: post-lanzamiento incluido" : "Bonus: post-launch included" }}
+              {{ t("howWeWork.bonusTitle") }}
             </h4>
             <p class="text-sm dark:text-text-secondary text-light-muted leading-relaxed">
-              {{ locale === "es"
-                ? "30 días de soporte, métricas y ajustes. Tu sitio sigue evolucionando con datos reales."
-                : "30 days of support, metrics, and tweaks. Your site keeps evolving with real data." }}
+              {{ t("howWeWork.bonusDesc") }}
             </p>
           </div>
           <router-link
             to="/#precios"
             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border text-sm font-semibold dark:text-white text-light-text hover:dark:border-brand-500/50 transition-all shrink-0"
           >
-            {{ locale === "es" ? "Ver mantenimiento" : "See maintenance" }}
+            {{ t("howWeWork.bonusCta") }}
             <span aria-hidden="true">→</span>
           </router-link>
         </div>
@@ -113,60 +109,37 @@ import LucideIcon from "./LucideIcon.vue";
 import SectionHeader from "./ui/SectionHeader.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
 
-const { locale } = useI18n();
+const { t } = useI18n();
 
+// Textos en src/i18n/{es,en}.js bajo `howWeWork.steps.<key>`
 const steps = [
   {
+    key: "discovery",
     num: "01",
     icon: "compass",
     iconBg: "dark:hover:shadow-[0_0_60px_rgba(59,130,246,0.15)]",
     tagColor: "text-brand-400",
-    duration: { es: "Día 1-2", en: "Day 1-2" },
-    title: { es: "Discovery & Estrategia", en: "Discovery & Strategy" },
-    desc: {
-      es: "Llamada estratégica para entender el negocio, el cliente final y qué métrica mueve la aguja.",
-      en: "Strategy call to understand the business, end customer, and which metric moves the needle.",
-    },
-    deliverable: { es: "Brief + roadmap", en: "Brief + roadmap" },
   },
   {
+    key: "design",
     num: "02",
     icon: "pen-tool",
     iconBg: "",
     tagColor: "dark:text-violet-300 text-violet-500",
-    duration: { es: "Semana 1", en: "Week 1" },
-    title: { es: "Diseño UX/UI", en: "UX/UI Design" },
-    desc: {
-      es: "Wireframes y prototipos validados antes de tocar código. Diseño orientado a conversión.",
-      en: "Wireframes and prototypes validated before writing code. Conversion-oriented design.",
-    },
-    deliverable: { es: "Mockups en alta fidelidad", en: "High-fidelity mockups" },
   },
   {
+    key: "development",
     num: "03",
     icon: "code-2",
     iconBg: "",
     tagColor: "dark:text-cyan-glow text-cyan-600",
-    duration: { es: "Semanas 2-3", en: "Weeks 2-3" },
-    title: { es: "Desarrollo Iterativo", en: "Iterative Development" },
-    desc: {
-      es: "Stack moderno (Vue 3 + Tailwind), entregas semanales con tu feedback aplicado en vivo.",
-      en: "Modern stack (Vue 3 + Tailwind), weekly deliveries with your feedback applied live.",
-    },
-    deliverable: { es: "Demo publicada en 21 días", en: "Live demo in 21 days" },
   },
   {
+    key: "launch",
     num: "04",
     icon: "rocket",
     iconBg: "",
     tagColor: "dark:text-emerald-400 text-emerald-500",
-    duration: { es: "Día final", en: "Final day" },
-    title: { es: "Lanzamiento & Métricas", en: "Launch & Metrics" },
-    desc: {
-      es: "Deploy con dominio, SSL, SEO y analytics configurados. Te entregamos el sitio listo para campañas.",
-      en: "Deploy with domain, SSL, SEO, and analytics configured. We hand off the site ready for campaigns.",
-    },
-    deliverable: { es: "Sitio live + tracking activo", en: "Live site + active tracking" },
   },
 ];
 </script>

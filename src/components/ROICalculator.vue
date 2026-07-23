@@ -5,11 +5,9 @@
     <div class="relative max-w-7xl mx-auto px-6">
       <SectionHeader
         align="center"
-        :eyebrow="locale === 'es' ? 'ROI Calculator' : 'ROI Calculator'"
-        :title="locale === 'es' ? '¿Cuánto puede recuperar tu negocio en 12 meses?' : 'How much can your business recover in 12 months?'"
-        :subtitle="locale === 'es'
-          ? 'Mueve los controles y descubre el impacto estimado de automatizar tu sitio y operación.'
-          : 'Move the controls and discover the estimated impact of automating your site and operation.'"
+        eyebrow="ROI Calculator"
+        :title="t('roi.title')"
+        :subtitle="t('roi.subtitle')"
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
@@ -21,10 +19,10 @@
             </div>
             <div>
               <h3 class="font-display text-lg font-bold dark:text-white text-light-text">
-                {{ locale === "es" ? "Tu negocio hoy" : "Your business today" }}
+                {{ t("roi.panelTitle") }}
               </h3>
               <p class="text-xs dark:text-text-secondary text-light-muted">
-                {{ locale === "es" ? "Datos aproximados son suficientes" : "Approximate numbers work fine" }}
+                {{ t("roi.panelSubtitle") }}
               </p>
             </div>
           </div>
@@ -35,7 +33,7 @@
               <div class="flex items-center justify-between mb-3">
                 <label class="text-sm font-semibold dark:text-white text-light-text flex items-center gap-2">
                   <LucideIcon name="eye" class-name="w-4 h-4 text-brand-400" />
-                  {{ locale === "es" ? "Visitas mensuales a tu sitio" : "Monthly visits to your site" }}
+                  {{ t("roi.visitors") }}
                 </label>
                 <span class="font-display text-lg font-bold text-gradient tabular-nums">
                   {{ formatNumber(visitors) }}
@@ -60,7 +58,7 @@
               <div class="flex items-center justify-between mb-3">
                 <label class="text-sm font-semibold dark:text-white text-light-text flex items-center gap-2">
                   <LucideIcon name="percent" class-name="w-4 h-4 text-brand-400" />
-                  {{ locale === "es" ? "Conversión actual" : "Current conversion" }}
+                  {{ t("roi.conversion") }}
                 </label>
                 <span class="font-display text-lg font-bold text-gradient tabular-nums">
                   {{ conversionRate.toFixed(1) }}%
@@ -85,7 +83,7 @@
               <div class="flex items-center justify-between mb-3">
                 <label class="text-sm font-semibold dark:text-white text-light-text flex items-center gap-2">
                   <LucideIcon name="dollar-sign" class-name="w-4 h-4 text-brand-400" />
-                  {{ locale === "es" ? "Ticket promedio (MXN)" : "Average ticket (MXN)" }}
+                  {{ t("roi.ticket") }}
                 </label>
                 <span class="font-display text-lg font-bold text-gradient tabular-nums">
                   ${{ formatNumber(avgTicket) }}
@@ -110,7 +108,7 @@
               <div class="flex items-center justify-between mb-3">
                 <label class="text-sm font-semibold dark:text-white text-light-text flex items-center gap-2">
                   <LucideIcon name="clock-4" class-name="w-4 h-4 text-brand-400" />
-                  {{ locale === "es" ? "Horas/semana en tareas manuales" : "Hours/week on manual tasks" }}
+                  {{ t("roi.hours") }}
                 </label>
                 <span class="font-display text-lg font-bold text-gradient tabular-nums">
                   {{ hoursManual }}h
@@ -139,10 +137,10 @@
               class="text-xs font-semibold uppercase tracking-[0.18em] dark:text-text-secondary text-light-muted hover:text-brand-400 transition-colors flex items-center gap-1.5"
             >
               <LucideIcon name="timer-reset" class-name="w-3.5 h-3.5" />
-              {{ locale === "es" ? "Reiniciar valores" : "Reset values" }}
+              {{ t("roi.reset") }}
             </button>
             <span class="text-xs dark:text-text-secondary text-light-muted">
-              {{ locale === "es" ? "Cálculo en tiempo real" : "Live calculation" }}
+              {{ t("roi.live") }}
             </span>
           </div>
         </div>
@@ -156,20 +154,20 @@
             <div class="flex items-center gap-2 mb-3">
               <span class="block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
               <span class="text-[11px] font-bold tracking-[0.22em] uppercase text-emerald-400">
-                {{ locale === "es" ? "Estimación a 12 meses" : "12-month estimate" }}
+                {{ t("roi.estimate12") }}
               </span>
             </div>
 
             <!-- Big number: extra revenue -->
             <div class="mb-7">
               <p class="text-xs dark:text-text-secondary text-light-muted mb-2">
-                {{ locale === "es" ? "Ingresos adicionales potenciales" : "Potential additional revenue" }}
+                {{ t("roi.potentialRevenue") }}
               </p>
               <div class="font-display font-bold text-gradient leading-none tabular-nums" style="font-size: clamp(2.2rem, 6vw, 3.6rem)">
                 ${{ formatNumber(extraRevenueYear) }}
               </div>
               <div class="text-xs dark:text-text-secondary text-light-muted mt-2 tabular-nums">
-                {{ locale === "es" ? "≈ $" + formatNumber(extraRevenueMonth) + " / mes" : "≈ $" + formatNumber(extraRevenueMonth) + " / month" }}
+                {{ t("roi.perMonth", { amount: formatNumber(extraRevenueMonth) }) }}
               </div>
             </div>
 
@@ -181,7 +179,7 @@
                     <LucideIcon name="users" class-name="w-4 h-4 text-brand-400" />
                   </div>
                   <span class="text-sm dark:text-text-secondary text-light-muted">
-                    {{ locale === "es" ? "Leads extra al mes" : "Extra leads/month" }}
+                    {{ t("roi.extraLeads") }}
                   </span>
                 </div>
                 <span class="font-display font-bold dark:text-white text-light-text tabular-nums">
@@ -195,7 +193,7 @@
                     <LucideIcon name="clock" class-name="w-4 h-4 text-emerald-400" />
                   </div>
                   <span class="text-sm dark:text-text-secondary text-light-muted">
-                    {{ locale === "es" ? "Horas recuperadas/año" : "Hours saved/year" }}
+                    {{ t("roi.hoursSaved") }}
                   </span>
                 </div>
                 <span class="font-display font-bold dark:text-white text-light-text tabular-nums">
@@ -209,7 +207,7 @@
                     <LucideIcon name="trending-up" class-name="w-4 h-4 dark:text-violet-300 text-violet-500" />
                   </div>
                   <span class="text-sm dark:text-text-secondary text-light-muted">
-                    {{ locale === "es" ? "ROI estimado" : "Estimated ROI" }}
+                    {{ t("roi.estimatedRoi") }}
                   </span>
                 </div>
                 <span class="font-display font-bold text-gradient tabular-nums">
@@ -226,13 +224,11 @@
               class="group inline-flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-full bg-gradient-to-r from-brand-500 to-cyan-glow text-white font-semibold text-sm shadow-[0_8px_30px_rgba(59,130,246,0.4)] hover:shadow-[0_12px_45px_rgba(59,130,246,0.6)] hover:brightness-110 transition-all"
             >
               <LucideIcon name="message-circle" class-name="w-4 h-4" />
-              {{ locale === "es" ? "Enviar mi resultado por WhatsApp" : "Send my result on WhatsApp" }}
+              {{ t("roi.ctaSend") }}
               <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
             </a>
             <p class="text-[10px] text-center dark:text-text-secondary text-light-muted mt-3 leading-relaxed">
-              {{ locale === "es"
-                ? "Estimación basada en lift promedio del 45% post-rediseño y 80% de eficiencia en tareas automatizables."
-                : "Estimate based on a 45% average lift after redesign and 80% efficiency on automatable tasks." }}
+              {{ t("roi.disclaimer") }}
             </p>
           </div>
         </div>
@@ -249,7 +245,7 @@ import LucideIcon from "./LucideIcon.vue";
 import SectionHeader from "./ui/SectionHeader.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
 
-const { locale } = useI18n();
+const { t } = useI18n();
 const { customLink } = useWhatsApp();
 
 const visitors = ref(2000);
@@ -294,10 +290,13 @@ const formatNumber = (n) => {
 };
 
 const quoteLink = computed(() => {
-  const message =
-    locale.value === "es"
-      ? `Hola Devifly, calcule mi ROI: ${formatNumber(visitors.value)} visitas/mes, ${conversionRate.value.toFixed(1)}% conversion, ticket $${formatNumber(avgTicket.value)} y ${hoursManual.value}h/sem manuales. Estimacion: $${formatNumber(extraRevenueYear.value)} MXN extra al ano. Quiero agendar una llamada estrategica.`
-      : `Hi Devifly, my ROI calc: ${formatNumber(visitors.value)} visits/mo, ${conversionRate.value.toFixed(1)}% conv, $${formatNumber(avgTicket.value)} ticket and ${hoursManual.value}h/wk manual. Estimate: $${formatNumber(extraRevenueYear.value)} MXN extra/year. I'd like to book a strategy call.`;
+  const message = t("roi.waMessage", {
+    visits: formatNumber(visitors.value),
+    conv: conversionRate.value.toFixed(1),
+    ticket: formatNumber(avgTicket.value),
+    hours: hoursManual.value,
+    estimate: formatNumber(extraRevenueYear.value),
+  });
   return customLink(message);
 });
 </script>

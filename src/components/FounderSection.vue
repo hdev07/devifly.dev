@@ -58,11 +58,7 @@
                       <div
                         class="text-xs text-white/70 uppercase tracking-[0.18em] mt-0.5"
                       >
-                        {{
-                          locale === "es"
-                            ? "Senior Full-Stack Engineer"
-                            : "Senior Full-Stack Engineer"
-                        }}
+                        Senior Full-Stack Engineer
                       </div>
                     </div>
                     <a
@@ -91,7 +87,7 @@
                 <span
                   class="text-[10px] font-bold uppercase tracking-[0.15em] dark:text-text-secondary text-light-muted"
                 >
-                  {{ locale === "es" ? "Track record" : "Track record" }}
+                  {{ t("founder.trackRecord") }}
                 </span>
               </div>
               <div class="flex items-baseline gap-1.5">
@@ -99,7 +95,7 @@
                   >5+</span
                 >
                 <span class="text-xs dark:text-text-secondary text-light-muted">
-                  {{ locale === "es" ? "años en producción" : "years in prod" }}
+                  {{ t("founder.yearsProd") }}
                 </span>
               </div>
             </div>
@@ -115,17 +111,13 @@
                 <span
                   class="text-[10px] font-bold uppercase tracking-[0.15em] dark:text-text-secondary text-light-muted"
                 >
-                  {{ locale === "es" ? "Disponible" : "Available" }}
+                  {{ t("founder.available") }}
                 </span>
               </div>
               <p
                 class="text-xs dark:text-text-primary text-light-text font-medium leading-relaxed"
               >
-                {{
-                  locale === "es"
-                    ? "Aceptando proyectos para Q2-Q3"
-                    : "Accepting projects for Q2-Q3"
-                }}
+                {{ t("founder.accepting") }}
               </p>
             </div>
           </div>
@@ -140,7 +132,7 @@
             <span
               class="text-[11px] font-semibold tracking-[0.22em] uppercase text-brand-400"
             >
-              {{ locale === "es" ? "Sobre el fundador" : "About the founder" }}
+              {{ t("founder.eyebrow") }}
             </span>
           </div>
 
@@ -148,31 +140,15 @@
             data-animate
             class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-light-text leading-[1.08] tracking-tight mb-6 delay-100"
           >
-            {{
-              locale === "es"
-                ? "Detrás de Devifly hay un dev que ya pasó por todos los errores que tú quieres evitar."
-                : "Behind Devifly is a dev who has already made every mistake you want to avoid."
-            }}
+            {{ t("founder.title") }}
           </h2>
 
           <div
             data-animate
             class="space-y-4 text-base sm:text-lg dark:text-text-secondary text-light-muted leading-relaxed mb-8 delay-200"
           >
-            <p>
-              {{
-                locale === "es"
-                  ? "Mi nombre está detrás de cada línea de código que entregamos. Construyo productos digitales desde 2019 y antes de Devifly trabajé en proyectos como MoviBase (SaaS de flotas con +10k vehículos), Confecdotario (red social con miles de usuarios) y Musion (PWA cultural con PostGIS)."
-                  : "My name is behind every line of code we ship. I have been building digital products since 2019 and before Devifly I worked on projects like MoviBase (fleet SaaS with +10k vehicles), Confecdotario (social network with thousands of users), and Musion (cultural PWA with PostGIS)."
-              }}
-            </p>
-            <p>
-              {{
-                locale === "es"
-                  ? "Después de ver demasiados proyectos quemarse en agencias que sobre-prometen y entregan plantillas, decidí abrir Devifly: un studio donde el founder es el dev, donde no pagas por overhead corporativo, y donde tu producto se diseña para vender, no para ganar premios."
-                  : "After watching too many projects burn in agencies that over-promise and deliver templates, I opened Devifly: a studio where the founder is the dev, where you do not pay for corporate overhead, and where your product is designed to sell, not to win awards."
-              }}
-            </p>
+            <p>{{ t("founder.p1") }}</p>
+            <p>{{ t("founder.p2") }}</p>
           </div>
 
           <!-- Promise cards -->
@@ -197,12 +173,12 @@
                 <div
                   class="font-semibold text-sm dark:text-white text-light-text"
                 >
-                  {{ promise.title[locale] }}
+                  {{ t(`founder.promises.${promise.key}.title`) }}
                 </div>
                 <div
                   class="text-xs dark:text-text-secondary text-light-muted leading-relaxed mt-0.5"
                 >
-                  {{ promise.desc[locale] }}
+                  {{ t(`founder.promises.${promise.key}.desc`) }}
                 </div>
               </div>
             </div>
@@ -216,11 +192,7 @@
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-brand-500 to-cyan-glow text-white font-semibold text-sm shadow-[0_8px_30px_rgba(59,130,246,0.35)] hover:shadow-[0_12px_45px_rgba(59,130,246,0.55)] hover:brightness-110 transition-all"
             >
-              {{
-                locale === "es"
-                  ? "Hablar conmigo directo"
-                  : "Talk to me directly"
-              }}
+              {{ t("founder.ctaTalk") }}
               <span aria-hidden="true">→</span>
             </a>
             <a
@@ -247,7 +219,7 @@ import { useWhatsApp } from "../composables/useWhatsApp.js";
 import LucideIcon from "./LucideIcon.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
 
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 const { linkFor } = useWhatsApp();
 
 const callLink = computed(() => linkFor("call", locale.value));
@@ -262,38 +234,11 @@ const founderPhoto = computed(() => {
   return entries.length > 0 ? entries[0] : null;
 });
 
+// Textos en src/i18n/{es,en}.js bajo `founder.promises.<key>`
 const promises = [
-  {
-    icon: "user-circle",
-    title: { es: "Trato directo con dev", en: "Direct line with dev" },
-    desc: {
-      es: "Sin pasar por 3 cuentas y un PM",
-      en: "No 3 accounts and a PM in between",
-    },
-  },
-  {
-    icon: "shield-check",
-    title: { es: "Demo antes de pagar", en: "Demo before paying" },
-    desc: {
-      es: "21 días para validar tu inversión",
-      en: "21 days to validate your investment",
-    },
-  },
-  {
-    icon: "code-2",
-    title: { es: "Código que tú puedes auditar", en: "Auditable code" },
-    desc: {
-      es: "Stack moderno, repos privados",
-      en: "Modern stack, private repos",
-    },
-  },
-  {
-    icon: "trending-up",
-    title: { es: "Pensado para vender", en: "Built to sell" },
-    desc: {
-      es: "CRO + UX + métricas desde día 1",
-      en: "CRO + UX + metrics from day 1",
-    },
-  },
+  { key: "direct", icon: "user-circle" },
+  { key: "demo", icon: "shield-check" },
+  { key: "code", icon: "code-2" },
+  { key: "sell", icon: "trending-up" },
 ];
 </script>
