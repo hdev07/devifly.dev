@@ -25,6 +25,8 @@ export const landingInvitacionesContent = {
       demoSubtitle:
         "Tres demos reales — Esencial, Pro y Premium VIP. Tócalas, abre la galería, prueba el RSVP. Así se ve la tuya.",
       openDemo: "Abrir demo",
+      demoCtaOpen: "Abrir demo interactiva",
+      demoCtaPlans: "Comparar planes",
       mostPopular: "Más popular",
       sectionBenefits: "02 / Beneficios",
       benefitsTitle: "Por qué la van a amar",
@@ -361,6 +363,8 @@ export const landingInvitacionesContent = {
       demoSubtitle:
         "Three real demos — Essential, Pro, and Premium VIP. Tap them, open the gallery, try RSVP. This is what yours will look like.",
       openDemo: "Open demo",
+      demoCtaOpen: "Open interactive demo",
+      demoCtaPlans: "Compare plans",
       mostPopular: "Most popular",
       sectionBenefits: "02 / Benefits",
       benefitsTitle: "Why they'll love it",

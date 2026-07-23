@@ -203,16 +203,9 @@ const toggleFaq = (i) => {
                 </div>
               </div>
             </RouterLink>
-            <div class="text-center">
-              <p class="text-xs font-bold mb-1" style="color: #10b981">{{ content.demoCards[0].planLabel }}</p>
-              <RouterLink
-                :to="content.demoCards[0].path"
-                class="inline-flex items-center gap-1 text-[11px] dark:text-text-secondary text-light-muted hover:text-emerald-400 transition"
-              >
-                {{ content.ui.openDemo }}
-                <LucideIcon name="arrow-right" class-name="w-3 h-3" />
-              </RouterLink>
-            </div>
+            <p class="text-xs font-bold text-center" style="color: #10b981">
+              {{ content.demoCards[0].planLabel }}
+            </p>
           </div>
 
           <!-- Demo Pro (highlighted) -->
@@ -283,16 +276,9 @@ const toggleFaq = (i) => {
                 </div>
               </div>
             </RouterLink>
-            <div class="text-center">
-              <p class="text-xs font-bold mb-1" style="color: #059669">{{ content.demoCards[1].planLabel }}</p>
-              <RouterLink
-                :to="content.demoCards[1].path"
-                class="inline-flex items-center gap-1 text-[11px] dark:text-text-secondary text-light-muted hover:text-emerald-400 transition"
-              >
-                {{ content.ui.openDemo }}
-                <LucideIcon name="arrow-right" class-name="w-3 h-3" />
-              </RouterLink>
-            </div>
+            <p class="text-xs font-bold text-center" style="color: #059669">
+              {{ content.demoCards[1].planLabel }}
+            </p>
           </div>
 
           <!-- Demo Premium VIP -->
@@ -357,17 +343,21 @@ const toggleFaq = (i) => {
                 </div>
               </div>
             </RouterLink>
-            <div class="text-center">
-              <p class="text-xs font-bold mb-1" style="color: #c6a75e">{{ content.demoCards[2].planLabel }}</p>
-              <RouterLink
-                :to="content.demoCards[2].path"
-                class="inline-flex items-center gap-1 text-[11px] dark:text-text-secondary text-light-muted hover:text-emerald-400 transition"
-              >
-                {{ content.ui.openDemo }}
-                <LucideIcon name="arrow-right" class-name="w-3 h-3" />
-              </RouterLink>
-            </div>
+            <p class="text-xs font-bold text-center" style="color: #c6a75e">
+              {{ content.demoCards[2].planLabel }}
+            </p>
           </div>
+        </div>
+
+        <!-- CTA único: una demo, comparador de planes abajo -->
+        <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <BaseButton to="/catalogos/demo" accent="emerald" size="lg">
+            <LucideIcon name="play-circle" class-name="w-4 h-4" />
+            {{ content.ui.demoCtaOpen }}
+          </BaseButton>
+          <BaseButton href="#precios" variant="secondary" accent="emerald" arrow>
+            {{ content.ui.demoCtaPlans }}
+          </BaseButton>
         </div>
       </div>
     </section>

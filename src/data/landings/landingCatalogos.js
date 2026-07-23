@@ -25,6 +25,8 @@ export const landingCatalogosContent = {
       demoSubtitle:
         "Tres estilos de catálogo — Básico, Pro y Premium VIP. Explora la demo en vivo y mira cómo se vería el tuyo.",
       openDemo: "Abrir demo",
+      demoCtaOpen: "Abrir demo interactiva",
+      demoCtaPlans: "Comparar planes",
       mostPopular: "Más popular",
       orderWhatsapp: "Pedir por WhatsApp",
       sectionBenefits: "02 / Beneficios",
@@ -368,6 +370,8 @@ export const landingCatalogosContent = {
       demoSubtitle:
         "Three catalog styles — Basic, Pro, and Premium VIP. Explore the live demo and see what yours would look like.",
       openDemo: "Open demo",
+      demoCtaOpen: "Open interactive demo",
+      demoCtaPlans: "Compare plans",
       mostPopular: "Most popular",
       orderWhatsapp: "Order via WhatsApp",
       sectionBenefits: "02 / Benefits",
