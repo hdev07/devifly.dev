@@ -43,11 +43,10 @@ const toggleFaq = (i) => {
 
       <div class="relative max-w-5xl mx-auto text-center">
         <div
-          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full mb-7 text-xs font-medium"
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full mb-7 text-xs font-medium dark:text-emerald-300 text-emerald-700"
           style="
             background: rgba(16, 185, 129, 0.1);
             border: 1px solid rgba(16, 185, 129, 0.25);
-            color: #6ee7b7;
           "
         >
           <span
@@ -99,32 +98,28 @@ const toggleFaq = (i) => {
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="check-circle-2"
-              class-name="w-3.5 h-3.5"
-              style="color: #10b981"
+              class-name="w-3.5 h-3.5 dark:text-emerald-400 text-emerald-700"
             />
             {{ content.ui.heroTrustNoFees }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="check-circle-2"
-              class-name="w-3.5 h-3.5"
-              style="color: #10b981"
+              class-name="w-3.5 h-3.5 dark:text-emerald-400 text-emerald-700"
             />
             {{ content.ui.heroTrustDelivery }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="check-circle-2"
-              class-name="w-3.5 h-3.5"
-              style="color: #10b981"
+              class-name="w-3.5 h-3.5 dark:text-emerald-400 text-emerald-700"
             />
             {{ content.ui.heroTrustWhatsapp }}
           </span>
           <span class="flex items-center gap-1.5">
             <LucideIcon
               name="check-circle-2"
-              class-name="w-3.5 h-3.5"
-              style="color: #10b981"
+              class-name="w-3.5 h-3.5 dark:text-emerald-400 text-emerald-700"
             />
             {{ content.ui.heroTrustGuarantee }}
           </span>
@@ -137,8 +132,7 @@ const toggleFaq = (i) => {
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
           <p
-            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
-            style="color: rgba(16, 185, 129, 0.7)"
+            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3 dark:text-emerald-400/70 text-emerald-700"
           >
             {{ content.ui.sectionDemo }}
           </p>
@@ -203,7 +197,7 @@ const toggleFaq = (i) => {
                 </div>
               </div>
             </RouterLink>
-            <p class="text-xs font-bold text-center" style="color: #10b981">
+            <p class="text-xs font-bold text-center dark:text-emerald-400 text-emerald-700">
               {{ content.demoCards[0].planLabel }}
             </p>
           </div>
@@ -276,7 +270,7 @@ const toggleFaq = (i) => {
                 </div>
               </div>
             </RouterLink>
-            <p class="text-xs font-bold text-center" style="color: #059669">
+            <p class="text-xs font-bold text-center dark:text-emerald-500 text-emerald-700">
               {{ content.demoCards[1].planLabel }}
             </p>
           </div>
@@ -343,7 +337,7 @@ const toggleFaq = (i) => {
                 </div>
               </div>
             </RouterLink>
-            <p class="text-xs font-bold text-center" style="color: #c6a75e">
+            <p class="text-xs font-bold text-center dark:text-[#c6a75e] text-amber-700">
               {{ content.demoCards[2].planLabel }}
             </p>
           </div>
@@ -376,8 +370,7 @@ const toggleFaq = (i) => {
       <div class="max-w-6xl mx-auto">
         <div class="mb-14">
           <p
-            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
-            style="color: rgba(16, 185, 129, 0.7)"
+            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3 dark:text-emerald-400/70 text-emerald-700"
           >
             {{ content.ui.sectionBenefits }}
           </p>
@@ -437,8 +430,7 @@ const toggleFaq = (i) => {
       <div class="max-w-6xl mx-auto">
         <div class="mb-14 text-center">
           <p
-            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
-            style="color: rgba(16, 185, 129, 0.7)"
+            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3 dark:text-emerald-400/70 text-emerald-700"
           >
             {{ content.ui.sectionTemplates }}
           </p>
@@ -529,8 +521,7 @@ const toggleFaq = (i) => {
       <div class="max-w-5xl mx-auto">
         <div class="mb-14 text-center">
           <p
-            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
-            style="color: rgba(16, 185, 129, 0.7)"
+            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3 dark:text-emerald-400/70 text-emerald-700"
           >
             {{ content.ui.sectionProcess }}
           </p>
@@ -570,8 +561,7 @@ const toggleFaq = (i) => {
               />
             </div>
             <p
-              class="font-mono text-[11px] mb-2"
-              style="color: rgba(16, 185, 129, 0.7)"
+              class="font-mono text-[11px] mb-2 dark:text-emerald-400/70 text-emerald-700"
             >
               {{ content.ui.stepLabel }} {{ step.num }}
             </p>
@@ -596,8 +586,7 @@ const toggleFaq = (i) => {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <p
-              class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
-              style="color: rgba(16, 185, 129, 0.7)"
+              class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3 dark:text-emerald-400/70 text-emerald-700"
             >
               {{ content.ui.sectionIncludes }}
             </p>
@@ -675,8 +664,7 @@ const toggleFaq = (i) => {
       <div class="max-w-6xl mx-auto">
         <div class="mb-14 text-center">
           <p
-            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
-            style="color: rgba(16, 185, 129, 0.7)"
+            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3 dark:text-emerald-400/70 text-emerald-700"
           >
             {{ content.ui.sectionPricing }}
           </p>
@@ -830,8 +818,7 @@ const toggleFaq = (i) => {
       <div class="max-w-3xl mx-auto">
         <div class="mb-12 text-center">
           <p
-            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
-            style="color: rgba(16, 185, 129, 0.7)"
+            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3 dark:text-emerald-400/70 text-emerald-700"
           >
             {{ content.ui.sectionFaq }}
           </p>
@@ -913,8 +900,7 @@ const toggleFaq = (i) => {
       <div class="max-w-6xl mx-auto">
         <div class="mb-14 text-center">
           <p
-            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3"
-            style="color: rgba(16, 185, 129, 0.7)"
+            class="text-[11px] tracking-[0.2em] uppercase font-mono mb-3 dark:text-emerald-400/70 text-emerald-700"
           >
             {{ content.ui.sectionTestimonials }}
           </p>
@@ -1055,7 +1041,6 @@ const toggleFaq = (i) => {
             <LucideIcon
               name="shield-check"
               class-name="w-3.5 h-3.5"
-              style="color: rgba(16, 185, 129, 0.7)"
             />
             {{ content.ui.finalTrustGuarantee }}
           </span>
@@ -1063,7 +1048,6 @@ const toggleFaq = (i) => {
             <LucideIcon
               name="clock-4"
               class-name="w-3.5 h-3.5"
-              style="color: rgba(16, 185, 129, 0.7)"
             />
             {{ content.ui.finalTrustDelivery }}
           </span>
@@ -1071,7 +1055,6 @@ const toggleFaq = (i) => {
             <LucideIcon
               name="message-circle"
               class-name="w-3.5 h-3.5"
-              style="color: rgba(16, 185, 129, 0.7)"
             />
             {{ content.ui.finalTrustSupport }}
           </span>

@@ -18,7 +18,7 @@
             :href="callLink"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#25D366] text-white text-sm font-semibold shadow-[0_8px_30px_rgba(37,211,102,0.3)] hover:shadow-[0_12px_40px_rgba(37,211,102,0.5)] hover:brightness-110 transition-all"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#25D366] text-emerald-950 text-sm font-semibold shadow-[0_8px_30px_rgba(37,211,102,0.3)] hover:shadow-[0_12px_40px_rgba(37,211,102,0.5)] hover:brightness-110 transition-all"
           >
             <LucideIcon name="message-circle" class-name="w-4 h-4" />
             {{ locale === "es" ? "Pregunta por WhatsApp" : "Ask on WhatsApp" }}

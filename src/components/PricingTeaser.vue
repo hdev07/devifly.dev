@@ -64,8 +64,8 @@
             :to="tier.link"
             class="w-full text-center px-4 py-2.5 rounded-xl text-sm font-semibold transition"
             :class="tier.featured
-              ? 'bg-brand-500 text-white hover:bg-brand-600'
-              : 'bg-brand-500/10 border border-brand-500/25 text-brand-500 hover:bg-brand-500/15'"
+              ? 'bg-brand-600 text-white hover:bg-brand-500'
+              : 'bg-brand-500/10 border border-brand-500/25 dark:text-brand-400 text-brand-600 hover:bg-brand-500/15'"
           >
             {{ tier.cta[locale] }}
           </router-link>

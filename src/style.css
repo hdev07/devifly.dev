@@ -122,11 +122,12 @@ input[type="submit"],
   filter: brightness(1.1);
   box-shadow: 0 14px 55px rgb(var(--accent-glow) / 0.5);
 }
-/* Signature brand gradient — only for the brand accent */
+/* Signature brand gradient — only for the brand accent.
+   Starts at brand-600 so the white label sits on an AA-compliant zone. */
 .btn-primary.accent-brand {
   background: linear-gradient(
     to right,
-    var(--color-brand-500),
+    var(--color-brand-600),
     var(--color-brand-500),
     var(--color-cyan-glow)
   );
@@ -173,10 +174,10 @@ input[type="submit"],
 }
 
 /* Accents — hue per product, same anatomy.
-   Contrast colors chosen for AA on the solid fill. */
+   Contrast colors chosen for AA (≥4.5:1) on the solid fill. */
 .accent-brand,
 .accent-blue {
-  --accent: var(--color-brand-500);
+  --accent: var(--color-brand-600); /* brand-500 + white = 3.7:1; 600 = 5.2:1 */
   --accent-contrast: #ffffff;
   --accent-glow: 59 130 246;
 }
@@ -191,12 +192,12 @@ input[type="submit"],
   --accent-glow: 239 68 68;
 }
 .accent-rose {
-  --accent: #f43f5e;
+  --accent: #e11d48; /* rose-500 + white = 3.7:1; rose-600 = 4.7:1 */
   --accent-contrast: #ffffff;
   --accent-glow: 244 63 94;
 }
 .accent-violet {
-  --accent: #8b5cf6;
+  --accent: #7c3aed; /* violet-500 + white = 4.2:1; violet-600 = 5.7:1 */
   --accent-contrast: #ffffff;
   --accent-glow: 139 92 246;
 }
