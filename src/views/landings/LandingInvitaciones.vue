@@ -8,6 +8,7 @@
 import { ref, computed } from "vue";
 import { RouterLink } from "vue-router";
 import LucideIcon from "../../components/LucideIcon.vue";
+import BaseButton from "../../components/ui/BaseButton.vue";
 import { useLocaleContent } from "../../composables/useLocaleContent.js";
 import { landingInvitacionesContent } from "../../data/landings/landingInvitaciones.js";
 
@@ -89,33 +90,13 @@ const toggleFaq = (i) => {
         </p>
 
         <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
-          <a
-            :href="waDemo"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-bold text-sm transition-all hover:scale-105"
-            style="
-              background: linear-gradient(135deg, #7c3aed, #a78bfa);
-              box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4);
-            "
-          >
+          <BaseButton :href="waDemo" accent="violet">
             <LucideIcon name="sparkles" class-name="w-4 h-4" />
             {{ content.ui.heroCtaDemo }}
-          </a>
-          <a
-            :href="waContratar"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all border"
-            style="
-              border-color: rgba(167, 139, 250, 0.35);
-              color: #c4b5fd;
-              background: rgba(167, 139, 250, 0.04);
-            "
-          >
+          </BaseButton>
+          <BaseButton :href="waContratar" variant="secondary" accent="violet" arrow>
             {{ content.ui.heroCtaQuote }}
-            <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-          </a>
+          </BaseButton>
         </div>
 
         <!-- Trust pills -->
@@ -894,37 +875,24 @@ const toggleFaq = (i) => {
             </div>
 
             <div class="px-8 pb-8 flex flex-col gap-2.5">
-              <a
+              <BaseButton
                 :href="pkgWaUrl(pkg.waKey)"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block w-full text-center px-4 py-3 rounded-xl font-bold text-sm transition"
-                :style="
-                  pkg.highlighted
-                    ? 'background: linear-gradient(135deg, #7c3aed, #a78bfa); color: white; box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35)'
-                    : pkg.vip
-                      ? 'background: linear-gradient(135deg, #c6a75e, #e8d5a3); color: #0b0b0b'
-                      : 'background: rgba(167, 139, 250, 0.12); border: 1px solid rgba(167, 139, 250, 0.3); color: #c4b5fd'
-                "
+                :variant="pkg.highlighted || pkg.vip ? 'primary' : 'secondary'"
+                :accent="pkg.vip ? 'gold' : 'violet'"
+                class="w-full justify-center"
+                arrow
               >
-                <span class="inline-flex items-center gap-2">
-                  {{ content.ui.hirePlan }} {{ pkg.name }}
-                  <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-                </span>
-              </a>
-              <RouterLink
+                {{ content.ui.hirePlan }} {{ pkg.name }}
+              </BaseButton>
+              <BaseButton
                 :to="pkg.demo"
-                class="block w-full text-center px-4 py-2.5 rounded-xl border text-sm font-semibold transition"
-                style="
-                  border-color: rgba(167, 139, 250, 0.2);
-                  color: rgba(196, 181, 253, 0.85);
-                "
+                variant="ghost"
+                accent="violet"
+                class="w-full justify-center"
               >
-                <span class="inline-flex items-center gap-2">
-                  <LucideIcon name="eye" class-name="w-4 h-4" />
-                  {{ content.ui.viewDemo }}
-                </span>
-              </RouterLink>
+                <LucideIcon name="eye" class-name="w-4 h-4" />
+                {{ content.ui.viewDemo }}
+              </BaseButton>
             </div>
           </div>
         </div>
@@ -1156,33 +1124,19 @@ const toggleFaq = (i) => {
         <div
           class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
         >
-          <a
-            :href="waDemo"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-bold text-sm transition-all hover:scale-105"
-            style="
-              background: linear-gradient(135deg, #7c3aed, #a78bfa);
-              box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4);
-            "
-          >
+          <BaseButton :href="waDemo" accent="violet" size="lg">
             <LucideIcon name="sparkles" class-name="w-4 h-4" />
             {{ content.ui.heroCtaDemo }}
-          </a>
-          <a
+          </BaseButton>
+          <BaseButton
             :href="waContratar"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm transition-all border"
-            style="
-              border-color: rgba(167, 139, 250, 0.35);
-              color: #c4b5fd;
-              background: rgba(167, 139, 250, 0.04);
-            "
+            variant="secondary"
+            accent="violet"
+            size="lg"
+            arrow
           >
             {{ content.ui.heroCtaQuote }}
-            <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-          </a>
+          </BaseButton>
         </div>
 
         <div

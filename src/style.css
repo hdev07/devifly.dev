@@ -205,6 +205,11 @@ input[type="submit"],
   --accent-contrast: #052e16;
   --accent-glow: 16 185 129;
 }
+.accent-gold {
+  --accent: #c6a75e;
+  --accent-contrast: #0b0b0b;
+  --accent-glow: 198 167 94;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .btn,
