@@ -3,6 +3,7 @@ import { ref, computed, watch, onMounted, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 import { useScrollAnimation } from "./composables/useScrollAnimation.js";
+import { useTheme } from "./composables/useTheme.js";
 import { applyRouteSeo } from "./seo/routeSeo.js";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
@@ -12,7 +13,15 @@ useScrollAnimation();
 
 const route = useRoute();
 const { locale } = useI18n();
+const { setForcedDark } = useTheme();
 const isFullscreen = computed(() => route.meta?.fullscreen === true);
+
+// Las rutas con meta.darkOnly fijan el chrome en oscuro (landings dark-only)
+watch(
+  () => route.meta?.darkOnly === true,
+  (darkOnly) => setForcedDark(darkOnly),
+  { immediate: true },
+);
 
 const shouldSkipSplash = (() => {
   if (typeof window === "undefined") {

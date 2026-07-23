@@ -20,7 +20,8 @@ const routes = [
   {
     path: '/landing-pages',
     name: 'LandingPages',
-    component: () => import('../views/landings/LandingNegocios.vue')
+    component: () => import('../views/landings/LandingNegocios.vue'),
+    meta: { darkOnly: true }
   },
   {
     path: '/invitaciones',
@@ -30,7 +31,8 @@ const routes = [
   {
     path: '/menus-digitales',
     name: 'MenusDigitales',
-    component: () => import('../views/landings/LandingMenus.vue')
+    component: () => import('../views/landings/LandingMenus.vue'),
+    meta: { darkOnly: true }
   },
   {
     path: '/catalogos',
@@ -40,7 +42,8 @@ const routes = [
   {
     path: '/salones-eventos',
     name: 'SalonesEventos',
-    component: () => import('../views/landings/LandingReservaciones.vue')
+    component: () => import('../views/landings/LandingReservaciones.vue'),
+    meta: { darkOnly: true }
   },
 
   // ===== Demo estrella por producto (fullscreen, noindex) =====
@@ -50,6 +53,7 @@ const routes = [
     component: () => import('../views/demos/LandingPageDemo.vue'),
     meta: {
       fullscreen: true,
+      darkOnly: true,
       exitTo: '/landing-pages',
       exitLabelEs: 'Volver a landing pages',
       exitLabelEn: 'Back to landing pages',
@@ -76,6 +80,7 @@ const routes = [
     component: () => import('../views/demos/MenuPremiumDemo.vue'),
     meta: {
       fullscreen: true,
+      darkOnly: true,
       exitTo: '/menus-digitales',
       exitLabelEs: 'Volver a menús digitales',
       exitLabelEn: 'Back to digital menus',
@@ -102,6 +107,7 @@ const routes = [
     component: () => import('../views/demos/SalonEventosDemo.vue'),
     meta: {
       fullscreen: true,
+      darkOnly: true,
       exitTo: '/salones-eventos',
       exitLabelEs: 'Volver a reservaciones',
       exitLabelEn: 'Back to venue websites',

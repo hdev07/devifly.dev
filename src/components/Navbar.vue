@@ -74,8 +74,9 @@
           {{ locale === 'en' ? 'ES' : 'EN' }}
         </button>
 
-        <!-- Theme Toggle -->
+        <!-- Theme Toggle (oculto en rutas dark-only) -->
         <button
+          v-if="!forcedDark"
           @click="toggleTheme()"
           class="relative w-14 h-7 rounded-full transition-colors duration-500"
           :class="isDark() ? 'bg-base-700' : 'bg-light-border'"
@@ -280,6 +281,7 @@
               {{ locale === 'en' ? 'ES' : 'EN' }}
             </button>
             <button
+              v-if="!forcedDark"
               @click="toggleTheme()"
               class="p-2.5 rounded-xl dark:bg-base-800 bg-light-card border dark:border-base-700/50 border-light-border"
             >
@@ -306,7 +308,7 @@ import { useI18n } from 'vue-i18n'
 import { useTheme } from '../composables/useTheme.js'
 
 const { t, locale } = useI18n()
-const { toggleTheme, isDark } = useTheme()
+const { toggleTheme, isDark, forcedDark } = useTheme()
 const route = useRoute()
 
 const scrolled = ref(false)

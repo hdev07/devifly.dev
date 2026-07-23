@@ -113,15 +113,16 @@ const goToBrand = (link) => {
 };
 
 const fallbackBrands = [
-  { name: "MoviBase", link: "https://movibase.com" },
-  { name: "Confecdotario", link: "https://confecdotario.com" },
-  { name: "Musion", link: "https://musion.com" },
+  { name: "Devifly Dev", link: "https://devifly.dev" },
   { name: "CruzBet", link: "https://cruzbet.devifly.dev" },
+  { name: "Timbra One", link: "https://timbra.one" },
+  { name: "Musion Day", link: "https://musion.day" },
+  { name: "Confecdotario", link: "https://confecdotario.com" },
+  { name: "MoviBase", link: "https://movibase.com" },
+  { name: "White Glove Naples", link: "https://whiteglovenaples.com" },
   { name: "PoleGP", link: "https://polegp.devifly.dev" },
-  { name: "Barberia JAFZ", link: "https://barberiajafz.devifly.dev" },
   { name: "Linco Eventos", link: "https://lincoeventos.com" },
   { name: "Aurea", link: "https://aurea.wtf" },
-  { name: "White Glove Naples", link: "https://whiteglovenaples.com" },
-  { name: "Timbra One", link: "https://timbra.one" },
+  { name: "Barberia JAFZ", link: "https://barberiajafz.devifly.dev" },
 ];
 </script>
