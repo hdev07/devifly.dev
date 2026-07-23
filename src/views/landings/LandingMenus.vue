@@ -344,22 +344,20 @@ const toggleFaq = (i) => {
                 {{ content.ui.demoSubtitle }}
               </p>
               <div class="flex flex-col sm:flex-row gap-4">
-                <RouterLink
-                  to="/menus-digitales/demo"
-                  class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-amber-500 text-neutral-950 font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105 shadow-[0_0_20px_rgba(245,158,11,0.25)]"
-                >
+                <BaseButton to="/menus-digitales/demo" accent="amber" size="lg" block>
                   <LucideIcon name="smartphone" class-name="w-4 h-4" />
                   {{ content.ui.demoCtaOpen }}
-                </RouterLink>
-                <a
+                </BaseButton>
+                <BaseButton
                   :href="waDemo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-amber-500/30 text-amber-400 font-semibold text-sm hover:bg-amber-500/10 transition"
+                  variant="secondary"
+                  accent="amber"
+                  size="lg"
+                  block
+                  arrow
                 >
                   {{ content.ui.demoCtaWant }}
-                  <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-                </a>
+                </BaseButton>
               </div>
             </div>
 
@@ -494,15 +492,9 @@ const toggleFaq = (i) => {
         </div>
 
         <div class="text-center mt-12">
-          <a
-            :href="waDemo"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-amber-500 text-neutral-950 font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105"
-          >
+          <BaseButton :href="waDemo" accent="amber" size="lg" arrow>
             {{ content.ui.processCta }}
-            <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-          </a>
+          </BaseButton>
         </div>
       </div>
     </section>
@@ -685,29 +677,24 @@ const toggleFaq = (i) => {
 
             <!-- CTA -->
             <div class="space-y-2.5">
-              <a
+              <BaseButton
                 :href="pkgWaUrl(pkg.waKey)"
-                target="_blank"
-                rel="noopener noreferrer"
-                :class="[
-                  'w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm transition-all hover:scale-[1.02]',
-                  pkg.highlighted
-                    ? 'bg-amber-500 text-neutral-950 hover:bg-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]'
-                    : pkg.vip
-                      ? 'bg-violet-600 text-white hover:bg-violet-500'
-                      : 'bg-neutral-700 text-white hover:bg-neutral-600',
-                ]"
+                :variant="pkg.highlighted || pkg.vip ? 'primary' : 'secondary'"
+                :accent="pkg.vip ? 'violet' : 'amber'"
+                class="w-full justify-center"
+                arrow
               >
                 {{ content.ui.hirePlan }} {{ pkg.name }}
-                <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-              </a>
-              <RouterLink
+              </BaseButton>
+              <BaseButton
                 :to="pkg.demo"
-                class="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-neutral-700 text-neutral-400 text-sm hover:text-white hover:border-neutral-600 transition"
+                variant="ghost"
+                accent="amber"
+                class="w-full justify-center"
               >
                 <LucideIcon name="play" class-name="w-3.5 h-3.5" />
                 {{ content.ui.viewDemo }}
-              </RouterLink>
+              </BaseButton>
             </div>
           </div>
         </div>
@@ -958,15 +945,9 @@ const toggleFaq = (i) => {
               </div>
             </div>
 
-            <a
-              :href="waDemo21"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-amber-500 text-black font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(245,158,11,0.3)]"
-            >
+            <BaseButton :href="waDemo21" accent="amber" size="lg" arrow>
               {{ content.ui.demo21Cta }}
-              <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-            </a>
+            </BaseButton>
           </div>
         </div>
       </div>
@@ -997,20 +978,17 @@ const toggleFaq = (i) => {
         <div
           class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
         >
-          <a
-            :href="waContratar"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-10 py-4 rounded-full bg-amber-500 text-neutral-950 font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(245,158,11,0.25)]"
-          >
+          <BaseButton :href="waContratar" accent="amber" size="lg">
             {{ content.ui.finalCtaQuote }}
-          </a>
-          <RouterLink
+          </BaseButton>
+          <BaseButton
             to="/menus-digitales/demo"
-            class="px-10 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-amber-500/30 hover:text-white transition"
+            variant="secondary"
+            accent="amber"
+            size="lg"
           >
             {{ content.ui.finalCtaDemo }}
-          </RouterLink>
+          </BaseButton>
         </div>
 
         <!-- Trust signals -->
