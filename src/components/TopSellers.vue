@@ -34,7 +34,7 @@
             : "If your project requires a different scope, we also build custom solutions." }}
         </p>
         <router-link
-          to="/products"
+          to="/#productos"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-full dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border dark:text-white text-light-text font-semibold text-sm hover:dark:border-brand-500/50 transition-all"
         >
           {{ locale === "es" ? "Ver catálogo completo" : "See full catalog" }}

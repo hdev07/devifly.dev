@@ -223,7 +223,7 @@
             </h3>
             <div class="space-y-2">
               <router-link
-                to="/products"
+                to="/#productos"
                 class="block text-sm text-brand-500 hover:text-brand-400 transition-colors"
                 ><span class="inline-flex items-center gap-1"
                   ><LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />{{
@@ -232,7 +232,7 @@
                 ></router-link
               >
               <router-link
-                to="/solutions"
+                to="/#enfoque"
                 class="block text-sm text-brand-500 hover:text-brand-400 transition-colors"
                 ><span class="inline-flex items-center gap-1"
                   ><LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />{{
@@ -241,7 +241,7 @@
                 ></router-link
               >
               <router-link
-                to="/case-studies"
+                to="/#casos"
                 class="block text-sm text-brand-500 hover:text-brand-400 transition-colors"
                 ><span class="inline-flex items-center gap-1"
                   ><LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />{{
@@ -250,7 +250,7 @@
                 ></router-link
               >
               <router-link
-                to="/pricing"
+                to="/#precios"
                 class="block text-sm text-brand-500 hover:text-brand-400 transition-colors"
                 ><span class="inline-flex items-center gap-1"
                   ><LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" />{{

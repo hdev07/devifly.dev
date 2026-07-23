@@ -45,16 +45,10 @@
 
               <!-- CTA row -->
               <div class="mt-10 flex flex-wrap items-center gap-4">
-                <a
-                  :href="callLink"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-brand-500 via-brand-500 to-cyan-glow text-white font-semibold text-sm sm:text-base shadow-[0_12px_45px_rgba(59,130,246,0.4)] hover:shadow-[0_16px_60px_rgba(59,130,246,0.6)] hover:brightness-110 transition-all"
-                >
+                <BaseButton :href="callLink" size="lg" arrow>
                   <LucideIcon name="message-circle" class-name="w-5 h-5" />
                   {{ locale === "es" ? "Agendar ahora por WhatsApp" : "Book now on WhatsApp" }}
-                  <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
-                </a>
+                </BaseButton>
                 <span class="text-sm dark:text-text-secondary text-light-muted">
                   {{ locale === "es" ? "Respondemos en menos de 24h" : "We answer in under 24h" }}
                 </span>
@@ -103,6 +97,7 @@ import { useI18n } from "vue-i18n";
 import { useWhatsApp } from "../composables/useWhatsApp.js";
 import LucideIcon from "./LucideIcon.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
+import BaseButton from "./ui/BaseButton.vue";
 
 const { locale } = useI18n();
 const { linkFor } = useWhatsApp();

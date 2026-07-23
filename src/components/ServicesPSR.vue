@@ -132,7 +132,7 @@ const services = [
       en: "+45% in leads and significantly lower acquisition cost.",
     },
     cta: { es: "Ver landing en vivo", en: "See live landing" },
-    link: "/landings",
+    link: "/landing-pages",
   },
   {
     key: "invitaciones",
@@ -224,7 +224,7 @@ const services = [
       en: "Customers decide on their own and you get a message ready to close.",
     },
     cta: { es: "Ver catálogo demo", en: "See demo catalog" },
-    link: "/catalogos-nenis",
+    link: "/catalogos",
   },
   {
     key: "saas",
@@ -247,7 +247,7 @@ const services = [
       en: "Fewer human errors, more speed, and data to decide on.",
     },
     cta: { es: "Hablar de mi proyecto", en: "Talk about my project" },
-    link: "/contact",
+    link: "/contacto",
   },
 ];
 </script>

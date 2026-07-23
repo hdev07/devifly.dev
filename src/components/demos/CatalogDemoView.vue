@@ -12,7 +12,7 @@
       }"
     >
       <router-link
-        to="/catalogos-nenis"
+        to="/catalogos"
         class="flex items-center gap-2 text-sm transition-colors"
         :style="{ color: theme.colors.primary }"
       >

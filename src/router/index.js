@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
+// IA "hub mínimo": Home (hub) + 5 landings de producto + 1 demo estrella
+// por producto + /contacto. Las páginas corporativas viejas redirigen a
+// secciones del Home; los tiers de demo redirigen a la demo estrella.
 const routes = [
   {
     path: '/',
@@ -8,52 +11,16 @@ const routes = [
     component: Home
   },
   {
-    path: '/products',
-    name: 'Products',
-    component: () => import('../views/Products.vue')
-  },
-  {
-    path: '/enfoque',
-    name: 'Enfoque',
-    component: () => import('../views/Enfoque.vue')
-  },
-  {
-    path: '/solutions',
-    name: 'Solutions',
-    component: () => import('../views/Enfoque.vue')
-  },
-  {
-    path: '/case-studies',
-    name: 'CaseStudies',
-    component: () => import('../views/CaseStudies.vue')
-  },
-  {
-    path: '/pricing',
-    name: 'Pricing',
-    component: () => import('../views/Pricing.vue')
-  },
-  {
-    path: '/contact',
-    name: 'Contact',
+    path: '/contacto',
+    name: 'Contacto',
     component: () => import('../views/Contact.vue')
   },
+
+  // ===== Landings de producto =====
   {
-    path: '/landings',
-    name: 'Landings',
+    path: '/landing-pages',
+    name: 'LandingPages',
     component: () => import('../views/landings/LandingNegocios.vue')
-  },
-  {
-    path: '/landings/demo',
-    name: 'LandingPageDemo',
-    component: () => import('../views/demos/LandingPageDemo.vue'),
-    meta: {
-      fullscreen: true,
-      exitTo: '/landings',
-      exitLabelEs: 'Volver a landing pages',
-      exitLabelEn: 'Back to landing pages',
-      robots: 'noindex, nofollow',
-      canonicalPath: '/landings'
-    }
   },
   {
     path: '/invitaciones',
@@ -61,34 +28,38 @@ const routes = [
     component: () => import('../views/landings/LandingInvitaciones.vue')
   },
   {
-    path: '/invitaciones/esencial',
-    name: 'DemoBasic',
-    component: () => import('../views/demos/InvitacionBasic.vue'),
+    path: '/menus-digitales',
+    name: 'MenusDigitales',
+    component: () => import('../views/landings/LandingMenus.vue')
+  },
+  {
+    path: '/catalogos',
+    name: 'Catalogos',
+    component: () => import('../views/landings/LandingCatalogos.vue')
+  },
+  {
+    path: '/salones-eventos',
+    name: 'SalonesEventos',
+    component: () => import('../views/landings/LandingReservaciones.vue')
+  },
+
+  // ===== Demo estrella por producto (fullscreen, noindex) =====
+  {
+    path: '/landing-pages/demo',
+    name: 'LandingPagesDemo',
+    component: () => import('../views/demos/LandingPageDemo.vue'),
     meta: {
       fullscreen: true,
-      exitTo: '/invitaciones',
-      exitLabelEs: 'Volver a invitaciones',
-      exitLabelEn: 'Back to invitations',
+      exitTo: '/landing-pages',
+      exitLabelEs: 'Volver a landing pages',
+      exitLabelEn: 'Back to landing pages',
       robots: 'noindex, nofollow',
-      canonicalPath: '/invitaciones'
+      canonicalPath: '/landing-pages'
     }
   },
   {
-    path: '/invitaciones/pro',
-    name: 'DemoPro',
-    component: () => import('../views/demos/InvitacionPro.vue'),
-    meta: {
-      fullscreen: true,
-      exitTo: '/invitaciones',
-      exitLabelEs: 'Volver a invitaciones',
-      exitLabelEn: 'Back to invitations',
-      robots: 'noindex, nofollow',
-      canonicalPath: '/invitaciones'
-    }
-  },
-  {
-    path: '/invitaciones/premium',
-    name: 'DemoPremium',
+    path: '/invitaciones/demo',
+    name: 'InvitacionesDemo',
     component: () => import('../views/demos/InvitacionPremium.vue'),
     meta: {
       fullscreen: true,
@@ -100,39 +71,8 @@ const routes = [
     }
   },
   {
-    path: '/menus-digitales',
-    name: 'MenusDigitales',
-    component: () => import('../views/landings/LandingMenus.vue')
-  },
-  {
     path: '/menus-digitales/demo',
-    name: 'MenuEsencialDemo',
-    component: () => import('../views/demos/MenuEsencialDemo.vue'),
-    meta: {
-      fullscreen: true,
-      exitTo: '/menus-digitales',
-      exitLabelEs: 'Volver a menús digitales',
-      exitLabelEn: 'Back to digital menus',
-      robots: 'noindex, nofollow',
-      canonicalPath: '/menus-digitales'
-    }
-  },
-  {
-    path: '/menus-digitales/pro',
-    name: 'MenuProDemo',
-    component: () => import('../views/demos/MenuProDemo.vue'),
-    meta: {
-      fullscreen: true,
-      exitTo: '/menus-digitales',
-      exitLabelEs: 'Volver a menús digitales',
-      exitLabelEn: 'Back to digital menus',
-      robots: 'noindex, nofollow',
-      canonicalPath: '/menus-digitales'
-    }
-  },
-  {
-    path: '/menus-digitales/premium',
-    name: 'MenuPremiumDemo',
+    name: 'MenusDigitalesDemo',
     component: () => import('../views/demos/MenuPremiumDemo.vue'),
     meta: {
       fullscreen: true,
@@ -144,57 +84,21 @@ const routes = [
     }
   },
   {
-    path: '/catalogos-nenis',
-    name: 'CatalogosNenis',
-    component: () => import('../views/landings/LandingCatalogos.vue')
-  },
-  {
-    path: '/catalogos-nenis/demo',
-    name: 'CatalogoNenisDemo',
-    component: () => import('../views/demos/CatalogoNenisDemo.vue'),
-    meta: {
-      fullscreen: true,
-      exitTo: '/catalogos-nenis',
-      exitLabelEs: 'Volver a catálogos digitales',
-      exitLabelEn: 'Back to digital catalogs',
-      robots: 'noindex, nofollow',
-      canonicalPath: '/catalogos-nenis'
-    }
-  },
-  {
-    path: '/catalogos-nenis/pro',
-    name: 'CatalogoProDemo',
-    component: () => import('../views/demos/CatalogoProDemo.vue'),
-    meta: {
-      fullscreen: true,
-      exitTo: '/catalogos-nenis',
-      exitLabelEs: 'Volver a catálogos digitales',
-      exitLabelEn: 'Back to digital catalogs',
-      robots: 'noindex, nofollow',
-      canonicalPath: '/catalogos-nenis'
-    }
-  },
-  {
-    path: '/catalogos-nenis/premium',
-    name: 'CatalogoPremiumDemo',
+    path: '/catalogos/demo',
+    name: 'CatalogosDemo',
     component: () => import('../views/demos/CatalogoPremiumDemo.vue'),
     meta: {
       fullscreen: true,
-      exitTo: '/catalogos-nenis',
+      exitTo: '/catalogos',
       exitLabelEs: 'Volver a catálogos digitales',
       exitLabelEn: 'Back to digital catalogs',
       robots: 'noindex, nofollow',
-      canonicalPath: '/catalogos-nenis'
+      canonicalPath: '/catalogos'
     }
   },
   {
-    path: '/salones-eventos',
-    name: 'SalonesEventos',
-    component: () => import('../views/landings/LandingReservaciones.vue')
-  },
-  {
     path: '/salones-eventos/demo',
-    name: 'SalonEventosDemo',
+    name: 'SalonesEventosDemo',
     component: () => import('../views/demos/SalonEventosDemo.vue'),
     meta: {
       fullscreen: true,
@@ -205,6 +109,30 @@ const routes = [
       canonicalPath: '/salones-eventos'
     }
   },
+
+  // ===== Redirects: páginas corporativas retiradas → secciones del Home =====
+  { path: '/products', redirect: { path: '/', hash: '#productos' } },
+  { path: '/pricing', redirect: { path: '/', hash: '#precios' } },
+  { path: '/enfoque', redirect: { path: '/', hash: '#enfoque' } },
+  { path: '/solutions', redirect: { path: '/', hash: '#enfoque' } },
+  { path: '/case-studies', redirect: { path: '/', hash: '#casos' } },
+  { path: '/contact', redirect: '/contacto' },
+
+  // ===== Redirects: slugs renombrados =====
+  { path: '/landings', redirect: '/landing-pages' },
+  { path: '/landings/demo', redirect: '/landing-pages/demo' },
+  { path: '/catalogos-nenis', redirect: '/catalogos' },
+
+  // ===== Redirects: demos por tier → demo estrella =====
+  { path: '/invitaciones/esencial', redirect: '/invitaciones/demo' },
+  { path: '/invitaciones/pro', redirect: '/invitaciones/demo' },
+  { path: '/invitaciones/premium', redirect: '/invitaciones/demo' },
+  { path: '/menus-digitales/pro', redirect: '/menus-digitales/demo' },
+  { path: '/menus-digitales/premium', redirect: '/menus-digitales/demo' },
+  { path: '/catalogos-nenis/demo', redirect: '/catalogos/demo' },
+  { path: '/catalogos-nenis/pro', redirect: '/catalogos/demo' },
+  { path: '/catalogos-nenis/premium', redirect: '/catalogos/demo' },
+
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',

@@ -1,7 +1,0 @@
-<template>
-  <CatalogDemoView tier="basico" />
-</template>
-
-<script setup>
-import CatalogDemoView from "../../components/demos/CatalogDemoView.vue";
-</script>

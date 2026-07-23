@@ -41,87 +41,7 @@ const routeSeoByName = {
     path: '/',
     pageType: 'WebSite',
   }),
-  Products: ({ locale }) => ({
-    title:
-      locale === 'es'
-        ? 'Productos digitales y servicios de desarrollo | Devifly'
-        : 'Digital products and development services | Devifly',
-    description:
-      locale === 'es'
-        ? 'Explora landings, catálogos, menús digitales, invitaciones web y soluciones a medida para negocios que quieren vender más.'
-        : 'Explore landing pages, digital catalogs, menus, web invitations, and custom solutions for businesses that want to sell more.',
-    keywords:
-      locale === 'es'
-        ? ['productos digitales', 'servicios digitales', 'landing pages', 'catalogos digitales', 'menus digitales']
-        : ['digital products', 'digital services', 'landing pages', 'digital catalogs', 'digital menus'],
-    path: '/products',
-    pageType: 'CollectionPage',
-  }),
-  Solutions: ({ locale }) => ({
-    title:
-      locale === 'es'
-        ? 'Soluciones digitales por tipo de negocio | Devifly'
-        : 'Digital solutions by business type | Devifly',
-    description:
-      locale === 'es'
-        ? 'Identificamos el problema de tu negocio y proponemos la landing, sistema o automatización correcta para convertir más y operar mejor.'
-        : 'We identify your business problem and map it to the right landing page, system, or automation to convert more and operate better.',
-    keywords:
-      locale === 'es'
-        ? ['soluciones digitales', 'automatizacion de negocios', 'web para negocios', 'software para empresas']
-        : ['digital solutions', 'business automation', 'business websites', 'software for companies'],
-    path: '/solutions',
-    pageType: 'CollectionPage',
-  }),
-  Enfoque: ({ locale }) => ({
-    title:
-      locale === 'es'
-        ? 'Enfoque de producto digital por negocio | Devifly'
-        : 'Digital product approach by business | Devifly',
-    description:
-      locale === 'es'
-        ? 'Metodología de producto digital: pilares de conversión, perfiles por negocio y proceso de lanzamiento sin plantillas genéricas.'
-        : 'Digital product methodology: conversion pillars, business profiles, and a launch process without generic templates.',
-    keywords:
-      locale === 'es'
-        ? ['enfoque digital', 'producto digital a medida', 'estrategia web para negocios']
-        : ['digital approach', 'tailored digital product', 'business web strategy'],
-    path: '/enfoque',
-    pageType: 'CollectionPage',
-  }),
-  CaseStudies: ({ locale }) => ({
-    title:
-      locale === 'es'
-        ? 'Casos de éxito y proyectos reales | Devifly'
-        : 'Case studies and shipped products | Devifly',
-    description:
-      locale === 'es'
-        ? 'Revisa proyectos reales desarrollados por Devifly para SaaS, apps, catálogos y productos digitales con impacto comercial.'
-        : 'Review real projects built by Devifly across SaaS, apps, catalogs, and digital products with business impact.',
-    keywords:
-      locale === 'es'
-        ? ['casos de exito', 'portafolio de software', 'proyectos web']
-        : ['case studies', 'software portfolio', 'web projects'],
-    path: '/case-studies',
-    pageType: 'CollectionPage',
-  }),
-  Pricing: ({ locale }) => ({
-    title:
-      locale === 'es'
-        ? 'Precios de landings, invitaciones y software | Devifly'
-        : 'Pricing for landing pages, invitations and software | Devifly',
-    description:
-      locale === 'es'
-        ? 'Consulta precios orientativos para landings, invitaciones digitales, catálogos, menús y desarrollo a medida.'
-        : 'Review pricing guidance for landing pages, digital invitations, catalogs, menus, and custom software.',
-    keywords:
-      locale === 'es'
-        ? ['precios landing page', 'precio invitacion digital', 'cotizar software']
-        : ['landing page pricing', 'digital invitation pricing', 'software quote'],
-    path: '/pricing',
-    pageType: 'CollectionPage',
-  }),
-  Contact: ({ locale }) => ({
+  Contacto: ({ locale }) => ({
     title:
       locale === 'es'
         ? 'Contacto y cotización de proyectos | Devifly'
@@ -134,10 +54,10 @@ const routeSeoByName = {
       locale === 'es'
         ? ['contacto devifly', 'cotizar landing page', 'cotizar software']
         : ['contact devifly', 'landing page quote', 'software quote'],
-    path: '/contact',
+    path: '/contacto',
     pageType: 'ContactPage',
   }),
-  Landings: ({ locale }) => ({
+  LandingPages: ({ locale }) => ({
     title:
       locale === 'es'
         ? 'Landing pages para negocios y campañas | Devifly'
@@ -150,7 +70,7 @@ const routeSeoByName = {
       locale === 'es'
         ? ['landing page para negocio', 'landing page de alta conversion', 'pagina web para captar clientes']
         : ['business landing page', 'high conversion landing page', 'lead generation website'],
-    path: '/landings',
+    path: '/landing-pages',
     pageType: 'Service',
   }),
   Invitaciones: ({ locale }) => ({
@@ -185,7 +105,7 @@ const routeSeoByName = {
     path: '/menus-digitales',
     pageType: 'Service',
   }),
-  CatalogosNenis: ({ locale }) => ({
+  Catalogos: ({ locale }) => ({
     title:
       locale === 'es'
         ? 'Catálogos digitales para vender por WhatsApp | Devifly'
@@ -198,7 +118,7 @@ const routeSeoByName = {
       locale === 'es'
         ? ['catalogo digital', 'catalogo para whatsapp', 'catalogo para nenis', 'tienda catalogo']
         : ['digital catalog', 'whatsapp catalog', 'online product catalog'],
-    path: '/catalogos-nenis',
+    path: '/catalogos',
     pageType: 'Service',
   }),
   SalonesEventos: ({ locale }) => ({

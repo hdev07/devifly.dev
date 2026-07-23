@@ -21,10 +21,10 @@
           "
         />
         <router-link
-          to="/case-studies"
+          to="/contacto"
           class="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border dark:text-white text-light-text text-sm font-semibold hover:dark:border-brand-500/40 hover:border-brand-500/50 backdrop-blur-md whitespace-nowrap transition-all"
         >
-          {{ locale === "es" ? "Ver todos los resultados" : "See all results" }}
+          {{ locale === "es" ? "Quiero un resultado así" : "I want results like these" }}
           <LucideIcon name="arrow-right" class-name="w-4 h-4" />
         </router-link>
       </div>
@@ -168,10 +168,10 @@
 
       <div data-animate class="text-center mt-10 lg:hidden">
         <router-link
-          to="/case-studies"
+          to="/contacto"
           class="inline-flex items-center gap-2 px-5 py-3 rounded-full dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border dark:text-white text-light-text text-sm font-semibold hover:dark:border-brand-500/40 transition-all"
         >
-          {{ locale === "es" ? "Ver todos los resultados" : "See all results" }}
+          {{ locale === "es" ? "Quiero un resultado así" : "I want results like these" }}
           <LucideIcon name="arrow-right" class-name="w-4 h-4" />
         </router-link>
       </div>

@@ -79,10 +79,10 @@
             : "* USD prices include a 20% international adjustment. VAT applies if an invoice is required. 21-day demo available on select products." }}
         </p>
         <router-link
-          to="/pricing"
+          to="/#productos"
           class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-500 hover:text-brand-400 whitespace-nowrap"
         >
-          {{ locale === "es" ? "Ver todos los planes" : "See all plans" }}
+          {{ locale === "es" ? "Ver planes por producto" : "See plans by product" }}
           <LucideIcon name="arrow-right" class-name="w-4 h-4" />
         </router-link>
       </div>
@@ -115,7 +115,7 @@ const tiers = [
       en: ["Responsive design", "WhatsApp integrated", "1 year hosting included"],
     },
     cta: { es: "Ver planes", en: "View plans" },
-    link: "/pricing",
+    link: "/#productos",
   },
   {
     key: "growth",
@@ -133,7 +133,7 @@ const tiers = [
       en: ["Sales-oriented UX", "SEO + analytics", "30-day support"],
     },
     cta: { es: "Ver planes", en: "View plans" },
-    link: "/pricing",
+    link: "/#productos",
   },
   {
     key: "scale",
@@ -151,7 +151,7 @@ const tiers = [
       en: ["Custom architecture", "Dashboards + APIs", "Ongoing support"],
     },
     cta: { es: "Hablar con un experto", en: "Talk to an expert" },
-    link: "/contact",
+    link: "/contacto",
   },
 ];
 </script>

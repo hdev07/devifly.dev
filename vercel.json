@@ -1,4 +1,18 @@
 {
+  "redirects": [
+    { "source": "/products", "destination": "/#productos", "permanent": true },
+    { "source": "/pricing", "destination": "/#precios", "permanent": true },
+    { "source": "/enfoque", "destination": "/#enfoque", "permanent": true },
+    { "source": "/solutions", "destination": "/#enfoque", "permanent": true },
+    { "source": "/case-studies", "destination": "/#casos", "permanent": true },
+    { "source": "/contact", "destination": "/contacto", "permanent": true },
+    { "source": "/landings", "destination": "/landing-pages", "permanent": true },
+    { "source": "/landings/demo", "destination": "/landing-pages/demo", "permanent": true },
+    { "source": "/catalogos-nenis", "destination": "/catalogos", "permanent": true },
+    { "source": "/catalogos-nenis/:tier", "destination": "/catalogos/demo", "permanent": true },
+    { "source": "/invitaciones/(esencial|pro|premium)", "destination": "/invitaciones/demo", "permanent": true },
+    { "source": "/menus-digitales/(pro|premium)", "destination": "/menus-digitales/demo", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

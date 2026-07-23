@@ -7,6 +7,7 @@
 import { ref, computed } from "vue";
 import { RouterLink } from "vue-router";
 import LucideIcon from "../../components/LucideIcon.vue";
+import BaseButton from "../../components/ui/BaseButton.vue";
 import { useLocaleContent } from "../../composables/useLocaleContent.js";
 import { landingMenusContent } from "../../data/landings/landingMenus.js";
 
@@ -71,22 +72,19 @@ const toggleFaq = (i) => {
 
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row items-start gap-4 mb-10">
-              <RouterLink
-                to="/menus-digitales/demo"
-                class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-amber-500 text-neutral-950 font-bold text-sm hover:bg-amber-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(245,158,11,0.3)]"
-              >
+              <BaseButton to="/menus-digitales/demo" accent="amber" size="lg">
                 <LucideIcon name="play-circle" class-name="w-4 h-4" />
                 {{ content.ui.heroCtaDemo }}
-              </RouterLink>
-              <a
+              </BaseButton>
+              <BaseButton
                 :href="waContratar"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-amber-500/40 hover:text-white transition"
+                variant="secondary"
+                accent="amber"
+                size="lg"
+                arrow
               >
                 {{ content.ui.heroCtaQuote }}
-                <LucideIcon name="arrow-right" class-name="w-4 h-4" />
-              </a>
+              </BaseButton>
             </div>
 
             <!-- Mini trust -->

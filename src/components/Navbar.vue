@@ -52,49 +52,14 @@
           </button>
         </div>
 
-        <!-- Soluciones -->
+        <!-- Links simples → secciones del Home -->
         <router-link
-          to="/enfoque"
-          class="relative px-2.5 lg:px-3 py-2 rounded-lg text-sm transition-all duration-200"
-          :class="isActive('/enfoque') || isActive('/solutions')
-            ? 'text-brand-500 dark:text-brand-400'
-            : 'dark:text-text-secondary text-light-muted hover:text-brand-500 dark:hover:text-brand-400 hover:bg-white/5'"
+          v-for="item in simpleNavItems"
+          :key="item.key"
+          :to="item.href"
+          class="relative px-2.5 lg:px-3 py-2 rounded-lg text-sm transition-all duration-200 dark:text-text-secondary text-light-muted hover:text-brand-500 dark:hover:text-brand-400 hover:bg-white/5"
         >
-          {{ t('nav.solutions') }}
-          <span
-            v-if="isActive('/enfoque') || isActive('/solutions')"
-            class="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-brand-500"
-          ></span>
-        </router-link>
-
-        <!-- Precios -->
-        <router-link
-          to="/pricing"
-          class="relative px-2.5 lg:px-3 py-2 rounded-lg text-sm transition-all duration-200"
-          :class="isActive('/pricing')
-            ? 'text-brand-500 dark:text-brand-400'
-            : 'dark:text-text-secondary text-light-muted hover:text-brand-500 dark:hover:text-brand-400 hover:bg-white/5'"
-        >
-          {{ t('nav.pricing') }}
-          <span
-            v-if="isActive('/pricing')"
-            class="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-brand-500"
-          ></span>
-        </router-link>
-
-        <!-- Casos de éxito -->
-        <router-link
-          to="/case-studies"
-          class="relative px-2.5 lg:px-3 py-2 rounded-lg text-sm transition-all duration-200"
-          :class="isActive('/case-studies')
-            ? 'text-brand-500 dark:text-brand-400'
-            : 'dark:text-text-secondary text-light-muted hover:text-brand-500 dark:hover:text-brand-400 hover:bg-white/5'"
-        >
-          {{ t('nav.cases') }}
-          <span
-            v-if="isActive('/case-studies')"
-            class="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-brand-500"
-          ></span>
+          {{ t(`nav.${item.key}`) }}
         </router-link>
 
       </div>
@@ -131,7 +96,7 @@
 
         <!-- CTA -->
         <router-link
-          to="/contact"
+          to="/contacto"
           class="group relative flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-1.5 lg:py-2 rounded-xl text-xs lg:text-sm font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-brand-500/25"
           style="background: linear-gradient(135deg, #3b82f6, #22d3ee);"
         >
@@ -218,7 +183,7 @@
               {{ locale === 'en' ? '✦ All services include hosting, SSL and ongoing support' : '✦ Todos los servicios incluyen hosting, SSL y soporte continuo' }}
             </p>
             <router-link
-              to="/products"
+              to="/#productos"
               @click="closeDropdown"
               class="flex items-center gap-1.5 text-xs font-semibold text-brand-500 hover:text-brand-400 transition-colors"
             >
@@ -301,7 +266,7 @@
           <!-- Mobile CTA -->
           <div class="mt-3 pt-4 border-t dark:border-base-700/40 border-light-border flex items-center gap-3">
             <router-link
-              to="/contact"
+              to="/contacto"
               @click="closeMobile"
               class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white"
               style="background: linear-gradient(135deg, #3b82f6, #22d3ee);"
@@ -354,13 +319,13 @@ let closeTimer = null
 const isActive = (path) => route.path === path || route.path.startsWith(path + '/')
 
 const isProductsActive = computed(() =>
-  ['/products', '/landings', '/invitaciones', '/menus-digitales', '/catalogos-nenis', '/salones-eventos'].some(p => route.path.startsWith(p))
+  ['/landing-pages', '/invitaciones', '/menus-digitales', '/catalogos', '/salones-eventos'].some(p => route.path.startsWith(p))
 )
 
 // Mega menu products
 const megaProducts = [
   {
-    href: '/landings',
+    href: '/landing-pages',
     titleEs: 'Landing Pages',
     titleEn: 'Landing Pages',
     descEs: 'Páginas de alta conversión para negocios',
@@ -390,7 +355,7 @@ const megaProducts = [
     badge: null,
   },
   {
-    href: '/catalogos-nenis',
+    href: '/catalogos',
     titleEs: 'Catálogos',
     titleEn: 'Catalogs',
     descEs: 'Catálogos digitales para vendedoras',
@@ -411,11 +376,11 @@ const megaProducts = [
   },
 ]
 
-// Simple nav links (no dropdown)
+// Simple nav links (no dropdown) → secciones del Home
 const simpleNavItems = [
-  { key: 'solutions', href: '/enfoque' },
-  { key: 'pricing', href: '/pricing' },
-  { key: 'cases', href: '/case-studies' },
+  { key: 'solutions', href: '/#enfoque' },
+  { key: 'pricing', href: '/#precios' },
+  { key: 'cases', href: '/#casos' },
 ]
 
 // Dropdown logic

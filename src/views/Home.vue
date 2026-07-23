@@ -20,20 +20,28 @@ import CTAFinal from "../components/CTAFinal.vue";
     <Hero />
     <!-- 2. Trust bar -->
     <TrustBar />
-    <!-- 3. Services with Problem -> Solution -> Result -->
-    <ServicesPSR />
+    <!-- 3. Services with Problem -> Solution -> Result (ancla: #productos) -->
+    <div id="productos" class="scroll-mt-20">
+      <ServicesPSR />
+    </div>
     <!-- 4. Why Devifly comparison table -->
     <WhyDevifly />
-    <!-- 5. Case studies -->
-    <CaseStudiesTeaser />
-    <!-- 6. Process (4 steps) -->
-    <HowWeWork />
+    <!-- 5. Case studies (ancla: #casos) -->
+    <div id="casos" class="scroll-mt-20">
+      <CaseStudiesTeaser />
+    </div>
+    <!-- 6. Process (4 steps) (ancla: #enfoque) -->
+    <div id="enfoque" class="scroll-mt-20">
+      <HowWeWork />
+    </div>
     <!-- 7. Packaged products -->
     <TopSellers />
     <!-- ROI Calculator (between products and pricing) -->
     <ROICalculator />
-    <!-- 8. Pricing -->
-    <PricingTeaser />
+    <!-- 8. Pricing (ancla: #precios) -->
+    <div id="precios" class="scroll-mt-20">
+      <PricingTeaser />
+    </div>
     <!-- Lead magnet (free audit) -->
     <LeadMagnet />
     <!-- 9. FAQ + Founder -->

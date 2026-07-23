@@ -57,28 +57,15 @@
 
           <!-- 3 CTAs -->
           <div data-animate class="mt-9 flex flex-wrap items-center gap-3 sm:gap-4 delay-300">
-            <a
-              :href="callLink"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-brand-500 via-brand-500 to-cyan-glow text-white font-semibold text-sm shadow-[0_10px_40px_rgba(59,130,246,0.35)] hover:shadow-[0_14px_55px_rgba(59,130,246,0.55)] hover:brightness-110 transition-all"
-            >
+            <BaseButton :href="callLink" arrow>
               {{ locale === "es" ? "Agendar llamada" : "Book a call" }}
-              <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
-            </a>
-            <router-link
-              to="/products"
-              class="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border dark:text-white text-light-text font-semibold text-sm backdrop-blur-md hover:dark:border-brand-500/40 hover:border-brand-500/50 transition-all"
-            >
+            </BaseButton>
+            <BaseButton to="/#productos" variant="secondary">
               {{ locale === "es" ? "Ver productos" : "See products" }}
-            </router-link>
-            <router-link
-              to="/case-studies"
-              class="group inline-flex items-center gap-1.5 text-sm font-medium dark:text-text-secondary text-light-muted hover:dark:text-white hover:text-light-text transition-colors px-2 py-3"
-            >
+            </BaseButton>
+            <BaseButton to="/#casos" variant="ghost" arrow>
               {{ locale === "es" ? "Casos de éxito" : "Case studies" }}
-              <span class="group-hover:translate-x-0.5 transition-transform inline-block">→</span>
-            </router-link>
+            </BaseButton>
           </div>
 
           <!-- Inline metrics -->
@@ -193,6 +180,7 @@ import { useI18n } from "vue-i18n";
 import { useWhatsApp } from "../composables/useWhatsApp.js";
 import LucideIcon from "./LucideIcon.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
+import BaseButton from "./ui/BaseButton.vue";
 
 const { locale } = useI18n();
 const { linkFor } = useWhatsApp();

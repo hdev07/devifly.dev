@@ -65,7 +65,7 @@ const toggleFaq = (i) => {
 
             <div class="flex flex-col sm:flex-row items-start gap-4 mb-10">
               <RouterLink
-                to="/landings/demo"
+                to="/landing-pages/demo"
                 class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-blue-500 text-white font-bold text-sm hover:bg-blue-400 transition-all hover:scale-105 shadow-[0_0_24px_rgba(59,130,246,0.35)]"
               >
                 <LucideIcon name="play-circle" class-name="w-4 h-4" />
@@ -244,7 +244,7 @@ const toggleFaq = (i) => {
               </p>
               <div class="flex flex-col sm:flex-row gap-4">
                 <RouterLink
-                  to="/landings/demo"
+                  to="/landing-pages/demo"
                   class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-blue-500 text-white font-bold text-sm hover:bg-blue-400 transition-all hover:scale-105 shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                 >
                   <LucideIcon name="smartphone" class-name="w-4 h-4" />
@@ -534,7 +534,7 @@ const toggleFaq = (i) => {
                 <LucideIcon name="arrow-right" class-name="w-4 h-4" />
               </a>
               <RouterLink
-                to="/landings/demo"
+                to="/landing-pages/demo"
                 class="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-neutral-700 text-neutral-400 text-sm hover:text-white hover:border-neutral-600 transition"
               >
                 <LucideIcon name="play" class-name="w-3.5 h-3.5" />
@@ -782,7 +782,7 @@ const toggleFaq = (i) => {
             {{ content.ui.finalCtaQuote }}
           </a>
           <RouterLink
-            to="/landings/demo"
+            to="/landing-pages/demo"
             class="px-10 py-4 rounded-full border border-neutral-700 text-neutral-300 font-semibold text-sm hover:border-blue-500/30 hover:text-white transition"
           >
             {{ content.ui.finalCtaDemo }}

@@ -175,7 +175,7 @@ const toggleFaq = (i) => {
           <!-- Demo Básico -->
           <div class="flex flex-col items-center gap-3 group">
             <RouterLink
-              to="/catalogos-nenis/demo"
+              to="/catalogos/demo"
               class="block transition-transform group-hover:-translate-y-1"
             >
               <div
@@ -243,7 +243,7 @@ const toggleFaq = (i) => {
               {{ content.ui.mostPopular }}
             </div>
             <RouterLink
-              to="/catalogos-nenis/pro"
+              to="/catalogos/demo"
               class="block transition-transform group-hover:-translate-y-1"
             >
               <div
@@ -317,7 +317,7 @@ const toggleFaq = (i) => {
           <!-- Demo Premium VIP -->
           <div class="flex flex-col items-center gap-3 group">
             <RouterLink
-              to="/catalogos-nenis/premium"
+              to="/catalogos/demo"
               class="block transition-transform group-hover:-translate-y-1"
             >
               <div

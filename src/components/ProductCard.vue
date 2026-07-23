@@ -99,7 +99,7 @@
           </div>
           <router-link
             v-if="showHire"
-            to="/contact"
+            to="/contacto"
             class="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border dark:text-text-secondary text-light-muted font-semibold text-xs hover:dark:border-brand-500/40 hover:border-brand-500/50 hover:text-brand-400 transition"
           >
             {{ hireLabel }}

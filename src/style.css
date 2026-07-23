@@ -35,6 +35,14 @@
   --color-light-text: #0f172a;
   --color-light-muted: #475569;
   --color-light-border: #e2e8f0;
+
+  /* Radius tokens — one role per radius:
+     action = interactive (buttons, pills, badges)
+     card   = surfaces (cards, panels)
+     field  = inputs & small icon chips */
+  --radius-action: 9999px;
+  --radius-card: 1rem;
+  --radius-field: 0.5rem;
 }
 
 /* Custom futuristic cursor */
@@ -54,6 +62,155 @@ input[type="submit"],
   cursor:
     url("/cursor-pointer.svg") 16 16,
     pointer;
+}
+
+/* ===== Button system (BaseButton.vue) =====
+   One shape (--radius-action), one hover (lift + glow), accent via CSS vars.
+   Accent classes only swap the hue — never the anatomy. */
+
+.btn {
+  /* brand is the default accent */
+  --accent: var(--color-brand-500);
+  --accent-contrast: #ffffff;
+  --accent-glow: 59 130 246;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: var(--radius-action);
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  white-space: nowrap;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid rgb(var(--accent-glow));
+  outline-offset: 2px;
+}
+
+/* Sizes */
+.btn-sm {
+  padding: 0.625rem 1.25rem;
+}
+.btn-md {
+  padding: 0.875rem 1.75rem;
+}
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 0.9375rem;
+}
+
+/* Variants */
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  box-shadow: 0 10px 40px rgb(var(--accent-glow) / 0.35);
+}
+.btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 14px 55px rgb(var(--accent-glow) / 0.5);
+}
+/* Signature brand gradient — only for the brand accent */
+.btn-primary.accent-brand {
+  background: linear-gradient(
+    to right,
+    var(--color-brand-500),
+    var(--color-brand-500),
+    var(--color-cyan-glow)
+  );
+  color: #ffffff;
+}
+
+.btn-secondary {
+  border: 1px solid;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.dark .btn-secondary {
+  background: rgb(255 255 255 / 0.05);
+  border-color: rgb(255 255 255 / 0.1);
+  color: #ffffff;
+}
+.light .btn-secondary {
+  background: var(--color-light-card);
+  border-color: var(--color-light-border);
+  color: var(--color-light-text);
+}
+.btn-secondary:hover {
+  border-color: rgb(var(--accent-glow) / 0.5);
+}
+
+.btn-ghost {
+  padding-inline: 0.5rem;
+  font-weight: 500;
+}
+.dark .btn-ghost {
+  color: var(--color-text-secondary);
+}
+.light .btn-ghost {
+  color: var(--color-light-muted);
+}
+.btn-ghost:hover {
+  transform: none;
+}
+.dark .btn-ghost:hover {
+  color: #ffffff;
+}
+.light .btn-ghost:hover {
+  color: var(--color-light-text);
+}
+
+/* Accents — hue per product, same anatomy.
+   Contrast colors chosen for AA on the solid fill. */
+.accent-brand,
+.accent-blue {
+  --accent: var(--color-brand-500);
+  --accent-contrast: #ffffff;
+  --accent-glow: 59 130 246;
+}
+.accent-amber {
+  --accent: #f59e0b;
+  --accent-contrast: #0a0a0a;
+  --accent-glow: 245 158 11;
+}
+.accent-red {
+  --accent: #ef4444;
+  --accent-contrast: #0a0a0a;
+  --accent-glow: 239 68 68;
+}
+.accent-rose {
+  --accent: #f43f5e;
+  --accent-contrast: #ffffff;
+  --accent-glow: 244 63 94;
+}
+.accent-violet {
+  --accent: #8b5cf6;
+  --accent-contrast: #ffffff;
+  --accent-glow: 139 92 246;
+}
+.accent-emerald {
+  --accent: #10b981;
+  --accent-contrast: #052e16;
+  --accent-glow: 16 185 129;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn:hover {
+    transform: none;
+  }
 }
 
 /* Base styles */

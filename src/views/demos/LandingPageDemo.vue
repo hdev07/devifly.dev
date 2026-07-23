@@ -2,7 +2,7 @@
   <div class="landing-demo min-h-screen bg-brand-dark text-white">
     <!-- Back link (floating) -->
     <router-link
-      to="/landings"
+      to="/landing-pages"
       class="fixed top-5 left-5 z-[60] flex items-center gap-2 text-xs text-gray-500 hover:text-white tracking-wide uppercase transition"
     >
       <svg
