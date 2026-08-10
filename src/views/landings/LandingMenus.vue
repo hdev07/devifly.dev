@@ -63,7 +63,7 @@ const toggleFaq = (i) => {
               class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.05] tracking-tight mb-6"
             >
               {{ content.ui.heroTitleBefore }}
-              <span class="text-amber-400">{{ content.ui.heroTitleHighlight }}</span>
+              <span class="text-amber-400"> {{ content.ui.heroTitleHighlight }}</span>
             </h1>
 
             <p class="text-neutral-400 text-lg leading-relaxed mb-8 max-w-xl">
@@ -877,9 +877,9 @@ const toggleFaq = (i) => {
               class="text-neutral-400 max-w-2xl mx-auto mb-10 text-base leading-relaxed"
             >
               {{ content.ui.demo21DescBefore }}
-              <span class="text-amber-400 font-bold">{{ content.demo21Price }}</span>
+              <span class="text-amber-400 font-bold"> {{ content.demo21Price }} </span>
               {{ content.ui.demo21DescAfter }}
-              <strong class="text-white">{{ content.ui.demo21Days }}</strong>.
+              <strong class="text-white"> {{ content.ui.demo21Days }}</strong>.
               {{ content.ui.demo21DescEnd }}
             </p>
 

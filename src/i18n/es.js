@@ -26,7 +26,7 @@ export default {
     from: 'Desde',
   },
   hero: {
-    badge: '+20 productos en producción · Disponible Q2',
+    badge: '+20 productos en producción · Agenda hoy',
     title1: 'Diseñamos',
     title2: 'software que genera',
     title3: 'crecimiento',
@@ -182,7 +182,7 @@ export default {
       communication: {
         feature: 'Comunicación',
         others: 'Pasas por 3 cuentas y un PM antes de hablar con dev',
-        devifly: 'Trato directo con el founder/dev en cada etapa',
+        devifly: 'Comunicación directa con el fundador en cada etapa',
       },
       changes: {
         feature: 'Cambios después del lanzamiento',
@@ -208,6 +208,30 @@ export default {
       'Tres proyectos reales con usuarios activos. Así se ve cuando el producto correcto resuelve un problema de negocio.',
     cta: 'Quiero un resultado así',
     visit: 'Visitar {name}',
+    readCase: 'Ver caso completo',
+  },
+  demos: {
+    eyebrow: 'Demos',
+    title: 'Míralo en acción',
+    subtitle:
+      'Pasa el cursor para previsualizar. Entra al caso para ver el proceso, métricas y galería completa.',
+  },
+  caseStudy: {
+    back: 'Volver a casos',
+    openProduct: 'Abrir producto',
+    cta: 'Quiero un producto así',
+    ctaTitle: '¿Tu negocio necesita un producto digital a este nivel?',
+    ctaSubtitle:
+      'Agendamos una llamada de 20 minutos para aterrizar alcance, stack y timeline.',
+    galleryEyebrow: 'Producto',
+    galleryTitle: 'Capturas en device frames',
+    gallerySubtitle: 'La interfaz real, no mockups genéricos de stock.',
+    processEyebrow: 'Proceso',
+    processTitle: 'Cómo se construyó',
+    processSubtitle: 'Decisiones de producto, no solo pixels.',
+    brandEyebrow: 'Marca',
+    brandTitle: 'Identidad y sistema visual',
+    brandSubtitle: 'Logo, icono, color y piezas de onboarding.',
   },
   pricingTeaser: {
     eyebrow: 'Inversión',
@@ -271,13 +295,13 @@ export default {
     trackRecord: 'Track record',
     yearsProd: 'años en producción',
     available: 'Disponible',
-    accepting: 'Aceptando proyectos para Q2-Q3',
-    title: 'Detrás de Devifly hay un dev que ya pasó por todos los errores que tú quieres evitar.',
-    p1: 'Mi nombre está detrás de cada línea de código que entregamos. Construyo productos digitales desde 2019 y antes de Devifly trabajé en proyectos como MoviBase (SaaS de flotas con +10k vehículos), Confecdotario (red social con miles de usuarios) y Musion (PWA cultural con PostGIS).',
-    p2: 'Después de ver demasiados proyectos quemarse en agencias que sobre-prometen y entregan plantillas, decidí abrir Devifly: un studio donde el founder es el dev, donde no pagas por overhead corporativo, y donde tu producto se diseña para vender, no para ganar premios.',
+    accepting: 'Aceptando nuevos proyectos',
+    title: 'Detrás de Devifly hay un fundador que ya envió — y corrigió — todo tipo de producto digital.',
+    p1: 'Lidero cada proyecto que entregamos. Construyo productos digitales desde 2019 y he trabajado en proyectos como MoviBase (SaaS de flotas con +10k vehículos), Confecdotario (red social con miles de usuarios) y Musion (PWA cultural con PostGIS). Según el proyecto, incorporo especialistas en diseño, copywriting o backend.',
+    p2: 'Después de ver demasiados proyectos quemarse en agencias que sobre-prometen y entregan plantillas, decidí abrir Devifly: un studio liderado por su fundador, donde hablas con quien toma las decisiones técnicas, donde no pagas por overhead corporativo, y donde tu producto se diseña para vender, no para ganar premios.',
     ctaTalk: 'Hablar conmigo directo',
     promises: {
-      direct: { title: 'Trato directo con dev', desc: 'Sin pasar por 3 cuentas y un PM' },
+      direct: { title: 'Liderado por el fundador', desc: 'Línea directa — sin capas de ejecutivos' },
       demo: { title: 'Demo antes de pagar', desc: '21 días para validar tu inversión' },
       code: { title: 'Código que tú puedes auditar', desc: 'Stack moderno, repos privados' },
       sell: { title: 'Pensado para vender', desc: 'CRO + UX + métricas desde día 1' },
@@ -355,6 +379,22 @@ export default {
         q: '¿Firman acuerdo de confidencialidad (NDA)?',
         a: 'Sí, sin problema. Para proyectos sensibles firmamos NDA antes del discovery y todo el código vive en repositorios privados con acceso controlado. Nunca compartimos detalles ni capturas sin tu autorización.',
       },
+      {
+        q: '¿Cómo miden el éxito de una landing o sitio?',
+        a: 'Configuramos Google Analytics 4, eventos de conversión y heatmaps desde el día 1. Medimos tasa de conversión, costo por lead, tiempo en página y scroll depth. En los reportes mensuales del plan de mantenimiento te mostramos qué funciona y qué ajustar para mejorar resultados.',
+      },
+      {
+        q: '¿Qué pasa si necesito integrar con mi sistema actual?',
+        a: 'Todos nuestros productos se construyen con APIs REST documentadas. Podemos conectar con CRMs, ERPs, pasarelas de pago (Stripe, MercadoPago), Google Calendar, plataformas de email y prácticamente cualquier servicio con API. Lo evaluamos en el discovery para darte un alcance realista.',
+      },
+      {
+        q: '¿Pueden manejar alto tráfico o campañas grandes?',
+        a: 'Sí. Desplegamos en infraestructura cloud con CDN global, caché agresivo y lazy loading. Nuestras apps Vue 3 cargan en menos de 1.5 segundos y soportan picos de tráfico de campañas de ads sin degradarse. MoviBase maneja +10k vehículos en tiempo real como referencia.',
+      },
+      {
+        q: '¿Qué diferencia hay entre su menú digital y un SaaS como iMenu o Menú QR?',
+        a: 'Los SaaS de QR menus te dan un template genérico igual al de mil restaurantes. Nosotros diseñamos un menú custom con la identidad visual de tu marca, optimizado para conversión y sin suscripción mensual — pagas una vez y es tuyo. Además, integra directo con WhatsApp para pedidos sin comisiones por transacción.',
+      },
     ],
   },
   ctaFinal: {
@@ -373,7 +413,7 @@ export default {
     ctaBook: 'Agendar ahora por WhatsApp',
     reply24: 'Respondemos en menos de 24h',
     quote:
-      'Llegué con una idea vaga y salí con un roadmap claro y precio fijo. En 21 días tenía mi sitio publicado y generando leads.',
+      'Plataforma SaaS para rastreo de flotas con más de 10,000 vehículos en producción. GPS en vivo, geocercas y reportes financieros automatizados.',
   },
   contactPage: {
     badge: 'Contacto',

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" fill="none">
+  <rect width="390" height="844" fill="#0D0D0D"/>
+  <!-- status bar -->
+  <text x="28" y="28" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="12" font-weight="600">9:41</text>
+  <circle cx="340" cy="24" r="3" fill="#FFD700"/>
+  <rect x="348" y="18" width="18" height="10" rx="2" fill="#2A2A2A"/>
+  <rect x="350" y="20" width="12" height="6" rx="1" fill="#FFD700"/>
+
+  <!-- header -->
+  <text x="24" y="68" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="22" font-weight="700">Inicio</text>
+  <text x="24" y="90" fill="#666666" font-family="system-ui,sans-serif" font-size="12">La Cotorrisa · Comunidad</text>
+  <circle cx="348" cy="70" r="18" fill="#1A1A1A" stroke="#FFD70055" stroke-width="1.5"/>
+  <text x="341" y="75" fill="#FFD700" font-family="system-ui,sans-serif" font-size="12" font-weight="700">LC</text>
+
+  <!-- tabs -->
+  <rect x="24" y="110" width="72" height="32" rx="16" fill="#FFD700"/>
+  <text x="42" y="131" fill="#0D0D0D" font-family="system-ui,sans-serif" font-size="12" font-weight="700">Para ti</text>
+  <rect x="104" y="110" width="88" height="32" rx="16" fill="#1A1A1A" stroke="#2A2A2A"/>
+  <text x="118" y="131" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Siguiendo</text>
+  <rect x="200" y="110" width="78" height="32" rx="16" fill="#1A1A1A" stroke="#2A2A2A"/>
+  <text x="218" y="131" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Hot</text>
+
+  <!-- anecdote card 1 -->
+  <rect x="20" y="160" width="350" height="200" rx="18" fill="#1A1A1A" stroke="#2A2A2A"/>
+  <circle cx="52" cy="192" r="16" fill="#FF8C0033" stroke="#FF8C00"/>
+  <text x="46" y="197" fill="#FF8C00" font-family="system-ui,sans-serif" font-size="11" font-weight="700">MX</text>
+  <text x="78" y="188" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="13" font-weight="600">@mexicano_random</text>
+  <text x="78" y="206" fill="#666666" font-family="system-ui,sans-serif" font-size="11">hace 12 min · Tema: Metros</text>
+  <text x="40" y="242" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">Hoy en el metro una señora</text>
+  <text x="40" y="262" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">me preguntó si yo era el</text>
+  <text x="40" y="282" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">mismo del podcast&</text>
+  <rect x="40" y="300" width="68" height="24" rx="12" fill="#FFD70022" stroke="#FFD70055"/>
+  <text x="52" y="316" fill="#FFD700" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Metros</text>
+  <!-- actions -->
+  <text x="44" y="342" fill="#E63946" font-family="system-ui,sans-serif" font-size="13" font-weight="600">e 248</text>
+  <text x="120" y="342" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="13">=¬ 42</text>
+  <text x="190" y="342" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="13">=A 1.2k</text>
+
+  <!-- anecdote card 2 -->
+  <rect x="20" y="380" width="350" height="180" rx="18" fill="#1A1A1A" stroke="#2A2A2A"/>
+  <circle cx="52" cy="412" r="16" fill="#2EC4B633" stroke="#2EC4B6"/>
+  <text x="46" y="417" fill="#2EC4B6" font-family="system-ui,sans-serif" font-size="11" font-weight="700">AN</text>
+  <text x="78" y="408" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="13" font-weight="600">@anecdotas_del_sur</text>
+  <text x="78" y="426" fill="#666666" font-family="system-ui,sans-serif" font-size="11">hace 1 h · Tema: Familia</text>
+  <text x="40" y="462" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">Mi tía juraba que Ricardo</text>
+  <text x="40" y="482" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">era su vecino en Coyoacán&</text>
+  <rect x="40" y="500" width="72" height="24" rx="12" fill="#FFD70022" stroke="#FFD70055"/>
+  <text x="52" y="516" fill="#FFD700" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Familia</text>
+  <text x="44" y="542" fill="#E63946" font-family="system-ui,sans-serif" font-size="13" font-weight="600">e 91</text>
+  <text x="120" y="542" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="13">=¬ 18</text>
+
+  <!-- anecdote card 3 (partial) -->
+  <rect x="20" y="580" width="350" height="160" rx="18" fill="#1A1A1A" stroke="#2A2A2A"/>
+  <circle cx="52" cy="612" r="16" fill="#FFD70033" stroke="#FFD700"/>
+  <text x="46" y="617" fill="#FFD700" font-family="system-ui,sans-serif" font-size="11" font-weight="700">CT</text>
+  <text x="78" y="608" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="13" font-weight="600">@cotorro_oficial</text>
+  <text x="78" y="626" fill="#666666" font-family="system-ui,sans-serif" font-size="11">hace 3 h · Tema: Conciertos</text>
+  <text x="40" y="662" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">En el live me reconocieron</text>
+  <text x="40" y="682" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">por el badge de Cotorro >œ</text>
+
+  <!-- FAB -->
+  <circle cx="330" cy="720" r="28" fill="#FFD700"/>
+  <text x="320" y="728" fill="#0D0D0D" font-family="system-ui,sans-serif" font-size="28" font-weight="700">+</text>
+
+  <!-- bottom nav -->
+  <rect x="0" y="760" width="390" height="84" fill="#0D0D0D"/>
+  <rect y="760" width="390" height="1" fill="#2A2A2A"/>
+  <g>
+    <rect x="36" y="786" width="22" height="18" rx="3" fill="#FFD700"/>
+    <text x="30" y="826" fill="#FFD700" font-family="system-ui,sans-serif" font-size="10" font-weight="600">Inicio</text>
+  </g>
+  <g opacity="0.45">
+    <rect x="118" y="786" width="22" height="18" rx="3" stroke="#A0A0A0" stroke-width="1.5" fill="none"/>
+    <text x="112" y="826" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="10">Temas</text>
+  </g>
+  <g opacity="0.9">
+    <circle cx="195" cy="795" r="14" stroke="#FFD700" stroke-width="2" fill="none"/>
+    <text x="189" y="800" fill="#FFD700" font-family="system-ui,sans-serif" font-size="16" font-weight="700">+</text>
+    <text x="180" y="826" fill="#FFD700" font-family="system-ui,sans-serif" font-size="10">Crear</text>
+  </g>
+  <g opacity="0.45">
+    <circle cx="268" cy="795" r="9" stroke="#A0A0A0" stroke-width="1.5" fill="none"/>
+    <text x="252" y="826" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="10">Alertas</text>
+  </g>
+  <g opacity="0.45">
+    <circle cx="340" cy="795" r="9" stroke="#A0A0A0" stroke-width="1.5" fill="none"/>
+    <text x="326" y="826" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="10">Perfil</text>
+  </g>
+</svg>

@@ -62,9 +62,7 @@ const toggleFaq = (i) => {
         <h1
           class="font-display text-5xl sm:text-6xl lg:text-[5rem] font-bold leading-[1.04] tracking-tight mb-7"
         >
-          <span class="dark:text-white text-light-text"
-            >{{ content.ui.heroTitleBefore }}
-          </span>
+          <span class="dark:text-white text-light-text">{{ content.ui.heroTitleBefore }} </span>
           <span
             class="bg-clip-text text-transparent"
             style="
@@ -77,9 +75,7 @@ const toggleFaq = (i) => {
             "
             >{{ content.ui.heroTitleHighlight }}</span
           >
-          <span class="dark:text-white text-light-text">
-            {{ content.ui.heroTitleAfter }}</span
-          >
+          <span class="dark:text-white text-light-text"> {{ content.ui.heroTitleAfter }}</span>
         </h1>
 
         <p
@@ -1071,9 +1067,7 @@ const toggleFaq = (i) => {
         <h2
           class="font-display text-4xl sm:text-5xl font-bold mb-6 leading-tight"
         >
-          <span class="dark:text-white text-light-text"
-            >{{ content.ui.finalTitleBefore }}
-          </span>
+          <span class="dark:text-white text-light-text">{{ content.ui.finalTitleBefore }} </span>
           <span
             class="bg-clip-text text-transparent"
             style="

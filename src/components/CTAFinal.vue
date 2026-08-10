@@ -23,7 +23,7 @@
               <!-- Headline -->
               <h2 class="font-display font-bold dark:text-white text-light-text leading-[1.05] tracking-tight" style="font-size: clamp(2.2rem, 5.5vw, 4rem)">
                 {{ t("ctaFinal.title1") }}
-                <span class="text-gradient">{{ t("ctaFinal.titleGradient") }}</span>
+                <span class="text-gradient"> {{ t("ctaFinal.titleGradient") }} </span>
                 {{ t("ctaFinal.title2") }}
               </h2>
 
@@ -62,21 +62,16 @@
                 </p>
                 <div class="flex items-center gap-3">
                   <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-cyan-glow flex items-center justify-center font-display font-bold text-white">
-                    M
+                    MB
                   </div>
                   <div>
                     <div class="font-semibold text-sm dark:text-white text-light-text">
-                      Marco G.
+                      MoviBase
                     </div>
                     <div class="text-xs dark:text-text-secondary text-light-muted">
-                      Founder · Salón Casa Verde
+                      SaaS en producción · movibase.com
                     </div>
                   </div>
-                </div>
-
-                <!-- Star rating -->
-                <div class="flex gap-1 mt-4">
-                  <LucideIcon v-for="n in 5" :key="n" name="star" class-name="w-4 h-4 fill-amber-400 text-amber-400" />
                 </div>
               </div>
             </div>

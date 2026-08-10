@@ -994,9 +994,7 @@ const toggleFaq = (i) => {
         <h2
           class="font-display text-4xl sm:text-5xl font-bold mb-6 leading-tight"
         >
-          <span class="dark:text-white text-light-text"
-            >{{ content.ui.finalTitleBefore }}
-          </span>
+          <span class="dark:text-white text-light-text">{{ content.ui.finalTitleBefore }} </span>
           <span
             class="bg-clip-text text-transparent"
             style="

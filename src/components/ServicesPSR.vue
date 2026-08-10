@@ -85,6 +85,12 @@
               </div>
             </div>
 
+            <!-- Price -->
+            <p v-if="svc.priceEs" class="text-sm tabular-nums dark:text-text-secondary text-light-muted">
+              {{ t('common.from') }}
+              <span class="font-semibold dark:text-white text-light-text">{{ locale === 'es' ? svc.priceEs : svc.priceEn }}</span>
+            </p>
+
             <!-- CTA -->
             <router-link
               :to="svc.link"
@@ -106,7 +112,7 @@ import LucideIcon from "./LucideIcon.vue";
 import SectionHeader from "./ui/SectionHeader.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 // Textos en src/i18n/{es,en}.js bajo `services.items.<key>`
 const services = [
@@ -116,6 +122,8 @@ const services = [
     iconBg: "dark:bg-brand-500/15 bg-brand-500/10",
     iconColor: "text-brand-400",
     accent: "bg-gradient-to-r from-brand-500 to-cyan-glow",
+    priceEs: "$4,999 MXN",
+    priceEn: "$359 USD",
     link: "/landing-pages",
   },
   {
@@ -124,6 +132,8 @@ const services = [
     iconBg: "dark:bg-pink-500/15 bg-pink-500/10",
     iconColor: "dark:text-pink-400 text-pink-500",
     accent: "bg-gradient-to-r from-pink-500 to-violet-soft",
+    priceEs: "$499 MXN",
+    priceEn: "$35 USD",
     link: "/invitaciones",
   },
   {
@@ -132,6 +142,8 @@ const services = [
     iconBg: "dark:bg-amber-500/15 bg-amber-500/10",
     iconColor: "dark:text-amber-400 text-amber-500",
     accent: "bg-gradient-to-r from-amber-500 to-orange-400",
+    priceEs: "$3,999 MXN",
+    priceEn: "$275 USD",
     link: "/menus-digitales",
   },
   {
@@ -140,6 +152,8 @@ const services = [
     iconBg: "dark:bg-emerald-500/15 bg-emerald-500/10",
     iconColor: "dark:text-emerald-400 text-emerald-500",
     accent: "bg-gradient-to-r from-emerald-500 to-teal-400",
+    priceEs: "$5,999 MXN",
+    priceEn: "$419 USD",
     link: "/salones-eventos",
   },
   {
@@ -148,6 +162,8 @@ const services = [
     iconBg: "dark:bg-violet-500/15 bg-violet-500/10",
     iconColor: "dark:text-violet-300 text-violet-500",
     accent: "bg-gradient-to-r from-violet-soft to-fuchsia-400",
+    priceEs: "$1,499 MXN",
+    priceEn: "$107 USD",
     link: "/catalogos",
   },
   {

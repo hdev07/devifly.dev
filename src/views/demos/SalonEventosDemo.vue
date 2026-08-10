@@ -81,9 +81,20 @@
               Salón de Eventos
             </p>
           </div>
+          <span
+            class="text-[9px] font-semibold px-2.5 py-1 rounded-full tracking-wider uppercase"
+            style="
+              color: #c9a96e;
+              background: rgba(201, 169, 110, 0.08);
+              border: 1px solid rgba(201, 169, 110, 0.2);
+            "
+          >
+            Plan {{ tierLabels[tier] }}
+          </span>
         </div>
 
         <a
+          v-if="isPro"
           href="#cotizador"
           class="px-5 py-2 rounded-full text-xs font-medium transition-all duration-300 hover:scale-105 tracking-[0.15em] uppercase"
           style="
@@ -93,6 +104,18 @@
           "
         >
           Cotizar
+        </a>
+        <a
+          v-else
+          href="#contacto"
+          class="px-5 py-2 rounded-full text-xs font-medium transition-all duration-300 hover:scale-105 tracking-[0.15em] uppercase"
+          style="
+            background: rgba(201, 169, 110, 0.08);
+            border: 1px solid rgba(201, 169, 110, 0.25);
+            color: #c9a96e;
+          "
+        >
+          Contacto
         </a>
       </div>
     </header>
@@ -459,7 +482,7 @@
           class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4"
         >
           <div
-            v-for="(img, i) in galleryImages"
+            v-for="(img, i) in filteredGallery"
             :key="i"
             class="relative aspect-square rounded-xl overflow-hidden group cursor-pointer"
             :class="{ 'md:col-span-2 md:row-span-2': i === 0 }"
@@ -470,6 +493,20 @@
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
             />
+            <template v-if="isPro && img.type === 'video'">
+              <div
+                class="absolute inset-0 flex items-center justify-center bg-black/30"
+              >
+                <div
+                  class="w-14 h-14 rounded-full flex items-center justify-center backdrop-blur-sm transition-transform duration-300 group-hover:scale-110"
+                  style="background: rgba(201, 169, 110, 0.85)"
+                >
+                  <svg class="w-6 h-6 ml-0.5" fill="#0c0a09" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+            </template>
             <div
               class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             ></div>
@@ -551,8 +588,8 @@
       </div>
     </section>
 
-    <!-- Divider -->
-    <div class="flex items-center justify-center gap-4 py-2">
+    <!-- Divider (before cotizador) -->
+    <div v-if="isPro" class="flex items-center justify-center gap-4 py-2">
       <div
         class="h-px flex-1 max-w-40"
         style="
@@ -581,6 +618,7 @@
 
     <!-- COTIZADOR -->
     <section
+      v-if="isPro"
       id="cotizador"
       class="py-20 sm:py-28 px-6"
       style="background: rgba(201, 169, 110, 0.01)"
@@ -1046,7 +1084,7 @@
     </section>
 
     <!-- Calendar -->
-    <section class="py-20 sm:py-28 px-6">
+    <section v-if="isPro" class="py-20 sm:py-28 px-6">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16">
           <p
@@ -1261,6 +1299,169 @@
       </div>
     </section>
 
+    <!-- Premium Panel Mockups -->
+    <section v-if="isPremium" class="py-20 sm:py-28 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <p
+            class="text-[10px] tracking-[0.35em] uppercase mb-4"
+            style="color: #c9a96e"
+          >
+            Exclusivo Premium
+          </p>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
+            style="
+              color: #f5efe6;
+              font-family: 'Playfair Display', serif;
+            "
+          >
+            Así se ve tu panel
+          </h2>
+          <p
+            class="max-w-xl mx-auto leading-relaxed text-sm sm:text-base"
+            style="color: #9c8e80"
+          >
+            Administra tu salón desde un solo lugar: prospectos, contratos, pagos
+            y reportes.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            v-for="panel in premiumPanels"
+            :key="panel.title"
+            class="p-6 rounded-xl transition-all duration-300 hover:-translate-y-1"
+            style="
+              background: rgba(201, 169, 110, 0.02);
+              border: 1px solid rgba(201, 169, 110, 0.06);
+            "
+          >
+            <div
+              class="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+              style="background: rgba(201, 169, 110, 0.08)"
+            >
+              <svg
+                class="w-5 h-5"
+                style="color: #c9a96e"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  :d="panel.icon"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3
+              class="text-sm font-semibold mb-2"
+              style="color: #f5efe6; font-family: 'Playfair Display', serif"
+            >
+              {{ panel.title }}
+            </h3>
+            <p class="text-xs leading-relaxed" style="color: #9c8e80">
+              {{ panel.desc }}
+            </p>
+            <!-- Mini mockup bar -->
+            <div
+              class="mt-4 h-16 rounded-lg overflow-hidden"
+              style="
+                background: rgba(12, 10, 9, 0.6);
+                border: 1px solid rgba(201, 169, 110, 0.06);
+              "
+            >
+              <div
+                class="h-2 rounded-full mx-3 mt-3"
+                :style="{
+                  width: panel.bar + '%',
+                  background:
+                    'linear-gradient(90deg, rgba(201,169,110,0.3), rgba(201,169,110,0.15))',
+                }"
+              ></div>
+              <div class="flex gap-2 mx-3 mt-2">
+                <div
+                  class="h-1.5 rounded-full flex-1"
+                  style="background: rgba(201, 169, 110, 0.06)"
+                ></div>
+                <div
+                  class="h-1.5 rounded-full flex-1"
+                  style="background: rgba(201, 169, 110, 0.04)"
+                ></div>
+                <div
+                  class="h-1.5 rounded-full w-8"
+                  style="background: rgba(201, 169, 110, 0.08)"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section
+      class="py-20 sm:py-28 px-6"
+      style="background: rgba(201, 169, 110, 0.01)"
+    >
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <p
+            class="text-[10px] tracking-[0.35em] uppercase mb-4"
+            style="color: #c9a96e"
+          >
+            Inspiración
+          </p>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold"
+            style="
+              color: #f5efe6;
+              font-family: 'Playfair Display', serif;
+            "
+          >
+            Blog de Eventos
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-6">
+          <article
+            v-for="post in blogPosts"
+            :key="post.title"
+            class="rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+            style="
+              background: rgba(201, 169, 110, 0.02);
+              border: 1px solid rgba(201, 169, 110, 0.06);
+            "
+          >
+            <div class="aspect-[16/10] overflow-hidden">
+              <img
+                :src="post.img"
+                :alt="post.title"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-5">
+              <p class="text-[10px] tracking-wider uppercase mb-2" style="color: #c9a96e">
+                {{ post.tag }}
+              </p>
+              <h3
+                class="text-sm font-semibold mb-2 line-clamp-2"
+                style="color: #f5efe6; font-family: 'Playfair Display', serif"
+              >
+                {{ post.title }}
+              </h3>
+              <p class="text-xs leading-relaxed line-clamp-3" style="color: #9c8e80">
+                {{ post.excerpt }}
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section id="contacto" class="py-20 sm:py-28 px-6">
       <div class="max-w-4xl mx-auto text-center">
@@ -1309,112 +1510,183 @@
           instalaciones.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="https://wa.me/528000000000"
-            target="_blank"
-            class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 text-sm tracking-wider"
+        <!-- Contact form + quick buttons grid -->
+        <div class="grid md:grid-cols-2 gap-8 text-left">
+          <!-- Contact form -->
+          <form
+            class="p-6 rounded-2xl space-y-4"
             style="
-              background: linear-gradient(135deg, #25d366, #128c7e);
-              color: white;
-              box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+              background: rgba(201, 169, 110, 0.02);
+              border: 1px solid rgba(201, 169, 110, 0.08);
             "
+            @submit.prevent
           >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs mb-1.5 tracking-wider uppercase" style="color: #9c8e80">Nombre</label>
+                <input
+                  type="text"
+                  placeholder="Tu nombre"
+                  class="w-full px-4 py-3 rounded-lg text-sm outline-none transition-colors duration-200"
+                  style="
+                    background: rgba(201, 169, 110, 0.04);
+                    border: 1px solid rgba(201, 169, 110, 0.1);
+                    color: #f5efe6;
+                  "
+                />
+              </div>
+              <div>
+                <label class="block text-xs mb-1.5 tracking-wider uppercase" style="color: #9c8e80">Teléfono</label>
+                <input
+                  type="tel"
+                  placeholder="55 1234 5678"
+                  class="w-full px-4 py-3 rounded-lg text-sm outline-none transition-colors duration-200"
+                  style="
+                    background: rgba(201, 169, 110, 0.04);
+                    border: 1px solid rgba(201, 169, 110, 0.1);
+                    color: #f5efe6;
+                  "
+                />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs mb-1.5 tracking-wider uppercase" style="color: #9c8e80">Email</label>
+              <input
+                type="email"
+                placeholder="correo@ejemplo.com"
+                class="w-full px-4 py-3 rounded-lg text-sm outline-none transition-colors duration-200"
+                style="
+                  background: rgba(201, 169, 110, 0.04);
+                  border: 1px solid rgba(201, 169, 110, 0.1);
+                  color: #f5efe6;
+                "
               />
-            </svg>
-            WhatsApp
-          </a>
-          <a
-            href="tel:+528000000000"
-            class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 text-sm tracking-wider"
-            style="
-              background: rgba(201, 169, 110, 0.06);
-              border: 1px solid rgba(201, 169, 110, 0.2);
-              color: #c9a96e;
-            "
-          >
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-              />
-            </svg>
-            Llamar
-          </a>
-        </div>
-
-        <!-- Location -->
-        <div
-          class="mt-12 p-6 rounded-2xl inline-block"
-          style="
-            background: rgba(201, 169, 110, 0.02);
-            border: 1px solid rgba(201, 169, 110, 0.06);
-          "
-        >
-          <div class="flex items-center justify-center gap-3 mb-3">
-            <svg
-              class="w-5 h-5"
-              style="color: #c9a96e"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-            <span
-              class="font-semibold text-sm"
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs mb-1.5 tracking-wider uppercase" style="color: #9c8e80">Tipo de evento</label>
+                <select
+                  class="w-full px-4 py-3 rounded-lg text-sm outline-none appearance-none"
+                  style="
+                    background: rgba(201, 169, 110, 0.04);
+                    border: 1px solid rgba(201, 169, 110, 0.1);
+                    color: #9c8e80;
+                  "
+                >
+                  <option value="">Seleccionar</option>
+                  <option value="boda">Boda</option>
+                  <option value="xv">XV Años</option>
+                  <option value="corporativo">Corporativo</option>
+                  <option value="social">Evento social</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs mb-1.5 tracking-wider uppercase" style="color: #9c8e80">Fecha tentativa</label>
+                <input
+                  type="date"
+                  class="w-full px-4 py-3 rounded-lg text-sm outline-none"
+                  style="
+                    background: rgba(201, 169, 110, 0.04);
+                    border: 1px solid rgba(201, 169, 110, 0.1);
+                    color: #9c8e80;
+                  "
+                />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs mb-1.5 tracking-wider uppercase" style="color: #9c8e80">Mensaje</label>
+              <textarea
+                rows="3"
+                placeholder="Cuéntanos sobre tu evento..."
+                class="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none"
+                style="
+                  background: rgba(201, 169, 110, 0.04);
+                  border: 1px solid rgba(201, 169, 110, 0.1);
+                  color: #f5efe6;
+                "
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full py-3.5 rounded-full text-sm font-semibold tracking-wider uppercase transition-all duration-300 hover:scale-[1.02]"
               style="
-                color: #f5efe6;
-                font-family: &quot;Playfair Display&quot;, serif;
+                background: linear-gradient(135deg, #c9a96e, #a08040);
+                color: #0c0a09;
+                font-family: 'Playfair Display', serif;
               "
-              >Ubicación</span
             >
+              Enviar Solicitud
+            </button>
+          </form>
+
+          <!-- Quick contact + Location -->
+          <div class="space-y-6">
+            <div class="flex flex-col gap-3">
+              <a
+                href="https://wa.me/528000000000"
+                target="_blank"
+                class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 text-sm tracking-wider"
+                style="
+                  background: linear-gradient(135deg, #25d366, #128c7e);
+                  color: white;
+                  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+                "
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+                WhatsApp
+              </a>
+              <a
+                href="tel:+528000000000"
+                class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 text-sm tracking-wider"
+                style="
+                  background: rgba(201, 169, 110, 0.06);
+                  border: 1px solid rgba(201, 169, 110, 0.2);
+                  color: #c9a96e;
+                "
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                Llamar
+              </a>
+            </div>
+
+            <!-- Embedded map -->
+            <div class="rounded-2xl overflow-hidden" style="border: 1px solid rgba(201, 169, 110, 0.08)">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.5!2d-103.3496!3d20.6597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDM5JzM0LjkiTiAxMDPCsDIwJzU4LjYiVw!5e0!3m2!1ses!2smx!4v1700000000000"
+                width="100%"
+                height="220"
+                style="border: 0; filter: grayscale(0.3) contrast(1.1)"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div class="p-4" style="background: rgba(201, 169, 110, 0.02)">
+                <p class="text-sm font-medium" style="color: #f5efe6; font-family: 'Playfair Display', serif">
+                  Jardín Victoria
+                </p>
+                <p class="text-xs mt-1" style="color: #9c8e80">
+                  Av. Jardines #123, Col. Valle Verde · Guadalajara, Jalisco
+                </p>
+              </div>
+            </div>
           </div>
-          <p class="text-sm" style="color: #9c8e80">
-            Av. Jardines #123, Col. Valle Verde<br />
-            Guadalajara, Jalisco, México
-          </p>
-          <a
-            href="https://maps.google.com"
-            target="_blank"
-            class="inline-flex items-center gap-2 mt-3 text-xs font-medium tracking-wider"
-            style="color: #c9a96e"
-          >
-            Ver en Google Maps
-            <svg
-              class="w-3.5 h-3.5"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
-          </a>
         </div>
       </div>
     </section>
@@ -1437,9 +1709,25 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
+import { useRoute } from "vue-router";
 import { useDemoChrome } from "../../composables/useDemoChrome.js";
 
 const { copy } = useDemoChrome();
+const route = useRoute();
+
+const validTiers = ["esencial", "pro", "premium"];
+const tier = computed(() =>
+  validTiers.includes(route.query.plan) ? route.query.plan : "premium",
+);
+const isPro = computed(() => tier.value === "pro" || tier.value === "premium");
+const isPremium = computed(() => tier.value === "premium");
+const tierLabels = { esencial: "Esencial", pro: "Pro", premium: "Premium" };
+
+const filteredGallery = computed(() =>
+  isPro.value
+    ? galleryImages
+    : galleryImages.filter((img) => img.type !== "video"),
+);
 
 // --- Hero background ---
 const svgBg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%230c0a09" width="100" height="100"/><circle cx="20" cy="30" r="1.5" fill="%23c9a96e" opacity="0.06"/><circle cx="80" cy="70" r="2" fill="%23c9a96e" opacity="0.05"/><circle cx="50" cy="15" r="1" fill="%23c9a96e" opacity="0.07"/><circle cx="10" cy="85" r="1.8" fill="%23c9a96e" opacity="0.04"/><circle cx="70" cy="20" r="1.2" fill="%23c9a96e" opacity="0.06"/></svg>`;
@@ -1694,6 +1982,78 @@ const galleryImages = [
     title: "Terraza Mirador",
     desc: "Vista panorámica nocturna",
     img: "https://images.unsplash.com/photo-1510076857177-7470076d4098?w=400&h=400&fit=crop",
+  },
+  {
+    title: "Recorrido por el Jardín",
+    desc: "Video del espacio completo",
+    img: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=400&h=400&fit=crop",
+    type: "video",
+  },
+  {
+    title: "Evento en Vivo",
+    desc: "Highlights de bodas reales",
+    img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=400&h=400&fit=crop",
+    type: "video",
+  },
+];
+
+const premiumPanels = [
+  {
+    title: "Panel de Administración",
+    desc: "Gestiona fechas, espacios, servicios y precios desde un dashboard centralizado.",
+    icon: "M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75",
+    bar: 78,
+  },
+  {
+    title: "Directorio de Prospectos",
+    desc: "CRM integrado: captura leads del formulario, da seguimiento y cierra ventas.",
+    icon: "M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z",
+    bar: 62,
+  },
+  {
+    title: "Pagos y Facturación",
+    desc: "Botón de pago en línea, seguimiento de anticipos y saldos pendientes.",
+    icon: "M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z",
+    bar: 45,
+  },
+  {
+    title: "Contratos Digitales",
+    desc: "Genera contratos PDF personalizados con firma electrónica integrada.",
+    icon: "M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z",
+    bar: 88,
+  },
+  {
+    title: "Multi-Ubicación",
+    desc: "Administra varios salones o jardines desde una sola cuenta.",
+    icon: "M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z",
+    bar: 55,
+  },
+  {
+    title: "Reportes Mensuales",
+    desc: "Estadísticas de eventos, ocupación, ingresos y conversión de prospectos.",
+    icon: "M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z",
+    bar: 70,
+  },
+];
+
+const blogPosts = [
+  {
+    title: "10 Tendencias en Bodas para 2026",
+    tag: "Bodas",
+    excerpt: "Desde la iluminación con velas suspendidas hasta los menús de temporada, descubre las tendencias que están definiendo las celebraciones este año.",
+    img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=500&h=300&fit=crop",
+  },
+  {
+    title: "Cómo Elegir el Salón Perfecto",
+    tag: "Guía",
+    excerpt: "Capacidad, ubicación, servicios incluidos y presupuesto: los factores clave para tomar la mejor decisión para tu evento.",
+    img: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500&h=300&fit=crop",
+  },
+  {
+    title: "Checklist: 3 Meses Antes de tu Evento",
+    tag: "Planificación",
+    excerpt: "Una lista completa de todo lo que debes tener resuelto a 90 días de tu celebración para que nada quede al aire.",
+    img: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=500&h=300&fit=crop",
   },
 ];
 

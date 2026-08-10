@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" fill="none">
+  <rect width="390" height="844" fill="#0B1220"/>
+  <!-- status bar -->
+  <text x="28" y="28" fill="#94A3B8" font-family="system-ui,sans-serif" font-size="12" font-weight="600">9:41</text>
+  <circle cx="340" cy="24" r="3" fill="#2DD4BF"/>
+  <rect x="348" y="18" width="18" height="10" rx="2" fill="#334155"/>
+  <rect x="350" y="20" width="12" height="6" rx="1" fill="#2DD4BF"/>
+
+  <!-- header -->
+  <text x="24" y="68" fill="#F8FAFC" font-family="system-ui,sans-serif" font-size="22" font-weight="700">Panel</text>
+  <text x="24" y="92" fill="#64748B" font-family="system-ui,sans-serif" font-size="13">Despacho Contable MX</text>
+  <rect x="318" y="56" width="48" height="48" rx="14" fill="#155EEF"/>
+  <text x="334" y="86" fill="#fff" font-family="system-ui,sans-serif" font-size="16" font-weight="700">HC</text>
+
+  <!-- search -->
+  <rect x="24" y="112" width="342" height="44" rx="12" fill="#111827" stroke="#1E293B"/>
+  <circle cx="48" cy="134" r="8" stroke="#64748B" stroke-width="1.5" fill="none"/>
+  <path d="M54 140l6 6" stroke="#64748B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="68" y="139" fill="#64748B" font-family="system-ui,sans-serif" font-size="13">Buscar RFC o cliente&</text>
+
+  <!-- metrics -->
+  <rect x="24" y="172" width="164" height="88" rx="16" fill="#111827" stroke="#1E293B"/>
+  <text x="40" y="198" fill="#64748B" font-family="system-ui,sans-serif" font-size="11" font-weight="600">RFC ACTIVOS</text>
+  <text x="40" y="232" fill="#F8FAFC" font-family="system-ui,sans-serif" font-size="28" font-weight="700">48</text>
+  <text x="100" y="232" fill="#2DD4BF" font-family="system-ui,sans-serif" font-size="12" font-weight="600">+3</text>
+
+  <rect x="202" y="172" width="164" height="88" rx="16" fill="#111827" stroke="#1E293B"/>
+  <text x="218" y="198" fill="#64748B" font-family="system-ui,sans-serif" font-size="11" font-weight="600">XML HOY</text>
+  <text x="218" y="232" fill="#F8FAFC" font-family="system-ui,sans-serif" font-size="28" font-weight="700">2.3k</text>
+  <text x="290" y="232" fill="#2563EB" font-family="system-ui,sans-serif" font-size="12" font-weight="600">SAT</text>
+
+  <rect x="24" y="272" width="164" height="88" rx="16" fill="#111827" stroke="#1E293B"/>
+  <text x="40" y="298" fill="#64748B" font-family="system-ui,sans-serif" font-size="11" font-weight="600">ALERTAS EFOS</text>
+  <text x="40" y="332" fill="#F59E0B" font-family="system-ui,sans-serif" font-size="28" font-weight="700">2</text>
+  <text x="80" y="332" fill="#F59E0B" font-family="system-ui,sans-serif" font-size="12" font-weight="600">revisar</text>
+
+  <rect x="202" y="272" width="164" height="88" rx="16" fill="#111827" stroke="#1E293B"/>
+  <text x="218" y="298" fill="#64748B" font-family="system-ui,sans-serif" font-size="11" font-weight="600">CIERRES</text>
+  <text x="218" y="332" fill="#10B981" font-family="system-ui,sans-serif" font-size="28" font-weight="700">12</text>
+  <text x="270" y="332" fill="#10B981" font-family="system-ui,sans-serif" font-size="12" font-weight="600">/ 48</text>
+
+  <!-- section title -->
+  <text x="24" y="398" fill="#F8FAFC" font-family="system-ui,sans-serif" font-size="16" font-weight="700">Cartera reciente</text>
+  <text x="300" y="398" fill="#2563EB" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Ver todos</text>
+
+  <!-- client cards -->
+  <rect x="24" y="416" width="342" height="92" rx="16" fill="#111827" stroke="#1E293B"/>
+  <rect x="40" y="436" width="40" height="40" rx="12" fill="#155EEF22" stroke="#2563EB55"/>
+  <text x="52" y="462" fill="#60A5FA" font-family="system-ui,sans-serif" font-size="13" font-weight="700">AG</text>
+  <text x="96" y="448" fill="#F8FAFC" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Agro Norte SA</text>
+  <text x="96" y="468" fill="#64748B" font-family="system-ui,sans-serif" font-size="11">AGO � RFC � 3 pendientes</text>
+  <rect x="280" y="448" width="68" height="24" rx="12" fill="#10B98122"/>
+  <text x="294" y="464" fill="#34D399" font-family="system-ui,sans-serif" font-size="11" font-weight="600">OK</text>
+
+  <rect x="24" y="520" width="342" height="92" rx="16" fill="#111827" stroke="#1E293B"/>
+  <rect x="40" y="540" width="40" height="40" rx="12" fill="#F59E0B22" stroke="#F59E0B55"/>
+  <text x="52" y="566" fill="#FBBF24" font-family="system-ui,sans-serif" font-size="13" font-weight="700">CL</text>
+  <text x="96" y="552" fill="#F8FAFC" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Cl�nica del Valle</text>
+  <text x="96" y="572" fill="#64748B" font-family="system-ui,sans-serif" font-size="11">AGO � EFOS � 1 alerta</text>
+  <rect x="268" y="552" width="80" height="24" rx="12" fill="#F59E0B22"/>
+  <text x="280" y="568" fill="#FBBF24" font-family="system-ui,sans-serif" font-size="11" font-weight="600">ALERTA</text>
+
+  <rect x="24" y="624" width="342" height="92" rx="16" fill="#111827" stroke="#1E293B"/>
+  <rect x="40" y="644" width="40" height="40" rx="12" fill="#2DD4BF22" stroke="#2DD4BF55"/>
+  <text x="52" y="670" fill="#2DD4BF" font-family="system-ui,sans-serif" font-size="13" font-weight="700">TR</text>
+  <text x="96" y="656" fill="#F8FAFC" font-family="system-ui,sans-serif" font-size="14" font-weight="600">Transportes Ruiz</text>
+  <text x="96" y="676" fill="#64748B" font-family="system-ui,sans-serif" font-size="11">AGO � descarga en curso</text>
+  <rect x="256" y="656" width="92" height="24" rx="12" fill="#2563EB22"/>
+  <text x="268" y="672" fill="#60A5FA" font-family="system-ui,sans-serif" font-size="11" font-weight="600">DESCARGANDO</text>
+
+  <!-- bottom nav -->
+  <rect x="0" y="760" width="390" height="84" fill="#0F172A"/>
+  <rect y="760" width="390" height="1" fill="#1E293B"/>
+  <g opacity="1">
+    <rect x="36" y="780" width="28" height="4" rx="2" fill="#2563EB"/>
+    <rect x="36" y="790" width="28" height="4" rx="2" fill="#2563EB"/>
+    <rect x="36" y="800" width="18" height="4" rx="2" fill="#2563EB"/>
+    <text x="32" y="826" fill="#2563EB" font-family="system-ui,sans-serif" font-size="10" font-weight="600">Inicio</text>
+  </g>
+  <g opacity="0.45">
+    <circle cx="140" cy="792" r="10" stroke="#94A3B8" stroke-width="1.5" fill="none"/>
+    <text x="122" y="826" fill="#94A3B8" font-family="system-ui,sans-serif" font-size="10">RFC</text>
+  </g>
+  <g opacity="0.45">
+    <rect x="230" y="782" width="20" height="20" rx="4" stroke="#94A3B8" stroke-width="1.5" fill="none"/>
+    <text x="218" y="826" fill="#94A3B8" font-family="system-ui,sans-serif" font-size="10">Reportes</text>
+  </g>
+  <g opacity="0.45">
+    <circle cx="330" cy="792" r="10" stroke="#94A3B8" stroke-width="1.5" fill="none"/>
+    <text x="312" y="826" fill="#94A3B8" font-family="system-ui,sans-serif" font-size="10">Equipo</text>
+  </g>
+</svg>

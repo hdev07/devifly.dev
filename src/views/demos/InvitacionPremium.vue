@@ -26,10 +26,11 @@
             border: 1px solid rgba(198, 167, 94, 0.3);
             background: rgba(198, 167, 94, 0.08);
           "
-          >{{ copy.demo }} — Plan Premium</span
+          >{{ copy.demo }} — Plan {{ tierLabels[tier] }}</span
         >
         <button
           v-for="(guest, i) in demoGuests"
+          v-show="isPremium"
           :key="guest.slug"
           type="button"
           @click="activeGuestIdx = i"
@@ -94,8 +95,9 @@
       ></div>
 
       <div class="relative z-10 max-w-xl mx-auto">
-        <!-- Domain badge -->
+        <!-- Domain badge (Premium: unique link) -->
         <div
+          v-if="isPremium"
           class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8"
           style="
             border: 1px solid rgba(198, 167, 94, 0.2);
@@ -110,14 +112,16 @@
             >mariana-y-diego.com/inv/{{ activeGuest.slug }}</span
           >
         </div>
+        <div v-else class="mb-8"></div>
 
         <p
+          v-if="isPremium"
           class="text-sm mb-4 tracking-wide"
           style="color: rgba(198, 167, 94, 0.75)"
         >
           {{ activeGuest.label }}
         </p>
-        <p class="text-xs mb-6" style="color: rgba(255, 255, 255, 0.35)">
+        <p v-if="isPremium" class="text-xs mb-6" style="color: rgba(255, 255, 255, 0.35)">
           Link único · {{ activeGuest.passes }} pases asignados
         </p>
 
@@ -206,28 +210,30 @@
           </div>
         </div>
 
-        <!-- Music toggle -->
-        <button
-          @click="toggleMusic"
-          class="flex items-center gap-2 mx-auto px-5 py-2.5 rounded-full text-sm transition-all hover:scale-105"
-          style="
-            background: rgba(198, 167, 94, 0.06);
-            color: rgba(198, 167, 94, 0.6);
-            border: 1px solid rgba(198, 167, 94, 0.15);
-          "
-        >
-          <LucideIcon
-            :name="musicOn ? 'music' : 'volume-x'"
-            class-name="w-4 h-4"
-          />
-          {{ musicOn ? t("pauseMusic") : t("playMusic") }}
-        </button>
-        <audio ref="audioRef" loop preload="none">
-          <source
-            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-            type="audio/mpeg"
-          />
-        </audio>
+        <!-- Music toggle (Pro+) -->
+        <template v-if="isPro">
+          <button
+            @click="toggleMusic"
+            class="flex items-center gap-2 mx-auto px-5 py-2.5 rounded-full text-sm transition-all hover:scale-105"
+            style="
+              background: rgba(198, 167, 94, 0.06);
+              color: rgba(198, 167, 94, 0.6);
+              border: 1px solid rgba(198, 167, 94, 0.15);
+            "
+          >
+            <LucideIcon
+              :name="musicOn ? 'music' : 'volume-x'"
+              class-name="w-4 h-4"
+            />
+            {{ musicOn ? t("pauseMusic") : t("playMusic") }}
+          </button>
+          <audio ref="audioRef" loop preload="none">
+            <source
+              src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+              type="audio/mpeg"
+            />
+          </audio>
+        </template>
 
         <!-- Scroll -->
         <div class="mt-8 animate-bounce">
@@ -235,6 +241,108 @@
             name="chevron-down"
             class-name="w-6 h-6 mx-auto text-[rgba(198,167,94,0.4)]"
           />
+        </div>
+      </div>
+    </section>
+
+    <!-- PADRES Y PADRINOS -->
+    <section class="py-16 sm:py-20 px-6" style="background: #0d0d0d">
+      <div class="max-w-xl mx-auto text-center">
+        <div
+          class="inline-flex items-center gap-2 mb-8 text-xs tracking-[0.2em] uppercase"
+          style="color: rgba(198, 167, 94, 0.5)"
+        >
+          <span class="w-8 h-px" style="background: rgba(198, 167, 94, 0.3)"></span>
+          {{ t("parentsTitle") }}
+          <span class="w-8 h-px" style="background: rgba(198, 167, 94, 0.3)"></span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+          <div>
+            <p
+              class="text-[10px] tracking-[0.15em] uppercase mb-3"
+              style="color: rgba(198, 167, 94, 0.6)"
+            >
+              {{ t("brideParents") }}
+            </p>
+            <p
+              class="text-sm leading-relaxed"
+              style="color: rgba(255, 255, 255, 0.7); font-family: 'Cormorant Garamond', serif"
+            >
+              {{ t("brideMother") }}
+            </p>
+            <p class="text-xs mt-0.5" style="color: rgba(198, 167, 94, 0.3)">&</p>
+            <p
+              class="text-sm leading-relaxed"
+              style="color: rgba(255, 255, 255, 0.7); font-family: 'Cormorant Garamond', serif"
+            >
+              {{ t("brideFather") }}
+            </p>
+          </div>
+
+          <div>
+            <p
+              class="text-[10px] tracking-[0.15em] uppercase mb-3"
+              style="color: rgba(198, 167, 94, 0.6)"
+            >
+              {{ t("groomParents") }}
+            </p>
+            <p
+              class="text-sm leading-relaxed"
+              style="color: rgba(255, 255, 255, 0.7); font-family: 'Cormorant Garamond', serif"
+            >
+              {{ t("groomMother") }}
+            </p>
+            <p class="text-xs mt-0.5" style="color: rgba(198, 167, 94, 0.3)">&</p>
+            <p
+              class="text-sm leading-relaxed"
+              style="color: rgba(255, 255, 255, 0.7); font-family: 'Cormorant Garamond', serif"
+            >
+              {{ t("groomFather") }}
+            </p>
+          </div>
+        </div>
+
+        <p
+          class="text-[10px] tracking-[0.15em] uppercase mb-5"
+          style="color: rgba(198, 167, 94, 0.5)"
+        >
+          {{ t("godparentsTitle") }}
+        </p>
+        <div class="grid grid-cols-3 gap-4">
+          <div>
+            <p class="text-[10px] tracking-wider uppercase" style="color: rgba(198, 167, 94, 0.4)">
+              {{ t("godparentsVelacion") }}
+            </p>
+            <p
+              class="text-xs mt-1"
+              style="color: rgba(255, 255, 255, 0.6); font-family: 'Cormorant Garamond', serif"
+            >
+              {{ t("godparentsVelacionNames") }}
+            </p>
+          </div>
+          <div>
+            <p class="text-[10px] tracking-wider uppercase" style="color: rgba(198, 167, 94, 0.4)">
+              {{ t("godparentsAnillos") }}
+            </p>
+            <p
+              class="text-xs mt-1"
+              style="color: rgba(255, 255, 255, 0.6); font-family: 'Cormorant Garamond', serif"
+            >
+              {{ t("godparentsAnillosNames") }}
+            </p>
+          </div>
+          <div>
+            <p class="text-[10px] tracking-wider uppercase" style="color: rgba(198, 167, 94, 0.4)">
+              {{ t("godparentsLazo") }}
+            </p>
+            <p
+              class="text-xs mt-1"
+              style="color: rgba(255, 255, 255, 0.6); font-family: 'Cormorant Garamond', serif"
+            >
+              {{ t("godparentsLazoNames") }}
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -367,7 +475,7 @@
               loading="lazy"
             />
             <div
-              v-if="photo.type === 'video'"
+              v-if="isPro && photo.type === 'video'"
               class="absolute inset-0 flex items-center justify-center pointer-events-none"
             >
               <div
@@ -453,6 +561,7 @@
             {{ t("howToGet") }}
           </a>
           <a
+            v-if="isPro"
             :href="googleCalUrl"
             target="_blank"
             rel="noopener noreferrer"
@@ -467,6 +576,7 @@
             Calendar
           </a>
           <a
+            v-if="isPro"
             :href="appleCalUrl"
             target="_blank"
             rel="noopener noreferrer"
@@ -551,8 +661,9 @@
             >
           </div>
 
-          <!-- Playlist / Spotify -->
+          <!-- Playlist / Spotify (Pro+) -->
           <div
+            v-if="isPro"
             class="p-6 rounded-2xl text-center transition-all hover:-translate-y-1"
             style="
               background: rgba(198, 167, 94, 0.04);
@@ -577,8 +688,9 @@
             >
           </div>
 
-          <!-- Álbum Colaborativo -->
+          <!-- Álbum Colaborativo (Premium) -->
           <div
+            v-if="isPremium"
             class="p-6 rounded-2xl text-center transition-all hover:-translate-y-1"
             style="
               background: rgba(198, 167, 94, 0.04);
@@ -737,8 +849,9 @@
           {{ t("rsvpSubtitle") }}
         </p>
 
-        <!-- Personalized greeting -->
+        <!-- Personalized greeting (Premium) -->
         <div
+          v-if="isPremium"
           class="p-5 rounded-2xl mb-8 text-center"
           style="
             background: rgba(198, 167, 94, 0.04);
@@ -792,6 +905,7 @@
           </select>
           <div v-if="rsvpForm.attending === 'yes'" class="space-y-4">
             <div
+              v-if="isPremium"
               class="p-4 rounded-xl text-center"
               style="
                 background: rgba(198, 167, 94, 0.06);
@@ -808,7 +922,7 @@
               v-model="rsvpForm.guests"
               type="number"
               min="1"
-              :max="activeGuest.passes"
+              :max="isPremium ? activeGuest.passes : 10"
               :placeholder="t('rsvpGuests')"
               class="w-full px-4 py-3.5 rounded-xl text-sm text-white/80 placeholder-white/30 focus:outline-none"
               style="
@@ -846,8 +960,8 @@
           </button>
         </form>
 
-        <!-- WhatsApp alternative -->
-        <div class="text-center mt-6">
+        <!-- WhatsApp alternative (Pro+) -->
+        <div v-if="isPro" class="text-center mt-6">
           <a
             href="https://wa.me/5215551234567?text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Mariana%20y%20Diego%20%F0%9F%92%8D"
             target="_blank"
@@ -870,8 +984,9 @@
       </div>
     </section>
 
-    <!-- QR MODAL TRIGGER + ADMIN PANEL PREVIEW -->
+    <!-- QR MODAL TRIGGER + ADMIN PANEL PREVIEW (Premium) -->
     <section
+      v-if="isPremium"
       class="py-16 sm:py-24 px-6"
       style="
         background: #0b0b0b;
@@ -1048,13 +1163,27 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useI18n } from "vue-i18n";
+import { useRoute } from "vue-router";
 import LucideIcon from "../../components/LucideIcon.vue";
 import { useDemoChrome } from "../../composables/useDemoChrome.js";
 
 const { locale } = useI18n();
 const { copy } = useDemoChrome();
+const route = useRoute();
 
-const waContratar = `https://wa.me/+525635926679?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Premium de invitaciones digitales y me interesa contratarlo 💎")}`;
+const validTiers = ["esencial", "pro", "premium"];
+const tier = computed(() =>
+  validTiers.includes(route.query.plan) ? route.query.plan : "premium",
+);
+const isPro = computed(() => tier.value === "pro" || tier.value === "premium");
+const isPremium = computed(() => tier.value === "premium");
+
+const tierLabels = { esencial: "Esencial", pro: "Pro", premium: "Premium" };
+
+const waContratar = computed(() => {
+  const msg = `¡Hola! Vi la demo del Plan ${tierLabels[tier.value]} de invitaciones digitales y me interesa contratarlo`;
+  return `https://wa.me/+525635926679?text=${encodeURIComponent(msg)}`;
+});
 
 const lang = locale;
 const musicOn = ref(false);
@@ -1150,6 +1279,20 @@ const translations = {
     playlistTitle: "Playlist",
     albumTitle: "Álbum Colaborativo",
     cortejoTitle: "Nuestro Cortejo Nupcial",
+    parentsTitle: "Con la bendición de nuestros padres",
+    brideParents: "Padres de la novia",
+    groomParents: "Padres del novio",
+    brideMother: "María Elena Ríos de Herrera",
+    brideFather: "Roberto Herrera Guzmán",
+    groomMother: "Patricia Sánchez de Torres",
+    groomFather: "Alejandro Torres Medina",
+    godparentsTitle: "Padrinos",
+    godparentsVelacion: "Velación",
+    godparentsVelacionNames: "Carlos y Ana Mendoza",
+    godparentsAnillos: "Anillos",
+    godparentsAnillosNames: "Francisco y Laura Peña",
+    godparentsLazo: "Lazo",
+    godparentsLazoNames: "Miguel y Sofía Ramírez",
     footerMsg: "Con amor infinito, Mariana & Diego",
   },
   en: {
@@ -1229,6 +1372,20 @@ const translations = {
     playlistTitle: "Playlist",
     albumTitle: "Collaborative Album",
     cortejoTitle: "Our Wedding Party",
+    parentsTitle: "With the blessing of our parents",
+    brideParents: "Bride's parents",
+    groomParents: "Groom's parents",
+    brideMother: "María Elena Ríos de Herrera",
+    brideFather: "Roberto Herrera Guzmán",
+    groomMother: "Patricia Sánchez de Torres",
+    groomFather: "Alejandro Torres Medina",
+    godparentsTitle: "Godparents",
+    godparentsVelacion: "Blessing",
+    godparentsVelacionNames: "Carlos & Ana Mendoza",
+    godparentsAnillos: "Rings",
+    godparentsAnillosNames: "Francisco & Laura Peña",
+    godparentsLazo: "Lasso",
+    godparentsLazoNames: "Miguel & Sofía Ramírez",
     footerMsg: "With infinite love, Mariana & Diego",
   },
 };
@@ -1268,6 +1425,105 @@ const demoGuests = [
       "Apreciada Familia López, los esperamos con alegría para compartir esta celebración.",
     greetingEn:
       "Dear López Family, we look forward to sharing this celebration with you.",
+  },
+  {
+    shortName: "Ramírez",
+    label: "Familia Ramírez",
+    slug: "fam-ramirez-5t4w",
+    passes: 3,
+    qrCode: "BODA-VIP-0128",
+    greetingEs:
+      "Querida Familia Ramírez, nos llenaría de alegría contar con ustedes en nuestro gran día.",
+    greetingEn:
+      "Dear Ramírez Family, it would bring us great joy to have you at our big day.",
+  },
+  {
+    shortName: "García",
+    label: "Roberto & Sofía García",
+    slug: "roberto-sofia-garcia-2j6r",
+    passes: 2,
+    qrCode: "BODA-VIP-0145",
+    greetingEs:
+      "Queridos Roberto y Sofía, su amistad ha sido un regalo y queremos celebrar con ustedes.",
+    greetingEn:
+      "Dear Roberto and Sofía, your friendship has been a gift and we want to celebrate with you.",
+  },
+  {
+    shortName: "Mendoza",
+    label: "Familia Mendoza",
+    slug: "fam-mendoza-8k1v",
+    passes: 6,
+    qrCode: "BODA-VIP-0162",
+    greetingEs:
+      "Estimada Familia Mendoza, será un honor tenerlos con nosotros en esta celebración.",
+    greetingEn:
+      "Dear Mendoza Family, it will be an honor to have you with us at this celebration.",
+  },
+  {
+    shortName: "Torres",
+    label: "Ing. Carlos Torres",
+    slug: "carlos-torres-4p9x",
+    passes: 1,
+    qrCode: "BODA-VIP-0178",
+    greetingEs:
+      "Estimado Carlos, tu presencia significaría mucho para nosotros.",
+    greetingEn:
+      "Dear Carlos, your presence would mean so much to us.",
+  },
+  {
+    shortName: "Sánchez",
+    label: "Familia Sánchez",
+    slug: "fam-sanchez-6m3y",
+    passes: 4,
+    qrCode: "BODA-VIP-0195",
+    greetingEs:
+      "Querida Familia Sánchez, los invitamos con mucho cariño a compartir nuestra felicidad.",
+    greetingEn:
+      "Dear Sánchez Family, we lovingly invite you to share our happiness.",
+  },
+  {
+    shortName: "Peña",
+    label: "Dra. Laura Peña",
+    slug: "laura-pena-1h7z",
+    passes: 2,
+    qrCode: "BODA-VIP-0210",
+    greetingEs:
+      "Querida Laura, sería un placer enorme que nos acompañaras en este día tan especial.",
+    greetingEn:
+      "Dear Laura, it would be a great pleasure to have you join us on this special day.",
+  },
+  {
+    shortName: "Flores",
+    label: "Familia Flores",
+    slug: "fam-flores-9n2k",
+    passes: 5,
+    qrCode: "BODA-VIP-0227",
+    greetingEs:
+      "Apreciada Familia Flores, los esperamos con los brazos abiertos para celebrar juntos.",
+    greetingEn:
+      "Dear Flores Family, we await you with open arms to celebrate together.",
+  },
+  {
+    shortName: "Ríos",
+    label: "Familia Ríos",
+    slug: "fam-rios-3w5q",
+    passes: 4,
+    qrCode: "BODA-VIP-0244",
+    greetingEs:
+      "Querida Familia Ríos, su presencia hará de este día un momento inolvidable.",
+    greetingEn:
+      "Dear Ríos Family, your presence will make this day an unforgettable moment.",
+  },
+  {
+    shortName: "Vargas",
+    label: "Familia Vargas",
+    slug: "fam-vargas-7d8m",
+    passes: 3,
+    qrCode: "BODA-VIP-0261",
+    greetingEs:
+      "Estimada Familia Vargas, nos encantaría que fueran parte de esta hermosa celebración.",
+    greetingEn:
+      "Dear Vargas Family, we would love for you to be part of this beautiful celebration.",
   },
 ];
 const activeGuest = computed(() => demoGuests[activeGuestIdx.value]);

@@ -116,12 +116,30 @@ const routes = [
     }
   },
 
+  // ===== Case studies =====
+  {
+    path: '/casos/timbra',
+    name: 'CaseStudyTimbra',
+    component: () => import('../views/casos/CaseStudyTimbra.vue'),
+  },
+  {
+    path: '/casos/musion',
+    name: 'CaseStudyMusion',
+    component: () => import('../views/casos/CaseStudyMusion.vue'),
+  },
+  {
+    path: '/casos/confecdotario',
+    name: 'CaseStudyConfecdotario',
+    component: () => import('../views/casos/CaseStudyConfecdotario.vue'),
+  },
+
   // ===== Redirects: páginas corporativas retiradas → secciones del Home =====
   { path: '/products', redirect: { path: '/', hash: '#productos' } },
   { path: '/pricing', redirect: { path: '/', hash: '#precios' } },
   { path: '/enfoque', redirect: { path: '/', hash: '#enfoque' } },
   { path: '/solutions', redirect: { path: '/', hash: '#enfoque' } },
   { path: '/case-studies', redirect: { path: '/', hash: '#casos' } },
+  { path: '/casos', redirect: { path: '/', hash: '#casos' } },
   { path: '/contact', redirect: '/contacto' },
 
   // ===== Redirects: slugs renombrados =====

@@ -144,7 +144,7 @@ export const menuThemes = {
     ],
   },
   pro: {
-    plan: "Profesional",
+    plan: "Pro",
     restaurantName: "La Trattoria",
     restaurantSubtitle: "Ristorante & Bar",
     restaurantDesc:
@@ -178,7 +178,7 @@ export const menuThemes = {
         "linear-gradient(135deg, rgba(15, 13, 10, 0.98), rgba(25, 20, 15, 0.98))",
     },
     waHire:
-      "¡Hola! Me interesa el Plan Profesional de menú digital ($7,999 MXN) 🍽️",
+      "¡Hola! Me interesa el Plan Pro de menú digital ($7,999 MXN) 🍽️",
     waOrder:
       "Hola, me gustaría preguntar sobre el menú de La Trattoria",
     infoItems: [
@@ -205,7 +205,7 @@ export const menuThemes = {
     ],
   },
   premium: {
-    plan: "Enterprise",
+    plan: "Premium",
     restaurantName: "Grupo Sakura",
     restaurantSubtitle: "Restaurante Japonés · 3 sucursales",
     restaurantDesc:
@@ -239,7 +239,7 @@ export const menuThemes = {
         "linear-gradient(135deg, rgba(10, 8, 20, 0.98), rgba(20, 15, 35, 0.98))",
     },
     waHire:
-      "¡Hola! Me interesa el Plan Enterprise de menú digital ($14,999 MXN) 🏢",
+      "¡Hola! Me interesa el Plan Premium de menú digital ($14,999 MXN) 🏢",
     waOrder: "Hola, vi el menú de Grupo Sakura y me gustaría reservar",
     infoItems: [
       { label: "Horario", value: "12:00 pm – 11:00 pm" },
@@ -268,6 +268,37 @@ export const menuThemes = {
         badge: "L–V",
       },
     ],
+  },
+};
+
+export const branchOverrides = {
+  polanco: {
+    priceMultiplier: 1.15,
+    schedule: "Lun–Sáb 1:00 pm – 12:00 am",
+    itemTags: {
+      "Rib Eye Premium": "Exclusivo",
+      "Negroni Ahumado": "Favorito local",
+      "Tabla de Quesos Artesanales": "Recomendado",
+    },
+    unavailable: ["Hamburguesa Gourmet"],
+  },
+  condesa: {
+    priceMultiplier: 1.0,
+    schedule: "Lun–Dom 12:00 pm – 11:00 pm",
+    itemTags: {
+      "Mojito de Maracuá": "Favorito local",
+      "Churros con Chocolate": "Más vendido",
+    },
+    unavailable: [],
+  },
+  "santa-fe": {
+    priceMultiplier: 1.08,
+    schedule: "Lun–Vie 12:00 pm – 10:00 pm",
+    itemTags: {
+      "Molcajete Mar y Tierra": "Favorito local",
+      "Carajillo Licor 43": "Más vendido",
+    },
+    unavailable: ["Cerveza Artesanal", "Tostada de Pulpo"],
   },
 };
 

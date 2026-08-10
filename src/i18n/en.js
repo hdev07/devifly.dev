@@ -26,7 +26,7 @@ export default {
     from: 'From',
   },
   hero: {
-    badge: '+20 products live · Available Q2',
+    badge: '+20 products live · Book today',
     title1: 'We design',
     title2: 'software that drives',
     title3: 'growth',
@@ -50,7 +50,7 @@ export default {
   },
   services: {
     eyebrow: 'Services',
-    title: 'We solve the problems costing you sales',
+    title: 'We fix the problems that cost you sales',
     subtitle:
       'Every service starts from a real problem we see in businesses every day. Here is how we tackle each.',
     items: {
@@ -178,7 +178,7 @@ export default {
       communication: {
         feature: 'Communication',
         others: 'You go through 3 accounts and a PM before reaching dev',
-        devifly: 'Direct line with founder/dev at every step',
+        devifly: 'Founder-led, direct communication at every step',
       },
       changes: {
         feature: 'Post-launch changes',
@@ -193,7 +193,7 @@ export default {
       vision: {
         feature: 'Business vision',
         others: 'They only build what you ask for',
-        devifly: 'They contribute CRO strategy and metrics',
+        devifly: 'We bring CRO strategy and metrics',
       },
     },
   },
@@ -204,6 +204,30 @@ export default {
       'Three real projects with active users. This is what happens when the right product solves a business problem.',
     cta: 'I want results like these',
     visit: 'Visit {name}',
+    readCase: 'Read full case',
+  },
+  demos: {
+    eyebrow: 'Demos',
+    title: 'See it in action',
+    subtitle:
+      'Hover to preview. Open the case for process, metrics, and the full gallery.',
+  },
+  caseStudy: {
+    back: 'Back to cases',
+    openProduct: 'Open product',
+    cta: 'I want a product like this',
+    ctaTitle: 'Need a digital product at this level?',
+    ctaSubtitle:
+      'We book a 20-minute call to lock scope, stack, and timeline.',
+    galleryEyebrow: 'Product',
+    galleryTitle: 'Shots in device frames',
+    gallerySubtitle: 'The real UI—not generic stock mockups.',
+    processEyebrow: 'Process',
+    processTitle: 'How it was built',
+    processSubtitle: 'Product decisions, not just pixels.',
+    brandEyebrow: 'Brand',
+    brandTitle: 'Identity and visual system',
+    brandSubtitle: 'Logo, icon, color, and onboarding pieces.',
   },
   pricingTeaser: {
     eyebrow: 'Investment',
@@ -266,13 +290,13 @@ export default {
     trackRecord: 'Track record',
     yearsProd: 'years in prod',
     available: 'Available',
-    accepting: 'Accepting projects for Q2-Q3',
-    title: 'Behind Devifly is a dev who has already made every mistake you want to avoid.',
-    p1: 'My name is behind every line of code we ship. I have been building digital products since 2019 and before Devifly I worked on projects like MoviBase (fleet SaaS with +10k vehicles), Confecdotario (social network with thousands of users), and Musion (cultural PWA with PostGIS).',
-    p2: 'After watching too many projects burn in agencies that over-promise and deliver templates, I opened Devifly: a studio where the founder is the dev, where you do not pay for corporate overhead, and where your product is designed to sell, not to win awards.',
+    accepting: 'Accepting new projects',
+    title: 'Behind Devifly is a founder who has already shipped — and fixed — every kind of digital product.',
+    p1: 'I lead every project we ship. Since 2019 I have built products like MoviBase (fleet SaaS with +10k vehicles), Confecdotario (social network with thousands of users), and Musion (cultural PWA with PostGIS). Depending on the project, I bring in specialist designers, copywriters, or backend engineers.',
+    p2: 'After watching too many projects burn in agencies that over-promise and deliver templates, I started Devifly: a founder-led studio where you talk to the person who makes the technical calls, where you do not pay for corporate overhead, and where your product is designed to sell, not to win awards.',
     ctaTalk: 'Talk to me directly',
     promises: {
-      direct: { title: 'Direct line with dev', desc: 'No 3 accounts and a PM in between' },
+      direct: { title: 'Founder-led at every step', desc: 'Direct line — no layers of account managers' },
       demo: { title: 'Demo before paying', desc: '21 days to validate your investment' },
       code: { title: 'Auditable code', desc: 'Modern stack, private repos' },
       sell: { title: 'Built to sell', desc: 'CRO + UX + metrics from day 1' },
@@ -324,7 +348,7 @@ export default {
       },
       {
         q: 'What if I am not convinced by the first version?',
-        a: 'We work in weekly iterative deliveries. Each delivery includes one feedback round, and major changes are applied live in the next iteration. We also offer a 21-day demo for $71 USD to validate before paying the bulk of the project.',
+        a: 'We deliver in weekly iterations. Each delivery includes one feedback round, and major changes are applied live in the next iteration. We also offer a 21-day demo for $71 USD to validate before paying the bulk of the project.',
       },
       {
         q: 'Do you work with clients outside Mexico?',
@@ -350,6 +374,22 @@ export default {
         q: 'Do you sign NDAs?',
         a: 'Yes, no problem. For sensitive projects we sign an NDA before discovery and all code lives in private repositories with access control. We never share details or screenshots without your authorization.',
       },
+      {
+        q: 'How do you measure the success of a landing or site?',
+        a: 'We set up Google Analytics 4, conversion events, and heatmaps from day 1. We track conversion rate, cost per lead, time on page, and scroll depth. In the monthly reports included with maintenance plans, we show you what is working and what to tweak for better results.',
+      },
+      {
+        q: 'What if I need to integrate with my existing system?',
+        a: 'All our products are built with documented REST APIs. We can connect with CRMs, ERPs, payment gateways (Stripe, MercadoPago), Google Calendar, email platforms, and virtually any service with an API. We scope this during discovery so you get a realistic estimate.',
+      },
+      {
+        q: 'Can you handle high traffic or big campaigns?',
+        a: 'Yes. We deploy on cloud infrastructure with a global CDN, aggressive caching, and lazy loading. Our Vue 3 apps load in under 1.5 seconds and handle ad-campaign traffic spikes without degradation. MoviBase handles +10k vehicles in real time as a reference.',
+      },
+      {
+        q: 'How is your digital menu different from a SaaS like iMenu or QR Menu?',
+        a: 'SaaS QR menu platforms give you a generic template identical to a thousand other restaurants. We design a custom menu with your brand identity, optimized for conversion, and with no monthly subscription — you pay once and own it. Plus, it integrates directly with WhatsApp for orders with zero transaction fees.',
+      },
     ],
   },
   ctaFinal: {
@@ -358,7 +398,7 @@ export default {
     titleGradient: 'strategy session',
     title2: 'of 30 minutes.',
     subtitle:
-      'We help you define the right product for your business, the deliverables, and the scope — no smoke selling. If we fit, we move forward. If not, you walk away with a clear plan.',
+      'We help you define the right product for your business, the deliverables, and the scope — no pitch, no pressure. If we are a fit, we move forward. If not, you walk away with a clear plan.',
     inclusions: {
       diagnosis: 'Opportunity diagnosis',
       recommendation: 'Product recommendation',
@@ -368,7 +408,7 @@ export default {
     ctaBook: 'Book now on WhatsApp',
     reply24: 'We answer in under 24h',
     quote:
-      'I arrived with a fuzzy idea and left with a clear roadmap and fixed price. In 21 days I had my site live generating leads.',
+      'Fleet tracking SaaS platform with 10,000+ vehicles in production. Live GPS, geofence alerts, and automated financial reports across Latin America.',
   },
   contactPage: {
     badge: 'Contact',

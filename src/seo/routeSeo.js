@@ -137,6 +137,54 @@ const routeSeoByName = {
     path: '/salones-eventos',
     pageType: 'Service',
   }),
+  CaseStudyTimbra: ({ locale }) => ({
+    title:
+      locale === 'es'
+        ? 'Caso Timbra — Panel fiscal multi-RFC | Devifly'
+        : 'Timbra case study — Multi-RFC fiscal panel | Devifly',
+    description:
+      locale === 'es'
+        ? 'Cómo construimos timbra.one: descarga masiva SAT, validación EFOS/EDOS, e.firma con KMS, DIOT y cierres mensuales para despachos contables en México.'
+        : 'How we built timbra.one: SAT bulk CFDI download, EFOS/EDOS validation, KMS-secured e.firma, DIOT, and month-end closes for Mexican accounting firms.',
+    keywords:
+      locale === 'es'
+        ? ['caso de exito timbra', 'software fiscal despachos', 'descarga masiva sat', 'validacion efos']
+        : ['timbra case study', 'accounting firm software mexico', 'sat bulk download', 'efos validation'],
+    path: '/casos/timbra',
+    pageType: 'WebPage',
+  }),
+  CaseStudyMusion: ({ locale }) => ({
+    title:
+      locale === 'es'
+        ? 'Caso Musion — PWA de museos CDMX | Devifly'
+        : 'Musion case study — CDMX museums PWA | Devifly',
+    description:
+      locale === 'es'
+        ? 'Cómo construimos Musion: catálogo de 195 museos, rutas a pie, pasaporte digital y PWA instalable para planear días culturales en CDMX.'
+        : 'How we built Musion: a 195-museum catalog, walkable routes, digital passport, and an installable PWA for cultural day planning in Mexico City.',
+    keywords:
+      locale === 'es'
+        ? ['caso de exito musion', 'pwa museos cdmx', 'app museos ciudad de mexico', 'desarrollo pwa vue']
+        : ['musion case study', 'cdmx museums pwa', 'vue pwa development'],
+    path: '/casos/musion',
+    pageType: 'WebPage',
+  }),
+  CaseStudyConfecdotario: ({ locale }) => ({
+    title:
+      locale === 'es'
+        ? 'Caso Confecdotario — Comunidad PWA La Cotorrisa | Devifly'
+        : 'Confecdotario case study — La Cotorrisa community PWA | Devifly',
+    description:
+      locale === 'es'
+        ? 'Cómo construimos Confecdotario: red social propia con feed de anécdotas, medallas, temas, moderación y PWA para la audiencia de La Cotorrisa.'
+        : 'How we built Confecdotario: an owned social network with anecdote feed, badges, topics, moderation, and a PWA for La Cotorrisa’s audience.',
+    keywords:
+      locale === 'es'
+        ? ['caso de exito confecdotario', 'comunidad pwa', 'red social propia', 'la cotorrisa app']
+        : ['confecdotario case study', 'community pwa', 'owned social network', 'la cotorrisa app'],
+    path: '/casos/confecdotario',
+    pageType: 'WebPage',
+  }),
   NotFound: ({ locale }) => ({
     title:
       locale === 'es' ? 'Página no encontrada | Devifly' : 'Page not found | Devifly',

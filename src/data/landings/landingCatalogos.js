@@ -3,9 +3,9 @@ export const landingCatalogosContent = {
     wa: {
       demo: "¡Hola! Me interesa un catálogo digital para mi negocio de ventas 🛍️",
       hire: "Quiero cotizar mi catálogo digital de productos 🛍️",
-      basico: "¡Hola! Me interesa el Plan Básico de catálogo digital ($1,499 MXN) 🛍️",
+      basico: "¡Hola! Me interesa el Plan Esencial de catálogo digital ($1,499 MXN) 🛍️",
       pro: "¡Hola! Me interesa el Plan Pro de catálogo digital ($3,499 MXN) ✨",
-      premium: "¡Hola! Me interesa el Plan Premium VIP de catálogo digital ($6,999 MXN) 💎",
+      premium: "¡Hola! Me interesa el Plan Premium de catálogo digital ($6,999 MXN) 💎",
     },
     ui: {
       heroBadge: "Catálogos Digitales",
@@ -23,7 +23,7 @@ export const landingCatalogosContent = {
       sectionDemo: "01 / Demo interactiva",
       demoTitle: "Pruébalo antes de pedirlo",
       demoSubtitle:
-        "Tres estilos de catálogo — Básico, Pro y Premium VIP. Explora la demo en vivo y mira cómo se vería el tuyo.",
+        "Tres estilos de catálogo — Esencial, Pro y Premium. Explora la demo en vivo y mira cómo se vería el tuyo.",
       openDemo: "Abrir demo",
       demoCtaOpen: "Abrir demo interactiva",
       demoCtaPlans: "Comparar planes",
@@ -49,19 +49,19 @@ export const landingCatalogosContent = {
       sectionPricing: "06 / Precios",
       pricingTitle: "Elige tu plan ideal",
       pricingSubtitle:
-        "Pago único — sin mensualidades ni comisiones. Desde lo básico hasta la experiencia VIP con múltiples vendedoras.",
+        "Pago único — sin mensualidades ni comisiones. Desde lo esencial hasta la experiencia Premium con múltiples vendedoras.",
       pricingNote:
         "Precios más IVA (16%) si requieres factura. Pago único; la cotización final puede variar según alcance.",
       hirePlan: "Contratar",
       viewDemo: "Ver demo",
       pricingGuarantee:
-        "Garantía de satisfacción · Si no vendes más, te ayudamos a mejorar tu catálogo gratis.",
+        "Garantía de satisfacción · Si en los primeros 30 días no ves los resultados esperados, te hacemos hasta 2 rondas de ajustes sin costo.",
       sectionFaq: "07 / Preguntas frecuentes",
       faqTitle: "Resolvemos tus dudas",
       faqSubtitle: "Si te queda alguna, escríbenos por WhatsApp — respondemos rápido.",
       faqMoreQuestions: "¿Tienes otra pregunta? Escríbenos",
-      sectionTestimonials: "08 / Testimonios",
-      testimonialsTitle: "Lo que dicen nuestras clientas",
+      sectionTestimonials: "08 / Nuestro trabajo",
+      testimonialsTitle: "Proyectos en producción",
       finalTitleBefore: "Empieza a vender más con tu",
       finalTitleHighlight: "catálogo digital",
       finalSubtitle:
@@ -79,15 +79,15 @@ export const landingCatalogosContent = {
     demoCards: [
       {
         planKey: "basico",
-        planLabel: "Básico",
-        path: "/catalogos/demo",
+        planLabel: "Esencial",
+        path: "/catalogos/demo?plan=esencial",
         mockCategory: "Boutique",
         mockName: "Lupita Moda",
       },
       {
         planKey: "pro",
         planLabel: "Pro",
-        path: "/catalogos/demo",
+        path: "/catalogos/demo?plan=pro",
         highlighted: true,
         mockName: "Glam Beauty ✨",
         mockSubtitle: "Cosméticos & skincare",
@@ -99,8 +99,8 @@ export const landingCatalogosContent = {
       },
       {
         planKey: "premium",
-        planLabel: "Premium VIP",
-        path: "/catalogos/demo",
+        planLabel: "Premium",
+        path: "/catalogos/demo?plan=premium",
         mockCategory: "Joyería VIP",
         mockName: "Oro & Plata",
       },
@@ -203,10 +203,10 @@ export const landingCatalogosContent = {
     ],
     packages: [
       {
-        name: "Básico",
+        name: "Esencial",
         price: "$1,499",
         tagline: "Para empezar a vender de forma profesional",
-        demo: "/catalogos/demo",
+        demo: "/catalogos/demo?plan=esencial",
         waKey: "basico",
         highlighted: false,
         badge: null,
@@ -217,9 +217,9 @@ export const landingCatalogosContent = {
           "1 categoría",
           "Galería de 2 fotos por producto",
           "Control de precios",
-          "Link compartible",
+          "Link compartible en redes y WhatsApp",
           "Botón de WhatsApp",
-          "Diseño responsive",
+          "Adaptado para verse en celular y redes sociales",
         ],
         excluded: [
           "Productos ilimitados",
@@ -238,14 +238,14 @@ export const landingCatalogosContent = {
         name: "Pro",
         price: "$3,499",
         tagline: "Para negocios que ya venden fuerte y quieren crecer",
-        demo: "/catalogos/demo",
+        demo: "/catalogos/demo?plan=pro",
         waKey: "pro",
         highlighted: true,
         badge: "Más popular",
         vip: false,
         validity: "Entrega: 2 semanas",
         features: [
-          "Todo lo del Básico",
+          "Todo lo de Esencial",
           "Productos ilimitados",
           "Categorías ilimitadas",
           "Hasta 5 fotos por producto",
@@ -265,10 +265,10 @@ export const landingCatalogosContent = {
         ],
       },
       {
-        name: "Premium VIP",
+        name: "Premium",
         price: "$6,999",
         tagline: "Para negocios serios con múltiples vendedoras",
-        demo: "/catalogos/demo",
+        demo: "/catalogos/demo?plan=premium",
         waKey: "premium",
         highlighted: false,
         badge: "Experiencia VIP",
@@ -290,11 +290,11 @@ export const landingCatalogosContent = {
     faqs: [
       {
         q: "¿Cuánto tarda en estar listo mi catálogo?",
-        a: "Según el plan: Básico en 1 semana, Pro en 2 semanas y Premium VIP en 3–4 semanas desde que nos compartes tus productos, fotos y preferencias de diseño.",
+        a: "Según el plan: Esencial en 1 semana, Pro en 2 semanas y Premium en 3–4 semanas desde que nos compartes tus productos, fotos y preferencias de diseño.",
       },
       {
         q: "¿Puedo actualizar productos yo misma?",
-        a: "Sí. En los planes Pro y Premium VIP tienes panel admin completo para agregar, editar o quitar productos cuando quieras. En el plan Básico nos escribes y te ayudamos con los cambios.",
+        a: "Sí. En los planes Pro y Premium tienes panel admin completo para agregar, editar o quitar productos cuando quieras. En el plan Esencial nos escribes y te ayudamos con los cambios.",
       },
       {
         q: "¿Cobran comisión por cada venta?",
@@ -310,37 +310,37 @@ export const landingCatalogosContent = {
       },
       {
         q: "¿Puedo tener varias vendedoras con su propio catálogo?",
-        a: "Sí, en el plan Premium VIP. Cada vendedora tiene su catálogo independiente bajo la misma cuenta, ideal para equipos de venta o distribuidoras.",
+        a: "Sí, en el plan Premium. Cada vendedora tiene su catálogo independiente bajo la misma cuenta, ideal para equipos de venta o distribuidoras.",
       },
       {
         q: "¿Qué pasa si no me gusta el resultado?",
-        a: "Trabajamos contigo hasta que quede como lo quieres. Si en el primer mes no ves mejora en tus ventas, te ayudamos a optimizar tu catálogo sin costo extra.",
+        a: "Trabajamos contigo hasta que quede como lo quieres. Si en los primeros 30 días no ves los resultados esperados, te hacemos hasta 2 rondas de ajustes de diseño o estructura sin costo extra.",
       },
     ],
     testimonials: [
       {
         quote:
-          "Ahora mis clientas ven todo mi catálogo y me piden directo. Vendo más y ya no paso el día mandando las mismas fotos.",
-        name: "Paola R.",
-        event: "Moda & accesorios · CDMX",
-        avatar: "P",
-        stars: 5,
+          "Plataforma de rastreo de flotas para empresas de transporte en Latinoamérica. GPS en vivo, geocercas y reportes financieros para más de 10,000 vehículos.",
+        name: "MoviBase",
+        event: "SaaS en producción · movibase.com",
+        avatar: "M",
+        stars: 0,
       },
       {
         quote:
-          "Me ahorro horas cada semana y la imagen se ve súper profesional. Mis clientas confían más desde que tengo el link del catálogo.",
-        name: "Fernanda M.",
-        event: "Belleza · Estado de México",
-        avatar: "F",
-        stars: 5,
+          "Red social propia para el podcast La Cotorrisa. Feed, medallas por participación y notificaciones push. +180% de engagement vs. redes genéricas.",
+        name: "Confecdotario",
+        event: "Comunidad PWA · app.confecdotario.com",
+        avatar: "C",
+        stars: 0,
       },
       {
         quote:
-          "El panel admin es facilísimo. Actualizo precios y stock en minutos. El plan Pro valió cada peso.",
-        name: "Lucía S.",
-        event: "Repostería · Querétaro",
-        avatar: "L",
-        stars: 5,
+          "App cultural con detección de proximidad. Conecta visitantes con museos cercanos y permite compras en tienda digital desde la experiencia.",
+        name: "Musion",
+        event: "App Geo + Tienda · musion.day",
+        avatar: "M",
+        stars: 0,
       },
     ],
   },
@@ -348,9 +348,9 @@ export const landingCatalogosContent = {
     wa: {
       demo: "Hello! I'm interested in a digital catalog for my sales business 🛍️",
       hire: "I'd like a quote for my digital product catalog 🛍️",
-      basico: "Hello! I'm interested in the Basic digital catalog plan ($108 USD) 🛍️",
+      basico: "Hello! I'm interested in the Essential digital catalog plan ($108 USD) 🛍️",
       pro: "Hello! I'm interested in the Pro digital catalog plan ($251 USD) ✨",
-      premium: "Hello! I'm interested in the Premium VIP digital catalog plan ($503 USD) 💎",
+      premium: "Hello! I'm interested in the Premium digital catalog plan ($503 USD) 💎",
     },
     ui: {
       heroBadge: "Digital Catalogs",
@@ -368,7 +368,7 @@ export const landingCatalogosContent = {
       sectionDemo: "01 / Interactive demo",
       demoTitle: "Try it before you order",
       demoSubtitle:
-        "Three catalog styles — Basic, Pro, and Premium VIP. Explore the live demo and see what yours would look like.",
+        "Three catalog styles — Essential, Pro, and Premium. Explore the live demo and see what yours would look like.",
       openDemo: "Open demo",
       demoCtaOpen: "Open interactive demo",
       demoCtaPlans: "Compare plans",
@@ -394,19 +394,19 @@ export const landingCatalogosContent = {
       sectionPricing: "06 / Pricing",
       pricingTitle: "Choose your ideal plan",
       pricingSubtitle:
-        "One-time payment — no monthly fees or commissions. From basic to the VIP experience with multiple sellers.",
+        "One-time payment — no monthly fees or commissions. From essential to the Premium experience with multiple sellers.",
       pricingNote:
         "USD prices include a 20% international adjustment. VAT applies if an invoice is required.",
       hirePlan: "Get",
       viewDemo: "View demo",
       pricingGuarantee:
-        "Satisfaction guarantee · If you don't sell more, we'll help improve your catalog for free.",
+        "Satisfaction guarantee · If in the first 30 days you don't see the results you expected, we'll do up to 2 rounds of adjustments at no cost.",
       sectionFaq: "07 / Frequently asked questions",
       faqTitle: "We answer your questions",
       faqSubtitle: "If you still have one, message us on WhatsApp — we reply quickly.",
       faqMoreQuestions: "Have another question? Message us",
-      sectionTestimonials: "08 / Testimonials",
-      testimonialsTitle: "What our clients say",
+      sectionTestimonials: "08 / Our work",
+      testimonialsTitle: "Projects in production",
       finalTitleBefore: "Start selling more with your",
       finalTitleHighlight: "digital catalog",
       finalSubtitle:
@@ -424,15 +424,15 @@ export const landingCatalogosContent = {
     demoCards: [
       {
         planKey: "basico",
-        planLabel: "Basic",
-        path: "/catalogos/demo",
+        planLabel: "Essential",
+        path: "/catalogos/demo?plan=esencial",
         mockCategory: "Boutique",
         mockName: "Lupita Moda",
       },
       {
         planKey: "pro",
         planLabel: "Pro",
-        path: "/catalogos/demo",
+        path: "/catalogos/demo?plan=pro",
         highlighted: true,
         mockName: "Glam Beauty ✨",
         mockSubtitle: "Cosmetics & skincare",
@@ -444,8 +444,8 @@ export const landingCatalogosContent = {
       },
       {
         planKey: "premium",
-        planLabel: "Premium VIP",
-        path: "/catalogos/demo",
+        planLabel: "Premium",
+        path: "/catalogos/demo?plan=premium",
         mockCategory: "VIP Jewelry",
         mockName: "Gold & Silver",
       },
@@ -548,10 +548,10 @@ export const landingCatalogosContent = {
     ],
     packages: [
       {
-        name: "Basic",
+        name: "Essential",
         price: "$108",
         tagline: "Start selling professionally",
-        demo: "/catalogos/demo",
+        demo: "/catalogos/demo?plan=esencial",
         waKey: "basico",
         highlighted: false,
         badge: null,
@@ -562,9 +562,9 @@ export const landingCatalogosContent = {
           "1 category",
           "2 photos per product gallery",
           "Price control",
-          "Shareable link",
+          "Shareable link for social media and WhatsApp",
           "WhatsApp button",
-          "Responsive design",
+          "Built to look great on mobile and social",
         ],
         excluded: [
           "Unlimited products",
@@ -583,14 +583,14 @@ export const landingCatalogosContent = {
         name: "Pro",
         price: "$251",
         tagline: "For businesses already selling strong and ready to grow",
-        demo: "/catalogos/demo",
+        demo: "/catalogos/demo?plan=pro",
         waKey: "pro",
         highlighted: true,
         badge: "Most popular",
         vip: false,
         validity: "Delivery: 2 weeks",
         features: [
-          "Everything in Basic",
+          "Everything in Essential",
           "Unlimited products",
           "Unlimited categories",
           "Up to 5 photos per product",
@@ -610,10 +610,10 @@ export const landingCatalogosContent = {
         ],
       },
       {
-        name: "Premium VIP",
+        name: "Premium",
         price: "$503",
         tagline: "For serious businesses with multiple sellers",
-        demo: "/catalogos/demo",
+        demo: "/catalogos/demo?plan=premium",
         waKey: "premium",
         highlighted: false,
         badge: "VIP experience",
@@ -635,11 +635,11 @@ export const landingCatalogosContent = {
     faqs: [
       {
         q: "How long until my catalog is ready?",
-        a: "Depending on the plan: Basic in 1 week, Pro in 2 weeks, and Premium VIP in 3–4 weeks once you share your products, photos, and design preferences.",
+        a: "Depending on the plan: Essential in 1 week, Pro in 2 weeks, and Premium in 3–4 weeks once you share your products, photos, and design preferences.",
       },
       {
         q: "Can I update products myself?",
-        a: "Yes. On Pro and Premium VIP you get a full admin panel to add, edit, or remove products whenever you want. On Basic, message us and we'll help with changes.",
+        a: "Yes. On Pro and Premium you get a full admin panel to add, edit, or remove products whenever you want. On Essential, message us and we'll help with changes.",
       },
       {
         q: "Do you charge a commission on each sale?",
@@ -655,37 +655,37 @@ export const landingCatalogosContent = {
       },
       {
         q: "Can I have several sellers with their own catalog?",
-        a: "Yes, on the Premium VIP plan. Each seller has an independent catalog under the same account — ideal for sales teams or distributors.",
+        a: "Yes, on the Premium plan. Each seller has an independent catalog under the same account — ideal for sales teams or distributors.",
       },
       {
         q: "What if I don't like the result?",
-        a: "We work with you until it's how you want it. If in the first month you don't see better sales, we'll help optimize your catalog at no extra cost.",
+        a: "We work with you until it's how you want it. If in the first 30 days you don't see the results you expected, we'll do up to 2 rounds of design or structure adjustments at no extra cost.",
       },
     ],
     testimonials: [
       {
         quote:
-          "Now my customers see my whole catalog and order directly. I sell more and no longer spend the day sending the same photos.",
-        name: "Paola R.",
-        event: "Fashion & accessories · Mexico City",
-        avatar: "P",
-        stars: 5,
+          "Fleet tracking platform for transport companies across Latin America. Live GPS, geofence alerts, and automated financial reports for 10,000+ vehicles.",
+        name: "MoviBase",
+        event: "Live SaaS · movibase.com",
+        avatar: "M",
+        stars: 0,
       },
       {
         quote:
-          "I save hours every week and the image looks super professional. My customers trust me more since I have the catalog link.",
-        name: "Fernanda M.",
-        event: "Beauty · State of Mexico",
-        avatar: "F",
-        stars: 5,
+          "Owned social network for La Cotorrisa podcast. Feed, participation badges, and push notifications. +180% engagement vs. generic social media.",
+        name: "Confecdotario",
+        event: "Community PWA · app.confecdotario.com",
+        avatar: "C",
+        stars: 0,
       },
       {
         quote:
-          "The admin panel is super easy. I update prices and stock in minutes. The Pro plan was worth every penny.",
-        name: "Lucía S.",
-        event: "Bakery · Querétaro",
-        avatar: "L",
-        stars: 5,
+          "Cultural app with proximity detection. Connects visitors with nearby museums and enables digital store purchases from the experience.",
+        name: "Musion",
+        event: "Geo + Store App · musion.day",
+        avatar: "M",
+        stars: 0,
       },
     ],
   },

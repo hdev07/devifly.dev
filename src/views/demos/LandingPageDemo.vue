@@ -31,23 +31,32 @@
       <div
         class="max-w-6xl mx-auto px-5 flex items-center justify-between h-14 sm:h-16"
       >
-        <a
-          href="#"
-          class="font-heading text-xl sm:text-2xl tracking-[0.15em] text-white uppercase"
-        >
-          Barbería JAFZ
-          <span class="text-gray-600 font-body text-xs hidden sm:inline"
-            >× El Salón</span
+        <div class="flex items-center gap-3">
+          <a
+            href="#"
+            class="font-heading text-xl sm:text-2xl tracking-[0.15em] text-white uppercase"
           >
-        </a>
+            Barbería JAFZ
+            <span class="text-gray-600 font-body text-xs hidden sm:inline"
+              >× El Salón</span
+            >
+          </a>
+          <span
+            class="text-[9px] font-semibold px-2 py-0.5 rounded-full tracking-wider uppercase bg-brand-red/10 text-brand-red border border-brand-red/20 hidden sm:inline"
+          >
+            Plan {{ tierLabels[tier] }}
+          </span>
+        </div>
 
         <nav class="hidden md:flex items-center gap-6">
           <a
+            v-if="isPro"
             href="#barberia"
             class="text-xs text-gray-400 hover:text-brand-red tracking-wide uppercase transition"
             >Barbería</a
           >
           <a
+            v-if="isPro"
             href="#salon"
             class="text-xs text-gray-400 hover:text-brand-gold tracking-wide uppercase transition"
             >Salón</a
@@ -58,9 +67,15 @@
             >Precios</a
           >
           <a
+            v-if="isPro"
             href="#galeria"
             class="text-xs text-gray-400 hover:text-white tracking-wide uppercase transition"
             >Galería</a
+          >
+          <a
+            href="#contacto"
+            class="text-xs text-gray-400 hover:text-white tracking-wide uppercase transition"
+            >Contacto</a
           >
         </nav>
 
@@ -193,8 +208,9 @@
         </div>
       </div>
 
-      <!-- Bottom promo -->
+      <!-- Bottom promo (Pro+) -->
       <div
+        v-if="isPro"
         class="relative z-10 border-t border-white/[0.04] bg-black/80 backdrop-blur-sm"
       >
         <div
@@ -216,8 +232,8 @@
       </div>
     </section>
 
-    <!-- Marquee Banner -->
-    <div class="bg-brand-red py-2.5 overflow-hidden select-none">
+    <!-- Marquee Banner (Pro+) -->
+    <div v-if="isPro" class="bg-brand-red py-2.5 overflow-hidden select-none">
       <div class="animate-marquee flex whitespace-nowrap">
         <span
           v-for="n in 2"
@@ -240,8 +256,8 @@
       </div>
     </div>
 
-    <!-- Team Section -->
-    <section class="bg-brand-dark py-20 sm:py-28 overflow-hidden">
+    <!-- Team Section (Pro+) -->
+    <section v-if="isPro" class="bg-brand-dark py-20 sm:py-28 overflow-hidden">
       <div class="max-w-6xl mx-auto px-5">
         <p
           class="text-brand-red text-xs font-bold tracking-[0.3em] uppercase mb-3"
@@ -332,8 +348,8 @@
       </div>
     </section>
 
-    <!-- Barbería Section -->
-    <section id="barberia" class="bg-black py-20 sm:py-28">
+    <!-- Barbería Section (Pro+) -->
+    <section v-if="isPro" id="barberia" class="bg-black py-20 sm:py-28">
       <div class="max-w-6xl mx-auto px-5">
         <div class="grid md:grid-cols-5 gap-10 md:gap-14">
           <div class="md:col-span-3">
@@ -414,8 +430,8 @@
       </div>
     </section>
 
-    <!-- Salón Section -->
-    <section id="salon" class="bg-brand-dark py-20 sm:py-28">
+    <!-- Salón Section (Pro+) -->
+    <section v-if="isPro" id="salon" class="bg-brand-dark py-20 sm:py-28">
       <div class="max-w-6xl mx-auto px-5">
         <div class="grid md:grid-cols-5 gap-10 md:gap-14">
           <div class="md:col-span-2 hidden md:block md:order-1">
@@ -496,8 +512,8 @@
       </div>
     </section>
 
-    <!-- Gallery -->
-    <section id="galeria" class="bg-black py-20 sm:py-28">
+    <!-- Gallery (Pro+) -->
+    <section v-if="isPro" id="galeria" class="bg-black py-20 sm:py-28">
       <div class="max-w-6xl mx-auto px-5">
         <div
           class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10"
@@ -598,6 +614,19 @@
           >
             Sin sorpresas.
           </h2>
+        </div>
+
+        <!-- Analytics badge (Pro+) -->
+        <div v-if="isPro" class="flex items-center gap-3 mb-8 p-3 rounded-lg bg-brand-gray/30 border border-white/[0.04] w-fit">
+          <div class="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center">
+            <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-green-400">UTM Ready</p>
+            <p class="text-[10px] text-gray-600">Medición para campañas activa</p>
+          </div>
         </div>
 
         <!-- Toggle -->
@@ -738,8 +767,8 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="bg-brand-dark py-20 sm:py-28 overflow-hidden">
+    <!-- Testimonials (Pro+) -->
+    <section v-if="isPro" class="bg-brand-dark py-20 sm:py-28 overflow-hidden">
       <div class="max-w-6xl mx-auto px-5">
         <p
           class="text-brand-red text-xs font-bold tracking-[0.3em] uppercase mb-3"
@@ -798,112 +827,193 @@
       </div>
     </section>
 
-    <!-- Location & CTA -->
-    <section id="ubicacion" class="bg-black py-20 sm:py-28">
+    <!-- Contact Form -->
+    <section id="contacto" class="bg-brand-dark py-20 sm:py-28">
       <div class="max-w-6xl mx-auto px-5">
-        <!-- Big CTA -->
-        <div class="text-center mb-16">
-          <h2
-            class="font-heading text-5xl sm:text-6xl md:text-7xl text-white tracking-wide leading-[0.85]"
-          >
-            ¿Listo para<br />tu cita?
-          </h2>
-          <p class="text-gray-500 text-sm sm:text-base mt-4 max-w-md mx-auto">
-            Elige tu especialista y agenda en segundos por WhatsApp.
-          </p>
-          <div
-            class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
-          >
-            <a
-              :href="waLinkAlonso"
-              target="_blank"
-              rel="noopener"
-              class="bg-brand-red hover:bg-brand-red-dark text-white font-semibold text-sm px-8 py-3.5 rounded transition inline-flex items-center gap-2"
-            >
-              ✂️ Barbería — Alonso
-            </a>
-            <a
-              :href="waLinkBlanca"
-              target="_blank"
-              rel="noopener"
-              class="bg-brand-gold hover:bg-brand-gold-dark text-white font-semibold text-sm px-8 py-3.5 rounded transition inline-flex items-center gap-2"
-            >
-              ✨ Salón — Blanca
-            </a>
-          </div>
-        </div>
-
-        <div
-          class="grid md:grid-cols-5 gap-10 md:gap-14 pt-10 border-t border-white/[0.06]"
-        >
-          <!-- Info -->
-          <div class="md:col-span-2">
+        <div class="grid md:grid-cols-2 gap-10 md:gap-14">
+          <!-- Form -->
+          <div>
             <p
               class="text-brand-red text-xs font-bold tracking-[0.3em] uppercase mb-3"
             >
-              Encuéntranos
+              Contacto
             </p>
-            <h3 class="font-heading text-3xl text-white tracking-wide mb-8">
-              Te esperamos.
-            </h3>
+            <h2
+              class="font-heading text-4xl sm:text-5xl text-white tracking-wide leading-[0.95] mb-3"
+            >
+              Agenda tu cita.
+            </h2>
+            <p class="text-gray-500 text-sm mb-8">
+              Déjanos tus datos y te respondemos en menos de 15 minutos.
+            </p>
 
-            <div class="space-y-5">
-              <div>
-                <p class="text-gray-500 text-xs uppercase tracking-wider mb-1">
-                  Dirección
-                </p>
-                <p class="text-gray-300 text-sm">
-                  Libertad 135, Valle Dorado, 53690 Naucalpan de Juárez, Méx.
-                </p>
+            <form
+              class="space-y-4"
+              @submit.prevent
+            >
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs text-gray-600 mb-1.5 tracking-wider uppercase">Nombre</label>
+                  <input
+                    type="text"
+                    placeholder="Tu nombre"
+                    class="w-full px-4 py-3 rounded-lg text-sm text-white outline-none transition-colors duration-200 bg-brand-gray/40 border border-white/[0.06] focus:border-brand-red/40 placeholder-gray-600"
+                  />
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-600 mb-1.5 tracking-wider uppercase">Teléfono</label>
+                  <input
+                    type="tel"
+                    placeholder="55 1234 5678"
+                    class="w-full px-4 py-3 rounded-lg text-sm text-white outline-none transition-colors duration-200 bg-brand-gray/40 border border-white/[0.06] focus:border-brand-red/40 placeholder-gray-600"
+                  />
+                </div>
               </div>
               <div>
-                <p class="text-gray-500 text-xs uppercase tracking-wider mb-1">
-                  Horario
-                </p>
-                <p class="text-gray-300 text-sm">
-                  Mar – Dom · 12:00 PM – 10:00 PM
-                </p>
-              </div>
-              <div>
-                <p class="text-gray-500 text-xs uppercase tracking-wider mb-1">
-                  Barbería — Alonso
-                </p>
-                <a
-                  href="tel:5521483348"
-                  class="text-gray-300 text-sm hover:text-brand-red transition"
-                  >55 2148 3348</a
+                <label class="block text-xs text-gray-600 mb-1.5 tracking-wider uppercase">Servicio de interés</label>
+                <select
+                  class="w-full px-4 py-3 rounded-lg text-sm outline-none appearance-none bg-brand-gray/40 border border-white/[0.06] text-gray-500"
                 >
+                  <option value="">Seleccionar</option>
+                  <option value="corte">Corte</option>
+                  <option value="corte-barba">Corte + Barba</option>
+                  <option value="tinte">Tinte</option>
+                  <option value="unas">Uñas</option>
+                  <option value="maquillaje">Maquillaje</option>
+                  <option value="otro">Otro</option>
+                </select>
               </div>
               <div>
-                <p class="text-gray-500 text-xs uppercase tracking-wider mb-1">
-                  Salón — Blanca
-                </p>
-                <a
-                  href="tel:5521535048"
-                  class="text-gray-300 text-sm hover:text-brand-gold transition"
-                  >55 2153 5048</a
-                >
+                <label class="block text-xs text-gray-600 mb-1.5 tracking-wider uppercase">Mensaje</label>
+                <textarea
+                  rows="3"
+                  placeholder="Cuéntanos qué necesitas..."
+                  class="w-full px-4 py-3 rounded-lg text-sm text-white outline-none resize-none bg-brand-gray/40 border border-white/[0.06] focus:border-brand-red/40 placeholder-gray-600"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-brand-red hover:bg-brand-red-dark text-white font-semibold text-sm py-3.5 rounded transition tracking-wide uppercase"
+              >
+                Enviar mensaje
+              </button>
+            </form>
+          </div>
+
+          <!-- Quick contact + WhatsApp -->
+          <div class="space-y-6">
+            <div class="flex flex-col gap-3">
+              <a
+                :href="waLinkAlonso"
+                target="_blank"
+                rel="noopener"
+                class="group flex items-center gap-4 p-5 rounded-lg transition-all duration-300 bg-brand-gray/40 border border-white/[0.04] hover:border-brand-red/20"
+              >
+                <div class="w-12 h-12 rounded-full bg-brand-red/10 flex items-center justify-center shrink-0">
+                  <span class="text-lg">✂️</span>
+                </div>
+                <div class="min-w-0">
+                  <p class="text-white text-sm font-semibold">Barbería — Alonso</p>
+                  <p class="text-gray-500 text-xs mt-0.5">WhatsApp directo · 55 2148 3348</p>
+                </div>
+                <span class="ml-auto text-gray-700 group-hover:text-brand-red transition shrink-0">→</span>
+              </a>
+              <a
+                :href="waLinkBlanca"
+                target="_blank"
+                rel="noopener"
+                class="group flex items-center gap-4 p-5 rounded-lg transition-all duration-300 bg-brand-gray/40 border border-white/[0.04] hover:border-brand-gold/20"
+              >
+                <div class="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center shrink-0">
+                  <span class="text-lg">✨</span>
+                </div>
+                <div class="min-w-0">
+                  <p class="text-white text-sm font-semibold">Salón — Blanca</p>
+                  <p class="text-gray-500 text-xs mt-0.5">WhatsApp directo · 55 2153 5048</p>
+                </div>
+                <span class="ml-auto text-gray-700 group-hover:text-brand-gold transition shrink-0">→</span>
+              </a>
+            </div>
+
+            <div class="space-y-4 pt-4 border-t border-white/[0.06]">
+              <div>
+                <p class="text-gray-600 text-xs uppercase tracking-wider mb-1">Dirección</p>
+                <p class="text-gray-300 text-sm">Libertad 135, Valle Dorado, 53690 Naucalpan de Juárez, Méx.</p>
+              </div>
+              <div>
+                <p class="text-gray-600 text-xs uppercase tracking-wider mb-1">Horario</p>
+                <p class="text-gray-300 text-sm">Mar – Dom · 12:00 PM – 10:00 PM</p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Map -->
-          <div class="md:col-span-3">
-            <div
-              class="rounded-lg overflow-hidden aspect-[4/3] bg-brand-gray border border-white/[0.04]"
-            >
-              <iframe
-                class="w-full h-full block"
-                frameborder="0"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.5!2d-99.2397!3d19.4918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI5JzMwLjUiTiA5OcKwMTQnMjMuMCJX!5e0!3m2!1ses!2smx"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                style="
-                  filter: invert(0.9) hue-rotate(180deg) saturate(0.15)
-                    brightness(0.7);
-                "
-              ></iframe>
+    <!-- Location & Map -->
+    <section id="ubicacion" class="bg-black py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="rounded-lg overflow-hidden aspect-[21/9] bg-brand-gray border border-white/[0.04]">
+          <iframe
+            class="w-full h-full block"
+            frameborder="0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.5!2d-99.2397!3d19.4918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI5JzMwLjUiTiA5OcKwMTQnMjMuMCJX!5e0!3m2!1ses!2smx"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            style="
+              filter: invert(0.9) hue-rotate(180deg) saturate(0.15)
+                brightness(0.7);
+            "
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premium Admin Panel Mockups -->
+    <section v-if="isPremium" class="bg-brand-dark py-20 sm:py-28">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center mb-14">
+          <p class="text-brand-red text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            Exclusivo Premium
+          </p>
+          <h2 class="font-heading text-4xl sm:text-5xl text-white tracking-wide leading-[0.95] mb-3">
+            Administra tu sitio.
+          </h2>
+          <p class="text-gray-500 text-sm max-w-lg mx-auto">
+            Tu cliente edita contenido, precios e imágenes desde un panel intuitivo. Sin depender de un desarrollador.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            v-for="panel in premiumPanels"
+            :key="panel.title"
+            class="p-6 rounded-lg transition-all duration-300 hover:-translate-y-1 bg-brand-gray/40 border border-white/[0.04]"
+          >
+            <div class="w-10 h-10 rounded-lg bg-brand-red/10 flex items-center justify-center mb-4">
+              <svg
+                class="w-5 h-5 text-brand-red"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path :d="panel.icon" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="text-sm font-semibold text-white mb-2">{{ panel.title }}</h3>
+            <p class="text-xs text-gray-500 leading-relaxed">{{ panel.desc }}</p>
+            <div class="mt-4 h-16 rounded-lg overflow-hidden bg-black/40 border border-white/[0.04]">
+              <div
+                class="h-2 rounded-full mx-3 mt-3"
+                :style="{ width: panel.bar + '%', background: 'linear-gradient(90deg, rgba(220,38,38,0.3), rgba(220,38,38,0.15))' }"
+              ></div>
+              <div class="flex gap-2 mx-3 mt-2">
+                <div class="h-1.5 rounded-full flex-1" style="background: rgba(220,38,38,0.06)"></div>
+                <div class="h-1.5 rounded-full flex-1" style="background: rgba(220,38,38,0.04)"></div>
+                <div class="h-1.5 rounded-full w-8" style="background: rgba(220,38,38,0.08)"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -938,9 +1048,19 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
+import { useRoute } from "vue-router";
 import { useDemoChrome } from "../../composables/useDemoChrome.js";
 
 const { copy } = useDemoChrome();
+const route = useRoute();
+
+const validTiers = ["esencial", "pro", "premium"];
+const tier = computed(() =>
+  validTiers.includes(route.query.plan) ? route.query.plan : "premium",
+);
+const isPro = computed(() => tier.value === "pro" || tier.value === "premium");
+const isPremium = computed(() => tier.value === "premium");
+const tierLabels = { esencial: "Esencial", pro: "Pro", premium: "Premium" };
 
 const waLinkAlonso =
   "https://wa.me/525521483348?text=Hola%20Alonso%2C%20quiero%20agendar%20una%20cita";
@@ -1142,6 +1262,45 @@ const testimonials = [
     name: "Daniel P.",
     text: "El mejor servicio en Naucalpan. El ambiente es increíble y los precios son justos.",
     type: "barberia",
+  },
+];
+
+const premiumPanels = [
+  {
+    title: "Panel Admin",
+    desc: "Edita textos, imágenes y secciones desde un solo lugar, sin tocar código.",
+    icon: "M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75",
+    bar: 75,
+  },
+  {
+    title: "SEO Técnico",
+    desc: "Schema markup, sitemap XML, meta tags dinámicos y Core Web Vitals optimizados.",
+    icon: "M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605",
+    bar: 90,
+  },
+  {
+    title: "Arquitectura Extendida",
+    desc: "Múltiples páginas, blog integrado y estructura preparada para crecer.",
+    icon: "M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 0 1-1.125-1.125v-3.75ZM14.25 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v5.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125v-5.25ZM3.25 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-2.25Z",
+    bar: 60,
+  },
+  {
+    title: "CMS Autoadministrable",
+    desc: "Tus clientes actualizan contenido, precios y horarios sin depender de un desarrollador.",
+    icon: "M16.862 4.487l1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10",
+    bar: 85,
+  },
+  {
+    title: "Analytics Avanzado",
+    desc: "Google Analytics 4, eventos de conversión, embudos y reportes de rendimiento.",
+    icon: "M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z",
+    bar: 70,
+  },
+  {
+    title: "Multi-idioma",
+    desc: "Sitio listo para servir contenido en español, inglés u otros idiomas.",
+    icon: "M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802",
+    bar: 55,
   },
 ];
 </script>

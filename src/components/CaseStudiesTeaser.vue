@@ -31,6 +31,44 @@
         >
           <div class="h-1 w-full" :class="study.accent" />
 
+          <!-- Device mockup strip (P0 impact) -->
+          <div
+            v-if="mockups[study.key]"
+            class="relative h-44 sm:h-48 overflow-hidden dark:bg-zinc-950/80 bg-zinc-100/80 border-b dark:border-white/5 border-light-border"
+          >
+            <div
+              class="absolute inset-0 flex items-end justify-center gap-2 pt-6 px-4"
+            >
+              <DeviceFrame
+                v-if="mockups[study.key][1]"
+                size="sm"
+                class="opacity-70 -mb-8 hidden xs:block sm:block scale-90 origin-bottom"
+                tilted
+                :tilt="-8"
+                :src="mockups[study.key][1]"
+                :alt="study.title[locale]"
+              />
+              <DeviceFrame
+                size="sm"
+                class="relative z-10 -mb-4"
+                :src="mockups[study.key][0]"
+                :alt="study.title[locale]"
+              />
+              <DeviceFrame
+                v-if="mockups[study.key][2]"
+                size="sm"
+                class="opacity-70 -mb-8 hidden sm:block scale-90 origin-bottom"
+                tilted
+                :tilt="8"
+                :src="mockups[study.key][2]"
+                :alt="study.title[locale]"
+              />
+            </div>
+            <div
+              class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t dark:from-base-900/90 from-light-surface/90 to-transparent pointer-events-none"
+            />
+          </div>
+
           <div class="p-6 sm:p-7 flex flex-col gap-5 h-full">
             <div class="flex items-start justify-between gap-4">
               <div class="flex items-start gap-4 min-w-0">
@@ -150,6 +188,15 @@
                 </p>
               </div>
             </div>
+
+            <router-link
+              v-if="study.casePath"
+              :to="study.casePath"
+              class="inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors"
+            >
+              {{ t("cases.readCase") }}
+              <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+            </router-link>
           </div>
         </article>
       </div>
@@ -173,11 +220,22 @@ import { useI18n } from "vue-i18n";
 import LucideIcon from "./LucideIcon.vue";
 import SectionHeader from "./ui/SectionHeader.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
+import DeviceFrame from "./cases/DeviceFrame.vue";
 import { caseStudies } from "../data/solutions.js";
+import { musionCase } from "../data/cases/musion.js";
+import { timbraCase } from "../data/cases/timbra.js";
+import { confecdotarioCase } from "../data/cases/confecdotario.js";
 
 const { t, locale } = useI18n();
 
 const featuredCases = computed(() =>
   caseStudies.filter((cs) => cs.featured),
 );
+
+/** Screenshots keyed by caseStudy.key — expand as other cases get assets */
+const mockups = {
+  timbra: timbraCase.gallery.map((g) => g.src),
+  musion: musionCase.gallery.map((g) => g.src),
+  confecdotario: confecdotarioCase.gallery.map((g) => g.src),
+};
 </script>

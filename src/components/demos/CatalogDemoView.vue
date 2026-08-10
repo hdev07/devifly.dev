@@ -229,18 +229,20 @@
                 <LucideIcon name="credit-card" class-name="w-2.5 h-2.5" />
                 {{ copy.onlinePay }}
               </div>
-              <div
-                v-if="product.stock <= 3 && product.stock > 0"
-                class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full text-[10px] font-semibold text-white bg-orange-500"
-              >
-                {{ copy.stockLeft(product.stock) }}
-              </div>
-              <div
-                v-else-if="product.stock === 0"
-                class="absolute inset-0 bg-black/50 flex items-center justify-center"
-              >
-                <span class="text-white font-bold text-sm">{{ copy.soldOut }}</span>
-              </div>
+              <template v-if="showStock">
+                <div
+                  v-if="product.stock <= 3 && product.stock > 0"
+                  class="absolute bottom-2 right-2 px-2 py-0.5 rounded-full text-[10px] font-semibold text-white bg-orange-500"
+                >
+                  {{ copy.stockLeft(product.stock) }}
+                </div>
+                <div
+                  v-else-if="product.stock === 0"
+                  class="absolute inset-0 bg-black/50 flex items-center justify-center"
+                >
+                  <span class="text-white font-bold text-sm">{{ copy.soldOut }}</span>
+                </div>
+              </template>
             </div>
             <div class="p-3">
               <p class="text-[11px] font-medium mb-0.5 capitalize" :style="{ color: theme.colors.categoryLabel }">
@@ -261,7 +263,7 @@
                   ${{ product.oldPrice.toLocaleString() }}
                 </span>
               </div>
-              <div v-if="product.sizes?.length" class="flex gap-1 mt-2 flex-wrap">
+              <div v-if="showSizes && product.sizes?.length" class="flex gap-1 mt-2 flex-wrap">
                 <span
                   v-for="s in product.sizes"
                   :key="s"
@@ -362,7 +364,7 @@
                 </span>
               </div>
 
-              <div v-if="selectedProduct.sizes" class="mb-4">
+              <div v-if="showSizes && selectedProduct.sizes" class="mb-4">
                 <p class="text-xs font-semibold mb-2" :style="{ color: theme.colors.text }">{{ copy.size }}</p>
                 <div class="flex gap-2 flex-wrap">
                   <button
@@ -398,7 +400,7 @@
                 </div>
               </div>
 
-              <div class="mb-6">
+              <div v-if="showStock" class="mb-6">
                 <p
                   class="text-xs inline-flex items-center gap-1"
                   :style="{
@@ -480,8 +482,7 @@ const ui = {
     footerCredit: "Catálogo creado con",
     categoryLabels: {
       Todo: "Todo",
-      Ropa: "Ropa",
-      Accesorios: "Accesorios",
+      Moda: "Moda",
       Skincare: "Skincare",
       Maquillaje: "Maquillaje",
       Anillos: "Anillos",
@@ -510,8 +511,7 @@ const ui = {
     footerCredit: "Catalog built with",
     categoryLabels: {
       Todo: "All",
-      Ropa: "Clothing",
-      Accesorios: "Accessories",
+      Moda: "Fashion",
       Skincare: "Skincare",
       Maquillaje: "Makeup",
       Anillos: "Rings",
@@ -536,6 +536,8 @@ const props = defineProps({
 const theme = catalogThemes[props.tier];
 const products = catalogProducts[props.tier];
 const categories = catalogCategories[props.tier];
+const showStock = props.tier !== "basico";
+const showSizes = props.tier !== "basico";
 
 const displayCategories = computed(() =>
   categories.map((cat) => ({

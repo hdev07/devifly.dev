@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" fill="none">
+  <rect width="390" height="844" fill="#0E0B0D"/>
+  <rect x="24" y="56" width="120" height="14" rx="7" fill="#FF4081" fill-opacity="0.85"/>
+  <text x="24" y="110" fill="#FAF7F9" font-family="system-ui,sans-serif" font-size="28" font-weight="700">Pasaporte</text>
+  <text x="24" y="140" fill="#A89BA3" font-family="system-ui,sans-serif" font-size="14">12 sellos � Explorador</text>
+
+  <rect x="24" y="168" width="342" height="88" rx="20" fill="#1A1418" stroke="#FF408133"/>
+  <circle cx="68" cy="212" r="22" fill="#FF4081"/>
+  <text x="104" y="206" fill="#FAF7F9" font-family="system-ui,sans-serif" font-size="15" font-weight="600">Nivel Explorador</text>
+  <text x="104" y="228" fill="#A89BA3" font-family="system-ui,sans-serif" font-size="12">3 zonas desbloqueadas</text>
+  <rect x="104" y="238" width="180" height="6" rx="3" fill="#2A2227"/>
+  <rect x="104" y="238" width="108" height="6" rx="3" fill="#FF4081"/>
+
+  <!-- Stamp grid -->
+  <g>
+    <rect x="24" y="284" width="100" height="120" rx="18" fill="#1A1418"/>
+    <circle cx="74" cy="332" r="28" fill="none" stroke="#FF4081" stroke-width="3" stroke-dasharray="4 3"/>
+    <text x="74" y="338" text-anchor="middle" fill="#FF4081" font-family="system-ui,sans-serif" font-size="18" font-weight="700">M</text>
+    <text x="74" y="384" text-anchor="middle" fill="#A89BA3" font-family="system-ui,sans-serif" font-size="10">Bellas Artes</text>
+
+    <rect x="145" y="284" width="100" height="120" rx="18" fill="#1A1418"/>
+    <circle cx="195" cy="332" r="28" fill="none" stroke="#FF4081" stroke-width="3" stroke-dasharray="4 3"/>
+    <text x="195" y="338" text-anchor="middle" fill="#FF4081" font-family="system-ui,sans-serif" font-size="18" font-weight="700">M</text>
+    <text x="195" y="384" text-anchor="middle" fill="#A89BA3" font-family="system-ui,sans-serif" font-size="10">Antropolog�a</text>
+
+    <rect x="266" y="284" width="100" height="120" rx="18" fill="#1A1418"/>
+    <circle cx="316" cy="332" r="28" fill="none" stroke="#3A3036" stroke-width="3" stroke-dasharray="4 3"/>
+    <text x="316" y="384" text-anchor="middle" fill="#6B5F66" font-family="system-ui,sans-serif" font-size="10">Pendiente</text>
+  </g>
+
+  <g>
+    <rect x="24" y="420" width="100" height="120" rx="18" fill="#1A1418"/>
+    <circle cx="74" cy="468" r="28" fill="none" stroke="#FF4081" stroke-width="3" stroke-dasharray="4 3"/>
+    <text x="74" y="474" text-anchor="middle" fill="#FF4081" font-family="system-ui,sans-serif" font-size="18" font-weight="700">M</text>
+    <text x="74" y="520" text-anchor="middle" fill="#A89BA3" font-family="system-ui,sans-serif" font-size="10">Frida Kahlo</text>
+
+    <rect x="145" y="420" width="100" height="120" rx="18" fill="#1A1418"/>
+    <circle cx="195" cy="468" r="28" fill="none" stroke="#3A3036" stroke-width="3" stroke-dasharray="4 3"/>
+    <text x="195" y="520" text-anchor="middle" fill="#6B5F66" font-family="system-ui,sans-serif" font-size="10">Pendiente</text>
+
+    <rect x="266" y="420" width="100" height="120" rx="18" fill="#1A1418"/>
+    <circle cx="316" cy="468" r="28" fill="none" stroke="#3A3036" stroke-width="3" stroke-dasharray="4 3"/>
+    <text x="316" y="520" text-anchor="middle" fill="#6B5F66" font-family="system-ui,sans-serif" font-size="10">Pendiente</text>
+  </g>
+
+  <!-- Bottom nav -->
+  <rect y="760" width="390" height="84" fill="#151015"/>
+  <circle cx="78" cy="792" r="4" fill="#A89BA3"/>
+  <circle cx="156" cy="792" r="4" fill="#A89BA3"/>
+  <circle cx="234" cy="792" r="5" fill="#FF4081"/>
+  <circle cx="312" cy="792" r="4" fill="#A89BA3"/>
+  <text x="234" y="818" text-anchor="middle" fill="#FF4081" font-family="system-ui,sans-serif" font-size="10">Pasaporte</text>
+</svg>

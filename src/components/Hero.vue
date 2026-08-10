@@ -28,9 +28,7 @@
             style="font-size: clamp(2.4rem, 6.8vw, 5rem)"
           >
             {{ t("hero.title1") }}
-            <span class="text-gradient">
-              {{ t("hero.title2") }}
-            </span>
+            <span class="text-gradient"> {{ t("hero.title2") }} </span>
             <br class="hidden sm:block" />
             <span class="relative inline-block">
               {{ t("hero.title3") }}.

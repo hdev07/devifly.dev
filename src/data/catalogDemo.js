@@ -2,7 +2,7 @@ export const WA_NUMBER = "525635926679";
 
 export const catalogThemes = {
   basico: {
-    plan: "Básico",
+    plan: "Esencial",
     storeName: "Lupita Moda",
     storeTagline: "Moda & accesorios para toda ocasión",
     storeEmoji: "👗",
@@ -75,7 +75,7 @@ export const catalogThemes = {
     waOrder: "Hola, vi tu catálogo Glam Beauty y quiero hacer un pedido",
   },
   premium: {
-    plan: "Premium VIP",
+    plan: "Premium",
     storeName: "Oro & Plata",
     storeTagline: "Joyería artesanal de lujo",
     storeEmoji: "💎",
@@ -108,7 +108,7 @@ export const catalogThemes = {
       ctaText: "#0b0b0b",
     },
     waHire:
-      "¡Hola! Me interesa el Plan Premium VIP de catálogo digital ($6,999 MXN) 💎",
+      "¡Hola! Me interesa el Plan Premium de catálogo digital ($6,999 MXN) 💎",
     waOrder: "Hola, vi tu catálogo Oro & Plata y me interesa una pieza",
     sellers: [
       { id: "main", name: "Colección principal", avatar: "O" },
@@ -124,11 +124,9 @@ export const catalogProducts = {
     {
       id: 1,
       name: "Blusa Floral Primavera",
-      category: "ropa",
+      category: "moda",
       price: 349,
       oldPrice: 499,
-      stock: 12,
-      sizes: ["S", "M", "L"],
       description:
         "Blusa de manga corta con estampado floral. Tela ligera y fresca.",
       img: "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=400&h=400&fit=crop",
@@ -142,10 +140,8 @@ export const catalogProducts = {
     {
       id: 2,
       name: "Vestido Casual Boho",
-      category: "ropa",
+      category: "moda",
       price: 599,
-      stock: 5,
-      sizes: ["S", "M", "L"],
       description: "Vestido largo estilo boho con bordados artesanales.",
       img: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&h=400&fit=crop",
       imgs: [
@@ -156,9 +152,8 @@ export const catalogProducts = {
     {
       id: 3,
       name: "Bolsa Crossbody Elegante",
-      category: "accesorios",
+      category: "moda",
       price: 449,
-      stock: 8,
       description: "Bolsa crossbody de piel sintética con acabados metálicos.",
       img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop",
       imgs: [
@@ -169,9 +164,8 @@ export const catalogProducts = {
     {
       id: 4,
       name: "Aretes Corazón Cristal",
-      category: "accesorios",
+      category: "moda",
       price: 149,
-      stock: 3,
       description: "Aretes colgantes en forma de corazón con cristal.",
       img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop",
       imgs: [
@@ -184,10 +178,8 @@ export const catalogProducts = {
     {
       id: 5,
       name: "Jeans Skinny High-Rise",
-      category: "ropa",
+      category: "moda",
       price: 499,
-      stock: 0,
-      sizes: ["26", "28", "30"],
       description: "Jeans skinny de tiro alto con stretch.",
       img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&h=400&fit=crop",
       imgs: [
@@ -198,9 +190,8 @@ export const catalogProducts = {
     {
       id: 6,
       name: "Pulsera Perlas Delicada",
-      category: "accesorios",
+      category: "moda",
       price: 199,
-      stock: 14,
       description: "Pulsera de perlas sintéticas con broche dorado.",
       img: "https://images.unsplash.com/photo-1611591434041-61c41349c35a?w=400&h=400&fit=crop",
       imgs: [
@@ -234,6 +225,7 @@ export const catalogProducts = {
       category: "maquillaje",
       price: 150,
       stock: 35,
+      sizes: ["Mini", "Full Size"],
       colors: [
         { name: "Nude", hex: "#d4a276" },
         { name: "Rosa", hex: "#f9a8d4" },
@@ -320,6 +312,7 @@ export const catalogProducts = {
       category: "maquillaje",
       price: 340,
       stock: 11,
+      sizes: ["30ml", "50ml"],
       colors: [
         { name: "Claro", hex: "#fde8d0" },
         { name: "Medio", hex: "#d4a276" },
@@ -437,8 +430,7 @@ export const catalogProducts = {
 export const catalogCategories = {
   basico: [
     { key: "all", label: "Todo", icon: "✨" },
-    { key: "ropa", label: "Ropa", icon: "👗" },
-    { key: "accesorios", label: "Accesorios", icon: "💎" },
+    { key: "moda", label: "Moda", icon: "👗" },
   ],
   pro: [
     { key: "all", label: "Todo", icon: "✨" },

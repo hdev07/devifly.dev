@@ -1318,13 +1318,17 @@ Esta sección sirve cuando el cliente duda de si Devifly puede resolver algo gra
 
 ### Confecdotario
 
-- Red social funcional con comunidad activa.
+- Red social funcional con comunidad activa (audiencia de La Cotorrisa).
+- Feed de anécdotas, medallas, temas, moderación y PWA instalable.
 - Demuestra capacidad en productos de engagement, escalabilidad y experiencia digital.
+- Caso público: `/casos/confecdotario`.
 
 ### Musion
 
-- PWA cultural con geolocalización, pagos y múltiples roles.
-- Demuestra capacidad en arquitectura compleja y experiencia móvil.
+- PWA cultural para planear recorridos a pie por los 195 museos de CDMX.
+- Catálogo verificable, optimizador de rutas caminables y pasaporte digital con sellos.
+- Demuestra capacidad en producto móvil complejo, geo (PostGIS/Mapbox) y arquitectura lista para crecer.
+- Caso público: `/casos/musion`.
 
 ### PoleGP
 

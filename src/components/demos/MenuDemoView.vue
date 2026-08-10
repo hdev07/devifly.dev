@@ -899,7 +899,7 @@
             color: rgba(212, 175, 55, 0.4);
           "
         >
-          <span>{{ copy.schedule }} {{ theme.schedule }}</span>
+          <span>{{ copy.schedule }} {{ branchSchedule ?? theme.schedule }}</span>
         </div>
 
         <p class="text-neutral-700 text-[10px] mt-6 tracking-wider">
@@ -921,6 +921,7 @@ import { useI18n } from "vue-i18n";
 import {
   menuThemes,
   esencialMenuCategories,
+  branchOverrides,
   foodImageMap,
   waLink,
 } from "../../data/menuDemo.js";
@@ -1034,10 +1035,19 @@ const selectedBranch = computed(() =>
   theme.value.branches?.find((b) => b.id === activeBranch.value),
 );
 
+const branchSchedule = computed(() => {
+  if (props.tier !== "premium" || !activeBranch.value) return null;
+  return branchOverrides[activeBranch.value]?.schedule ?? null;
+});
+
 const infoItems = computed(() =>
   theme.value.infoItems.map((item) => ({
     ...item,
     label: copy.value.infoLabels[item.label] ?? item.label,
+    value:
+      item.label === "Horario" && branchSchedule.value
+        ? branchSchedule.value
+        : item.value,
   })),
 );
 
@@ -1454,9 +1464,31 @@ const fullMenuCategories = [
   },
 ];
 
-const menuCategories = computed(() =>
-  props.tier === "esencial" ? esencialMenuCategories : fullMenuCategories,
-);
+function applyBranchOverrides(categories, branchId) {
+  const overrides = branchOverrides[branchId];
+  if (!overrides) return categories;
+  const { priceMultiplier, itemTags, unavailable } = overrides;
+  return categories.map((cat) => ({
+    ...cat,
+    subcategories: cat.subcategories.map((sub) => ({
+      ...sub,
+      items: sub.items
+        .filter((item) => !unavailable.includes(item.name))
+        .map((item) => ({
+          ...item,
+          price: Math.round(item.price * priceMultiplier / 5) * 5,
+          tag: itemTags[item.name] ?? item.tag,
+        })),
+    })),
+  }));
+}
+
+const menuCategories = computed(() => {
+  if (props.tier === "esencial") return esencialMenuCategories;
+  if (props.tier === "premium" && activeBranch.value)
+    return applyBranchOverrides(fullMenuCategories, activeBranch.value);
+  return fullMenuCategories;
+});
 
 const activeCategory = ref("entradas");
 

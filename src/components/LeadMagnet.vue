@@ -15,7 +15,7 @@
 
           <h2 class="font-display font-bold dark:text-white text-light-text leading-[1.05] tracking-tight mb-5" style="font-size: clamp(2rem, 5vw, 3.4rem)">
             {{ t("leadMagnet.title1") }}
-            <span class="text-gradient">{{ t("leadMagnet.title2") }}</span>
+            <span class="text-gradient"> {{ t("leadMagnet.title2") }}</span>
           </h2>
 
           <p class="text-base sm:text-lg dark:text-text-secondary text-light-muted leading-relaxed mb-7 max-w-xl">
