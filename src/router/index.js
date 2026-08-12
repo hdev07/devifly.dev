@@ -64,7 +64,7 @@ const routes = [
   {
     path: '/invitaciones/demo',
     name: 'InvitacionesDemo',
-    component: () => import('../views/demos/InvitacionPremium.vue'),
+    component: () => import('../views/demos/InvitacionesDemo.vue'),
     meta: {
       fullscreen: true,
       exitTo: '/invitaciones',
