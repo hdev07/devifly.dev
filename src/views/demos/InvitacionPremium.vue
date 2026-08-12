@@ -905,7 +905,7 @@
           </select>
           <div v-if="rsvpForm.attending === 'yes'" class="space-y-4">
             <div
-              v-if="isPremium"
+              v-if="isPro"
               class="p-4 rounded-xl text-center"
               style="
                 background: rgba(198, 167, 94, 0.06);
@@ -922,7 +922,7 @@
               v-model="rsvpForm.guests"
               type="number"
               min="1"
-              :max="isPremium ? activeGuest.passes : 10"
+              :max="isPro ? activeGuest.passes : 10"
               :placeholder="t('rsvpGuests')"
               class="w-full px-4 py-3.5 rounded-xl text-sm text-white/80 placeholder-white/30 focus:outline-none"
               style="
@@ -984,9 +984,9 @@
       </div>
     </section>
 
-    <!-- QR MODAL TRIGGER + ADMIN PANEL PREVIEW (Premium) -->
+    <!-- ADMIN PANEL PREVIEW (Pro+) + QR MODAL TRIGGER (Premium) -->
     <section
-      v-if="isPremium"
+      v-if="isPro"
       class="py-16 sm:py-24 px-6"
       style="
         background: #0b0b0b;
@@ -994,8 +994,8 @@
       "
     >
       <div class="max-w-3xl mx-auto">
-        <!-- QR Section -->
-        <div class="text-center mb-16">
+        <!-- QR Section (Premium) -->
+        <div v-if="isPremium" class="text-center mb-16">
           <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">
             {{ t("qrTitle") }}
           </h2>

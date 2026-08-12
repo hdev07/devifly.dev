@@ -8,7 +8,7 @@
 
   <!-- header -->
   <text x="24" y="68" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="22" font-weight="700">Inicio</text>
-  <text x="24" y="90" fill="#666666" font-family="system-ui,sans-serif" font-size="12">La Cotorrisa · Comunidad</text>
+  <text x="24" y="90" fill="#666666" font-family="system-ui,sans-serif" font-size="12">La Cotorrisa ï¿½ Comunidad</text>
   <circle cx="348" cy="70" r="18" fill="#1A1A1A" stroke="#FFD70055" stroke-width="1.5"/>
   <text x="341" y="75" fill="#FFD700" font-family="system-ui,sans-serif" font-size="12" font-weight="700">LC</text>
 
@@ -25,15 +25,15 @@
   <circle cx="52" cy="192" r="16" fill="#FF8C0033" stroke="#FF8C00"/>
   <text x="46" y="197" fill="#FF8C00" font-family="system-ui,sans-serif" font-size="11" font-weight="700">MX</text>
   <text x="78" y="188" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="13" font-weight="600">@mexicano_random</text>
-  <text x="78" y="206" fill="#666666" font-family="system-ui,sans-serif" font-size="11">hace 12 min · Tema: Metros</text>
-  <text x="40" y="242" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">Hoy en el metro una señora</text>
-  <text x="40" y="262" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">me preguntó si yo era el</text>
+  <text x="78" y="206" fill="#666666" font-family="system-ui,sans-serif" font-size="11">hace 12 min ï¿½ Tema: Metros</text>
+  <text x="40" y="242" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">Hoy en el metro una seï¿½ora</text>
+  <text x="40" y="262" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">me preguntï¿½ si yo era el</text>
   <text x="40" y="282" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">mismo del podcast&</text>
   <rect x="40" y="300" width="68" height="24" rx="12" fill="#FFD70022" stroke="#FFD70055"/>
   <text x="52" y="316" fill="#FFD700" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Metros</text>
   <!-- actions -->
   <text x="44" y="342" fill="#E63946" font-family="system-ui,sans-serif" font-size="13" font-weight="600">e 248</text>
-  <text x="120" y="342" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="13">=¬ 42</text>
+  <text x="120" y="342" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="13">=ï¿½ 42</text>
   <text x="190" y="342" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="13">=A 1.2k</text>
 
   <!-- anecdote card 2 -->
@@ -41,22 +41,22 @@
   <circle cx="52" cy="412" r="16" fill="#2EC4B633" stroke="#2EC4B6"/>
   <text x="46" y="417" fill="#2EC4B6" font-family="system-ui,sans-serif" font-size="11" font-weight="700">AN</text>
   <text x="78" y="408" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="13" font-weight="600">@anecdotas_del_sur</text>
-  <text x="78" y="426" fill="#666666" font-family="system-ui,sans-serif" font-size="11">hace 1 h · Tema: Familia</text>
-  <text x="40" y="462" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">Mi tía juraba que Ricardo</text>
-  <text x="40" y="482" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">era su vecino en Coyoacán&</text>
+  <text x="78" y="426" fill="#666666" font-family="system-ui,sans-serif" font-size="11">hace 1 h ï¿½ Tema: Familia</text>
+  <text x="40" y="462" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">Mi tï¿½a juraba que Ricardo</text>
+  <text x="40" y="482" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">era su vecino en Coyoacï¿½n&</text>
   <rect x="40" y="500" width="72" height="24" rx="12" fill="#FFD70022" stroke="#FFD70055"/>
   <text x="52" y="516" fill="#FFD700" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Familia</text>
   <text x="44" y="542" fill="#E63946" font-family="system-ui,sans-serif" font-size="13" font-weight="600">e 91</text>
-  <text x="120" y="542" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="13">=¬ 18</text>
+  <text x="120" y="542" fill="#A0A0A0" font-family="system-ui,sans-serif" font-size="13">=ï¿½ 18</text>
 
   <!-- anecdote card 3 (partial) -->
   <rect x="20" y="580" width="350" height="160" rx="18" fill="#1A1A1A" stroke="#2A2A2A"/>
   <circle cx="52" cy="612" r="16" fill="#FFD70033" stroke="#FFD700"/>
   <text x="46" y="617" fill="#FFD700" font-family="system-ui,sans-serif" font-size="11" font-weight="700">CT</text>
   <text x="78" y="608" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="13" font-weight="600">@cotorro_oficial</text>
-  <text x="78" y="626" fill="#666666" font-family="system-ui,sans-serif" font-size="11">hace 3 h · Tema: Conciertos</text>
+  <text x="78" y="626" fill="#666666" font-family="system-ui,sans-serif" font-size="11">hace 3 h ï¿½ Tema: Conciertos</text>
   <text x="40" y="662" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">En el live me reconocieron</text>
-  <text x="40" y="682" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">por el badge de Cotorro >œ</text>
+  <text x="40" y="682" fill="#FAFAFA" font-family="system-ui,sans-serif" font-size="14">por el badge de Cotorro >ï¿½</text>
 
   <!-- FAB -->
   <circle cx="330" cy="720" r="28" fill="#FFD700"/>

@@ -153,7 +153,7 @@ const toggleFaq = (i) => {
           <!-- Demo 1: Esencial -->
           <div class="flex flex-col items-center gap-3 group">
             <RouterLink
-              to="/invitaciones/demo"
+              :to="content.demoCards[0].path"
               class="block transition-transform group-hover:-translate-y-1"
             >
               <div
@@ -233,7 +233,7 @@ const toggleFaq = (i) => {
               {{ content.ui.mostPopular }}
             </div>
             <RouterLink
-              to="/invitaciones/demo"
+              :to="content.demoCards[1].path"
               class="block transition-transform group-hover:-translate-y-1"
             >
               <div
@@ -325,7 +325,7 @@ const toggleFaq = (i) => {
           <!-- Demo 3: Premium VIP -->
           <div class="flex flex-col items-center gap-3 group">
             <RouterLink
-              to="/invitaciones/demo"
+              :to="content.demoCards[2].path"
               class="block transition-transform group-hover:-translate-y-1"
             >
               <div

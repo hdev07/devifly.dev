@@ -94,7 +94,7 @@ export const caseStudies = [
     },
     highlight: { value: '+180%', label: { es: 'Engagement vs. redes genéricas', en: 'Engagement vs. generic social' } },
     tags: ['PWA', 'Comunidad'],
-    link: 'https://app.confecdotario.com/',
+    link: 'https://confecdotario.com/',
     casePath: '/casos/confecdotario',
     mockup: 'confecdotario',
   },

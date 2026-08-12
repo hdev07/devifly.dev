@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
   <rect width="200" height="200" rx="40" fill="#0D0D0D"/>
   <circle cx="70" cy="80" r="28" fill="#FFD70022" stroke="#FFD700" stroke-width="2"/>
-  <text x="58" y="88" font-size="24">>œ</text>
+  <text x="58" y="88" font-size="24">>ï¿½</text>
   <circle cx="130" cy="80" r="28" fill="#FF8C0022" stroke="#FF8C00" stroke-width="2"/>
   <text x="118" y="88" font-size="24">d</text>
   <circle cx="100" cy="140" r="28" fill="#2EC4B622" stroke="#2EC4B6" stroke-width="2"/>
