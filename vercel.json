@@ -9,9 +9,12 @@
     { "source": "/landings", "destination": "/landing-pages", "permanent": true },
     { "source": "/landings/demo", "destination": "/landing-pages/demo", "permanent": true },
     { "source": "/catalogos-nenis", "destination": "/catalogos", "permanent": true },
-    { "source": "/catalogos-nenis/:tier", "destination": "/catalogos/demo", "permanent": true },
-    { "source": "/invitaciones/(esencial|pro|premium)", "destination": "/invitaciones/demo", "permanent": true },
-    { "source": "/menus-digitales/(pro|premium)", "destination": "/menus-digitales/demo", "permanent": true }
+    { "source": "/catalogos-nenis/:tier(esencial|pro|premium)", "destination": "/catalogos/:tier", "permanent": true },
+    { "source": "/catalogos-nenis/demo", "destination": "/catalogos/premium", "permanent": true },
+    { "source": "/invitaciones/demo", "destination": "/invitaciones/premium", "permanent": true },
+    { "source": "/menus-digitales/demo", "destination": "/menus-digitales/premium", "permanent": true },
+    { "source": "/catalogos/demo", "destination": "/catalogos/premium", "permanent": true },
+    { "source": "/salones-eventos/demo", "destination": "/salones-eventos/premium", "permanent": true }
   ],
   "rewrites": [
     {

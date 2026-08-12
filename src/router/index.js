@@ -1,9 +1,46 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
-// IA "hub mínimo": Home (hub) + 5 landings de producto + 1 demo estrella
-// por producto + /contacto. Las páginas corporativas viejas redirigen a
-// secciones del Home; los tiers de demo redirigen a la demo estrella.
+const invitationDemoMeta = {
+  fullscreen: true,
+  exitTo: '/invitaciones',
+  exitLabelEs: 'Volver a invitaciones',
+  exitLabelEn: 'Back to invitations',
+  robots: 'noindex, nofollow',
+  canonicalPath: '/invitaciones',
+}
+
+const menuDemoMeta = {
+  fullscreen: true,
+  darkOnly: true,
+  exitTo: '/menus-digitales',
+  exitLabelEs: 'Volver a menús digitales',
+  exitLabelEn: 'Back to digital menus',
+  robots: 'noindex, nofollow',
+  canonicalPath: '/menus-digitales',
+}
+
+const catalogDemoMeta = {
+  fullscreen: true,
+  exitTo: '/catalogos',
+  exitLabelEs: 'Volver a catálogos digitales',
+  exitLabelEn: 'Back to digital catalogs',
+  robots: 'noindex, nofollow',
+  canonicalPath: '/catalogos',
+}
+
+const salonDemoMeta = {
+  fullscreen: true,
+  darkOnly: true,
+  exitTo: '/salones-eventos',
+  exitLabelEs: 'Volver a reservaciones',
+  exitLabelEn: 'Back to venue websites',
+  robots: 'noindex, nofollow',
+  canonicalPath: '/salones-eventos',
+}
+
+// IA "hub mínimo": Home (hub) + 5 landings de producto + demos por plan
+// (esencial / pro / premium) + /contacto.
 const routes = [
   {
     path: '/',
@@ -46,7 +83,33 @@ const routes = [
     meta: { darkOnly: true }
   },
 
-  // ===== Demo estrella por producto (fullscreen, noindex) =====
+  // ===== Demos por plan (URL: /producto/esencial|pro|premium) =====
+  {
+    path: '/invitaciones/:plan(esencial|pro|premium)',
+    name: 'InvitacionesDemoPlan',
+    component: () => import('../views/demos/InvitacionesDemo.vue'),
+    meta: invitationDemoMeta,
+  },
+  {
+    path: '/menus-digitales/:plan(esencial|pro|premium)',
+    name: 'MenusDigitalesDemoPlan',
+    component: () => import('../views/demos/MenuPremiumDemo.vue'),
+    meta: menuDemoMeta,
+  },
+  {
+    path: '/catalogos/:plan(esencial|pro|premium)',
+    name: 'CatalogosDemoPlan',
+    component: () => import('../views/demos/CatalogoPremiumDemo.vue'),
+    meta: catalogDemoMeta,
+  },
+  {
+    path: '/salones-eventos/:plan(esencial|pro|premium)',
+    name: 'SalonesEventosDemoPlan',
+    component: () => import('../views/demos/SalonEventosDemo.vue'),
+    meta: salonDemoMeta,
+  },
+
+  // ===== Demo genérica (alias → premium) =====
   {
     path: '/landing-pages/demo',
     name: 'LandingPagesDemo',
@@ -61,60 +124,10 @@ const routes = [
       canonicalPath: '/landing-pages'
     }
   },
-  {
-    path: '/invitaciones/demo',
-    name: 'InvitacionesDemo',
-    component: () => import('../views/demos/InvitacionesDemo.vue'),
-    meta: {
-      fullscreen: true,
-      exitTo: '/invitaciones',
-      exitLabelEs: 'Volver a invitaciones',
-      exitLabelEn: 'Back to invitations',
-      robots: 'noindex, nofollow',
-      canonicalPath: '/invitaciones'
-    }
-  },
-  {
-    path: '/menus-digitales/demo',
-    name: 'MenusDigitalesDemo',
-    component: () => import('../views/demos/MenuPremiumDemo.vue'),
-    meta: {
-      fullscreen: true,
-      darkOnly: true,
-      exitTo: '/menus-digitales',
-      exitLabelEs: 'Volver a menús digitales',
-      exitLabelEn: 'Back to digital menus',
-      robots: 'noindex, nofollow',
-      canonicalPath: '/menus-digitales'
-    }
-  },
-  {
-    path: '/catalogos/demo',
-    name: 'CatalogosDemo',
-    component: () => import('../views/demos/CatalogoPremiumDemo.vue'),
-    meta: {
-      fullscreen: true,
-      exitTo: '/catalogos',
-      exitLabelEs: 'Volver a catálogos digitales',
-      exitLabelEn: 'Back to digital catalogs',
-      robots: 'noindex, nofollow',
-      canonicalPath: '/catalogos'
-    }
-  },
-  {
-    path: '/salones-eventos/demo',
-    name: 'SalonesEventosDemo',
-    component: () => import('../views/demos/SalonEventosDemo.vue'),
-    meta: {
-      fullscreen: true,
-      darkOnly: true,
-      exitTo: '/salones-eventos',
-      exitLabelEs: 'Volver a reservaciones',
-      exitLabelEn: 'Back to venue websites',
-      robots: 'noindex, nofollow',
-      canonicalPath: '/salones-eventos'
-    }
-  },
+  { path: '/invitaciones/demo', redirect: '/invitaciones/premium' },
+  { path: '/menus-digitales/demo', redirect: '/menus-digitales/premium' },
+  { path: '/catalogos/demo', redirect: '/catalogos/premium' },
+  { path: '/salones-eventos/demo', redirect: '/salones-eventos/premium' },
 
   // ===== Case studies =====
   {
@@ -146,16 +159,10 @@ const routes = [
   { path: '/landings', redirect: '/landing-pages' },
   { path: '/landings/demo', redirect: '/landing-pages/demo' },
   { path: '/catalogos-nenis', redirect: '/catalogos' },
-
-  // ===== Redirects: demos por tier → demo estrella =====
-  { path: '/invitaciones/esencial', redirect: '/invitaciones/demo' },
-  { path: '/invitaciones/pro', redirect: '/invitaciones/demo' },
-  { path: '/invitaciones/premium', redirect: '/invitaciones/demo' },
-  { path: '/menus-digitales/pro', redirect: '/menus-digitales/demo' },
-  { path: '/menus-digitales/premium', redirect: '/menus-digitales/demo' },
-  { path: '/catalogos-nenis/demo', redirect: '/catalogos/demo' },
-  { path: '/catalogos-nenis/pro', redirect: '/catalogos/demo' },
-  { path: '/catalogos-nenis/premium', redirect: '/catalogos/demo' },
+  { path: '/catalogos-nenis/demo', redirect: '/catalogos/premium' },
+  { path: '/catalogos-nenis/pro', redirect: '/catalogos/pro' },
+  { path: '/catalogos-nenis/premium', redirect: '/catalogos/premium' },
+  { path: '/catalogos-nenis/esencial', redirect: '/catalogos/esencial' },
 
   {
     path: '/:pathMatch(.*)*',

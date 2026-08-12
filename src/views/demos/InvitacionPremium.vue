@@ -1167,14 +1167,13 @@ import { useRoute } from "vue-router";
 import LucideIcon from "../../components/LucideIcon.vue";
 import { useDemoChrome } from "../../composables/useDemoChrome.js";
 
+import { useDemoPlan } from "../../composables/useDemoPlan.js";
+
 const { locale } = useI18n();
 const { copy } = useDemoChrome();
 const route = useRoute();
 
-const validTiers = ["esencial", "pro", "premium"];
-const tier = computed(() =>
-  validTiers.includes(route.query.plan) ? route.query.plan : "premium",
-);
+const tier = computed(() => useDemoPlan(route));
 const isPro = computed(() => tier.value === "pro" || tier.value === "premium");
 const isPremium = computed(() => tier.value === "premium");
 
