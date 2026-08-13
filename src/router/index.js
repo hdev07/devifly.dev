@@ -111,6 +111,20 @@ const routes = [
 
   // ===== Demo genérica (alias → premium) =====
   {
+    path: '/landing-pages/:plan(esencial|pro|premium)',
+    name: 'LandingPagesDemoPlan',
+    component: () => import('../views/demos/LandingPageDemo.vue'),
+    meta: {
+      fullscreen: true,
+      darkOnly: true,
+      exitTo: '/landing-pages',
+      exitLabelEs: 'Volver a landing pages',
+      exitLabelEn: 'Back to landing pages',
+      robots: 'noindex, nofollow',
+      canonicalPath: '/landing-pages'
+    }
+  },
+  {
     path: '/landing-pages/demo',
     name: 'LandingPagesDemo',
     component: () => import('../views/demos/LandingPageDemo.vue'),
@@ -145,6 +159,36 @@ const routes = [
     name: 'CaseStudyConfecdotario',
     component: () => import('../views/casos/CaseStudyConfecdotario.vue'),
   },
+
+  // ===== Legal (rutas explícitas, no dinámicas, para que el SEO por nombre funcione) =====
+  {
+    path: '/legal/terminos',
+    name: 'LegalTerminos',
+    component: () => import('../views/Legal.vue'),
+    meta: { legalSlug: 'terminos' },
+  },
+  {
+    path: '/legal/privacidad',
+    name: 'LegalPrivacidad',
+    component: () => import('../views/Legal.vue'),
+    meta: { legalSlug: 'privacidad' },
+  },
+  {
+    path: '/legal/cancelaciones',
+    name: 'LegalCancelaciones',
+    component: () => import('../views/Legal.vue'),
+    meta: { legalSlug: 'cancelaciones' },
+  },
+  {
+    path: '/legal/propiedad-del-codigo',
+    name: 'LegalPropiedadCodigo',
+    component: () => import('../views/Legal.vue'),
+    meta: { legalSlug: 'propiedad-del-codigo' },
+  },
+  { path: '/legal', redirect: '/legal/terminos' },
+  { path: '/terminos', redirect: '/legal/terminos' },
+  { path: '/privacidad', redirect: '/legal/privacidad' },
+  { path: '/aviso-de-privacidad', redirect: '/legal/privacidad' },
 
   // ===== Redirects: páginas corporativas retiradas → secciones del Home =====
   { path: '/products', redirect: { path: '/', hash: '#productos' } },

@@ -72,7 +72,7 @@ const toggleFaq = (i) => {
 
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row items-start gap-4 mb-10">
-              <BaseButton to="/menus-digitales/demo" accent="amber" size="lg">
+              <BaseButton to="/menus-digitales/premium" accent="amber" size="lg">
                 <LucideIcon name="play-circle" class-name="w-4 h-4" />
                 {{ content.ui.heroCtaDemo }}
               </BaseButton>
@@ -344,7 +344,7 @@ const toggleFaq = (i) => {
                 {{ content.ui.demoSubtitle }}
               </p>
               <div class="flex flex-col sm:flex-row gap-4">
-                <BaseButton to="/menus-digitales/demo" accent="amber" size="lg" block>
+                <BaseButton to="/menus-digitales/premium" accent="amber" size="lg" block>
                   <LucideIcon name="smartphone" class-name="w-4 h-4" />
                   {{ content.ui.demoCtaOpen }}
                 </BaseButton>
@@ -982,7 +982,7 @@ const toggleFaq = (i) => {
             {{ content.ui.finalCtaQuote }}
           </BaseButton>
           <BaseButton
-            to="/menus-digitales/demo"
+            to="/menus-digitales/premium"
             variant="secondary"
             accent="amber"
             size="lg"

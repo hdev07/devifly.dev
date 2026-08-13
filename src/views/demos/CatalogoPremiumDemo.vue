@@ -5,9 +5,10 @@
 <script setup>
 import { computed } from "vue";
 import { useRoute } from "vue-router";
+import { useDemoPlan } from "../../composables/useDemoPlan.js";
 import CatalogDemoView from "../../components/demos/CatalogDemoView.vue";
 
 const route = useRoute();
-const validTiers = { esencial: "basico", pro: "pro", premium: "premium" };
-const tier = computed(() => validTiers[route.query.plan] ?? "premium");
+const planToTier = { esencial: "basico", pro: "pro", premium: "premium" };
+const tier = computed(() => planToTier[useDemoPlan(route)] ?? "premium");
 </script>

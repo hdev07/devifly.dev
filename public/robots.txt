@@ -1,9 +1,9 @@
 User-agent: *
 Allow: /
-Disallow: /landing-pages/demo
-Disallow: /invitaciones/demo
-Disallow: /menus-digitales/demo
-Disallow: /catalogos/demo
-Disallow: /salones-eventos/demo
+
+# Las demos por plan (/producto/esencial|pro|premium) se excluyen con
+# <meta name="robots" content="noindex, nofollow"> desde el router.
+# No se listan aquí a propósito: un Disallow impediría al crawler leer ese
+# meta y la URL podría indexarse igual, sin contenido.
 
 Sitemap: https://devifly.dev/sitemap.xml

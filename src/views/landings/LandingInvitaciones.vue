@@ -414,7 +414,7 @@ const toggleFaq = (i) => {
 
         <!-- CTA único: una demo, comparador de planes abajo -->
         <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <BaseButton to="/invitaciones/demo" accent="violet" size="lg">
+          <BaseButton to="/invitaciones/premium" accent="violet" size="lg">
             <LucideIcon name="play-circle" class-name="w-4 h-4" />
             {{ content.ui.demoCtaOpen }}
           </BaseButton>
