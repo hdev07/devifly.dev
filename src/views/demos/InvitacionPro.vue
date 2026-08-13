@@ -27,18 +27,27 @@
           border: 1px solid rgba(212, 175, 55, 0.3);
         "
       >
-        {{ copy.demo }} — Plan Pro
+        {{ copy.demo }} — {{ t("planLabel") }}
       </span>
-      <a
-        :href="waContratar"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-sm font-semibold transition-colors"
-        style="color: #7a1e3a"
-        ><span class="inline-flex items-center gap-1"
-          >{{ copy.hire }}
-          <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" /></span
-      ></a>
+      <div class="flex items-center gap-3">
+        <button
+          @click="locale = locale === 'es' ? 'en' : 'es'"
+          class="text-xs px-3 py-1 rounded-full transition"
+          style="border: 1px solid rgba(212, 175, 55, 0.4); color: #d4af37"
+        >
+          {{ locale === "es" ? "EN" : "ES" }}
+        </button>
+        <a
+          :href="waContratar"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-semibold transition-colors"
+          style="color: #7a1e3a"
+          ><span class="inline-flex items-center gap-1"
+            >{{ copy.hire }}
+            <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" /></span
+        ></a>
+      </div>
     </div>
 
     <!-- PORTADA / HERO -->
@@ -117,7 +126,7 @@
               color: #d4af37;
               font-family: &quot;Playfair Display&quot;, serif;
             "
-            >Mis XV Años</span
+            >{{ t("eventType") }}</span
           >
           <div
             class="h-px w-12 sm:w-16"
@@ -146,12 +155,11 @@
             font-style: italic;
           "
         >
-          "Hoy dejo atrás la niñez para comenzar<br />un nuevo capítulo de mi
-          vida"
+          {{ t("quote1") }}<br />{{ t("quote2") }}
         </p>
 
         <p class="text-xs mb-1" style="color: #b5a08c">
-          Con la bendición de mis padres
+          {{ t("blessing") }}
         </p>
         <p class="font-medium text-sm mb-8" style="color: #7a1e3a">
           Roberto & María Elena Guzmán
@@ -165,9 +173,9 @@
           "
         >
           <p class="font-semibold text-lg mb-1" style="color: #7a1e3a">
-            Sábado, 20 de Septiembre
+            {{ t("dateLine") }}
           </p>
-          <p class="text-sm" style="color: #d4af37">2025 · 4:00 PM</p>
+          <p class="text-sm" style="color: #d4af37">2027 · 4:00 PM</p>
         </div>
 
         <!-- Countdown -->
@@ -176,7 +184,7 @@
             class="text-[10px] tracking-[0.35em] uppercase mb-4 font-medium"
             style="color: #c4a882"
           >
-            Faltan
+            {{ t("countdownTitle") }}
           </p>
           <div class="flex items-center justify-center gap-3">
             <div
@@ -205,8 +213,9 @@
           </div>
         </div>
 
-        <!-- Music toggle -->
+        <!-- Music toggle — se oculta solo si no hay pista en /public/audio -->
         <button
+          v-if="musicAvailable"
           @click="toggleMusic"
           class="flex items-center gap-2 mx-auto px-5 py-2.5 rounded-full text-sm transition-all hover:scale-105"
           style="
@@ -219,14 +228,16 @@
             :name="musicOn ? 'music' : 'volume-x'"
             class-name="w-4 h-4"
           />
-          {{ musicOn ? "Pausar" : "Reproducir música" }}
+          {{ musicOn ? t("pauseMusic") : t("playMusic") }}
         </button>
-        <audio ref="audioRef" loop preload="none">
-          <source
-            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
-            type="audio/mpeg"
-          />
-        </audio>
+        <audio
+          ref="audioRef"
+          src="/audio/invitacion-pro.mp3"
+          type="audio/mpeg"
+          loop
+          preload="metadata"
+          @error="musicAvailable = false"
+        ></audio>
 
         <div class="mt-8 animate-bounce">
           <LucideIcon
@@ -247,17 +258,14 @@
           />
         </div>
         <h2 class="text-2xl sm:text-3xl font-bold mb-6" style="color: #7a1e3a">
-          Un Mensaje Especial
+          {{ t("messageTitle") }}
         </h2>
         <p
           class="text-sm leading-relaxed mb-6"
           style="color: #666; font-style: italic; line-height: 2"
         >
-          Queridos familia y amigos,<br /><br />
-          Hoy es un día muy especial para mí. Después de 15 años rodeada de su
-          amor y cariño, quiero celebrar este momento tan importante con cada
-          uno de ustedes. Gracias por ser parte de mi vida y por acompañarme en
-          este nuevo capítulo.
+          {{ t("messageGreeting") }}<br /><br />
+          {{ t("messageBody") }}
         </p>
         <p
           class="text-sm font-medium"
@@ -267,7 +275,7 @@
             font-size: 1.5rem;
           "
         >
-          Con todo mi amor, Valentina
+          {{ t("messageSign") }}
         </p>
       </div>
     </section>
@@ -279,10 +287,10 @@
           class="text-2xl sm:text-3xl font-bold text-center mb-3"
           style="color: #7a1e3a"
         >
-          Mis Momentos
+          {{ t("galleryTitle") }}
         </h2>
         <p class="text-sm text-center mb-10" style="color: #999">
-          Una mirada a los momentos más especiales
+          {{ t("gallerySubtitle") }}
         </p>
 
         <div
@@ -300,7 +308,7 @@
           >
             <img
               :src="photo.img"
-              alt="Galería XV años"
+              :alt="t('galleryAlt')"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
             />
@@ -334,7 +342,7 @@
           class="text-2xl sm:text-3xl font-bold text-center mb-10"
           style="color: #7a1e3a"
         >
-          Nuestro Itinerario
+          {{ t("itineraryTitle") }}
         </h2>
         <div
           class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-[#d4af37] before:via-[#7a1e3a] before:to-[#d4af37]"
@@ -355,7 +363,7 @@
                 class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
               >
                 <h4 class="font-bold text-base" style="color: #7a1e3a">
-                  Misa de Acción de Gracias
+                  {{ t("mass") }}
                 </h4>
                 <span
                   class="text-xs font-semibold px-2 py-0.5 rounded-full w-fit"
@@ -363,7 +371,7 @@
                   >4:00 PM</span
                 >
               </div>
-              <p class="text-sm" style="color: #999">Parroquia de Guadalupe</p>
+              <p class="text-sm" style="color: #999">{{ t("parish") }}</p>
             </div>
           </div>
           <div
@@ -382,7 +390,7 @@
                 class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
               >
                 <h4 class="font-bold text-base" style="color: #7a1e3a">
-                  Sesión Fotográfica
+                  {{ t("photoSession") }}
                 </h4>
                 <span
                   class="text-xs font-semibold px-2 py-0.5 rounded-full w-fit"
@@ -390,7 +398,7 @@
                   >5:30 PM</span
                 >
               </div>
-              <p class="text-sm" style="color: #999">Jardines del Salón</p>
+              <p class="text-sm" style="color: #999">{{ t("gardens") }}</p>
             </div>
           </div>
           <div
@@ -409,7 +417,7 @@
                 class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
               >
                 <h4 class="font-bold text-base" style="color: #7a1e3a">
-                  Recepción
+                  {{ t("reception") }}
                 </h4>
                 <span
                   class="text-xs font-semibold px-2 py-0.5 rounded-full w-fit"
@@ -417,7 +425,7 @@
                   >7:00 PM</span
                 >
               </div>
-              <p class="text-sm" style="color: #999">Salón Rosa de Cristal</p>
+              <p class="text-sm" style="color: #999">{{ t("hall") }}</p>
             </div>
           </div>
         </div>
@@ -431,10 +439,10 @@
           class="text-2xl sm:text-3xl font-bold text-center mb-3"
           style="color: #7a1e3a"
         >
-          Detalles del Evento
+          {{ t("detailsTitle") }}
         </h2>
         <p class="text-sm text-center mb-10" style="color: #999">
-          Todo lo que necesitas saber para acompañarme
+          {{ t("detailsSubtitle") }}
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
@@ -450,9 +458,9 @@
               class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]"
             />
             <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">
-              Misa de Acción de Gracias
+              {{ t("mass") }}
             </h3>
-            <p class="text-sm" style="color: #b5708a">Parroquia de Guadalupe</p>
+            <p class="text-sm" style="color: #b5708a">{{ t("parish") }}</p>
             <p class="text-xs mt-2 font-medium" style="color: #d4af37">
               4:00 PM · Zapopan, Jalisco
             </p>
@@ -469,9 +477,9 @@
               class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]"
             />
             <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">
-              Fiesta
+              {{ t("party") }}
             </h3>
-            <p class="text-sm" style="color: #b5708a">Salón Rosa de Cristal</p>
+            <p class="text-sm" style="color: #b5708a">{{ t("hall") }}</p>
             <p class="text-xs mt-2 font-medium" style="color: #d4af37">
               7:00 PM · Zapopan, Jalisco
             </p>
@@ -492,10 +500,10 @@
               class-name="w-8 h-8 mx-auto text-[#7a1e3a]"
           /></span>
           <h3 class="font-bold text-sm mb-1" style="color: #7a1e3a">
-            Código de Vestimenta
+            {{ t("dressCodeTitle") }}
           </h3>
           <p class="text-sm" style="color: #999">
-            Formal / Elegante · Colores: Rosa, dorado, vino
+            {{ t("dressCodeValue") }}
           </p>
         </div>
 
@@ -527,7 +535,7 @@
               border: 1.5px solid rgba(122, 30, 58, 0.15);
             "
           >
-            <LucideIcon name="map-pin" class-name="w-4 h-4" /> Cómo llegar
+            <LucideIcon name="map-pin" class-name="w-4 h-4" /> {{ t("directions") }}
           </a>
           <a
             :href="calendarUrl"
@@ -540,8 +548,8 @@
               border: 1.5px solid rgba(212, 175, 55, 0.2);
             "
           >
-            <LucideIcon name="calendar-days" class-name="w-4 h-4" /> Agregar a
-            calendario
+            <LucideIcon name="calendar-days" class-name="w-4 h-4" />
+            {{ t("addToCalendar") }}
           </a>
         </div>
 
@@ -557,11 +565,11 @@
               class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]"
             />
             <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">
-              Hashtag del Evento
+              {{ t("hashtagTitle") }}
             </h3>
             <p class="text-sm" style="color: #999">#XVDeValentina</p>
             <p class="text-xs mt-1 font-medium" style="color: #d4af37">
-              ¡Etiquétame en tus fotos!
+              {{ t("hashtagNote") }}
             </p>
           </div>
 
@@ -575,10 +583,10 @@
               class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]"
             />
             <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">
-              Playlist Colaborativa
+              {{ t("playlistTitle") }}
             </h3>
             <p class="text-sm mb-3" style="color: #999">
-              Agrega las canciones que no pueden faltar aquí.
+              {{ t("playlistNote") }}
             </p>
             <a
               href="#"
@@ -588,8 +596,9 @@
                 color: #d4af37;
                 border: 1px solid rgba(212, 175, 55, 0.3);
               "
-              ><LucideIcon name="music" class-name="w-3.5 h-3.5" />Abrir en
-              Spotify</a
+              ><LucideIcon name="music" class-name="w-3.5 h-3.5" />{{
+                t("openSpotify")
+              }}</a
             >
           </div>
 
@@ -606,11 +615,10 @@
               class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]"
             />
             <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">
-              Mesa de Regalos
+              {{ t("giftsTitle") }}
             </h3>
             <p class="text-sm mb-4 max-w-md mx-auto" style="color: #999">
-              El mejor regalo es tu presencia, pero si deseas tener un detalle
-              conmigo:
+              {{ t("giftsNote") }}
             </p>
             <div class="flex flex-wrap justify-center gap-3">
               <a
@@ -637,7 +645,7 @@
                 class="px-5 py-2.5 rounded-xl text-sm font-semibold bg-white"
                 style="color: #999; border: 1px solid rgba(0, 0, 0, 0.1)"
               >
-                Sobre (Día del evento)
+                {{ t("giftsEnvelope") }}
               </div>
             </div>
           </div>
@@ -655,10 +663,10 @@
               class-name="w-10 h-10 mb-3 mx-auto text-[#7a1e3a]"
             />
             <h3 class="font-bold text-lg mb-1" style="color: #7a1e3a">
-              Sugerencia de Hospedaje
+              {{ t("lodgingTitle") }}
             </h3>
             <p class="text-sm mb-4 max-w-md mx-auto" style="color: #999">
-              Para invitados foráneos, recomendamos este hotel cercano al salón:
+              {{ t("lodgingNote") }}
             </p>
             <div class="flex justify-center flex-wrap gap-3">
               <a
@@ -699,18 +707,18 @@
           class="text-2xl sm:text-3xl font-bold text-center mb-3"
           style="color: #7a1e3a"
         >
-          Confirma tu Asistencia
+          {{ t("rsvpTitle") }}
         </h2>
         <p class="text-sm text-center mb-8" style="color: #999">
-          Por favor confirma antes del
-          <strong style="color: #7a1e3a">1 de agosto de 2025</strong>
+          {{ t("rsvpDeadlinePre") }}
+          <strong style="color: #7a1e3a">{{ t("rsvpDeadline") }}</strong>
         </p>
 
         <form class="space-y-4" @submit.prevent="handleRSVP">
           <input
             v-model="rsvpForm.name"
             type="text"
-            placeholder="Tu nombre completo"
+            :placeholder="t('rsvpNamePlaceholder')"
             required
             class="w-full px-4 py-3.5 rounded-xl text-sm focus:outline-none transition-all"
             style="
@@ -729,13 +737,13 @@
             "
           >
             <option value="" style="background: #fff; color: #aaa">
-              ¿Asistirás?
+              {{ t("rsvpAsk") }}
             </option>
             <option value="yes" style="background: #fff; color: #444">
-              Sí, con mucho gusto
+              {{ t("rsvpYes") }}
             </option>
             <option value="no" style="background: #fff; color: #444">
-              No podré asistir
+              {{ t("rsvpNo") }}
             </option>
           </select>
           <div
@@ -752,10 +760,10 @@
                 class-name="w-8 h-8 mx-auto text-[#d4af37]"
             /></span>
             <p class="text-sm font-bold" style="color: #7a1e3a">
-              Pases Asignados: 3
+              {{ t("passesTitle") }}
             </p>
             <p class="text-xs mt-1" style="color: #999">
-              Esta invitación es válida para un máximo de 3 personas.
+              {{ t("passesNote") }}
             </p>
           </div>
           <div v-if="rsvpForm.attending === 'yes'">
@@ -764,7 +772,7 @@
               type="number"
               min="1"
               max="3"
-              placeholder="¿Cuántos asistirán? (incluyéndote)"
+              :placeholder="t('rsvpGuestsPlaceholder')"
               class="w-full px-4 py-3.5 rounded-xl text-sm focus:outline-none transition-all"
               style="
                 background: #ffffff;
@@ -775,7 +783,7 @@
           </div>
           <textarea
             v-model="rsvpForm.message"
-            placeholder="Mensaje para Valentina (opcional)"
+            :placeholder="t('rsvpMessagePlaceholder')"
             rows="3"
             class="w-full px-4 py-3.5 rounded-xl text-sm focus:outline-none transition-all resize-none"
             style="
@@ -789,18 +797,16 @@
             class="w-full py-3.5 rounded-xl font-bold text-white transition-all hover:scale-105 hover:shadow-lg"
             style="background: linear-gradient(135deg, #7a1e3a, #9b2950)"
           >
-            {{
-              rsvpSubmitted ? "¡Gracias por confirmar!" : "Confirmar asistencia"
-            }}
+            {{ rsvpSubmitted ? t("rsvpThanks") : t("rsvpSubmit") }}
           </button>
         </form>
 
         <div class="text-center mt-6">
           <p class="text-xs mb-3" style="color: #b5a08c">
-            ¿Prefieres confirmar por WhatsApp?
+            {{ t("rsvpWaPrefer") }}
           </p>
           <a
-            href="https://wa.me/5215551234567?text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Valentina%20%F0%9F%91%91"
+            :href="waRsvp"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105"
@@ -815,7 +821,7 @@
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
               />
             </svg>
-            Confirmar por WhatsApp
+            {{ t("rsvpWaCta") }}
           </a>
         </div>
       </div>
@@ -831,10 +837,10 @@
           class="text-2xl sm:text-3xl font-bold text-center mb-3"
           style="color: #7a1e3a"
         >
-          Listado de asistencia confirmada
+          {{ t("panelTitle") }}
         </h2>
         <p class="text-sm text-center mb-8" style="color: #999">
-          Vista previa del panel que verás en tiempo real (solo organizadores)
+          {{ t("panelSubtitle") }}
         </p>
 
         <div class="grid grid-cols-3 gap-3 mb-8">
@@ -860,9 +866,9 @@
             class="grid grid-cols-3 gap-2 px-4 py-3 text-xs font-semibold uppercase tracking-wider"
             style="background: rgba(212, 175, 55, 0.08); color: #7a1e3a"
           >
-            <span>Invitado</span>
-            <span class="text-center">Personas</span>
-            <span class="text-right">Estado</span>
+            <span>{{ t("colGuest") }}</span>
+            <span class="text-center">{{ t("colPeople") }}</span>
+            <span class="text-right">{{ t("colStatus") }}</span>
           </div>
           <div
             v-for="guest in confirmedGuests"
@@ -875,12 +881,12 @@
             <span
               class="text-right text-xs font-semibold px-2 py-0.5 rounded-full justify-self-end"
               :style="
-                guest.status === 'Confirmado'
+                guest.confirmed
                   ? 'background: rgba(37, 211, 102, 0.1); color: #25a244'
                   : 'background: rgba(212, 175, 55, 0.1); color: #d4af37'
               "
             >
-              {{ guest.status }}
+              {{ guest.confirmed ? t("statusConfirmed") : t("statusPending") }}
             </span>
           </div>
         </div>
@@ -903,12 +909,12 @@
           font-size: 1.5rem;
         "
       >
-        Con amor, Valentina
+        {{ t("footerLove") }}
       </p>
       <p class="text-xs mt-4" style="color: #c0b0a0">
-        Hecho con
+        {{ t("footerMade1") }}
         <LucideIcon name="heart" class-name="w-4 h-4 inline text-[#d4af37]" />
-        por
+        {{ t("footerMade2") }}
         <a
           href="https://devifly.dev"
           class="font-semibold transition-colors hover:underline"
@@ -922,26 +928,209 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
+import { useI18n } from "vue-i18n";
 import LucideIcon from "../../components/LucideIcon.vue";
 import { useDemoChrome } from "../../composables/useDemoChrome.js";
 
 const { copy } = useDemoChrome();
+const { locale } = useI18n();
 
-const waContratar = `https://wa.me/+525635926679?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Pro de invitaciones digitales y me interesa contratarlo ✨")}`;
+// Paridad es/en: cualquier clave nueva va en los dos bloques.
+const translations = {
+  es: {
+    planLabel: "Plan Pro",
+    eventType: "Mis XV Años",
+    quote1: '"Hoy dejo atrás la niñez para comenzar',
+    quote2: 'un nuevo capítulo de mi vida"',
+    blessing: "Con la bendición de mis padres",
+    dateLine: "Sábado, 18 de Septiembre",
+    countdownTitle: "Faltan",
+    pauseMusic: "Pausar",
+    playMusic: "Reproducir música",
+    messageTitle: "Un Mensaje Especial",
+    messageGreeting: "Queridos familia y amigos,",
+    messageBody:
+      "Hoy es un día muy especial para mí. Después de 15 años rodeada de su amor y cariño, quiero celebrar este momento tan importante con cada uno de ustedes. Gracias por ser parte de mi vida y por acompañarme en este nuevo capítulo.",
+    messageSign: "Con todo mi amor, Valentina",
+    galleryTitle: "Mis Momentos",
+    gallerySubtitle: "Una mirada a los momentos más especiales",
+    galleryAlt: "Galería XV años",
+    itineraryTitle: "Nuestro Itinerario",
+    mass: "Misa de Acción de Gracias",
+    parish: "Parroquia de Guadalupe",
+    photoSession: "Sesión Fotográfica",
+    gardens: "Jardines del Salón",
+    reception: "Recepción",
+    hall: "Salón Rosa de Cristal",
+    detailsTitle: "Detalles del Evento",
+    detailsSubtitle: "Todo lo que necesitas saber para acompañarme",
+    party: "Fiesta",
+    dressCodeTitle: "Código de Vestimenta",
+    dressCodeValue: "Formal / Elegante · Colores: Rosa, dorado, vino",
+    directions: "Cómo llegar",
+    addToCalendar: "Agregar a calendario",
+    hashtagTitle: "Hashtag del Evento",
+    hashtagNote: "¡Etiquétame en tus fotos!",
+    playlistTitle: "Playlist Colaborativa",
+    playlistNote: "Agrega las canciones que no pueden faltar aquí.",
+    openSpotify: "Abrir en Spotify",
+    giftsTitle: "Mesa de Regalos",
+    giftsNote:
+      "El mejor regalo es tu presencia, pero si deseas tener un detalle conmigo:",
+    giftsEnvelope: "Sobre (Día del evento)",
+    lodgingTitle: "Sugerencia de Hospedaje",
+    lodgingNote:
+      "Para invitados foráneos, recomendamos este hotel cercano al salón:",
+    rsvpTitle: "Confirma tu Asistencia",
+    rsvpDeadlinePre: "Por favor confirma antes del",
+    rsvpDeadline: "18 de agosto de 2027",
+    rsvpNamePlaceholder: "Tu nombre completo",
+    rsvpAsk: "¿Asistirás?",
+    rsvpYes: "Sí, con mucho gusto",
+    rsvpNo: "No podré asistir",
+    passesTitle: "Pases Asignados: 3",
+    passesNote: "Esta invitación es válida para un máximo de 3 personas.",
+    rsvpGuestsPlaceholder: "¿Cuántos asistirán? (incluyéndote)",
+    rsvpMessagePlaceholder: "Mensaje para Valentina (opcional)",
+    rsvpSubmit: "Confirmar asistencia",
+    rsvpThanks: "¡Gracias por confirmar!",
+    rsvpWaPrefer: "¿Prefieres confirmar por WhatsApp?",
+    rsvpWaCta: "Confirmar por WhatsApp",
+    waRsvpMsg: "¡Hola! Confirmo mi asistencia a los XV de Valentina 👑",
+    panelTitle: "Listado de asistencia confirmada",
+    panelSubtitle:
+      "Vista previa del panel que verás en tiempo real (solo organizadores)",
+    colGuest: "Invitado",
+    colPeople: "Personas",
+    colStatus: "Estado",
+    statusConfirmed: "Confirmado",
+    statusPending: "Pendiente",
+    statConfirmed: "Confirmados",
+    statPending: "Pendientes",
+    statInvited: "Invitados",
+    footerLove: "Con amor, Valentina",
+    footerMade1: "Hecho con",
+    footerMade2: "por",
+    waHire:
+      "¡Hola! Vi la demo del Plan Pro de invitaciones digitales y me interesa contratarlo ✨",
+    calTitle: "XV Años de Valentina",
+    calDetails:
+      "Misa de Acción de Gracias a las 4:00 PM en Parroquia de Guadalupe. Fiesta a las 7:00 PM en Salón Rosa de Cristal, Zapopan.",
+    cdDays: "DÍAS",
+    cdHrs: "HRS",
+    cdMin: "MIN",
+    cdSec: "SEG",
+  },
+  en: {
+    planLabel: "Pro Plan",
+    eventType: "My Quinceañera",
+    quote1: '"Today I leave childhood behind to begin',
+    quote2: 'a new chapter of my life"',
+    blessing: "With my parents' blessing",
+    dateLine: "Saturday, September 18",
+    countdownTitle: "Countdown",
+    pauseMusic: "Pause",
+    playMusic: "Play music",
+    messageTitle: "A Special Message",
+    messageGreeting: "Dear family and friends,",
+    messageBody:
+      "Today is a very special day for me. After 15 years surrounded by your love and care, I want to celebrate this milestone with each of you. Thank you for being part of my life and for joining me in this new chapter.",
+    messageSign: "With all my love, Valentina",
+    galleryTitle: "My Moments",
+    gallerySubtitle: "A look at the most special moments",
+    galleryAlt: "Quinceañera gallery",
+    itineraryTitle: "Our Itinerary",
+    mass: "Thanksgiving Mass",
+    parish: "Guadalupe Parish",
+    photoSession: "Photo Session",
+    gardens: "Venue Gardens",
+    reception: "Reception",
+    hall: "Rosa de Cristal Hall",
+    detailsTitle: "Event Details",
+    detailsSubtitle: "Everything you need to know to join me",
+    party: "Party",
+    dressCodeTitle: "Dress Code",
+    dressCodeValue: "Formal / Elegant · Colors: Pink, gold, burgundy",
+    directions: "Get directions",
+    addToCalendar: "Add to calendar",
+    hashtagTitle: "Event Hashtag",
+    hashtagNote: "Tag me in your photos!",
+    playlistTitle: "Collaborative Playlist",
+    playlistNote: "Add the songs that can't be missing here.",
+    openSpotify: "Open in Spotify",
+    giftsTitle: "Gift Registry",
+    giftsNote:
+      "The best gift is your presence, but if you'd like to bring something:",
+    giftsEnvelope: "Envelope (day of the event)",
+    lodgingTitle: "Where to Stay",
+    lodgingNote:
+      "For guests traveling in, we recommend this hotel near the venue:",
+    rsvpTitle: "Confirm Your Attendance",
+    rsvpDeadlinePre: "Please confirm before",
+    rsvpDeadline: "August 18, 2027",
+    rsvpNamePlaceholder: "Your full name",
+    rsvpAsk: "Will you attend?",
+    rsvpYes: "Yes, I'll be there",
+    rsvpNo: "Sorry, I can't make it",
+    passesTitle: "Passes assigned: 3",
+    passesNote: "This invitation is valid for up to 3 people.",
+    rsvpGuestsPlaceholder: "How many will attend? (including you)",
+    rsvpMessagePlaceholder: "Message for Valentina (optional)",
+    rsvpSubmit: "Confirm attendance",
+    rsvpThanks: "Thanks for confirming!",
+    rsvpWaPrefer: "Prefer to confirm over WhatsApp?",
+    rsvpWaCta: "Confirm via WhatsApp",
+    waRsvpMsg: "Hi! I'm confirming my attendance to Valentina's quinceañera 👑",
+    panelTitle: "Confirmed attendance list",
+    panelSubtitle:
+      "Preview of the real-time panel you'll see (organizers only)",
+    colGuest: "Guest",
+    colPeople: "People",
+    colStatus: "Status",
+    statusConfirmed: "Confirmed",
+    statusPending: "Pending",
+    statConfirmed: "Confirmed",
+    statPending: "Pending",
+    statInvited: "Invited",
+    footerLove: "With love, Valentina",
+    footerMade1: "Made with",
+    footerMade2: "by",
+    waHire:
+      "Hi! I saw the Pro plan demo for digital invitations and I'd like to hire it ✨",
+    calTitle: "Valentina's Quinceañera",
+    calDetails:
+      "Thanksgiving Mass at 4:00 PM at Guadalupe Parish. Party at 7:00 PM at Rosa de Cristal Hall, Zapopan.",
+    cdDays: "DAYS",
+    cdHrs: "HRS",
+    cdMin: "MIN",
+    cdSec: "SEC",
+  },
+};
 
-const attendanceStats = [
-  { val: "48", label: "Confirmados" },
-  { val: "12", label: "Pendientes" },
-  { val: "60", label: "Invitados" },
-];
+const t = (key, fallback) => translations[locale.value]?.[key] ?? fallback ?? key;
+
+const waContratar = computed(
+  () => `https://wa.me/+525635926679?text=${encodeURIComponent(t("waHire"))}`,
+);
+
+const waRsvp = computed(
+  () => `https://wa.me/5215551234567?text=${encodeURIComponent(t("waRsvpMsg"))}`,
+);
+
+const attendanceStats = computed(() => [
+  { val: "48", label: t("statConfirmed") },
+  { val: "12", label: t("statPending") },
+  { val: "60", label: t("statInvited") },
+]);
 const confirmedGuests = [
-  { name: "Familia Guzmán", guests: 4, status: "Confirmado" },
-  { name: "Roberto & Ana López", guests: 2, status: "Confirmado" },
-  { name: "Daniela Morales", guests: 1, status: "Pendiente" },
-  { name: "Grupo de amigas", guests: 5, status: "Confirmado" },
+  { name: "Familia Guzmán", guests: 4, confirmed: true },
+  { name: "Roberto & Ana López", guests: 2, confirmed: true },
+  { name: "Daniela Morales", guests: 1, confirmed: false },
+  { name: "Grupo de amigas", guests: 5, confirmed: true },
 ];
 
 const musicOn = ref(false);
+const musicAvailable = ref(true);
 const audioRef = ref(null);
 const rsvpSubmitted = ref(false);
 let countdownInterval = null;
@@ -956,7 +1145,11 @@ const rsvpForm = ref({
 const toggleMusic = () => {
   musicOn.value = !musicOn.value;
   if (musicOn.value) {
-    audioRef.value?.play();
+    // Si la pista no existe todavía, el botón se retira en lugar de fallar en silencio.
+    Promise.resolve(audioRef.value?.play()).catch(() => {
+      musicOn.value = false;
+      musicAvailable.value = false;
+    });
   } else {
     audioRef.value?.pause();
   }
@@ -971,73 +1164,74 @@ const handleRSVP = () => {
 
 const gallery = [
   {
-    img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=600&fit=crop",
+    img: "/img/demos/photo-1519741497674-611481863552-600x600.jpg",
     type: "video",
   },
   {
-    img: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1464366400600-7168b8af9bc3-400x400.jpg",
   },
   {
-    img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1507679799987-c73779587ccf-400x400.jpg",
   },
   {
-    img: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1583939003579-730e3918a45a-400x400.jpg",
   },
   {
-    img: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1470225620780-dba8ba36b745-400x400.jpg",
   },
   {
-    img: "https://images.unsplash.com/photo-1549488344-cbb6c34cf08b?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1549488344-cbb6c34cf08b-400x400.jpg",
   },
 ];
 
 const calendarUrl = computed(() => {
-  const title = encodeURIComponent("XV Años de Valentina");
-  const details = encodeURIComponent(
-    "Misa de Acción de Gracias a las 4:00 PM en Parroquia de Guadalupe. Fiesta a las 7:00 PM en Salón Rosa de Cristal, Zapopan.",
-  );
+  const title = encodeURIComponent(t("calTitle"));
+  const details = encodeURIComponent(t("calDetails"));
   const location = encodeURIComponent(
     "Salón Rosa de Cristal, Zapopan, Jalisco",
   );
-  const dates = "20250920T160000/20250920T235900";
+  const dates = "20270918T160000/20270918T235900";
   return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
 });
 
-const countdown = ref([
-  { label: "DÍAS", val: "00" },
-  { label: "HRS", val: "00" },
-  { label: "MIN", val: "00" },
-  { label: "SEG", val: "00" },
+const countdownLabels = computed(() => [
+  t("cdDays"),
+  t("cdHrs"),
+  t("cdMin"),
+  t("cdSec"),
 ]);
 
+const countdown = ref(
+  countdownLabels.value.map((label) => ({ label, val: "00" })),
+);
+
 onMounted(() => {
-  const target = new Date("2027-09-20T16:00:00");
+  const target = new Date("2027-09-18T16:00:00");
   const update = () => {
     const diff = target - Date.now();
     if (diff <= 0) {
-      countdown.value = [
-        { label: "DÍAS", val: "00" },
-        { label: "HRS", val: "00" },
-        { label: "MIN", val: "00" },
-        { label: "SEG", val: "00" },
-      ];
+      countdown.value = countdownLabels.value.map((label) => ({
+        label,
+        val: "00",
+      }));
       return;
     }
+    const [days, hrs, min, sec] = countdownLabels.value;
     countdown.value = [
       {
-        label: "DÍAS",
+        label: days,
         val: String(Math.floor(diff / 86400000)).padStart(2, "0"),
       },
       {
-        label: "HRS",
+        label: hrs,
         val: String(Math.floor((diff % 86400000) / 3600000)).padStart(2, "0"),
       },
       {
-        label: "MIN",
+        label: min,
         val: String(Math.floor((diff % 3600000) / 60000)).padStart(2, "0"),
       },
       {
-        label: "SEG",
+        label: sec,
         val: String(Math.floor((diff % 60000) / 1000)).padStart(2, "0"),
       },
     ];

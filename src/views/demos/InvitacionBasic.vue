@@ -26,18 +26,27 @@
           color: #5b9bd5;
           border: 1px solid rgba(167, 216, 255, 0.4);
         "
-        >{{ copy.demo }} — Plan Esencial</span
+        >{{ copy.demo }} — {{ t("planLabel") }}</span
       >
-      <a
-        :href="waContratar"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-sm font-semibold transition-colors"
-        style="color: #5b9bd5"
-        ><span class="inline-flex items-center gap-1"
-          >{{ copy.hire }}
-          <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" /></span
-      ></a>
+      <div class="flex items-center gap-3">
+        <button
+          @click="locale = locale === 'es' ? 'en' : 'es'"
+          class="text-xs px-3 py-1 rounded-full transition"
+          style="border: 1px solid rgba(167, 216, 255, 0.5); color: #5b9bd5"
+        >
+          {{ locale === "es" ? "EN" : "ES" }}
+        </button>
+        <a
+          :href="waContratar"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-semibold transition-colors"
+          style="color: #5b9bd5"
+          ><span class="inline-flex items-center gap-1"
+            >{{ copy.hire }}
+            <LucideIcon name="arrow-right" class-name="w-3.5 h-3.5" /></span
+        ></a>
+      </div>
     </div>
 
     <!-- HERO -->
@@ -95,7 +104,7 @@
           <span
             class="text-xs tracking-[0.35em] uppercase font-medium"
             style="color: #5b9bd5"
-            >Bautizo de</span
+            >{{ t("eventType") }}</span
           >
           <div
             class="h-px w-10"
@@ -121,15 +130,15 @@
           class="text-sm mb-5 max-w-xs mx-auto"
           style="color: #b0a7c0; line-height: 1.7"
         >
-          Con la bendición de Dios,<br />celebramos su llegada a la fe
+          {{ t("blessing1") }}<br />{{ t("blessing2") }}
         </p>
 
         <!-- Parents & godparents -->
-        <p class="text-xs mb-1" style="color: #c0b0c8">Hijos de</p>
+        <p class="text-xs mb-1" style="color: #c0b0c8">{{ t("childOf") }}</p>
         <p class="font-semibold text-sm mb-4" style="color: #8b7aaf">
           Andrea & Carlos Mendoza
         </p>
-        <p class="text-xs mb-1" style="color: #c0b0c8">Padrinos</p>
+        <p class="text-xs mb-1" style="color: #c0b0c8">{{ t("godparents") }}</p>
         <p class="font-semibold text-sm mb-8" style="color: #8b7aaf">
           Miguel & Patricia Ruiz · Luis Hernández
         </p>
@@ -147,7 +156,7 @@
             class-name="w-4 h-4 text-[#5b9bd5]"
           />
           <span class="font-medium text-sm" style="color: #5b9bd5"
-            >Sábado, 14 de Junio · 12:00 PM</span
+            >{{ t("dateChip") }}</span
           >
         </div>
 
@@ -157,7 +166,7 @@
             class="text-[10px] tracking-[0.3em] uppercase mb-4 font-medium"
             style="color: #c0b0d0"
           >
-            Faltan
+            {{ t("countdownTitle") }}
           </p>
           <div class="flex items-center justify-center gap-2.5">
             <div
@@ -211,7 +220,7 @@
             color: #6aade4;
           "
         >
-          Nuestro Itinerario
+          {{ t("itineraryTitle") }}
         </h2>
         <div
           class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-[#a7d8ff] before:via-[#d6c1ff] before:to-[#fadadd]"
@@ -230,13 +239,13 @@
               <div
                 class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
               >
-                <h4 class="font-bold text-[#5b9bd5] text-base">Ceremonia</h4>
+                <h4 class="font-bold text-[#5b9bd5] text-base">{{ t("ceremony") }}</h4>
                 <span
                   class="text-xs font-semibold text-[#6aade4] bg-[#edf6ff] px-2 py-0.5 rounded-full w-fit"
                   >12:00 PM</span
                 >
               </div>
-              <p class="text-sm text-[#b0a7c0]">Parroquia San José</p>
+              <p class="text-sm text-[#b0a7c0]">{{ t("parish") }}</p>
             </div>
           </div>
           <div
@@ -254,14 +263,14 @@
                 class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
               >
                 <h4 class="font-bold text-[#d4849a] text-base">
-                  Sesión de Fotos
+                  {{ t("photoSession") }}
                 </h4>
                 <span
                   class="text-xs font-semibold text-[#d4849a] bg-[#fff5f6] px-2 py-0.5 rounded-full w-fit"
                   >1:30 PM</span
                 >
               </div>
-              <p class="text-sm text-[#c0b0c8]">Jardines del Salón</p>
+              <p class="text-sm text-[#c0b0c8]">{{ t("gardens") }}</p>
             </div>
           </div>
           <div
@@ -278,13 +287,13 @@
               <div
                 class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
               >
-                <h4 class="font-bold text-[#8b7aaf] text-base">Recepción</h4>
+                <h4 class="font-bold text-[#8b7aaf] text-base">{{ t("reception") }}</h4>
                 <span
                   class="text-xs font-semibold text-[#8b7aaf] bg-[#f8f0ff] px-2 py-0.5 rounded-full w-fit"
                   >2:00 PM</span
                 >
               </div>
-              <p class="text-sm text-[#b0a7c0]">Salón Los Arcos</p>
+              <p class="text-sm text-[#b0a7c0]">{{ t("hall") }}</p>
             </div>
           </div>
         </div>
@@ -302,7 +311,7 @@
             color: #6aade4;
           "
         >
-          ¿Cuándo y Dónde?
+          {{ t("whenWhere") }}
         </h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
@@ -321,9 +330,9 @@
               class="font-bold text-lg mb-1"
               style="color: #8b7aaf; font-family: &quot;Baloo 2&quot;, cursive"
             >
-              Ceremonia
+              {{ t("ceremony") }}
             </h3>
-            <p class="text-sm" style="color: #a89cc0">Parroquia San José</p>
+            <p class="text-sm" style="color: #a89cc0">{{ t("parish") }}</p>
             <p class="text-xs mt-1" style="color: #c0b0d0">
               12:00 PM · Guadalajara, Jal.
             </p>
@@ -343,9 +352,9 @@
               class="font-bold text-lg mb-1"
               style="color: #d4849a; font-family: &quot;Baloo 2&quot;, cursive"
             >
-              Celebración
+              {{ t("celebration") }}
             </h3>
-            <p class="text-sm" style="color: #c9a0ae">Salón Los Arcos</p>
+            <p class="text-sm" style="color: #c9a0ae">{{ t("hall") }}</p>
             <p class="text-xs mt-1" style="color: #d4b8c0">
               2:00 PM · Guadalajara, Jal.
             </p>
@@ -380,7 +389,7 @@
               border: 1.5px solid rgba(167, 216, 255, 0.3);
             "
           >
-            <LucideIcon name="map-pin" class-name="w-4 h-4" /> Cómo llegar
+            <LucideIcon name="map-pin" class-name="w-4 h-4" /> {{ t("directions") }}
           </a>
         </div>
       </div>
@@ -405,11 +414,11 @@
             class="font-bold text-lg mb-1"
             style="color: #8b7aaf; font-family: &quot;Baloo 2&quot;, cursive"
           >
-            Código de Vestimenta
+            {{ t("dressCodeTitle") }}
           </h3>
-          <p class="text-sm text-[#a89cc0]">Formal de día</p>
+          <p class="text-sm text-[#a89cc0]">{{ t("dressCodeValue") }}</p>
           <p class="text-xs mt-1 text-[#c0b0d0]">
-            Evitar colores blancos y pasteles
+            {{ t("dressCodeNote") }}
           </p>
         </div>
 
@@ -426,10 +435,10 @@
             class="font-bold text-lg mb-1"
             style="color: #5b9bd5; font-family: &quot;Baloo 2&quot;, cursive"
           >
-            Hashtag del Evento
+            {{ t("hashtagTitle") }}
           </h3>
-          <p class="text-sm text-[#9bb0c8]">#BautizoSantiago2025</p>
-          <p class="text-xs mt-1 text-[#b0bdcc]">¡Etiquétanos en tus fotos!</p>
+          <p class="text-sm text-[#9bb0c8]">#BautizoSantiago2027</p>
+          <p class="text-xs mt-1 text-[#b0bdcc]">{{ t("hashtagNote") }}</p>
         </div>
 
         <!-- Mesa de Regalos -->
@@ -445,11 +454,10 @@
             class="font-bold text-lg mb-1"
             style="color: #d4849a; font-family: &quot;Baloo 2&quot;, cursive"
           >
-            Mesa de Regalos
+            {{ t("giftsTitle") }}
           </h3>
           <p class="text-sm text-[#c9a0ae] mb-3">
-            Tu presence es nuestro mejor regalo, pero si deseas tener un
-            detalle:
+            {{ t("giftsNote") }}
           </p>
           <div class="flex justify-center gap-3">
             <a
@@ -480,11 +488,10 @@
             class="font-bold text-lg mb-1"
             style="color: #d4af37; font-family: &quot;Baloo 2&quot;, cursive"
           >
-            Sugerencia de Hospedaje
+            {{ t("lodgingTitle") }}
           </h3>
           <p class="text-sm text-[#b5a08c] mb-3">
-            Para nuestros invitados foráneos, recomendamos estos hoteles
-            cercanos:
+            {{ t("lodgingNote") }}
           </p>
           <div class="flex flex-col sm:flex-row justify-center gap-3">
             <a
@@ -516,8 +523,9 @@
           "
         >
           <span class="inline-flex items-center gap-2"
-            ><LucideIcon name="camera" class-name="w-7 h-7" />Nuestra
-            Galería</span
+            ><LucideIcon name="camera" class-name="w-7 h-7" />{{
+              t("galleryTitle")
+            }}</span
           >
         </h2>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -525,8 +533,8 @@
             class="aspect-square rounded-2xl overflow-hidden border-2 border-[#d6c1ff]/30 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
             <img
-              src="https://images.unsplash.com/photo-1519340333755-56e9c1d04579?w=400&h=400&fit=crop"
-              alt="Bebé durmiendo"
+              src="/img/demos/photo-1519340333755-56e9c1d04579-400x400.jpg"
+              :alt="t('galleryAlt1')"
               class="w-full h-full object-cover"
               loading="lazy"
             />
@@ -535,8 +543,8 @@
             class="aspect-square rounded-2xl overflow-hidden border-2 border-[#fadadd]/30 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
             <img
-              src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&h=400&fit=crop"
-              alt="Ropita de bebé"
+              src="/img/demos/photo-1515488042361-ee00e0ddd4e4-400x400.jpg"
+              :alt="t('galleryAlt2')"
               class="w-full h-full object-cover"
               loading="lazy"
             />
@@ -545,8 +553,8 @@
             class="aspect-square rounded-2xl overflow-hidden border-2 border-[#a7d8ff]/30 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
             <img
-              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop"
-              alt="Vela de bautizo"
+              src="/img/demos/photo-1544367567-0f2fcb009e0b-400x400.jpg"
+              :alt="t('galleryAlt3')"
               class="w-full h-full object-cover"
               loading="lazy"
             />
@@ -555,8 +563,8 @@
             class="aspect-square rounded-2xl overflow-hidden border-2 border-[#fff3b0]/50 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
             <img
-              src="https://images.unsplash.com/photo-1504439904031-93ded9f93e4e?w=400&h=400&fit=crop"
-              alt="Cruz decorativa"
+              src="/img/demos/photo-1504439904031-93ded9f93e4e-400x400.jpg"
+              :alt="t('galleryAlt4')"
               class="w-full h-full object-cover"
               loading="lazy"
             />
@@ -565,8 +573,8 @@
             class="aspect-square rounded-2xl overflow-hidden border-2 border-[#d6c1ff]/30 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
             <img
-              src="https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?w=400&h=400&fit=crop"
-              alt="Familia celebrando"
+              src="/img/demos/photo-1492725764893-90b379c2b6e7-400x400.jpg"
+              :alt="t('galleryAlt5')"
               class="w-full h-full object-cover"
               loading="lazy"
             />
@@ -575,8 +583,8 @@
             class="aspect-square rounded-2xl overflow-hidden border-2 border-[#fadadd]/30 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer"
           >
             <img
-              src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=400&h=400&fit=crop"
-              alt="Detalles de bautizo"
+              src="/img/demos/photo-1513542789411-b6a5d4f31634-400x400.jpg"
+              :alt="t('galleryAlt6')"
               class="w-full h-full object-cover"
               loading="lazy"
             />
@@ -600,13 +608,14 @@
           "
         >
           <span class="inline-flex items-center gap-2"
-            ><LucideIcon name="users" class-name="w-7 h-7" />Confirmación de
-            asistencia</span
+            ><LucideIcon name="users" class-name="w-7 h-7" />{{
+              t("rsvpTitle")
+            }}</span
           >
         </h2>
         <p class="text-sm mb-8" style="color: #b0a7c0">
-          Confirma tu asistencia antes del
-          <strong style="color: #8b7aaf">1 de mayo de 2025</strong>
+          {{ t("rsvpDeadlinePre") }}
+          <strong style="color: #8b7aaf">{{ t("rsvpDeadline") }}</strong>
         </p>
 
         <form
@@ -616,7 +625,7 @@
           <input
             v-model="rsvpForm.name"
             type="text"
-            placeholder="Tu nombre completo"
+            :placeholder="t('rsvpNamePlaceholder')"
             required
             class="w-full px-4 py-3.5 rounded-xl text-sm focus:outline-none transition-all"
             style="
@@ -635,18 +644,16 @@
               color: #444;
             "
           >
-            <option value="" disabled>¿Asistirás?</option>
-            <option value="yes">Sí, con mucho gusto</option>
-            <option value="no">No podré asistir</option>
+            <option value="" disabled>{{ t("rsvpAsk") }}</option>
+            <option value="yes">{{ t("rsvpYes") }}</option>
+            <option value="no">{{ t("rsvpNo") }}</option>
           </select>
           <button
             type="submit"
             class="w-full py-3.5 rounded-xl font-bold text-white transition-all hover:scale-105 shadow-md"
             style="background: linear-gradient(135deg, #a7d8ff, #7ac0ff)"
           >
-            {{
-              rsvpSubmitted ? "¡Gracias por confirmar!" : "Confirmar asistencia"
-            }}
+            {{ rsvpSubmitted ? t("rsvpThanks") : t("rsvpSubmit") }}
           </button>
         </form>
       </div>
@@ -664,10 +671,10 @@
         />
       </div>
       <p class="text-sm font-medium" style="color: #b0a7c0">
-        Con amor y fe, la familia Mendoza
+        {{ t("footerLove") }}
       </p>
       <p class="text-xs mt-3" style="color: #d0c8d8">
-        Hecho con dedicación por
+        {{ t("footerMade") }}
         <a
           href="https://devifly.dev"
           class="font-semibold transition-colors hover:underline"
@@ -688,7 +695,118 @@ import { useI18n } from "vue-i18n";
 const { copy } = useDemoChrome();
 const { locale } = useI18n();
 
-const waContratar = `https://wa.me/+525635926679?text=${encodeURIComponent("¡Hola! Vi la demo del Plan Esencial de invitaciones digitales y me interesa contratarlo 💌")}`;
+// Paridad es/en: cualquier clave nueva va en los dos bloques.
+const translations = {
+  es: {
+    planLabel: "Plan Esencial",
+    eventType: "Bautizo de",
+    blessing1: "Con la bendición de Dios,",
+    blessing2: "celebramos su llegada a la fe",
+    childOf: "Hijo de",
+    godparents: "Padrinos",
+    dateChip: "Sábado, 12 de Junio · 12:00 PM",
+    countdownTitle: "Faltan",
+    itineraryTitle: "Nuestro Itinerario",
+    ceremony: "Ceremonia",
+    parish: "Parroquia San José",
+    photoSession: "Sesión de Fotos",
+    gardens: "Jardines del Salón",
+    reception: "Recepción",
+    hall: "Salón Los Arcos",
+    whenWhere: "¿Cuándo y Dónde?",
+    celebration: "Celebración",
+    directions: "Cómo llegar",
+    dressCodeTitle: "Código de Vestimenta",
+    dressCodeValue: "Formal de día",
+    dressCodeNote: "Evitar colores blancos y pasteles",
+    hashtagTitle: "Hashtag del Evento",
+    hashtagNote: "¡Etiquétanos en tus fotos!",
+    giftsTitle: "Mesa de Regalos",
+    giftsNote:
+      "Tu presencia es nuestro mejor regalo, pero si deseas tener un detalle:",
+    lodgingTitle: "Sugerencia de Hospedaje",
+    lodgingNote:
+      "Para nuestros invitados foráneos, recomendamos estos hoteles cercanos:",
+    galleryTitle: "Nuestra Galería",
+    galleryAlt1: "Bebé durmiendo",
+    galleryAlt2: "Ropita de bebé",
+    galleryAlt3: "Vela de bautizo",
+    galleryAlt4: "Cruz decorativa",
+    galleryAlt5: "Familia celebrando",
+    galleryAlt6: "Detalles de bautizo",
+    rsvpTitle: "Confirmación de asistencia",
+    rsvpDeadlinePre: "Confirma tu asistencia antes del",
+    rsvpDeadline: "12 de mayo de 2027",
+    rsvpNamePlaceholder: "Tu nombre completo",
+    rsvpAsk: "¿Asistirás?",
+    rsvpYes: "Sí, con mucho gusto",
+    rsvpNo: "No podré asistir",
+    rsvpSubmit: "Confirmar asistencia",
+    rsvpThanks: "¡Gracias por confirmar!",
+    footerLove: "Con amor y fe, la familia Mendoza",
+    footerMade: "Hecho con dedicación por",
+    waHire:
+      "¡Hola! Vi la demo del Plan Esencial de invitaciones digitales y me interesa contratarlo 💌",
+  },
+  en: {
+    planLabel: "Essential Plan",
+    eventType: "Baptism of",
+    blessing1: "With God's blessing,",
+    blessing2: "we celebrate his welcome into the faith",
+    childOf: "Son of",
+    godparents: "Godparents",
+    dateChip: "Saturday, June 12 · 12:00 PM",
+    countdownTitle: "Countdown",
+    itineraryTitle: "Our Itinerary",
+    ceremony: "Ceremony",
+    parish: "San José Parish",
+    photoSession: "Photo Session",
+    gardens: "Venue Gardens",
+    reception: "Reception",
+    hall: "Los Arcos Hall",
+    whenWhere: "When & Where?",
+    celebration: "Celebration",
+    directions: "Get directions",
+    dressCodeTitle: "Dress Code",
+    dressCodeValue: "Daytime formal",
+    dressCodeNote: "Please avoid white and pastel colors",
+    hashtagTitle: "Event Hashtag",
+    hashtagNote: "Tag us in your photos!",
+    giftsTitle: "Gift Registry",
+    giftsNote:
+      "Your presence is the best gift, but if you'd like to bring something:",
+    lodgingTitle: "Where to Stay",
+    lodgingNote:
+      "For guests traveling in, we recommend these nearby hotels:",
+    galleryTitle: "Our Gallery",
+    galleryAlt1: "Sleeping baby",
+    galleryAlt2: "Baby clothes",
+    galleryAlt3: "Baptism candle",
+    galleryAlt4: "Decorative cross",
+    galleryAlt5: "Family celebrating",
+    galleryAlt6: "Baptism details",
+    rsvpTitle: "RSVP",
+    rsvpDeadlinePre: "Please confirm your attendance before",
+    rsvpDeadline: "May 12, 2027",
+    rsvpNamePlaceholder: "Your full name",
+    rsvpAsk: "Will you attend?",
+    rsvpYes: "Yes, I'll be there",
+    rsvpNo: "Sorry, I can't make it",
+    rsvpSubmit: "Confirm attendance",
+    rsvpThanks: "Thanks for confirming!",
+    footerLove: "With love and faith, the Mendoza family",
+    footerMade: "Crafted with care by",
+    waHire:
+      "Hi! I saw the Essential plan demo for digital invitations and I'd like to hire it 💌",
+  },
+};
+
+const t = (key, fallback) => translations[locale.value]?.[key] ?? fallback ?? key;
+
+const waContratar = computed(
+  () =>
+    `https://wa.me/+525635926679?text=${encodeURIComponent(t("waHire"))}`,
+);
 
 let countdownInterval = null;
 const rsvpSubmitted = ref(false);
@@ -716,7 +834,7 @@ const countdown = ref([
 ]);
 
 onMounted(() => {
-  const target = new Date("2027-06-14T12:00:00");
+  const target = new Date("2027-06-12T12:00:00");
   const update = () => {
     const diff = target - Date.now();
     if (diff <= 0) {
