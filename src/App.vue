@@ -1,7 +1,8 @@
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
+import { LOCALE_STORAGE_KEY } from "./i18n/index.js";
 import { useScrollAnimation } from "./composables/useScrollAnimation.js";
 import { useTheme } from "./composables/useTheme.js";
 import { applyRouteSeo } from "./seo/routeSeo.js";
@@ -12,7 +13,30 @@ import SplashScreen from "./components/SplashScreen.vue";
 useScrollAnimation();
 
 const route = useRoute();
+const router = useRouter();
 const { locale } = useI18n();
+
+// El idioma se refleja en la URL (`?lang=en`) y se recuerda entre visitas. Así
+// la versión en inglés es compartible e indexable — ver hreflang en routeSeo.js
+watch(locale, (value) => {
+  try {
+    window.localStorage.setItem(LOCALE_STORAGE_KEY, value);
+  } catch {
+    // localStorage bloqueado: el idioma solo dura la sesión.
+  }
+
+  const query = { ...route.query };
+
+  if (value === "en") {
+    query.lang = "en";
+  } else {
+    delete query.lang;
+  }
+
+  if (JSON.stringify(query) !== JSON.stringify(route.query)) {
+    router.replace({ path: route.path, query, hash: route.hash });
+  }
+});
 const { setForcedDark } = useTheme();
 const isFullscreen = computed(() => route.meta?.fullscreen === true);
 

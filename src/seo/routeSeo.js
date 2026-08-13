@@ -57,6 +57,67 @@ const routeSeoByName = {
     path: '/contacto',
     pageType: 'ContactPage',
   }),
+  LegalTerminos: ({ locale }) => ({
+    title:
+      locale === 'es'
+        ? 'Términos y Condiciones de Servicio | Devifly'
+        : 'Terms and Conditions of Service | Devifly',
+    description:
+      locale === 'es'
+        ? 'Cómo contratamos, cobramos, entregamos y garantizamos cada proyecto: plazos, revisiones, cambios de alcance, garantía de 30 días y jurisdicción.'
+        : 'How we contract, charge, deliver, and warrant every project: timelines, revisions, scope changes, 30-day warranty, and jurisdiction.',
+    keywords:
+      locale === 'es'
+        ? ['terminos y condiciones', 'contrato desarrollo web', 'condiciones de servicio']
+        : ['terms and conditions', 'web development contract', 'service conditions'],
+    path: '/legal/terminos',
+    pageType: 'WebPage',
+  }),
+  LegalPrivacidad: ({ locale }) => ({
+    title: locale === 'es' ? 'Aviso de Privacidad | Devifly' : 'Privacy Notice | Devifly',
+    description:
+      locale === 'es'
+        ? 'Qué datos personales recabamos, para qué los usamos, con quién los compartimos y cómo ejercer tus derechos ARCO conforme a la LFPDPPP.'
+        : 'What personal data we collect, what we use it for, who we share it with, and how to exercise your ARCO rights under Mexican data protection law.',
+    keywords:
+      locale === 'es'
+        ? ['aviso de privacidad', 'derechos arco', 'lfpdppp', 'proteccion de datos']
+        : ['privacy notice', 'arco rights', 'data protection', 'lfpdppp'],
+    path: '/legal/privacidad',
+    pageType: 'WebPage',
+  }),
+  LegalCancelaciones: ({ locale }) => ({
+    title:
+      locale === 'es'
+        ? 'Política de Cancelación y Reembolsos | Devifly'
+        : 'Cancellation and Refund Policy | Devifly',
+    description:
+      locale === 'es'
+        ? 'Puedes cancelar cuando quieras. Cuánto se reembolsa según el avance, qué entregables te llevas y cómo funcionan las pausas y suscripciones.'
+        : 'Cancel any time. How much is refunded based on progress, which deliverables you take with you, and how pauses and subscriptions work.',
+    keywords:
+      locale === 'es'
+        ? ['politica de cancelacion', 'reembolso desarrollo web', 'cancelar proyecto']
+        : ['cancellation policy', 'web development refund', 'cancel project'],
+    path: '/legal/cancelaciones',
+    pageType: 'WebPage',
+  }),
+  LegalPropiedadCodigo: ({ locale }) => ({
+    title:
+      locale === 'es'
+        ? 'Propiedad del Código y Entregables | Devifly'
+        : 'Code and Deliverables Ownership | Devifly',
+    description:
+      locale === 'es'
+        ? 'Al liquidar tu proyecto el código es tuyo: repositorio, dominio, accesos y documentación. Qué se cede, qué no y cómo se hace la entrega formal.'
+        : 'On final payment the code is yours: repository, domain, credentials, and documentation. What transfers, what does not, and how the formal handover works.',
+    keywords:
+      locale === 'es'
+        ? ['propiedad del codigo', 'cesion de derechos', 'entrega de repositorio']
+        : ['code ownership', 'assignment of rights', 'repository handover'],
+    path: '/legal/propiedad-del-codigo',
+    pageType: 'WebPage',
+  }),
   LandingPages: ({ locale }) => ({
     title:
       locale === 'es'
@@ -223,8 +284,12 @@ function getDefaultSeo(locale) {
 }
 
 function resolveSeo(route, locale) {
-  const resolver = routeSeoByName[route.name] ?? getDefaultSeo
-  return resolver({ route, locale })
+  const resolver = routeSeoByName[route.name]
+
+  // Ojo: getDefaultSeo recibe el locale suelto, no el objeto `{ route, locale }`
+  // que esperan los resolvers. Pasárselo como resolver hacía que toda ruta sin
+  // entrada propia (las demos, y cualquier ruta nueva) se rotulara en inglés.
+  return resolver ? resolver({ route, locale }) : getDefaultSeo(locale)
 }
 
 function buildBreadcrumb(route, seo, locale) {
@@ -363,16 +428,34 @@ function upsertLink(selector, rel, href) {
   element.setAttribute('href', href)
 }
 
+function upsertAlternate(hreflang, href) {
+  const selector = `link[rel="alternate"][hreflang="${hreflang}"]`
+  let element = document.head.querySelector(selector)
+
+  if (!element) {
+    element = document.createElement('link')
+    element.setAttribute('rel', 'alternate')
+    element.setAttribute('hreflang', hreflang)
+    document.head.appendChild(element)
+  }
+
+  element.setAttribute('href', href)
+}
+
 export function applyRouteSeo(route, locale) {
   const base = getDefaultSeo(locale)
   const resolved = resolveSeo(route, locale)
   const path = normalizePath(route.meta?.canonicalPath ?? resolved.path ?? route.path)
 
+  // Misma ruta en los dos idiomas; el inglés se distingue por `?lang=en`.
+  const esUrl = toAbsoluteUrl(path)
+  const enUrl = `${esUrl}?lang=en`
+
   const seo = {
     ...base,
     ...resolved,
     path,
-    canonical: toAbsoluteUrl(path),
+    canonical: locale === 'en' ? enUrl : esUrl,
     robots: route.meta?.robots ?? resolved.robots ?? 'index, follow',
     image: siteConfig.ogImage,
     type: resolved.type ?? 'website',
@@ -401,7 +484,26 @@ export function applyRouteSeo(route, locale) {
   upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', seo.image)
   upsertMeta('meta[name="twitter:image:alt"]', 'name', 'twitter:image:alt', seo.title)
 
+  upsertMeta(
+    'meta[property="og:locale:alternate"]',
+    'property',
+    'og:locale:alternate',
+    getLocaleCode(locale === 'en' ? 'es' : 'en'),
+  )
+
   upsertLink('link[rel="canonical"]', 'canonical', seo.canonical)
+
+  // Sin hreflang, Google trata la versión en inglés como duplicado de la
+  // española y no la indexa. Las rutas noindex (demos por plan) no las emiten.
+  if (!seo.robots.includes('noindex')) {
+    upsertAlternate('es-MX', esUrl)
+    upsertAlternate('en', enUrl)
+    upsertAlternate('x-default', esUrl)
+  } else {
+    document.head
+      .querySelectorAll('link[rel="alternate"][hreflang]')
+      .forEach((element) => element.remove())
+  }
 
   let schemaScript = document.head.querySelector('script[data-devifly-seo="schema"]')
 
