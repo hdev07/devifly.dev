@@ -523,8 +523,8 @@
       </div>
     </section>
 
-    <!-- Services -->
-    <section class="py-20 sm:py-28 px-6">
+    <!-- Services — "Sección paquetes/servicios" es feature de Pro -->
+    <section v-if="isPro" class="py-20 sm:py-28 px-6">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
           <p
@@ -1401,8 +1401,9 @@
       </div>
     </section>
 
-    <!-- Blog -->
+    <!-- Blog — "Blog de eventos" es feature de Pro -->
     <section
+      v-if="isPro"
       class="py-20 sm:py-28 px-6"
       style="background: rgba(201, 169, 110, 0.01)"
     >
@@ -1711,14 +1712,12 @@
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 import { useDemoChrome } from "../../composables/useDemoChrome.js";
+import { useDemoPlan } from "../../composables/useDemoPlan.js";
 
 const { copy } = useDemoChrome();
 const route = useRoute();
 
-const validTiers = ["esencial", "pro", "premium"];
-const tier = computed(() =>
-  validTiers.includes(route.query.plan) ? route.query.plan : "premium",
-);
+const tier = computed(() => useDemoPlan(route));
 const isPro = computed(() => tier.value === "pro" || tier.value === "premium");
 const isPremium = computed(() => tier.value === "premium");
 const tierLabels = { esencial: "Esencial", pro: "Pro", premium: "Premium" };
@@ -1956,43 +1955,43 @@ const galleryImages = [
   {
     title: "Jardín al Atardecer",
     desc: "Ceremonia al aire libre",
-    img: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&h=600&fit=crop",
+    img: "/img/demos/photo-1519167758481-83f550bb49b3-600x600.jpg",
   },
   {
     title: "Salón Imperial",
     desc: "Recepción para 400 personas",
-    img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1519225421980-715cb0215aed-400x400.jpg",
   },
   {
     title: "Arco Floral",
     desc: "Escenarios para fotografía",
-    img: "https://images.unsplash.com/photo-1478146059778-26028b07395a?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1478146059778-26028b07395a-400x400.jpg",
   },
   {
     title: "Pista de Baile",
     desc: "Iluminación LED profesional",
-    img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1470229722913-7c0e2dbbafd3-400x400.jpg",
   },
   {
     title: "Zona Lounge",
     desc: "Área VIP de descanso",
-    img: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1464366400600-7168b8af9bc3-400x400.jpg",
   },
   {
     title: "Terraza Mirador",
     desc: "Vista panorámica nocturna",
-    img: "https://images.unsplash.com/photo-1510076857177-7470076d4098?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1510076857177-7470076d4098-400x400.jpg",
   },
   {
     title: "Recorrido por el Jardín",
     desc: "Video del espacio completo",
-    img: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1505236858219-8359eb29e329-400x400.jpg",
     type: "video",
   },
   {
     title: "Evento en Vivo",
     desc: "Highlights de bodas reales",
-    img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1511795409834-ef04bbd61622-400x400.jpg",
     type: "video",
   },
 ];
@@ -2041,19 +2040,19 @@ const blogPosts = [
     title: "10 Tendencias en Bodas para 2026",
     tag: "Bodas",
     excerpt: "Desde la iluminación con velas suspendidas hasta los menús de temporada, descubre las tendencias que están definiendo las celebraciones este año.",
-    img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=500&h=300&fit=crop",
+    img: "/img/demos/photo-1519741497674-611481863552-500x300.jpg",
   },
   {
     title: "Cómo Elegir el Salón Perfecto",
     tag: "Guía",
     excerpt: "Capacidad, ubicación, servicios incluidos y presupuesto: los factores clave para tomar la mejor decisión para tu evento.",
-    img: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500&h=300&fit=crop",
+    img: "/img/demos/photo-1464366400600-7168b8af9bc3-500x300.jpg",
   },
   {
     title: "Checklist: 3 Meses Antes de tu Evento",
     tag: "Planificación",
     excerpt: "Una lista completa de todo lo que debes tener resuelto a 90 días de tu celebración para que nada quede al aire.",
-    img: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=500&h=300&fit=crop",
+    img: "/img/demos/photo-1505236858219-8359eb29e329-500x300.jpg",
   },
 ];
 
