@@ -99,6 +99,48 @@
           </router-link>
         </div>
       </div>
+
+      <!-- Respaldo contractual: documentos públicos en /legal -->
+      <div
+        data-animate
+        class="mt-6 rounded-2xl border dark:border-white/8 border-light-border dark:bg-base-900/40 bg-light-surface/70 p-6 sm:p-7 backdrop-blur-xl delay-100"
+      >
+        <div class="flex flex-col sm:flex-row sm:items-center gap-5">
+          <div
+            class="w-12 h-12 rounded-xl flex items-center justify-center dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border shrink-0"
+          >
+            <LucideIcon name="shield-check" class-name="w-5 h-5 text-brand-400" />
+          </div>
+          <div class="flex-1">
+            <h4
+              class="font-display text-base sm:text-lg font-bold dark:text-white text-light-text mb-1"
+            >
+              {{ t("howWeWork.legalTitle") }}
+            </h4>
+            <p
+              class="text-sm dark:text-text-secondary text-light-muted leading-relaxed mb-3"
+            >
+              {{ t("howWeWork.legalDesc") }}
+            </p>
+            <ul class="flex flex-wrap gap-2">
+              <li
+                v-for="doc in legalDocs"
+                :key="doc"
+                class="text-[11px] font-medium px-3 py-1 rounded-full dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border dark:text-text-secondary text-light-muted"
+              >
+                {{ t(`howWeWork.legalDocs.${doc}`) }}
+              </li>
+            </ul>
+          </div>
+          <router-link
+            to="/legal/terminos"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border text-sm font-semibold dark:text-white text-light-text hover:dark:border-brand-500/50 hover:border-brand-500/50 transition-all shrink-0"
+          >
+            {{ t("howWeWork.legalCta") }}
+            <span aria-hidden="true">→</span>
+          </router-link>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -110,6 +152,9 @@ import SectionHeader from "./ui/SectionHeader.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
 
 const { t } = useI18n();
+
+// Documentos publicados en /legal — ver src/data/legal.js
+const legalDocs = ["contract", "sow", "nda", "ownership", "cancellation"];
 
 // Textos en src/i18n/{es,en}.js bajo `howWeWork.steps.<key>`
 const steps = [

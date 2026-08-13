@@ -267,6 +267,44 @@
       </div>
     </section>
 
+    <!-- TESTIMONIAL — se renderiza solo si el caso trae cita real del cliente.
+         Formato en src/data/cases/README.md -->
+    <section
+      v-if="study.testimonial"
+      class="relative py-20 sm:py-28 dark:bg-base-900/40 bg-light-card/50 border-y dark:border-white/8 border-light-border"
+    >
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <LucideIcon
+          name="quote"
+          class-name="w-8 h-8 mx-auto mb-6 text-brand-400"
+        />
+        <blockquote
+          class="font-display text-xl sm:text-2xl leading-relaxed dark:text-white text-light-text text-balance"
+        >
+          “{{ study.testimonial.quote[locale] }}”
+        </blockquote>
+        <figcaption
+          class="mt-8 flex items-center justify-center gap-4 flex-wrap"
+        >
+          <img
+            v-if="study.testimonial.avatar"
+            :src="study.testimonial.avatar"
+            :alt="study.testimonial.author"
+            class="w-12 h-12 rounded-full object-cover border dark:border-white/10 border-light-border"
+            loading="lazy"
+          />
+          <div class="text-left">
+            <p class="font-semibold dark:text-white text-light-text">
+              {{ study.testimonial.author }}
+            </p>
+            <p class="text-sm dark:text-text-secondary text-light-muted">
+              {{ study.testimonial.role[locale] }}
+            </p>
+          </div>
+        </figcaption>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="relative py-20 sm:py-28">
       <div class="max-w-3xl mx-auto px-6 text-center">

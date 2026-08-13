@@ -58,18 +58,35 @@
           :key="loop"
           class="flex items-center gap-12 sm:gap-16 px-6 sm:px-8 shrink-0"
         >
-          <template
-            v-for="(fallbackBrands, i) in fallbackBrands"
-            :key="`${loop}-${i}`"
-          >
+          <template v-for="(brand, i) in brands" :key="`${loop}-${i}`">
             <div
               class="shrink-0 flex items-center justify-center h-10 sm:h-12 transition-all duration-300 dark:opacity-60 opacity-70 hover:opacity-100 grayscale hover:grayscale-0"
             >
+              <!-- Con logotipo: ver src/assets/img/brands/README.md.
+                   Si hay variante `-dark`, cada una se muestra en su tema. -->
+              <img
+                v-if="brand.logo"
+                :src="brand.logo"
+                :alt="brand.name"
+                @click="goToBrand(brand.link)"
+                class="h-7 sm:h-9 w-auto max-w-[170px] object-contain cursor-pointer"
+                :class="brand.logoDark ? 'dark:hidden' : ''"
+                loading="lazy"
+              />
+              <img
+                v-if="brand.logoDark"
+                :src="brand.logoDark"
+                :alt="brand.name"
+                @click="goToBrand(brand.link)"
+                class="h-7 sm:h-9 w-auto max-w-[170px] object-contain cursor-pointer hidden dark:block"
+                loading="lazy"
+              />
               <span
-                @click="goToBrand(fallbackBrands.link)"
-                class="font-display text-xl sm:text-2xl font-bold dark:text-white/70 text-light-muted whitespace-nowrap tracking-tight"
+                v-if="!brand.logo && !brand.logoDark"
+                @click="goToBrand(brand.link)"
+                class="font-display text-xl sm:text-2xl font-bold dark:text-white/70 text-light-muted whitespace-nowrap tracking-tight cursor-pointer"
               >
-                {{ fallbackBrands.name }}
+                {{ brand.name }}
               </span>
             </div>
           </template>
@@ -96,17 +113,55 @@ const goToBrand = (link) => {
   window.open(link, "_blank");
 };
 
-const fallbackBrands = [
-  { name: "Devifly Dev", link: "https://devifly.dev" },
-  { name: "CruzBet", link: "https://cruzbet.devifly.dev" },
-  { name: "Timbra One", link: "https://timbra.one" },
-  { name: "Musion Day", link: "https://musion.day" },
-  { name: "Confecdotario", link: "https://confecdotario.com" },
-  { name: "MoviBase", link: "https://movibase.com" },
-  { name: "White Glove Naples", link: "https://whiteglovenaples.com" },
-  { name: "PoleGP", link: "https://polegp.devifly.dev" },
-  { name: "Linco Eventos", link: "https://lincoeventos.com" },
-  { name: "Aurea", link: "https://aurea.wtf" },
-  { name: "Barberia JAFZ", link: "https://barberiajafz.devifly.dev" },
+// Logotipos: cualquier archivo que se deje en src/assets/img/brands/ se toma
+// automáticamente si su nombre coincide con el `slug` de la marca. Mientras no
+// exista el archivo, se muestra el nombre en texto. Ver README de esa carpeta.
+const brandLogoFiles = import.meta.glob(
+  "../assets/img/brands/*.{svg,png,webp}",
+  { eager: true, import: "default" },
+);
+const brandLogos = Object.fromEntries(
+  Object.entries(brandLogoFiles).map(([path, src]) => [
+    path.split("/").pop().replace(/\.(svg|png|webp)$/, ""),
+    src,
+  ]),
+);
+
+const brandList = [
+  { slug: "devifly", name: "Devifly Dev", link: "https://devifly.dev" },
+  { slug: "cruzbet", name: "CruzBet", link: "https://cruzbet.devifly.dev" },
+  { slug: "timbra", name: "Timbra One", link: "https://timbra.one" },
+  { slug: "musion", name: "Musion Day", link: "https://musion.day" },
+  {
+    slug: "confecdotario",
+    name: "Confecdotario",
+    link: "https://confecdotario.com",
+  },
+  { slug: "movibase", name: "MoviBase", link: "https://movibase.com" },
+  {
+    slug: "white-glove-naples",
+    name: "White Glove Naples",
+    link: "https://whiteglovenaples.com",
+  },
+  { slug: "polegp", name: "PoleGP", link: "https://polegp.devifly.dev" },
+  {
+    slug: "linco-eventos",
+    name: "Linco Eventos",
+    link: "https://lincoeventos.com",
+  },
+  { slug: "aurea", name: "Aurea", link: "https://aurea.wtf" },
+  {
+    slug: "barberia-jafz",
+    name: "Barberia JAFZ",
+    link: "https://barberiajafz.devifly.dev",
+  },
 ];
+
+const brands = computed(() =>
+  brandList.map((brand) => ({
+    ...brand,
+    logo: brandLogos[brand.slug] ?? null,
+    logoDark: brandLogos[`${brand.slug}-dark`] ?? null,
+  })),
+);
 </script>
