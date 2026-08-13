@@ -600,7 +600,7 @@
                   <img
                     :src="
                       foodImageMap[item.name] ||
-                      'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&h=200&fit=crop'
+                      '/img/demos/photo-1546069901-ba9599a7e63c-200x200.jpg'
                     "
                     :alt="item.name"
                     class="absolute inset-0 w-full h-full object-cover"
@@ -707,7 +707,7 @@
             <img
               :src="
                 foodImageMap[selectedItem.name] ||
-                'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop'
+                '/img/demos/photo-1546069901-ba9599a7e63c-600x400.jpg'
               "
               :alt="selectedItem.name"
               class="absolute inset-0 w-full h-full object-cover"

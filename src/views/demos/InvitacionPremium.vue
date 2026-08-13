@@ -109,7 +109,7 @@
             style="background: #c6a75e"
           ></span>
           <span class="text-xs font-mono" style="color: rgba(198, 167, 94, 0.7)"
-            >mariana-y-diego.com/inv/{{ activeGuest.slug }}</span
+            >ana-y-carlos.com/inv/{{ activeGuest.slug }}</span
           >
         </div>
         <div v-else class="mb-8"></div>
@@ -211,7 +211,7 @@
         </div>
 
         <!-- Music toggle (Pro+) -->
-        <template v-if="isPro">
+        <template v-if="isPro && musicAvailable">
           <button
             @click="toggleMusic"
             class="flex items-center gap-2 mx-auto px-5 py-2.5 rounded-full text-sm transition-all hover:scale-105"
@@ -227,12 +227,14 @@
             />
             {{ musicOn ? t("pauseMusic") : t("playMusic") }}
           </button>
-          <audio ref="audioRef" loop preload="none">
-            <source
-              src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-              type="audio/mpeg"
-            />
-          </audio>
+          <audio
+            ref="audioRef"
+            src="/audio/invitacion-premium.mp3"
+            type="audio/mpeg"
+            loop
+            preload="metadata"
+            @error="musicAvailable = false"
+          ></audio>
         </template>
 
         <!-- Scroll -->
@@ -610,7 +612,7 @@
               {{ t("dressCodeTitle", "Código de Vestimenta") }}
             </h3>
             <p class="text-sm" style="color: #888">
-              Etiqueta Rigurosa / Black Tie
+              {{ t("dressCodeValue") }}
             </p>
           </div>
 
@@ -629,9 +631,9 @@
             <h3 class="text-white font-bold text-lg mb-1">
               {{ t("hashtagTitle", "Hashtag") }}
             </h3>
-            <p class="text-sm" style="color: #888">#MarianaYDiego2026</p>
+            <p class="text-sm" style="color: #888">#AnaYCarlos2027</p>
             <p class="text-xs mt-1" style="color: #c6a75e">
-              ¡Sube tus fotos y etiquétanos!
+              {{ t("hashtagNote") }}
             </p>
           </div>
 
@@ -651,13 +653,13 @@
               {{ t("lodgingTitle", "Hospedaje") }}
             </h3>
             <p class="text-sm mb-3" style="color: #888">
-              Tarifa especial en Hotel Camino Real Santa Fe.
+              {{ t("lodgingDesc") }}
             </p>
             <a
               href="#"
               class="inline-block px-4 py-2 rounded-xl text-xs font-semibold transition-all hover:scale-105"
               style="border: 1px solid rgba(198, 167, 94, 0.3); color: #c6a75e"
-              >Reservar</a
+              >{{ t("lodgingBtn") }}</a
             >
           </div>
 
@@ -678,13 +680,13 @@
               {{ t("playlistTitle", "Playlist") }}
             </h3>
             <p class="text-sm mb-3" style="color: #888">
-              Ayúdanos a armar la playlist para la fiesta.
+              {{ t("playlistDesc") }}
             </p>
             <a
               href="#"
               class="inline-block px-4 py-2 rounded-xl text-xs font-semibold transition-all hover:scale-105"
               style="border: 1px solid rgba(198, 167, 94, 0.3); color: #c6a75e"
-              >Abrir Spotify</a
+              >{{ t("playlistBtn") }}</a
             >
           </div>
 
@@ -705,13 +707,13 @@
               {{ t("albumTitle", "Álbum Colaborativo") }}
             </h3>
             <p class="text-sm mb-3" style="color: #888">
-              Comparte las fotos que tomes durante el evento.
+              {{ t("albumDesc") }}
             </p>
             <a
               href="#"
               class="inline-block px-4 py-2 rounded-xl text-xs font-semibold transition-all hover:scale-105"
               style="border: 1px solid rgba(198, 167, 94, 0.3); color: #c6a75e"
-              >Subir Fotos</a
+              >{{ t("albumBtn") }}</a
             >
           </div>
 
@@ -731,13 +733,13 @@
               {{ t("triviaTitle", "Trivia de Novios") }}
             </h3>
             <p class="text-sm mb-3" style="color: #888">
-              ¿Qué tanto nos conoces? Resuelve esta pequeña trivia.
+              {{ t("triviaDesc") }}
             </p>
             <a
               href="#"
               class="inline-block px-4 py-2 rounded-xl text-xs font-semibold transition-all hover:scale-105"
               style="border: 1px solid rgba(198, 167, 94, 0.3); color: #c6a75e"
-              >Jugar Trivia</a
+              >{{ t("triviaBtn") }}</a
             >
           </div>
         </div>
@@ -963,7 +965,7 @@
         <!-- WhatsApp alternative (Pro+) -->
         <div v-if="isPro" class="text-center mt-6">
           <a
-            href="https://wa.me/5215551234567?text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Mariana%20y%20Diego%20%F0%9F%92%8D"
+            href="https://wa.me/5215551234567?text=%C2%A1Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Ana%20y%20Carlos%20%F0%9F%92%8D"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105"
@@ -1105,7 +1107,7 @@
                     28, 35, 41, 42, 43, 44, 45, 46, 47, 48, 49,
                   ].includes(n)
                     ? '#C6A75E'
-                    : Math.random() > 0.5
+                    : qrNoise(n)
                       ? '#C6A75E'
                       : 'white',
                 }"
@@ -1146,7 +1148,7 @@
         {{ t("footerMsg") }}
       </p>
       <p class="text-xs" style="color: #444">
-        mariana-y-diego.com · Hecho con
+        ana-y-carlos.com · Hecho con
         <LucideIcon name="heart" class-name="w-4 h-4 inline text-[#c6a75e]" />
         por
         <a
@@ -1186,6 +1188,7 @@ const waContratar = computed(() => {
 
 const lang = locale;
 const musicOn = ref(false);
+const musicAvailable = ref(true);
 const audioRef = ref(null);
 const rsvpOpen = ref(false);
 const qrOpen = ref(false);
@@ -1202,10 +1205,10 @@ const rsvpForm = ref({
 
 const translations = {
   es: {
-    bride: "Mariana",
-    groom: "Diego",
+    bride: "Ana",
+    groom: "Carlos",
     and: "y",
-    date: "Sábado · 15 de Noviembre de 2025 · 7:00 PM",
+    date: "Viernes · 10 de Diciembre de 2027 · 5:00 PM",
     pauseMusic: "Pausar",
     playMusic: "Reproducir música",
     storyTitle: "Nuestra Historia",
@@ -1236,9 +1239,9 @@ const translations = {
     giftsTitle: "Mesa de Regalos",
     giftsDesc: "Tu presencia es el mejor regalo. Si deseas obsequiarnos algo:",
     rsvpTitle: "Confirma tu Asistencia",
-    rsvpSubtitle: "Por favor confirma antes del 15 de octubre de 2025",
+    rsvpSubtitle: "Por favor confirma antes del 10 de noviembre de 2027",
     rsvpGreeting:
-      "Querido invitado, Mariana y Diego están muy felices de invitarte a celebrar su amor.",
+      "Querido invitado, Ana y Carlos están muy felices de invitarte a celebrar su amor.",
     rsvpName: "Tu nombre completo",
     rsvpAttending: "¿Asistirás?",
     rsvpYes: "Sí, con mucho gusto",
@@ -1278,6 +1281,17 @@ const translations = {
     playlistTitle: "Playlist",
     albumTitle: "Álbum Colaborativo",
     cortejoTitle: "Nuestro Cortejo Nupcial",
+    dressCodeValue: "Etiqueta Rigurosa / Black Tie",
+    hashtagNote: "¡Sube tus fotos y etiquétanos!",
+    lodgingDesc: "Tarifa especial en Hotel Camino Real Santa Fe.",
+    lodgingBtn: "Reservar",
+    playlistDesc: "Ayúdanos a armar la playlist para la fiesta.",
+    playlistBtn: "Abrir Spotify",
+    albumDesc: "Comparte las fotos que tomes durante el evento.",
+    albumBtn: "Subir Fotos",
+    triviaTitle: "Trivia de Novios",
+    triviaDesc: "¿Qué tanto nos conoces? Resuelve esta pequeña trivia.",
+    triviaBtn: "Jugar Trivia",
     parentsTitle: "Con la bendición de nuestros padres",
     brideParents: "Padres de la novia",
     groomParents: "Padres del novio",
@@ -1292,13 +1306,13 @@ const translations = {
     godparentsAnillosNames: "Francisco y Laura Peña",
     godparentsLazo: "Lazo",
     godparentsLazoNames: "Miguel y Sofía Ramírez",
-    footerMsg: "Con amor infinito, Mariana & Diego",
+    footerMsg: "Con amor infinito, Ana & Carlos",
   },
   en: {
-    bride: "Mariana",
-    groom: "Diego",
+    bride: "Ana",
+    groom: "Carlos",
     and: "&",
-    date: "Saturday · November 15th, 2025 · 7:00 PM",
+    date: "Friday · December 10th, 2027 · 5:00 PM",
     pauseMusic: "Pause",
     playMusic: "Play music",
     storyTitle: "Our Story",
@@ -1329,9 +1343,9 @@ const translations = {
     giftsTitle: "Gift Registry",
     giftsDesc: "Your presence is everything. If you wish to give a gift:",
     rsvpTitle: "Confirm Attendance",
-    rsvpSubtitle: "Please confirm before October 15th, 2025",
+    rsvpSubtitle: "Please confirm before November 10th, 2027",
     rsvpGreeting:
-      "Dear guest, Mariana and Diego are very happy to invite you to celebrate their love.",
+      "Dear guest, Ana and Carlos are very happy to invite you to celebrate their love.",
     rsvpName: "Your full name",
     rsvpAttending: "Will you attend?",
     rsvpYes: "Yes, gladly",
@@ -1371,6 +1385,17 @@ const translations = {
     playlistTitle: "Playlist",
     albumTitle: "Collaborative Album",
     cortejoTitle: "Our Wedding Party",
+    dressCodeValue: "Strict Black Tie",
+    hashtagNote: "Upload your photos and tag us!",
+    lodgingDesc: "Special rate at Hotel Camino Real Santa Fe.",
+    lodgingBtn: "Book",
+    playlistDesc: "Help us build the party playlist.",
+    playlistBtn: "Open Spotify",
+    albumDesc: "Share the photos you take during the event.",
+    albumBtn: "Upload Photos",
+    triviaTitle: "Couple Trivia",
+    triviaDesc: "How well do you know us? Take this short quiz.",
+    triviaBtn: "Play Trivia",
     parentsTitle: "With the blessing of our parents",
     brideParents: "Bride's parents",
     groomParents: "Groom's parents",
@@ -1385,10 +1410,16 @@ const translations = {
     godparentsAnillosNames: "Francisco & Laura Peña",
     godparentsLazo: "Lasso",
     godparentsLazoNames: "Miguel & Sofía Ramírez",
-    footerMsg: "With infinite love, Mariana & Diego",
+    footerMsg: "With infinite love, Ana & Carlos",
   },
 };
-const t = (key) => translations[lang.value][key] || key;
+// El 2º argumento es el texto por defecto: sin él, una clave faltante se
+// renderizaba como el nombre de la clave (p.ej. "triviaTitle").
+const t = (key, fallback) => translations[lang.value][key] ?? fallback ?? key;
+
+// Relleno determinista del QR decorativo. Con Math.random() en el binding, el
+// patrón se redibujaba distinto en cada render y el código parpadeaba.
+const qrNoise = (n) => (n * 7919) % 5 < 2;
 
 const activeGuestIdx = ref(0);
 const demoGuests = [
@@ -1399,9 +1430,9 @@ const demoGuests = [
     passes: 4,
     qrCode: "BODA-VIP-0042",
     greetingEs:
-      "Querida Familia Martínez, Mariana y Diego están encantados de invitarlos a celebrar su amor.",
+      "Querida Familia Martínez, Ana y Carlos están encantados de invitarlos a celebrar su amor.",
     greetingEn:
-      "Dear Martínez Family, Mariana and Diego are delighted to invite you to celebrate their love.",
+      "Dear Martínez Family, Ana and Carlos are delighted to invite you to celebrate their love.",
   },
   {
     shortName: "Herrera",
@@ -1539,7 +1570,11 @@ const itinerary = [
 const toggleMusic = () => {
   musicOn.value = !musicOn.value;
   if (musicOn.value) {
-    audioRef.value?.play();
+    // Si la pista no existe todavía, el botón se retira en lugar de fallar en silencio.
+    Promise.resolve(audioRef.value?.play()).catch(() => {
+      musicOn.value = false;
+      musicAvailable.value = false;
+    });
   } else {
     audioRef.value?.pause();
   }
@@ -1576,26 +1611,26 @@ const timeline = [
 
 const galleryPhotos = [
   {
-    img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=600&fit=crop",
+    img: "/img/demos/photo-1519741497674-611481863552-600x600.jpg",
     type: "video",
   },
   {
-    img: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1606800052052-a08af7148866-400x400.jpg",
   },
   {
-    img: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1465495976277-4387d4b0b4c6-400x400.jpg",
   },
   {
-    img: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1511285560929-80b456fea0bc-400x400.jpg",
   },
   {
-    img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1519225421980-715cb0215aed-400x400.jpg",
   },
   {
-    img: "https://images.unsplash.com/photo-1529636798458-92182e662485?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1529636798458-92182e662485-400x400.jpg",
   },
   {
-    img: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&h=400&fit=crop",
+    img: "/img/demos/photo-1583939003579-730e3918a45a-400x400.jpg",
   },
 ];
 
@@ -1632,12 +1667,12 @@ const guests = [
 ];
 
 const googleCalUrl = computed(() => {
-  const title = encodeURIComponent("Boda Mariana & Diego");
+  const title = encodeURIComponent("Boda Ana & Carlos");
   const details = encodeURIComponent(
     "Ceremonia en Iglesia La Paz a las 5:00 PM. Recepción en Salón Versalles a las 7:00 PM. Dresscode: Formal / Etiqueta.",
   );
   const location = encodeURIComponent("Salón Versalles, Santa Fe, CDMX");
-  const dates = "20251115T170000/20251116T020000";
+  const dates = "20271210T170000/20271211T020000";
   return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
 });
 
@@ -1646,9 +1681,9 @@ const appleCalUrl = computed(() => {
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
     "BEGIN:VEVENT",
-    "DTSTART:20251115T170000",
-    "DTEND:20251116T020000",
-    "SUMMARY:Boda Mariana & Diego",
+    "DTSTART:20271210T170000",
+    "DTEND:20271211T020000",
+    "SUMMARY:Boda Ana & Carlos",
     "LOCATION:Salón Versalles, Santa Fe, CDMX",
     "DESCRIPTION:Ceremonia en Iglesia La Paz a las 5:00 PM. Recepción en Salón Versalles a las 7:00 PM.",
     "END:VEVENT",
@@ -1665,7 +1700,7 @@ const countdown = ref([
 ]);
 
 onMounted(() => {
-  const target = new Date("2027-11-15T17:00:00");
+  const target = new Date("2027-12-10T17:00:00");
   const update = () => {
     const diff = target - Date.now();
     if (diff <= 0) {

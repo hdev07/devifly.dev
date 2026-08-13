@@ -96,7 +96,7 @@
       <div class="absolute inset-0 hidden md:flex">
         <div class="w-1/2 relative overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?w=1200&q=80"
+            src="/img/demos/photo-1622287162716-f311baa1a2b8-1200xx.jpg"
             alt=""
             class="w-full h-full object-cover scale-105"
           />
@@ -104,7 +104,7 @@
         </div>
         <div class="w-1/2 relative overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=80"
+            src="/img/demos/photo-1560066984-138dadb4c035-1200xx.jpg"
             alt=""
             class="w-full h-full object-cover scale-105"
           />
@@ -121,7 +121,7 @@
       <!-- Mobile background -->
       <div class="absolute inset-0 md:hidden">
         <img
-          src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?w=900&q=80"
+          src="/img/demos/photo-1622287162716-f311baa1a2b8-900xx.jpg"
           alt=""
           class="w-full h-full object-cover"
         />
@@ -275,7 +275,7 @@
           <div class="group relative">
             <div class="aspect-[3/4] overflow-hidden rounded-lg bg-brand-gray">
               <img
-                src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80"
+                src="/img/demos/photo-1621605815971-fbc98d665033-800xx.jpg"
                 alt="Alonso Flores - Barbero"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
@@ -312,7 +312,7 @@
           <div class="group relative">
             <div class="aspect-[3/4] overflow-hidden rounded-lg bg-brand-gray">
               <img
-                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80"
+                src="/img/demos/photo-1560066984-138dadb4c035-800xx.jpg"
                 alt="Blanca Trejo - Estilista"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
@@ -398,7 +398,7 @@
                 class="aspect-[3/4] rounded-lg overflow-hidden bg-brand-gray"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80"
+                  src="/img/demos/photo-1599351431202-1e0f0137899a-800xx.jpg"
                   alt="Barbería"
                   class="w-full h-full object-cover"
                   loading="lazy"
@@ -440,7 +440,7 @@
                 class="aspect-[3/4] rounded-lg overflow-hidden bg-brand-gray"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80"
+                  src="/img/demos/photo-1560066984-138dadb4c035-800xx.jpg"
                   alt="Salón de belleza"
                   class="w-full h-full object-cover"
                   loading="lazy"
@@ -1050,14 +1050,12 @@
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 import { useDemoChrome } from "../../composables/useDemoChrome.js";
+import { useDemoPlan } from "../../composables/useDemoPlan.js";
 
 const { copy } = useDemoChrome();
 const route = useRoute();
 
-const validTiers = ["esencial", "pro", "premium"];
-const tier = computed(() =>
-  validTiers.includes(route.query.plan) ? route.query.plan : "premium",
-);
+const tier = computed(() => useDemoPlan(route));
 const isPro = computed(() => tier.value === "pro" || tier.value === "premium");
 const isPremium = computed(() => tier.value === "premium");
 const tierLabels = { esencial: "Esencial", pro: "Pro", premium: "Premium" };
@@ -1211,38 +1209,38 @@ function whatsappLink(serviceName) {
 
 const barberiaImages = [
   {
-    src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&q=80",
+    src: "/img/demos/photo-1599351431202-1e0f0137899a-600xx.jpg",
     alt: "Corte fade",
   },
   {
-    src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80",
+    src: "/img/demos/photo-1503951914875-452162b0f3f1-600xx.jpg",
     alt: "Barbería",
   },
   {
-    src: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=600&q=80",
+    src: "/img/demos/photo-1622286342621-4bd786c2447c-600xx.jpg",
     alt: "Perfilado",
   },
   {
-    src: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&q=80",
+    src: "/img/demos/photo-1621605815971-fbc98d665033-600xx.jpg",
     alt: "Estilo",
   },
 ];
 
 const salonImages = [
   {
-    src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
+    src: "/img/demos/photo-1560066984-138dadb4c035-600xx.jpg",
     alt: "Salón",
   },
   {
-    src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80",
+    src: "/img/demos/photo-1487412947147-5cebf100ffc2-600xx.jpg",
     alt: "Tinte",
   },
   {
-    src: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80",
+    src: "/img/demos/photo-1604654894610-df63bc536371-600xx.jpg",
     alt: "Uñas",
   },
   {
-    src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
+    src: "/img/demos/photo-1522337360788-8b13dee7a37e-600xx.jpg",
     alt: "Maquillaje",
   },
 ];
