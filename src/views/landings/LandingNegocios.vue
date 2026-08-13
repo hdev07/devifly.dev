@@ -517,7 +517,7 @@ const toggleFaq = (i) => {
                 {{ content.ui.hirePlan }} {{ pkg.name }}
               </BaseButton>
               <BaseButton
-                to="/landing-pages/demo"
+                :to="pkg.demo"
                 variant="ghost"
                 accent="blue"
                 class="w-full justify-center"

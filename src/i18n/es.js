@@ -5,7 +5,7 @@ export default {
     cases: 'Resultados',
     pricing: 'Inversión',
     bookCall: 'Agendar llamada',
-    allInclude: '✦ Todos los servicios incluyen hosting, SSL y soporte continuo',
+    allInclude: '✦ Todos los servicios incluyen hosting y dominio el 1er año (hasta $800 MXN/año), SSL y soporte post-lanzamiento',
     seeAll: 'Ver todos los servicios',
     mega: {
       landing: { title: 'Landing Pages', desc: 'Páginas de alta conversión para negocios' },
@@ -18,6 +18,25 @@ export default {
   footer: {
     rights: 'Todos los derechos reservados.',
     built: 'Hecho con Vue, Tailwind y pasión.',
+    legalTitle: 'Legal',
+    terms: 'Términos y condiciones',
+    privacy: 'Aviso de privacidad',
+    cancellation: 'Cancelación y reembolsos',
+    ownership: 'Propiedad del código',
+  },
+  legal: {
+    eyebrow: 'Legal',
+    breadcrumb: 'Navegación',
+    backHome: 'Volver al inicio',
+    otherDocs: 'Documentos',
+    questionsText: '¿Alguna duda sobre estas políticas? Escríbenos y te respondemos con nombre y apellido.',
+    contactTitle: 'Responsable de estas políticas',
+    contactText:
+      'Estas políticas aplican a todos los servicios prestados bajo la marca Devifly (devifly.dev). Para cualquier aclaración, este es el contacto formal.',
+    entityLabel: 'Titular',
+    regimeLabel: 'Régimen fiscal',
+    emailLabel: 'Contacto',
+    addressLabel: 'Domicilio',
   },
   common: {
     problem: 'Problema',
@@ -107,16 +126,6 @@ export default {
       },
     },
   },
-  topSellers: {
-    eyebrow: 'Productos Empaquetados',
-    title: 'Soluciones listas para lanzar tu negocio',
-    subtitle:
-      'Productos con alcance y precio claro. Si tu proyecto requiere más, también construimos a medida.',
-    customNote: 'Si tu proyecto requiere otro alcance, también trabajamos soluciones a medida.',
-    seeCatalog: 'Ver catálogo completo',
-    viewMore: 'Ver más',
-    demo: 'Demo',
-  },
   howWeWork: {
     eyebrow: 'Proceso',
     title: 'De la idea al lanzamiento en 4 pasos',
@@ -153,6 +162,17 @@ export default {
     bonusTitle: 'Bonus: post-lanzamiento incluido',
     bonusDesc: '30 días de soporte, métricas y ajustes. Tu sitio sigue evolucionando con datos reales.',
     bonusCta: 'Ver mantenimiento',
+    legalTitle: 'Con contrato desde el día uno, no con un correo de confianza',
+    legalDesc:
+      'Cada proyecto arranca con documentos firmados: alcance por escrito, confidencialidad si la necesitas y cesión de derechos al liquidar. Nuestras políticas son públicas, no letra chica que aparece al final.',
+    legalCta: 'Leer los términos',
+    legalDocs: {
+      contract: 'Contrato marco',
+      sow: 'Anexo de alcance (SOW)',
+      nda: 'NDA',
+      ownership: 'Cesión de derechos',
+      cancellation: 'Política de cancelación',
+    },
   },
   whyDevifly: {
     eyebrow: 'Por qué Devifly',
@@ -205,16 +225,16 @@ export default {
     eyebrow: 'Resultados',
     title: 'Productos en producción, no en Figma',
     subtitle:
-      'Tres proyectos reales con usuarios activos. Así se ve cuando el producto correcto resuelve un problema de negocio.',
+      'Cinco proyectos reales con usuarios activos. Así se ve cuando el producto correcto resuelve un problema de negocio.',
     cta: 'Quiero un resultado así',
     visit: 'Visitar {name}',
     readCase: 'Ver caso completo',
   },
   demos: {
-    eyebrow: 'Demos',
-    title: 'Míralo en acción',
+    eyebrow: 'Demos de producto',
+    title: 'Míralo en acción antes de contratar',
     subtitle:
-      'Pasa el cursor para previsualizar. Entra al caso para ver el proceso, métricas y galería completa.',
+      'Cinco demos reales y navegables, una por producto. Pasa el cursor para previsualizar y entra para usarlas como lo haría tu cliente.',
   },
   caseStudy: {
     back: 'Volver a casos',
@@ -236,34 +256,40 @@ export default {
   pricingTeaser: {
     eyebrow: 'Inversión',
     title: 'Precios claros, sin letra chica',
-    subtitle: 'Tres niveles según la complejidad de tu proyecto. Cotizamos a medida si necesitas más.',
+    subtitle: 'Los mismos tres planes en todos nuestros productos. El precio cambia según el producto que elijas, no las reglas del juego.',
     mostRequested: 'Más solicitado',
     note: '* Precios de referencia en MXN, más IVA (16%) si requieres factura. Demo de 21 días disponible en productos seleccionados.',
     seePlans: 'Ver planes por producto',
+    customTitle: '¿Software a medida o SaaS?',
+    customText: 'Sistemas internos, dashboards y plataformas se cotizan por alcance después de un discovery sin costo.',
+    customCta: 'Hablar con un experto',
     tiers: {
-      starter: {
-        title: 'Starter',
-        subtitle: 'Invitaciones, catálogos y menús digitales.',
+      esencial: {
+        title: 'Esencial',
+        subtitle: 'Publicar rápido y empezar a vender.',
         price: '$499',
+        range: 'Rango real: $499 – $5,999 MXN según producto',
         delivery: 'MXN · 1-2 semanas',
-        features: ['Diseño responsive', 'WhatsApp integrado', 'Hosting 1 año incluido'],
+        features: ['Diseño responsive mobile-first', 'WhatsApp integrado', 'Hosting y dominio 1er año incluidos'],
         cta: 'Ver planes',
       },
-      growth: {
-        title: 'Growth',
-        subtitle: 'Landings y sitios para salones de eventos.',
-        price: '$4,999',
+      pro: {
+        title: 'Pro',
+        subtitle: 'Para administrarlo tú y medir resultados.',
+        price: '$899',
+        range: 'Rango real: $899 – $9,999 MXN según producto',
         delivery: 'MXN · 2-3 semanas',
-        features: ['UX orientado a venta', 'SEO + analytics', 'Soporte 30 días'],
+        features: ['Panel admin (catálogos, menús y salones)', 'Dominio propio + SEO y analytics', 'Soporte 30 días'],
         cta: 'Ver planes',
       },
-      scale: {
-        title: 'Scale / SaaS',
-        subtitle: 'Sistemas a medida y plataformas SaaS.',
-        price: 'A cotizar',
-        delivery: 'MXN · Por alcance',
-        features: ['Arquitectura a medida', 'Dashboards + APIs', 'Soporte continuo'],
-        cta: 'Hablar con un experto',
+      premium: {
+        title: 'Premium',
+        subtitle: 'Producto completo, integrado y acompañado.',
+        price: '$1,599',
+        range: 'Rango real: $1,599 – $16,999 MXN según producto',
+        delivery: 'MXN · 3-5 semanas',
+        features: ['Integraciones y automatizaciones', 'Multi-idioma / multi-ubicación', 'Soporte prioritario extendido'],
+        cta: 'Ver planes',
       },
     },
   },
@@ -357,15 +383,19 @@ export default {
       },
       {
         q: '¿Trabajan con clientes fuera de México?',
-        a: 'Sí. Trabajamos remoto con clientes en LATAM, Estados Unidos y Europa. Tenemos versión en inglés del sitio y todas las comunicaciones pueden ser bilingües. Los precios en USD incluyen un ajuste del 20% para clientes internacionales; si requieres factura, aplican más IVA.',
+        a: 'Sí. Trabajamos remoto con clientes en LATAM, Estados Unidos y Europa. Tenemos versión en inglés del sitio y todas las comunicaciones pueden ser bilingües. Los precios en USD ya incluyen el procesamiento de pago internacional y la facturación en dólares; si requieres factura mexicana, aplica IVA.',
       },
       {
         q: '¿El precio incluye hosting y dominio?',
-        a: 'Sí, los planes Starter incluyen hosting y dominio en subdominio .devifly.dev por 1 año. Los planes Growth y Scale incluyen dominio personalizado (.com / .mx) y hosting optimizado. Después del primer año el costo recurrente es de ~$199 MXN/mes.',
+        a: 'Sí. Todos los planes incluyen hosting y dominio durante el primer año, sin costo extra. En Esencial el dominio es un subdominio .devifly.dev; en Pro y Premium incluimos dominio personalizado (.com / .mx) y hosting optimizado, con un tope de $800 MXN anuales que cubre cualquier dominio estándar. A partir del segundo año la renovación es de $199 MXN/mes o $1,999 MXN/año, y si prefieres llevarte el sitio a tu propia infraestructura te entregamos todo para migrarlo sin costo.',
+      },
+      {
+        q: '¿Y si el dominio que quiero es carísimo? ¿O si ya tengo el mío?',
+        a: 'Son dos casos distintos. Si el dominio que eliges es premium o de reventa y cuesta más de $800 MXN al año, la diferencia la cubres tú a precio de registrador, sin margen nuestro, y siempre te la informamos y autorizas antes de registrar nada. Si ya tienes tu dominio, lo conectamos y configuramos DNS, correo y SSL sin costo adicional, pero el precio del plan no cambia: el dominio es un insumo del servicio, no una partida que se descuente si no la usas. En ambos casos el dominio queda a tu nombre y te lo llevas cuando quieras.',
       },
       {
         q: '¿Puedo administrar el sitio yo después del lanzamiento?',
-        a: 'Depende del plan. Los planes Pro y superiores incluyen un panel admin para que edites contenido, productos, precios o platillos. Si quieres delegar los cambios, ofrecemos planes de mantenimiento mensual desde $999 MXN.',
+        a: 'Depende del producto y del plan. En catálogos, menús digitales y sitios para salones, los planes Pro y Premium incluyen panel admin para que edites productos, precios, platillos, fotos y horarios tú mismo. Las landing pages y las invitaciones digitales no llevan panel porque son piezas de contenido fijo: los cambios los hacemos nosotros. Si prefieres delegar todo, los planes de mantenimiento arrancan en $999 MXN/mes.',
       },
       {
         q: '¿Por qué Vue 3 y no WordPress?',
@@ -374,6 +404,14 @@ export default {
       {
         q: '¿Tengo que pagar todo por adelantado?',
         a: 'No. Pagas un anticipo del 50% para iniciar (que en muchos casos cubre la demo de 21 días) y el restante al lanzamiento. En proyectos largos cortamos por hitos para que pagues conforme avanzas.',
+      },
+      {
+        q: '¿Qué pasa si cancelo el proyecto a la mitad?',
+        a: 'Puedes cancelar cuando quieras avisando por escrito. Cerramos el trabajo hasta el hito completado, te entregamos todo lo producido hasta esa fecha (código, diseños, accesos y documentación) y liquidamos únicamente lo trabajado: si el avance es menor al anticipo, te devolvemos la diferencia; si es mayor, facturamos el excedente. El anticipo no es un castigo, es una cuenta a favor. Está escrito en nuestra Política de cancelación y reembolsos, no lo dejamos a la buena fe.',
+      },
+      {
+        q: '¿De quién es el código cuando terminan el proyecto?',
+        a: 'Tuyo. Al liquidar el proyecto te cedemos los derechos patrimoniales del código, el diseño y los contenidos que produjimos para ti, y te transferimos el repositorio, el dominio y todos los accesos. No usamos licencias que te aten ni nos quedamos con la llave de tu negocio. Lo único que conservamos es nuestro propio conocimiento, librerías y componentes base reutilizables, y el derecho a mostrar el proyecto en nuestro portafolio (renunciable si firmamos NDA).',
       },
       {
         q: '¿Firman acuerdo de confidencialidad (NDA)?',

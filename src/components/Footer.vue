@@ -75,6 +75,19 @@
         </div>
 
         <div class="text-center md:text-right">
+          <nav
+            class="flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-1.5 mb-3"
+            :aria-label="t('footer.legalTitle')"
+          >
+            <router-link
+              v-for="link in legalLinks"
+              :key="link.to"
+              :to="link.to"
+              class="text-xs dark:text-text-secondary text-light-muted hover:text-brand-500 dark:hover:text-brand-400 transition-colors"
+            >
+              {{ t(link.label) }}
+            </router-link>
+          </nav>
           <p class="text-sm dark:text-text-secondary text-light-muted">
             © {{ currentYear }} devifly.dev · {{ t("footer.rights") }}
           </p>
@@ -93,4 +106,12 @@ import { siteConfig, siteLinks } from "../data/site.js";
 
 const { t } = useI18n();
 const currentYear = new Date().getFullYear();
+
+// Documentos legales públicos — ver src/data/legal.js
+const legalLinks = [
+  { to: "/legal/terminos", label: "footer.terms" },
+  { to: "/legal/privacidad", label: "footer.privacy" },
+  { to: "/legal/cancelaciones", label: "footer.cancellation" },
+  { to: "/legal/propiedad-del-codigo", label: "footer.ownership" },
+];
 </script>

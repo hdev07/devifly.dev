@@ -160,4 +160,13 @@ export const confecdotarioCase = {
       en: 'Community · Badges · PWA',
     },
   },
+  // Testimonial del cliente. Mientras sea null, la sección no se renderiza.
+  // Para activarla, sustituye por:
+  //   testimonial: {
+  //     quote: { es: 'Cita literal del cliente.', en: 'Client quote.' },
+  //     author: 'Nombre Apellido',
+  //     role: { es: 'Cargo · Empresa', en: 'Role · Company' },
+  //     avatar: null, // opcional: import de una foto en assets/img/cases/confecdotario/
+  //   },
+  testimonial: null,
 }

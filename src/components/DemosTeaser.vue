@@ -66,36 +66,76 @@ import { useI18n } from "vue-i18n";
 import SectionHeader from "./ui/SectionHeader.vue";
 import AmbientGlow from "./ui/AmbientGlow.vue";
 import LucideIcon from "./LucideIcon.vue";
-import { musionCase } from "../data/cases/musion.js";
-import { timbraCase } from "../data/cases/timbra.js";
-import { confecdotarioCase } from "../data/cases/confecdotario.js";
+// Capturas reales de cada demo (portada + una sección interior para el hover).
+// Se regeneran con scratchpad/shots.mjs contra el dev server.
+import invitacionesThumb from "../assets/img/demos/invitaciones-thumb.jpg";
+import invitacionesPreview from "../assets/img/demos/invitaciones-preview.jpg";
+import menusThumb from "../assets/img/demos/menus-thumb.jpg";
+import menusPreview from "../assets/img/demos/menus-preview.jpg";
+import catalogosThumb from "../assets/img/demos/catalogos-thumb.jpg";
+import catalogosPreview from "../assets/img/demos/catalogos-preview.jpg";
+import salonesThumb from "../assets/img/demos/salones-thumb.jpg";
+import salonesPreview from "../assets/img/demos/salones-preview.jpg";
+import landingThumb from "../assets/img/demos/landing-thumb.jpg";
+import landingPreview from "../assets/img/demos/landing-preview.jpg";
 
 const { t, locale } = useI18n();
 
 const demos = computed(() => [
   {
-    key: "timbra",
-    href: timbraCase.path,
-    thumb: timbraCase.demo.thumb,
-    preview: timbraCase.demo.preview,
-    title: timbraCase.demo.title,
-    subtitle: timbraCase.demo.subtitle,
+    key: "invitaciones",
+    href: "/invitaciones/premium",
+    thumb: invitacionesThumb,
+    preview: invitacionesPreview,
+    title: { es: "Invitaciones digitales", en: "Digital invitations" },
+    subtitle: {
+      es: "Boda · RSVP, pases y galería",
+      en: "Wedding · RSVP, passes and gallery",
+    },
   },
   {
-    key: "musion",
-    href: musionCase.path,
-    thumb: musionCase.demo.thumb,
-    preview: musionCase.demo.preview,
-    title: musionCase.demo.title,
-    subtitle: musionCase.demo.subtitle,
+    key: "menus",
+    href: "/menus-digitales/premium",
+    thumb: menusThumb,
+    preview: menusPreview,
+    title: { es: "Menús digitales", en: "Digital menus" },
+    subtitle: {
+      es: "Restaurante · 3 sucursales y alérgenos",
+      en: "Restaurant · 3 branches and allergens",
+    },
   },
   {
-    key: "confecdotario",
-    href: confecdotarioCase.path,
-    thumb: confecdotarioCase.demo.thumb,
-    preview: confecdotarioCase.demo.preview,
-    title: confecdotarioCase.demo.title,
-    subtitle: confecdotarioCase.demo.subtitle,
+    key: "catalogos",
+    href: "/catalogos/premium",
+    thumb: catalogosThumb,
+    preview: catalogosPreview,
+    title: { es: "Catálogos digitales", en: "Digital catalogs" },
+    subtitle: {
+      es: "Joyería · Carrito y pago en línea",
+      en: "Jewelry · Cart and online payment",
+    },
+  },
+  {
+    key: "salones",
+    href: "/salones-eventos/premium",
+    thumb: salonesThumb,
+    preview: salonesPreview,
+    title: { es: "Salones de eventos", en: "Event venues" },
+    subtitle: {
+      es: "Cotizador, calendario y paquetes",
+      en: "Quote builder, calendar and packages",
+    },
+  },
+  {
+    key: "landing",
+    href: "/landing-pages/premium",
+    thumb: landingThumb,
+    preview: landingPreview,
+    title: { es: "Landing pages", en: "Landing pages" },
+    subtitle: {
+      es: "Negocio local · Formulario y prueba social",
+      en: "Local business · Form and social proof",
+    },
   },
 ]);
 </script>

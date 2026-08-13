@@ -6,97 +6,97 @@ export function waLink(message) {
 
 export const foodImageMap = {
   "Taco de Pastor":
-    "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=200&h=200&fit=crop",
+    "/img/demos/photo-1551504734-5ee1c4a1479b-200x200.jpg",
   "Taco de Bistec":
-    "https://images.unsplash.com/photo-1624300629298-e9de39c13be5?w=200&h=200&fit=crop",
+    "/img/demos/photo-1624300629298-e9de39c13be5-200x200.jpg",
   "Taco de Suadero":
-    "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=200&h=200&fit=crop",
+    "/img/demos/photo-1599974579688-8dbdd335c77f-200x200.jpg",
   "Quesadilla de Queso":
-    "https://images.unsplash.com/photo-1618040996337-56904b7850b9?w=200&h=200&fit=crop",
+    "/img/demos/photo-1618040996337-56904b7850b9-200x200.jpg",
   "Gringa de Pastor":
-    "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=200&h=200&fit=crop",
+    "/img/demos/photo-1565299585323-38d6b0865b47-200x200.jpg",
   "Orden de Guacamole":
-    "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?w=200&h=200&fit=crop",
+    "/img/demos/photo-1615870216519-2f9fa575fa5c-200x200.jpg",
   "Refresco":
-    "https://images.unsplash.com/photo-1622483767028-3ff66c5fa4e0?w=200&h=200&fit=crop",
+    "/img/demos/photo-1533007716222-4b465613a984-200x200.jpg",
   "Agua de Jamaica":
-    "https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=200&h=200&fit=crop",
+    "/img/demos/photo-1541658016709-82535e94bc69-200x200.jpg",
   "Agua de Limón":
-    "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=200&h=200&fit=crop",
+    "/img/demos/photo-1621263764928-df1444c5e859-200x200.jpg",
   "Guacamole con Totopos":
-    "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?w=200&h=200&fit=crop",
+    "/img/demos/photo-1615870216519-2f9fa575fa5c-200x200.jpg",
   "Nachos Supremos":
-    "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=200&h=200&fit=crop",
+    "/img/demos/photo-1513456852971-30c0b8199d4d-200x200.jpg",
   "Esquites Premium":
-    "https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=200&h=200&fit=crop",
+    "/img/demos/photo-1551462147-ff29053bfc14-200x200.jpg",
   "Tabla de Quesos Artesanales":
-    "https://images.unsplash.com/photo-1452195100486-9cc805987862?w=200&h=200&fit=crop",
+    "/img/demos/photo-1452195100486-9cc805987862-200x200.jpg",
   "Tostada de Atún Fresco":
-    "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=200&h=200&fit=crop",
+    "/img/demos/photo-1579871494447-9811cf80d66c-200x200.jpg",
   "Tostada de Aguachile":
-    "https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=200&h=200&fit=crop",
+    "/img/demos/photo-1535399831218-d5bd36d1a6b3-200x200.jpg",
   "Tostada de Pulpo":
-    "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=200&h=200&fit=crop",
+    "/img/demos/photo-1565557623262-b51c2513a641-200x200.jpg",
   "Salmón al Mango":
-    "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=200&h=200&fit=crop",
+    "/img/demos/photo-1467003909585-2f8a72700288-200x200.jpg",
   "Pulpo Zarandeado":
-    "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=200&h=200&fit=crop",
+    "/img/demos/photo-1565557623262-b51c2513a641-200x200.jpg",
   "Camarones a la Diabla":
-    "https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=200&h=200&fit=crop",
+    "/img/demos/photo-1625943553852-781c6dd46faa-200x200.jpg",
   "Rib Eye Premium":
-    "https://images.unsplash.com/photo-1558030006-450675393462?w=200&h=200&fit=crop",
+    "/img/demos/photo-1558030006-450675393462-200x200.jpg",
   "Arrachera Marinada":
-    "https://images.unsplash.com/photo-1544025162-d76694265947?w=200&h=200&fit=crop",
+    "/img/demos/photo-1544025162-d76694265947-200x200.jpg",
   "Molcajete Mar y Tierra":
-    "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=200&h=200&fit=crop",
+    "/img/demos/photo-1599974579688-8dbdd335c77f-200x200.jpg",
   "Hamburguesa Gourmet":
-    "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&h=200&fit=crop",
+    "/img/demos/photo-1568901346375-23c9450c58cd-200x200.jpg",
   "Tacos de Rib Eye":
-    "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=200&h=200&fit=crop",
+    "/img/demos/photo-1551504734-5ee1c4a1479b-200x200.jpg",
   "Tacos de Arrachera":
-    "https://images.unsplash.com/photo-1624300629298-e9de39c13be5?w=200&h=200&fit=crop",
+    "/img/demos/photo-1624300629298-e9de39c13be5-200x200.jpg",
   "Tacos de Picanha":
-    "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=200&h=200&fit=crop",
+    "/img/demos/photo-1599974579688-8dbdd335c77f-200x200.jpg",
   "Taco de Pulpo Zarandeado":
-    "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=200&h=200&fit=crop",
+    "/img/demos/photo-1565557623262-b51c2513a641-200x200.jpg",
   "Taco de Camarón Tempura":
-    "https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=200&h=200&fit=crop",
+    "/img/demos/photo-1625943553852-781c6dd46faa-200x200.jpg",
   "Margarita Clásica":
-    "https://images.unsplash.com/photo-1556855810-ac404aa91e85?w=200&h=200&fit=crop",
+    "/img/demos/photo-1556855810-ac404aa91e85-200x200.jpg",
   "Mojito de Maracuyá":
-    "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=200&h=200&fit=crop",
+    "/img/demos/photo-1551538827-9c037cb4f32a-200x200.jpg",
   "Mezcalita Toronja":
-    "https://images.unsplash.com/photo-1587223962217-f4e4612c1e6b?w=200&h=200&fit=crop",
+    "/img/demos/photo-1618799805265-4f27cb61ede9-200x200.jpg",
   "Negroni Ahumado":
-    "https://images.unsplash.com/photo-1574056932095-24bbcfdd4253?w=200&h=200&fit=crop",
+    "/img/demos/photo-1626688445658-c948f32d68ba-200x200.jpg",
   "Cerveza Nacional":
-    "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=200&h=200&fit=crop",
+    "/img/demos/photo-1535958636474-b021ee887b13-200x200.jpg",
   "Cerveza Premium":
-    "https://images.unsplash.com/photo-1608270586620-248524c67de9?w=200&h=200&fit=crop",
+    "/img/demos/photo-1608270586620-248524c67de9-200x200.jpg",
   "Cerveza Artesanal":
-    "https://images.unsplash.com/photo-1566633806327-68e152aaf26d?w=200&h=200&fit=crop",
+    "/img/demos/photo-1566633806327-68e152aaf26d-200x200.jpg",
   "Limonada de Frutos Rojos":
-    "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=200&h=200&fit=crop",
+    "/img/demos/photo-1621263764928-df1444c5e859-200x200.jpg",
   "Naranjada con Hierbabuena":
-    "https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?w=200&h=200&fit=crop",
+    "/img/demos/photo-1534353473418-4cfa6c56fd38-200x200.jpg",
   "Agua de Horchata":
-    "https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=200&h=200&fit=crop",
+    "/img/demos/photo-1541658016709-82535e94bc69-200x200.jpg",
   "Churros con Chocolate":
-    "https://images.unsplash.com/photo-1624371414361-e670246e0773?w=200&h=200&fit=crop",
+    "/img/demos/photo-1624371414361-e670edf4898d-200x200.jpg",
   "Pastel de Tres Leches":
-    "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=200&h=200&fit=crop",
+    "/img/demos/photo-1464349095431-e9a21285b5f3-200x200.jpg",
   "Flan Napolitano":
-    "https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?w=200&h=200&fit=crop",
+    "/img/demos/photo-1528975604071-b4dc52a2d18c-200x200.jpg",
   "Helado Artesanal":
-    "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=200&h=200&fit=crop",
+    "/img/demos/photo-1497034825429-c343d7c6a68f-200x200.jpg",
   "Café Americano":
-    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&h=200&fit=crop",
+    "/img/demos/photo-1509042239860-f550ce710b93-200x200.jpg",
   "Carajillo Licor 43":
-    "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=200&h=200&fit=crop",
+    "/img/demos/photo-1514362545857-3bc16c4c7d1b-200x200.jpg",
   "Carajillo de Baileys":
-    "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=200&h=200&fit=crop",
+    "/img/demos/photo-1514362545857-3bc16c4c7d1b-200x200.jpg",
   "Mezcal Cenizo (1 oz)":
-    "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=200&h=200&fit=crop",
+    "/img/demos/photo-1569529465841-dfecdab7503b-200x200.jpg",
 };
 
 export const menuThemes = {
@@ -108,7 +108,7 @@ export const menuThemes = {
       "Auténticos tacos al pastor y antojitos mexicanos, hechos al momento en nuestro food truck",
     logoInitial: "P",
     heroImage:
-      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=900&h=500&fit=crop",
+      "/img/demos/photo-1565299585323-38d6b0865b47-900x500.jpg",
     schedule: "Mar–Dom 6:00 pm – 12:00 am",
     showSearch: false,
     showPromotions: false,
@@ -135,7 +135,7 @@ export const menuThemes = {
         "linear-gradient(135deg, rgba(15, 13, 10, 0.98), rgba(30, 20, 10, 0.98))",
     },
     waHire:
-      "¡Hola! Me interesa el Plan Esencial de menú digital ($3,999 MXN) 🌮",
+      "¡Hola! Me interesa el Plan Esencial de menú digital ($2,499 MXN) 🌮",
     waOrder: "Hola, vi el menú de Tacos El Patrón y quiero hacer un pedido",
     infoItems: [
       { label: "Horario", value: "6:00 pm – 12:00 am" },
@@ -151,7 +151,7 @@ export const menuThemes = {
       "Una experiencia gastronómica única con los mejores ingredientes de temporada",
     logoInitial: "T",
     heroImage:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&h=500&fit=crop",
+      "/img/demos/photo-1517248135467-4c7edcad34c4-900x500.jpg",
     schedule: "Lun–Dom 1:00 pm – 12:00 am",
     showSearch: true,
     showPromotions: true,
@@ -212,7 +212,7 @@ export const menuThemes = {
       "Alta cocina japonesa contemporánea con ingredientes importados y servicio de nivel internacional",
     logoInitial: "S",
     heroImage:
-      "https://images.unsplash.com/photo-1579027989536-b7b3f8758f5b?w=900&h=500&fit=crop",
+      "/img/demos/photo-1635321594488-2d38af11ed03-900x500.jpg",
     schedule: "Lun–Dom 12:00 pm – 11:00 pm",
     showSearch: true,
     showPromotions: true,

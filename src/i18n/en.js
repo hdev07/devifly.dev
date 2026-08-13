@@ -5,7 +5,7 @@ export default {
     cases: 'Results',
     pricing: 'Investment',
     bookCall: 'Book a call',
-    allInclude: '✦ All services include hosting, SSL and ongoing support',
+    allInclude: '✦ All services include hosting and domain for year 1 (up to $800 MXN/yr), SSL and post-launch support',
     seeAll: 'See all services',
     mega: {
       landing: { title: 'Landing Pages', desc: 'High-conversion pages for businesses' },
@@ -18,6 +18,25 @@ export default {
   footer: {
     rights: 'All rights reserved.',
     built: 'Built with Vue, Tailwind & passion.',
+    legalTitle: 'Legal',
+    terms: 'Terms and conditions',
+    privacy: 'Privacy notice',
+    cancellation: 'Cancellation and refunds',
+    ownership: 'Code ownership',
+  },
+  legal: {
+    eyebrow: 'Legal',
+    breadcrumb: 'Navigation',
+    backHome: 'Back to home',
+    otherDocs: 'Documents',
+    questionsText: 'Questions about these policies? Write to us and a real person answers.',
+    contactTitle: 'Who is responsible for these policies',
+    contactText:
+      'These policies apply to every service provided under the Devifly brand (devifly.dev). For any clarification, this is the formal contact.',
+    entityLabel: 'Holder',
+    regimeLabel: 'Tax regime',
+    emailLabel: 'Contact',
+    addressLabel: 'Address',
   },
   common: {
     problem: 'Problem',
@@ -105,15 +124,6 @@ export default {
       },
     },
   },
-  topSellers: {
-    eyebrow: 'Packaged Products',
-    title: 'Ready-to-launch business solutions',
-    subtitle: 'Products with clear scope and pricing. If your project needs more, we also build custom.',
-    customNote: 'If your project requires a different scope, we also build custom solutions.',
-    seeCatalog: 'See full catalog',
-    viewMore: 'Learn more',
-    demo: 'Demo',
-  },
   howWeWork: {
     eyebrow: 'Process',
     title: 'From idea to launch in 4 steps',
@@ -149,6 +159,17 @@ export default {
     bonusTitle: 'Bonus: post-launch included',
     bonusDesc: '30 days of support, metrics, and tweaks. Your site keeps evolving with real data.',
     bonusCta: 'See maintenance',
+    legalTitle: 'Under contract from day one, not on a handshake email',
+    legalDesc:
+      'Every project starts with signed paperwork: scope in writing, an NDA if you need one, and IP assignment on final payment. Our policies are public, not fine print that shows up at the end.',
+    legalCta: 'Read the terms',
+    legalDocs: {
+      contract: 'Master agreement',
+      sow: 'Statement of work',
+      nda: 'NDA',
+      ownership: 'IP assignment',
+      cancellation: 'Cancellation policy',
+    },
   },
   whyDevifly: {
     eyebrow: 'Why Devifly',
@@ -201,16 +222,16 @@ export default {
     eyebrow: 'Results',
     title: 'Products in production, not in Figma',
     subtitle:
-      'Three real projects with active users. This is what happens when the right product solves a business problem.',
+      'Five real projects with active users. This is what happens when the right product solves a business problem.',
     cta: 'I want results like these',
     visit: 'Visit {name}',
     readCase: 'Read full case',
   },
   demos: {
-    eyebrow: 'Demos',
-    title: 'See it in action',
+    eyebrow: 'Product demos',
+    title: 'See it in action before you hire',
     subtitle:
-      'Hover to preview. Open the case for process, metrics, and the full gallery.',
+      'Five real, navigable demos — one per product. Hover to preview and open them to use them the way your customer would.',
   },
   caseStudy: {
     back: 'Back to cases',
@@ -232,34 +253,40 @@ export default {
   pricingTeaser: {
     eyebrow: 'Investment',
     title: 'Clear pricing, no fine print',
-    subtitle: 'Three tiers by project complexity. We quote custom if you need more.',
+    subtitle: 'The same three plans across every product. The price changes with the product you pick — the rules never do.',
     mostRequested: 'Most requested',
-    note: '* USD prices include a 20% international adjustment. VAT applies if an invoice is required. 21-day demo available on select products.',
+    note: '* Reference USD prices, including international payment processing and USD invoicing. VAT applies if a Mexican invoice is required. 21-day demo available on select products.',
     seePlans: 'See plans by product',
+    customTitle: 'Custom software or SaaS?',
+    customText: 'Internal systems, dashboards, and platforms are quoted by scope after a free discovery call.',
+    customCta: 'Talk to an expert',
     tiers: {
-      starter: {
-        title: 'Starter',
-        subtitle: 'Invitations, catalogs, and digital menus.',
+      esencial: {
+        title: 'Essential',
+        subtitle: 'Ship fast and start selling.',
         price: '$35',
+        range: 'Actual range: $35 – $419 USD depending on product',
         delivery: 'USD · 1-2 weeks',
-        features: ['Responsive design', 'WhatsApp integrated', '1 year hosting included'],
+        features: ['Mobile-first responsive design', 'WhatsApp integrated', 'Hosting and domain included year 1'],
         cta: 'View plans',
       },
-      growth: {
-        title: 'Growth',
-        subtitle: 'Landings and venue websites.',
-        price: '$359',
+      pro: {
+        title: 'Pro',
+        subtitle: 'Run it yourself and measure results.',
+        price: '$66',
+        range: 'Actual range: $66 – $719 USD depending on product',
         delivery: 'USD · 2-3 weeks',
-        features: ['Sales-oriented UX', 'SEO + analytics', '30-day support'],
+        features: ['Admin panel (catalogs, menus, venues)', 'Custom domain + SEO and analytics', '30-day support'],
         cta: 'View plans',
       },
-      scale: {
-        title: 'Scale / SaaS',
-        subtitle: 'Custom systems and SaaS platforms.',
-        price: 'Custom',
-        delivery: 'USD · By scope',
-        features: ['Custom architecture', 'Dashboards + APIs', 'Ongoing support'],
-        cta: 'Talk to an expert',
+      premium: {
+        title: 'Premium',
+        subtitle: 'The complete product, integrated and supported.',
+        price: '$114',
+        range: 'Actual range: $114 – $1,199 USD depending on product',
+        delivery: 'USD · 3-5 weeks',
+        features: ['Integrations and automations', 'Multi-language / multi-location', 'Extended priority support'],
+        cta: 'View plans',
       },
     },
   },
@@ -352,15 +379,19 @@ export default {
       },
       {
         q: 'Do you work with clients outside Mexico?',
-        a: 'Yes. We work remote with clients across LATAM, the US, and Europe. The site has an English version and all communication can be bilingual. USD prices include a 20% international adjustment; VAT applies if an invoice is required.',
+        a: 'Yes. We work remote with clients across LATAM, the US, and Europe. The site has an English version and all communication can be bilingual. USD prices already include international payment processing and USD invoicing; VAT applies if a Mexican invoice is required.',
       },
       {
         q: 'Does the price include hosting and domain?',
-        a: 'Yes. Starter plans include 1 year of hosting and a .devifly.dev subdomain. Growth and Scale plans include a custom domain (.com / .mx) and optimized hosting. After the first year, the recurring cost is ~$14 USD/month.',
+        a: 'Yes. Every plan includes hosting and a domain for the first year at no extra cost. Essential ships on a .devifly.dev subdomain; Pro and Premium include a custom domain (.com / .mx) and optimized hosting, capped at $800 MXN per year — enough to cover any standard domain. From year two, renewal is $14 USD/month or $144 USD/year — and if you would rather move the site to your own infrastructure, we hand over everything you need to migrate at no cost.',
+      },
+      {
+        q: 'What if the domain I want is expensive? Or if I already own one?',
+        a: 'Two different cases. If the domain you pick is premium or aftermarket and costs more than $800 MXN per year, you cover the difference at registrar cost with no markup from us, and we always tell you and get your approval before registering anything. If you already own a domain, we connect it and configure DNS, mail, and SSL at no extra cost — but the plan price does not change: the domain is an input to the service, not a line item you get credited for skipping. Either way the domain is in your name and you can take it with you whenever you want.',
       },
       {
         q: 'Can I manage the site myself after launch?',
-        a: 'Depends on the plan. Pro and higher plans include an admin panel so you can edit content, products, prices, or dishes. If you prefer to delegate changes, we offer monthly maintenance plans from $71 USD.',
+        a: 'It depends on the product and the plan. For digital catalogs, menus, and venue websites, the Pro and Premium plans include an admin panel so you can edit products, prices, dishes, photos, and schedules yourself. Landing pages and digital invitations have no panel by design — they are fixed content pieces, so we handle the edits. If you would rather delegate everything, maintenance plans start at $71 USD/month.',
       },
       {
         q: 'Why Vue 3 and not WordPress?',
@@ -369,6 +400,14 @@ export default {
       {
         q: 'Do I have to pay everything upfront?',
         a: 'No. You pay a 50% deposit to start (which often covers the 21-day demo) and the rest on launch. On longer projects we split by milestones so you pay as you progress.',
+      },
+      {
+        q: 'What happens if I cancel the project halfway?',
+        a: 'You can cancel at any time with written notice. We close out the work at the last completed milestone, hand over everything produced up to that date (code, designs, access, and documentation), and settle only what was actually worked: if the progress is worth less than your deposit, we refund the difference; if it is worth more, we invoice the excess. The deposit is a credit in your favor, not a penalty. This is written into our Cancellation and Refund Policy — we do not leave it to good faith.',
+      },
+      {
+        q: 'Who owns the code once the project is done?',
+        a: 'You do. On final payment we assign you the economic rights to the code, design, and content we produced for you, and transfer the repository, the domain, and every access credential. We use no licensing that locks you in and we never hold the keys to your business. All we keep is our own know-how, base libraries, and reusable components — plus the right to show the project in our portfolio, which we waive if we sign an NDA.',
       },
       {
         q: 'Do you sign NDAs?',

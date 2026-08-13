@@ -226,16 +226,31 @@ import { musionCase } from "../data/cases/musion.js";
 import { timbraCase } from "../data/cases/timbra.js";
 import { confecdotarioCase } from "../data/cases/confecdotario.js";
 
+// MoviBase y PoleGP no tienen caso propio: son capturas de su landing pública,
+// no del sistema. Se regeneran con scratchpad/ext-shots.mjs.
+import movibase1 from "../assets/img/cases/movibase/phone-1.jpg";
+import movibase2 from "../assets/img/cases/movibase/phone-2.jpg";
+import movibase3 from "../assets/img/cases/movibase/phone-3.jpg";
+import polegp1 from "../assets/img/cases/polegp/phone-1.jpg";
+import polegp2 from "../assets/img/cases/polegp/phone-2.jpg";
+import polegp3 from "../assets/img/cases/polegp/phone-3.jpg";
+
 const { t, locale } = useI18n();
 
+// Solo proyectos con capturas: los 3 con caso propio primero, luego el resto.
+// Un proyecto entra a la parrilla en cuanto tiene entrada en `mockups`.
 const featuredCases = computed(() =>
-  caseStudies.filter((cs) => cs.featured),
+  caseStudies
+    .filter((cs) => mockups[cs.key])
+    .sort((a, b) => Number(b.featured) - Number(a.featured)),
 );
 
-/** Screenshots keyed by caseStudy.key — expand as other cases get assets */
+/** Screenshots keyed by caseStudy.key */
 const mockups = {
   timbra: timbraCase.gallery.map((g) => g.src),
   musion: musionCase.gallery.map((g) => g.src),
   confecdotario: confecdotarioCase.gallery.map((g) => g.src),
+  movibase: [movibase1, movibase2, movibase3],
+  polegp: [polegp1, polegp2, polegp3],
 };
 </script>

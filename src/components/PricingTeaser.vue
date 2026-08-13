@@ -45,6 +45,9 @@
             <p class="text-xs dark:text-text-secondary text-light-muted mt-1">
               {{ t(`pricingTeaser.tiers.${tier.key}.delivery`) }}
             </p>
+            <p class="text-[11px] dark:text-text-secondary/80 text-light-muted mt-2 leading-snug">
+              {{ t(`pricingTeaser.tiers.${tier.key}.range`) }}
+            </p>
           </div>
 
           <ul class="space-y-2 mb-6 flex-1">
@@ -68,6 +71,26 @@
             {{ t(`pricingTeaser.tiers.${tier.key}.cta`) }}
           </router-link>
         </article>
+      </div>
+
+      <div
+        class="mt-5 flex flex-col sm:flex-row sm:items-center gap-4 rounded-2xl border border-dashed dark:border-base-700/60 border-light-border dark:bg-base-900/30 bg-white/60 px-6 py-5"
+      >
+        <div class="flex-1">
+          <h3 class="font-display text-base font-bold dark:text-white text-light-text">
+            {{ t("pricingTeaser.customTitle") }}
+          </h3>
+          <p class="text-sm dark:text-text-secondary text-light-muted mt-1 leading-relaxed">
+            {{ t("pricingTeaser.customText") }}
+          </p>
+        </div>
+        <router-link
+          to="/contacto"
+          class="shrink-0 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-semibold bg-brand-500/10 border border-brand-500/25 dark:text-brand-400 text-brand-600 hover:bg-brand-500/15 transition"
+        >
+          {{ t("pricingTeaser.customCta") }}
+          <LucideIcon name="arrow-right" class-name="w-4 h-4" />
+        </router-link>
       </div>
 
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
@@ -96,8 +119,8 @@ const { t, tm } = useI18n();
 
 // Textos en src/i18n/{es,en}.js bajo `pricingTeaser.tiers.<key>`
 const tiers = [
-  { key: "starter", featured: false, link: "/#productos" },
-  { key: "growth", featured: true, link: "/#productos" },
-  { key: "scale", featured: false, link: "/contacto" },
+  { key: "esencial", featured: false, link: "/#productos" },
+  { key: "pro", featured: true, link: "/#productos" },
+  { key: "premium", featured: false, link: "/#productos" },
 ];
 </script>
