@@ -257,6 +257,7 @@ export const landingNegociosContent = {
       {
         name: "Esencial",
         icon: "layout",
+        demo: "/landing-pages/esencial",
         price: "$4,999",
         period: "pago único",
         tagline: "Estructura compacta para una oferta puntual o campaña específica",
@@ -283,6 +284,7 @@ export const landingNegociosContent = {
       {
         name: "Pro",
         icon: "layers",
+        demo: "/landing-pages/pro",
         price: "$7,999",
         period: "pago único",
         tagline: "Explica propuesta, beneficios y respaldo comercial completo",
@@ -306,6 +308,7 @@ export const landingNegociosContent = {
       {
         name: "Premium",
         icon: "building-2",
+        demo: "/landing-pages/premium",
         price: "$12,999",
         period: "pago único",
         tagline: "Para marcas que necesitan estructura, contenido y crecimiento",
@@ -436,7 +439,7 @@ export const landingNegociosContent = {
       pricingSubtitle:
         "One-time payment, no monthly fees or surprises. From a focused campaign to a full portal.",
       pricingNote:
-        "USD prices include a 20% international adjustment. VAT applies if an invoice is required.",
+        "Reference USD prices, including international payment processing and USD invoicing. VAT applies if a Mexican invoice is required.",
       hirePlan: "Get",
       viewDemo: "View demo",
       comparisonTitle: "Detailed plan comparison",
@@ -636,6 +639,7 @@ export const landingNegociosContent = {
       {
         name: "Essential",
         icon: "layout",
+        demo: "/landing-pages/esencial",
         price: "$359",
         period: "one-time payment",
         tagline: "Compact structure for a focused offer or specific campaign",
@@ -662,6 +666,7 @@ export const landingNegociosContent = {
       {
         name: "Pro",
         icon: "layers",
+        demo: "/landing-pages/pro",
         price: "$575",
         period: "one-time payment",
         tagline: "Explain proposal, benefits, and full commercial positioning",
@@ -685,6 +690,7 @@ export const landingNegociosContent = {
       {
         name: "Premium",
         icon: "building-2",
+        demo: "/landing-pages/premium",
         price: "$959",
         period: "one-time payment",
         tagline: "For brands that need structure, content, and room to grow",

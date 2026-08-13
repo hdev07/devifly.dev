@@ -81,7 +81,7 @@ export const landingInvitacionesContent = {
         path: "/invitaciones/esencial",
         mockEvent: "Bautizo",
         mockName: "Santiago",
-        mockDate: "15 Mar 2026",
+        mockDate: "12 Jun 2027",
       },
       {
         planKey: "pro",
@@ -90,7 +90,7 @@ export const landingInvitacionesContent = {
         highlighted: true,
         mockEvent: "Mis XV Años",
         mockName: "Valentina",
-        mockDate: "20 Jul 2026",
+        mockDate: "18 Sep 2027",
       },
       {
         planKey: "premium",
@@ -98,7 +98,7 @@ export const landingInvitacionesContent = {
         path: "/invitaciones/premium",
         mockEvent: "Nuestra Boda",
         mockName: "Ana & Carlos",
-        mockDate: "10 Dic 2026",
+        mockDate: "10 Dic 2027",
       },
     ],
     themes: [
@@ -222,6 +222,7 @@ export const landingInvitacionesContent = {
         excluded: [
           "Música de fondo y animaciones",
           "Galería de video",
+          "Trivia interactiva",
           "Listado de asistencia confirmada",
           "Pases asignados por invitado",
           "Invitaciones múltiples (10-20)",
@@ -258,6 +259,7 @@ export const landingInvitacionesContent = {
           "QR y control de acceso",
           "Diseño completamente personalizado",
           "Álbum colaborativo",
+          "Trivia interactiva",
         ],
       },
       {
@@ -279,6 +281,7 @@ export const landingInvitacionesContent = {
           "Control de acceso en evento",
           "Diseño completamente personalizado",
           "Álbum colaborativo de fotos",
+          "Trivia interactiva",
         ],
         excluded: [],
       },
@@ -391,7 +394,7 @@ export const landingInvitacionesContent = {
       pricingSubtitle:
         "One-time payment — no monthly fees. From essentials to the full Premium experience with QR.",
       pricingNote:
-        "USD prices include a 20% international adjustment. VAT applies if an invoice is required.",
+        "Reference USD prices, including international payment processing and USD invoicing. VAT applies if a Mexican invoice is required.",
       hirePlan: "Get",
       viewDemo: "View demo",
       pricingGuarantee: "Satisfaction guarantee · Unlimited design revisions. If after 2 rounds of changes you're not convinced, full refund before publishing.",
@@ -422,7 +425,7 @@ export const landingInvitacionesContent = {
         path: "/invitaciones/esencial",
         mockEvent: "Baptism",
         mockName: "Santiago",
-        mockDate: "Mar 15, 2026",
+        mockDate: "Jun 12, 2027",
       },
       {
         planKey: "pro",
@@ -431,7 +434,7 @@ export const landingInvitacionesContent = {
         highlighted: true,
         mockEvent: "My Quinceañera",
         mockName: "Valentina",
-        mockDate: "Jul 20, 2026",
+        mockDate: "Sep 18, 2027",
       },
       {
         planKey: "premium",
@@ -439,7 +442,7 @@ export const landingInvitacionesContent = {
         path: "/invitaciones/premium",
         mockEvent: "Our Wedding",
         mockName: "Ana & Carlos",
-        mockDate: "Dec 10, 2026",
+        mockDate: "Dec 10, 2027",
       },
     ],
     themes: [
@@ -563,6 +566,7 @@ export const landingInvitacionesContent = {
         excluded: [
           "Background music and animations",
           "Video gallery",
+          "Interactive trivia",
           "Confirmed guest list",
           "Passes per guest",
           "Multiple invitations (10-20)",
@@ -599,6 +603,7 @@ export const landingInvitacionesContent = {
           "QR and access control",
           "Fully custom design",
           "Collaborative photo album",
+          "Interactive trivia",
         ],
       },
       {
@@ -620,6 +625,7 @@ export const landingInvitacionesContent = {
           "On-site access control",
           "Fully custom design",
           "Collaborative photo album",
+          "Interactive trivia",
         ],
         excluded: [],
       },

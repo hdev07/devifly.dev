@@ -142,8 +142,8 @@ const services = [
     iconBg: "dark:bg-amber-500/15 bg-amber-500/10",
     iconColor: "dark:text-amber-400 text-amber-500",
     accent: "bg-gradient-to-r from-amber-500 to-orange-400",
-    priceEs: "$3,999 MXN",
-    priceEn: "$275 USD",
+    priceEs: "$2,499 MXN",
+    priceEn: "$179 USD",
     link: "/menus-digitales",
   },
   {
