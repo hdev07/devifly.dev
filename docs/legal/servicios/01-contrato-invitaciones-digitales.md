@@ -167,6 +167,8 @@ La garantía **no cubre**: cambios de contenido solicitados por EL CLIENTE —qu
 
 **Compromiso de disponibilidad el día del evento.** Si por causa imputable a EL PRESTADOR la invitación resultara inaccesible durante más de **4 (cuatro) horas continuas** dentro de las 48 horas previas al evento o durante su celebración, EL CLIENTE tendrá derecho al reembolso del **50% del precio pagado**, como pena convencional única y total, en términos de la Cláusula Décima Cuarta.
 
+**Soporte post-lanzamiento.** Adicionalmente a la garantía, el plan **Pro** incluye **30 (treinta) días naturales** y el plan **Premium** **90 (noventa) días naturales** de soporte post-lanzamiento, contados desde la publicación, para dudas de uso y ajustes menores, sin exceder en ningún caso la vigencia contratada. Se presta en horario laboral con respuesta dentro de las 24 horas hábiles siguientes. No comprende funcionalidad nueva ni el rediseño de la invitación.
+
 ### DÉCIMA PRIMERA — CANCELACIÓN
 
 **11.1 Cancelación por EL CLIENTE.** Podrá cancelar en cualquier momento mediante aviso escrito. El reembolso se calcula sobre el avance real:

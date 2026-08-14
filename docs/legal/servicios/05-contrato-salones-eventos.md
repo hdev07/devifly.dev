@@ -186,7 +186,9 @@ EL PRESTADOR otorga una garantía de **30 (treinta) días naturales** contados d
 
 La garantía **no cubre**: cambios de contenido, fotografías, paquetes o tarifas; funcionalidad nueva; errores en la información capturada por EL CLIENTE; fallas por modificaciones hechas por EL CLIENTE o por terceros; interrupciones o cambios de política de servicios de terceros; ni resultados comerciales.
 
-Concluida la garantía, el soporte se presta conforme al plan de mantenimiento que EL CLIENTE contrate.
+**Soporte post-lanzamiento.** Adicionalmente a la garantía, el plan **Pro** incluye **30 (treinta) días naturales** y el plan **Premium** **90 (noventa) días naturales** de soporte post-lanzamiento, contados desde la publicación, para dudas de uso y ajustes menores. Se presta en horario laboral con respuesta dentro de las 24 horas hábiles siguientes. No comprende alta o modificación masiva de contenido, funcionalidad nueva ni desarrollo.
+
+Concluidos la garantía y el soporte post-lanzamiento, el soporte se presta conforme al plan de mantenimiento que EL CLIENTE contrate.
 
 ### DÉCIMA TERCERA — HOSTING, DOMINIO Y RENOVACIÓN
 

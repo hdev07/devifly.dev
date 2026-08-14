@@ -168,7 +168,9 @@ EL PRESTADOR otorga una garantía de **30 (treinta) días naturales** contados d
 
 La garantía **no cubre**: alta, baja o modificación de platillos, precios o fotografías; funcionalidad nueva; fallas derivadas de modificaciones hechas por EL CLIENTE o por terceros; errores en la información proporcionada por EL CLIENTE; interrupciones o cambios de política de servicios de terceros; ni daños por uso indebido.
 
-Concluida la garantía, el soporte se presta conforme al plan de mantenimiento que EL CLIENTE contrate. El plan **Premium** incluye **soporte prioritario durante 6 (seis) meses** contados desde la publicación, entendido como atención en horario laboral con respuesta dentro de las 24 horas hábiles siguientes.
+**Soporte post-lanzamiento.** Adicionalmente a la garantía, el plan **Pro** incluye **30 (treinta) días naturales** y el plan **Premium** **90 (noventa) días naturales** de soporte post-lanzamiento, contados desde la publicación, para dudas de uso y ajustes menores. Se presta en horario laboral con respuesta dentro de las 24 horas hábiles siguientes. No comprende alta o modificación masiva de contenido, funcionalidad nueva ni desarrollo.
+
+Concluidos la garantía y el soporte post-lanzamiento, el soporte se presta conforme al plan de mantenimiento que EL CLIENTE contrate.
 
 ### DÉCIMA SEGUNDA — HOSTING, DOMINIO Y RENOVACIÓN
 
@@ -291,7 +293,7 @@ Todo lo del plan Pro, más:
 - [ ] Multi-idioma (español / inglés)
 - [ ] Vista de platillos más consultados
 - [ ] Exportación compatible con sistemas POS
-- [ ] Soporte prioritario por 6 meses
+- [ ] Soporte post-lanzamiento por 90 días
 - [ ] Diseño a medida con branding
 
 ### Límites cuantitativos del proyecto
