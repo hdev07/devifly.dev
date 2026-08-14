@@ -62,19 +62,35 @@ Todo lo del plan Pro, más:
 
 **Horario hábil:** lunes a viernes de 9:00 a 18:00 horas, tiempo del centro de México, excluyendo días festivos oficiales.
 
-## TERCERA — ACUMULACIÓN Y EXCEDENTES
+## TERCERA — CLASIFICACIÓN DE SOLICITUDES
+
+Para determinar cómo se atiende cada solicitud, LAS PARTES acuerdan la siguiente clasificación:
+
+**a) Cambio de contenido** — Entra en la bolsa mensual sin costo adicional. Se entiende por cambio de contenido toda modificación sobre elementos ya existentes en el sitio: textos, precios, horarios, teléfonos, correos, imágenes, enlaces, documentos PDF y reordenamiento de secciones o ítems existentes. Estimación máxima: 1 (una) hora. Si una solicitud que parece un cambio de contenido supera esa estimación, EL PRESTADOR lo comunicará antes de iniciar el trabajo y lo reclasificará conforme al inciso b).
+
+**b) Mejora o desarrollo** — Se cotiza a precio cerrado con tarifa preferencial del plan contratado antes de iniciar cualquier trabajo. Se entiende por mejora o desarrollo toda solicitud que añade estructura, funcionalidad o diseño nuevos al sitio: nuevas secciones, páginas adicionales, formularios, integraciones con servicios externos, cambios de diseño o actualizaciones masivas de contenido en cinco o más páginas en una sola solicitud.
+
+**c) Proyecto independiente** — Queda fuera del mantenimiento y requiere contrato aparte. Se entiende por proyecto independiente: una nueva propiedad digital, un rediseño completo, módulos con lógica propia (reservas, pagos, membresías) o cualquier trabajo cuyo alcance implique rediseñar o reconstruir más del 50% del sitio.
+
+**d) Garantía** — No consume bolsa ni genera cargo. Todo error de implementación atribuible directamente a EL PRESTADOR se corrige sin costo durante los **30 (treinta) días naturales** posteriores a la publicación. Quedan excluidas de la garantía las fallas causadas por modificaciones del cliente o de terceros, y las solicitudes de contenido nuevo.
+
+Ante la duda sobre la categoría de una solicitud, EL PRESTADOR comunicará su criterio por escrito antes de iniciar cualquier trabajo.
+
+## CUARTA — ACUMULACIÓN Y EXCEDENTES
 
 Las horas incluidas **no son acumulables** entre meses: las no utilizadas en el mes se pierden. Esto se debe a que la disponibilidad reservada es el servicio, no las horas en sí.
 
-Las horas que excedan la bolsa mensual se facturan a **$700 M.N. por hora**, más IVA, previa autorización por escrito de EL CLIENTE. EL PRESTADOR notificará a EL CLIENTE **antes** de agotar la bolsa mensual y **no ejecutará** trabajo excedente sin autorización previa.
+Las horas que excedan la bolsa mensual se facturan a **$700 M.N. por hora**, más IVA, previa autorización por escrito de EL CLIENTE.
+
+**Procedimiento de excedente:** cuando EL PRESTADOR detecte que la siguiente solicitud agotará la bolsa mensual, notificará a EL CLIENTE el tiempo estimado y el costo antes de continuar, y esperará autorización escrita. Como único margen de cortesía, EL PRESTADOR podrá ejecutar sin autorización previa hasta **20 (veinte) minutos** adicionales por encima de la bolsa mensual; cualquier excedente mayor queda detenido hasta recibir confirmación.
 
 El tiempo se computa en incrementos de **15 (quince) minutos**, con un mínimo facturable de **30 (treinta) minutos** por solicitud atendida.
 
 Si EL CLIENTE excede la bolsa mensual durante **2 (dos) meses consecutivos**, EL PRESTADOR le propondrá el cambio al plan inmediato superior, que en todos los casos resulta más económico que continuar pagando excedentes.
 
-Cuando EL CLIENTE se encuentre en el plan VIP y agote su bolsa mensual durante **2 (dos) meses consecutivos**, LAS PARTES reconocen que el trabajo requerido excede la naturaleza del mantenimiento y acuerdan valorar su contratación como proyecto de evolución independiente, conforme a la Cláusula Cuarta, inciso b).
+Cuando EL CLIENTE se encuentre en el plan VIP y agote su bolsa mensual durante **2 (dos) meses consecutivos**, LAS PARTES reconocen que el trabajo requerido excede la naturaleza del mantenimiento y acuerdan valorar su contratación como proyecto de evolución independiente, conforme a la Cláusula Tercera, inciso c).
 
-## CUARTA — QUÉ NO INCLUYE
+## QUINTA — QUÉ NO INCLUYE
 
 Los planes de mantenimiento **no comprenden**:
 
@@ -88,9 +104,9 @@ Los planes de mantenimiento **no comprenden**:
 
 **e)** Licencias de software, fuentes tipográficas o servicios de terceros contratados a nombre de EL CLIENTE.
 
-**f)** Reparación de fallas causadas por modificaciones realizadas por EL CLIENTE o por terceros ajenos a EL PRESTADOR. Estas se atienden con cargo por hora.
+**f)** Reparación de fallas causadas por modificaciones realizadas por EL CLIENTE o por terceros ajenos a EL PRESTADOR. Estas se atienden con cargo por hora conforme a la Cláusula Cuarta.
 
-## QUINTA — NIVEL DE SERVICIO
+## SEXTA — NIVEL DE SERVICIO
 
 EL PRESTADOR se compromete a mantener una **disponibilidad mensual del 99.5%**, calculada sobre el tiempo total del mes, excluyendo:
 
@@ -104,7 +120,7 @@ EL PRESTADOR se compromete a mantener una **disponibilidad mensual del 99.5%**, 
 
 **Compensación:** si la disponibilidad en un mes calendario cae por debajo del 99.5% por causas imputables a EL PRESTADOR, EL CLIENTE tendrá derecho a un descuento del **10%** de la mensualidad por cada punto porcentual de incumplimiento, hasta un máximo del 50% de dicha mensualidad. La compensación se aplicará como crédito en la siguiente factura y constituye el remedio único y exclusivo por este concepto.
 
-## SEXTA — PRECIO Y FORMA DE PAGO
+## SÉPTIMA — PRECIO Y FORMA DE PAGO
 
 | Concepto | Monto |
 |---|---|
@@ -117,21 +133,21 @@ El pago se realiza por **anticipado**, dentro de los primeros **5 (cinco) días 
 
 **Ajuste anual:** EL PRESTADOR podrá ajustar la tarifa una vez al año, en un porcentaje que no excederá la inflación anual reportada por el INEGI más 3 puntos porcentuales, notificándolo con al menos **60 (sesenta) días naturales** de anticipación. Si EL CLIENTE no acepta el ajuste, podrá terminar el contrato sin penalización antes de que entre en vigor.
 
-## SÉPTIMA — VIGENCIA Y RENOVACIÓN
+## OCTAVA — VIGENCIA Y RENOVACIÓN
 
 Este contrato inicia el **[FECHA]** y tiene una vigencia de **[1 mes / 12 meses]**, renovable automáticamente por periodos iguales, salvo que alguna de LAS PARTES notifique su intención de no renovar con **30 (treinta) días naturales** de anticipación.
 
 **No existe periodo mínimo de permanencia.**
 
-## OCTAVA — CANCELACIÓN
+## NOVENA — CANCELACIÓN
 
-**8.1** EL CLIENTE puede cancelar en cualquier momento mediante aviso por escrito con **30 (treinta) días naturales** de anticipación.
+**9.1** EL CLIENTE puede cancelar en cualquier momento mediante aviso por escrito con **30 (treinta) días naturales** de anticipación.
 
-**8.2** El periodo en curso ya iniciado **no es reembolsable**, pero el servicio permanecerá activo hasta el final del periodo pagado.
+**9.2** El periodo en curso ya iniciado **no es reembolsable**, pero el servicio permanecerá activo hasta el final del periodo pagado.
 
-**8.3** En los planes anuales cancelados a la mitad, se reembolsará de forma **proporcional** el importe correspondiente a los meses completos no consumidos.
+**9.3** En los planes anuales cancelados a la mitad, se reembolsará de forma **proporcional** el importe correspondiente a los meses completos no consumidos.
 
-**8.4 Entrega a la salida.** Al terminar la relación, EL PRESTADOR entregará a EL CLIENTE, sin costo alguno y dentro de los **10 (diez) días hábiles** siguientes:
+**9.4 Entrega a la salida.** Al terminar la relación, EL PRESTADOR entregará a EL CLIENTE, sin costo alguno y dentro de los **10 (diez) días hábiles** siguientes:
 
 - El código fuente actualizado y el repositorio.
 - Los respaldos de la base de datos, si aplica.
@@ -141,26 +157,26 @@ Este contrato inicia el **[FECHA]** y tiene una vigencia de **[1 mes / 12 meses]
 
 EL PRESTADOR conservará un respaldo durante **60 (sesenta) días naturales** posteriores a la terminación y después lo eliminará de forma segura. EL CLIENTE puede solicitar la eliminación inmediata por escrito.
 
-**8.5 Mora.** El retraso de **15 (quince) días naturales** en el pago faculta a EL PRESTADOR a suspender el servicio, previo aviso de **5 (cinco) días hábiles** para que EL CLIENTE descargue su información. La suspensión no extingue los derechos de EL CLIENTE sobre el código y los datos, que se le entregarán en todo caso conforme a la cláusula 8.4.
+**9.5 Mora.** El retraso de **15 (quince) días naturales** en el pago faculta a EL PRESTADOR a suspender el servicio, previo aviso de **5 (cinco) días hábiles** para que EL CLIENTE descargue su información. La suspensión no extingue los derechos de EL CLIENTE sobre el código y los datos, que se le entregarán en todo caso conforme a la cláusula 9.4.
 
-## NOVENA — PROPIEDAD Y DATOS
+## DÉCIMA — PROPIEDAD Y DATOS
 
 El código, el contenido, la base de datos y la información de los usuarios finales son y permanecen como **propiedad exclusiva de EL CLIENTE**. EL PRESTADOR actúa como **encargado del tratamiento** en términos de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, tratando los datos únicamente conforme a las instrucciones de EL CLIENTE.
 
 EL PRESTADOR no utilizará los datos de EL CLIENTE ni de sus usuarios para finalidad distinta a la prestación de este servicio, ni los transferirá a terceros salvo instrucción expresa o requerimiento de autoridad competente.
 
-## DÉCIMA — CONFIDENCIALIDAD Y RESPONSABILIDAD
+## DÉCIMA PRIMERA — CONFIDENCIALIDAD Y RESPONSABILIDAD
 
 Resultan aplicables íntegramente las cláusulas de confidencialidad y de limitación de responsabilidad del Contrato de Prestación de Servicios de Desarrollo Web suscrito entre LAS PARTES.
 
 La responsabilidad acumulada máxima de EL PRESTADOR bajo este contrato se limita al monto equivalente a **3 (tres) mensualidades** del plan contratado.
 
-## DÉCIMA PRIMERA — NOTIFICACIONES
+## DÉCIMA SEGUNDA — NOTIFICACIONES
 
 - **EL PRESTADOR:** devifly.dev@gmail.com · +52 56 3592 6679
 - **EL CLIENTE:** [CORREO] · [TELÉFONO]
 
-## DÉCIMA SEGUNDA — LEGISLACIÓN Y JURISDICCIÓN
+## DÉCIMA TERCERA — LEGISLACIÓN Y JURISDICCIÓN
 
 Este contrato se rige por las leyes de los Estados Unidos Mexicanos. LAS PARTES se someten a la jurisdicción de los **tribunales competentes del Estado de México**, renunciando a cualquier otro fuero.
 
