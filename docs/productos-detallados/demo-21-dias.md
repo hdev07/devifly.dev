@@ -17,7 +17,7 @@ No es una maqueta. No es un PDF. No es un "así se vería". Es su sitio funciona
 | Producto | Plan base que se entrega como demo | Precio regular del plan |
 | --- | --- | --- |
 | Landing Pages | One Page | $4,999 MXN |
-| Menús Digitales | Esencial | $3,999 MXN |
+| Menús Digitales | Esencial | $2,499 MXN |
 | Web para Salones de Eventos | Esencial | $5,999 MXN |
 
 No aplica para: Invitaciones Digitales, Catálogos Digitales, Desarrollo Custom.

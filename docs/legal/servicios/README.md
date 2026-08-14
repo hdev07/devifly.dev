@@ -12,10 +12,10 @@ Un contrato **autónomo** por cada servicio del catálogo. Se firman solos, sin 
 |---|---|---|---|---|
 | 01 | Invitaciones Digitales | [Contrato](01-contrato-invitaciones-digitales.md) | Esencial · Pro · Premium | $499 – $1,599 |
 | 02 | Catálogos Digitales | [Contrato](02-contrato-catalogos-digitales.md) | Esencial · Pro · Premium | $1,499 – $6,999 |
-| 03 | Menús Digitales | [Contrato](03-contrato-menus-digitales.md) | Esencial · Pro · Premium | $3,999 – $14,999 |
+| 03 | Menús Digitales | [Contrato](03-contrato-menus-digitales.md) | Esencial · Pro · Premium | $2,499 – $14,999 |
 | 04 | Landing Pages | [Contrato](04-contrato-landing-pages.md) | Esencial · Pro · Premium | $4,999 – $12,999 |
 | 05 | Salones de Eventos | [Contrato](05-contrato-salones-eventos.md) | Esencial · Pro · Premium | $5,999 – $16,999 |
-| 06 | Software a Medida | [Contrato](06-contrato-software-a-medida.md) | Por alcance | Desde $25,000 |
+| 06 | Software a Medida | [Contrato](06-contrato-software-a-medida.md) | Por alcance | Desde $40,000 |
 
 **Mantenimiento y hosting** no tiene contrato aquí: se cubre con el [contrato 04 de la carpeta padre](../04-contrato-mantenimiento-hosting.md), que se firma el día de la entrega y es el que genera el ingreso recurrente.
 

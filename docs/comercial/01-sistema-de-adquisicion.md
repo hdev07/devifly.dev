@@ -30,7 +30,7 @@ No todos los negocios son buenos clientes. Estos son los tres perfiles donde tu 
 
 | | |
 |---|---|
-| **Ticket** | $3,999 – $14,999 + mantenimiento |
+| **Ticket** | $2,499 – $14,999 + mantenimiento |
 | **Por qué convierte** | El menú QR de la mayoría es una foto de PDF ilegible. La comparación es instantánea y humillante. |
 | **Dolor observable** | QR que abre un PDF, o menú desactualizado con precios viejos. |
 | **Dónde encontrarlos** | Caminando. Literalmente: escanea el QR de cada lugar donde comes. |

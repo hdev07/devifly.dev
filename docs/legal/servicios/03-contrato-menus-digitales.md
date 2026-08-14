@@ -80,7 +80,7 @@ EL CLIENTE pagará la cantidad de **$[MONTO] M.N. ([MONTO CON LETRA] pesos 00/10
 
 | Plan | Precio | Entrega estimada |
 |---|---|---|
-| Esencial | $3,999 M.N. | 1 semana |
+| Esencial | $2,499 M.N. | 1 semana |
 | Pro | $7,999 M.N. | 2 semanas |
 | Premium | $14,999 M.N. | 3 a 4 semanas |
 
@@ -88,7 +88,7 @@ EL CLIENTE pagará la cantidad de **$[MONTO] M.N. ([MONTO CON LETRA] pesos 00/10
 
 | Plan | Precio | Anticipo a la firma | Saldo a la entrega |
 |---|---|---|---|
-| Esencial | $3,999 M.N. | $2,000 M.N. | $1,999 M.N. |
+| Esencial | $2,499 M.N. | $1,250 M.N. | $1,249 M.N. |
 | Pro | $7,999 M.N. | $4,000 M.N. | $3,999 M.N. |
 | Premium | $14,999 M.N. | $7,500 M.N. | $7,499 M.N. |
 
@@ -259,7 +259,7 @@ Este contrato se rige por el Código Civil Federal, el Código de Comercio y la 
 
 Marcar el plan contratado. Lo no marcado está fuera de alcance.
 
-### Plan Esencial — $3,999 M.N. · entrega 1 semana
+### Plan Esencial — $2,499 M.N. · entrega 1 semana
 
 - [ ] Diseño optimizado para el celular de los comensales
 - [ ] Hasta 30 platillos

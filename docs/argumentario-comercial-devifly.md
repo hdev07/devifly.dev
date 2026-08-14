@@ -480,13 +480,13 @@ Un menú web optimizado para celular, accesible por QR, con categorías, fotos, 
 
 ### Rango de inversión
 
-- Desde $3,999 MXN.
+- Desde $2,499 MXN.
 
 ### Planes disponibles
 
 | Plan | Inversión | Ideal para | Resumen |
 | --- | --- | --- | --- |
-| Esencial | $3,999 MXN | restaurantes pequeños | carta digital básica pero sólida |
+| Esencial | $2,499 MXN | restaurantes pequeños | carta digital básica pero sólida |
 | Profesional | $7,999 MXN | restaurantes medianos con carta completa | menú más robusto con panel y promociones |
 | Enterprise | $14,999 MXN | cadenas o franquicias | operación multi-sucursal y analítica |
 
@@ -806,7 +806,7 @@ Esta sección sirve para clientes que preguntan si Devifly puede resolver algo m
 - Qué resuelve: menús impresos obsoletos y dificultad para destacar promociones.
 - Incluye: diseño mobile-first, categorías, fotos, promociones, búsqueda y QR.
 - Beneficio comercial: mejor experiencia y mayor exposición de productos.
-- Inversión base: desde $3,999 MXN.
+- Inversión base: desde $2,499 MXN.
 
 ### Web para Salones de Eventos
 

@@ -163,7 +163,7 @@ Resuelve la operación de cadenas o franquicias que necesitan más estructura, h
 
 | Característica | Esencial | Profesional | Enterprise |
 | --- | --- | --- | --- |
-| Precio | $3,999 MXN | $7,999 MXN | $14,999 MXN |
+| Precio | $2,499 MXN | $7,999 MXN | $14,999 MXN |
 | Platillos | Hasta 30 | Ilimitados | Ilimitados |
 | Categorías | 3 | Ilimitadas + subcategorías | Ilimitadas + subcategorías |
 | Fotos por platillo | 1 | 3 | 3+ |
@@ -219,7 +219,7 @@ Este producto cuenta con opción de **demo de 21 días por $999 MXN**.
 
 | Concepto | Detalle |
 | --- | --- |
-| Qué se entrega | Versión funcional completa del plan **Esencial** ($3,999) |
+| Qué se entrega | Versión funcional completa del plan **Esencial** ($2,499) |
 | Dónde se publica | Subdominio devifly.dev (ej. `turestaurante.devifly.dev`) |
 | Contenido | Carta real del cliente si la proporciona, o estructura sugerida con placeholders |
 | Duración | 21 días naturales desde publicación |
@@ -230,10 +230,10 @@ Este producto cuenta con opción de **demo de 21 días por $999 MXN**.
 
 1. Restaurantero paga $999 → se publica su menú digital real bajo devifly.dev
 2. Usa 21 días → lo prueba en mesas con QR, lo muestra a su equipo
-3. Decide contratar plan Esencial ($3,999) → anticipo sería $2,000
-4. Se descuentan $999 → paga solo $1,001 de anticipo
-5. Contra entrega → $1,999
-6. **Total: $3,999** (no pagó nada extra por el demo)
+3. Decide contratar plan Esencial ($2,499) → anticipo sería $1,250
+4. Se descuentan $999 → paga solo $251 de anticipo
+5. Contra entrega → $1,249
+6. **Total: $2,499** (no pagó nada extra por el demo)
 
 Si el cliente no contrata: el demo se desactiva al día 22 y el contenido se conserva 30 días adicionales. Los $999 no son reembolsables.
 
