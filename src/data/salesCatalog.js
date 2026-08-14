@@ -1006,13 +1006,13 @@ export const afterSalesPlans = [
     priceMonthlyEs: "$999 MXN/mes",
     priceMonthlyEn: "$71 USD/mo",
     featuresEs: [
-      "Hasta 2 cambios de contenido al mes",
+      "Hasta 2 horas de cambios de contenido al mes",
       "Soporte por WhatsApp (48 hrs)",
       "Monitoreo de disponibilidad",
       "Hosting incluido",
     ],
     featuresEn: [
-      "Up to 2 content updates/month",
+      "Up to 2 hours of content updates per month",
       "WhatsApp support (48 hrs)",
       "Uptime monitoring",
       "Hosting included",
@@ -1029,14 +1029,14 @@ export const afterSalesPlans = [
     priceMonthlyEs: "$1,999 MXN/mes",
     priceMonthlyEn: "$143 USD/mo",
     featuresEs: [
-      "Hasta 5 cambios al mes (contenido + diseño)",
+      "Hasta 5 horas de cambios al mes (contenido + diseño)",
       "Soporte prioritario (24 hrs)",
       "Reporte mensual de rendimiento",
       "Backups semanales",
       "Hosting incluido",
     ],
     featuresEn: [
-      "Up to 5 updates/month (content + design)",
+      "Up to 5 hours of updates per month (content + design)",
       "Priority support (24 hrs)",
       "Monthly performance report",
       "Weekly backups",

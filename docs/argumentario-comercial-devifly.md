@@ -683,9 +683,9 @@ Esta parte es clave para no dejar dudas después del cierre.
 | Servicio | Precio | Qué cubre |
 | --- | --- | --- |
 | Hosting + Dominio | $199 MXN/mes o $1,999 MXN/año | servidor, dominio, SSL y renovación |
-| Mantenimiento Básico | $999 MXN/mes | cambios ocasionales, soporte y monitoreo |
-| Mantenimiento Pro | $1,999 MXN/mes | cambios frecuentes, prioridad y reportes |
-| Mantenimiento VIP | $3,499 MXN/mes | cambios ilimitados, evolución continua y soporte premium |
+| Mantenimiento Básico | $999 MXN/mes | 2 horas al mes, soporte y monitoreo |
+| Mantenimiento Pro | $1,999 MXN/mes | 5 horas al mes, prioridad y reportes |
+| Mantenimiento VIP | $3,499 MXN/mes | 20 horas al mes, evolución continua y soporte premium |
 
 ### Alcance detallado de post-entrega
 
@@ -698,14 +698,14 @@ Esta parte es clave para no dejar dudas después del cierre.
 
 #### Mantenimiento Básico
 
-- Hasta 2 cambios de contenido al mes.
+- Hasta 2 horas de cambios de contenido al mes.
 - Soporte por WhatsApp con ventana de 48 horas.
 - Monitoreo de disponibilidad.
 - Hosting incluido.
 
 #### Mantenimiento Pro
 
-- Hasta 5 cambios al mes.
+- Hasta 5 horas de cambios al mes.
 - Soporte prioritario con ventana de 24 horas.
 - Reporte mensual de rendimiento.
 - Backups semanales.
@@ -713,9 +713,10 @@ Esta parte es clave para no dejar dudas después del cierre.
 
 #### Mantenimiento VIP
 
-- Cambios ilimitados de contenido y diseño.
+- Hasta 20 horas al mes de cambios de contenido y diseño.
+- Hasta 3 solicitudes activas en paralelo.
 - Soporte el mismo día en horario laboral.
-- Nuevas secciones o funcionalidades incluidas dentro del esquema de mantenimiento.
+- Nuevas secciones o funcionalidades dentro de las horas del plan.
 - Reportes y recomendaciones mensuales.
 - Hosting premium incluido.
 

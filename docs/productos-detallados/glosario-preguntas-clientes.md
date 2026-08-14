@@ -271,9 +271,9 @@ Depende del plan. Los planes altos incluyen panel admin para que manejes conteni
 
 Depende del nivel:
 
-- **Básico** ($999/mes): 2 cambios de contenido, soporte 48 hrs, hosting.
-- **Pro** ($1,999/mes): 5 cambios + diseño ligero, soporte prioritario 24 hrs, backups, reportes.
-- **VIP** ($3,499/mes): cambios ilimitados, soporte mismo día, nuevas secciones incluidas, reportes con recomendaciones.
+- **Básico** ($999/mes): 2 horas de cambios de contenido, soporte 48 hrs, hosting.
+- **Pro** ($1,999/mes): 5 horas de cambios + diseño ligero, soporte prioritario 24 hrs, backups, reportes.
+- **VIP** ($3,499/mes): hasta 20 horas de cambios al mes con máximo 3 solicitudes activas, soporte mismo día, nuevas secciones dentro de esas horas, reportes con recomendaciones.
 
 ### "¿Y si no quiero pagar mantenimiento?"
 

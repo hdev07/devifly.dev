@@ -75,7 +75,7 @@ Los contratos vienen con estos números cargados. Si cambias uno, cámbialo en l
 | Renovación de la invitación por 6 meses más | $399 M.N. | 01 |
 | Renovación anual de hosting y dominio | $199 M.N./mes o $1,999 M.N./año | 02–05 |
 
-Todas están por encima de la tarifa implícita del plan de mantenimiento más caro ($350/hora en VIP), que es lo que hace que subir de plan siempre convenga más que pagar excedentes.
+Todas están por encima de la tarifa implícita del plan de mantenimiento más caro (**$175/hora en VIP**: $3,499 entre 20 horas), que es lo que hace que subir de plan siempre convenga más que pagar excedentes.
 
 **Límites de carga inicial incluidos** (lo que Devifly captura; la capacidad del sistema es la del plan y el cliente sigue dando de alta sin costo):
 

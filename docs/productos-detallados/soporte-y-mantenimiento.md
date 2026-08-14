@@ -85,7 +85,7 @@ Resuelve escenarios donde el cliente necesita ayuda ocasional, pocos cambios al 
 
 ### Qué cubre
 
-- Hasta 2 cambios de contenido al mes.
+- Hasta 2 horas de cambios de contenido al mes.
 - Soporte por WhatsApp con ventana aproximada de 48 horas.
 - Monitoreo de disponibilidad.
 - Hosting incluido dentro del paquete.
@@ -93,7 +93,7 @@ Resuelve escenarios donde el cliente necesita ayuda ocasional, pocos cambios al 
 ### Qué no cubre
 
 - Rediseños completos.
-- Cambios ilimitados.
+- Trabajo por encima de las 2 horas mensuales; el excedente se cotiza aparte.
 - Nuevas funcionalidades complejas.
 - Integraciones nuevas.
 - Desarrollo de módulos o secciones grandes.
@@ -103,7 +103,7 @@ Resuelve escenarios donde el cliente necesita ayuda ocasional, pocos cambios al 
 
 | Característica | A qué se refiere | Qué resuelve |
 | --- | --- | --- |
-| Hasta 2 cambios de contenido al mes | Ajustes puntuales en textos, imágenes o bloques simples | Da flexibilidad para mantener el sitio actualizado sin contratar desarrollo cada vez |
+| Hasta 2 horas de cambios al mes | Ajustes puntuales en textos, imágenes o bloques simples | Da flexibilidad para mantener el sitio actualizado sin contratar desarrollo cada vez, con un tope que ambas partes pueden verificar |
 | Soporte por WhatsApp (48 hrs) | Canal directo con tiempo de respuesta estándar | Ofrece acompañamiento sin necesidad de un esquema premium |
 | Monitoreo de disponibilidad | Revisión de que el sitio siga arriba | Reduce riesgo de que una caída pase desapercibida |
 | Hosting incluido | El costo base de publicación ya viene dentro del plan | Simplifica operación administrativa para el cliente |
@@ -122,7 +122,7 @@ Resuelve la necesidad de negocios más activos que necesitan cambios frecuentes,
 
 ### Qué cubre
 
-- Hasta 5 cambios al mes de contenido y diseño ligero.
+- Hasta 5 horas al mes de cambios de contenido y diseño ligero.
 - Soporte prioritario con ventana aproximada de 24 horas.
 - Reporte mensual de rendimiento.
 - Backups semanales.
@@ -130,7 +130,7 @@ Resuelve la necesidad de negocios más activos que necesitan cambios frecuentes,
 
 ### Qué no cubre
 
-- Cambios ilimitados.
+- Trabajo por encima de las 5 horas mensuales; el excedente se cotiza aparte.
 - Nuevos módulos grandes.
 - Replanteamiento completo de UX o branding.
 - Integraciones complejas o desarrollo custom nuevo.
@@ -140,7 +140,7 @@ Resuelve la necesidad de negocios más activos que necesitan cambios frecuentes,
 
 | Característica | A qué se refiere | Qué resuelve |
 | --- | --- | --- |
-| Hasta 5 cambios al mes (contenido + diseño) | Ajustes más frecuentes y con algo más de profundidad visual | Permite que el sitio se mantenga vivo sin entrar a rediseños mayores |
+| Hasta 5 horas de cambios al mes (contenido + diseño) | Ajustes más frecuentes y con algo más de profundidad visual | Permite que el sitio se mantenga vivo sin entrar a rediseños mayores |
 | Soporte prioritario (24 hrs) | Respuesta más rápida que en Básico | Disminuye tiempos muertos cuando el sitio es más importante para la operación |
 | Reporte mensual de rendimiento | Resumen de estado o desempeño técnico básico | Da visibilidad sobre cómo va el proyecto tras la entrega |
 | Backups semanales | Respaldo periódico de información o estado del proyecto | Reduce riesgo ante errores o incidentes |
@@ -160,15 +160,18 @@ Resuelve la necesidad de negocios que quieren acompañamiento continuo, rapidez,
 
 ### Qué cubre
 
-- Cambios ilimitados de contenido y diseño dentro de la lógica del proyecto.
+- Hasta 20 horas mensuales de cambios de contenido y diseño.
+- Hasta 3 solicitudes activas en paralelo.
 - Soporte el mismo día en horario laboral.
-- Nuevas secciones o funcionalidades incluidas dentro de un marco razonable de evolución.
+- Nuevas secciones o funcionalidades dentro de las horas del plan.
 - Reportes y recomendaciones mensuales.
 - Hosting premium incluido.
 
 ### Qué no cubre
 
-- Desarrollo ilimitado de módulos enterprise.
+- Horas por encima de las 20 mensuales. Se cotizan como excedente a $700 MXN/hora, con autorización previa.
+- Más de 3 solicitudes atendidas al mismo tiempo; las adicionales entran en fila.
+- Desarrollo de módulos enterprise.
 - Replantear por completo el producto cada mes.
 - Proyectos paralelos nuevos no relacionados con la solución existente.
 - Integraciones complejas o sistemas nuevos fuera del marco de mantenimiento.
@@ -178,9 +181,10 @@ Resuelve la necesidad de negocios que quieren acompañamiento continuo, rapidez,
 
 | Característica | A qué se refiere | Qué resuelve |
 | --- | --- | --- |
-| Cambios ilimitados de contenido y diseño | Ajustes frecuentes dentro del mismo proyecto sin tope mensual típico | Evita fricción para marcas que cambian mucho |
+| Hasta 20 horas/mes de cambios | Bolsa amplia de contenido y diseño dentro del mismo proyecto | Evita fricción para marcas que cambian mucho, con un tope que ambas partes pueden verificar |
+| Hasta 3 solicitudes activas | Se trabajan tres cosas a la vez; el resto entra en fila | Protege los tiempos de respuesta prometidos en lugar de dispersarlos |
 | Soporte mismo día (horario laboral) | Atención más rápida en horario definido | Da tranquilidad a negocios que dependen del sitio más activamente |
-| Nuevas secciones o funcionalidades incluidas | Espacio para evolución continua razonable del proyecto | Permite mejorar el sitio sin abrir mini-cotizaciones por cada ajuste menor |
+| Nuevas secciones o funcionalidades dentro de las horas del plan | Espacio para evolución continua del proyecto | Permite mejorar el sitio sin abrir mini-cotizaciones por cada ajuste menor |
 | Reportes + recomendaciones mensuales | Seguimiento con sugerencias de mejora | Convierte mantenimiento en evolución y no solo en corrección |
 | Hosting premium incluido | Infraestructura con nivel más alto dentro del esquema del servicio | Acompaña necesidades de clientes más activos |
 
@@ -197,12 +201,15 @@ Resuelve la necesidad de negocios que quieren acompañamiento continuo, rapidez,
 | Precio | $199 MXN/mes | $999 MXN/mes | $1,999 MXN/mes | $3,499 MXN/mes |
 | Hosting incluido | Sí | Sí | Sí | Premium |
 | Dominio y SSL | Sí | Sí | Sí | Sí |
-| Cambios de contenido/mes | 0 | 2 | 5 | Ilimitados |
+| Horas de trabajo incluidas/mes | 0 | 2 | 5 | 20 |
+| Solicitudes activas en paralelo | — | Sin tope declarado | Sin tope declarado | Máx. 3 |
 | Soporte WhatsApp | No | 48 hrs | 24 hrs (prioritario) | Mismo día |
 | Monitoreo disponibilidad | No | Sí | Sí | Sí |
 | Backups | No | No | Semanales | Sí |
 | Reportes | No | No | Mensual | Mensual + recomendaciones |
-| Nuevas secciones/funcionalidades | No | No | No | Incluidas (razonables) |
+| Nuevas secciones/funcionalidades | No | No | No | Dentro de las 20 hrs |
+
+Lo que exceda el tope del plan se cotiza como excedente a **$700 MXN/hora + IVA**, con mínimo de 30 minutos y autorización previa por escrito. Las horas no se acumulan de un mes a otro.
 
 ## 5. Dominio según producto contratado
 

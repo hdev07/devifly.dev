@@ -112,7 +112,9 @@ Todos los documentos usan `[CORCHETES]`. Antes de enviar cualquiera, busca `[` y
 | Excedente de mantenimiento | $700 MXN/hora + IVA, mínimo 30 min | Contrato 04, cláusula tercera |
 | Orden de cambio | Precio cerrado. Estimar internamente a $800 MXN/hora, mínimo $1,200 por orden | Documento 06 |
 
-Ambas están por encima de la tarifa implícita del plan más caro ($350/hora en VIP), que es lo que hace que subir de plan siempre convenga más que pagar excedentes. Si bajas el excedente por debajo de $500, rompes ese incentivo y nadie sube de plan.
+Ambas están muy por encima de la tarifa implícita del plan más caro (**$175/hora en VIP**: $3,499 entre 20 horas), que es lo que hace que subir de plan siempre convenga más que pagar excedentes. Si bajas el excedente por debajo de $500, rompes ese incentivo y nadie sube de plan.
+
+**Contrapartida del VIP a 20 horas:** a $175/hora es el plan con menor margen por hora de toda la línea, y solo es rentable si el cliente no agota la bolsa. Por eso el contrato 04 limita a **3 solicitudes activas en paralelo** y obliga a reencuadrar como proyecto de evolución al cliente que agote sus 20 horas dos meses seguidos. Sin esos dos frenos, un solo cliente demandante se come el margen del plan entero.
 
 **Pendiente de decidir:**
 

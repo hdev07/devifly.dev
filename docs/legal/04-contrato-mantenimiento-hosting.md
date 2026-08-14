@@ -54,8 +54,9 @@ Todo lo del plan Básico, más:
 
 Todo lo del plan Pro, más:
 
-- Hasta **10 horas** mensuales de desarrollo y mejoras.
-- Nuevas secciones o funcionalidades menores sin costo adicional.
+- Hasta **20 horas** mensuales de cambios de contenido, diseño y mejoras.
+- Un máximo de **3 (tres) solicitudes activas en paralelo**. Las solicitudes adicionales se atienden en el orden en que se libere capacidad.
+- Nuevas secciones o funcionalidades menores **dentro de las horas del plan**, sin costo adicional.
 - Una sesión mensual de estrategia de 60 minutos.
 - Atención prioritaria. Tiempo de primera respuesta: 4 horas hábiles.
 
@@ -70,6 +71,8 @@ Las horas que excedan la bolsa mensual se facturan a **$700 M.N. por hora**, má
 El tiempo se computa en incrementos de **15 (quince) minutos**, con un mínimo facturable de **30 (treinta) minutos** por solicitud atendida.
 
 Si EL CLIENTE excede la bolsa mensual durante **2 (dos) meses consecutivos**, EL PRESTADOR le propondrá el cambio al plan inmediato superior, que en todos los casos resulta más económico que continuar pagando excedentes.
+
+Cuando EL CLIENTE se encuentre en el plan VIP y agote su bolsa mensual durante **2 (dos) meses consecutivos**, LAS PARTES reconocen que el trabajo requerido excede la naturaleza del mantenimiento y acuerdan valorar su contratación como proyecto de evolución independiente, conforme a la Cláusula Cuarta, inciso b).
 
 ## CUARTA — QUÉ NO INCLUYE
 
