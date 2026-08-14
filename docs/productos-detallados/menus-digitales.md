@@ -79,7 +79,7 @@ Resuelve la necesidad de digitalizar una carta pequeña con una experiencia limp
 - Cuando la carta es corta.
 - Cuando se necesita digitalización rápida.
 
-## 6.2 Profesional
+## 6.2 Pro
 
 ### Qué resuelve
 
@@ -118,7 +118,7 @@ Resuelve la necesidad de administrar una carta más amplia y más dinámica, con
 - Cuando se cambia seguido.
 - Cuando se quieren destacar promociones y editar contenido con más frecuencia.
 
-## 6.3 Enterprise
+## 6.3 Premium
 
 ### Qué resuelve
 
@@ -126,7 +126,7 @@ Resuelve la operación de cadenas o franquicias que necesitan más estructura, h
 
 ### Qué cubre
 
-- Todo lo del plan Profesional.
+- Todo lo del plan Pro.
 - Multi-sucursal.
 - Menú por horario.
 - Analíticas de consulta.
@@ -144,7 +144,7 @@ Resuelve la operación de cadenas o franquicias que necesitan más estructura, h
 
 | Característica | A qué se refiere | Qué resuelve |
 | --- | --- | --- |
-| Todo lo de Profesional | Hereda base funcional y operativa del plan anterior | Permite sumar complejidad sin reconstruir desde cero |
+| Todo lo de Pro | Hereda base funcional y operativa del plan anterior | Permite sumar complejidad sin reconstruir desde cero |
 | Multi-sucursal / Franquicia | Posibilidad de trabajar varias sedes o unidades | Ayuda a marcas con operación distribuida |
 | Menú por horario | Cambios por desayuno, comida o cena | Evita mostrar productos fuera de horario |
 | Analíticas de platillos más vistos | Datos sobre consulta o interés por producto | Ayuda a detectar qué llama más la atención |
@@ -161,7 +161,7 @@ Resuelve la operación de cadenas o franquicias que necesitan más estructura, h
 
 ## 7. Comparativa rápida entre planes
 
-| Característica | Esencial | Profesional | Enterprise |
+| Característica | Esencial | Pro | Premium |
 | --- | --- | --- | --- |
 | Precio | $2,499 MXN | $7,999 MXN | $14,999 MXN |
 | Platillos | Hasta 30 | Ilimitados | Ilimitados |
@@ -182,13 +182,13 @@ Resuelve la operación de cadenas o franquicias que necesitan más estructura, h
 | Plan | Tipo de dominio | Ejemplo | Costo |
 | --- | --- | --- | --- |
 | Esencial | Subdominio Devifly | `turestaurante.devifly.dev` | Incluido sin costo adicional |
-| Profesional | Subdominio Devifly | `turestaurante.devifly.dev` | Incluido sin costo adicional |
-| Enterprise | Dominio propio (.com o .mx) | `turestaurante.com` | Primer año incluido en el precio del plan |
+| Pro | Subdominio Devifly | `turestaurante.devifly.dev` | Incluido sin costo adicional |
+| Premium | Dominio propio (.com o .mx) | `turestaurante.com` | Primer año incluido en el precio del plan |
 
 ### Reglas de dominio
 
-- Los planes Esencial y Profesional se publican bajo un subdominio de devifly.dev. No hay costo de dominio.
-- Enterprise incluye el registro del dominio propio (.com o .mx) durante el primer año.
+- Los planes Esencial y Pro se publican bajo un subdominio de devifly.dev. No hay costo de dominio.
+- Premium incluye el registro del dominio propio (.com o .mx) durante el primer año.
 - A partir del año 2, la renovación es responsabilidad del cliente. Se puede gestionar a través del servicio Hosting + Dominio ($199 MXN/mes) o de forma independiente.
 - El costo de renovación varía según extensión:
   - `.com`: ~$200–$360 MXN/año
@@ -211,7 +211,7 @@ Resuelve la operación de cadenas o franquicias que necesitan más estructura, h
 
 ## 10. Cómo explicarlo en una reunión
 
-"Esencial digitaliza una carta pequeña. Profesional la vuelve una herramienta editable y comercial más potente. Enterprise ya está pensado para cadenas, horarios, métricas e integración operativa."
+"Esencial digitaliza una carta pequeña. Pro la vuelve una herramienta editable y comercial más potente. Premium ya está pensado para cadenas, horarios, métricas e integración operativa."
 
 ## 11. Demo 21 días
 

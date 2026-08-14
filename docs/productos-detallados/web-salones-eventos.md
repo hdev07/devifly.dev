@@ -120,7 +120,7 @@ Resuelve la necesidad de pasar de un sitio informativo a una herramienta más cl
 - Cuando necesita filtrar mejor cotizaciones.
 - Cuando quiere empezar a ordenar su agenda.
 
-## 6.3 Premium VIP
+## 6.3 Premium
 
 ### Qué resuelve
 
@@ -164,7 +164,7 @@ Resuelve escenarios donde el negocio del salón ya necesita una capa operativa m
 
 ## 7. Comparativa rápida entre planes
 
-| Característica | Esencial | Pro | Premium VIP |
+| Característica | Esencial | Pro | Premium |
 | --- | --- | --- | --- |
 | Precio | $5,999 MXN | $9,999 MXN | $16,999 MXN |
 | Galería de fotos | Hasta 20 | Ilimitadas + videos | Ilimitadas + videos |
@@ -187,12 +187,12 @@ Resuelve escenarios donde el negocio del salón ya necesita una capa operativa m
 | --- | --- | --- | --- |
 | Esencial | Subdominio Devifly | `tusalondeventos.devifly.dev` | Incluido sin costo adicional |
 | Pro | Subdominio Devifly | `tusalondeventos.devifly.dev` | Incluido sin costo adicional |
-| Premium VIP | Dominio propio (.com o .mx) | `tusalondeventos.com` | Primer año incluido en el precio del plan |
+| Premium | Dominio propio (.com o .mx) | `tusalondeventos.com` | Primer año incluido en el precio del plan |
 
 ### Reglas de dominio
 
 - Los planes Esencial y Pro se publican bajo un subdominio de devifly.dev. No hay costo de dominio.
-- Premium VIP incluye el registro del dominio propio (.com o .mx) durante el primer año.
+- Premium incluye el registro del dominio propio (.com o .mx) durante el primer año.
 - A partir del año 2, la renovación es responsabilidad del cliente. Se puede gestionar a través del servicio Hosting + Dominio ($199 MXN/mes) o de forma independiente.
 - El costo de renovación varía según extensión:
   - `.com`: ~$200–$360 MXN/año
@@ -215,7 +215,7 @@ Resuelve escenarios donde el negocio del salón ya necesita una capa operativa m
 
 ## 10. Cómo explicarlo en una reunión
 
-"Esencial sirve para presentarte mejor y facilitar contacto. Pro sirve para cotizar y ordenar disponibilidad. Premium VIP ya convierte la web en una herramienta comercial y operativa mucho más seria."
+"Esencial sirve para presentarte mejor y facilitar contacto. Pro sirve para cotizar y ordenar disponibilidad. Premium ya convierte la web en una herramienta comercial y operativa mucho más seria."
 
 ## 11. Demo 21 días
 

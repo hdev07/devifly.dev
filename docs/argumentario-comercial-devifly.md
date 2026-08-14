@@ -221,13 +221,13 @@ Una landing page es una página enfocada en una oferta específica. Su trabajo n
 
 | Plan | Inversión | Ideal para | Resumen |
 | --- | --- | --- | --- |
-| One Page | $4,999 MXN | una oferta puntual o campaña específica | estructura compacta para vender una sola propuesta |
-| Multi-Sección | $7,999 MXN | marcas que necesitan más contexto y confianza | desarrollo más completo con bloques de objeciones y respaldo |
-| Portal Avanzado | $12,999 MXN | marcas que quieren crecer con más contenido y estructura | arquitectura ampliada y preparación para escalabilidad |
+| Esencial | $4,999 MXN | una oferta puntual o campaña específica | estructura compacta para vender una sola propuesta |
+| Pro | $7,999 MXN | marcas que necesitan más contexto y confianza | desarrollo más completo con bloques de objeciones y respaldo |
+| Premium | $12,999 MXN | marcas que quieren crecer con más contenido y estructura | arquitectura ampliada y preparación para escalabilidad |
 
 ### Alcance detallado por plan
 
-#### One Page
+#### Esencial
 
 - Secciones esenciales de conversión.
 - CTA principal claramente visible.
@@ -235,7 +235,7 @@ Una landing page es una página enfocada en una oferta específica. Su trabajo n
 - Versión móvil optimizada.
 - Enfoque en rapidez de salida.
 
-#### Multi-Sección
+#### Pro
 
 - Todo lo necesario para explicar mejor una propuesta.
 - Múltiples bloques y secciones.
@@ -243,7 +243,7 @@ Una landing page es una página enfocada en una oferta específica. Su trabajo n
 - Espacio para servicios, beneficios, pruebas y argumentos comerciales.
 - Medición preparada para campañas.
 
-#### Portal Avanzado
+#### Premium
 
 - Arquitectura de contenido más amplia.
 - CMS o estructura autoadministrable según alcance.
@@ -403,13 +403,13 @@ Un catálogo web para mostrar productos, variantes y precios en un formato fáci
 
 | Plan | Inversión | Ideal para | Resumen |
 | --- | --- | --- | --- |
-| Básico | $1,499 MXN | empezar a vender de forma profesional | primer catálogo ordenado y compartible |
+| Esencial | $1,499 MXN | empezar a vender de forma profesional | primer catálogo ordenado y compartible |
 | Pro | $3,499 MXN | negocios con más productos y necesidad de control | catálogo robusto con panel admin |
-| Premium VIP | $6,999 MXN | negocios serios con múltiples vendedoras o más operación | solución más completa con reportes y pagos |
+| Premium | $6,999 MXN | negocios serios con múltiples vendedoras o más operación | solución más completa con reportes y pagos |
 
 ### Alcance detallado por plan
 
-#### Básico
+#### Esencial
 
 - Hasta 50 productos.
 - 1 categoría.
@@ -430,7 +430,7 @@ Un catálogo web para mostrar productos, variantes y precios en un formato fáci
 - Panel admin completo.
 - Entrega aproximada de 2 semanas.
 
-#### Premium VIP
+#### Premium
 
 - Todo lo del plan Pro.
 - Múltiples vendedoras o múltiples catálogos.
@@ -487,8 +487,8 @@ Un menú web optimizado para celular, accesible por QR, con categorías, fotos, 
 | Plan | Inversión | Ideal para | Resumen |
 | --- | --- | --- | --- |
 | Esencial | $2,499 MXN | restaurantes pequeños | carta digital básica pero sólida |
-| Profesional | $7,999 MXN | restaurantes medianos con carta completa | menú más robusto con panel y promociones |
-| Enterprise | $14,999 MXN | cadenas o franquicias | operación multi-sucursal y analítica |
+| Pro | $7,999 MXN | restaurantes medianos con carta completa | menú más robusto con panel y promociones |
+| Premium | $14,999 MXN | cadenas o franquicias | operación multi-sucursal y analítica |
 
 ### Alcance detallado por plan
 
@@ -501,7 +501,7 @@ Un menú web optimizado para celular, accesible por QR, con categorías, fotos, 
 - 1 foto por platillo.
 - Entrega aproximada de 1 semana.
 
-#### Profesional
+#### Pro
 
 - Todo lo de Esencial.
 - Platillos ilimitados.
@@ -512,9 +512,9 @@ Un menú web optimizado para celular, accesible por QR, con categorías, fotos, 
 - Sección de promociones.
 - Entrega aproximada de 2 semanas.
 
-#### Enterprise
+#### Premium
 
-- Todo lo de Profesional.
+- Todo lo de Pro.
 - Multi-sucursal o franquicia.
 - Menú por horario.
 - Analíticas de platillos más vistos.
@@ -572,7 +572,7 @@ Un sitio orientado a presentar el recinto, mostrar instalaciones, resolver dudas
 | --- | --- | --- | --- |
 | Esencial | $5,999 MXN | presencia profesional inicial | mostrar el salón y facilitar contacto |
 | Pro | $9,999 MXN | convertir mejor y manejar más información | cotizador, calendario y mejor contenido |
-| Premium VIP | $16,999 MXN | operación más completa y profesionalizada | administración, CRM, pagos y contratos |
+| Premium | $16,999 MXN | operación más completa y profesionalizada | administración, CRM, pagos y contratos |
 
 ### Alcance detallado por plan
 
@@ -598,7 +598,7 @@ Un sitio orientado a presentar el recinto, mostrar instalaciones, resolver dudas
 - Fotos ilimitadas y videos.
 - Entrega aproximada de 3 semanas.
 
-#### Premium VIP
+#### Premium
 
 - Todo lo de Pro.
 - Panel administrativo completo.

@@ -117,7 +117,7 @@ Justamente ahí es donde más te sirve. Un salón grande se ve profesional. Si t
 
 ### "¿Puedo actualizar los paquetes yo solo?"
 
-Depende del plan. En el plan Esencial nosotros hacemos los cambios. En el Premium VIP tienes un panel para administrar tú mismo contenido, paquetes, fotos y más. Si actualizas seguido, conviene el plan más alto o un mantenimiento mensual.
+Depende del plan. En el plan Esencial nosotros hacemos los cambios. En el Premium tienes un panel para administrar tú mismo contenido, paquetes, fotos y más. Si actualizas seguido, conviene el plan más alto o un mantenimiento mensual.
 
 ### "¿Y qué pasa si me contratan menos en temporada baja?"
 
@@ -157,7 +157,7 @@ Sí. No hay mínimo de invitados. Puedes compartirla con 10 o con 500. El link e
 
 ### "¿Esto es una tienda en línea?"
 
-No exactamente. Es un catálogo profesional para mostrar tus productos de forma ordenada y facilitar que te contacten para comprar. El pedido se cierra por WhatsApp o por el canal que tú uses. En el plan Premium VIP sí se pueden agregar pagos en línea, pero el enfoque principal es mostrar, ordenar y vender más fácil.
+No exactamente. Es un catálogo profesional para mostrar tus productos de forma ordenada y facilitar que te contacten para comprar. El pedido se cierra por WhatsApp o por el canal que tú uses. En el plan Premium sí se pueden agregar pagos en línea, pero el enfoque principal es mostrar, ordenar y vender más fácil.
 
 ### "¿Por qué necesito esto si ya vendo por Facebook?"
 
@@ -173,7 +173,7 @@ Sí. El catálogo funciona para cualquier tipo de producto. Se organiza por cate
 
 ### "¿Mis clientas van a poder pagar desde ahí?"
 
-En el plan Premium VIP sí hay integración con pagos en línea. En los demás planes, el pedido se cierra por WhatsApp. Muchos negocios prefieren así porque ya les funciona el cierre por mensaje.
+En el plan Premium sí hay integración con pagos en línea. En los demás planes, el pedido se cierra por WhatsApp. Muchos negocios prefieren así porque ya les funciona el cierre por mensaje.
 
 ### "¿Y si después necesito más de 50 productos?"
 
@@ -193,11 +193,11 @@ El menú se abre escaneando un QR desde el celular. Es lo mismo que abrir un lin
 
 ### "¿Puedo cambiar precios cuando quiera?"
 
-Desde el plan Profesional ($7,999) tienes panel admin para editar platillos, precios y promociones cuando quieras. En el plan Esencial los cambios los hacemos nosotros.
+Desde el plan Pro ($7,999) tienes panel admin para editar platillos, precios y promociones cuando quieras. En el plan Esencial los cambios los hacemos nosotros.
 
 ### "¿Y si tengo 2 o 3 sucursales?"
 
-Eso es exactamente lo que resuelve el plan Enterprise ($14,999). Incluye multi-sucursal, menú por horario, analíticas y dominio personalizado. Para una sola sucursal, los planes Esencial o Profesional son suficientes.
+Eso es exactamente lo que resuelve el plan Premium ($14,999). Incluye multi-sucursal, menú por horario, analíticas y dominio personalizado. Para una sola sucursal, los planes Esencial o Pro son suficientes.
 
 ### "¿Se puede pedir desde el menú?"
 
@@ -221,7 +221,7 @@ Perfecto. Podemos hacer una landing nueva enfocada en la campaña o oferta espec
 
 ### "¿Qué tan rápido me la entregan?"
 
-El plan One Page se entrega en aproximadamente 1 semana. Multi-Sección en 2 semanas. Portal Avanzado en 3 semanas. Tiempos reales, no estimados inflados.
+El plan Esencial se entrega en aproximadamente 1 semana. Pro en 2 semanas. Premium en 3 semanas. Tiempos reales, no estimados inflados.
 
 ### "¿Funciona bien en celular?"
 
@@ -293,7 +293,7 @@ Tu proyecto se construyó para ti. Los entregables pactados son tuyos según el 
 
 ### "¿Necesito comprar un dominio aparte?"
 
-Depende del plan que contrates. Los planes básicos e intermedios se publican bajo un subdominio de devifly.dev (gratis, tipo `tunegocio.devifly.dev`). Los planes Premium, Enterprise o VIP ya incluyen un dominio propio (.com o .mx) con el primer año incluido.
+Depende del plan que contrates. Los planes básicos e intermedios se publican bajo un subdominio de devifly.dev (gratis, tipo `tunegocio.devifly.dev`). Los planes Premium ya incluyen un dominio propio (.com o .mx) con el primer año incluido.
 
 ### "¿Qué es eso de subdominio devifly.dev?"
 
@@ -338,18 +338,18 @@ Depende del producto:
 | --- | --- |
 | Invitación Esencial | 3–5 días |
 | Invitación Pro/Premium | 1–2 semanas |
-| Landing One Page | ~1 semana |
-| Landing Multi-Sección | ~2 semanas |
-| Landing Portal Avanzado | ~3 semanas |
+| Landing Esencial | ~1 semana |
+| Landing Pro | ~2 semanas |
+| Landing Premium | ~3 semanas |
 | Catálogo Básico | ~1 semana |
 | Catálogo Pro | ~2 semanas |
-| Catálogo Premium VIP | ~3–4 semanas |
+| Catálogo Premium | ~3–4 semanas |
 | Menú Esencial | ~1 semana |
-| Menú Profesional | ~2 semanas |
-| Menú Enterprise | ~3–4 semanas |
+| Menú Pro | ~2 semanas |
+| Menú Premium | ~3–4 semanas |
 | Salón Esencial | ~2 semanas |
 | Salón Pro | ~3 semanas |
-| Salón Premium VIP | ~4–5 semanas |
+| Salón Premium | ~4–5 semanas |
 | Desarrollo Custom | Según alcance (se define en discovery) |
 
 Estos tiempos aplican una vez que el cliente entrega todo el material necesario. Si el material tarda, el proyecto tarda.

@@ -16,7 +16,7 @@ No es una maqueta. No es un PDF. No es un "así se vería". Es su sitio funciona
 
 | Producto | Plan base que se entrega como demo | Precio regular del plan |
 | --- | --- | --- |
-| Landing Pages | One Page | $4,999 MXN |
+| Landing Pages | Esencial | $4,999 MXN |
 | Menús Digitales | Esencial | $2,499 MXN |
 | Web para Salones de Eventos | Esencial | $5,999 MXN |
 
@@ -124,7 +124,7 @@ A criterio del vendedor, el demo puede darse **sin costo ($0)** como estrategia 
 | Se acuerda el plan | El cliente elige el plan que mejor le funcione (puede ser uno superior al demo) |
 | Se descuenta el demo | Los $999 se restan del anticipo |
 | Se personaliza y evoluciona | Se agregan secciones, funcionalidades y contenido según el plan contratado |
-| Se migra a dominio propio | Si el plan incluye dominio (Premium/Enterprise/VIP) o lo contrata aparte |
+| Se migra a dominio propio | Si el plan incluye dominio (Premium) o lo contrata aparte |
 | Se aplican condiciones normales | 2 rondas de revisión, garantía 15 días, esquema 50/50 |
 
 ### Si el cliente no contrata

@@ -20,7 +20,7 @@ La gestión de la información escala desde una simple notificación hasta un si
 *   **¿Se aprueban automáticamente?** No. El sistema registra la "solicitud de fecha". Tú validas la información y confirmas al cliente.
 *   **¿El calendario se actualiza solo?** **Sí, mediante sincronización con Google Calendar.** Si marcas una fecha como "Ocupada" en tu Google Calendar personal/del negocio, la página web mostrará automáticamente que esa fecha ya no está disponible para nuevos clientes.
 
-### 1.3 Plan Premium VIP ($16,999 MXN)
+### 1.3 Plan Premium ($16,999 MXN)
 *   **¿Dónde se registran?** En un **Panel Administrativo (Dashboard) y un CRM integrado**. Tienes un listado de todos los prospectos, su estatus (pendiente, cotizado, reservado) y su historial.
 *   **¿Quién las aprueba?** El administrador desde el panel. El sistema permite formalizar la reserva mediante el pago de un anticipo en línea.
 *   **¿Se aprueban automáticamente?** Puede configurarse para que, **si el cliente paga el anticipo en línea**, la fecha se bloquee automáticamente y la reserva cambie a estado "Confirmada". Si es solo solicitud, requiere aprobación manual en el CRM.
@@ -32,22 +32,22 @@ La gestión de la información escala desde una simple notificación hasta un si
 
 ### "¿Qué pasa si alguien reserva una fecha que acabo de vender por fuera?"
 *   **En Plan Pro:** Debes marcarla en tu Google Calendar de inmediato para que la web se actualice.
-*   **En Plan Premium VIP:** La registras en el CRM y el sistema bloquea la fecha en todos lados.
+*   **En Plan Premium:** La registras en el CRM y el sistema bloquea la fecha en todos lados.
 
 ### "¿El sistema envía correos automáticos al cliente?"
 *   **Esencial:** No, tú respondes manualmente.
 *   **Pro:** El sistema envía un correo automático de "Recibimos tu solicitud, nos pondremos en contacto".
-*   **Premium VIP:** Envía confirmaciones de pago, recordatorios de fechas y hasta el contrato digital.
+*   **Premium:** Envía confirmaciones de pago, recordatorios de fechas y hasta el contrato digital.
 *   
 ### "¿Quién tiene acceso a ver las reservas?"
 *   **Esencial/Pro:** Quien tenga acceso al correo del negocio o al WhatsApp vinculado.
-*   **Premium VIP:** Tú y el personal que autorices, cada uno con su propio usuario y contraseña en el Panel Administrativo.
+*   **Premium:** Tú y el personal que autorices, cada uno con su propio usuario y contraseña en el Panel Administrativo.
 
 ---
 
 ## 3. Tabla Comparativa de Gestión
 
-| Función | Esencial | Pro | Premium VIP |
+| Función | Esencial | Pro | Premium |
 | --- | --- | --- | --- |
 | **Registro de Leads** | Correo / WhatsApp | Correo / WhatsApp | **CRM Interno** |
 | **Aprobación** | Manual | Manual | Manual o Automática (vía pago) |
@@ -60,7 +60,7 @@ La gestión de la información escala desde una simple notificación hasta un si
 ## 4. Guía de Respuesta para el Vendedor
 
 **Si el cliente busca control total:**
-> "Para que no tengas que mover un dedo, el **Plan Premium VIP** es el ideal. Las reservas entran al CRM, el calendario se bloquea solo cuando te pagan el anticipo y tú solo entras a revisar tu reporte de ventas."
+> "Para que no tengas que mover un dedo, el **Plan Premium** es el ideal. Las reservas entran al CRM, el calendario se bloquea solo cuando te pagan el anticipo y tú solo entras a revisar tu reporte de ventas."
 
 **Si el cliente quiere orden pero tiene presupuesto medio:**
 > "Con el **Plan Pro**, el calendario se sincroniza con tu Google Calendar. Si tú anotas un evento en tu celular, la página se actualiza sola para que nadie te pregunte por una fecha que ya tienes llena."

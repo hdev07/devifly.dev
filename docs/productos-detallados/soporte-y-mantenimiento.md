@@ -71,7 +71,7 @@ El servicio de Hosting + Dominio cubre la renovación anual del dominio. Sin emb
 - Si el proyecto usa subdominio devifly.dev (planes básicos de producto), el costo de dominio no aplica y el servicio se limita a hosting + SSL.
 - Si el cliente ya tiene dominio propio y solo necesita hosting, el costo de dominio no se incluye; solo se gestiona la conexión técnica sin cargo adicional.
 - El costo del servicio Hosting + Dominio ($199 MXN/mes) cubre tanto infraestructura como renovación del dominio contratado. Si la extensión del dominio tiene un costo anual más alto (ej. .mx premium), puede aplicar un ajuste.
-- El primer año de dominio puede estar incluido en planes Premium/Enterprise/VIP de los productos. A partir del año 2, el cliente asume la renovación directamente o a través de este servicio.
+- El primer año de dominio puede estar incluido en los planes Premium de los productos. A partir del año 2, el cliente asume la renovación directamente o a través de este servicio.
 
 ### Cuándo conviene recomendarlo
 
@@ -215,14 +215,14 @@ Lo que exceda el tope del plan se cotiza como excedente a **$700 MXN/hora + IVA*
 
 | Producto | Planes con subdominio devifly.dev | Plan con dominio propio incluido (1er año) |
 | --- | --- | --- |
-| Landing Pages | One Page, Multi-Sección | Portal Avanzado |
+| Landing Pages | Esencial, Pro | Premium |
 | Invitaciones | Esencial, Pro | Premium |
-| Catálogos | Básico, Pro | Premium VIP |
-| Menús | Esencial, Profesional | Enterprise |
-| Salones de Eventos | Esencial, Pro | Premium VIP |
+| Catálogos | Esencial, Pro | Premium |
+| Menús | Esencial, Pro | Premium |
+| Salones de Eventos | Esencial, Pro | Premium |
 | Desarrollo Custom | Según cotización | Según cotización |
 
-**Flujo post año 1:** Cuando un plan Premium/Enterprise/VIP incluyó dominio propio el primer año, a partir del año 2 el cliente debe:
+**Flujo post año 1:** Cuando un plan Premium incluyó dominio propio el primer año, a partir del año 2 el cliente debe:
 1. Contratar el servicio de Hosting + Dominio ($199 MXN/mes) que ya incluye la renovación, o
 2. Renovar el dominio por su cuenta y solo contratar hosting si lo necesita.
 

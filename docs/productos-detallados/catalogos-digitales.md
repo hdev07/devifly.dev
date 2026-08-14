@@ -41,7 +41,7 @@ La categoría Catálogo se refiere a una estructura digital de exhibición de pr
 
 ## 6. Planes
 
-## 6.1 Básico
+## 6.1 Esencial
 
 ### Qué resuelve
 
@@ -119,7 +119,7 @@ Resuelve la necesidad de crecer el catálogo y operar con más control sin pasar
 - Cuando maneja muchas referencias.
 - Cuando ya necesita control real de variantes y stock.
 
-## 6.3 Premium VIP
+## 6.3 Premium
 
 ### Qué resuelve
 
@@ -162,7 +162,7 @@ Resuelve operaciones más serias donde ya hay múltiples vendedoras, necesidad d
 
 ## 7. Comparativa rápida entre planes
 
-| Característica | Básico | Pro | Premium VIP |
+| Característica | Esencial | Pro | Premium |
 | --- | --- | --- | --- |
 | Precio | $1,499 MXN | $3,499 MXN | $6,999 MXN |
 | Productos | Hasta 50 | Ilimitados | Ilimitados |
@@ -181,14 +181,14 @@ Resuelve operaciones más serias donde ya hay múltiples vendedoras, necesidad d
 
 | Plan | Tipo de dominio | Ejemplo | Costo |
 | --- | --- | --- | --- |
-| Básico | Subdominio Devifly | `tunegocio.devifly.dev` | Incluido sin costo adicional |
+| Esencial | Subdominio Devifly | `tunegocio.devifly.dev` | Incluido sin costo adicional |
 | Pro | Subdominio Devifly | `tunegocio.devifly.dev` | Incluido sin costo adicional |
-| Premium VIP | Dominio propio (.com o .mx) | `tucatalogo.com` | Primer año incluido en el precio del plan |
+| Premium | Dominio propio (.com o .mx) | `tucatalogo.com` | Primer año incluido en el precio del plan |
 
 ### Reglas de dominio
 
-- Los planes Básico y Pro se publican bajo un subdominio de devifly.dev. No hay costo de dominio.
-- Premium VIP incluye el registro del dominio propio (.com o .mx) durante el primer año.
+- Los planes Esencial y Pro se publican bajo un subdominio de devifly.dev. No hay costo de dominio.
+- Premium incluye el registro del dominio propio (.com o .mx) durante el primer año.
 - A partir del año 2, la renovación es responsabilidad del cliente. Se puede gestionar a través del servicio Hosting + Dominio ($199 MXN/mes) o de forma independiente.
 - El costo de renovación varía según extensión:
   - `.com`: ~$200–$360 MXN/año
@@ -211,7 +211,7 @@ Resuelve operaciones más serias donde ya hay múltiples vendedoras, necesidad d
 
 ## 10. Cómo explicarlo en una reunión
 
-"Básico ordena un catálogo inicial. Pro da control real para crecer. Premium VIP ya acerca el catálogo a una operación mucho más completa, con promociones, métricas y más estructura comercial."
+"Esencial ordena un catálogo inicial. Pro da control real para crecer. Premium ya acerca el catálogo a una operación mucho más completa, con promociones, métricas y más estructura comercial."
 
 ## 11. Cierre de alcance
 

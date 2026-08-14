@@ -49,7 +49,7 @@ Estas son las características generales del producto, independientemente del pl
 
 ## 6. Planes
 
-## 6.1 One Page
+## 6.1 Esencial
 
 ### Qué resuelve
 
@@ -86,7 +86,7 @@ Resuelve la necesidad de lanzar una oferta clara y funcional sin construir una e
 - Cuando el presupuesto es controlado.
 - Cuando todavía no se requiere una arquitectura grande.
 
-## 6.2 Multi-Sección
+## 6.2 Pro
 
 ### Qué resuelve
 
@@ -121,9 +121,9 @@ Resuelve escenarios donde una sola página compacta ya no basta para explicar bi
 - Cuando el cliente ya invierte en tráfico.
 - Cuando la oferta requiere explicación.
 - Cuando se necesita una página más persuasiva.
-- Cuando una One Page se quedaría corta.
+- Cuando el plan Esencial se quedaría corto.
 
-## 6.3 Portal Avanzado
+## 6.3 Premium
 
 ### Qué resuelve
 
@@ -162,7 +162,7 @@ Resuelve la necesidad de tener una presencia web más completa, con mejor estruc
 
 ## 7. Comparativa rápida entre planes
 
-| Característica | One Page | Multi-Sección | Portal Avanzado |
+| Característica | Esencial | Pro | Premium |
 | --- | --- | --- | --- |
 | Precio | $4,999 MXN | $7,999 MXN | $12,999 MXN |
 | Secciones | Esenciales | Múltiples bloques | Arquitectura extendida |
@@ -176,14 +176,14 @@ Resuelve la necesidad de tener una presencia web más completa, con mejor estruc
 
 | Plan | Tipo de dominio | Ejemplo | Costo |
 | --- | --- | --- | --- |
-| One Page | Subdominio Devifly | `tunegocio.devifly.dev` | Incluido sin costo adicional |
-| Multi-Sección | Subdominio Devifly | `tunegocio.devifly.dev` | Incluido sin costo adicional |
-| Portal Avanzado | Dominio propio (.com o .mx) | `tunegocio.com` | Primer año incluido en el precio del plan |
+| Esencial | Subdominio Devifly | `tunegocio.devifly.dev` | Incluido sin costo adicional |
+| Pro | Subdominio Devifly | `tunegocio.devifly.dev` | Incluido sin costo adicional |
+| Premium | Dominio propio (.com o .mx) | `tunegocio.com` | Primer año incluido en el precio del plan |
 
 ### Reglas de dominio
 
-- Los planes One Page y Multi-Sección se publican en un subdominio de devifly.dev. No hay costo de dominio.
-- Portal Avanzado incluye el registro del dominio propio (.com o .mx) durante el primer año.
+- Los planes Esencial y Pro se publican en un subdominio de devifly.dev. No hay costo de dominio.
+- Premium incluye el registro del dominio propio (.com o .mx) durante el primer año.
 - A partir del año 2, la renovación del dominio es responsabilidad del cliente. Se puede gestionar a través del servicio de Hosting + Dominio ($199 MXN/mes) o por cuenta propia.
 - El costo de renovación varía según extensión:
   - `.com`: ~$200–$360 MXN/año
@@ -206,7 +206,7 @@ Resuelve la necesidad de tener una presencia web más completa, con mejor estruc
 
 ## 10. Cómo explicarlo en una reunión
 
-"Landing Pages es la opción correcta cuando el cliente necesita convertir mejor una oferta específica. Si solo necesita salir rápido, One Page. Si necesita explicar mejor y persuadir más, Multi-Sección. Si ya quiere una base más robusta y preparada para crecer, Portal Avanzado."
+"Landing Pages es la opción correcta cuando el cliente necesita convertir mejor una oferta específica. Si solo necesita salir rápido, Esencial. Si necesita explicar mejor y persuadir más, Pro. Si ya quiere una base más robusta y preparada para crecer, Premium."
 
 ## 11. Demo 21 días
 
@@ -214,7 +214,7 @@ Este producto cuenta con opción de **demo de 21 días por $999 MXN**.
 
 | Concepto | Detalle |
 | --- | --- |
-| Qué se entrega | Versión funcional completa del plan **One Page** ($4,999) |
+| Qué se entrega | Versión funcional completa del plan **Esencial** ($4,999) |
 | Dónde se publica | Subdominio devifly.dev (ej. `tunegocio.devifly.dev`) |
 | Contenido | Real del cliente si lo proporciona, o estructura sugerida con placeholders |
 | Duración | 21 días naturales desde publicación |
@@ -225,7 +225,7 @@ Este producto cuenta con opción de **demo de 21 días por $999 MXN**.
 
 1. Cliente paga $999 → se publica su landing real bajo devifly.dev
 2. Usa 21 días → la comparte, la prueba, la enseña
-3. Decide contratar plan One Page ($4,999) → anticipo sería $2,500
+3. Decide contratar plan Esencial ($4,999) → anticipo sería $2,500
 4. Se descuentan $999 → paga solo $1,501 de anticipo
 5. Contra entrega → $2,499
 6. **Total: $4,999** (no pagó nada extra por el demo)
