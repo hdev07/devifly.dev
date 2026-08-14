@@ -17,9 +17,22 @@
     { "source": "/salones-eventos/demo", "destination": "/salones-eventos/premium", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/p/:doc", "destination": "/p/:doc.html" },
     {
       "source": "/(.*)",
       "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/p/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive, nosnippet, noimageindex"
+        },
+        { "key": "Referrer-Policy", "value": "no-referrer" }
+      ]
     }
   ]
 }

@@ -5,5 +5,9 @@ Allow: /
 # <meta name="robots" content="noindex, nofollow"> desde el router.
 # No se listan aquí a propósito: un Disallow impediría al crawler leer ese
 # meta y la URL podría indexarse igual, sin contenido.
+#
+# Los documentos privados de cliente (/p/*) siguen el mismo criterio: llevan
+# noindex en el <meta> y en la cabecera X-Robots-Tag (vercel.json). Sin Disallow,
+# por la misma razón.
 
 Sitemap: https://devifly.dev/sitemap.xml
