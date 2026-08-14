@@ -13,17 +13,17 @@
 
 const DRY_RUN = process.argv.includes('--dry-run')
 
-const TO = process.env.QUOTE_TO || 'hdev0716@gmail.com'
+const TO = process.env.QUOTE_TO || 'worthyjose@gmail.com'
 const FROM = process.env.QUOTE_FROM || 'Devifly <hola@devifly.dev>'
 const REPLY_TO = process.env.QUOTE_REPLY_TO || 'devifly.dev@gmail.com'
 const URL = process.env.QUOTE_URL || 'https://devifly.dev/p/white-glove-corrections-8cf7ecec'
 
 const SUBJECT = 'Your website corrections, priced — Devifly'
 
-const TEXT = `Renee,
+const TEXT = `José,
 
-Here is the quote for the 22 changes you sent on August 13, laid out as a page
-you can go through at your own pace:
+Here is the quote for the 22 changes White Glove sent on August 13, laid out as
+a page you can go through at your own pace:
 
 ${URL}
 
@@ -32,17 +32,18 @@ A few things worth knowing before you open it:
 - Every price is fixed. If the work takes us longer than expected, you pay the same.
 - You can untick any part you would rather leave for later, and the total updates
   as you go.
-- Two of the choices change the price: where your six videos live, and who writes
+- Two of the choices change the price: where the six videos live, and who writes
   the new Electric Fields article.
 - The page is in English, with a Spanish toggle at the top right.
 
 There is also something we found while pricing this, and it is written openly in
 the page: the video section currently shows the same sample clip under several
-titles, and the gallery shows grey placeholders. Putting your real videos and
+titles, and the gallery shows grey placeholders. Putting the real videos and
 photos in their place is included at no extra charge.
 
-To go ahead, write back with a yes, or tell us which parts you want changed. The
-estimate holds until August 27, 2026.
+When you have it the way you want it, there is a button at the bottom that sends
+us your exact selection — you do not have to write out what you picked. Or just
+reply to this email. The estimate holds until August 27, 2026.
 
 Devifly
 devifly.dev
@@ -69,7 +70,7 @@ const HTML = `<!doctype html>
 
         <tr><td style="padding:20px 32px 0;">
           <h1 style="margin:0 0 12px;font-size:22px;line-height:1.25;color:#16212e;">Your website corrections, priced</h1>
-          <p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:#334155;">Renee — here is the quote for the 22 changes you sent on August 13, laid out as a page you can go through at your own pace.</p>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:#334155;">José — here is the quote for the 22 changes White Glove sent on August 13, laid out as a page you can go through at your own pace.</p>
         </td></tr>
 
         <tr><td style="padding:8px 32px 0;">
@@ -87,7 +88,7 @@ const HTML = `<!doctype html>
               <p style="margin:0 0 10px;font-size:13px;font-weight:bold;text-transform:uppercase;letter-spacing:.06em;color:#94a3b8;">Before you open it</p>
               <p style="margin:0 0 8px;font-size:14px;line-height:1.6;color:#334155;"><strong>Every price is fixed.</strong> If the work takes us longer than expected, you pay the same.</p>
               <p style="margin:0 0 8px;font-size:14px;line-height:1.6;color:#334155;"><strong>You can untick anything</strong> you would rather leave for later — the total updates as you go.</p>
-              <p style="margin:0 0 8px;font-size:14px;line-height:1.6;color:#334155;"><strong>Two choices change the price:</strong> where your six videos live, and who writes the new Electric Fields article.</p>
+              <p style="margin:0 0 8px;font-size:14px;line-height:1.6;color:#334155;"><strong>Two choices change the price:</strong> where the six videos live, and who writes the new Electric Fields article.</p>
               <p style="margin:0;font-size:14px;line-height:1.6;color:#334155;">The page is in English, with a Spanish toggle at the top right.</p>
             </td></tr>
           </table>
@@ -96,13 +97,13 @@ const HTML = `<!doctype html>
         <tr><td style="padding:18px 32px 0;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f8fafc;border-left:3px solid #2f6b58;border-radius:0 6px 6px 0;">
             <tr><td style="padding:14px 16px;">
-              <p style="margin:0;font-size:14px;line-height:1.6;color:#334155;"><strong>Something we found while pricing this.</strong> The video section currently shows the same sample clip under several titles, and the gallery shows grey placeholders. Putting your real videos and photos in their place is <strong>included at no extra charge</strong>.</p>
+              <p style="margin:0;font-size:14px;line-height:1.6;color:#334155;"><strong>Something we found while pricing this.</strong> The video section currently shows the same sample clip under several titles, and the gallery shows grey placeholders. Putting the real videos and photos in their place is <strong>included at no extra charge</strong>.</p>
             </td></tr>
           </table>
         </td></tr>
 
         <tr><td style="padding:20px 32px 0;">
-          <p style="margin:0;font-size:15px;line-height:1.6;color:#334155;"><strong>To go ahead:</strong> write back with a yes, or tell us which parts you want changed. The estimate holds until August 27, 2026.</p>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#334155;"><strong>When you have it the way you want it,</strong> there is a button at the bottom of the page that sends us your exact selection — you do not have to write out what you picked. Or just reply to this email. The estimate holds until August 27, 2026.</p>
         </td></tr>
 
         <tr><td style="padding:22px 32px 28px;">
