@@ -81,7 +81,8 @@
 
   * { box-sizing:border-box; }
 
-  html { scroll-behavior:smooth; }
+  html { scroll-behavior:smooth; overflow-x:hidden; }
+  body { overflow-x:hidden; }
 
   body {
     background:var(--bg); color:var(--ink);
@@ -276,8 +277,10 @@
 
   /* ===== tablas ===== */
   .tw {
-    overflow-x:auto; border:1px solid var(--rule); border-radius:var(--radius-card);
+    overflow-x:auto; -webkit-overflow-scrolling:touch;
+    border:1px solid var(--rule); border-radius:var(--radius-card);
     background:var(--raised); box-shadow:var(--shadow);
+    max-width:100%;
   }
   table { border-collapse:collapse; width:100%; font-size:.87rem; min-width:30rem; }
   thead th {
@@ -445,6 +448,9 @@
     .pricebar { position:static; backdrop-filter:none; }
     body { padding:0 1rem 4rem; }
     .cta { padding:1.4rem 1.25rem; }
+    .pb-grid { grid-template-columns:repeat(auto-fit,minmax(8rem,1fr)); }
+    .opt { flex-wrap:wrap; }
+    .opt .op { margin-left:0; padding-left:0; width:100%; }
   }
 </style>
 
