@@ -13,8 +13,8 @@ dist-ssr
 *.local
 
 # Secretos: RESEND_API_KEY vive aquí, nunca en el repo. Ver .env.example.
-.env
-.env.*
+# .env.local lo genera `vercel link` y trae el VERCEL_OIDC_TOKEN.
+.env*
 !.env.example
 .vercel
 
