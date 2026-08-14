@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Skills de Claude Code: enlaces al repo SKILLS-DEVIFLY, no se versionan aquí
+.claude/
