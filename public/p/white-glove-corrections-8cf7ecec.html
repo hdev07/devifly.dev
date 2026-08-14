@@ -279,8 +279,15 @@
   .tw {
     overflow-x:auto; -webkit-overflow-scrolling:touch;
     border:1px solid var(--rule); border-radius:var(--radius-card);
-    background:var(--raised); box-shadow:var(--shadow);
-    max-width:100%;
+    box-shadow:var(--shadow); max-width:100%;
+    /* scroll-shadow: la sombra derecha desaparece cuando llegas al final */
+    background:
+      linear-gradient(to right,  var(--raised) 30%, transparent) left  / 2rem 100% no-repeat,
+      linear-gradient(to left,   var(--raised) 30%, transparent) right / 2rem 100% no-repeat,
+      radial-gradient(ellipse at left,  rgba(59,130,246,.25), transparent 70%) left  / 1.2rem 100% no-repeat,
+      radial-gradient(ellipse at right, rgba(59,130,246,.25), transparent 70%) right / 1.2rem 100% no-repeat;
+    background-color: var(--raised);
+    background-attachment: local, local, scroll, scroll;
   }
   table { border-collapse:collapse; width:100%; font-size:.87rem; min-width:30rem; }
   thead th {
@@ -451,14 +458,6 @@
     .pb-grid { grid-template-columns:repeat(auto-fit,minmax(8rem,1fr)); }
     .opt { flex-wrap:wrap; }
     .opt .op { margin-left:0; padding-left:0; width:100%; font-size:1.1rem; }
-    /* tabla de comparación: mostrar solo Opción, Correcciones y Total */
-    .hide-sm,
-    #compare-wrap td:nth-child(3),
-    #compare-wrap td:nth-child(4) { display:none; }
-    #compare-wrap td,
-    #compare-wrap th { padding:.55rem .65rem; }
-    /* reducir min-width global para que el scroll quede dentro del .tw */
-    table { min-width:20rem; font-size:.84rem; }
   }
 </style>
 
@@ -540,13 +539,13 @@
       <p class="hint" data-t="fut_hint">Answer this honestly — it is the only thing that decides whether a plan is worth it.</p>
     </div>
 
-    <div class="tw" id="compare-wrap">
+    <div class="tw">
       <table>
         <thead><tr>
           <th data-t="c_plan">Option</th>
           <th class="n" data-t="c_now">Pay today</th>
-          <th class="n hide-sm" data-t="c_later">Changes later</th>
-          <th class="n hide-sm" data-t="c_fee">Plan &amp; hosting</th>
+          <th class="n" data-t="c_later">Changes later</th>
+          <th class="n" data-t="c_fee">Plan &amp; hosting</th>
           <th class="n" data-t="c_yr">Next 12 months</th>
         </tr></thead>
         <tbody id="compare"></tbody>
