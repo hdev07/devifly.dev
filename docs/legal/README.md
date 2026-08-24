@@ -96,7 +96,7 @@ Todos los documentos usan `[CORCHETES]`. Antes de enviar cualquiera, busca `[` y
 
 | Campo | Valor |
 |---|---|
-| Titular | Héctor Alejandro Cruz Solís |
+| Titular | Hector Alejandro Cruz Solis |
 | Marca | Devifly · devifly.dev |
 | RFC | CUSH011107NH8 |
 | Régimen | Persona física · RESICO |

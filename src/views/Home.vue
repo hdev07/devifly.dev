@@ -8,6 +8,7 @@ import DemosTeaser from "../components/DemosTeaser.vue";
 import HowWeWork from "../components/HowWeWork.vue";
 import ROICalculator from "../components/ROICalculator.vue";
 import PricingTeaser from "../components/PricingTeaser.vue";
+import AfterSalesPlans from "../components/AfterSalesPlans.vue";
 import LeadMagnet from "../components/LeadMagnet.vue";
 import FAQ from "../components/FAQ.vue";
 import FounderSection from "../components/FounderSection.vue";
@@ -41,6 +42,10 @@ import CTAFinal from "../components/CTAFinal.vue";
     <!-- 8. Pricing (ancla: #precios) -->
     <div id="precios" class="scroll-mt-20">
       <PricingTeaser />
+    </div>
+    <!-- 8b. After-sales plans (ancla: #mantenimiento) -->
+    <div id="mantenimiento" class="scroll-mt-20">
+      <AfterSalesPlans />
     </div>
     <!-- Lead magnet (free audit) -->
     <LeadMagnet />

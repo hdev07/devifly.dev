@@ -20,7 +20,7 @@
 
 ---
 
-Contrato de prestación de servicios que celebran, por una parte, **HÉCTOR ALEJANDRO CRUZ SOLÍS**, persona física con actividad empresarial que opera comercialmente bajo la marca **Devifly (devifly.dev)**, a quien se le denominará **"EL PRESTADOR"**; y por la otra, **[NOMBRE COMPLETO O RAZÓN SOCIAL DEL CLIENTE]**, a quien se le denominará **"EL CLIENTE"**; y conjuntamente como **"LAS PARTES"**, conforme a las siguientes declaraciones y cláusulas.
+Contrato de prestación de servicios que celebran, por una parte, **HECTOR ALEJANDRO CRUZ SOLIS**, persona física con actividad empresarial que opera comercialmente bajo la marca **Devifly (devifly.dev)**, a quien se le denominará **"EL PRESTADOR"**; y por la otra, **[NOMBRE COMPLETO O RAZÓN SOCIAL DEL CLIENTE]**, a quien se le denominará **"EL CLIENTE"**; y conjuntamente como **"LAS PARTES"**, conforme a las siguientes declaraciones y cláusulas.
 
 ---
 
@@ -336,6 +336,6 @@ Leído que fue el presente contrato por LAS PARTES, y enteradas de su contenido,
 |---|---|
 | <br><br><br> | <br><br><br> |
 | _______________________________ | _______________________________ |
-| **Héctor Alejandro Cruz Solís** | **[NOMBRE DEL CLIENTE / REPRESENTANTE]** |
+| **Hector Alejandro Cruz Solis** | **[NOMBRE DEL CLIENTE / REPRESENTANTE]** |
 | RFC: CUSH011107NH8 | RFC: [RFC DEL CLIENTE] |
 | Devifly · devifly.dev | [CARGO, si aplica] |

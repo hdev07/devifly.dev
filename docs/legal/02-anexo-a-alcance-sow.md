@@ -13,7 +13,7 @@
 
 | | EL PRESTADOR | EL CLIENTE |
 |---|---|---|
-| **Nombre / razón social** | Héctor Alejandro Cruz Solís (Devifly) | [NOMBRE O RAZÓN SOCIAL] |
+| **Nombre / razón social** | Hector Alejandro Cruz Solis (Devifly) | [NOMBRE O RAZÓN SOCIAL] |
 | **RFC** | CUSH011107NH8 | [RFC] |
 | **Interlocutor** | Héctor Cruz | [NOMBRE] |
 | **Correo** | devifly.dev@gmail.com | [CORREO] |
@@ -216,6 +216,6 @@ Al firmar, LAS PARTES declaran haber leído y comprendido el alcance aquí descr
 |---|---|
 | <br><br> | <br><br> |
 | _______________________________ | _______________________________ |
-| **Héctor Alejandro Cruz Solís** | **[NOMBRE]** |
+| **Hector Alejandro Cruz Solis** | **[NOMBRE]** |
 | Devifly · devifly.dev | [CARGO] |
 | Fecha: ____________________ | Fecha: ____________________ |

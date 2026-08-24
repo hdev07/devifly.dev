@@ -4,7 +4,7 @@
 
 ---
 
-Convenio de cesión de derechos patrimoniales de autor que celebran, por una parte, **HÉCTOR ALEJANDRO CRUZ SOLÍS**, persona física con actividad empresarial, con RFC **CUSH011107NH8**, quien opera bajo la marca **Devifly (devifly.dev)**, en su carácter de **"EL CEDENTE"**; y por la otra, **[NOMBRE O RAZÓN SOCIAL]**, con RFC **[RFC]**, en su carácter de **"EL CESIONARIO"**.
+Convenio de cesión de derechos patrimoniales de autor que celebran, por una parte, **HECTOR ALEJANDRO CRUZ SOLIS**, persona física con actividad empresarial, con RFC **CUSH011107NH8**, quien opera bajo la marca **Devifly (devifly.dev)**, en su carácter de **"EL CEDENTE"**; y por la otra, **[NOMBRE O RAZÓN SOCIAL]**, con RFC **[RFC]**, en su carácter de **"EL CESIONARIO"**.
 
 ---
 
@@ -135,6 +135,6 @@ Leído que fue el presente convenio y enteradas LAS PARTES de su contenido y alc
 |---|---|
 | <br><br><br> | <br><br><br> |
 | _______________________________ | _______________________________ |
-| **Héctor Alejandro Cruz Solís** | **[NOMBRE]** |
+| **Hector Alejandro Cruz Solis** | **[NOMBRE]** |
 | RFC: CUSH011107NH8 | RFC: [RFC] |
 | Devifly · devifly.dev | [CARGO, si aplica] |

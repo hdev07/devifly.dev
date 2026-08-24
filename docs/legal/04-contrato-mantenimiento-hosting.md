@@ -4,7 +4,7 @@
 
 ---
 
-Contrato de prestación de servicios de mantenimiento que celebran **HÉCTOR ALEJANDRO CRUZ SOLÍS**, bajo la marca **Devifly (devifly.dev)**, RFC **CUSH011107NH8** (**"EL PRESTADOR"**), y **[NOMBRE O RAZÓN SOCIAL]**, RFC **[RFC]** (**"EL CLIENTE"**), al tenor de las siguientes cláusulas.
+Contrato de prestación de servicios de mantenimiento que celebran **HECTOR ALEJANDRO CRUZ SOLIS**, bajo la marca **Devifly (devifly.dev)**, RFC **CUSH011107NH8** (**"EL PRESTADOR"**), y **[NOMBRE O RAZÓN SOCIAL]**, RFC **[RFC]** (**"EL CLIENTE"**), al tenor de las siguientes cláusulas.
 
 ---
 
@@ -190,5 +190,5 @@ Firmado en **[CIUDAD]**, a los **[DÍA]** días del mes de **[MES]** de **[AÑO]
 |---|---|
 | <br><br><br> | <br><br><br> |
 | _______________________________ | _______________________________ |
-| **Héctor Alejandro Cruz Solís** | **[NOMBRE]** |
+| **Hector Alejandro Cruz Solis** | **[NOMBRE]** |
 | RFC: CUSH011107NH8 | RFC: [RFC] |

@@ -12,7 +12,7 @@
 
 | | |
 |---|---|
-| **EL PRESTADOR** | Héctor Alejandro Cruz Solís · Devifly · RFC CUSH011107NH8 |
+| **EL PRESTADOR** | Hector Alejandro Cruz Solis · Devifly · RFC CUSH011107NH8 |
 | **EL CLIENTE** | [NOMBRE O RAZÓN SOCIAL] · RFC [RFC] |
 | **Recibe por EL CLIENTE** | [NOMBRE DEL INTERLOCUTOR] |
 
@@ -172,6 +172,6 @@ Firmada la presente acta en **[CIUDAD]**, a los **[DÍA]** días del mes de **[M
 |---|---|
 | <br><br><br> | <br><br><br> |
 | _______________________________ | _______________________________ |
-| **Héctor Alejandro Cruz Solís** | **[NOMBRE DEL INTERLOCUTOR]** |
+| **Hector Alejandro Cruz Solis** | **[NOMBRE DEL INTERLOCUTOR]** |
 | Devifly · devifly.dev | [CARGO] |
 | Fecha: ____________________ | Fecha: ____________________ |

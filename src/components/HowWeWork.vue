@@ -91,7 +91,7 @@
             </p>
           </div>
           <router-link
-            to="/#precios"
+            to="/#mantenimiento"
             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full dark:bg-white/5 bg-light-card border dark:border-white/10 border-light-border text-sm font-semibold dark:text-white text-light-text hover:dark:border-brand-500/50 transition-all shrink-0"
           >
             {{ t("howWeWork.bonusCta") }}

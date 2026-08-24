@@ -12,7 +12,7 @@
 
 | | |
 |---|---|
-| **EL PRESTADOR** | Héctor Alejandro Cruz Solís · Devifly · RFC CUSH011107NH8 |
+| **EL PRESTADOR** | Hector Alejandro Cruz Solis · Devifly · RFC CUSH011107NH8 |
 | **EL CLIENTE** | [NOMBRE O RAZÓN SOCIAL] · RFC [RFC] |
 | **Solicitado por** | [NOMBRE DEL INTERLOCUTOR] |
 | **Fecha de la solicitud** | [FECHA] |
@@ -123,7 +123,7 @@ EL PRESTADOR **no iniciará** ningún trabajo relacionado con este cambio hasta 
 |---|---|
 | <br><br> | <br><br> |
 | _______________________________ | _______________________________ |
-| **Héctor Alejandro Cruz Solís** | **[NOMBRE DEL INTERLOCUTOR]** |
+| **Hector Alejandro Cruz Solis** | **[NOMBRE DEL INTERLOCUTOR]** |
 | Devifly · devifly.dev | [CARGO] |
 | Fecha: ____________________ | Fecha: ____________________ |
 

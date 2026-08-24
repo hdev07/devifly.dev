@@ -4,7 +4,7 @@
 
 ---
 
-Acuerdo de Confidencialidad que celebran, por una parte, **HÉCTOR ALEJANDRO CRUZ SOLÍS**, persona física con actividad empresarial que opera bajo la marca **Devifly (devifly.dev)**, con RFC **CUSH011107NH8** y domicilio en **Prolongación Morelos 189, Valle Dorado, C.P. 53690, Naucalpan de Juárez, Estado de México**; y por la otra, **[NOMBRE COMPLETO O RAZÓN SOCIAL]**, con RFC **[RFC]**; a quienes conjuntamente se les denominará **"LAS PARTES"**, conforme a lo siguiente:
+Acuerdo de Confidencialidad que celebran, por una parte, **HECTOR ALEJANDRO CRUZ SOLIS**, persona física con actividad empresarial que opera bajo la marca **Devifly (devifly.dev)**, con RFC **CUSH011107NH8** y domicilio en **Prolongación Morelos 189, Valle Dorado, C.P. 53690, Naucalpan de Juárez, Estado de México**; y por la otra, **[NOMBRE COMPLETO O RAZÓN SOCIAL]**, con RFC **[RFC]**; a quienes conjuntamente se les denominará **"LAS PARTES"**, conforme a lo siguiente:
 
 ---
 
@@ -136,6 +136,6 @@ Enteradas LAS PARTES del contenido y alcance legal de este acuerdo, lo firman en
 |---|---|
 | <br><br><br> | <br><br><br> |
 | _______________________________ | _______________________________ |
-| **Héctor Alejandro Cruz Solís** | **[NOMBRE]** |
+| **Hector Alejandro Cruz Solis** | **[NOMBRE]** |
 | RFC: CUSH011107NH8 | RFC: [RFC] |
 | devifly.dev@gmail.com | [CORREO] |
